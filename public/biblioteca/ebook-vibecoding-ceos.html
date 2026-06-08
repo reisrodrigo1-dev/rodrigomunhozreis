@@ -132,7 +132,7 @@ code{font-family:var(--mono);font-size:.9em;background:#fff;border:1px solid var
     <h1>Vibecoding<br>para CEOs</h1>
     <p class="sub">Como construir software com IA — do zero ao deploy — sem virar um risco de segurança.</p>
     <div class="by"><b>Rodrigo Munhoz Reis</b> · Vibecoding com Engenharia</div>
-    <div class="cover-tag">Ferramentas · Firebase · GitHub · Vercel · Segurança · +22 prompts prontos</div>
+    <div class="cover-tag">Do plano ao deploy · Segurança · Custos · +22 prompts · Glossário · Roadmap de 30 dias</div>
   </div>
 </section>
 
@@ -151,6 +151,13 @@ code{font-family:var(--mono);font-size:.9em;background:#fff;border:1px solid var
     <li><span class="tn">08</span><span class="tt">P.E.D.E.R. + agentes especialistas</span><span class="tp">pg. 10</span></li>
     <li><span class="tn">09</span><span class="tt">Checklist de segurança (não pule)</span><span class="tp">pg. 11</span></li>
     <li><span class="tn">10</span><span class="tt">Biblioteca de prompts completos</span><span class="tp">pg. 12</span></li>
+    <li><span class="tn">11</span><span class="tt">Instruções iniciais para a IA (salve na memória)</span><span class="tp">pg. 13</span></li>
+    <li><span class="tn">12</span><span class="tt">Glossário do dono</span><span class="tp">pg. 14</span></li>
+    <li><span class="tn">13</span><span class="tt">Custos reais &amp; quando contratar um dev</span><span class="tp">pg. 15</span></li>
+    <li><span class="tn">14</span><span class="tt">Ferramentas de IA &amp; quando NÃO usar vibecoding</span><span class="tp">pg. 16</span></li>
+    <li><span class="tn">15</span><span class="tt">Contas seguras, monitoramento &amp; propriedade do código</span><span class="tp">pg. 17</span></li>
+    <li><span class="tn">16</span><span class="tt">Roadmap de 30 dias &amp; checklist imprimível</span><span class="tp">pg. 18</span></li>
+    <li><span class="tn">17</span><span class="tt">FAQ do CEO, adoção pelo time &amp; erros caros</span><span class="tp">pg. 19</span></li>
   </ol>
   <div class="box amber">
     <div class="bt">Como usar este guia</div>
@@ -395,6 +402,167 @@ node_modules
   <div class="prompt"><div class="pn">22</div><div class="pc"><div class="pt">Onboarding de um desenvolvedor</div><div class="pq">Crie um guia de onboarding para um novo desenvolvedor entrar neste projeto: o que instalar, como rodar localmente, a estrutura de pastas, as variáveis de ambiente necessárias (sem expor os valores) e as regras do projeto (sempre git pull antes de push; nunca subir .env, segredos ou .md sensíveis). Seja objetivo e prático.</div></div></div>
 
   <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>12</span></div>
+</section>
+
+<!-- ░░░ CAP 11 — INSTRUÇÕES INICIAIS (MEMÓRIA) ░░░ -->
+<section class="page">
+  <span class="chapnum">11</span>
+  <div class="kicker">Bônus · Cole no início do projeto</div>
+  <h2>Instruções iniciais para a IA (salve na memória)</h2>
+  <p class="lead">Antes do primeiro comando, dê estas regras para a IA "guardar na memória". No Claude Code ou no Cursor, salve como <b>regras do projeto</b> (um arquivo de regras / memória). Assim ela já trabalha com segurança e bom design desde o começo — sem você precisar repetir.</p>
+  <div class="prompt"><div class="pn">★</div><div class="pc"><div class="pt">Regras permanentes do projeto (memória)</div><div class="pq"><b>Estas são as regras permanentes deste projeto. Guarde na memória e siga em TODO comando.</b><br><br>
+<b>PAPEL:</b> aja como engenheiro de software sênior e arquiteto, com obsessão por segurança e por bom design.<br><br>
+<b>MÉTODO:</b> plano antes do código (proponha fases, começando por um MVP); construa em pedaços pequenos e me explique o que cada parte faz; antes de eu aceitar qualquer mudança que toque em segurança, dados pessoais ou pagamentos, me avise e explique o risco.<br><br>
+<b>SEGURANÇA (inegociável):</b> nunca coloque segredos (chaves, senhas, tokens) no código — use variáveis de ambiente (.env.local); configure o .gitignore para ignorar node_modules, .next, todos os .env* e segredos (*.pem, *service-account*.json), e .md se eu pedir; NUNCA versione/suba .env, segredos ou .md sensíveis, e antes de cada push me mostre o que será enviado e confirme; sempre rode "git pull" antes de "git push"; no Firebase, entregue regras de Firestore/Storage restritivas e oriente a ativar o App Check; respeite a LGPD com dados pessoais.<br><br>
+<b>STACK PADRÃO</b> (se eu não definir): Next.js + Tailwind + Firebase + Vercel.<br><br>
+<b>DESIGN (profissional e tecnológico):</b> se você for o Claude (Claude Code), instale e use a skill de design <span class="ph">ui-ux-pro-max</span> (repositório nextlevelbuilder/ui-ux-pro-max-skill, em ~/.claude/skills); use tema escuro premium (fundo quase-preto) com UM acento de cor (ex.: âmbar) — evite gradiente neon arco-íris (parece "feito por IA"); tipografia com uma sans limpa (Inter/Geist) + uma serifa de destaque em itálico (ex.: Instrument Serif) nas palavras-chave dos títulos; use cards de vidro (glassmorphism), glow sutil, grid de fundo discreto e gradiente nos títulos; micro-animações de entrada e hover (150–300ms) respeitando prefers-reduced-motion; ícones SVG (nunca emoji como ícone); espaçamento generoso e hierarquia forte; acessibilidade (contraste AA, foco visível, labels nos campos, alt nas imagens).<br><br>
+<b>QUALIDADE:</b> código limpo e comentado nos pontos sensíveis; sugira testes para o que é crítico (login, pagamento, dados); ao terminar uma tarefa, liste o que ficou pronto e o próximo passo.</div></div></div>
+  <p class="muted" style="margin-top:14px">Dica: no Claude Code isso vira um arquivo de memória/regras; no Cursor, um arquivo de regras do projeto. Em qualquer IA, basta colar no início da conversa e pedir para "seguir essas regras o tempo todo".</p>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>13</span></div>
+</section>
+
+<!-- ░░░ CAP 12 — GLOSSÁRIO ░░░ -->
+<section class="page">
+  <span class="chapnum">12</span>
+  <div class="kicker">Decifrando o tecniquês</div>
+  <h2>Glossário do dono</h2>
+  <p>Os termos que você vai ouvir do time ou da IA — em uma frase cada. Decore os principais e pare de ficar perdido na reunião.</p>
+  <table>
+    <tbody>
+      <tr><td>Frontend</td><td>A parte visível do sistema (o que o usuário vê e clica).</td></tr>
+      <tr><td>Backend</td><td>A parte de bastidores (servidor, banco de dados, regras de negócio).</td></tr>
+      <tr><td>Repositório (repo)</td><td>A "pasta" do seu projeto versionada no GitHub.</td></tr>
+      <tr><td>Commit</td><td>Uma "foto" salva de uma alteração no código.</td></tr>
+      <tr><td>Push / Pull</td><td>Enviar (push) e baixar (pull) alterações do repositório.</td></tr>
+      <tr><td>Branch</td><td>Uma linha de trabalho paralela, para mexer sem quebrar o principal.</td></tr>
+      <tr><td>Deploy</td><td>Publicar o sistema no ar (ex.: na Vercel).</td></tr>
+      <tr><td>Build</td><td>O processo de "montar" o app para rodar em produção.</td></tr>
+      <tr><td>API</td><td>A ponte por onde dois sistemas conversam.</td></tr>
+      <tr><td>Endpoint</td><td>Um endereço específico dessa ponte (ex.: /clientes).</td></tr>
+      <tr><td>Variável de ambiente (.env)</td><td>Onde ficam as chaves e segredos — fora do código.</td></tr>
+      <tr><td>Token / Chave de API</td><td>Uma "senha" que dá acesso a um serviço. Trate como senha.</td></tr>
+      <tr><td>MVP</td><td>A versão mínima que já entrega valor e pode ir ao mercado.</td></tr>
+      <tr><td>Bug</td><td>Um erro/defeito no sistema.</td></tr>
+      <tr><td>Open source</td><td>Código aberto, que qualquer um pode ver e usar.</td></tr>
+    </tbody>
+  </table>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>14</span></div>
+</section>
+
+<!-- ░░░ CAP 13 — CUSTOS & DEV ░░░ -->
+<section class="page">
+  <span class="chapnum">13</span>
+  <div class="kicker">A conta na ponta do lápis</div>
+  <h2>Custos reais &amp; quando contratar um dev</h2>
+  <p>A boa notícia: dá para começar quase de graça. A conta cresce com o uso. Estimativa realista:</p>
+  <table>
+    <thead><tr><th>Ferramenta</th><th>Grátis até</th><th>Quando você paga</th></tr></thead>
+    <tbody>
+      <tr><td>GitHub</td><td>Repositórios privados ilimitados</td><td>Recursos avançados de time</td></tr>
+      <tr><td>Vercel</td><td>Plano Hobby (uso pessoal)</td><td>Uso comercial / time → Pro (~US$20/mês)</td></tr>
+      <tr><td>Firebase</td><td>Plano Spark (cotas generosas)</td><td>Passou da cota → Blaze (paga o que usar)</td></tr>
+      <tr><td>IA (Cursor/Copilot/Claude)</td><td>Plano grátis limitado</td><td>Uso intenso → ~US$20/mês</td></tr>
+      <tr><td>Domínio</td><td>—</td><td>~R$40/ano</td></tr>
+      <tr><td>E-mail profissional</td><td>Zoho (grátis básico)</td><td>Google Workspace (~R$30/usuário/mês)</td></tr>
+    </tbody>
+  </table>
+  <h3>Quando contratar um desenvolvedor</h3>
+  <p>Sinais de que chegou a hora: você passa mais tempo apagando incêndio do que crescendo; o produto virou crítico (dinheiro, dados sensíveis, muitos usuários); ou a complexidade travou seu ritmo.</p>
+  <h4>Como avaliar sem ser técnico</h4>
+  <ul>
+    <li>Peça para a pessoa <b>revisar um código com você</b>, explicando os riscos — veja se pensa em segurança.</li>
+    <li>Faça perguntas do glossário e veja se ela explica <b>simples</b> (quem entende, simplifica).</li>
+    <li>Peça <b>portfólio e referências</b>; comece com um <b>projeto pequeno e pago</b> antes de fechar tudo.</li>
+  </ul>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>15</span></div>
+</section>
+
+<!-- ░░░ CAP 14 — FERRAMENTAS & LIMITES ░░░ -->
+<section class="page">
+  <span class="chapnum">14</span>
+  <div class="kicker">Escolhendo a ferramenta certa</div>
+  <h2>Ferramentas de IA &amp; quando NÃO usar vibecoding</h2>
+  <table>
+    <thead><tr><th>Ferramenta</th><th>Boa para…</th></tr></thead>
+    <tbody>
+      <tr><td>Cursor</td><td>Construir do zero conversando — editor com IA integrada. Ótimo ponto de partida.</td></tr>
+      <tr><td>GitHub Copilot (VS Code)</td><td>Quem já usa VS Code: autocompletar e chat no editor.</td></tr>
+      <tr><td>Claude Code</td><td>Tarefas multi-arquivo e raciocínio mais profundo, no terminal. Suporta skills (ex.: ui-ux-pro-max).</td></tr>
+      <tr><td>Lovable / Bolt</td><td>Protótipos rápidos direto do navegador — bom para validar ideias.</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">Não existe "a melhor". Comece por uma (Cursor ou Claude Code são ótimas) e domine antes de trocar.</p>
+  <h3>Quando NÃO usar vibecoding (seja honesto)</h3>
+  <p>Vibecoding é alavanca para 90% dos casos. Mas em alguns, você quer engenheiros dedicados liderando (com a IA ajudando, não conduzindo):</p>
+  <ul>
+    <li>Sistemas <b>críticos</b> de saúde, financeiro de baixo nível ou que envolvam risco de vida.</li>
+    <li>Necessidade de <b>performance extrema</b> ou algoritmos muito específicos.</li>
+    <li>Conformidade pesada (auditoria, regulação) onde o erro custa caríssimo.</li>
+  </ul>
+  <div class="box"><div class="bt">💡 Regra</div><p style="margin:0">Quanto maior o risco do erro, mais o julgamento humano de engenharia precisa liderar. A IA acelera; ela não assume a responsabilidade.</p></div>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>16</span></div>
+</section>
+
+<!-- ░░░ CAP 15 — CONTAS, MONITORAMENTO, PROPRIEDADE ░░░ -->
+<section class="page">
+  <span class="chapnum">15</span>
+  <div class="kicker">Blindando o negócio</div>
+  <h2>Contas seguras, monitoramento &amp; propriedade do código</h2>
+  <h3>Proteja suas contas</h3>
+  <ul>
+    <li><b>Ative o 2FA</b> (verificação em duas etapas) em TODAS as contas: GitHub, Vercel, Google/Firebase. É o cadeado mais barato e eficaz.</li>
+    <li>Use um <b>gerenciador de senhas</b> (1Password, Bitwarden) — nada de senha repetida ou no bloco de notas.</li>
+    <li><b>Menor privilégio:</b> cada pessoa acessa só o que precisa. Revogue acessos de quem saiu.</li>
+  </ul>
+  <h3>Saiba quando algo quebra (monitoramento)</h3>
+  <ul>
+    <li><b>Error tracking</b> (ex.: Sentry): te avisa quando um erro acontece para um usuário real.</li>
+    <li><b>Uptime</b>: alerta se o site sair do ar.</li>
+    <li><b>Analytics</b> (Plausible, Google Analytics): entenda o uso e a conversão.</li>
+  </ul>
+  <h3>Garanta que o código é seu</h3>
+  <p>Ao terceirizar, blinde a propriedade: o <b>repositório no SEU GitHub</b> (não no do fornecedor), um <b>contrato com cessão de direitos</b> sobre o que for produzido, e atenção às <b>licenças</b> das bibliotecas usadas. Código é ativo da empresa — trate como tal.</p>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>17</span></div>
+</section>
+
+<!-- ░░░ CAP 16 — ROADMAP & CHECKLIST ░░░ -->
+<section class="page">
+  <span class="chapnum">16</span>
+  <div class="kicker">Do zero ao no ar</div>
+  <h2>Roadmap de 30 dias</h2>
+  <div class="steps">
+    <div class="step"><h4>Semana 1 — Fundação</h4><p>Crie as contas, instale as ferramentas, dê as "instruções iniciais" (cap. 11) e peça à IA o plano + a arquitetura do MVP.</p></div>
+    <div class="step"><h4>Semana 2 — Construir o núcleo</h4><p>Construa a funcionalidade principal em pedaços pequenos, revisando cada um. Nada de tentar tudo de uma vez.</p></div>
+    <div class="step"><h4>Semana 3 — Blindar</h4><p>Conecte o banco com regras, configure variáveis, rode a revisão de segurança (5 Camadas) e crie os testes do que é crítico.</p></div>
+    <div class="step"><h4>Semana 4 — Publicar</h4><p>Suba no GitHub (com cuidado!), faça o deploy na Vercel, configure o domínio e leve aos primeiros usuários de verdade.</p></div>
+  </div>
+  <div class="box amber">
+    <div class="bt">✂ Checklist de pré-deploy (imprima e cole na parede)</div>
+    <p style="margin:0">☐ <code>.env</code> e segredos fora do git &nbsp; ☐ <code>git pull</code> antes do push &nbsp; ☐ regras do Firestore/Storage publicadas &nbsp; ☐ App Check ativo &nbsp; ☐ 2FA nas contas &nbsp; ☐ dados em conformidade com a LGPD &nbsp; ☐ código revisado (5 Camadas) &nbsp; ☐ variáveis cadastradas na Vercel &nbsp; ☐ build sem erros &nbsp; ☐ backup/rollback possível</p>
+  </div>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>18</span></div>
+</section>
+
+<!-- ░░░ CAP 17 — FAQ, TIME, ERROS ░░░ -->
+<section class="page">
+  <span class="chapnum">17</span>
+  <div class="kicker">As perguntas que todo dono faz</div>
+  <h2>FAQ, adoção pelo time &amp; erros caros</h2>
+  <h4>Posso fazer sozinho, sem time técnico?</h4>
+  <p>Um MVP, sim — com método. Conforme o produto fica crítico, você combina seu vibecoding com um dev para os pontos sensíveis.</p>
+  <h4>E se a IA mudar ou ficar obsoleta?</h4>
+  <p>O que você aprende aqui é o <b>método</b> (segurança, revisão, arquitetura) — isso vale para qualquer IA. A ferramenta muda; o rigor permanece.</p>
+  <h4>O código gerado é meu?</h4>
+  <p>Sim — você é dono do que produz. O cuidado é com licenças de bibliotecas de terceiros (quase sempre livres) e com contratos quando você terceiriza.</p>
+  <h3>Faça o seu time adotar o método</h3>
+  <p>Transforme o <b>Protocolo de 5 Camadas</b> e as "instruções iniciais" (cap. 11) no <b>padrão da empresa</b>: todo projeto começa com elas. Assim a segurança não depende da boa vontade de cada um — vira processo.</p>
+  <h3>3 erros que custam caro</h3>
+  <ul>
+    <li><b>Subir segredo no git</b> — chave vaza, alguém usa, a conta é sequestrada. (Prevenção: <code>.gitignore</code> + revisão.)</li>
+    <li><b>Banco sem regras</b> — qualquer um lê/escreve seus dados. (Prevenção: regras restritivas + App Check.)</li>
+    <li><b>"Funcionou, então tá pronto"</b> — sem teste e sem revisão, o erro aparece com o cliente. (Prevenção: 5 Camadas.)</li>
+  </ul>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>19</span></div>
 </section>
 
 <!-- ░░░ ENCERRAMENTO ░░░ -->
