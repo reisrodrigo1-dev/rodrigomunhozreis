@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 // Config via variáveis de ambiente (NEXT_PUBLIC_*). A apiKey web do Firebase é
-// pública por design — a segurança real vem das REGRAS (Firestore/Storage) + App Check.
+// pública por design — a segurança real vem das REGRAS (Firestore/Storage).
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -21,18 +21,3 @@ export const app: FirebaseApp = getApps().length ? getApp() : initializeApp(fire
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-
-// App Check (reCAPTCHA v3): protege /leads e /downloads contra escrita por bots.
-// Ativa automaticamente quando NEXT_PUBLIC_RECAPTCHA_SITE_KEY estiver definida.
-// Roda só no navegador — não afeta SSR/build.
-const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-if (typeof window !== "undefined" && recaptchaKey) {
-  import("firebase/app-check")
-    .then(({ initializeAppCheck, ReCaptchaV3Provider }) => {
-      initializeAppCheck(app, {
-        provider: new ReCaptchaV3Provider(recaptchaKey),
-        isTokenAutoRefreshEnabled: true,
-      });
-    })
-    .catch(() => {});
-}
