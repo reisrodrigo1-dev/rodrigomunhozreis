@@ -3,48 +3,95 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // ⚠️ Troque pelo seu e-mail de admin (o mesmo do login no /admin)
+    // Admin: custom claim `admin:true` (recomendado) OU o e-mail abaixo (legado).
     function isAdmin() {
-      return request.auth != null
-        && request.auth.token.email == 'reis.mrodrigo@gmail.com';
+      return request.auth != null && (
+        request.auth.token.admin == true ||
+        request.auth.token.email == 'reis.mrodrigo@gmail.com'
+      );
     }
 
-    // Captura pública de e-mail; leitura só admin
+    // Campo opcional: ausente/null, ou string dentro do limite de tamanho.
+    function strOrNull(v, max) {
+      return v == null || (v is string && v.size() <= max);
+    }
+
+    function isEmail(v) {
+      return v is string && v.size() < 320 && v.matches('^[^@]+@[^@]+[.][^@]+$');
+    }
+
+    // Captura pública de leads; leitura/edição/exclusão só admin.
     match /leads/{id} {
-      allow create: if request.resource.data.email is string
-                    && request.resource.data.email.size() < 320;
+      allow create: if
+        request.resource.data.keys().hasOnly(['email','name','whatsapp','source','consentVersion','consentAt','createdAt'])
+        && isEmail(request.resource.data.email)
+        && strOrNull(request.resource.data.name, 200)
+        && strOrNull(request.resource.data.whatsapp, 40)
+        && strOrNull(request.resource.data.source, 120)
+        && strOrNull(request.resource.data.consentVersion, 40);
       allow read, update, delete: if isAdmin();
     }
 
-    // Registro público de downloads; leitura só admin
+    // Registro público de downloads; leitura só admin.
     match /downloads/{id} {
-      allow create: if request.resource.data.email is string;
+      allow create: if
+        request.resource.data.keys().hasOnly(['materialId','materialTitle','email','leadId','userAgent','source','consentVersion','consentAt','createdAt'])
+        && isEmail(request.resource.data.email)
+        && strOrNull(request.resource.data.materialId, 120)
+        && strOrNull(request.resource.data.materialTitle, 200)
+        && strOrNull(request.resource.data.leadId, 120)
+        && strOrNull(request.resource.data.userAgent, 500)
+        && strOrNull(request.resource.data.source, 120)
+        && strOrNull(request.resource.data.consentVersion, 40);
       allow read, update, delete: if isAdmin();
     }
 
-    // Materiais (quando vierem do Firestore): leitura pública, escrita só admin
+    // Materiais: leitura pública, escrita só admin.
     match /materials/{id} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // Robôs (prompts): leitura pública, escrita só admin
+    // Robôs (prompts): leitura pública, escrita só admin.
     match /robots/{id} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // Alunos: cada um cria/lê/edita o próprio doc; admin lê todos
+    // Clientes: cada um cria/lê o próprio doc; edita só nome/whatsapp/perfil
+    // (NUNCA email, createdAt ou plan/entitlement). Admin lê/edita/exclui todos.
     match /students/{uid} {
-      allow create: if request.auth != null && request.auth.uid == uid;
-      allow read, update: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow create: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['nome','email','whatsapp','perfil','consentVersion','consentAt','createdAt'])
+        && request.resource.data.nome is string && request.resource.data.nome.size() <= 200
+        && isEmail(request.resource.data.email)
+        && request.resource.data.whatsapp is string && request.resource.data.whatsapp.size() <= 40
+        && request.resource.data.perfil is string && request.resource.data.perfil.size() <= 80;
+      allow read: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow update: if request.auth != null && (
+        (request.auth.uid == uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['nome','whatsapp','perfil']))
+        || isAdmin()
+      );
       allow delete: if isAdmin();
     }
 
-    // Blog: posts publicados são públicos; rascunhos e escrita só admin
+    // Blog: posts publicados são públicos; rascunhos e escrita só admin.
     match /posts/{id} {
       allow read: if resource.data.status == 'published' || isAdmin();
       allow write: if isAdmin();
+    }
+
+    // Config do site (CMS leve): leitura pública, escrita só admin.
+    match /settings/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Trilha de auditoria: leitura só admin; escrita só via Admin SDK (Cloud Function).
+    match /audit_logs/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
     }
   }
 }

@@ -39,8 +39,11 @@ export function SiteFooter() {
           </a>
         </div>
       </div>
-      <div className="container-c border-t border-white/10 py-6 text-xs text-paper/35">
-        © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
+      <div className="container-c flex flex-col gap-2 border-t border-white/10 py-6 text-xs text-paper/35 sm:flex-row sm:items-center sm:justify-between">
+        <span>© {new Date().getFullYear()} {site.name}. Todos os direitos reservados.</span>
+        <a href="/privacidade" className="hover:text-amber-light">
+          Política de Privacidade
+        </a>
       </div>
     </footer>
   );

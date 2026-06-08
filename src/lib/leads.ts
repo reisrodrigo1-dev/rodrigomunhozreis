@@ -1,3 +1,5 @@
+import { CONSENT_VERSION } from "./consent";
+
 /**
  * Cria um lead (e-mail capturado) na coleção `leads`.
  * O Firebase é importado dinamicamente para NÃO entrar no bundle inicial da página.
@@ -16,6 +18,8 @@ export async function createLead(
     name: name?.trim() ?? null,
     whatsapp: whatsapp?.trim() ?? null,
     source,
+    consentVersion: CONSENT_VERSION,
+    consentAt: serverTimestamp(),
     createdAt: serverTimestamp(),
   });
 }

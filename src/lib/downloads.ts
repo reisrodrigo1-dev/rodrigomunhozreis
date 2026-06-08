@@ -1,4 +1,5 @@
 import type { Material } from "./materials";
+import { CONSENT_VERSION } from "./consent";
 
 /**
  * Registra CADA download na coleção `downloads` — "tudo que baixam fica armazenado".
@@ -13,6 +14,8 @@ export async function recordDownload(material: Material, email: string, leadId?:
     email: email.trim().toLowerCase(),
     leadId: leadId ?? null,
     userAgent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+    consentVersion: CONSENT_VERSION,
+    consentAt: serverTimestamp(),
     createdAt: serverTimestamp(),
   });
 }

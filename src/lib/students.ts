@@ -1,13 +1,17 @@
+import { CONSENT_VERSION } from "./consent";
+
 export type Student = {
   uid: string;
   nome: string;
   email: string;
   whatsapp: string;
   perfil: string;
+  /** Entitlement — definido só por admin/Cloud Function, nunca pelo cliente. Ausente = "free". */
+  plan?: "free" | "pro";
   createdAt?: unknown;
 };
 
-export type StudentInput = Omit<Student, "uid" | "createdAt">;
+export type StudentInput = Omit<Student, "uid" | "createdAt" | "plan">;
 
 /** Cria o documento do aluno (também serve de lead). Firebase carregado sob demanda. */
 export async function createStudent(uid: string, data: StudentInput): Promise<void> {
@@ -16,6 +20,8 @@ export async function createStudent(uid: string, data: StudentInput): Promise<vo
   await setDoc(doc(db, "students", uid), {
     ...data,
     email: data.email.trim().toLowerCase(),
+    consentVersion: CONSENT_VERSION,
+    consentAt: serverTimestamp(),
     createdAt: serverTimestamp(),
   });
 }

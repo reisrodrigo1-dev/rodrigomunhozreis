@@ -38,9 +38,9 @@ export function SiteHeader() {
             </svg>
             {site.clienteArea.label}
           </Link>
-          <a href="/#materiais" className="btn btn-glow !px-5 !py-2.5">
+          <Link href="/#materiais" className="btn btn-glow !px-5 !py-2.5">
             Material grátis
-          </a>
+          </Link>
         </div>
       </div>
     </header>

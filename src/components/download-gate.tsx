@@ -3,22 +3,9 @@
 import { useState } from "react";
 import { createLead } from "@/lib/leads";
 import { recordDownload } from "@/lib/downloads";
+import { maskName, maskPhone } from "@/lib/format";
+import { ConsentCheckbox } from "@/components/consent-checkbox";
 import type { Material } from "@/lib/materials";
-
-/** Máscara de telefone brasileiro: (11) 91234-5678 */
-function maskPhone(value: string): string {
-  const d = value.replace(/\D/g, "").slice(0, 11);
-  if (d.length === 0) return "";
-  if (d.length <= 2) return `(${d}`;
-  if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
-  if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
-  return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
-}
-
-/** Deixa cada palavra do nome com inicial maiúscula. */
-function maskName(value: string): string {
-  return value.replace(/\s+/g, " ").replace(/\b\p{L}/gu, (c) => c.toUpperCase());
-}
 
 /**
  * Portão de download: captura nome + e-mail + WhatsApp (com máscaras), grava o
@@ -35,6 +22,7 @@ export function DownloadGate({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
 
   const inputCls = `min-h-[44px] w-full rounded-xl border px-4 text-sm outline-none transition-colors ${
@@ -46,7 +34,7 @@ export function DownloadGate({
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const digits = whatsapp.replace(/\D/g, "");
-    if (!name.trim() || !email || digits.length < 10) return;
+    if (!name.trim() || !email || digits.length < 10 || !consent) return;
     setStatus("loading");
     try {
       const lead = await createLead(email, `material:${material.slug}`, name, whatsapp);
@@ -110,6 +98,7 @@ export function DownloadGate({
         maxLength={16}
         className={inputCls}
       />
+      <ConsentCheckbox checked={consent} onChange={setConsent} dark={dark} id={`cs-${material.slug}`} />
       <button
         type="submit"
         disabled={status === "loading"}

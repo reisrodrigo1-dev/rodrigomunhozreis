@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Default: nega tudo.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    // Materiais (e-books, PDFs) enviados pelo admin: leitura pública, escrita só admin.
+    match /materials/{file=**} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.token.admin == true ||
+        request.auth.token.email == 'reis.mrodrigo@gmail.com'
+      ) && request.resource.size < 50 * 1024 * 1024;
+    }
+  }
+}

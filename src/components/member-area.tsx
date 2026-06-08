@@ -13,19 +13,12 @@ import { auth } from "@/lib/firebase";
 import { createStudent } from "@/lib/students";
 import { getRobots } from "@/lib/robots-db";
 import { RobotCard } from "@/components/robot-card";
+import { ConsentCheckbox } from "@/components/consent-checkbox";
+import { maskPhone } from "@/lib/format";
 import type { Robot } from "@/lib/robots";
 
 const categories: Robot["category"][] = ["Criar sistemas com IA", "Para o negócio"];
 const perfis = ["Dono de empresa", "Empreendedor", "Profissional / colaborador", "Estudante", "Outro"];
-
-function maskPhone(value: string): string {
-  const d = value.replace(/\D/g, "").slice(0, 11);
-  if (d.length === 0) return "";
-  if (d.length <= 2) return `(${d}`;
-  if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
-  if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
-  return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
-}
 
 const field =
   "min-h-[44px] w-full rounded-xl border border-white/15 bg-white/5 px-4 text-sm text-paper outline-none transition-colors placeholder:text-paper/40 focus:border-amber";
@@ -37,6 +30,7 @@ function AuthForm() {
   const [whatsapp, setWhatsapp] = useState("");
   const [perfil, setPerfil] = useState(perfis[0]);
   const [senha, setSenha] = useState("");
+  const [consent, setConsent] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -50,6 +44,11 @@ function AuthForm() {
       } else {
         if (whatsapp.replace(/\D/g, "").length < 10) {
           setError("Informe um WhatsApp válido com DDD.");
+          setLoading(false);
+          return;
+        }
+        if (!consent) {
+          setError("Você precisa aceitar a Política de Privacidade.");
           setLoading(false);
           return;
         }
@@ -126,6 +125,11 @@ function AuthForm() {
           </>
         )}
         <input type="password" required autoComplete={mode === "signup" ? "new-password" : "current-password"} placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} className={field} />
+        {mode === "signup" && (
+          <div className="mt-1">
+            <ConsentCheckbox checked={consent} onChange={setConsent} dark id="cs-signup" />
+          </div>
+        )}
         {error && <p className="text-sm text-red-400">{error}</p>}
         <button type="submit" disabled={loading} className="btn btn-glow mt-1 w-full disabled:opacity-60">
           {loading ? "Aguarde…" : mode === "signup" ? "Criar conta e acessar" : "Entrar"}

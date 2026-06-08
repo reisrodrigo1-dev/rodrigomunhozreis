@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { getPostBySlug, getPublishedPosts, toIsoDate, type Post } from "@/lib/posts";
@@ -109,9 +110,9 @@ export default async function PostPage({ params }: Props) {
         )}
         <div className="prose-dark mt-10" dangerouslySetInnerHTML={{ __html: html }} />
         <div className="mt-12 border-t border-white/10 pt-6">
-          <a href="/blog" className="text-sm font-semibold text-amber-light hover:underline">
+          <Link href="/blog" className="text-sm font-semibold text-amber-light hover:underline">
             ← Voltar ao blog
-          </a>
+          </Link>
         </div>
       </div>
     </article>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { getPublishedPosts, type Post } from "@/lib/posts";
 
@@ -31,18 +32,18 @@ export function LatestPosts() {
                 <span className="accent">blog.</span>
               </h2>
             </div>
-            <a
+            <Link
               href="/blog"
               className="hidden text-sm font-semibold text-amber-light hover:underline sm:inline"
             >
               Ver todos →
-            </a>
+            </Link>
           </div>
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {posts.map((p, i) => (
             <Reveal key={p.id} delay={0.06 * i}>
-              <a
+              <Link
                 href={`/blog/${p.slug}`}
                 className="glass glass-hover group block h-full overflow-hidden"
               >
@@ -65,7 +66,7 @@ export function LatestPosts() {
                   <h3 className="mt-2 text-lg font-semibold text-paper">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-paper/55">{p.excerpt}</p>
                 </div>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>
