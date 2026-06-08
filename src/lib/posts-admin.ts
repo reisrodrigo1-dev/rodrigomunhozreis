@@ -1,4 +1,5 @@
 import type { Post } from "./posts";
+import { seedPosts } from "./seed-posts";
 
 export type PostInput = {
   title: string;
@@ -10,7 +11,7 @@ export type PostInput = {
   tags?: string[];
 };
 
-/** Todos os posts (admin). */
+/** Todos os posts (admin) — do Firestore. */
 export async function getAllPosts(): Promise<Post[]> {
   const { collection, getDocs } = await import("firebase/firestore");
   const { db } = await import("./firebase");
@@ -51,4 +52,28 @@ export async function deletePost(id: string): Promise<void> {
   const { doc, deleteDoc } = await import("firebase/firestore");
   const { db } = await import("./firebase");
   await deleteDoc(doc(db, "posts", id));
+}
+
+/**
+ * Importa os posts iniciais (seed) para o Firestore — uma vez.
+ * Idempotente: pula os que já existem (mesmo slug). Retorna quantos criou.
+ */
+export async function importSeedPosts(): Promise<number> {
+  const existing = await getAllPosts();
+  const slugs = new Set(existing.map((p) => p.slug));
+  let created = 0;
+  for (const p of seedPosts) {
+    if (slugs.has(p.slug)) continue;
+    await createPost({
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.excerpt,
+      content: p.content,
+      coverUrl: p.coverUrl,
+      status: p.status,
+      tags: p.tags,
+    });
+    created++;
+  }
+  return created;
 }

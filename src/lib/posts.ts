@@ -1,5 +1,3 @@
-import { seedPosts } from "./seed-posts";
-
 export type Post = {
   id: string;
   title: string;
@@ -40,47 +38,27 @@ function sortByDate(a: Post, b: Post): number {
   return toMillis(b.publishedAt ?? b.createdAt) - toMillis(a.publishedAt ?? a.createdAt);
 }
 
-const publishedSeed = seedPosts.filter((p) => p.status === "published");
-
-/** Posts publicados (Firestore + seed do código), mais recentes primeiro. */
+/** Posts publicados — direto do Firestore (banco de dados). */
 export async function getPublishedPosts(): Promise<Post[]> {
-  let fire: Post[] = [];
-  try {
-    const { collection, getDocs, query, where } = await import("firebase/firestore");
-    const { db } = await import("./firebase");
-    const snap = await getDocs(query(collection(db, "posts"), where("status", "==", "published")));
-    fire = snap.docs.map((d) => ({ id: d.id, ...(d.data() as object) })) as Post[];
-  } catch {
-    fire = [];
-  }
-  const slugs = new Set(fire.map((p) => p.slug));
-  return [...fire, ...publishedSeed.filter((p) => !slugs.has(p.slug))].sort(sortByDate);
+  const { collection, getDocs, query, where } = await import("firebase/firestore");
+  const { db } = await import("./firebase");
+  const snap = await getDocs(query(collection(db, "posts"), where("status", "==", "published")));
+  return (snap.docs.map((d) => ({ id: d.id, ...(d.data() as object) })) as Post[]).sort(sortByDate);
 }
 
-/** Os N posts mais recentes (síncrono, só do seed) — para a home estática. */
-export function getFeaturedPosts(n = 3): Post[] {
-  return [...publishedSeed].sort(sortByDate).slice(0, n);
-}
-
-/** Um post publicado pelo slug (Firestore ou seed), ou null. */
+/** Um post publicado pelo slug — direto do Firestore, ou null. */
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  try {
-    const { collection, getDocs, query, where, limit } = await import("firebase/firestore");
-    const { db } = await import("./firebase");
-    const snap = await getDocs(
-      query(
-        collection(db, "posts"),
-        where("slug", "==", slug),
-        where("status", "==", "published"),
-        limit(1)
-      )
-    );
-    if (!snap.empty) {
-      const d = snap.docs[0];
-      return { id: d.id, ...(d.data() as object) } as Post;
-    }
-  } catch {
-    /* segue para o seed */
-  }
-  return publishedSeed.find((p) => p.slug === slug) ?? null;
+  const { collection, getDocs, query, where, limit } = await import("firebase/firestore");
+  const { db } = await import("./firebase");
+  const snap = await getDocs(
+    query(
+      collection(db, "posts"),
+      where("slug", "==", slug),
+      where("status", "==", "published"),
+      limit(1)
+    )
+  );
+  if (snap.empty) return null;
+  const d = snap.docs[0];
+  return { id: d.id, ...(d.data() as object) } as Post;
 }

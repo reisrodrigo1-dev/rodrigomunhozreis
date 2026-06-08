@@ -2,7 +2,7 @@ import { Reveal } from "@/components/reveal";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { DownloadGate } from "@/components/download-gate";
 import { materials } from "@/lib/materials";
-import { getFeaturedPosts } from "@/lib/posts";
+import { LatestPosts } from "@/components/latest-posts";
 import { site } from "@/lib/site";
 
 const camadas = [
@@ -18,7 +18,6 @@ const badges = ["Grátis", "+130 prompts", "Plano de 7 dias", "Método P.E.D.E.R
 export default function Home() {
   const ebook = materials.find((m) => m.id === "ebook-ia-sem-medo") ?? materials[0];
   const proof = site.companies.map((c) => c.name).join(" · ");
-  const posts = getFeaturedPosts(3);
 
   return (
     <>
@@ -65,29 +64,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROVA ===== */}
+      {/* ===== PROJETOS (autoridade) ===== */}
       <section id="prova" className="border-t border-white/5 py-20 md:py-28">
         <div className="container-c">
           <Reveal>
             <p className="kicker-d">A prova vem antes do método</p>
-            <h2 className="mt-5 max-w-[18ch] text-4xl font-medium tracking-tight md:text-5xl">
-              <span className="text-grad">Não é teoria. É </span>
-              <span className="accent">produção.</span>
+            <h2 className="mt-5 max-w-[20ch] text-4xl font-medium tracking-tight md:text-5xl">
+              <span className="text-grad">Não é teoria. São produtos </span>
+              <span className="accent">no ar.</span>
             </h2>
             <p className="mt-5 max-w-2xl text-lg text-paper/55">
-              Empresas reais, com clientes reais, dados sensíveis e LGPD — todas construídas em
-              vibecoding feito com rigor. É essa experiência que eu ensino.
+              Sou Diretor de TI e sócio de plataformas reais de legal-tech e edtech — todas
+              construídas em vibecoding feito com rigor. Clique e veja você mesmo.
             </p>
           </Reveal>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {site.companies.map((c, i) => (
-              <Reveal key={c.name} delay={0.08 * i}>
-                <div className="glass glass-hover h-full p-7">
-                  <p className="text-xl font-semibold text-paper">{c.name}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-paper/50">{c.desc}</p>
-                </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {site.projects.map((p, i) => (
+              <Reveal key={p.name} delay={0.05 * i}>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass glass-hover group flex h-full flex-col p-7"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-semibold text-paper">{p.name}</span>
+                    <span className="text-amber-light opacity-0 transition group-hover:opacity-100">
+                      ↗
+                    </span>
+                  </div>
+                  <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-amber-light">
+                    {p.role}
+                  </span>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-paper/55">{p.desc}</p>
+                  <span className="mt-4 text-sm font-medium text-paper/70">
+                    {p.url.replace("https://", "")}
+                  </span>
+                </a>
               </Reveal>
             ))}
+          </div>
+
+          {/* Marquee dos projetos (animação) */}
+          <div className="marquee-mask mt-14 overflow-hidden">
+            <div className="marquee-track gap-10 text-2xl font-medium text-paper/25 md:text-3xl">
+              {[...site.projects, ...site.projects].map((p, i) => (
+                <span key={i} className="whitespace-nowrap">
+                  {p.name} <span className="text-amber/50">·</span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -234,58 +260,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== DO BLOG ===== */}
-      <section id="blog" className="border-t border-white/5 py-20 md:py-28">
-        <div className="container-c">
-          <Reveal>
-            <div className="flex items-end justify-between gap-6">
-              <div>
-                <p className="kicker-d">Conteúdo</p>
-                <h2 className="mt-5 text-4xl font-medium tracking-tight md:text-5xl">
-                  <span className="text-grad">Do </span>
-                  <span className="accent">blog.</span>
-                </h2>
-              </div>
-              <a
-                href="/blog"
-                className="hidden text-sm font-semibold text-amber-light hover:underline sm:inline"
-              >
-                Ver todos →
-              </a>
-            </div>
-          </Reveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {posts.map((p, i) => (
-              <Reveal key={p.id} delay={0.06 * i}>
-                <a
-                  href={`/blog/${p.slug}`}
-                  className="glass glass-hover group block h-full overflow-hidden"
-                >
-                  {p.coverUrl && (
-                    <div className="aspect-[16/10] overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={p.coverUrl}
-                        alt=""
-                        className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
-                      />
-                    </div>
-                  )}
-                  <div className="p-6">
-                    {p.tags?.[0] && (
-                      <span className="text-xs font-semibold uppercase tracking-wide text-amber-light">
-                        {p.tags[0]}
-                      </span>
-                    )}
-                    <h3 className="mt-2 text-lg font-semibold text-paper">{p.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-paper/55">{p.excerpt}</p>
-                  </div>
-                </a>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ===== DO BLOG (do banco) ===== */}
+      <LatestPosts />
 
       {/* ===== CTA FINAL ===== */}
       <section className="relative overflow-hidden border-t border-white/5 py-28">

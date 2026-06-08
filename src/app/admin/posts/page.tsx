@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/posts-admin";
+import { getAllPosts, importSeedPosts } from "@/lib/posts-admin";
 import { fmtDate, type Row } from "@/lib/admin-data";
 import type { Post } from "@/lib/posts";
 
 export default function AdminPosts() {
   const [rows, setRows] = useState<Post[]>([]);
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
+  const [importing, setImporting] = useState(false);
 
   useEffect(() => {
     getAllPosts()
@@ -19,13 +20,36 @@ export default function AdminPosts() {
       .catch(() => setState("error"));
   }, []);
 
+  async function handleImport() {
+    setImporting(true);
+    try {
+      const n = await importSeedPosts();
+      const p = await getAllPosts();
+      setRows(p);
+      alert(n > 0 ? `${n} post(s) importado(s) para o banco.` : "Nada novo para importar.");
+    } catch {
+      alert("Erro ao importar. Verifique o Firestore e as regras.");
+    } finally {
+      setImporting(false);
+    }
+  }
+
   return (
     <div>
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <h1 className="font-serif text-3xl font-semibold">Blog</h1>
-        <Link href="/admin/posts/new" className="btn btn-primary !px-5 !py-2.5">
-          Novo post
-        </Link>
+        <div className="flex gap-2">
+          <button
+            onClick={handleImport}
+            disabled={importing}
+            className="btn btn-ghost !px-4 !py-2 disabled:opacity-50"
+          >
+            {importing ? "Importando…" : "Importar posts iniciais"}
+          </button>
+          <Link href="/admin/posts/new" className="btn btn-primary !px-5 !py-2.5">
+            Novo post
+          </Link>
+        </div>
       </div>
 
       {state === "error" && (

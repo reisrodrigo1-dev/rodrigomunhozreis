@@ -23,6 +23,38 @@ export const site = {
     { name: "BipeTech", desc: "Sócio · edtech por trás do TreinadorOAB e do ConectaEduca." },
     { name: "DireitoHub", desc: "Sócio · legal-tech." },
   ],
+  projects: [
+    {
+      name: "MeuCurso",
+      role: "Diretor de TI",
+      desc: "Plataforma de cursos preparatórios para OAB, concursos e pós-graduação jurídica.",
+      url: "https://meucurso.com.br",
+    },
+    {
+      name: "DireitoHub",
+      role: "Sócio",
+      desc: "IA jurídica para advogados brasileiros.",
+      url: "https://direitohub.com.br",
+    },
+    {
+      name: "TreinadorOAB",
+      role: "Sócio",
+      desc: "Preparação para o Exame da OAB com correção por IA.",
+      url: "https://treinadoroab.com.br",
+    },
+    {
+      name: "ConectaEduca",
+      role: "Sócio",
+      desc: "Marketplace educacional.",
+      url: "https://conectaeduca.com.br",
+    },
+    {
+      name: "BipeTech",
+      role: "Sócio",
+      desc: "Estúdio de inovação em tecnologia e Inteligência Artificial.",
+      url: "https://bipetech.com.br",
+    },
+  ],
   nav: [
     { label: "Método", href: "/#metodo" },
     { label: "Materiais", href: "/#materiais" },

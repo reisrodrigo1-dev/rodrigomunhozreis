@@ -9,7 +9,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       {/* Fundo: glow + grade */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div
-          className="absolute inset-x-0 top-0 h-[560px]"
+          className="animate-pulse-glow absolute inset-x-0 top-0 h-[560px]"
           style={{
             background:
               "radial-gradient(ellipse at top, rgba(224,164,92,0.16), transparent 60%)",
