@@ -33,7 +33,7 @@ export function NewsletterForm({
   if (status === "done") {
     return (
       <p className={dark ? "text-paper" : "text-ink"}>
-        ✓ Pronto! Você está na lista. Em breve você recebe novidades por e-mail.
+        ✓ Pronto! Você está na lista.
       </p>
     );
   }

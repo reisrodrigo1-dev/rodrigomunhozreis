@@ -34,9 +34,6 @@ export function SiteFooter() {
           <a href={site.links.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-paper/55 hover:text-amber-light">
             WhatsApp
           </a>
-          <a href={site.links.email} className="text-paper/55 hover:text-amber-light">
-            Contato
-          </a>
         </div>
       </div>
       <div className="container-c border-t border-white/10 py-6 text-xs text-paper/35">

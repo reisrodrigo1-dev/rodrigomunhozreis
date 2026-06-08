@@ -252,9 +252,6 @@ export default function Home() {
               <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-dark-ghost">
                 Agendar pelo LinkedIn
               </a>
-              <a href={site.links.email} className="btn btn-dark-ghost">
-                Enviar um e-mail
-              </a>
             </div>
           </Reveal>
         </div>

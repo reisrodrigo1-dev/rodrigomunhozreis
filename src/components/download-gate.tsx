@@ -46,7 +46,7 @@ export function DownloadGate({
   if (status === "done") {
     return (
       <p className={`text-sm font-medium ${dark ? "text-amber-light" : "text-amber-deep"}`}>
-        ✓ Tudo certo, {name.split(" ")[0]}! Seu download começou. Verifique também seu e-mail.
+        ✓ Tudo certo, {name.split(" ")[0]}! Seu download já começou.
       </p>
     );
   }
