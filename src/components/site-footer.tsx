@@ -22,6 +22,9 @@ export function SiteFooter() {
               {item.label}
             </a>
           ))}
+          <a href={site.clienteArea.href} className="text-paper/55 hover:text-amber-light">
+            {site.clienteArea.label}
+          </a>
         </nav>
 
         <div className="flex flex-col gap-3 text-sm">

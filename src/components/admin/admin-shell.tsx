@@ -129,7 +129,9 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
 
   if (loading) return <Screen>Carregando…</Screen>;
   if (!user) return <Login />;
-  if (ADMIN_EMAIL && user.email !== ADMIN_EMAIL) {
+  // Fail-closed: só o e-mail de admin entra. Se a variável não estiver
+  // configurada, NINGUÉM acessa (em vez de liberar para todos).
+  if (!ADMIN_EMAIL || user.email !== ADMIN_EMAIL) {
     return (
       <Screen>
         <p className="text-ink-soft">

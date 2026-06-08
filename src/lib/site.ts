@@ -72,9 +72,10 @@ export const site = {
     { label: "Robôs", href: "/robos" },
     { label: "Materiais", href: "/#materiais" },
     { label: "Blog", href: "/blog" },
-    { label: "Área do Cliente", href: "/cliente" },
     { label: "Trabalhe comigo", href: "/#trabalhe" },
   ],
+  // Acesso à área logada — separado do menu principal.
+  clienteArea: { label: "Área do Cliente", href: "/cliente" },
 };
 
 export type Site = typeof site;

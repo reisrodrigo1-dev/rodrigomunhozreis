@@ -24,9 +24,21 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a href="/#materiais" className="btn btn-glow !px-5 !py-2.5">
-          Material grátis
-        </a>
+        <div className="flex items-center gap-3 md:gap-5">
+          <Link
+            href={site.clienteArea.href}
+            className="hidden items-center gap-1.5 text-sm font-medium text-paper/75 transition-colors hover:text-amber-light sm:inline-flex md:border-l md:border-white/10 md:pl-5"
+          >
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            {site.clienteArea.label}
+          </Link>
+          <a href="/#materiais" className="btn btn-glow !px-5 !py-2.5">
+            Material grátis
+          </a>
+        </div>
       </div>
     </header>
   );
