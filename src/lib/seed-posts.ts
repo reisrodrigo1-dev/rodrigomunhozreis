@@ -7,6 +7,88 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "manifesto",
+    slug: "manifesto",
+    status: "published",
+    tags: ["Manifesto"],
+    publishedAt: "2026-06-08",
+    coverUrl:
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+    title: "Manifesto: por que eu construo (e ensino) vibecoding com engenharia",
+    excerpt:
+      "Não vendo mágica nem medo. Rodo empresas reais 100% em vibecoding — e acredito que IA é alavanca para quem tem método, não atalho para quem não sabe.",
+    content: `Eu rodo empresas inteiras com vibecoding. Não uma demo, não um protótipo — produtos reais, em produção, com clientes pagantes e dados sensíveis. E é justamente por isso que eu preciso te dizer uma coisa incômoda.
+
+A forma como a maioria está usando IA para construir software é uma bomba-relógio.
+
+## Dois tipos de pessoas
+Existem dois tipos de gente fazendo vibecoding hoje.
+
+A primeira abre a IA, pede um sistema, aceita tudo o que aparece na tela e sobe para produção. Não lê o código. Não entende o que foi feito. Confunde velocidade com competência.
+
+A segunda usa a mesma IA — mas como engenheiro. Lê cada parte antes de aceitar. Sabe onde os dados trafegam. Testa antes de confiar. Trata a IA como um júnior brilhante, não como um oráculo.
+
+Eu sou o segundo tipo. E não por talento — por **método**.
+
+## No que eu acredito
+Acredito que o problema nunca foi a IA. É o **vibecoding às cegas**: aceitar o que a máquina cospe sem entender.
+
+Acredito que você não precisa ser um programador sênior para construir com IA de forma segura. Precisa de um processo — e processo se aprende.
+
+Acredito que a prova vem antes do discurso. Por isso eu mostro o que construí, com nome e link, em vez de prometer.
+
+E acredito que, daqui a pouco, saber operar IA com rigor não será diferencial — será o mínimo. Quem aprender agora larga na frente.
+
+## Por que eu ensino
+Porque vejo gente boa com medo de IA por preconceito, e gente sem preparo colocando empresas em risco por excesso de confiança. Os dois extremos perdem.
+
+Eu quero o meio com método: a velocidade da IA **com** a segurança da engenharia. É isso que eu construo todo dia — e é isso que eu ensino aqui.
+
+> Vibecoding não é atalho para quem não sabe o que está fazendo. É alavanca para quem tem método.
+
+Se essa é a sua praia, fica por aqui. Vou te mostrar exatamente como eu faço.`,
+  },
+  {
+    id: "erro-donos-de-empresa-ia-substitui-programadores",
+    slug: "erro-donos-de-empresa-ia-substitui-programadores",
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-06-06",
+    coverUrl:
+      "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=1200&q=80",
+    title:
+      "O erro que donos de empresa cometem ao achar que a IA substitui todos os programadores",
+    excerpt:
+      "Achar que a IA dispensa engenharia é caro: projetos sobem inseguros, sem arquitetura e viram dívida. O que os dados mostram — e o que fazer no lugar.",
+    content: `"Agora com IA eu não preciso mais de programador." Se você é dono de empresa, provavelmente já pensou — ou ouviu — essa frase. Ela parece economia inteligente. Na prática, costuma sair muito mais cara.
+
+## O que realmente acontece
+A IA escreve código rápido. O que ela **não** faz sozinha é engenharia: decidir arquitetura, blindar segurança, modelar dados, pensar em escala. Quando ninguém com esse olhar revisa, o resultado é previsível:
+
+- **Projetos sobem inseguros.** Um estudo da Veracode (2025) mostra que código gerado por IA tem **2,74x mais vulnerabilidades** que código humano. Em uma análise de 5.600 apps "vibecodados", pesquisadores acharam 400+ segredos expostos e 175 vazamentos de dados pessoais.
+- **Sem arquitetura.** Funciona com 10 usuários, quebra (ou explode a conta) com 1.000. A dívida técnica se acumula invisível.
+- **Falsa sensação de pronto.** 61% do código de IA funciona, mas só **10,5% passa numa revisão de segurança**. "Funcionou na tela" não é "está pronto".
+- **Mais retrabalho, não menos.** 67% dos desenvolvedores dizem gastar **mais** tempo depurando código de IA do que antes.
+
+No Brasil, ainda tem a LGPD: um vazamento de dados de cliente não é só vergonha — é multa.
+
+## Por que o erro é sedutor
+Porque a demo é linda. Em minutos você vê algo "funcionando" e conclui que o trabalho acabou. Mas o trabalho difícil — o que protege a sua empresa — é justamente o invisível: segurança, arquitetura, testes, versionamento.
+
+## A verdade que economiza dinheiro
+A IA não substitui o programador. Ela **substitui a digitação** do que já foi pensado. O julgamento de engenharia continua sendo necessário — e, com IA, fica até mais valioso.
+
+O dono esperto não pergunta "como demito o time técnico?". Pergunta: **"como faço meu time entregar 3x mais com IA, sem virar um risco?"**. A resposta é método: gente que sabe revisar o que a IA escreve, aplicando um protocolo de segurança antes de qualquer coisa ir para produção.
+
+> Velocidade sem engenharia não é economia. É dívida com juros — e a conta chega na pior hora.
+
+Se você quer adotar IA na sua empresa sem transformar isso numa bomba-relógio, é exatamente esse o trabalho que eu faço. Vamos conversar.
+
+## Fontes
+- [Veracode — 2025 GenAI Code Security Report](https://www.veracode.com/blog/ai-generated-code-security-risks/)
+- [Cloud Security Alliance — AI-Generated Code Security](https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-security-vibe-coding-202/)`,
+  },
+  {
     id: "os-7-pecados-do-vibecoding-as-cegas",
     slug: "os-7-pecados-do-vibecoding-as-cegas",
     status: "published",

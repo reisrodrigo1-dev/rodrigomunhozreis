@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Reveal } from "@/components/reveal";
+import { BlogBrowser } from "@/components/blog-browser";
 import { getPublishedPosts, type Post } from "@/lib/posts";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog — IA, Vibecoding e Tecnologia",
   description:
-    "Vibecoding com engenharia, IA sem medo e bastidores reais de quem roda empresas com IA.",
+    "Artigos sobre vibecoding com engenharia, segurança em IA e como usar inteligência artificial no trabalho — com dados e exemplos reais.",
 };
 
 export default async function BlogPage() {
@@ -25,49 +25,18 @@ export default async function BlogPage() {
         <Reveal>
           <p className="kicker-d">Conteúdo</p>
           <h1 className="mt-5 text-4xl font-medium tracking-tight md:text-6xl">
-            <span className="text-grad">Blog</span>
+            <span className="text-grad">O </span>
+            <span className="accent">blog.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-paper/55">
-            Vibecoding com engenharia, IA sem medo e bastidores reais.
+            Vibecoding com engenharia, IA sem medo e bastidores reais de quem roda empresas com IA.
           </p>
         </Reveal>
 
         {posts.length === 0 ? (
           <p className="mt-12 text-paper/50">Em breve, os primeiros artigos.</p>
         ) : (
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {posts.map((p, i) => (
-              <Reveal key={p.id} delay={0.06 * i}>
-                <Link
-                  href={`/blog/${p.slug}`}
-                  className="glass glass-hover group block h-full overflow-hidden"
-                >
-                  {p.coverUrl && (
-                    <div className="aspect-[16/9] overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={p.coverUrl}
-                        alt=""
-                        className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
-                      />
-                    </div>
-                  )}
-                  <div className="p-7">
-                    {p.tags?.[0] && (
-                      <span className="text-xs font-semibold uppercase tracking-wide text-amber-light">
-                        {p.tags[0]}
-                      </span>
-                    )}
-                    <h2 className="mt-2 text-2xl font-semibold text-paper">{p.title}</h2>
-                    <p className="mt-2 text-paper/55">{p.excerpt}</p>
-                    <span className="mt-4 inline-block text-sm font-semibold text-amber-light">
-                      Ler artigo →
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+          <BlogBrowser posts={posts} />
         )}
       </div>
     </section>

@@ -37,6 +37,19 @@ export default async function PostPage({ params }: Props) {
   if (!post) notFound();
 
   const html = await marked.parse(post.content || "");
+  const minutes = Math.max(1, Math.round((post.content || "").trim().split(/\s+/).length / 200));
+  const dateStr = (() => {
+    const v = post.publishedAt as { toDate?: () => Date } | string | undefined;
+    try {
+      const d =
+        typeof v === "string" ? new Date(v) : v && typeof v === "object" && v.toDate ? v.toDate() : null;
+      return d
+        ? d.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })
+        : "";
+    } catch {
+      return "";
+    }
+  })();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -59,6 +72,11 @@ export default async function PostPage({ params }: Props) {
           {post.title}
         </h1>
         {post.excerpt && <p className="mt-4 text-xl text-paper/55">{post.excerpt}</p>}
+        <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-paper/45">
+          <span className="text-paper/70">Rodrigo Munhoz Reis</span>
+          {dateStr && <span>· {dateStr}</span>}
+          <span>· {minutes} min de leitura</span>
+        </div>
         {post.coverUrl && (
           <div className="mt-8 aspect-[16/8] overflow-hidden rounded-2xl border border-white/10">
             {/* eslint-disable-next-line @next/next/no-img-element */}

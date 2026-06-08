@@ -5,7 +5,19 @@ export const site = {
   domain: "rodrigomunhozreis.com",
   tagline: "Vibecoding com Engenharia",
   description:
-    "Rodo 3 empresas reais 100% em vibecoding — e ensino a construir com IA do jeito certo: rápido, mas com rigor de engenheiro. Sem cair em vibecoding às cegas.",
+    "Aprenda a construir e usar IA do jeito certo: rápido, mas com rigor de engenheiro. Vibecoding com engenharia — sem cair no vibecoding às cegas.",
+  heroSubtitle:
+    "Sou Diretor de TI e sócio de produtos reais, 100% construídos em vibecoding. Ensino a usar IA com a velocidade da máquina e a segurança de quem entende de engenharia.",
+  keywords: [
+    "vibecoding",
+    "vibecoding com engenharia",
+    "vibecoding seguro",
+    "como usar IA no trabalho",
+    "inteligência artificial",
+    "segurança em IA",
+    "IA para empresas",
+    "Rodrigo Munhoz Reis",
+  ],
   enemy: "vibecoding às cegas",
   links: {
     linkedin: "https://www.linkedin.com/in/rodrigoreisoda/",

@@ -42,7 +42,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-paper/55">
-              {site.description}
+              {site.heroSubtitle}
             </p>
           </Reveal>
           <Reveal delay={0.24}>
