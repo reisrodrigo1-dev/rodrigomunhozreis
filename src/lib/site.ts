@@ -69,6 +69,7 @@ export const site = {
   ],
   nav: [
     { label: "Método", href: "/#metodo" },
+    { label: "Robôs", href: "/robos" },
     { label: "Materiais", href: "/#materiais" },
     { label: "Blog", href: "/blog" },
     { label: "Trabalhe comigo", href: "/#trabalhe" },
