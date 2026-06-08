@@ -17,6 +17,7 @@ const badges = ["Grátis", "+130 prompts", "Plano de 7 dias", "Método P.E.D.E.R
 
 export default function Home() {
   const ebook = materials.find((m) => m.id === "ebook-ia-sem-medo") ?? materials[0];
+  const ebookCeos = materials.find((m) => m.id === "ebook-vibecoding-ceos");
   const proof = site.companies.map((c) => c.name).join(" · ");
 
   return (
@@ -256,6 +257,50 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* ===== E-BOOK PARA CEOs ===== */}
+      {ebookCeos && (
+        <section id="ceos" className="border-t border-white/5 py-20 md:py-28">
+          <div className="container-c">
+            <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
+              <Reveal>
+                <p className="kicker-d">Para donos de empresa</p>
+                <h2 className="mt-5 max-w-[16ch] text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+                  <span className="text-grad">É CEO? Construa com IA </span>
+                  <span className="accent">sem virar um risco.</span>
+                </h2>
+                <p className="mt-5 max-w-xl text-lg text-paper/55">
+                  O guia “Vibecoding para CEOs”: ferramentas, Firebase, GitHub, Vercel, segurança,
+                  custos, glossário, roadmap de 30 dias e 22 prompts prontos. Do plano ao deploy.
+                </p>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {["Grátis", "+22 prompts", "Glossário", "Roadmap de 30 dias"].map((b) => (
+                    <li
+                      key={b}
+                      className="rounded-full border border-white/12 bg-white/5 px-3 py-1 text-sm text-paper/65"
+                    >
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+
+              <Reveal delay={0.1}>
+                <div className="glass p-7">
+                  <p className="text-xl font-semibold text-paper">Baixe agora, de graça</p>
+                  <p className="mt-1.5 text-sm text-paper/55">
+                    Coloque seus dados e o acesso é liberado na hora.
+                  </p>
+                  <div className="mt-5">
+                    <DownloadGate material={ebookCeos} variant="dark" />
+                  </div>
+                  <p className="mt-4 text-xs text-paper/40">Sem spam. Você cancela quando quiser.</p>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ===== DO BLOG (do banco) ===== */}
       <LatestPosts />
