@@ -2,6 +2,7 @@ import { Reveal } from "@/components/reveal";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { DownloadGate } from "@/components/download-gate";
 import { materials } from "@/lib/materials";
+import { getFeaturedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
 const camadas = [
@@ -17,6 +18,7 @@ const badges = ["Grátis", "+130 prompts", "Plano de 7 dias", "Método P.E.D.E.R
 export default function Home() {
   const ebook = materials.find((m) => m.id === "ebook-ia-sem-medo") ?? materials[0];
   const proof = site.companies.map((c) => c.name).join(" · ");
+  const posts = getFeaturedPosts(3);
 
   return (
     <>
@@ -229,6 +231,59 @@ export default function Home() {
               </a>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ===== DO BLOG ===== */}
+      <section id="blog" className="border-t border-white/5 py-20 md:py-28">
+        <div className="container-c">
+          <Reveal>
+            <div className="flex items-end justify-between gap-6">
+              <div>
+                <p className="kicker-d">Conteúdo</p>
+                <h2 className="mt-5 text-4xl font-medium tracking-tight md:text-5xl">
+                  <span className="text-grad">Do </span>
+                  <span className="accent">blog.</span>
+                </h2>
+              </div>
+              <a
+                href="/blog"
+                className="hidden text-sm font-semibold text-amber-light hover:underline sm:inline"
+              >
+                Ver todos →
+              </a>
+            </div>
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {posts.map((p, i) => (
+              <Reveal key={p.id} delay={0.06 * i}>
+                <a
+                  href={`/blog/${p.slug}`}
+                  className="glass glass-hover group block h-full overflow-hidden"
+                >
+                  {p.coverUrl && (
+                    <div className="aspect-[16/10] overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={p.coverUrl}
+                        alt=""
+                        className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+                      />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    {p.tags?.[0] && (
+                      <span className="text-xs font-semibold uppercase tracking-wide text-amber-light">
+                        {p.tags[0]}
+                      </span>
+                    )}
+                    <h3 className="mt-2 text-lg font-semibold text-paper">{p.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-paper/55">{p.excerpt}</p>
+                  </div>
+                </a>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

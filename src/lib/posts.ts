@@ -1,3 +1,5 @@
+import { seedPosts } from "./seed-posts";
+
 export type Post = {
   id: string;
   title: string;
@@ -25,34 +27,60 @@ export function slugify(s: string): string {
 }
 
 function toMillis(v: unknown): number {
-  const t = v as { toMillis?: () => number } | null;
-  return t && typeof t === "object" && t.toMillis ? t.toMillis() : 0;
+  if (!v) return 0;
+  if (typeof v === "number") return v;
+  if (typeof v === "string") return Date.parse(v) || 0;
+  const t = v as { toMillis?: () => number; toDate?: () => Date };
+  if (typeof t.toMillis === "function") return t.toMillis();
+  if (typeof t.toDate === "function") return t.toDate().getTime();
+  return 0;
 }
 
-/** Posts publicados, mais recentes primeiro (leitura pública). */
+function sortByDate(a: Post, b: Post): number {
+  return toMillis(b.publishedAt ?? b.createdAt) - toMillis(a.publishedAt ?? a.createdAt);
+}
+
+const publishedSeed = seedPosts.filter((p) => p.status === "published");
+
+/** Posts publicados (Firestore + seed do código), mais recentes primeiro. */
 export async function getPublishedPosts(): Promise<Post[]> {
-  const { collection, getDocs, query, where } = await import("firebase/firestore");
-  const { db } = await import("./firebase");
-  const snap = await getDocs(query(collection(db, "posts"), where("status", "==", "published")));
-  const posts = snap.docs.map((d) => ({ id: d.id, ...(d.data() as object) })) as Post[];
-  return posts.sort(
-    (a, b) => toMillis(b.publishedAt ?? b.createdAt) - toMillis(a.publishedAt ?? a.createdAt)
-  );
+  let fire: Post[] = [];
+  try {
+    const { collection, getDocs, query, where } = await import("firebase/firestore");
+    const { db } = await import("./firebase");
+    const snap = await getDocs(query(collection(db, "posts"), where("status", "==", "published")));
+    fire = snap.docs.map((d) => ({ id: d.id, ...(d.data() as object) })) as Post[];
+  } catch {
+    fire = [];
+  }
+  const slugs = new Set(fire.map((p) => p.slug));
+  return [...fire, ...publishedSeed.filter((p) => !slugs.has(p.slug))].sort(sortByDate);
 }
 
-/** Um post publicado pelo slug, ou null. */
+/** Os N posts mais recentes (síncrono, só do seed) — para a home estática. */
+export function getFeaturedPosts(n = 3): Post[] {
+  return [...publishedSeed].sort(sortByDate).slice(0, n);
+}
+
+/** Um post publicado pelo slug (Firestore ou seed), ou null. */
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  const { collection, getDocs, query, where, limit } = await import("firebase/firestore");
-  const { db } = await import("./firebase");
-  const snap = await getDocs(
-    query(
-      collection(db, "posts"),
-      where("slug", "==", slug),
-      where("status", "==", "published"),
-      limit(1)
-    )
-  );
-  if (snap.empty) return null;
-  const d = snap.docs[0];
-  return { id: d.id, ...(d.data() as object) } as Post;
+  try {
+    const { collection, getDocs, query, where, limit } = await import("firebase/firestore");
+    const { db } = await import("./firebase");
+    const snap = await getDocs(
+      query(
+        collection(db, "posts"),
+        where("slug", "==", slug),
+        where("status", "==", "published"),
+        limit(1)
+      )
+    );
+    if (!snap.empty) {
+      const d = snap.docs[0];
+      return { id: d.id, ...(d.data() as object) } as Post;
+    }
+  } catch {
+    /* segue para o seed */
+  }
+  return publishedSeed.find((p) => p.slug === slug) ?? null;
 }

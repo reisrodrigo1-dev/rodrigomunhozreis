@@ -38,17 +38,32 @@ export default async function BlogPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {posts.map((p, i) => (
               <Reveal key={p.id} delay={0.06 * i}>
-                <Link href={`/blog/${p.slug}`} className="glass glass-hover block h-full p-7">
-                  {p.tags?.[0] && (
-                    <span className="text-xs font-semibold uppercase tracking-wide text-amber-light">
-                      {p.tags[0]}
-                    </span>
+                <Link
+                  href={`/blog/${p.slug}`}
+                  className="glass glass-hover group block h-full overflow-hidden"
+                >
+                  {p.coverUrl && (
+                    <div className="aspect-[16/9] overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={p.coverUrl}
+                        alt=""
+                        className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+                      />
+                    </div>
                   )}
-                  <h2 className="mt-2 text-2xl font-semibold text-paper">{p.title}</h2>
-                  <p className="mt-2 text-paper/55">{p.excerpt}</p>
-                  <span className="mt-4 inline-block text-sm font-semibold text-amber-light">
-                    Ler artigo →
-                  </span>
+                  <div className="p-7">
+                    {p.tags?.[0] && (
+                      <span className="text-xs font-semibold uppercase tracking-wide text-amber-light">
+                        {p.tags[0]}
+                      </span>
+                    )}
+                    <h2 className="mt-2 text-2xl font-semibold text-paper">{p.title}</h2>
+                    <p className="mt-2 text-paper/55">{p.excerpt}</p>
+                    <span className="mt-4 inline-block text-sm font-semibold text-amber-light">
+                      Ler artigo →
+                    </span>
+                  </div>
                 </Link>
               </Reveal>
             ))}
