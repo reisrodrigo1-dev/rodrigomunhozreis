@@ -17,6 +17,7 @@ const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL?.trim();
 const nav = [
   { href: "/admin", label: "Visão geral" },
   { href: "/admin/posts", label: "Blog" },
+  { href: "/admin/robos", label: "Robôs" },
   { href: "/admin/leads", label: "Leads" },
   { href: "/admin/downloads", label: "Downloads" },
   { href: "/admin/biblioteca", label: "Palestras & E-books" },

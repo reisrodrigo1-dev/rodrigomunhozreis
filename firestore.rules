@@ -28,6 +28,12 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
+    // Robôs (prompts): leitura pública, escrita só admin
+    match /robots/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
     // Blog: posts publicados são públicos; rascunhos e escrita só admin
     match /posts/{id} {
       allow read: if resource.data.status == 'published' || isAdmin();
