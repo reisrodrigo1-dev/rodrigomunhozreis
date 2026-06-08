@@ -1,0 +1,74 @@
+"use client";
+
+import { useState } from "react";
+import { createLead } from "@/lib/leads";
+
+type Variant = "light" | "dark";
+
+/** Formulário de captura de e-mail — grava o lead no Firestore. */
+export function NewsletterForm({
+  variant = "light",
+  source = "newsletter",
+}: {
+  variant?: Variant;
+  source?: string;
+}) {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const dark = variant === "dark";
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    setStatus("loading");
+    try {
+      await createLead(email, source);
+      setStatus("done");
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  }
+
+  if (status === "done") {
+    return (
+      <p className={dark ? "text-paper" : "text-ink"}>
+        ✓ Pronto! Você está na lista. Em breve você recebe novidades por e-mail.
+      </p>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
+      <label htmlFor={`email-${source}`} className="sr-only">
+        Seu melhor e-mail
+      </label>
+      <input
+        id={`email-${source}`}
+        type="email"
+        required
+        autoComplete="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Seu melhor e-mail"
+        className={`min-h-[48px] flex-1 rounded-full border px-5 text-sm outline-none transition-colors ${
+          dark
+            ? "border-white/20 bg-white/5 text-paper placeholder:text-paper/50 focus:border-amber"
+            : "border-line bg-white text-ink placeholder:text-muted focus:border-amber"
+        }`}
+      />
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className={`btn ${dark ? "btn-on-dark" : "btn-primary"} disabled:opacity-60`}
+      >
+        {status === "loading" ? "Enviando…" : "Quero receber"}
+      </button>
+      {status === "error" && (
+        <p className="text-sm text-red-500 sm:absolute sm:mt-14">
+          Algo deu errado. Tente de novo.
+        </p>
+      )}
+    </form>
+  );
+}

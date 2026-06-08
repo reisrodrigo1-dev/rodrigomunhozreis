@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper text-ink font-sans;
+  }
+  ::selection {
+    @apply bg-amber-soft;
+  }
+  h1, h2, h3 {
+    @apply font-serif tracking-tight;
+  }
+  /* foco visível e acessível (regra ui-ux-pro-max) */
+  :focus-visible {
+    outline: 2px solid theme(colors.amber.DEFAULT);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container-c {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+  .kicker {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-amber-deep;
+  }
+  .kicker::before {
+    content: "";
+    @apply inline-block h-px w-7 bg-amber;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply bg-ink text-paper hover:bg-amber-deep;
+  }
+  .btn-ghost {
+    @apply border border-line text-ink hover:border-amber hover:text-amber-deep;
+  }
+  .btn-on-dark {
+    @apply bg-amber text-ink hover:bg-amber-light;
+  }
+}
+
+/* respeita quem pediu menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

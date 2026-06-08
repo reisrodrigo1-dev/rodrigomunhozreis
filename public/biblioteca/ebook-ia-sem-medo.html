@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA Sem Medo — Guia Prático · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   IA SEM MEDO — GUIA PRÁTICO (E-book)
+   Tema editorial claro · leitura e impressão A4
+   Prompts construídos com o método P.E.D.E.R.
+   =========================================================== */
+:root{
+  --paper:#F4EFE6; --page:#FBF8F2; --ink:#1B1813; --ink-soft:#3D372E;
+  --muted:#7C7365; --muted-2:#9A9183;
+  --amber:#B5762A; --amber-deep:#8F5C1E; --amber-soft:#F1E5CF;
+  --line:#E4DBCB; --line-strong:#D6CAB4;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+::selection{background:var(--amber-soft)}
+
+.page{
+  background:var(--page);max-width:820px;margin:28px auto;padding:72px 76px;
+  box-shadow:0 12px 48px rgba(27,24,19,.10);border:1px solid var(--line);position:relative;
+}
+.page.cover{padding:0;overflow:hidden}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px}
+h3{font-size:22px;margin:34px 0 10px}
+h4{font-size:17px;font-family:var(--sans);font-weight:700;margin:22px 0 6px;letter-spacing:0}
+p{margin:0 0 14px;color:var(--ink-soft)}
+strong,b{color:var(--ink);font-weight:700}
+em{font-style:italic}
+a{color:var(--amber-deep);text-decoration:none;border-bottom:1px solid var(--amber-soft)}
+.lead{font-size:19px;color:var(--ink-soft);line-height:1.55}
+.muted{color:var(--muted)}
+
+.kicker{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-deep);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.kicker::before{content:"";width:26px;height:1px;background:var(--amber)}
+.chapnum{font-family:var(--serif);font-weight:900;font-size:64px;color:var(--amber-soft);line-height:.8;display:block;margin-bottom:8px}
+
+.rule{height:1px;background:var(--line-strong);margin:26px 0}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 8px;color:var(--ink-soft)}
+li::marker{color:var(--amber)}
+
+.box{border:1px solid var(--line-strong);border-radius:12px;padding:20px 22px;margin:18px 0;background:#fff}
+.box.amber{background:linear-gradient(180deg,var(--amber-soft),#fff);border-color:#E6CF9F}
+.box.warn{border-color:#E6C9B0;background:#FCF4EC}
+.box .bt{font-weight:700;color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.card{border:1px solid var(--line-strong);border-radius:12px;padding:18px;background:#fff}
+.card h4{margin:0 0 4px}
+.card p{margin:0;font-size:14.5px;color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}
+thead th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+tbody td:first-child{font-family:var(--serif);font-weight:600;color:var(--ink)}
+
+.peder{display:flex;flex-direction:column;gap:10px;margin:18px 0}
+.peder .row{display:flex;gap:18px;align-items:flex-start;border:1px solid var(--line-strong);border-radius:12px;padding:16px 18px;background:#fff}
+.peder .L{font-family:var(--serif);font-weight:900;font-size:38px;color:var(--amber);line-height:.9;min-width:42px}
+.peder .row:last-child{background:linear-gradient(180deg,var(--amber-soft),#fff);border-color:#E6CF9F}
+.peder h4{margin:0 0 2px}
+.peder p{margin:0;font-size:14.5px}
+
+.day{border-left:3px solid var(--amber);padding:4px 0 4px 20px;margin:0 0 22px}
+.day .d{font-family:var(--serif);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber-deep)}
+.day h4{margin:2px 0 6px;font-size:19px;font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
+
+.cat{margin:30px 0 6px;display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--line-strong);padding-bottom:8px}
+.cat .cl{font-family:var(--serif);font-weight:900;font-size:22px;color:var(--amber)}
+.cat h3{margin:0;font-size:20px}
+.prompt{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);page-break-inside:avoid;break-inside:avoid}
+.prompt .pn{font-family:var(--mono);font-size:13px;color:var(--amber-deep);font-weight:500;min-width:30px;padding-top:2px}
+.prompt .pc{flex:1}
+.prompt .pt{font-weight:700;color:var(--ink);font-size:15px;margin-bottom:5px}
+.prompt .pq{font-family:var(--mono);font-size:12.5px;line-height:1.62;color:var(--ink-soft);background:#fff;border:1px solid var(--line);border-radius:8px;padding:11px 13px;cursor:pointer;transition:border-color .15s,background .15s}
+.prompt .pq:hover{border-color:var(--amber);background:#FFFDF8}
+.prompt .pq b{color:var(--ink);font-weight:600}
+.prompt .pq .ph{color:var(--amber-deep);font-style:normal}
+
+/* anatomia PEDER anotada */
+.anat{border:1px dashed var(--line-strong);border-radius:12px;padding:18px 20px;margin:18px 0;background:#fff}
+.anat .lab{display:inline-block;font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--amber);border-radius:4px;padding:2px 7px;margin:0 4px 0 0;vertical-align:middle}
+.anat p{font-family:var(--mono);font-size:13px;line-height:1.9;color:var(--ink-soft);margin:0}
+.anat .ph{color:var(--amber-deep)}
+
+.toc{list-style:none;padding:0;margin:24px 0}
+.toc li{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.toc .tn{font-family:var(--serif);font-weight:700;color:var(--amber);min-width:36px}
+.toc .tt{font-weight:600;flex:1}
+.toc .tp{color:var(--muted);font-family:var(--mono);font-size:13px}
+
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:42px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2)}
+.foot .dot{color:var(--amber)}
+
+#toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--page);padding:11px 20px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;transition:.25s;z-index:100;pointer-events:none}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.cover-inner{padding:84px 76px;background:
+  radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.14), transparent 55%),
+  linear-gradient(180deg,#211B12 0%, #2C2416 100%);
+  color:var(--page);min-height:980px;display:flex;flex-direction:column}
+.cover-inner .kicker{color:#E9B05C}
+.cover-inner .kicker::before{background:#E9B05C}
+.cover-inner h1{color:#F6EFE2;font-size:clamp(56px,11vw,104px);font-weight:900;line-height:.95;letter-spacing:-.03em;margin:auto 0 0}
+.cover-inner .sub{font-family:var(--serif);font-size:26px;color:#D9C9AE;margin-top:18px;max-width:30ch;line-height:1.3}
+.cover-inner .by{margin-top:42px;color:#B7A788;font-size:15px;letter-spacing:.04em}
+.cover-inner .by b{color:#F6EFE2}
+.cover-tag{margin-top:8px;font-size:13px;color:#9A8C70;letter-spacing:.1em;text-transform:uppercase}
+
+@media (max-width:680px){
+  .page{padding:40px 26px;margin:14px}
+  .cards,.peder .row{grid-template-columns:1fr}
+  .cover-inner{padding:48px 30px;min-height:auto}
+}
+
+@media print{
+  @page{size:A4;margin:16mm 15mm}
+  body{background:#fff;font-size:10.8pt}
+  .page{box-shadow:none;border:none;margin:0;max-width:none;padding:0;page-break-after:always}
+  .cover-inner{min-height:auto;height:262mm;border-radius:0}
+  #toast{display:none}
+  .prompt,.peder .row,.card,.box,.day,.anat{page-break-inside:avoid;break-inside:avoid}
+  h2,h3,.cat{page-break-after:avoid}
+  a{color:var(--amber-deep);border:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<!-- ░░░ CAPA ░░░ -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="kicker">Guia Prático · Companion da palestra</div>
+    <h1>IA Sem<br>Medo</h1>
+    <p class="sub">Tudo o que você precisa para começar a usar Inteligência Artificial hoje — sem entender nada de tecnologia.</p>
+    <div class="by"><b>Rodrigo Munhoz Reis</b> · Diretor de Tecnologia</div>
+    <div class="cover-tag">Método P.E.D.E.R. · Plano de 7 dias · +130 prompts prontos</div>
+  </div>
+</section>
+
+<!-- ░░░ SUMÁRIO ░░░ -->
+<section class="page">
+  <div class="kicker">O que você vai encontrar</div>
+  <h2>Sumário</h2>
+  <ol class="toc">
+    <li><span class="tn">01</span><span class="tt">A verdade sobre IA e o seu emprego</span><span class="tp">pg. 3</span></li>
+    <li><span class="tn">02</span><span class="tt">O que é IA (e o que ela não é)</span><span class="tp">pg. 4</span></li>
+    <li><span class="tn">03</span><span class="tt">O método P.E.D.E.R. — como fazer um bom pedido</span><span class="tp">pg. 5</span></li>
+    <li><span class="tn">04</span><span class="tt">Regras de ouro e cuidados essenciais</span><span class="tp">pg. 7</span></li>
+    <li><span class="tn">05</span><span class="tt">Quais IAs usar (e por onde começar)</span><span class="tp">pg. 8</span></li>
+    <li><span class="tn">06</span><span class="tt">Plano de 7 dias para destravar de vez</span><span class="tp">pg. 9</span></li>
+    <li><span class="tn">07</span><span class="tt">Biblioteca de prompts para a vida</span><span class="tp">pg. 10</span></li>
+    <li><span class="tn">08</span><span class="tt">100 prompts para usar no trabalho</span><span class="tp">pg. 12</span></li>
+  </ol>
+  <div class="box amber">
+    <div class="bt">Como usar este guia</div>
+    <p style="margin:0">Leia os capítulos 1 a 6 uma vez — é a base. Depois, deixe os capítulos 7 e 8 salvos no celular: são bibliotecas de prompts prontos, <b>todos construídos com o método P.E.D.E.R.</b>, para copiar, colar e adaptar. <b>Na versão digital, é só clicar em qualquer prompt para copiá-lo.</b></p>
+  </div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>Guia Prático</span></div>
+</section>
+
+<!-- ░░░ CAP 1 ░░░ -->
+<section class="page">
+  <span class="chapnum">01</span>
+  <div class="kicker">A pergunta que tira o sono</div>
+  <h2>A verdade sobre IA e o seu emprego</h2>
+  <p class="lead">Vamos começar pelo que mais assusta. Sim, a IA vai mudar o trabalho. Mas a frase certa não é "a IA vai te substituir".</p>
+  <div class="box amber">
+    <p style="margin:0;font-family:var(--serif);font-size:21px;color:var(--ink);line-height:1.3">"A IA não vai te substituir. Mas alguém que <em>sabe usá-la</em>, pode."</p>
+  </div>
+  <p>Guarde essa frase. O risco nunca foi a máquina — é ficar parado enquanto a pessoa ao seu lado aprende. Veja a conta que importa:</p>
+  <table>
+    <thead><tr><th>Situação</th><th>Resultado</th></tr></thead>
+    <tbody>
+      <tr><td>Profissional bom, sem IA</td><td>Bom — mas mais lento que poderia ser.</td></tr>
+      <tr><td>IA sozinha</td><td>Rápida, mas sem julgamento. Erra com confiança.</td></tr>
+      <tr><td><b>Profissional bom + IA</b></td><td><b>Imbatível.</b> É essa pessoa que as empresas vão disputar.</td></tr>
+    </tbody>
+  </table>
+  <h3>Quem realmente corre risco</h3>
+  <p>A IA é excelente em tarefa repetitiva e sem pensamento. Então quem fazia <em>só isso</em> — sem agregar julgamento, contexto ou cuidado — precisa evoluir. Não é sobre idade. É sobre agregar algo que a máquina não tem:</p>
+  <div class="cards">
+    <div class="card"><h4>Julgamento</h4><p>Saber o que faz sentido na vida real.</p></div>
+    <div class="card"><h4>Responsabilidade</h4><p>Assumir a decisão e suas consequências.</p></div>
+    <div class="card"><h4>Contexto</h4><p>Conhecer seu cliente, sua história, seu mercado.</p></div>
+    <div class="card"><h4>Ética e bom senso</h4><p>Saber, principalmente, quando <em>não</em> fazer.</p></div>
+  </div>
+  <p><b>A IA escreve o e-mail. Quem decide se ele deve ser enviado é você.</b> Esse "decidir" é o seu valor — e ele acabou de subir de preço. Saber operar IA hoje é como saber usar computador em 2000: daqui a pouco, não vão nem perguntar. Vão exigir.</p>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>03</span></div>
+</section>
+
+<!-- ░░░ CAP 2 ░░░ -->
+<section class="page">
+  <span class="chapnum">02</span>
+  <div class="kicker">Sem jargão</div>
+  <h2>O que é IA (e o que ela não é)</h2>
+  <p class="lead">Imagine um estagiário que leu praticamente tudo que já foi escrito na internet. Rápido, prestativo — e às vezes confiante mesmo quando está errado. É basicamente isso.</p>
+  <p>Não é um robô consciente dos filmes. É uma ferramenta que prevê, palavra por palavra, a resposta mais provável para o que você pediu. Entender isso muda tudo na forma como você fala com ela.</p>
+  <h3>Três coisas que ela NÃO é</h3>
+  <div class="cards">
+    <div class="card"><h4>Não pensa</h4><p>Não tem consciência nem sentimento. Calcula a próxima palavra com base em padrões.</p></div>
+    <div class="card"><h4>Não é infalível</h4><p>Pode inventar e afirmar com a maior certeza. Por isso você sempre confere o que é importante.</p></div>
+    <div class="card"><h4>Não é mágica</h4><p>É uma ferramenta poderosa. Quem manda, define e decide é você.</p></div>
+  </div>
+  <div class="box">
+    <div class="bt">A boa notícia</div>
+    <p style="margin:0">Você não precisa programar nem entender o que acontece "por dentro". Precisa saber <b>conversar</b> com ela. Se você usa WhatsApp, já tem 80% da habilidade. O resto é o método do próximo capítulo.</p>
+  </div>
+  <p class="muted">Pense nela sempre como aquele estagiário brilhante: entrega rápido, mas tudo passa pela sua revisão. Estagiário a gente confere — e é exatamente assim que você usa IA sem ser enganado por ela.</p>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>04</span></div>
+</section>
+
+<!-- ░░░ CAP 3 ░░░ -->
+<section class="page">
+  <span class="chapnum">03</span>
+  <div class="kicker">O pulo do gato</div>
+  <h2>O método P.E.D.E.R.</h2>
+  <p class="lead">A IA não adivinha. Pedido vago gera resposta genérica; pedido bom gera resposta sob medida. E fazer um bom pedido é simples: toda vez que for <b>pedir</b> algo importante, lembre da palavra <b>P.E.D.E.R.</b></p>
+  <div class="peder">
+    <div class="row"><div class="L">P</div><div><h4>Papel — diga quem a IA deve ser</h4><p>"Aja como um vendedor experiente…" / "Você é um professor paciente…". Dar um papel ajusta o tom e a profundidade da resposta.</p></div></div>
+    <div class="row"><div class="L">E</div><div><h4>Exemplo / Contexto — dê a situação</h4><p>"…estou vendendo bolo caseiro para a vizinhança…". Quanto mais contexto real, mais a resposta serve para o <em>seu</em> caso, e não para qualquer um.</p></div></div>
+    <div class="row"><div class="L">D</div><div><h4>Desejo — diga exatamente o que quer</h4><p>"…escreva um anúncio curto para WhatsApp…". Seja direto sobre o resultado: um e-mail? Uma lista? Um resumo? Um plano?</p></div></div>
+    <div class="row"><div class="L">E</div><div><h4>Estilo — diga o tom e o formato</h4><p>"…simpático, com emojis, em 3 linhas." Formal ou descontraído? Curto ou detalhado? Em tópicos ou em texto corrido? Você decide.</p></div></div>
+    <div class="row"><div class="L">R</div><div><h4>Refinar — não gostou? Ajuste</h4><p>"Deixa mais curto." "Outro tom." "Dá 3 opções." Este é o passo que a maioria esquece — e o que mais faz diferença. É uma conversa, não um comando único.</p></div></div>
+  </div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>05</span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">P.E.D.E.R. na prática</div>
+  <h2>Antes e depois</h2>
+  <p>O segredo fica óbvio quando você compara. Mesma IA, dois pedidos:</p>
+  <div class="box warn">
+    <div class="bt">✕ Pedido vago</div>
+    <p style="margin:0;font-family:var(--mono);font-size:14px">"faça um anúncio de bolo"</p>
+    <p class="muted" style="margin:8px 0 0;font-size:14px">→ Genérico, sem graça, serve para qualquer pessoa. Você vai ter que reescrever quase tudo.</p>
+  </div>
+  <div class="box amber">
+    <div class="bt">✓ Pedido P.E.D.E.R.</div>
+    <p style="margin:0;font-family:var(--mono);font-size:14px;line-height:1.6">"Aja como um <b>vendedor experiente</b>. Estou vendendo <b>bolo caseiro de cenoura para a vizinhança</b>. Escreva um <b>anúncio curto para WhatsApp</b>, <b>simpático, com emojis, em 3 linhas</b>. Depois me dê <b>2 variações</b>."</p>
+    <p class="muted" style="margin:8px 0 0;font-size:14px">→ Pronto para copiar e colar. E se não ficou perfeito, você <b>refina</b>: "deixa o tom mais urgente" ou "põe o preço em destaque".</p>
+  </div>
+  <div class="box">
+    <div class="bt">💡 Dica de ouro</div>
+    <p style="margin:0">Você não precisa preencher as 5 letras toda vez. Em pedidos simples, <b>Desejo + Estilo</b> já resolvem. Use o P.E.D.E.R. completo quando o resultado importa de verdade — e é exatamente assim que os prompts dos capítulos 7 e 8 foram montados.</p>
+  </div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>06</span></div>
+</section>
+
+<!-- ░░░ CAP 4 ░░░ -->
+<section class="page">
+  <span class="chapnum">04</span>
+  <div class="kicker">Para usar com segurança</div>
+  <h2>Regras de ouro e cuidados</h2>
+  <h3>As 3 regras de ouro</h3>
+  <ol>
+    <li><b>Seja específico.</b> Quanto mais detalhe você dá, melhor ela responde. Detalhe não é perda de tempo — é o atalho.</li>
+    <li><b>Não gostou? Refine.</b> "Mais curto", "mais formal", "outro ângulo", "me dê 3 opções". Vá moldando como numa conversa.</li>
+    <li><b>Converse, não comande.</b> Os melhores resultados vêm de idas e vindas, não de um único pedido perfeito.</li>
+  </ol>
+  <h3>Os 3 cuidados que protegem você</h3>
+  <div class="cards">
+    <div class="card"><h4>Confira o importante</h4><p>Datas, números, leis, nomes, fatos. Ela ajuda a produzir; você valida antes de usar.</p></div>
+    <div class="card"><h4>Não exponha dados sensíveis</h4><p>Senhas, CPF, dados de cliente, segredos da empresa — não cole sem critério em ferramentas públicas.</p></div>
+    <div class="card"><h4>A decisão é sempre sua</h4><p>Você é o chefe; a IA é a estagiária. A palavra final, a responsabilidade e o crédito são seus.</p></div>
+  </div>
+  <div class="box warn">
+    <div class="bt">⚠ Atenção a temas delicados</div>
+    <p style="margin:0">Para assuntos jurídicos, médicos, financeiros ou contábeis, use a IA para <b>entender e organizar</b> — nunca como substituta de um profissional. Ela erra com confiança, e nesses temas o erro custa caro.</p>
+  </div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>07</span></div>
+</section>
+
+<!-- ░░░ CAP 5 ░░░ -->
+<section class="page">
+  <span class="chapnum">05</span>
+  <div class="kicker">Não se perca na variedade</div>
+  <h2>Quais IAs usar</h2>
+  <p class="lead">Existem várias, e para começar são muito parecidas. Não tente usar todas. Escolha <b>uma</b> e use por uma semana.</p>
+  <table>
+    <thead><tr><th>Ferramenta</th><th>De quem é</th><th>Boa para…</th><th>Grátis</th></tr></thead>
+    <tbody>
+      <tr><td>ChatGPT</td><td>OpenAI</td><td>Generalista, a mais famosa. Ótima para começar.</td><td>Sim</td></tr>
+      <tr><td>Gemini</td><td>Google</td><td>Quem vive no Gmail e no Google Docs.</td><td>Sim</td></tr>
+      <tr><td>Claude</td><td>Anthropic</td><td>Textos longos e escrita caprichada.</td><td>Sim</td></tr>
+      <tr><td>Copilot</td><td>Microsoft</td><td>Quem usa Windows e Office.</td><td>Sim</td></tr>
+      <tr><td>Perplexity</td><td>Perplexity</td><td>Pesquisar com fontes e links.</td><td>Sim</td></tr>
+    </tbody>
+  </table>
+  <div class="box amber">
+    <div class="bt">Recomendação para hoje</div>
+    <p style="margin:0">Comece pelo <b>ChatGPT</b> ou pelo <b>Gemini</b>, na versão gratuita. Instale o aplicativo no celular para tê-lo sempre à mão. O importante não é qual você escolhe — é começar a usar.</p>
+  </div>
+  <h4>Dica para evoluir</h4>
+  <p>Depois de pegar o jeito na versão grátis, vale testar a versão paga da que você mais usar. As versões pagas costumam ser mais inteligentes, entender pedidos complexos e ler arquivos (PDF, planilhas, imagens). Mas só pague depois de já estar usando todo dia.</p>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>08</span></div>
+</section>
+
+<!-- ░░░ CAP 6 ░░░ -->
+<section class="page">
+  <span class="chapnum">06</span>
+  <div class="kicker">Do medo ao hábito</div>
+  <h2>Plano de 7 dias</h2>
+  <p class="lead">Sete dias, uma tarefa pequena por dia. No fim da semana, usar IA já vai ser natural. Faça na ordem.</p>
+  <div class="day"><div class="d">Dia 1 · Quebrar o gelo</div><h4>Sua primeira conversa</h4><p>Instale o ChatGPT ou Gemini no celular. Peça algo simples e pessoal: "Me dê 5 ideias de jantar rápido com frango." Só converse.</p></div>
+  <div class="day"><div class="d">Dia 2 · O método</div><h4>Use o P.E.D.E.R.</h4><p>Resolva uma tarefa real com Papel + Exemplo + Desejo + Estilo. Ex: reescrever uma mensagem chata que você precisa mandar.</p></div>
+  <div class="day"><div class="d">Dia 3 · Refinar</div><h4>Ida e volta</h4><p>Pegue a resposta de ontem e refine 3 vezes: "mais curto", "mais formal", "outro tom". Sinta como a conversa molda o resultado.</p></div>
+  <div class="day"><div class="d">Dia 4 · Resumir</div><h4>Domine documentos</h4><p>Cole um texto longo (notícia, contrato simples, e-mail) e peça: "Resuma em 5 tópicos e diga o que exige ação de mim."</p></div>
+  <div class="day"><div class="d">Dia 5 · Trabalho</div><h4>Aplique na rotina</h4><p>Escolha 3 prompts do Capítulo 8 e use em tarefas reais do seu trabalho hoje. Salve os que funcionarem.</p></div>
+  <div class="day"><div class="d">Dia 6 · Aprender</div><h4>Seu professor particular</h4><p>Peça para a IA te explicar algo que você sempre teve vontade de entender, "como se eu tivesse 10 anos". Faça perguntas de volta.</p></div>
+  <div class="day"><div class="d">Dia 7 · Seu kit</div><h4>Monte sua biblioteca</h4><p>Junte num bloco de notas os 5 prompts que mais te ajudaram na semana. Esse é o começo do seu kit pessoal de produtividade.</p></div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>09</span></div>
+</section>
+
+<!-- ░░░ CAP 7 — PROMPTS VIDA ░░░ -->
+<section class="page">
+  <span class="chapnum">07</span>
+  <div class="kicker">Copie, cole e adapte</div>
+  <h2>Biblioteca de prompts para a vida</h2>
+  <p>Todos os prompts a seguir já vêm montados com o método <b>P.E.D.E.R.</b> — por isso são "longos". Esse tamanho é justamente o que faz a IA acertar. Troque o que está <span style="color:var(--amber-deep)">[entre colchetes]</span> pela sua situação e, no fim, <b>refine</b> a resposta.</p>
+
+  <div class="cat"><span class="cl">A</span><h3>Comunicação do dia a dia</h3></div>
+  <div class="prompt"><div class="pn">01</div><div class="pc"><div class="pt">Reescrever uma mensagem difícil</div><div class="pq">Aja como um especialista em comunicação. Contexto: preciso responder a <span class="ph">[quem]</span> sobre <span class="ph">[assunto]</span> e a relação é <span class="ph">[próxima/tensa]</span>. Tarefa: reescreva minha mensagem para ficar clara, educada e firme, sem soar grosseira. Dê 2 versões — uma mais suave, uma mais direta. Minha mensagem: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">02</div><div class="pc"><div class="pt">Recusar um convite com elegância</div><div class="pq">Aja como um amigo diplomático. Contexto: fui convidado para <span class="ph">[evento]</span> por <span class="ph">[quem]</span>, mas não quero/posso ir. Tarefa: escreva uma recusa gentil, que agradeça e não precise de muita explicação. Estilo: caloroso e curto. Dê uma versão para mensagem e uma para falar pessoalmente.</div></div></div>
+  <div class="prompt"><div class="pn">03</div><div class="pc"><div class="pt">Sair bem de uma discussão</div><div class="pq">Aja como um mediador calmo. Contexto: estou numa discussão com <span class="ph">[quem]</span> sobre <span class="ph">[tema]</span>; a conversa está abaixo. Tarefa: me ajude a responder mantendo a calma e buscando solução, não vitória. Estilo: respeitoso, sem alimentar a briga. Sugira também uma frase para encerrar bem. Conversa: <span class="ph">[cole]</span></div></div></div>
+
+  <div class="cat"><span class="cl">B</span><h3>Casa, família e rotina</h3></div>
+  <div class="prompt"><div class="pn">04</div><div class="pc"><div class="pt">Cardápio da semana</div><div class="pq">Aja como um nutricionista prático e econômico. Contexto: cozinho para <span class="ph">[nº de pessoas]</span>, com restrições <span class="ph">[se houver]</span> e pouco tempo. Tarefa: monte um cardápio de almoço e jantar para 7 dias, barato e saudável, com a lista de compras organizada por seção do mercado. Estilo: pratos simples e rápidos.</div></div></div>
+  <div class="prompt"><div class="pn">05</div><div class="pc"><div class="pt">Plano de organização da casa</div><div class="pq">Aja como especialista em organização doméstica. Contexto: minha casa tem <span class="ph">[cômodos]</span> e trabalho o dia todo. Tarefa: crie um plano de limpeza semanal dividido por dias, com tarefas realistas de 15 a 20 minutos. Estilo: leve, sem peso na consciência. Diga por onde começar hoje.</div></div></div>
+  <div class="prompt"><div class="pn">06</div><div class="pc"><div class="pt">Ajudar nas tarefas dos filhos</div><div class="pq">Aja como um professor paciente e divertido. Contexto: meu filho tem <span class="ph">[idade]</span> anos e precisa entender <span class="ph">[assunto]</span> para a escola. Tarefa: explique de forma simples, com um exemplo do dia a dia e uma pergunta no fim para checar se entendeu. Estilo: lúdico. Se ele errar, explique de outro jeito.</div></div></div>
+
+  <div class="cat"><span class="cl">C</span><h3>Dinheiro e decisões</h3></div>
+  <div class="prompt"><div class="pn">07</div><div class="pc"><div class="pt">Organizar o orçamento</div><div class="pq">Aja como um educador financeiro acessível. Contexto: minha renda mensal é <span class="ph">[valor]</span> e meus gastos fixos são <span class="ph">[liste]</span>. Tarefa: monte um orçamento simples, sugira uma divisão saudável (necessidades / desejos / poupança) e aponte 3 lugares onde dá para economizar. Estilo: prático, sem julgamento.</div></div></div>
+  <div class="prompt"><div class="pn">08</div><div class="pc"><div class="pt">Decidir entre duas opções</div><div class="pq">Aja como um consultor imparcial. Contexto: estou em dúvida entre <span class="ph">[A]</span> e <span class="ph">[B]</span>; o que mais importa para mim é <span class="ph">[critério]</span> e meu orçamento é <span class="ph">[quanto]</span>. Tarefa: liste prós e contras honestos de cada (custo, tempo, risco) e recomende, explicando o porquê. Estilo: claro e direto.</div></div></div>
+
+  <div class="cat"><span class="cl">D</span><h3>Aprender qualquer coisa</h3></div>
+  <div class="prompt"><div class="pn">09</div><div class="pc"><div class="pt">Seu professor particular</div><div class="pq">Aja como meu professor particular de <span class="ph">[assunto]</span>, paciente e motivador. Contexto: sei <span class="ph">[nada/pouco]</span> do tema e tenho <span class="ph">[tempo disponível]</span>. Tarefa: monte uma trilha do zero ao avançado, com explicações simples e exemplos. Comece pela primeira aula e, ao fim de cada parte, me faça 1 pergunta antes de seguir. Estilo: passo a passo.</div></div></div>
+  <div class="prompt"><div class="pn">10</div><div class="pc"><div class="pt">Resumir para estudar</div><div class="pq">Aja como um tutor didático. Contexto: preciso estudar o material abaixo para <span class="ph">[prova/objetivo]</span>. Tarefa: resuma em tópicos fáceis de memorizar, monte um mapa mental em texto e crie 5 perguntas de revisão com respostas. Estilo: claro e organizado. Material: <span class="ph">[cole]</span></div></div></div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>10</span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Biblioteca para a vida · continuação</div>
+  <h2>Mais prompts úteis</h2>
+
+  <div class="cat"><span class="cl">E</span><h3>Saúde, hábitos e organização pessoal</h3></div>
+  <div class="prompt"><div class="pn">11</div><div class="pc"><div class="pt">Criar um novo hábito</div><div class="pq">Aja como um coach de hábitos. Contexto: quero criar o hábito de <span class="ph">[qual]</span> e já tentei antes sem sucesso por <span class="ph">[motivo]</span>. Tarefa: monte um plano gradual de 30 dias com metas pequenas e crescentes, gatilhos diários e o que fazer se eu falhar um dia. Estilo: realista e encorajador.</div></div></div>
+  <div class="prompt"><div class="pn">12</div><div class="pc"><div class="pt">Organizar a semana</div><div class="pq">Aja como especialista em produtividade pessoal. Contexto: preciso dar conta de <span class="ph">[liste tarefas]</span> esta semana, com os compromissos fixos <span class="ph">[liste]</span>. Tarefa: distribua tudo pelos dias de forma realista, priorizando o que importa e deixando folga. Estilo: uma agenda simples por dia.</div></div></div>
+
+  <div class="cat"><span class="cl">F</span><h3>Viagem e lazer</h3></div>
+  <div class="prompt"><div class="pn">13</div><div class="pc"><div class="pt">Roteiro de viagem</div><div class="pq">Aja como um guia de viagens experiente. Contexto: vou para <span class="ph">[destino]</span> por <span class="ph">[nº de dias]</span>, com perfil <span class="ph">[casal/família/sozinho]</span>, orçamento <span class="ph">[baixo/médio/alto]</span> e gosto de <span class="ph">[interesses]</span>. Tarefa: monte um roteiro dia a dia com o que fazer, onde comer e dicas de economia. Estilo: prático e realista nos deslocamentos.</div></div></div>
+  <div class="prompt"><div class="pn">14</div><div class="pc"><div class="pt">Checklist de mala</div><div class="pq">Aja como um viajante experiente. Contexto: viagem para <span class="ph">[destino]</span> por <span class="ph">[duração]</span>, clima <span class="ph">[qual]</span>, tipo <span class="ph">[trabalho/lazer]</span>. Tarefa: crie uma lista de mala completa, separada por categorias (roupas, higiene, documentos, eletrônicos). Estilo: objetiva. Marque o que não pode esquecer de jeito nenhum.</div></div></div>
+
+  <div class="cat"><span class="cl">G</span><h3>Escrita pessoal</h3></div>
+  <div class="prompt"><div class="pn">15</div><div class="pc"><div class="pt">Discurso ou homenagem</div><div class="pq">Aja como um redator de discursos emocionantes. Contexto: vou homenagear <span class="ph">[quem]</span> em <span class="ph">[ocasião]</span>; sobre a pessoa: <span class="ph">[conte algo marcante]</span>. Tarefa: escreva uma fala curta e tocante, com uma pequena história e uma frase final marcante. Estilo: <span class="ph">[carinhoso/divertido]</span>, para ser falada em ~2 minutos.</div></div></div>
+  <div class="prompt"><div class="pn">16</div><div class="pc"><div class="pt">Turbinar currículo e LinkedIn</div><div class="pq">Aja como um especialista em RH e carreira. Contexto: a descrição abaixo é do meu currículo/LinkedIn para a área de <span class="ph">[qual]</span>. Tarefa: reescreva destacando resultados (com números quando possível) e verbos de ação, cortando clichês. Estilo: profissional e impactante. Descrição: <span class="ph">[cole]</span></div></div></div>
+
+  <div class="box amber" style="margin-top:28px">
+    <div class="bt">Como criar os seus próprios</div>
+    <p style="margin:0">Reparou no padrão? Todo prompt nasce do P.E.D.E.R.: um <b>Papel</b> ("aja como…"), um <b>Exemplo/contexto</b>, o seu <b>Desejo</b>, o <b>Estilo</b> e um <b>Refino</b> no fim. Com isso, você nunca mais depende de uma lista pronta — você cria o prompt que precisar.</p>
+  </div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>11</span></div>
+</section>
+
+<!-- ░░░ CAP 8 — 100 PROMPTS TRABALHO ░░░ -->
+<section class="page">
+  <span class="chapnum">08</span>
+  <div class="kicker">O coração deste guia</div>
+  <h2>100 prompts para o trabalho</h2>
+  <p class="lead">Dez áreas, dez prompts cada. Todos construídos com o método P.E.D.E.R. — prontos para copiar, colar e adaptar.</p>
+  <p>Antes de começar, entenda a anatomia. Cada prompt tem as cinco partes do método. Veja o exemplo nº 01 destrinchado:</p>
+  <div class="anat">
+    <p><span class="lab">Papel</span> Aja como um redator corporativo experiente, especialista em comunicação diplomática. <span class="lab">Contexto</span> Recebi o e-mail de <span class="ph">[quem]</span> e preciso responder defendendo <span class="ph">[meu ponto]</span> sem criar atrito. <span class="lab">Desejo</span> Escreva minha resposta pronta para enviar. <span class="lab">Estilo</span> E-mail com assunto sugerido, no máximo 150 palavras, tom cordial e firme. <span class="lab">Refinar</span> Ao final, gere uma 2ª versão mais curta.</p>
+  </div>
+  <p class="muted">É esse "tamanho" que faz a IA acertar. Troque o que está <span style="color:var(--amber-deep)">[entre colchetes]</span> pelo seu caso real. <b>Na versão digital, clique no prompt para copiar.</b></p>
+  <div class="box">
+    <p style="margin:0;font-size:14.5px"><b>Índice:</b> 1. Comunicação &amp; E-mails · 2. Reuniões &amp; Atas · 3. Vendas &amp; Propostas · 4. Marketing &amp; Conteúdo · 5. Gestão &amp; Liderança · 6. Produtividade · 7. Análise &amp; Decisão · 8. RH &amp; Pessoas · 9. Atendimento · 10. Escrita &amp; Documentos</p>
+  </div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>12</span></div>
+</section>
+
+<section class="page">
+  <div class="cat"><span class="cl">1</span><h3>Comunicação & E-mails</h3></div>
+  <div class="prompt"><div class="pn">01</div><div class="pc"><div class="pt">Responder e-mail difícil com calma</div><div class="pq">Aja como um redator corporativo experiente, especialista em comunicação diplomática. Contexto: recebi o e-mail abaixo de <span class="ph">[quem]</span> e preciso responder defendendo <span class="ph">[meu ponto]</span> sem criar atrito. Tarefa: escreva minha resposta pronta para enviar. Estilo: e-mail com assunto sugerido, até 150 palavras, tom cordial e firme. Ao final, gere uma 2ª versão mais curta. E-mail recebido: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">02</div><div class="pc"><div class="pt">Cobrança educada</div><div class="pq">Aja como um gestor financeiro cordial. Contexto: preciso cobrar <span class="ph">[o quê]</span> de <span class="ph">[quem]</span>, atrasado desde <span class="ph">[quando]</span>, e já houve <span class="ph">[nº]</span> contatos. Tarefa: escreva um e-mail de cobrança com pedido claro e prazo. Estilo: profissional, firme mas respeitoso, até 120 palavras. Refine: depois me dê uma versão mais amigável e uma mais formal.</div></div></div>
+  <div class="prompt"><div class="pn">03</div><div class="pc"><div class="pt">Resumir e-mail longo + ações</div><div class="pq">Aja como meu assistente executivo. Contexto: recebi o e-mail abaixo e tenho pouco tempo. Tarefa: (1) resuma em até 3 tópicos; (2) liste as ações que ele exige de mim como "ação — prazo"; (3) destaque qualquer risco ou urgência. Estilo: objetivo, em tópicos. Se algo estiver ambíguo, aponte. E-mail: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">04</div><div class="pc"><div class="pt">Tópicos viram e-mail profissional</div><div class="pq">Aja como um redator profissional. Contexto: preciso enviar um e-mail para <span class="ph">[quem]</span> sobre <span class="ph">[assunto]</span>. Tarefa: transforme os tópicos abaixo num e-mail claro e bem estruturado. Estilo: tom <span class="ph">[formal/cordial]</span>, assunto sugerido, parágrafos curtos e um próximo passo no fim. Ao terminar, sugira 2 assuntos alternativos. Tópicos: <span class="ph">[liste]</span></div></div></div>
+  <div class="prompt"><div class="pn">05</div><div class="pc"><div class="pt">Pedir algo de forma persuasiva</div><div class="pq">Aja como especialista em comunicação persuasiva. Contexto: preciso pedir <span class="ph">[favor/prazo/recurso]</span> a <span class="ph">[quem]</span>, que <span class="ph">[contexto/poder de decisão]</span>. Tarefa: escreva o e-mail destacando o benefício para a outra parte. Estilo: curto (até 120 palavras), respeitoso, com pedido claro. Refine: depois me explique em 1 linha por que essa abordagem funciona.</div></div></div>
+  <div class="prompt"><div class="pn">06</div><div class="pc"><div class="pt">Dizer "não" com elegância</div><div class="pq">Aja como um profissional sênior diplomático. Contexto: preciso recusar <span class="ph">[pedido]</span> de <span class="ph">[quem]</span> porque <span class="ph">[motivo]</span>. Tarefa: escreva uma recusa que preserve a relação — agradeça, justifique brevemente e ofereça uma alternativa. Estilo: gentil e firme, até 100 palavras. Dê também uma versão sem a alternativa.</div></div></div>
+  <div class="prompt"><div class="pn">07</div><div class="pc"><div class="pt">Follow-up após reunião</div><div class="pq">Aja como um gerente de projetos organizado. Contexto: acabei de sair desta reunião (notas abaixo). Tarefa: escreva um e-mail de acompanhamento resumindo decisões e próximos passos. Estilo: lista "responsável — tarefa — prazo" com abertura e fechamento cordiais. Refine: aponte se ficou faltando definir algum responsável. Notas: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">08</div><div class="pc"><div class="pt">Deixar a mensagem menos seca</div><div class="pq">Aja como especialista em tom de voz profissional. Contexto: minha mensagem abaixo ficou seca/ríspida. Tarefa: reescreva mantendo o conteúdo, mas mais humana e cordial, sem ficar longa nem informal demais. Estilo: profissional caloroso, mesmo tamanho. Refine: mostre a versão final e diga em 1 linha o que mudou. Mensagem: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">09</div><div class="pc"><div class="pt">Adaptar para inglês de negócios</div><div class="pq">Act as a bilingual business communication expert. Contexto: preciso enviar o e-mail abaixo a um cliente/parceiro internacional. Tarefa: traduza e adapte para um inglês de negócios natural e educado (não literal). Estilo: profissional e claro. Refine: depois liste 3 expressões-chave usadas com a tradução, para eu aprender. E-mail: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">10</div><div class="pc"><div class="pt">Criar um modelo reutilizável</div><div class="pq">Aja como especialista em produtividade. Contexto: repito com frequência e-mails de <span class="ph">[situação]</span>. Tarefa: crie um modelo reutilizável com <span class="ph">[campos entre colchetes]</span> para eu preencher rápido. Estilo: profissional e adaptável. Refine: inclua 2 variações de tom (formal e cordial) e uma dica de quando usar cada uma.</div></div></div>
+
+  <div class="cat"><span class="cl">2</span><h3>Reuniões & Atas</h3></div>
+  <div class="prompt"><div class="pn">11</div><div class="pc"><div class="pt">Gerar pauta a partir do objetivo</div><div class="pq">Aja como um facilitador de reuniões eficazes. Contexto: preciso de uma reunião de <span class="ph">[duração]</span> com <span class="ph">[participantes]</span> para <span class="ph">[objetivo]</span>. Tarefa: monte a pauta com tempo por tópico, o objetivo de cada bloco e a decisão esperada no fim. Estilo: tabela enxuta. Refine: sugira qual tópico cortar se faltar tempo.</div></div></div>
+  <div class="prompt"><div class="pn">12</div><div class="pc"><div class="pt">Transformar notas em ata</div><div class="pq">Aja como um secretário executivo. Contexto: anotações brutas abaixo. Tarefa: organize numa ata com as seções Participantes, Decisões, Pendências (responsável e prazo) e Próxima reunião. Estilo: claro e formal. Refine: marque com "?" o que ficou indefinido. Notas: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">13</div><div class="pc"><div class="pt">Extrair itens de ação</div><div class="pq">Aja como um gerente de projetos. Contexto: texto/transcrição abaixo. Tarefa: extraia TODOS os itens de ação no formato "Quem · O quê · Até quando". Estilo: lista objetiva. Refine: se faltar responsável ou prazo, marque como "a definir". Texto: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">14</div><div class="pc"><div class="pt">Preparar uma reunião difícil</div><div class="pq">Aja como um negociador experiente. Contexto: terei uma reunião sobre <span class="ph">[tema sensível]</span> com <span class="ph">[quem]</span>, que provavelmente quer <span class="ph">[posição deles]</span>. Tarefa: liste as objeções prováveis e uma resposta firme e respeitosa para cada, além de 1 pergunta para entender o lado deles. Estilo: prático, em tópicos.</div></div></div>
+  <div class="prompt"><div class="pn">15</div><div class="pc"><div class="pt">Roteiro para conduzir</div><div class="pq">Aja como um facilitador. Contexto: vou conduzir uma reunião de 30 min sobre <span class="ph">[tema]</span> com <span class="ph">[participantes]</span>. Tarefa: crie um roteiro minuto a minuto que garanta decisões no fim, com abertura, blocos e fechamento. Estilo: cronograma. Refine: inclua uma frase de abertura e uma de encerramento prontas.</div></div></div>
+  <div class="prompt"><div class="pn">16</div><div class="pc"><div class="pt">Resumir para quem faltou</div><div class="pq">Aja como meu assistente. Contexto: notas da reunião abaixo; um colega faltou. Tarefa: escreva um resumo de 1 parágrafo só com o que ele precisa saber e o que muda para ele. Estilo: direto e cordial. Notas: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">17</div><div class="pc"><div class="pt">Reunião vira e-mail</div><div class="pq">Aja como um gerente de projetos. Contexto: anotações abaixo. Tarefa: transforme num e-mail de acompanhamento pronto para enviar aos participantes, com decisões, responsáveis e prazos. Estilo: profissional, com assunto sugerido. Notas: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">18</div><div class="pc"><div class="pt">Preparar um 1:1</div><div class="pq">Aja como um líder experiente e empático. Contexto: terei um 1:1 com <span class="ph">[liderado]</span>, cujo momento é <span class="ph">[contexto]</span>. Objetivo: <span class="ph">[feedback/alinhar metas/ouvir]</span>. Tarefa: monte um roteiro com perguntas abertas, a ordem da conversa e como abrir e fechar. Estilo: humano, não interrogatório.</div></div></div>
+  <div class="prompt"><div class="pn">19</div><div class="pc"><div class="pt">Antecipar perguntas</div><div class="pq">Aja como consultor de apresentações. Contexto: vou apresentar <span class="ph">[tema]</span> para <span class="ph">[público]</span>, que se importa com <span class="ph">[interesses]</span>. Tarefa: liste as 10 perguntas mais prováveis (incluindo as difíceis) e uma resposta sólida para cada. Estilo: objetivo. Refine: marque as 3 mais perigosas.</div></div></div>
+  <div class="prompt"><div class="pn">20</div><div class="pc"><div class="pt">Esta reunião é necessária?</div><div class="pq">Aja como especialista em produtividade. Contexto: marquei uma reunião sobre <span class="ph">[tema]</span> com <span class="ph">[quem]</span>. Tarefa: avalie se ela é mesmo necessária ou se pode virar uma mensagem assíncrona; se puder, escreva essa mensagem. Estilo: honesto e direto.</div></div></div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>13</span></div>
+</section>
+
+<section class="page">
+  <div class="cat"><span class="cl">3</span><h3>Vendas & Propostas</h3></div>
+  <div class="prompt"><div class="pn">21</div><div class="pc"><div class="pt">Montar uma proposta comercial</div><div class="pq">Aja como um executivo de vendas sênior. Contexto: cliente <span class="ph">[quem]</span>, necessidade <span class="ph">[qual]</span>, minha solução <span class="ph">[o quê]</span>, preço <span class="ph">[valor]</span>, diferencial <span class="ph">[qual]</span>. Tarefa: escreva uma proposta persuasiva organizada por benefícios (não funções), com seção de investimento e próximo passo. Estilo: profissional e escaneável. Refine: sugira 1 elemento que aumentaria a conversão.</div></div></div>
+  <div class="prompt"><div class="pn">22</div><div class="pc"><div class="pt">Script de prospecção</div><div class="pq">Aja como especialista em prospecção (SDR). Contexto: ofereço <span class="ph">[produto]</span> para <span class="ph">[tipo de cliente]</span>, que sofre com <span class="ph">[dor]</span>. Tarefa: escreva 3 versões de 1ª mensagem (até 4 linhas), personalizadas e sem cara de spam, cada uma com um gancho diferente. Estilo: humano e direto. Refine: diga qual usar em cada situação.</div></div></div>
+  <div class="prompt"><div class="pn">23</div><div class="pc"><div class="pt">Quebrar objeção de preço</div><div class="pq">Aja como um negociador de vendas. Contexto: o cliente disse "<span class="ph">[objeção]</span>"; meu produto entrega <span class="ph">[valor real]</span> e custa <span class="ph">[preço]</span>. Tarefa: dê 5 respostas que reforcem valor sem dar desconto na hora, cada uma com uma abordagem (ROI, risco, comparação…). Estilo: consultivo. Refine: aponte qual evita parecer defensivo.</div></div></div>
+  <div class="prompt"><div class="pn">24</div><div class="pc"><div class="pt">Follow-up que não enche</div><div class="pq">Aja como um vendedor consultivo. Contexto: o cliente <span class="ph">[quem]</span> sumiu após receber a proposta há <span class="ph">[tempo]</span>. Tarefa: escreva um follow-up leve que entregue algum valor e dê um motivo real para ele responder, sem soar desesperado. Estilo: cordial e curto. Refine: dê 2 versões — uma com novidade, outra com pergunta.</div></div></div>
+  <div class="prompt"><div class="pn">25</div><div class="pc"><div class="pt">Resumir a necessidade do cliente</div><div class="pq">Aja como um analista de vendas. Contexto: conversa/call com o cliente abaixo. Tarefa: resuma em 1 página quem é, dores, o que valoriza, objeções e o próximo passo recomendado. Estilo: estruturado em tópicos. Conversa: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">26</div><div class="pc"><div class="pt">Comparativo honesto</div><div class="pq">Aja como um estrategista de produto honesto. Contexto: concorro com <span class="ph">[concorrente]</span> vendendo <span class="ph">[produto]</span> para <span class="ph">[cliente]</span>. Tarefa: crie um comparativo justo destacando onde sou melhor, reconhecendo onde eles são e como eu contorno isso na conversa. Estilo: tabela + 2 frases de pitch.</div></div></div>
+  <div class="prompt"><div class="pn">27</div><div class="pc"><div class="pt">Reativar cliente inativo</div><div class="pq">Aja como especialista em CRM. Contexto: cliente não compra há <span class="ph">[tempo]</span>; o que mudou no meu negócio foi <span class="ph">[novidade]</span>. Tarefa: escreva uma mensagem de reativação genuína, com motivo de retorno e uma oferta sutil. Estilo: pessoal e curto.</div></div></div>
+  <div class="prompt"><div class="pn">28</div><div class="pc"><div class="pt">Perguntas de descoberta</div><div class="pq">Aja como um vendedor consultivo (método SPIN). Contexto: vou conversar com um possível cliente de <span class="ph">[segmento]</span>. Tarefa: liste 12 perguntas de descoberta que revelem dor, urgência, impacto e orçamento, na ordem ideal e sem parecer interrogatório. Estilo: conversacional.</div></div></div>
+  <div class="prompt"><div class="pn">29</div><div class="pc"><div class="pt">Estudo de caso</div><div class="pq">Aja como um redator de marketing. Contexto: resultado real abaixo. Tarefa: transforme num estudo de caso persuasivo na estrutura Situação → Desafio → Solução → Resultado (com números). Estilo: storytelling profissional, até 250 palavras. Caso: <span class="ph">[descreva]</span></div></div></div>
+  <div class="prompt"><div class="pn">30</div><div class="pc"><div class="pt">Tabela de planos</div><div class="pq">Aja como especialista em precificação. Contexto: vendo <span class="ph">[produto]</span> para <span class="ph">[público]</span>. Tarefa: crie 3 planos (básico, intermediário, premium) com nomes atraentes, o que inclui cada um e 1 frase de venda. Estilo: tabela clara. Refine: marque qual destacar como "mais popular" e por quê.</div></div></div>
+
+  <div class="cat"><span class="cl">4</span><h3>Marketing & Conteúdo</h3></div>
+  <div class="prompt"><div class="pn">31</div><div class="pc"><div class="pt">10 ideias de post</div><div class="pq">Aja como um estrategista de conteúdo. Contexto: falo sobre <span class="ph">[tema]</span> para <span class="ph">[público]</span>, que quer <span class="ph">[desejo/dor]</span>. Tarefa: gere 10 ideias de post variando entre dica, bastidor, história e opinião; para cada, sugira o formato (texto, carrossel, vídeo) e o gancho. Estilo: lista pronta para executar.</div></div></div>
+  <div class="prompt"><div class="pn">32</div><div class="pc"><div class="pt">Legenda com CTA</div><div class="pq">Aja como copywriter de redes sociais. Contexto: post sobre <span class="ph">[tema]</span> para <span class="ph">[público]</span>; objetivo <span class="ph">[engajar/vender]</span>. Tarefa: escreva uma legenda com gancho na 1ª linha, corpo escaneável e 1 CTA. Estilo: tom <span class="ph">[definir]</span>, com quebras de linha. Refine: dê 2 opções de 1ª linha.</div></div></div>
+  <div class="prompt"><div class="pn">33</div><div class="pc"><div class="pt">Roteiro de vídeo curto</div><div class="pq">Aja como roteirista de vídeos curtos. Contexto: tema <span class="ph">[qual]</span>, público <span class="ph">[quem]</span>, plataforma <span class="ph">[Reels/Shorts/TikTok]</span>. Tarefa: escreva um roteiro de ~30s com gancho nos 3 primeiros segundos, desenvolvimento e CTA, indicando o que falar e o que mostrar. Estilo: dinâmico.</div></div></div>
+  <div class="prompt"><div class="pn">34</div><div class="pc"><div class="pt">Artigo vira carrossel</div><div class="pq">Aja como designer de conteúdo. Contexto: texto abaixo. Tarefa: transforme num carrossel de 7 lâminas, 1 ideia por lâmina, com título curto e 1 frase de apoio cada, mais uma lâmina final de CTA. Estilo: claro e progressivo. Texto: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">35</div><div class="pc"><div class="pt">5 títulos que chamam atenção</div><div class="pq">Aja como especialista em copy. Contexto: conteúdo sobre <span class="ph">[tema]</span> para <span class="ph">[público]</span>. Tarefa: crie 5 títulos honestos (sem clickbait falso), do mais direto ao mais curioso. Estilo: chamativo. Refine: diga qual desperta mais curiosidade e qual gera mais confiança.</div></div></div>
+  <div class="prompt"><div class="pn">36</div><div class="pc"><div class="pt">E-mail de newsletter</div><div class="pq">Aja como redator de e-mail marketing. Contexto: lista de <span class="ph">[público]</span>; tema <span class="ph">[qual]</span>; quero <span class="ph">[objetivo]</span>. Tarefa: escreva uma newsletter com assunto chamativo, leitura leve e 1 único convite no fim. Estilo: pessoal e escaneável, até 250 palavras. Refine: dê 3 opções de assunto.</div></div></div>
+  <div class="prompt"><div class="pn">37</div><div class="pc"><div class="pt">Proposta de valor em 1 frase</div><div class="pq">Aja como estrategista de marca. Contexto: meu produto faz <span class="ph">[o quê]</span> para <span class="ph">[quem]</span>, resolvendo <span class="ph">[dor]</span>. Tarefa: resuma em 1 frase que um leigo entenda. Estilo: clara e marcante. Refine: dê 5 versões com ângulos diferentes (resultado, emoção, tempo, dinheiro, simplicidade).</div></div></div>
+  <div class="prompt"><div class="pn">38</div><div class="pc"><div class="pt">Gerar um FAQ</div><div class="pq">Aja como especialista em conversão. Contexto: vendo <span class="ph">[produto]</span> para <span class="ph">[público]</span>, que costuma duvidar de <span class="ph">[objeções]</span>. Tarefa: crie 10 perguntas frequentes com respostas que reduzam o medo de comprar. Estilo: claro e confiável.</div></div></div>
+  <div class="prompt"><div class="pn">39</div><div class="pc"><div class="pt">Adaptar para outro público</div><div class="pq">Aja como redator versátil. Contexto: o texto abaixo foi escrito para <span class="ph">[público atual]</span>; quero falar com <span class="ph">[novo público]</span>. Tarefa: reescreva trocando exemplos e linguagem, mantendo a mensagem central. Estilo: adequado ao novo público. Texto: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">40</div><div class="pc"><div class="pt">Calendário de 1 semana</div><div class="pq">Aja como social media estrategista. Contexto: negócio <span class="ph">[qual]</span>, rede <span class="ph">[qual]</span>, público <span class="ph">[quem]</span>. Tarefa: monte um calendário de 7 dias variando formato e objetivo (atrair, engajar, vender), com tema e gancho de cada dia. Estilo: tabela pronta para executar.</div></div></div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>14</span></div>
+</section>
+
+<section class="page">
+  <div class="cat"><span class="cl">5</span><h3>Gestão & Liderança</h3></div>
+  <div class="prompt"><div class="pn">41</div><div class="pc"><div class="pt">Dar feedback difícil</div><div class="pq">Aja como um líder experiente em comunicação não-violenta. Contexto: preciso falar com <span class="ph">[pessoa]</span> sobre <span class="ph">[comportamento]</span>, que causou <span class="ph">[impacto]</span>. Tarefa: estruture o feedback em fato → impacto → expectativa → apoio, pronto para eu falar. Estilo: direto e respeitoso, sem desmotivar. Refine: inclua como abrir a conversa.</div></div></div>
+  <div class="prompt"><div class="pn">42</div><div class="pc"><div class="pt">Reconhecimento específico</div><div class="pq">Aja como um líder que valoriza pessoas. Contexto: <span class="ph">[pessoa]</span> fez <span class="ph">[o quê]</span>, demonstrando <span class="ph">[qualidade]</span>. Tarefa: escreva um reconhecimento sincero e específico (não genérico) que reforce o comportamento. Estilo: caloroso e curto. Refine: dê uma versão para falar pessoalmente e outra para mensagem pública.</div></div></div>
+  <div class="prompt"><div class="pn">43</div><div class="pc"><div class="pt">Alinhar expectativas</div><div class="pq">Aja como um coach de liderança. Contexto: preciso alinhar com <span class="ph">[quem]</span> sobre <span class="ph">[tema]</span> porque <span class="ph">[situação]</span>. Tarefa: monte um roteiro de conversa focado em acordo, não em culpa, com perguntas e os pontos que preciso deixar claros. Estilo: colaborativo.</div></div></div>
+  <div class="prompt"><div class="pn">44</div><div class="pc"><div class="pt">Definir metas da equipe</div><div class="pq">Aja como especialista em OKRs. Contexto: objetivo geral da equipe é <span class="ph">[qual]</span>; o time é de <span class="ph">[tamanho/área]</span>. Tarefa: defina 3 metas claras e mensuráveis para o trimestre, cada uma com 2-3 resultados-chave. Estilo: objetivo. Refine: aponte qual meta é a mais arriscada.</div></div></div>
+  <div class="prompt"><div class="pn">45</div><div class="pc"><div class="pt">Status para a liderança</div><div class="pq">Aja como um gerente de projetos. Contexto: dados do projeto abaixo; o público é a diretoria, com pouco tempo. Tarefa: escreva um update executivo de até 5 linhas — avanços, riscos, próximos passos e se preciso de algo. Estilo: direto. Dados: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">46</div><div class="pc"><div class="pt">Mediar um conflito</div><div class="pq">Aja como um mediador imparcial. Contexto: <span class="ph">[pessoa A]</span> e <span class="ph">[pessoa B]</span> estão em conflito por <span class="ph">[motivo]</span>. Tarefa: dê um roteiro de conversa que ouça os dois lados, encontre o interesse comum e chegue a um acordo. Estilo: neutro e prático.</div></div></div>
+  <div class="prompt"><div class="pn">47</div><div class="pc"><div class="pt">Briefing de delegação</div><div class="pq">Aja como um gestor que delega bem. Contexto: vou delegar <span class="ph">[tarefa]</span> para <span class="ph">[quem]</span>, com prazo <span class="ph">[quando]</span>. Tarefa: escreva um briefing com objetivo, resultado esperado, contexto, o que considerar "pronto" e onde tirar dúvidas. Estilo: claro, sem microgerenciar.</div></div></div>
+  <div class="prompt"><div class="pn">48</div><div class="pc"><div class="pt">Apoiar uma decisão de gestão</div><div class="pq">Aja como um consultor de gestão. Contexto: preciso decidir sobre <span class="ph">[decisão]</span>, considerando equipe, custo e prazo. Tarefa: liste prós, contras e riscos e recomende a opção mais equilibrada com justificativa. Estilo: estruturado. Refine: aponte qual informação ainda me falta para decidir melhor.</div></div></div>
+  <div class="prompt"><div class="pn">49</div><div class="pc"><div class="pt">Onboarding de novato</div><div class="pq">Aja como especialista em pessoas. Contexto: um novo <span class="ph">[cargo]</span> está entrando; a área faz <span class="ph">[o quê]</span>. Tarefa: crie um plano de integração de 30 dias, semana a semana, com o que ele deve aprender, conhecer e entregar. Estilo: checklist.</div></div></div>
+  <div class="prompt"><div class="pn">50</div><div class="pc"><div class="pt">Comunicado de mudança</div><div class="pq">Aja como um líder comunicador. Contexto: vou anunciar <span class="ph">[mudança]</span> à equipe; o motivo é <span class="ph">[por quê]</span> e o impacto é <span class="ph">[qual]</span>. Tarefa: escreva um comunicado transparente que explique o porquê, reduza a ansiedade e abra espaço para dúvidas. Estilo: honesto e humano.</div></div></div>
+
+  <div class="cat"><span class="cl">6</span><h3>Produtividade & Organização</h3></div>
+  <div class="prompt"><div class="pn">51</div><div class="pc"><div class="pt">Priorizar tarefas</div><div class="pq">Aja como um coach de produtividade. Contexto: a lista de tarefas está abaixo e meu tempo hoje é <span class="ph">[quanto]</span>. Tarefa: classifique por urgência x importância (matriz de Eisenhower), diga por onde começar e o que adiar ou delegar. Estilo: prático. Lista: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">52</div><div class="pc"><div class="pt">Quebrar um projeto grande</div><div class="pq">Aja como um gerente de projetos. Contexto: preciso entregar <span class="ph">[projeto]</span> até <span class="ph">[prazo]</span>. Tarefa: divida em etapas e tarefas pequenas, em ordem lógica, com um primeiro passo que eu faça hoje em 30 min. Estilo: lista hierárquica. Refine: aponte o maior risco do cronograma.</div></div></div>
+  <div class="prompt"><div class="pn">53</div><div class="pc"><div class="pt">Planejar a semana</div><div class="pq">Aja como especialista em gestão de tempo. Contexto: minhas metas são <span class="ph">[liste]</span> e os compromissos fixos são <span class="ph">[liste]</span>. Tarefa: monte um plano semanal realista, com blocos de foco para o que importa, sem lotar a agenda. Estilo: agenda por dia.</div></div></div>
+  <div class="prompt"><div class="pn">54</div><div class="pc"><div class="pt">Checklist de processo</div><div class="pq">Aja como especialista em processos. Contexto: tarefa recorrente <span class="ph">[qual]</span>, feita por <span class="ph">[quem]</span>. Tarefa: crie um checklist passo a passo à prova de erros que qualquer um consiga seguir. Estilo: numerado. Refine: marque os pontos onde a maioria erra.</div></div></div>
+  <div class="prompt"><div class="pn">55</div><div class="pc"><div class="pt">Montar um cronograma</div><div class="pq">Aja como um gerente de projetos. Contexto: as tarefas estão abaixo e o prazo final é <span class="ph">[data]</span>. Tarefa: estime a duração de cada uma, ordene por dependência e monte um cronograma. Estilo: tabela "tarefa — duração — quando". Tarefas: <span class="ph">[liste]</span></div></div></div>
+  <div class="prompt"><div class="pn">56</div><div class="pc"><div class="pt">Resumir documento longo</div><div class="pq">Aja como um analista. Contexto: documento longo abaixo; preciso decidir <span class="ph">[o quê]</span>. Tarefa: resuma em 1 página com pontos principais, dados relevantes e as decisões que ele exige. Estilo: tópicos. Documento: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">57</div><div class="pc"><div class="pt">Caos de notas vira plano</div><div class="pq">Aja como meu chefe de gabinete. Contexto: anotações desorganizadas abaixo. Tarefa: agrupe por tema e transforme num plano de ação com prioridades e próximos passos. Estilo: organizado. Notas: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">58</div><div class="pc"><div class="pt">Criar um procedimento (SOP)</div><div class="pq">Aja como especialista em operações. Contexto: tarefa <span class="ph">[qual]</span> que quero padronizar. Tarefa: documente como fazer num procedimento padrão, com passos numerados, responsável, tempo estimado e erros a evitar. Estilo: claro o bastante para um iniciante seguir.</div></div></div>
+  <div class="prompt"><div class="pn">59</div><div class="pc"><div class="pt">Relatório semanal</div><div class="pq">Aja como assistente executivo. Contexto: o que fiz na semana está abaixo. Tarefa: transforme num relatório profissional e objetivo, separando entregas, andamentos e bloqueios. Estilo: tópicos, até 200 palavras. Itens: <span class="ph">[liste]</span></div></div></div>
+  <div class="prompt"><div class="pn">60</div><div class="pc"><div class="pt">O que delegar ou automatizar</div><div class="pq">Aja como um consultor de produtividade. Contexto: minha rotina semanal está abaixo. Tarefa: aponte o que dá para delegar, automatizar ou eliminar e o ganho de tempo de cada um. Estilo: tabela "tarefa — ação — ganho". Rotina: <span class="ph">[descreva]</span></div></div></div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>15</span></div>
+</section>
+
+<section class="page">
+  <div class="cat"><span class="cl">7</span><h3>Análise & Decisão</h3></div>
+  <div class="prompt"><div class="pn">61</div><div class="pc"><div class="pt">Matriz de decisão</div><div class="pq">Aja como um analista de decisões. Contexto: preciso escolher entre <span class="ph">[opções]</span> usando os critérios <span class="ph">[custo, tempo, risco, impacto…]</span>. Tarefa: monte uma matriz com nota (1-5) para cada opção em cada critério, some e recomende. Estilo: tabela + justificativa final.</div></div></div>
+  <div class="prompt"><div class="pn">62</div><div class="pc"><div class="pt">Mapear riscos</div><div class="pq">Aja como um gerente de riscos. Contexto: o plano está abaixo. Tarefa: liste os principais riscos com probabilidade (baixa/média/alta), impacto e como mitigar cada um. Estilo: tabela. Refine: aponte o risco que mais ameaça o sucesso. Plano: <span class="ph">[descreva]</span></div></div></div>
+  <div class="prompt"><div class="pn">63</div><div class="pc"><div class="pt">Prós e contras</div><div class="pq">Aja como um consultor imparcial. Contexto: decido entre <span class="ph">[A]</span> e <span class="ph">[B]</span>; meu cenário é <span class="ph">[descreva]</span> e o que mais importa é <span class="ph">[critério]</span>. Tarefa: faça uma análise honesta de prós e contras de cada, com recomendação. Estilo: equilibrado.</div></div></div>
+  <div class="prompt"><div class="pn">64</div><div class="pc"><div class="pt">Interpretar dados</div><div class="pq">Aja como um analista de dados que explica de forma simples. Contexto: os números estão abaixo. Tarefa: explique em linguagem clara o que indicam, o que chama atenção e que ações sugerem. Estilo: sem jargão, com 1 insight principal. Dados: <span class="ph">[cole/descreva]</span></div></div></div>
+  <div class="prompt"><div class="pn">65</div><div class="pc"><div class="pt">Análise SWOT</div><div class="pq">Aja como um consultor estratégico. Contexto: <span class="ph">[projeto/empresa]</span> que faz <span class="ph">[o quê]</span> no mercado de <span class="ph">[qual]</span>. Tarefa: faça uma SWOT honesta (forças, fraquezas, oportunidades, ameaças), com 3 itens em cada e 1 recomendação. Estilo: tabela.</div></div></div>
+  <div class="prompt"><div class="pn">66</div><div class="pc"><div class="pt">Chegar à raiz do problema</div><div class="pq">Aja como especialista em melhoria de processos. Contexto: o problema é <span class="ph">[descreva]</span>. Tarefa: aplique a técnica dos "5 porquês" para chegar à causa raiz e sugira uma ação para a causa real, não para o sintoma. Estilo: passo a passo.</div></div></div>
+  <div class="prompt"><div class="pn">67</div><div class="pc"><div class="pt">Construir cenários</div><div class="pq">Aja como um estrategista. Contexto: a decisão é <span class="ph">[descreva]</span>. Tarefa: descreva 3 cenários — melhor, pior e mais provável — com o que aconteceria e como me preparar para cada. Estilo: claro. Refine: diga qual preparação vale a pena em qualquer cenário.</div></div></div>
+  <div class="prompt"><div class="pn">68</div><div class="pc"><div class="pt">Entender um contrato</div><div class="pq">Aja como um leitor crítico de contratos (isto NÃO substitui um advogado). Contexto: o documento está abaixo. Tarefa: resuma em linguagem simples e aponte cláusulas de atenção, prazos, multas e minhas obrigações. Estilo: tópicos. Refine: marque o que eu deveria perguntar a um advogado. Documento: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">69</div><div class="pc"><div class="pt">Perguntas antes de decidir</div><div class="pq">Aja como um mentor experiente. Contexto: estou prestes a decidir sobre <span class="ph">[tema]</span>. Tarefa: me faça as 10 perguntas críticas que eu deveria responder antes, incluindo as desconfortáveis. Estilo: direto. Não responda por mim — apenas pergunte.</div></div></div>
+  <div class="prompt"><div class="pn">70</div><div class="pc"><div class="pt">Impacto x esforço</div><div class="pq">Aja como gestor de prioridades. Contexto: as iniciativas estão abaixo. Tarefa: classifique cada uma em impacto (alto/baixo) x esforço (alto/baixo), monte a matriz e diga o que fazer primeiro. Estilo: tabela. Iniciativas: <span class="ph">[liste]</span></div></div></div>
+
+  <div class="cat"><span class="cl">8</span><h3>RH & Pessoas</h3></div>
+  <div class="prompt"><div class="pn">71</div><div class="pc"><div class="pt">Descrição de vaga</div><div class="pq">Aja como um recrutador sênior. Contexto: preciso contratar <span class="ph">[cargo]</span> para <span class="ph">[área]</span>; a cultura da empresa é <span class="ph">[descreva]</span>. Tarefa: escreva uma descrição de vaga atraente com a missão do cargo, responsabilidades, requisitos (essenciais x desejáveis) e por que vale a pena. Estilo: humano, não burocrático.</div></div></div>
+  <div class="prompt"><div class="pn">72</div><div class="pc"><div class="pt">Perguntas de entrevista</div><div class="pq">Aja como especialista em seleção por competências. Contexto: vaga de <span class="ph">[cargo]</span>; a competência crítica é <span class="ph">[qual]</span>. Tarefa: crie 10 perguntas comportamentais (método STAR) para avaliar essa competência e diga o que observar numa boa resposta. Estilo: prático.</div></div></div>
+  <div class="prompt"><div class="pn">73</div><div class="pc"><div class="pt">Critérios de avaliação</div><div class="pq">Aja como especialista em RH. Contexto: estou avaliando candidatos a <span class="ph">[cargo]</span>. Tarefa: monte uma grade de avaliação (nota 1-5) com os 5 critérios mais importantes e o que define cada nota. Estilo: tabela objetiva para comparar candidatos com justiça.</div></div></div>
+  <div class="prompt"><div class="pn">74</div><div class="pc"><div class="pt">Feedback de desempenho</div><div class="pq">Aja como um gestor de pessoas. Contexto: avaliação de <span class="ph">[pessoa]</span>; minhas observações estão abaixo. Tarefa: escreva uma avaliação equilibrada — pontos fortes (com exemplos), pontos a desenvolver e um plano de ação. Estilo: construtivo e específico. Observações: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">75</div><div class="pc"><div class="pt">Plano de desenvolvimento (PDI)</div><div class="pq">Aja como um coach de carreira. Contexto: um <span class="ph">[cargo]</span> precisa evoluir em <span class="ph">[competência]</span> nos próximos 90 dias. Tarefa: crie um PDI com metas, ações concretas, recursos e marcos de acompanhamento. Estilo: prático.</div></div></div>
+  <div class="prompt"><div class="pn">76</div><div class="pc"><div class="pt">Conversa de desligamento</div><div class="pq">Aja como especialista em RH humanizado. Contexto: preciso desligar <span class="ph">[quem]</span> por <span class="ph">[motivo]</span>. Tarefa: prepare um roteiro de conversa respeitoso que comunique a decisão sem humilhar e trate dos próximos passos. Estilo: empático e firme. Refine: inclua como abrir e como encerrar.</div></div></div>
+  <div class="prompt"><div class="pn">77</div><div class="pc"><div class="pt">Pesquisa de clima</div><div class="pq">Aja como especialista em engajamento. Contexto: equipe de <span class="ph">[tamanho/área]</span>. Tarefa: crie 10 perguntas curtas e anônimas (com escala) para medir clima, motivação e confiança na liderança. Estilo: claro e neutro, sem induzir a resposta.</div></div></div>
+  <div class="prompt"><div class="pn">78</div><div class="pc"><div class="pt">Rascunho de política interna</div><div class="pq">Aja como analista de RH (rascunho — revisar com o jurídico). Contexto: quero uma política de <span class="ph">[tema]</span> com base nestes pontos <span class="ph">[liste]</span>. Tarefa: escreva um rascunho claro com regras, exceções e responsabilidades. Estilo: objetivo e justo.</div></div></div>
+  <div class="prompt"><div class="pn">79</div><div class="pc"><div class="pt">Boas-vindas a novo colega</div><div class="pq">Aja como um líder acolhedor. Contexto: <span class="ph">[nome]</span> entra como <span class="ph">[cargo]</span>, vindo de <span class="ph">[contexto]</span>. Tarefa: escreva uma mensagem de boas-vindas para a equipe que apresente a pessoa e gere conexão. Estilo: caloroso e curto.</div></div></div>
+  <div class="prompt"><div class="pn">80</div><div class="pc"><div class="pt">Comparar currículo com a vaga</div><div class="pq">Aja como um recrutador. Contexto: os requisitos da vaga e o currículo estão abaixo. Tarefa: compare ponto a ponto, liste aderências e lacunas e dê uma recomendação (avançar/não) com 3 perguntas para a entrevista. Estilo: objetivo. Vaga: <span class="ph">[cole]</span> · Currículo: <span class="ph">[cole]</span></div></div></div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>16</span></div>
+</section>
+
+<section class="page">
+  <div class="cat"><span class="cl">9</span><h3>Atendimento ao Cliente</h3></div>
+  <div class="prompt"><div class="pn">81</div><div class="pc"><div class="pt">Responder reclamação</div><div class="pq">Aja como especialista em atendimento ao cliente. Contexto: o cliente reclamou abaixo; a situação real é <span class="ph">[contexto]</span>. Tarefa: escreva uma resposta que valide o sentimento, reconheça o problema e ofereça uma solução concreta com prazo. Estilo: empático e profissional. Reclamação: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">82</div><div class="pc"><div class="pt">Respostas-padrão (macros)</div><div class="pq">Aja como um gestor de suporte. Contexto: as dúvidas mais comuns são sobre <span class="ph">[produto/serviço]</span>. Tarefa: crie 5 respostas-padrão reutilizáveis, em tom amigável, cada uma fácil de personalizar com <span class="ph">[campos]</span>. Estilo: claro.</div></div></div>
+  <div class="prompt"><div class="pn">83</div><div class="pc"><div class="pt">Traduzir o "tecniquês"</div><div class="pq">Aja como um redator de suporte. Contexto: a resposta técnica abaixo o cliente não vai entender. Tarefa: reescreva em linguagem simples, sem perder a precisão, com uma analogia se ajudar. Estilo: acessível e gentil. Texto: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">84</div><div class="pc"><div class="pt">Pedido de desculpas</div><div class="pq">Aja como um gerente de relacionamento. Contexto: falhamos em <span class="ph">[o quê]</span>, afetando o cliente <span class="ph">[como]</span>. Tarefa: escreva um pedido de desculpas que assuma a responsabilidade, explique o que será feito e ofereça <span class="ph">[compensação, se houver]</span>. Estilo: sincero, sem desculpas vazias.</div></div></div>
+  <div class="prompt"><div class="pn">85</div><div class="pc"><div class="pt">FAQ a partir de tickets</div><div class="pq">Aja como um analista de suporte. Contexto: os atendimentos recorrentes estão abaixo. Tarefa: identifique as perguntas mais frequentes e escreva um FAQ com respostas úteis e claras. Estilo: organizado por tema. Tickets: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">86</div><div class="pc"><div class="pt">Acalmar cliente irritado</div><div class="pq">Aja como especialista em gestão de conflitos. Contexto: cliente muito irritado por <span class="ph">[motivo]</span>. Tarefa: dê um roteiro de resposta que primeiro acalme (validando), depois assuma o controle e conduza à solução. Estilo: calmo e firme. Refine: inclua frases prontas para cada etapa.</div></div></div>
+  <div class="prompt"><div class="pn">87</div><div class="pc"><div class="pt">Cobrança cordial</div><div class="pq">Aja como um analista financeiro cordial. Contexto: <span class="ph">[quem]</span> está com pagamento atrasado de <span class="ph">[valor]</span> desde <span class="ph">[quando]</span>; quero preservar a relação. Tarefa: escreva uma mensagem de cobrança gentil mas clara, com uma forma fácil de regularizar. Estilo: respeitoso. Refine: dê uma 2ª versão mais firme para reincidência.</div></div></div>
+  <div class="prompt"><div class="pn">88</div><div class="pc"><div class="pt">Pesquisa de satisfação</div><div class="pq">Aja como especialista em experiência do cliente (CX). Contexto: quero medir satisfação após <span class="ph">[interação]</span>. Tarefa: crie uma pesquisa de 5 perguntas rápidas (escala + 1 aberta), fácil de responder no celular. Estilo: curta e clara.</div></div></div>
+  <div class="prompt"><div class="pn">89</div><div class="pc"><div class="pt">Agrupar feedbacks</div><div class="pq">Aja como um analista de CX. Contexto: os comentários de clientes estão abaixo. Tarefa: agrupe por tema, diga os 3 problemas mais citados e 1 ação sugerida para cada. Estilo: resumo executivo. Comentários: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">90</div><div class="pc"><div class="pt">Comunicado de problema</div><div class="pq">Aja como um gerente de comunicação. Contexto: estamos com <span class="ph">[instabilidade/atraso]</span> afetando clientes; a previsão é <span class="ph">[quando]</span>. Tarefa: escreva um comunicado transparente que explique sem gerar pânico, com o que estamos fazendo e o canal de contato. Estilo: honesto e tranquilizador.</div></div></div>
+
+  <div class="cat"><span class="cl">10</span><h3>Escrita, Revisão & Documentos</h3></div>
+  <div class="prompt"><div class="pn">91</div><div class="pc"><div class="pt">Revisar um texto</div><div class="pq">Aja como um revisor profissional. Contexto: o texto abaixo é para <span class="ph">[finalidade/público]</span>. Tarefa: corrija ortografia e gramática, melhore clareza e fluidez e ajuste o tom para <span class="ph">[qual]</span>. Estilo: mostre a versão final e, depois, liste as 3 principais mudanças. Texto: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">92</div><div class="pc"><div class="pt">Encurtar sem perder o sentido</div><div class="pq">Aja como um editor. Contexto: o texto longo está abaixo; preciso dele com metade do tamanho. Tarefa: reduza mantendo as ideias essenciais e a clareza, cortando repetição e enrolação. Estilo: enxuto. Texto: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">93</div><div class="pc"><div class="pt">Mudar o tom</div><div class="pq">Aja como um redator versátil. Contexto: o texto está abaixo. Tarefa: reescreva num tom mais <span class="ph">[formal/informal/empático/firme]</span>, mantendo a mensagem e o tamanho aproximado. Estilo: o tom pedido. Texto: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">94</div><div class="pc"><div class="pt">Resumo executivo</div><div class="pq">Aja como um consultor. Contexto: o documento está abaixo; o leitor é <span class="ph">[quem]</span> e tem 1 minuto. Tarefa: escreva um resumo executivo de meia página com contexto, pontos-chave e recomendação. Estilo: direto. Documento: <span class="ph">[cole]</span></div></div></div>
+  <div class="prompt"><div class="pn">95</div><div class="pc"><div class="pt">Estruturar uma apresentação</div><div class="pq">Aja como especialista em apresentações. Contexto: tema <span class="ph">[qual]</span>, público <span class="ph">[quem]</span>, objetivo <span class="ph">[qual]</span>, duração <span class="ph">[quanto]</span>. Tarefa: monte a estrutura slide a slide, com título e 1 ideia central por slide, seguindo um arco que prenda a atenção. Estilo: lista de slides.</div></div></div>
+  <div class="prompt"><div class="pn">96</div><div class="pc"><div class="pt">Escrever uma fala curta</div><div class="pq">Aja como um redator de discursos. Contexto: vou falar sobre <span class="ph">[tema]</span> em <span class="ph">[ocasião]</span> por ~2 minutos para <span class="ph">[público]</span>. Tarefa: escreva a fala com um começo que prenda, meio claro, fim com chamada e 1 frase de impacto. Estilo: para ser falada, não lida.</div></div></div>
+  <div class="prompt"><div class="pn">97</div><div class="pc"><div class="pt">Rascunho de documento</div><div class="pq">Aja como um redator técnico (rascunho — revisar com um profissional). Contexto: preciso de um(a) <span class="ph">[ata/termo/comunicado/política]</span> sobre <span class="ph">[tema]</span>, com base em <span class="ph">[pontos]</span>. Tarefa: escreva um rascunho estruturado e claro. Estilo: formal. Refine: marque onde um especialista deve revisar.</div></div></div>
+  <div class="prompt"><div class="pn">98</div><div class="pc"><div class="pt">Tópicos viram texto</div><div class="pq">Aja como um redator. Contexto: os tópicos soltos abaixo são sobre <span class="ph">[tema]</span>, para <span class="ph">[público]</span>. Tarefa: transforme num texto fluido e bem encadeado, SEM inventar informação que não esteja nos tópicos. Estilo: <span class="ph">[definir]</span>. Tópicos: <span class="ph">[liste]</span></div></div></div>
+  <div class="prompt"><div class="pn">99</div><div class="pc"><div class="pt">Explicar algo complexo</div><div class="pq">Aja como um ótimo professor. Contexto: preciso explicar <span class="ph">[conceito]</span> para <span class="ph">[público/idade]</span>. Tarefa: explique de forma simples, com uma analogia do dia a dia e um exemplo prático, terminando com uma frase-resumo. Estilo: claro e leve.</div></div></div>
+  <div class="prompt"><div class="pn">100</div><div class="pc"><div class="pt">Criar um glossário</div><div class="pq">Aja como um redator técnico. Contexto: o documento abaixo é cheio de termos difíceis, para leitores <span class="ph">[perfil]</span>. Tarefa: liste os termos técnicos e explique cada um em 1 frase simples. Estilo: glossário em ordem alfabética. Documento: <span class="ph">[cole]</span></div></div></div>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>17</span></div>
+</section>
+
+<!-- ░░░ ENCERRAMENTO ░░░ -->
+<section class="page">
+  <div class="kicker">Para levar com você</div>
+  <h2>O começo, não o fim</h2>
+  <p class="lead">Você chegou aqui com medo da IA. Sai com um método, um plano e mais de 130 ferramentas prontas. Lembre das três verdades:</p>
+  <ol>
+    <li><b>A IA não substitui gente boa</b> — substitui quem não agrega e não aprende.</li>
+    <li><b>Você já sabe</b> dar o primeiro passo. Tem a receita P.E.D.E.R. e um plano de 7 dias.</li>
+    <li><b>Saber operar IA</b> virou habilidade essencial — e você começou hoje.</li>
+  </ol>
+  <div class="box amber">
+    <p style="margin:0;font-family:var(--serif);font-size:20px;color:var(--ink);line-height:1.35">"Quem aprende a usar IA não é substituído por IA. É disputado pelas empresas."</p>
+  </div>
+  <div class="rule"></div>
+  <h4>Vamos continuar?</h4>
+  <p>Eu ensino, toda semana, a usar IA com método — do básico ao avançado, sem medo e sem cair em roubada. Me acompanhe em <b>@rodrigomunhozreis</b> e receba os próximos materiais.</p>
+  <p class="muted" style="font-size:13px;margin-top:26px">© Rodrigo Munhoz Reis · Material gratuito da palestra "IA Sem Medo". Sinta-se livre para compartilhar na íntegra.</p>
+  <div class="foot"><span><span class="dot">●</span> IA Sem Medo</span><span>Guia Prático</span></div>
+</section>
+
+<div id="toast">Prompt copiado ✓</div>
+
+<script>
+const toast=document.getElementById('toast');let t;
+document.querySelectorAll('.pq').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const txt=el.innerText.replace(/\s+/g,' ').trim();
+    if(navigator.clipboard){navigator.clipboard.writeText(txt).then(()=>{
+      toast.classList.add('on');clearTimeout(t);t=setTimeout(()=>toast.classList.remove('on'),1600);
+    });}
+  });
+});
+</script>
+</body>
+</html>

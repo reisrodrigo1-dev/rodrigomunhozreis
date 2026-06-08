@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA Sem Medo — Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   IA SEM MEDO — Keynote
+   Design system aplicado da skill ui-ux-pro-max:
+   - tokens semânticos · contraste AA · ritmo 8px
+   - sem emoji como ícone (SVG stroke 1.75)
+   - animações 150–300ms (transform/opacity) · reduced-motion
+   - paleta editorial quente (anti "cara de IA")
+   ============================================================ */
+
+:root{
+  /* — primitivos — */
+  --ink:        #0E0F13;   /* fundo base, tinta levemente quente */
+  --ink-2:      #15171E;   /* superfície/painel */
+  --ink-3:      #1E212B;   /* superfície elevada */
+  --paper:      #F4F1EA;   /* texto primário, papel quente */
+  --muted:      #A7A299;   /* texto secundário */
+  --muted-2:    #6F6B63;   /* texto terciário / legendas */
+  --line:       rgba(244,241,234,.12); /* hairline */
+  --amber:      #E0A45C;   /* acento quente único */
+  --amber-deep: #C8853B;
+  --amber-soft: rgba(224,164,92,.14);
+  --danger:     #D98A6A;   /* alerta discreto (não vermelho neon) */
+  --good:       #93B79B;
+
+  /* — semânticos — */
+  --bg: var(--ink);
+  --surface: var(--ink-2);
+  --on-bg: var(--paper);
+  --on-bg-muted: var(--muted);
+  --accent: var(--amber);
+
+  /* — tipografia — */
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* — ritmo (8px) — */
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px;
+
+  --maxw: 1180px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  background:var(--bg);
+  color:var(--on-bg);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow:hidden;
+}
+
+/* ===== Deck 16:9 (letterbox no desktop) ===== */
+.deck{position:fixed;inset:0;overflow:hidden;background:#000}
+@media (min-width:769px){
+  .deck{
+    width:min(100vw, calc(100vh * 16 / 9));
+    height:min(100vh, calc(100vw * 9 / 16));
+    margin:auto;inset:0;position:absolute;
+    box-shadow:0 0 120px rgba(0,0,0,.6);
+  }
+}
+
+/* film grain + vinheta global */
+.deck::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:50;
+  background:
+    radial-gradient(120% 120% at 50% 40%, transparent 55%, rgba(0,0,0,.45) 100%);
+  mix-blend-mode:multiply;
+}
+
+/* ===== Slide ===== */
+.slide{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(40px,6vw,96px);
+  background:var(--bg);
+  opacity:0;visibility:hidden;
+  transition:opacity .45s ease;
+  overflow:hidden;
+}
+.slide.active{opacity:1;visibility:visible}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
+
+/* kicker / olho editorial */
+.kicker{
+  font-family:var(--sans);font-weight:600;
+  font-size:clamp(11px,1.1vw,14px);
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);
+  display:flex;align-items:center;gap:12px;margin-bottom:var(--s3);
+}
+.kicker::before{content:"";width:32px;height:1px;background:var(--accent);display:inline-block}
+
+/* títulos */
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.04;letter-spacing:-.015em}
+.display{font-size:clamp(44px,8.5vw,120px);font-weight:900;line-height:.98;letter-spacing:-.03em}
+.title{font-size:clamp(34px,5.6vw,76px)}
+.subtitle{font-family:var(--serif);font-weight:400;font-size:clamp(20px,2.6vw,34px);color:var(--muted);line-height:1.25}
+.lead{font-size:clamp(17px,1.7vw,22px);color:var(--muted);line-height:1.55;max-width:60ch}
+.em{color:var(--accent)}
+.serif{font-family:var(--serif)}
+
+/* numeração editorial de slide */
+.deck-ui{position:fixed;z-index:60;color:var(--muted)}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:70;transition:width .4s ease}
+.counter{
+  bottom:clamp(20px,3vh,34px);right:clamp(24px,3vw,40px);
+  font-family:var(--sans);font-variant-numeric:tabular-nums;
+  font-size:13px;letter-spacing:.12em;color:var(--muted-2);
+}
+.counter b{color:var(--paper);font-weight:600}
+.brandmark{
+  bottom:clamp(20px,3vh,34px);left:clamp(24px,3vw,40px);
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);
+  display:flex;align-items:center;gap:10px;
+}
+.brandmark .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.navhint{
+  bottom:clamp(20px,3vh,34px);left:50%;transform:translateX(-50%);
+  font-size:11px;letter-spacing:.14em;color:var(--muted-2);text-transform:uppercase;
+  transition:opacity .6s ease;
+}
+.navarrows{position:fixed;bottom:clamp(16px,2.4vh,28px);left:50%;transform:translateX(-50%);z-index:65;display:flex;gap:10px}
+.navarrows button{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+  background:rgba(244,241,234,.04);color:var(--paper);cursor:pointer;
+  font-size:15px;display:grid;place-items:center;transition:background .2s ease,border-color .2s ease;
+}
+.navarrows button:hover{background:var(--amber-soft);border-color:var(--accent)}
+
+/* ===== mídia full-bleed em duotone âmbar ===== */
+.media{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#1b140d,#0E0F13)}
+.media img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:grayscale(100%) brightness(.66) contrast(1.08) sepia(.35);
+  opacity:.55;mix-blend-mode:luminosity;
+}
+.media .tint{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(90% 90% at 28% 28%, rgba(224,164,92,.22), transparent 62%),
+    linear-gradient(180deg, rgba(14,15,19,.45) 0%, rgba(14,15,19,.82) 78%, rgba(14,15,19,.95) 100%);
+}
+.slide.has-media .wrap{z-index:3}
+
+/* ===== componentes ===== */
+.rule{height:1px;background:var(--line);width:100%;margin:var(--s4) 0}
+
+.grid{display:grid;gap:var(--s3)}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,80px);align-items:center}
+
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  padding:clamp(20px,2.4vw,30px);
+}
+.card h3{font-size:clamp(19px,1.9vw,24px);margin-bottom:8px;letter-spacing:-.01em}
+.card p{color:var(--muted);font-size:clamp(14px,1.25vw,16.5px);line-height:1.5}
+.card .ic{color:var(--accent);margin-bottom:var(--s2);display:block}
+.card.accent{border-color:rgba(224,164,92,.4);background:linear-gradient(180deg,var(--amber-soft),var(--surface))}
+.card.accent h3{color:var(--paper)}
+
+.ic svg{width:30px;height:30px;display:block}
+.ic-lg svg{width:42px;height:42px}
+
+/* lista numerada editorial */
+.steps{display:flex;flex-direction:column;gap:var(--s2)}
+.step{display:flex;gap:var(--s3);align-items:baseline;padding-bottom:var(--s2);border-bottom:1px solid var(--line)}
+.step .n{font-family:var(--serif);font-weight:700;font-size:clamp(22px,2.4vw,32px);color:var(--accent);min-width:46px;font-variant-numeric:tabular-nums}
+.step .t{font-size:clamp(16px,1.5vw,20px);color:var(--paper)}
+.step .t small{display:block;color:var(--muted);font-size:.82em;margin-top:3px;font-weight:400}
+
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:var(--s5)}
+.tl{position:relative;padding-top:var(--s4);text-align:center}
+.tl::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--line)}
+.tl::after{content:"";position:absolute;top:-5px;left:calc(50% - 6px);width:12px;height:12px;border-radius:50%;background:var(--ink);border:2px solid var(--accent)}
+.tl.on::after{background:var(--accent);box-shadow:0 0 16px var(--accent)}
+.tl h3{font-size:clamp(18px,1.9vw,26px)}
+.tl p{color:var(--muted);font-size:13px;margin-top:4px}
+
+/* equação / linhas de comparação */
+.eqrow{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);
+  padding:clamp(16px,2vw,26px) clamp(18px,2.4vw,30px);border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.eqrow + .eqrow{margin-top:var(--s2)}
+.eqrow .lhs{font-family:var(--serif);font-size:clamp(18px,2vw,28px);color:var(--paper)}
+.eqrow .rhs{font-size:clamp(13px,1.3vw,17px);color:var(--muted);text-align:right}
+.eqrow.win{border-color:var(--accent);background:linear-gradient(90deg,var(--amber-soft),var(--surface))}
+.eqrow.win .rhs{color:var(--amber)}
+
+/* tabela */
+table{width:100%;border-collapse:collapse;font-size:clamp(13px,1.3vw,17px)}
+th,td{text-align:left;padding:clamp(12px,1.5vw,18px) clamp(10px,1.4vw,18px);border-bottom:1px solid var(--line)}
+thead th{color:var(--muted-2);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+tbody td:first-child{font-family:var(--serif);font-weight:600;color:var(--paper);font-size:1.05em}
+tbody tr:hover{background:rgba(244,241,234,.03)}
+.tag{display:inline-block;font-size:12px;color:var(--amber);border:1px solid rgba(224,164,92,.4);border-radius:999px;padding:3px 10px}
+
+/* before/after */
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.panel{border-radius:16px;padding:clamp(20px,2.4vw,30px);border:1px solid var(--line);background:var(--surface)}
+.panel .h{font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:var(--s2);display:flex;align-items:center;gap:8px}
+.panel.bad{border-color:rgba(217,138,106,.35)}
+.panel.bad .h{color:var(--danger)}
+.panel.good{border-color:rgba(224,164,92,.45);background:linear-gradient(180deg,var(--amber-soft),var(--surface))}
+.panel.good .h{color:var(--amber)}
+.panel code{font-family:'Inter',monospace;font-size:clamp(13px,1.3vw,16px);color:var(--paper);line-height:1.6;display:block}
+.panel .muted{color:var(--muted)}
+
+/* P.E.D.E. */
+.pede{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s2)}
+.pede .l{font-family:var(--serif);font-weight:900;font-size:clamp(36px,4.4vw,62px);color:var(--accent);line-height:1}
+.pede h3{font-size:clamp(15px,1.4vw,19px);margin:8px 0 6px}
+.pede p{font-size:clamp(12px,1.1vw,14px);color:var(--muted);line-height:1.4}
+.pede .card{padding:clamp(16px,1.8vw,22px)}
+
+/* big quote */
+.bigquote{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.4vw,78px);line-height:1.05;letter-spacing:-.02em;max-width:18ch}
+.bigquote .em{display:inline}
+
+/* takeaways */
+.takeaway{display:flex;gap:var(--s3);align-items:flex-start}
+.takeaway .n{font-family:var(--serif);font-weight:900;font-size:clamp(30px,3.4vw,52px);color:var(--accent);min-width:64px;line-height:.9}
+.takeaway .t{font-size:clamp(16px,1.6vw,21px);padding-top:6px}
+
+/* QR / cta */
+.qrbox{background:var(--paper);padding:14px;border-radius:14px;width:fit-content}
+.qrbox img{display:block;width:172px;height:172px;border-radius:6px}
+
+.chiprow{display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)}
+.chip{border:1px solid var(--line);border-radius:999px;padding:8px 16px;color:var(--muted);font-size:14px}
+.chip b{color:var(--paper);font-weight:600}
+
+/* reveal anim (150–300ms+, transform/opacity) */
+.reveal{opacity:0;transform:translateY(22px);animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
+@keyframes rise{to{opacity:1;transform:none}}
+.slide:not(.active) .reveal{animation:none}
+
+/* ===== responsivo ===== */
+@media (max-width:768px){
+  .split,.g2,.g3,.g4,.pede,.contrast,.timeline{grid-template-columns:1fr}
+  .timeline{gap:var(--s3)}
+  .tl::before{display:none}
+  .navhint{display:none}
+}
+
+/* ===== reduced motion ===== */
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  .slide{transition:none}
+  .progress{transition:none}
+}
+
+/* ===== print → PDF (todos os slides empilhados) ===== */
+@media print{
+  @page{size:1280px 720px;margin:0}
+  body,.deck{position:static;width:1280px;height:auto;overflow:visible;box-shadow:none}
+  .deck::after{display:none}
+  .deck-ui,.navarrows{display:none!important}
+  .slide{position:relative;inset:auto;opacity:1!important;visibility:visible!important;
+    width:1280px;height:720px;page-break-after:always;break-after:page}
+  .reveal{opacity:1!important;transform:none!important;animation:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="progress deck-ui" id="bar"></div>
+<div class="deck" id="deck">
+
+<!-- ░░░ 01 · CAPA ░░░ -->
+<section class="slide active has-media">
+  <div class="media"><img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"><div class="tint"></div></div>
+  <div class="wrap">
+    <div class="kicker reveal">Palestra · Primeiros passos com IA</div>
+    <h1 class="display reveal" style="--d:.06s">IA Sem<br>Medo</h1>
+    <p class="subtitle reveal" style="--d:.16s;margin-top:var(--s3);max-width:24ch">O primeiro passo de quem nunca usou — sem entender nada de tecnologia.</p>
+    <div class="rule reveal" style="--d:.26s;max-width:420px"></div>
+    <p class="reveal" style="--d:.32s;color:var(--muted);font-size:15px;letter-spacing:.04em">
+      <b style="color:var(--paper)">Rodrigo Munhoz Reis</b> &nbsp;·&nbsp; Diretor de Tecnologia
+    </p>
+  </div>
+</section>
+
+<!-- ░░░ 02 · GANCHO ░░░ -->
+<section class="slide has-media">
+  <div class="media"><img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"><div class="tint"></div></div>
+  <div class="wrap">
+    <p class="kicker reveal">Vamos começar honestos</p>
+    <h2 class="title reveal" style="--d:.06s;max-width:20ch">Você tem um pouco de medo de IA?</h2>
+    <p class="lead reveal" style="--d:.18s;margin-top:var(--s3)">Ótimo. Esse medo é inteligente.<br>Mas ele está apontado pro <span class="em">lugar errado</span> — e até o fim eu mostro por quê.</p>
+  </div>
+</section>
+
+<!-- ░░░ 03 · QUEM FALA ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kicker reveal">Quem fala com você</p>
+        <h2 class="title reveal" style="--d:.06s">Não vim vender medo<br>nem mágica.</h2>
+        <p class="lead reveal" style="--d:.16s;margin-top:var(--s3)">Vim te dar o primeiro passo — e tirar um peso das suas costas.</p>
+      </div>
+      <div class="grid" style="gap:var(--s2)">
+        <div class="card reveal" style="--d:.2s"><h3>Diretor de Tecnologia</h3><p>Construo software todos os dias.</p></div>
+        <div class="card reveal" style="--d:.28s"><h3>3 empresas em produção</h3><p>Reais, com clientes reais, no ar agora.</p></div>
+        <div class="card accent reveal" style="--d:.36s"><h3>Tudo com IA, todo dia</h3><p>Na prática — não na teoria.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 04 · TIMELINE ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Já vivemos isso antes</p>
+    <h2 class="title reveal" style="--d:.06s;max-width:22ch">Toda tecnologia nova assustou.</h2>
+    <div class="timeline">
+      <div class="tl reveal" style="--d:.16s"><h3>Calculadora</h3><p>"vai atrofiar a conta de cabeça"</p></div>
+      <div class="tl reveal" style="--d:.24s"><h3>Computador</h3><p>"vai roubar empregos"</p></div>
+      <div class="tl reveal" style="--d:.32s"><h3>Google</h3><p>"ninguém vai mais pensar"</p></div>
+      <div class="tl on reveal" style="--d:.4s"><h3 class="em">IA</h3><p>você está aqui</p></div>
+    </div>
+    <p class="lead reveal" style="--d:.5s;margin-top:var(--s5)">Quem aprendeu, avançou. Quem travou no medo, ficou pra trás.</p>
+  </div>
+</section>
+
+<!-- ░░░ 05 · DIVISOR — A PERGUNTA ░░░ -->
+<section class="slide has-media">
+  <div class="media"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"><div class="tint"></div></div>
+  <div class="wrap">
+    <p class="kicker reveal">A pergunta que tira o sono</p>
+    <h2 class="display reveal" style="--d:.08s;font-size:clamp(40px,7vw,104px)">A IA vai roubar<br>meu emprego?</h2>
+  </div>
+</section>
+
+<!-- ░░░ 06 · STATEMENT ░░░ -->
+<section class="slide">
+  <div class="wrap" style="text-align:left">
+    <p class="kicker reveal">A verdade em uma frase</p>
+    <p class="bigquote reveal" style="--d:.08s">A IA não vai te substituir. Mas alguém que <span class="em">sabe usá-la</span>, pode.</p>
+    <p class="lead reveal" style="--d:.2s;margin-top:var(--s4)">Guarda essa frase. O risco não é a máquina — é ficar parado enquanto o vizinho aprende.</p>
+  </div>
+</section>
+
+<!-- ░░░ 07 · A CONTA ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">A conta que importa</p>
+    <h2 class="title reveal" style="--d:.05s;margin-bottom:var(--s4)">Quem soma, ganha.</h2>
+    <div class="eqrow reveal" style="--d:.14s"><span class="lhs">Profissional bom, <em>sem</em> IA</span><span class="rhs">bom — mas mais lento</span></div>
+    <div class="eqrow reveal" style="--d:.22s"><span class="lhs">IA <em>sozinha</em></span><span class="rhs">rápida, mas sem julgamento. Erra com confiança.</span></div>
+    <div class="eqrow win reveal" style="--d:.3s"><span class="lhs">Profissional bom <em>+</em> IA</span><span class="rhs">imbatível</span></div>
+  </div>
+</section>
+
+<!-- ░░░ 08 · QUEM CORRE RISCO ░░░ -->
+<section class="slide">
+  <div class="wrap" style="text-align:left">
+    <p class="kicker reveal">Sem rodeio</p>
+    <h2 class="title reveal" style="--d:.06s;max-width:24ch">Quem corre risco é quem fazia <span class="em">só tarefa repetitiva</span> — sem pensar.</h2>
+    <p class="lead reveal" style="--d:.18s;margin-top:var(--s3)">Não é sobre ser velho ou novo. É sobre agregar algo que a máquina não tem.</p>
+  </div>
+</section>
+
+<!-- ░░░ 09 · O QUE A IA NÃO TEM ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">O que a IA não tem (e você tem)</p>
+    <div class="grid g4" style="margin-top:var(--s4)">
+      <div class="card reveal" style="--d:.12s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l7-4 7 4M4 11h4l-2 5a3 3 0 0 0 4 0l-2-5M16 11h4l-2 5a3 3 0 0 0 4 0l-2-5"/></svg></span><h3>Julgamento</h3><p>Saber o que faz sentido na vida real.</p></div>
+      <div class="card reveal" style="--d:.2s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Responsabilidade</h3><p>Assumir a decisão e suas consequências.</p></div>
+      <div class="card reveal" style="--d:.28s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><h3>Contexto</h3><p>Conhecer seu cliente, sua história.</p></div>
+      <div class="card reveal" style="--d:.36s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><path d="M12 6 8 12l4 6 4-6-4-6z"/></svg></span><h3>Ética</h3><p>O bom senso de quando não fazer.</p></div>
+    </div>
+    <p class="lead reveal" style="--d:.46s;margin-top:var(--s5)">A IA escreve o e-mail. Quem decide se ele <span class="em">deve ser enviado</span> é você.</p>
+  </div>
+</section>
+
+<!-- ░░░ 10 · EMPRESAS ░░░ -->
+<section class="slide">
+  <div class="wrap" style="text-align:left">
+    <p class="kicker reveal">Por que isso é uma oportunidade</p>
+    <p class="bigquote reveal" style="--d:.08s;max-width:24ch">As empresas não vão demitir gente boa. Vão <span class="em">disputar</span> quem sabe operar IA.</p>
+    <p class="lead reveal" style="--d:.2s;margin-top:var(--s4)">Saber operar IA hoje é como saber usar computador em 2000. Daqui a pouco, não vão nem perguntar — vão exigir.</p>
+  </div>
+</section>
+
+<!-- ░░░ 11 · ALÍVIO (quebra 1/3) ░░░ -->
+<section class="slide has-media">
+  <div class="media"><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"><div class="tint"></div></div>
+  <div class="wrap">
+    <p class="kicker reveal">Respira</p>
+    <p class="bigquote reveal" style="--d:.08s;max-width:22ch">Você não está numa corrida <em>contra</em> a máquina. Está numa corrida pra ser <span class="em">quem a domina.</span></p>
+    <p class="lead reveal" style="--d:.22s;margin-top:var(--s3)">E essa corrida começa hoje, aqui.</p>
+  </div>
+</section>
+
+<!-- ░░░ 12 · DIVISOR — O QUE É IA ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Parte 2</p>
+    <h2 class="display reveal" style="--d:.08s">Afinal, o<br>que é IA?</h2>
+  </div>
+</section>
+
+<!-- ░░░ 13 · ANALOGIA ░░░ -->
+<section class="slide has-media">
+  <div class="media"><img src="https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"><div class="tint"></div></div>
+  <div class="wrap">
+    <p class="kicker reveal">Sem jargão</p>
+    <h2 class="title reveal" style="--d:.06s;max-width:20ch">Um estagiário que leu <span class="em">a internet inteira.</span></h2>
+    <p class="lead reveal" style="--d:.18s;margin-top:var(--s3)">Rápido, prestativo — e às vezes confiante mesmo quando está errado. É isso. Não é um robô consciente.</p>
+  </div>
+</section>
+
+<!-- ░░░ 14 · O QUE NÃO É ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Desfazendo o mito</p>
+    <div class="grid g3" style="margin-top:var(--s4)">
+      <div class="card reveal" style="--d:.12s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M8 15h8"/></svg></span><h3>Não pensa</h3><p>Não tem consciência nem sentimento. Calcula a próxima palavra.</p></div>
+      <div class="card reveal" style="--d:.2s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span><h3>Erra com confiança</h3><p>Pode inventar e afirmar com a maior certeza. Confira o importante.</p></div>
+      <div class="card reveal" style="--d:.28s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.3 6.9H21l-5.4 4 2 6.6L12 16.8 6.4 20.5l2-6.6L3 9.9h6.7z"/></svg></span><h3>Não é mágica</h3><p>É uma ferramenta poderosa. Quem manda é você.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 15 · REASSEGURA ░░░ -->
+<section class="slide">
+  <div class="wrap" style="text-align:center">
+    <p class="kicker reveal" style="justify-content:center">A boa notícia</p>
+    <p class="bigquote reveal" style="--d:.08s;margin:0 auto;text-align:center;max-width:20ch">Se você usa WhatsApp, já tem <span class="em">80% da habilidade.</span></p>
+    <p class="lead reveal" style="--d:.2s;margin:var(--s3) auto 0">Você não precisa programar. Precisa saber conversar com ela.</p>
+  </div>
+</section>
+
+<!-- ░░░ 16 · DIVISOR — COMO USAR ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Parte 3</p>
+    <h2 class="display reveal" style="--d:.08s">Como usar<br>no dia a dia</h2>
+  </div>
+</section>
+
+<!-- ░░░ 17 · 3 USOS ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Três usos pra começar hoje</p>
+    <div class="grid g3" style="margin-top:var(--s4)">
+      <div class="card reveal" style="--d:.12s"><span class="ic ic-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><h3>Escrever por você</h3><p>E-mail difícil, mensagem delicada, anúncio, currículo. Ela te dá o rascunho; você ajusta.</p></div>
+      <div class="card reveal" style="--d:.22s"><span class="ic ic-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><h3>Resumir & explicar</h3><p>Resumir um documento, explicar "como se eu tivesse 10 anos", traduzir. Sem vergonha de perguntar.</p></div>
+      <div class="card reveal" style="--d:.32s"><span class="ic ic-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></span><h3>Pensar & decidir</h3><p>Comparar opções, organizar ideias, listar prós e contras. O consultor que nunca dorme.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 18 · DIVISOR — O PEDIDO ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">O pulo do gato</p>
+    <h2 class="display reveal" style="--d:.08s;font-size:clamp(40px,7vw,100px)">Como fazer<br>um bom pedido</h2>
+    <p class="lead reveal" style="--d:.2s;margin-top:var(--s3)">Pedido vago = resposta genérica. Pedido bom = resposta sob medida.</p>
+  </div>
+</section>
+
+<!-- ░░░ 19 · P.E.D.E. ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">A receita — toda vez que pedir, lembre que você vai <b style="color:var(--paper)">P.E.D.E.R.</b></p>
+    <div class="pede" style="margin-top:var(--s4)">
+      <div class="card reveal" style="--d:.1s"><div class="l">P</div><h3>Papel</h3><p>Diga quem a IA deve ser. <i style="color:var(--muted-2)">"Aja como um vendedor experiente…"</i></p></div>
+      <div class="card reveal" style="--d:.18s"><div class="l">E</div><h3>Exemplo</h3><p>Dê o contexto. <i style="color:var(--muted-2)">"…vendo bolo caseiro pra vizinhança…"</i></p></div>
+      <div class="card reveal" style="--d:.26s"><div class="l">D</div><h3>Desejo</h3><p>Diga o que quer. <i style="color:var(--muted-2)">"…escreva um anúncio pra WhatsApp…"</i></p></div>
+      <div class="card reveal" style="--d:.34s"><div class="l">E</div><h3>Estilo</h3><p>Diga tom e formato. <i style="color:var(--muted-2)">"…simpático, com emojis, 3 linhas."</i></p></div>
+      <div class="card accent reveal" style="--d:.42s"><div class="l">R</div><h3>Refinar</h3><p>Não gostou? Ajuste. <i style="color:var(--muted-2)">"Deixa mais curto." "Outro tom."</i></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 20 · ANTES x DEPOIS ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Mesma IA. A diferença foi o pedido.</p>
+    <div class="contrast" style="margin-top:var(--s3)">
+      <div class="panel bad reveal" style="--d:.12s">
+        <div class="h">✕ &nbsp;Pedido vago</div>
+        <code>"faça um anúncio de bolo"</code>
+        <p class="muted" style="margin-top:var(--s2);font-size:14px">→ genérico, sem graça, serve pra qualquer um.</p>
+      </div>
+      <div class="panel good reveal" style="--d:.24s">
+        <div class="h">✓ &nbsp;Pedido P.E.D.E.</div>
+        <code>"Aja como um vendedor experiente. Vendo bolo caseiro pra vizinhança. Escreva um anúncio curto pra WhatsApp, simpático, com emojis, em 3 linhas."</code>
+        <p class="muted" style="margin-top:var(--s2);font-size:14px">→ pronto pra copiar e colar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 21 · 3 REGRAS DE OURO ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Três regras de ouro</p>
+    <div class="steps" style="margin-top:var(--s4)">
+      <div class="step reveal" style="--d:.14s"><span class="n">01</span><span class="t">Seja específico<small>Quanto mais detalhe você dá, melhor ela responde.</small></span></div>
+      <div class="step reveal" style="--d:.24s"><span class="n">02</span><span class="t">Não gostou? Peça pra refazer<small>"Deixa mais curto." "Mais formal." "Outro tom." Ela refaz na hora.</small></span></div>
+      <div class="step reveal" style="--d:.34s"><span class="n">03</span><span class="t">Converse, não comande<small>Vá ajustando como numa conversa real — é assim que a mágica acontece.</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 22 · DIVISOR — QUAIS IAs ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Parte 4</p>
+    <h2 class="display reveal" style="--d:.08s">Quais IAs<br>usar</h2>
+  </div>
+</section>
+
+<!-- ░░░ 23 · TABELA ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">O mapa das principais — todas têm início grátis</p>
+    <table class="reveal" style="--d:.12s;margin-top:var(--s2)">
+      <thead><tr><th>IA</th><th>De quem é</th><th>Boa pra…</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>ChatGPT</td><td>OpenAI</td><td>Generalista, a mais famosa, ótima pra começar</td><td><span class="tag">grátis</span></td></tr>
+        <tr><td>Gemini</td><td>Google</td><td>Quem vive no Gmail e no Google Docs</td><td><span class="tag">grátis</span></td></tr>
+        <tr><td>Claude</td><td>Anthropic</td><td>Textos longos e escrita caprichada</td><td><span class="tag">grátis</span></td></tr>
+        <tr><td>Copilot</td><td>Microsoft</td><td>Quem usa Windows e Office</td><td><span class="tag">grátis</span></td></tr>
+        <tr><td>Perplexity</td><td>Perplexity</td><td>Pesquisar com fontes e links</td><td><span class="tag">grátis</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ░░░ 24 · RECOMENDAÇÃO ░░░ -->
+<section class="slide">
+  <div class="wrap" style="text-align:center">
+    <p class="kicker reveal" style="justify-content:center">Não se perca</p>
+    <p class="bigquote reveal" style="--d:.08s;margin:0 auto;text-align:center;max-width:16ch">Comece com <span class="em">uma só.</span></p>
+    <div class="chiprow reveal" style="--d:.22s;justify-content:center">
+      <span class="chip"><b>ChatGPT</b> ou <b>Gemini</b></span>
+      <span class="chip">versão <b>grátis</b></span>
+      <span class="chip">instala no <b>celular</b></span>
+    </div>
+    <p class="lead reveal" style="--d:.32s;margin:var(--s4) auto 0">O importante não é qual. É começar.</p>
+  </div>
+</section>
+
+<!-- ░░░ 25 · DIVISOR — CUIDADOS ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Antes de confiar</p>
+    <h2 class="display reveal" style="--d:.08s">Os cuidados</h2>
+    <p class="lead reveal" style="--d:.2s;margin-top:var(--s3)">Lembra que ela erra com confiança? Use IA sem ser enganado por ela — é isso que eu ensino empresas a fazer.</p>
+  </div>
+</section>
+
+<!-- ░░░ 26 · 3 CUIDADOS ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <div class="grid g3" style="margin-top:var(--s2)">
+      <div class="card accent reveal" style="--d:.12s"><span class="ic ic-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11l2 2 4-4"/></svg></span><h3>Confira o importante</h3><p>Datas, números, leis, fatos. Ela ajuda — você valida.</p></div>
+      <div class="card accent reveal" style="--d:.22s"><span class="ic ic-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><h3>Não exponha dados</h3><p>Senha, CPF, dados de cliente — sem critério, não.</p></div>
+      <div class="card accent reveal" style="--d:.32s"><span class="ic ic-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6z"/><path d="M12 8v4"/></svg></span><h3>A decisão é sua</h3><p>Você é o chefe. Ela é a estagiária. A palavra final é sua.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 27 · PRIMEIRO PASSO ░░░ -->
+<section class="slide">
+  <div class="wrap" style="text-align:left">
+    <p class="kicker reveal">Sua tarefa de hoje</p>
+    <h2 class="title reveal" style="--d:.06s;max-width:22ch">Hoje à noite, use a receita <span class="em">P.E.D.E.R.</span> pra resolver <span class="serif" style="font-style:italic">uma</span> coisa chata do seu dia.</h2>
+    <p class="lead reveal" style="--d:.2s;margin-top:var(--s3)">Só uma. Amanhã você já não é mais a mesma pessoa diante da IA.</p>
+  </div>
+</section>
+
+<!-- ░░░ 28 · FECHAMENTO (resolução) ░░░ -->
+<section class="slide has-media">
+  <div class="media"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"><div class="tint"></div></div>
+  <div class="wrap">
+    <p class="kicker reveal">A mensagem que fica</p>
+    <p class="bigquote reveal" style="--d:.08s;max-width:24ch">Quem aprende a usar IA não é substituído por IA. É <span class="em">disputado pelas empresas.</span></p>
+  </div>
+</section>
+
+<!-- ░░░ 29 · RECAP ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <p class="kicker reveal">Você sai daqui sabendo três coisas</p>
+    <div class="grid" style="gap:var(--s4);margin-top:var(--s4)">
+      <div class="takeaway reveal" style="--d:.14s"><span class="n">01</span><span class="t">A IA <b style="color:var(--paper)">não substitui gente boa</b> — substitui quem não agrega e não aprende.</span></div>
+      <div class="takeaway reveal" style="--d:.24s"><span class="n">02</span><span class="t">Você <b style="color:var(--paper)">já sabe</b> dar o primeiro passo — e tem a receita pra isso.</span></div>
+      <div class="takeaway reveal" style="--d:.34s"><span class="n">03</span><span class="t">Saber <b style="color:var(--paper)">operar IA</b> virou habilidade essencial — e você começou hoje.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 30 · CTA ░░░ -->
+<section class="slide">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kicker reveal">Vamos continuar?</p>
+        <h2 class="title reveal" style="--d:.06s">Do básico ao<br>avançado, toda semana.</h2>
+        <p class="lead reveal" style="--d:.16s;margin-top:var(--s3)">Eu mostro como usar IA com método — sem medo e sem cair em roubada.</p>
+        <div class="chiprow reveal" style="--d:.26s">
+          <span class="chip">📍 <b>@rodrigomunhozreis</b></span>
+          <span class="chip">Material grátis no QR →</span>
+        </div>
+      </div>
+      <div class="reveal" style="--d:.3s;display:flex;flex-direction:column;align-items:center;gap:var(--s2)">
+        <div class="qrbox"><img src="https://api.qrserver.com/v1/create-qr-code/?size=344x344&margin=0&data=https%3A%2F%2Fwww.meucurso.com.br" alt="QR para o material gratuito" onerror="this.parentElement.style.display='none'"></div>
+        <p style="color:var(--muted-2);font-size:12px;letter-spacing:.1em;text-transform:uppercase">Aponte a câmera</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /deck -->
+
+<!-- UI -->
+<div class="deck-ui brandmark"><span class="dot"></span> IA Sem Medo</div>
+<div class="deck-ui counter"><b id="cur">01</b> / <span id="tot">30</span></div>
+<div class="deck-ui navhint" id="hint">← → para navegar · F tela cheia</div>
+<div class="navarrows">
+  <button onclick="go(idx-1)" aria-label="Anterior">←</button>
+  <button onclick="go(idx+1)" aria-label="Próximo">→</button>
+</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const bar=document.getElementById('bar');
+const cur=document.getElementById('cur');
+const hint=document.getElementById('hint');
+document.getElementById('tot').textContent=String(slides.length).padStart(2,'0');
+let idx=Math.max(0,parseInt(location.hash.slice(1))-1||0);
+
+function go(n){
+  idx=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,i)=>{
+    s.classList.toggle('active',i===idx);
+    // re-disparar animações de entrada
+    if(i===idx){s.querySelectorAll('.reveal').forEach(el=>{el.style.animation='none';el.offsetHeight;el.style.animation='';});}
+  });
+  bar.style.width=((idx+1)/slides.length*100)+'%';
+  cur.textContent=String(idx+1).padStart(2,'0');
+  history.replaceState(null,'','#'+(idx+1));
+}
+
+document.addEventListener('keydown',e=>{
+  if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();go(idx+1)}
+  else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(idx-1)}
+  else if(e.key==='Home'){go(0)}
+  else if(e.key==='End'){go(slides.length-1)}
+  else if(e.key==='f'||e.key==='F'){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen()}
+});
+
+// avançar ao clicar (sem atrapalhar links/botões)
+document.getElementById('deck').addEventListener('click',e=>{
+  if(e.target.closest('a,button,.navarrows,.qrbox,table')) return;
+  const x=e.clientX, w=window.innerWidth;
+  go(x < w*0.28 ? idx-1 : idx+1);
+});
+
+// swipe touch
+let tx=0;
+addEventListener('touchstart',e=>tx=e.changedTouches[0].clientX,{passive:true});
+addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)go(d<0?idx+1:idx-1)},{passive:true});
+
+setTimeout(()=>hint&&(hint.style.opacity='0'),4500);
+go(idx);
+</script>
+</body>
+</html>
