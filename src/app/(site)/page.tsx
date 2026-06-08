@@ -162,6 +162,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== ROBÔS DE IA ===== */}
+      <section id="robos" className="border-t border-white/5 py-20 md:py-28">
+        <div className="container-c">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+            <Reveal>
+              <p className="kicker-d">Grátis · sem instalar nada</p>
+              <h2 className="mt-5 max-w-[18ch] text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+                <span className="text-grad">Robôs de IA que pensam com o </span>
+                <span className="accent">meu método.</span>
+              </h2>
+              <p className="mt-5 max-w-xl text-lg text-paper/55">
+                Especialistas prontos para criar sistemas e tomar decisões. Copie o prompt e leve
+                direto para a sua IA — ChatGPT, Gemini ou Claude. Em 1 clique, ela vira o especialista.
+              </p>
+              <a href="/robos" className="btn btn-glow mt-7 !px-7 !py-3.5">
+                Ver os robôs
+              </a>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  "Arquiteto de Produto",
+                  "Engenheiro Full-Stack",
+                  "Especialista em Firebase",
+                  "Revisor de Segurança",
+                  "Consultor de IA",
+                  "Copiloto do CEO",
+                ].map((n) => (
+                  <div key={n} className="glass px-4 py-3 text-sm font-medium text-paper/80">
+                    {n}
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ===== LEAD MAGNET ===== */}
       <section id="materiais" className="border-t border-white/5 py-20 md:py-28">
         <div className="container-c">
