@@ -34,6 +34,13 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
+    // Alunos: cada um cria/lê/edita o próprio doc; admin lê todos
+    match /students/{uid} {
+      allow create: if request.auth != null && request.auth.uid == uid;
+      allow read, update: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow delete: if isAdmin();
+    }
+
     // Blog: posts publicados são públicos; rascunhos e escrita só admin
     match /posts/{id} {
       allow read: if resource.data.status == 'published' || isAdmin();
