@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { getPostBySlug, getPublishedPosts, toIsoDate, type Post } from "@/lib/posts";
 import { renderMarkdown } from "@/lib/markdown";
+import { PostCta } from "@/components/post-cta";
 import { site } from "@/lib/site";
 
 // ISR: revalida a cada 5 min.
@@ -109,6 +110,7 @@ export default async function PostPage({ params }: Props) {
           </div>
         )}
         <div className="prose-dark mt-10" dangerouslySetInnerHTML={{ __html: html }} />
+        <PostCta />
         <div className="mt-12 border-t border-white/10 pt-6">
           <Link href="/blog" className="text-sm font-semibold text-amber-light hover:underline">
             ← Voltar ao blog

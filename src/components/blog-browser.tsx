@@ -101,9 +101,10 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
             <button
               key={c}
               onClick={() => setCat(c)}
+              aria-pressed={c === cat}
               className={`rounded-full border px-3.5 py-1.5 text-sm transition-colors ${
                 c === cat
-                  ? "border-amber bg-amber text-ink"
+                  ? "border-amber bg-amber font-semibold text-ink"
                   : "border-white/12 text-paper/60 hover:border-amber/50 hover:text-paper"
               }`}
             >

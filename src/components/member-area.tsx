@@ -93,13 +93,15 @@ function AuthForm() {
         <div className="mb-5 flex gap-2 rounded-full border border-white/10 p-1 text-sm">
         <button
           onClick={() => setMode("signup")}
-          className={`flex-1 rounded-full py-2 transition-colors ${mode === "signup" ? "bg-amber text-ink" : "text-paper/60"}`}
+          aria-pressed={mode === "signup"}
+          className={`flex-1 rounded-full py-2 transition-colors ${mode === "signup" ? "bg-amber font-semibold text-ink" : "text-paper/60"}`}
         >
           Criar conta
         </button>
         <button
           onClick={() => setMode("login")}
-          className={`flex-1 rounded-full py-2 transition-colors ${mode === "login" ? "bg-amber text-ink" : "text-paper/60"}`}
+          aria-pressed={mode === "login"}
+          className={`flex-1 rounded-full py-2 transition-colors ${mode === "login" ? "bg-amber font-semibold text-ink" : "text-paper/60"}`}
         >
           Entrar
         </button>
@@ -186,7 +188,18 @@ function Dashboard({ user }: { user: User }) {
         Seus robôs de IA, liberados. Copie o prompt ou abra direto na sua IA (ChatGPT, Claude, Gemini).
       </p>
 
-      {loaded && robots.length === 0 ? (
+      {!loaded ? (
+        <div className="mt-12 grid gap-5 md:grid-cols-3" aria-hidden="true">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="glass h-48 animate-pulse p-7">
+              <div className="h-5 w-2/3 rounded bg-white/10" />
+              <div className="mt-3 h-3 w-1/2 rounded bg-white/10" />
+              <div className="mt-5 h-3 w-full rounded bg-white/5" />
+              <div className="mt-2 h-3 w-4/5 rounded bg-white/5" />
+            </div>
+          ))}
+        </div>
+      ) : robots.length === 0 ? (
         <p className="mt-12 text-paper/50">Em breve, os robôs.</p>
       ) : (
         <>
@@ -197,9 +210,10 @@ function Dashboard({ user }: { user: User }) {
                 <button
                   key={c}
                   onClick={() => setActiveCat(c)}
+                  aria-pressed={activeCat === c}
                   className={`rounded-full border px-4 py-2 text-sm transition-colors ${
                     activeCat === c
-                      ? "border-amber bg-amber text-ink"
+                      ? "border-amber bg-amber font-semibold text-ink"
                       : "border-white/12 text-paper/65 hover:border-amber/50 hover:text-paper"
                   }`}
                 >

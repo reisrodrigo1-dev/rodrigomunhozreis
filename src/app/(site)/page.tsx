@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/reveal";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { DownloadGate } from "@/components/download-gate";
+import { WorkWithMeForm } from "@/components/work-with-me-form";
 import { materials } from "@/lib/materials";
 import { LatestPosts } from "@/components/latest-posts";
 import { site } from "@/lib/site";
@@ -289,13 +290,19 @@ export default function Home() {
             </Reveal>
           </div>
           <Reveal delay={0.14}>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href={site.links.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-glow">
-                Falar no WhatsApp
-              </a>
-              <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-dark-ghost">
-                Agendar pelo LinkedIn
-              </a>
+            <div className="mt-8 grid items-start gap-5 md:grid-cols-[1.1fr_.9fr]">
+              <WorkWithMeForm />
+              <div className="flex flex-col gap-3 md:pt-2">
+                <p className="text-paper/60">
+                  Prefere ir direto? Fale comigo pelos canais abaixo — respondo pessoalmente.
+                </p>
+                <a href={site.links.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-dark-ghost w-fit">
+                  Falar no WhatsApp
+                </a>
+                <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-dark-ghost w-fit">
+                  Conectar no LinkedIn
+                </a>
+              </div>
             </div>
           </Reveal>
         </div>
