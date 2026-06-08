@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getAllStudents, type Student } from "@/lib/students";
-import { fmtDate, downloadCSV, type Row } from "@/lib/admin-data";
+import { fmtDate, downloadCSV, deleteDocById, type Row } from "@/lib/admin-data";
 
 export default function AdminAlunos() {
   const [rows, setRows] = useState<Student[]>([]);
@@ -16,6 +16,16 @@ export default function AdminAlunos() {
       })
       .catch(() => setState("error"));
   }, []);
+
+  async function del(uid: string) {
+    if (!confirm("Excluir este aluno? Isso remove o cadastro (a conta de login continua no Firebase Auth).")) return;
+    try {
+      await deleteDocById("students", uid);
+      setRows((rs) => rs.filter((r) => r.uid !== uid));
+    } catch {
+      alert("Erro ao excluir.");
+    }
+  }
 
   return (
     <div>
@@ -51,13 +61,14 @@ export default function AdminAlunos() {
               <th className="px-4 py-3 font-semibold">WhatsApp</th>
               <th className="px-4 py-3 font-semibold">Perfil</th>
               <th className="px-4 py-3 font-semibold">Cadastro</th>
+              <th className="px-4 py-3"></th>
             </tr>
           </thead>
           <tbody>
             {state === "loading" ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={5}>Carregando…</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={6}>Carregando…</td></tr>
             ) : rows.length === 0 ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={5}>Nenhum aluno ainda.</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={6}>Nenhum aluno ainda.</td></tr>
             ) : (
               rows.map((r) => (
                 <tr key={r.uid} className="border-b border-line/60 last:border-0">
@@ -66,6 +77,11 @@ export default function AdminAlunos() {
                   <td className="px-4 py-3 text-muted">{r.whatsapp || "—"}</td>
                   <td className="px-4 py-3 text-muted">{r.perfil || "—"}</td>
                   <td className="px-4 py-3 text-muted">{fmtDate(r.createdAt)}</td>
+                  <td className="px-4 py-3 text-right">
+                    <button onClick={() => del(r.uid)} className="text-xs text-red-500 hover:underline">
+                      Excluir
+                    </button>
+                  </td>
                 </tr>
               ))
             )}

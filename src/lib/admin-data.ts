@@ -44,3 +44,10 @@ export function downloadCSV(filename: string, rows: Row[], columns: string[]) {
   a.click();
   URL.revokeObjectURL(url);
 }
+
+/** Exclui um documento de uma coleção (admin). */
+export async function deleteDocById(collectionName: string, id: string): Promise<void> {
+  const { doc, deleteDoc } = await import("firebase/firestore");
+  const { db } = await import("./firebase");
+  await deleteDoc(doc(db, collectionName, id));
+}

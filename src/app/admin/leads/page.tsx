@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchCollection, fmtDate, downloadCSV, type Row } from "@/lib/admin-data";
+import { fetchCollection, fmtDate, downloadCSV, deleteDocById, type Row } from "@/lib/admin-data";
 
 export default function AdminLeads() {
   const [rows, setRows] = useState<Row[]>([]);
@@ -16,14 +16,22 @@ export default function AdminLeads() {
       .catch(() => setState("error"));
   }, []);
 
+  async function del(id: string) {
+    if (!confirm("Excluir este lead? Esta ação não pode ser desfeita.")) return;
+    try {
+      await deleteDocById("leads", id);
+      setRows((rs) => rs.filter((r) => r.id !== id));
+    } catch {
+      alert("Erro ao excluir.");
+    }
+  }
+
   return (
     <div>
       <div className="flex items-center justify-between gap-4">
         <h1 className="font-serif text-3xl font-semibold">Leads</h1>
         <button
-          onClick={() =>
-            downloadCSV("leads.csv", rows, ["name", "email", "whatsapp", "source", "createdAt"])
-          }
+          onClick={() => downloadCSV("leads.csv", rows, ["name", "email", "whatsapp", "source", "createdAt"])}
           disabled={rows.length === 0}
           className="btn btn-ghost !px-4 !py-2 disabled:opacity-50"
         >
@@ -46,13 +54,14 @@ export default function AdminLeads() {
               <th className="px-4 py-3 font-semibold">WhatsApp</th>
               <th className="px-4 py-3 font-semibold">Origem</th>
               <th className="px-4 py-3 font-semibold">Data</th>
+              <th className="px-4 py-3"></th>
             </tr>
           </thead>
           <tbody>
             {state === "loading" ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={5}>Carregando…</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={6}>Carregando…</td></tr>
             ) : rows.length === 0 ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={5}>Nenhum lead ainda.</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={6}>Nenhum lead ainda.</td></tr>
             ) : (
               rows.map((r) => (
                 <tr key={r.id} className="border-b border-line/60 last:border-0">
@@ -61,6 +70,11 @@ export default function AdminLeads() {
                   <td className="px-4 py-3 text-muted">{String(r.whatsapp ?? "—")}</td>
                   <td className="px-4 py-3 text-muted">{String(r.source ?? "—")}</td>
                   <td className="px-4 py-3 text-muted">{fmtDate(r.createdAt)}</td>
+                  <td className="px-4 py-3 text-right">
+                    <button onClick={() => del(r.id)} className="text-xs text-red-500 hover:underline">
+                      Excluir
+                    </button>
+                  </td>
                 </tr>
               ))
             )}
