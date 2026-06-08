@@ -30,4 +30,13 @@ export const materials: Material[] = [
     description: "A receita do bom pedido de IA em uma página — para imprimir e deixar à mão.",
     fileUrl: "/biblioteca/cartao-peder.html",
   },
+  {
+    id: "ebook-vibecoding-ceos",
+    title: "Vibecoding para CEOs — Guia de Boas Práticas",
+    slug: "vibecoding-para-ceos",
+    type: "ebook",
+    description:
+      "Para donos de empresa: ferramentas, Firebase, GitHub, Vercel, segurança, custos, glossário, roadmap de 30 dias e +22 prompts completos. Do plano ao deploy.",
+    fileUrl: "/biblioteca/ebook-vibecoding-ceos.html",
+  },
 ];

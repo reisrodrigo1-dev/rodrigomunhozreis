@@ -7,6 +7,44 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "boas-praticas-vibecoding-para-empresas",
+    slug: "boas-praticas-vibecoding-para-empresas",
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-06-08",
+    coverUrl:
+      "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=1200&q=80",
+    title: "Vibecoding sem desastre: 6 boas práticas para donos de empresa",
+    excerpt:
+      "Construir software com IA é a maior alavanca que existe — e uma bomba-relógio sem cuidado. 6 práticas que evitam o desastre (e onde pegar o guia completo).",
+    content: `Cada vez mais donos de empresa estão construindo software com IA — o chamado vibecoding. É a maior alavanca de produtividade que já apareceu. Mas, sem cuidado, vira bomba-relógio: código gerado por IA tem **2,74x mais vulnerabilidades** que o humano (Veracode, 2025), e só **10,5% passa numa revisão de segurança**.
+
+A boa notícia: dá para ter a velocidade da IA sem herdar os riscos. Aqui vão 6 práticas que evitam 90% dos desastres.
+
+## 1. Plano antes do código
+Peça à IA o plano em fases (MVP primeiro) e a arquitetura antes de gerar qualquer coisa. Construir sem plano é construir dívida.
+
+## 2. Nunca suba segredos — e mantenha o repositório privado
+Suas chaves e senhas ficam no arquivo de variáveis de ambiente, que NUNCA pode ir para o GitHub. E o repositório do seu produto deve ser privado (é grátis no GitHub).
+
+## 3. Sempre dê "git pull" antes de subir
+Baixe as últimas alterações antes de enviar as suas. Evita sobrescrever trabalho e conflitos feios.
+
+## 4. Banco de dados com regras (e LGPD)
+No Firebase, configure as regras de segurança — sem elas, qualquer um lê e escreve seus dados. E mapeie quais dados pessoais você coleta (LGPD não é opcional).
+
+## 5. Revise antes de aceitar
+Use um agente revisor e o Protocolo de 5 Camadas: Entender, Ler, Blindar, Testar e Versionar. "Funcionou na tela" não é "está pronto".
+
+## 6. Saiba os custos (não terceirize às cegas)
+Quase tudo começa de graça e a conta cresce com o uso. Conheça onde ela pode explodir antes de escalar — e como avaliar um dev sem ser técnico.
+
+## Quer tudo isso em detalhe?
+Isso é só a ponta. No e-book gratuito **"Vibecoding para CEOs"** eu detalho cada prática — com as ferramentas que você precisa, como conectar o Firebase, subir no GitHub e publicar na Vercel, um glossário, um roadmap de 30 dias e **22 prompts prontos** (incluindo o de "instruções iniciais", que ensina a IA a trabalhar com segurança e bom design desde o primeiro comando).
+
+[**→ Baixe o e-book gratuito aqui**](/materiais)`,
+  },
+  {
     id: "manifesto",
     slug: "manifesto",
     status: "published",
