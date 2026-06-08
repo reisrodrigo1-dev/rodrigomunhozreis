@@ -38,7 +38,7 @@ export const assets: Asset[] = [
     title: "Vibecoding para CEOs — Guia de Boas Práticas",
     kind: "ebook",
     description:
-      "Guia para donos de empresa: ferramentas, Firebase, GitHub, Vercel, segurança e +15 prompts completos.",
+      "Guia para donos de empresa: ferramentas, Firebase, GitHub, Vercel, segurança e +22 prompts completos.",
     url: "/biblioteca/ebook-vibecoding-ceos.html",
   },
 ];

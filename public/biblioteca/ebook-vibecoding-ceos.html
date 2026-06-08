@@ -132,7 +132,7 @@ code{font-family:var(--mono);font-size:.9em;background:#fff;border:1px solid var
     <h1>Vibecoding<br>para CEOs</h1>
     <p class="sub">Como construir software com IA — do zero ao deploy — sem virar um risco de segurança.</p>
     <div class="by"><b>Rodrigo Munhoz Reis</b> · Vibecoding com Engenharia</div>
-    <div class="cover-tag">Ferramentas · Firebase · GitHub · Vercel · Segurança · +20 prompts prontos</div>
+    <div class="cover-tag">Ferramentas · Firebase · GitHub · Vercel · Segurança · +22 prompts prontos</div>
   </div>
 </section>
 
@@ -266,6 +266,13 @@ node_modules
 *.md</div>
   <div class="box warn"><div class="bt">⚠ Peça isso à IA, sempre</div><p style="margin:0">Dê à IA a regra permanente: <b>"nunca inclua arquivos .env, chaves, segredos ou .md no que for subir, e sempre confirme o que vai ser enviado antes do push."</b> Está pronto na biblioteca (prompt 14).</p></div>
   <p class="muted">Se um segredo já foi para o git, troque a chave (revogue a antiga) — apenas apagar o arquivo não basta, pois ele fica no histórico.</p>
+  <h3>3. Repositório público ou privado?</h3>
+  <p>No GitHub, seu repositório pode ser <b>público</b> (qualquer um vê o código) ou <b>privado</b> (só você e quem você convidar). A regra para empresa é simples:</p>
+  <ul>
+    <li><b>Privado</b> — o padrão para produtos e qualquer coisa com lógica de negócio. É <b>grátis</b> no GitHub. Mesmo assim, nunca guarde segredos nele: o <code>.env</code> continua fora do git.</li>
+    <li><b>Público</b> — só para projetos open source, exemplos ou portfólio. Lembre: tudo fica visível para o mundo, para sempre.</li>
+  </ul>
+  <div class="box warn"><div class="bt">⚠ Privado + Vercel = atenção ao plano</div><p style="margin:0">A Vercel publica repositórios privados normalmente. Mas o plano gratuito (Hobby) é para uso <b>pessoal / não comercial</b>. Para um <b>produto comercial ou trabalho em equipe</b>, o correto é a conta <b>Pro</b> da Vercel — que libera colaboração em time, mais recursos de build e proteção por senha. Coloque esse custo no orçamento do projeto.</p></div>
   <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>07</span></div>
 </section>
 
@@ -377,6 +384,15 @@ node_modules
   <div class="prompt"><div class="pn">13</div><div class="pc"><div class="pt">LGPD e dados pessoais</div><div class="pq">Aja como consultor de LGPD (isto não substitui um advogado). Analise este projeto e liste: quais dados pessoais ele coleta, onde ficam armazenados, quem tem acesso, e o que eu preciso para estar em conformidade (consentimento, política de privacidade, segurança dos dados). Aponte os riscos e como mitigá-los. Contexto do projeto: <span class="ph">[descreva]</span>.</div></div></div>
   <div class="prompt"><div class="pn">14</div><div class="pc"><div class="pt">Regra permanente (não subir arquivos sensíveis)</div><div class="pq">Regra permanente para este projeto: ao me ajudar a versionar ou subir código, NUNCA inclua arquivos .env, chaves, service accounts ou .md sensíveis. Sempre me mostre e confirme a lista do que será enviado ANTES de qualquer push. Se eu esquecer, me lembre.</div></div></div>
   <div class="prompt"><div class="pn">15</div><div class="pc"><div class="pt">Debugar um erro com segurança</div><div class="pq">Estou com este erro: <span class="ph">[cole o erro]</span>. Aja como engenheiro sênior: explique a causa provável em português simples, proponha a correção mais segura (sem gambiarra), diga como evitar que volte e confirme que a correção não introduz risco de segurança. Mude só o necessário.</div></div></div>
+
+  <div class="cat"><span class="cl">6</span><h3>Crescimento &amp; manutenção</h3></div>
+  <div class="prompt"><div class="pn">16</div><div class="pc"><div class="pt">Criar testes automatizados</div><div class="pq">Aja como engenheiro de qualidade. Crie os testes essenciais para a funcionalidade <span class="ph">[descreva]</span>: liste o que pode quebrar, os casos de borda e como rodar os testes. Priorize cobrir o que é crítico (login, pagamento, dados pessoais) antes do resto. Use o framework de testes adequado para a minha stack <span class="ph">[ex.: Next.js]</span>.</div></div></div>
+  <div class="prompt"><div class="pn">17</div><div class="pc"><div class="pt">Otimizar a performance</div><div class="pq">Aja como especialista em performance web. Analise <span class="ph">[a página/o app]</span> e aponte o que está deixando lento, com foco em Core Web Vitals (carregamento, interatividade e estabilidade visual). Sugira as correções de maior impacto primeiro (imagens pesadas, código que carrega à toa, fontes), sem quebrar nada. Explique o ganho esperado de cada uma.</div></div></div>
+  <div class="prompt"><div class="pn">18</div><div class="pc"><div class="pt">Integrar pagamento</div><div class="pq">Aja como especialista em pagamentos. Quero cobrar <span class="ph">[assinatura recorrente / produto único]</span> no meu app, para clientes no Brasil. Sugira a melhor opção entre Stripe e Mercado Pago para o meu caso, explique o fluxo seguro de cobrança (sem expor chaves — tudo em variáveis de ambiente) e me guie a integrar o checkout passo a passo, tratando webhooks e confirmação de pagamento.</div></div></div>
+  <div class="prompt"><div class="pn">19</div><div class="pc"><div class="pt">Criar um painel administrativo</div><div class="pq">Crie um painel de administração que só EU acesse (login protegido) para gerenciar <span class="ph">[posts / produtos / leads]</span>. Inclua listar, criar, editar e excluir, com confirmação antes de excluir. Reforce a segurança nas regras do banco (só admin escreve) e mantenha a identidade visual do site. Me explique como dar acesso a mais alguém depois, se eu precisar.</div></div></div>
+  <div class="prompt"><div class="pn">20</div><div class="pc"><div class="pt">Estimar custos de infraestrutura</div><div class="pq">Aja como CTO consciente de custos. Para este projeto <span class="ph">[descreva a stack e o volume esperado de usuários]</span>, estime os custos mensais de infraestrutura (hospedagem, banco, e-mail, pagamentos), aponte onde a conta pode explodir com a escala e como evitar surpresas. Diga o que é grátis até certo limite e quando vale a pena migrar de plano.</div></div></div>
+  <div class="prompt"><div class="pn">21</div><div class="pc"><div class="pt">Backup e restauração dos dados</div><div class="pq">Me ensine a fazer backup e exportação dos dados deste projeto (banco de dados e arquivos), com que frequência fazer, e como restaurar caso algo dê errado. Inclua um passo a passo e diga o que dá para automatizar para eu não depender de lembrar.</div></div></div>
+  <div class="prompt"><div class="pn">22</div><div class="pc"><div class="pt">Onboarding de um desenvolvedor</div><div class="pq">Crie um guia de onboarding para um novo desenvolvedor entrar neste projeto: o que instalar, como rodar localmente, a estrutura de pastas, as variáveis de ambiente necessárias (sem expor os valores) e as regras do projeto (sempre git pull antes de push; nunca subir .env, segredos ou .md sensíveis). Seja objetivo e prático.</div></div></div>
 
   <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>12</span></div>
 </section>
