@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { MobileNav } from "@/components/mobile-nav";
 
 export function SiteHeader() {
   return (
@@ -24,10 +25,12 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 md:gap-5">
+        <MobileNav />
+
+        <div className="hidden items-center gap-3 md:flex md:gap-5">
           <Link
             href={site.clienteArea.href}
-            className="hidden items-center gap-1.5 text-sm font-medium text-paper/75 transition-colors hover:text-amber-light sm:inline-flex md:border-l md:border-white/10 md:pl-5"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-paper/75 transition-colors hover:text-amber-light md:border-l md:border-white/10 md:pl-5"
           >
             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />

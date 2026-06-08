@@ -1,11 +1,25 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
-import { getPostBySlug, type Post } from "@/lib/posts";
+import { getPostBySlug, getPublishedPosts, toIsoDate, type Post } from "@/lib/posts";
+import { renderMarkdown } from "@/lib/markdown";
+import { site } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+// ISR: revalida a cada 5 min.
+export const revalidate = 300;
 
 type Props = { params: Promise<{ slug: string }> };
+
+// Pré-renderiza os slugs publicados no build (os novos entram on-demand via ISR).
+export async function generateStaticParams() {
+  try {
+    const posts = await getPublishedPosts();
+    return posts.map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
+}
 
 async function load(slug: string): Promise<Post | null> {
   try {
@@ -22,10 +36,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
+      url: `https://${site.domain}/blog/${post.slug}`,
       images: post.coverUrl ? [post.coverUrl] : undefined,
     },
   };
@@ -36,28 +52,30 @@ export default async function PostPage({ params }: Props) {
   const post = await load(slug);
   if (!post) notFound();
 
-  const html = await marked.parse(post.content || "");
+  const html = renderMarkdown(await marked.parse(post.content || ""));
   const minutes = Math.max(1, Math.round((post.content || "").trim().split(/\s+/).length / 200));
-  const dateStr = (() => {
-    const v = post.publishedAt as { toDate?: () => Date } | string | undefined;
-    try {
-      const d =
-        typeof v === "string" ? new Date(v) : v && typeof v === "object" && v.toDate ? v.toDate() : null;
-      return d
-        ? d.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })
-        : "";
-    } catch {
-      return "";
-    }
-  })();
+  const isoPublished = toIsoDate(post.publishedAt ?? post.createdAt);
+  const isoModified = toIsoDate(post.updatedAt) ?? isoPublished;
+  const dateStr = isoPublished
+    ? new Date(isoPublished).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })
+    : "";
+  const url = `https://${site.domain}/blog/${post.slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
-    image: post.coverUrl,
-    author: { "@type": "Person", name: "Rodrigo Munhoz Reis" },
-    datePublished: typeof post.publishedAt === "string" ? post.publishedAt : undefined,
+    ...(post.coverUrl ? { image: post.coverUrl } : {}),
+    author: { "@type": "Person", name: site.name, url: `https://${site.domain}` },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      logo: { "@type": "ImageObject", url: `https://${site.domain}/icon.png` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    ...(isoPublished ? { datePublished: isoPublished } : {}),
+    ...(isoModified ? { dateModified: isoModified } : {}),
   };
 
   return (
@@ -78,9 +96,15 @@ export default async function PostPage({ params }: Props) {
           <span>· {minutes} min de leitura</span>
         </div>
         {post.coverUrl && (
-          <div className="mt-8 aspect-[16/8] overflow-hidden rounded-2xl border border-white/10">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={post.coverUrl} alt={post.title} className="h-full w-full object-cover" />
+          <div className="relative mt-8 aspect-[16/8] overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src={post.coverUrl}
+              alt={post.title}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+            />
           </div>
         )}
         <div className="prose-dark mt-10" dangerouslySetInnerHTML={{ __html: html }} />

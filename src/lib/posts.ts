@@ -38,6 +38,12 @@ function sortByDate(a: Post, b: Post): number {
   return toMillis(b.publishedAt ?? b.createdAt) - toMillis(a.publishedAt ?? a.createdAt);
 }
 
+/** Converte qualquer formato de data (Timestamp Firestore / string / number) para ISO 8601, ou undefined. */
+export function toIsoDate(v: unknown): string | undefined {
+  const ms = toMillis(v);
+  return ms ? new Date(ms).toISOString() : undefined;
+}
+
 /** Posts publicados — direto do Firestore (banco de dados). */
 export async function getPublishedPosts(): Promise<Post[]> {
   const { collection, getDocs, query, where } = await import("firebase/firestore");

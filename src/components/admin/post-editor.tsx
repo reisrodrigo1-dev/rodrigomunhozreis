@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { marked } from "marked";
+import { renderMarkdown } from "@/lib/markdown";
 import { slugify, type Post } from "@/lib/posts";
 import type { PostInput } from "@/lib/posts-admin";
 
@@ -98,7 +99,7 @@ export function PostEditor({
           {preview ? (
             <div
               className="prose prose-stone max-w-none rounded-lg border border-line bg-white p-4 prose-headings:font-serif"
-              dangerouslySetInnerHTML={{ __html: marked.parse(content || "*Sem conteúdo*") as string }}
+              dangerouslySetInnerHTML={{ __html: renderMarkdown(marked.parse(content || "*Sem conteúdo*") as string) }}
             />
           ) : (
             <textarea

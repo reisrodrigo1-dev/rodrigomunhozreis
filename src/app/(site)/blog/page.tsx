@@ -3,12 +3,14 @@ import { Reveal } from "@/components/reveal";
 import { BlogBrowser } from "@/components/blog-browser";
 import { getPublishedPosts, type Post } from "@/lib/posts";
 
-export const dynamic = "force-dynamic";
+// ISR: revalida a cada 5 min (servido do CDN, sem round-trip frio ao Firestore por request).
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Blog — IA, Vibecoding e Tecnologia",
   description:
     "Artigos sobre vibecoding com engenharia, segurança em IA e como usar inteligência artificial no trabalho — com dados e exemplos reais.",
+  alternates: { canonical: "/blog" },
 };
 
 export default async function BlogPage() {

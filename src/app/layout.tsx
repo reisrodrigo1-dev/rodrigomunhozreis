@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, Instrument_Serif } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -34,6 +38,7 @@ export const metadata: Metadata = {
   description: site.description,
   keywords: site.keywords,
   authors: [{ name: site.name }],
+  alternates: { canonical: "/" },
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
@@ -49,12 +54,31 @@ export const metadata: Metadata = {
   },
 };
 
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.role,
+  url: `https://${site.domain}`,
+  description: site.description,
+  sameAs: [site.links.linkedin, site.links.instagram],
+  knowsAbout: ["Inteligência Artificial", "Vibecoding", "Engenharia de Software", "Segurança em IA"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${fraunces.variable} ${inter.variable} ${instrument.variable}`}>
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        {children}
+        <Analytics />
+      </body>
+      {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
   );
 }
