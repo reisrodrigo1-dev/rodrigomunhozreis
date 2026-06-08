@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { WhatsAppButton } from "@/components/whatsapp-button";
 import { site } from "@/lib/site";
 
 const fraunces = Fraunces({
@@ -47,12 +44,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${fraunces.variable} ${inter.variable}`}>
-      <body className="min-h-screen">
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
-        <WhatsAppButton />
-      </body>
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }

@@ -6,7 +6,7 @@ service cloud.firestore {
     // ⚠️ Troque pelo seu e-mail de admin (o mesmo do login no /admin)
     function isAdmin() {
       return request.auth != null
-        && request.auth.token.email == 'SEU_EMAIL_ADMIN@exemplo.com';
+        && request.auth.token.email == 'reis.mrodrigo@gmail.com';
     }
 
     // Captura pública de e-mail; leitura só admin

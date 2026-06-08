@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx,mdx}"],
@@ -25,7 +26,7 @@ const config: Config = {
       transitionTimingFunction: { brand: "cubic-bezier(.2,.7,.2,1)" },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
 
 export default config;

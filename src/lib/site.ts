@@ -19,15 +19,15 @@ export const site = {
       ),
   },
   companies: [
-    { name: "MeuCurso", desc: "E-commerce jurídico (OAB e concursos)." },
-    { name: "ConectaEduca", desc: "Marketplace educacional." },
-    { name: "TreinadorJur", desc: "Treino e correção de provas com IA." },
+    { name: "MeuCurso", desc: "Diretor de TI · e-commerce jurídico (OAB e concursos)." },
+    { name: "BipeTech", desc: "Sócio · edtech por trás do TreinadorOAB e do ConectaEduca." },
+    { name: "DireitoHub", desc: "Sócio · legal-tech." },
   ],
   nav: [
-    { label: "Método", href: "#metodo" },
-    { label: "Prova", href: "#prova" },
-    { label: "Materiais", href: "#materiais" },
-    { label: "Trabalhe comigo", href: "#trabalhe" },
+    { label: "Método", href: "/#metodo" },
+    { label: "Materiais", href: "/#materiais" },
+    { label: "Blog", href: "/blog" },
+    { label: "Trabalhe comigo", href: "/#trabalhe" },
   ],
 };
 

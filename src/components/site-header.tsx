@@ -26,7 +26,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a href="#materiais" className="btn btn-primary !px-5 !py-2.5">
+        <a href="/#materiais" className="btn btn-primary !px-5 !py-2.5">
           Material grátis
         </a>
       </div>
