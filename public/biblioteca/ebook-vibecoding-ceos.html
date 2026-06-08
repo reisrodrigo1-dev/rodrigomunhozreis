@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibecoding para CEOs — Guia de Boas Práticas · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   VIBECODING PARA CEOs — Guia de Boas Práticas (E-book)
+   Tema editorial claro · leitura e impressão A4
+   =========================================================== */
+:root{
+  --paper:#F4EFE6; --page:#FBF8F2; --ink:#1B1813; --ink-soft:#3D372E;
+  --muted:#7C7365; --muted-2:#9A9183;
+  --amber:#B5762A; --amber-deep:#8F5C1E; --amber-soft:#F1E5CF;
+  --line:#E4DBCB; --line-strong:#D6CAB4; --danger:#C0532E; --good:#5E7D52;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+::selection{background:var(--amber-soft)}
+
+.page{background:var(--page);max-width:820px;margin:28px auto;padding:72px 76px;box-shadow:0 12px 48px rgba(27,24,19,.10);border:1px solid var(--line);position:relative}
+.page.cover{padding:0;overflow:hidden}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px}
+h3{font-size:22px;margin:34px 0 10px}
+h4{font-size:17px;font-family:var(--sans);font-weight:700;margin:22px 0 6px;letter-spacing:0}
+p{margin:0 0 14px;color:var(--ink-soft)}
+strong,b{color:var(--ink);font-weight:700}
+a{color:var(--amber-deep);text-decoration:none;border-bottom:1px solid var(--amber-soft)}
+.lead{font-size:19px;color:var(--ink-soft);line-height:1.55}
+.muted{color:var(--muted)}
+
+.kicker{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-deep);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.kicker::before{content:"";width:26px;height:1px;background:var(--amber)}
+.chapnum{font-family:var(--serif);font-weight:900;font-size:64px;color:var(--amber-soft);line-height:.8;display:block;margin-bottom:8px}
+.rule{height:1px;background:var(--line-strong);margin:26px 0}
+
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 8px;color:var(--ink-soft)}
+li::marker{color:var(--amber)}
+
+.box{border:1px solid var(--line-strong);border-radius:12px;padding:20px 22px;margin:18px 0;background:#fff}
+.box.amber{background:linear-gradient(180deg,var(--amber-soft),#fff);border-color:#E6CF9F}
+.box.warn{border-color:#E6C2A8;background:#FCF2EA}
+.box .bt{font-weight:700;color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.card{border:1px solid var(--line-strong);border-radius:12px;padding:18px;background:#fff}
+.card h4{margin:0 0 4px}
+.card p{margin:0;font-size:14.5px;color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+tbody td:first-child{font-family:var(--serif);font-weight:600;color:var(--ink)}
+
+code{font-family:var(--mono);font-size:.9em;background:#fff;border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--amber-deep)}
+.codeblock{font-family:var(--mono);font-size:13px;line-height:1.7;background:#1B1813;color:#F4EFE6;border-radius:10px;padding:16px 18px;margin:16px 0;overflow-x:auto;white-space:pre-wrap}
+.codeblock .c{color:#9A9183}
+
+.steps{counter-reset:step;margin:18px 0}
+.step{position:relative;padding:4px 0 16px 44px;border-left:2px solid var(--line);margin-left:14px}
+.step::before{counter-increment:step;content:counter(step);position:absolute;left:-15px;top:0;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;font-family:var(--serif);font-weight:700;font-size:14px;display:grid;place-items:center}
+.step h4{margin:0 0 4px}
+.step:last-child{border-left-color:transparent}
+
+/* prompts */
+.cat{margin:30px 0 6px;display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--line-strong);padding-bottom:8px}
+.cat .cl{font-family:var(--serif);font-weight:900;font-size:22px;color:var(--amber)}
+.cat h3{margin:0;font-size:20px}
+.prompt{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);page-break-inside:avoid;break-inside:avoid}
+.prompt .pn{font-family:var(--mono);font-size:13px;color:var(--amber-deep);font-weight:500;min-width:30px;padding-top:2px}
+.prompt .pc{flex:1}
+.prompt .pt{font-weight:700;color:var(--ink);font-size:15px;margin-bottom:5px}
+.prompt .pq{font-family:var(--mono);font-size:12.5px;line-height:1.62;color:var(--ink-soft);background:#fff;border:1px solid var(--line);border-radius:8px;padding:11px 13px;cursor:pointer;transition:border-color .15s,background .15s}
+.prompt .pq:hover{border-color:var(--amber);background:#FFFDF8}
+.prompt .pq b{color:var(--ink);font-weight:600}
+.prompt .pq .ph{color:var(--amber-deep)}
+
+.anat{border:1px dashed var(--line-strong);border-radius:12px;padding:18px 20px;margin:18px 0;background:#fff}
+.anat .lab{display:inline-block;font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--amber);border-radius:4px;padding:2px 7px;margin:0 4px 0 0;vertical-align:middle}
+.anat p{font-family:var(--mono);font-size:13px;line-height:1.9;color:var(--ink-soft);margin:0}
+.anat .ph{color:var(--amber-deep)}
+
+.toc{list-style:none;padding:0;margin:24px 0}
+.toc li{display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.toc .tn{font-family:var(--serif);font-weight:700;color:var(--amber);min-width:34px}
+.toc .tt{font-weight:600;flex:1}
+.toc .tp{color:var(--muted);font-family:var(--mono);font-size:13px}
+
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:42px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2)}
+.foot .dot{color:var(--amber)}
+
+#toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--page);padding:11px 20px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;transition:.25s;z-index:100;pointer-events:none}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.cover-inner{padding:84px 76px;background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12 0%, #2C2416 100%);color:var(--page);min-height:980px;display:flex;flex-direction:column}
+.cover-inner .kicker{color:#E9B05C}
+.cover-inner .kicker::before{background:#E9B05C}
+.cover-inner h1{color:#F6EFE2;font-size:clamp(44px,8vw,82px);font-weight:900;line-height:.98;letter-spacing:-.03em;margin:auto 0 0}
+.cover-inner .sub{font-family:var(--serif);font-size:24px;color:#D9C9AE;margin-top:18px;max-width:32ch;line-height:1.3}
+.cover-inner .by{margin-top:42px;color:#B7A788;font-size:15px;letter-spacing:.04em}
+.cover-inner .by b{color:#F6EFE2}
+.cover-tag{margin-top:8px;font-size:13px;color:#9A8C70;letter-spacing:.08em;text-transform:uppercase}
+
+@media (max-width:680px){ .page{padding:40px 26px;margin:14px} .cards{grid-template-columns:1fr} .cover-inner{padding:48px 30px;min-height:auto} }
+@media print{
+  @page{size:A4;margin:16mm 15mm}
+  body{background:#fff;font-size:10.8pt}
+  .page{box-shadow:none;border:none;margin:0;max-width:none;padding:0;page-break-after:always}
+  .cover-inner{min-height:auto;height:262mm;border-radius:0}
+  #toast{display:none}
+  .prompt,.card,.box,.step,.anat{page-break-inside:avoid;break-inside:avoid}
+  h2,h3,.cat{page-break-after:avoid}
+  a{color:var(--amber-deep);border:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<!-- ░░░ CAPA ░░░ -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="kicker">Guia de Boas Práticas · Para CEOs e donos de empresa</div>
+    <h1>Vibecoding<br>para CEOs</h1>
+    <p class="sub">Como construir software com IA — do zero ao deploy — sem virar um risco de segurança.</p>
+    <div class="by"><b>Rodrigo Munhoz Reis</b> · Vibecoding com Engenharia</div>
+    <div class="cover-tag">Ferramentas · Firebase · GitHub · Vercel · Segurança · +20 prompts prontos</div>
+  </div>
+</section>
+
+<!-- ░░░ SUMÁRIO ░░░ -->
+<section class="page">
+  <div class="kicker">O que você vai aprender</div>
+  <h2>Sumário</h2>
+  <ol class="toc">
+    <li><span class="tn">01</span><span class="tt">Por que um CEO precisa entender disso</span><span class="tp">pg. 3</span></li>
+    <li><span class="tn">02</span><span class="tt">A mentalidade: vibecoding com engenharia</span><span class="tp">pg. 4</span></li>
+    <li><span class="tn">03</span><span class="tt">As ferramentas e contas que você precisa</span><span class="tp">pg. 5</span></li>
+    <li><span class="tn">04</span><span class="tt">O fluxo de trabalho seguro (passo a passo)</span><span class="tp">pg. 6</span></li>
+    <li><span class="tn">05</span><span class="tt">Git &amp; GitHub sem dor (e o que NUNCA subir)</span><span class="tp">pg. 7</span></li>
+    <li><span class="tn">06</span><span class="tt">Firebase com segurança</span><span class="tp">pg. 8</span></li>
+    <li><span class="tn">07</span><span class="tt">Deploy na Vercel</span><span class="tp">pg. 9</span></li>
+    <li><span class="tn">08</span><span class="tt">P.E.D.E.R. + agentes especialistas</span><span class="tp">pg. 10</span></li>
+    <li><span class="tn">09</span><span class="tt">Checklist de segurança (não pule)</span><span class="tp">pg. 11</span></li>
+    <li><span class="tn">10</span><span class="tt">Biblioteca de prompts completos</span><span class="tp">pg. 12</span></li>
+  </ol>
+  <div class="box amber">
+    <div class="bt">Como usar este guia</div>
+    <p style="margin:0">Leia os capítulos 1 a 9 uma vez — é a base. Depois, mantenha o capítulo 10 (a biblioteca de prompts) sempre à mão: são comandos prontos para você (ou seu time) colar na IA em cada etapa. <b>Na versão digital, clique em qualquer prompt para copiá-lo.</b></p>
+  </div>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>Guia de Boas Práticas</span></div>
+</section>
+
+<!-- ░░░ CAP 1 ░░░ -->
+<section class="page">
+  <span class="chapnum">01</span>
+  <div class="kicker">A real</div>
+  <h2>Por que um CEO precisa entender disso</h2>
+  <p class="lead">Você não precisa virar programador. Mas, se a sua empresa vai construir software com IA, você precisa saber o que separa um produto sólido de uma bomba-relógio. Senão, você paga a conta sem nem entender por quê.</p>
+  <p>Vibecoding — construir software conversando com a IA — é a maior alavanca de produtividade que já apareceu. Dá pra tirar uma ideia do papel em dias. Mas a velocidade tem um lado perigoso quando ninguém revisa o que a máquina produz.</p>
+  <div class="box warn">
+    <div class="bt">⚠ Os números que assustam</div>
+    <ul style="margin:0">
+      <li>Código gerado por IA tem <b>2,74x mais vulnerabilidades</b> que código humano (Veracode, 2025).</li>
+      <li>61% do código de IA funciona, mas só <b>10,5% passa numa revisão de segurança</b>.</li>
+      <li>Em 5.600 apps "vibecodados": 400+ segredos expostos e 175 vazamentos de dados pessoais.</li>
+    </ul>
+  </div>
+  <p>Traduzindo para a linguagem do dono: <b>vazamento de dado de cliente é multa de LGPD; sistema inseguro é processo e reputação; arquitetura ruim é retrabalho caro.</b> Tudo isso é evitável — com método. É o que este guia te dá.</p>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>03</span></div>
+</section>
+
+<!-- ░░░ CAP 2 ░░░ -->
+<section class="page">
+  <span class="chapnum">02</span>
+  <div class="kicker">Mentalidade</div>
+  <h2>Vibecoding com engenharia</h2>
+  <p class="lead">O inimigo nunca foi a IA. É o <b>vibecoding às cegas</b>: aceitar tudo o que a máquina cospe sem entender.</p>
+  <p>A virada de chave é simples: trate a IA como um <b>estagiário brilhante e rápido — não como um oráculo infalível.</b> Estagiário entrega rápido, mas tudo passa por revisão. Quatro princípios guiam isso:</p>
+  <div class="cards">
+    <div class="card"><h4>1. Plano antes do código</h4><p>Você (ou a IA, sob sua direção) decide arquitetura e escopo antes de gerar qualquer coisa.</p></div>
+    <div class="card"><h4>2. Pedido como especificação</h4><p>Pedido vago gera lixo. Pedido preciso gera código revisável.</p></div>
+    <div class="card"><h4>3. Revisão sempre</h4><p>Nada é aceito sem ler. Use um agente especialista para revisar (cap. 8).</p></div>
+    <div class="card"><h4>4. Você manda na qualidade</h4><p>Nada vai para produção sem passar pelos cuidados de segurança.</p></div>
+  </div>
+  <div class="box amber"><p style="margin:0;font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.35">"Velocidade sem engenharia não é economia. É dívida com juros — e a conta chega na pior hora."</p></div>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>04</span></div>
+</section>
+
+<!-- ░░░ CAP 3 ░░░ -->
+<section class="page">
+  <span class="chapnum">03</span>
+  <div class="kicker">O kit</div>
+  <h2>As ferramentas e contas que você precisa</h2>
+  <p>Você consegue começar com pouco — e quase tudo tem plano gratuito. Este é o kit padrão, simples e seguro:</p>
+  <table>
+    <thead><tr><th>Ferramenta</th><th>Para quê</th><th>Custo</th></tr></thead>
+    <tbody>
+      <tr><td>Editor com IA</td><td>Onde você constrói. Sugestões: <b>Cursor</b>, <b>VS Code + GitHub Copilot</b> ou <b>Claude Code</b>.</td><td>Free / pago</td></tr>
+      <tr><td>Node.js</td><td>Motor que roda projetos web modernos (instale a versão LTS).</td><td>Grátis</td></tr>
+      <tr><td>Git + GitHub</td><td>Controle de versão e onde o código fica guardado/colaborado.</td><td>Grátis</td></tr>
+      <tr><td>Vercel</td><td>Publica o site no ar em minutos, conectado ao GitHub.</td><td>Free / pago</td></tr>
+      <tr><td>Firebase (Google)</td><td>Backend pronto: login, banco de dados, arquivos.</td><td>Free / pago</td></tr>
+      <tr><td>Uma IA</td><td>O cérebro. ChatGPT, Claude ou a IA do próprio editor.</td><td>Free / pago</td></tr>
+    </tbody>
+  </table>
+  <h3>Stack sugerida (a mais simples e segura)</h3>
+  <p>Se você não sabe por onde começar, peça à IA para usar este padrão — é o que roda muito SaaS sério hoje:</p>
+  <div class="codeblock"><span class="c"># Stack padrão recomendada</span>
+Frontend ......... Next.js (React) + Tailwind CSS
+Backend/Banco .... Firebase (Auth + Firestore + Storage)
+Hospedagem ....... Vercel  (conectada ao GitHub)
+Versionamento .... Git + GitHub
+Pagamentos ....... Stripe ou Mercado Pago (quando precisar)</div>
+  <p class="muted">Regra de dono: comece com o mais simples que resolve. Sofisticação vem depois que o produto provar que vale.</p>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>05</span></div>
+</section>
+
+<!-- ░░░ CAP 4 ░░░ -->
+<section class="page">
+  <span class="chapnum">04</span>
+  <div class="kicker">O ritmo certo</div>
+  <h2>O fluxo de trabalho seguro</h2>
+  <p>Todo projeto bem-feito segue o mesmo ciclo. Decore esta ordem — ela evita 90% dos desastres:</p>
+  <div class="steps">
+    <div class="step"><h4>Planejar</h4><p>Antes de codar, peça à IA um plano em fases (MVP primeiro), a arquitetura e os riscos. Não comece pelo código.</p></div>
+    <div class="step"><h4>Construir em pedaços pequenos</h4><p>Uma funcionalidade por vez. Pedaços pequenos são fáceis de revisar e de desfazer.</p></div>
+    <div class="step"><h4>Revisar (Protocolo de 5 Camadas)</h4><p>Entender, Ler, Blindar (segurança/LGPD), Testar e Versionar — antes de aceitar (cap. 8 e 9).</p></div>
+    <div class="step"><h4>Versionar (commit)</h4><p>Commits pequenos e frequentes. Sempre <b>git pull antes de enviar</b> (cap. 5).</p></div>
+    <div class="step"><h4>Publicar (deploy)</h4><p>Subir para a Vercel só depois de passar pelos cuidados. Configure as variáveis no ambiente certo (cap. 7).</p></div>
+  </div>
+  <div class="box"><div class="bt">💡 Regra de ouro</div><p style="margin:0">"Funcionou na tela" não é "está pronto". Pronto é depois de revisado, testado e com os dados protegidos.</p></div>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>06</span></div>
+</section>
+
+<!-- ░░░ CAP 5 ░░░ -->
+<section class="page">
+  <span class="chapnum">05</span>
+  <div class="kicker">Versionamento</div>
+  <h2>Git &amp; GitHub sem dor</h2>
+  <p>Git guarda o histórico do seu código; o GitHub é onde ele fica salvo e compartilhado. Dois cuidados aqui evitam vazamentos e dores de cabeça enormes.</p>
+  <h3>1. Sempre dê <code>git pull</code> antes de subir</h3>
+  <p>Antes de enviar suas mudanças (<code>push</code>), <b>baixe as últimas alterações</b> com <code>git pull</code>. Isso evita sobrescrever o trabalho de outra pessoa (ou de você mesmo em outra máquina) e conflitos feios.</p>
+  <div class="codeblock">git pull        <span class="c"># baixa o que mudou ANTES de subir</span>
+git add .
+git commit -m "minha alteração"
+git push        <span class="c"># agora sim, envia</span></div>
+  <h3>2. NUNCA suba <code>.env</code> nem arquivos sensíveis</h3>
+  <p>O arquivo <code>.env</code> guarda suas <b>senhas e chaves secretas</b>. Se ele for parar no GitHub, qualquer um pode roubar seus acessos. O mesmo vale para chaves e service accounts. Garanta isso no <code>.gitignore</code>:</p>
+  <div class="codeblock"><span class="c"># .gitignore — o que NUNCA versionar</span>
+node_modules
+.next
+.env
+.env*
+*.pem
+*service-account*.json
+<span class="c"># .md — só se você não quiser versionar documentos</span>
+*.md</div>
+  <div class="box warn"><div class="bt">⚠ Peça isso à IA, sempre</div><p style="margin:0">Dê à IA a regra permanente: <b>"nunca inclua arquivos .env, chaves, segredos ou .md no que for subir, e sempre confirme o que vai ser enviado antes do push."</b> Está pronto na biblioteca (prompt 14).</p></div>
+  <p class="muted">Se um segredo já foi para o git, troque a chave (revogue a antiga) — apenas apagar o arquivo não basta, pois ele fica no histórico.</p>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>07</span></div>
+</section>
+
+<!-- ░░░ CAP 6 ░░░ -->
+<section class="page">
+  <span class="chapnum">06</span>
+  <div class="kicker">Backend</div>
+  <h2>Firebase com segurança</h2>
+  <p>O Firebase (do Google) te dá um backend pronto: <b>login</b> (Authentication), <b>banco de dados</b> (Firestore) e <b>arquivos</b> (Storage). Três cuidados são inegociáveis.</p>
+  <div class="steps">
+    <div class="step"><h4>Config em variáveis de ambiente</h4><p>A configuração do Firebase vai no <code>.env.local</code> (nunca colada no código). No padrão Next.js, com o prefixo <code>NEXT_PUBLIC_</code>.</p></div>
+    <div class="step"><h4>Regras de segurança</h4><p>A apiKey do Firebase web é pública por design — a segurança real são as <b>Regras</b> do Firestore e do Storage: definem quem pode ler e escrever cada coisa. Sem regras, seu banco fica aberto.</p></div>
+    <div class="step"><h4>App Check + LGPD</h4><p>Ative o <b>App Check</b> (bloqueia acesso de fora do seu app) e mapeie quais dados pessoais você guarda, onde e quem acessa.</p></div>
+  </div>
+  <div class="box"><div class="bt">Exemplo de regra (Firestore)</div>
+  <div class="codeblock" style="margin:6px 0 0">match /leads/{id} {
+  allow create: if true;        <span class="c">// qualquer um cria (captura)</span>
+  allow read:   if isAdmin();   <span class="c">// só admin lê</span>
+}</div></div>
+  <p>Use o <b>prompt 5</b> da biblioteca: ele já pede a conexão completa + as regras + o App Check, e você só cola a sua config.</p>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>08</span></div>
+</section>
+
+<!-- ░░░ CAP 7 ░░░ -->
+<section class="page">
+  <span class="chapnum">07</span>
+  <div class="kicker">Publicação</div>
+  <h2>Deploy na Vercel</h2>
+  <p>A Vercel publica seu site no ar em minutos, conectada ao seu GitHub. Cada vez que você dá <code>push</code>, ela atualiza o site sozinha.</p>
+  <div class="steps">
+    <div class="step"><h4>Suba o código no GitHub</h4><p>Com os cuidados do capítulo 5 (sem <code>.env</code>, com <code>git pull</code> antes).</p></div>
+    <div class="step"><h4>Importe o repositório na Vercel</h4><p>vercel.com → <b>Add New Project</b> → escolha o repositório. Ela detecta o Next.js sozinha.</p></div>
+    <div class="step"><h4>Configure as variáveis de ambiente</h4><p>Em <b>Settings → Environment Variables</b>, recadastre as MESMAS chaves do seu <code>.env.local</code>. (O <code>.env</code> não vai pelo git — por isso você precisa colá-las aqui.)</p></div>
+    <div class="step"><h4>Deploy e domínio</h4><p>Clique em <b>Deploy</b>. Depois, em <b>Settings → Domains</b>, aponte o seu domínio próprio.</p></div>
+  </div>
+  <div class="box warn"><div class="bt">⚠ O erro nº1 no deploy</div><p style="margin:0">"Funciona no meu PC mas quebra na Vercel" quase sempre é <b>variável de ambiente faltando</b>. Como o <code>.env</code> não sobe para o git, você precisa cadastrá-las também na Vercel.</p></div>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>09</span></div>
+</section>
+
+<!-- ░░░ CAP 8 ░░░ -->
+<section class="page">
+  <span class="chapnum">08</span>
+  <div class="kicker">Como falar com a IA</div>
+  <h2>P.E.D.E.R. + agentes especialistas</h2>
+  <p>Pedido vago = resposta ruim. A receita <b>P.E.D.E.R.</b> garante bons pedidos:</p>
+  <div class="anat">
+    <p><span class="lab">Papel</span> Aja como um arquiteto de software sênior. <span class="lab">Exemplo/Contexto</span> Quero construir <span class="ph">[produto]</span> para <span class="ph">[público]</span>. <span class="lab">Desejo</span> Antes de codar, monte o plano em fases. <span class="lab">Estilo</span> Em tópicos, com riscos destacados. <span class="lab">Refinar</span> Me faça perguntas se faltar algo.</p>
+  </div>
+  <h3>Agentes especialistas: a virada de chave</h3>
+  <p>Em vez de uma IA genérica, peça para ela <b>assumir um papel especialista</b> e salvar esse papel para reusar. Os mais valiosos para um dono de empresa:</p>
+  <ul>
+    <li><b>Agente Arquiteto</b> — monta o plano e a arquitetura antes de qualquer código.</li>
+    <li><b>Agente Revisor de Segurança</b> — lê o código e caça segredos expostos, falhas de autenticação e dados desprotegidos.</li>
+    <li><b>Agente de Deploy</b> — guia GitHub e Vercel com os cuidados certos.</li>
+  </ul>
+  <p>Os prompts 1, 3 e 9 da biblioteca criam exatamente esses agentes. Use-os como ponto de partida de todo projeto.</p>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>10</span></div>
+</section>
+
+<!-- ░░░ CAP 9 ░░░ -->
+<section class="page">
+  <span class="chapnum">09</span>
+  <div class="kicker">Antes de respirar aliviado</div>
+  <h2>Checklist de segurança</h2>
+  <p>Rode esta lista antes de subir qualquer coisa para produção. Se algum item falhar, pare.</p>
+  <table>
+    <tbody>
+      <tr><td>✅ Segredos</td><td><code>.env</code> e chaves <b>fora do git</b> (confirmado no <code>.gitignore</code>).</td></tr>
+      <tr><td>✅ Git</td><td><code>git pull</code> feito antes do <code>push</code>; nenhum <code>.env</code>/<code>.md</code> sensível subindo.</td></tr>
+      <tr><td>✅ Firebase</td><td>Regras do Firestore e do Storage <b>publicadas</b> e restritivas. App Check ativo.</td></tr>
+      <tr><td>✅ Dados (LGPD)</td><td>Você sabe quais dados pessoais coleta, onde ficam e quem acessa.</td></tr>
+      <tr><td>✅ Revisão</td><td>Código passou pelo Protocolo de 5 Camadas / agente revisor.</td></tr>
+      <tr><td>✅ Vercel</td><td>Variáveis de ambiente recadastradas; build sem erros.</td></tr>
+      <tr><td>✅ Backup</td><td>Você consegue voltar atrás (histórico do git, export do banco).</td></tr>
+    </tbody>
+  </table>
+  <div class="box amber"><div class="bt">A pergunta de ouro do dono</div><p style="margin:0">Antes de aceitar qualquer mudança importante, pergunte à IA: <b>"o que isso faz, o que pode quebrar, e isso toca em segurança, dados ou pagamentos?"</b> (prompt 10).</p></div>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>11</span></div>
+</section>
+
+<!-- ░░░ CAP 10 — PROMPTS ░░░ -->
+<section class="page">
+  <span class="chapnum">10</span>
+  <div class="kicker">O coração deste guia</div>
+  <h2>Biblioteca de prompts completos</h2>
+  <p class="lead">Prompts prontos, completos, para colar na IA em cada etapa — do plano ao deploy. Troque o que está <span style="color:var(--amber-deep)">[entre colchetes]</span> pelo seu caso. <b>Na versão digital, clique no prompt para copiar.</b></p>
+
+  <div class="cat"><span class="cl">1</span><h3>Plano &amp; arquitetura</h3></div>
+  <div class="prompt"><div class="pn">01</div><div class="pc"><div class="pt">Montar o plano do projeto (agente arquiteto)</div><div class="pq">Aja como um arquiteto de software sênior. Quero construir <span class="ph">[descreva o produto/ideia]</span> para <span class="ph">[público-alvo]</span>. Antes de escrever QUALQUER código: (1) me faça as perguntas necessárias para entender o escopo; (2) proponha um plano em fases, começando por um MVP enxuto; (3) sugira a arquitetura, as telas e os módulos; (4) liste os principais riscos e cuidados de segurança. Não comece a codar ainda — só o plano. Salve esse papel de "arquiteto" para eu reusar neste projeto.</div></div></div>
+  <div class="prompt"><div class="pn">02</div><div class="pc"><div class="pt">Sugerir a stack (tecnologias)</div><div class="pq">Aja como CTO. Para o projeto <span class="ph">[descreva]</span>, sugira a stack mais simples e segura para um time pequeno, equilibrando custo e velocidade. Inclua: framework de frontend, estilização, backend/banco, autenticação, hospedagem e (se preciso) pagamentos. Para cada escolha, explique o porquê em 1 linha e dê 1 alternativa. Se eu não tiver preferência, use o padrão: Next.js + Tailwind + Firebase + Vercel.</div></div></div>
+
+  <div class="cat"><span class="cl">2</span><h3>Construção &amp; revisão</h3></div>
+  <div class="prompt"><div class="pn">03</div><div class="pc"><div class="pt">Criar agente especialista para analisar o código</div><div class="pq">Crie e salve um agente/persona especialista em revisão de código e segurança para este projeto. Ele deve, em todo código que eu mostrar: (1) explicar em português simples o que o código faz; (2) apontar vulnerabilidades — segredos expostos, falta de validação de entrada, problemas de autenticação/autorização, exposição de dados; (3) apontar problemas de arquitetura e dívida técnica; (4) sugerir as correções, em ordem de gravidade — sem reescrever tudo sem me avisar. A partir de agora, use essa persona quando eu pedir "revisar".</div></div></div>
+  <div class="prompt"><div class="pn">04</div><div class="pc"><div class="pt">Scaffolding inicial com segurança</div><div class="pq">Aja como engenheiro sênior. Crie a base do projeto usando <span class="ph">[stack — ex.: Next.js + Tailwind]</span>. Já configure: estrutura de pastas limpa, variáveis de ambiente em um arquivo <span class="ph">.env.local</span> (NUNCA valores hardcoded no código), e um <span class="ph">.gitignore</span> que ignore node_modules, .next, todos os .env* e arquivos sensíveis (*.pem, service-account*.json). Explique cada arquivo de configuração em 1 linha. Não suba nada ainda.</div></div></div>
+  <div class="prompt"><div class="pn">05</div><div class="pc"><div class="pt">Antes de aceitar qualquer alteração</div><div class="pq">Antes de eu aceitar essa mudança: explique em português simples o que ela faz, o que pode quebrar, e se ela toca em segurança, dados pessoais ou pagamentos. Se tocar, detalhe o cuidado necessário. Não altere mais nada além do que pedi.</div></div></div>
+
+  <div class="cat"><span class="cl">3</span><h3>Firebase</h3></div>
+  <div class="prompt"><div class="pn">06</div><div class="pc"><div class="pt">Conectar o Firebase com segurança</div><div class="pq">Aja como especialista em Firebase. Conecte este projeto ao Firebase usando Authentication, Firestore e Storage. Requisitos obrigatórios: (1) configuração via variáveis de ambiente (NEXT_PUBLIC_*), NUNCA no código; (2) inicialização que não recria o app no hot-reload; (3) me entregue as REGRAS de segurança do Firestore e do Storage, restritivas (leitura/escrita só para quem pode); (4) explique, em passos, como ativar o App Check no console. Aqui está minha config do Firebase: <span class="ph">[cole a config do console]</span>.</div></div></div>
+  <div class="prompt"><div class="pn">07</div><div class="pc"><div class="pt">Login só para mim (admin)</div><div class="pq">Quero uma área de administração que só EU acesse. Implemente login com e-mail/senha (Firebase Auth), proteja as rotas de admin no app e reforce no servidor com as regras do Firestore (só o e-mail <span class="ph">[seu e-mail]</span> pode escrever). Me explique como criar o meu usuário admin no console.</div></div></div>
+
+  <div class="cat"><span class="cl">4</span><h3>Git, GitHub &amp; Vercel</h3></div>
+  <div class="prompt"><div class="pn">08</div><div class="pc"><div class="pt">Configurar o .gitignore (não subir .env/.md)</div><div class="pq">Revise e ajuste meu .gitignore para NUNCA versionar: node_modules, .next/out/build, TODOS os .env*, arquivos .md (por opção minha), e segredos (*.pem, *service-account*.json). Depois, verifique se algum desses já está sendo rastreado pelo git e me diga como removê-lo do versionamento SEM apagar do meu PC (git rm --cached). Confirme a lista final do que será e do que NÃO será enviado.</div></div></div>
+  <div class="prompt"><div class="pn">09</div><div class="pc"><div class="pt">Subir no GitHub (com git pull antes)</div><div class="pq">Me guie, passo a passo e com os comandos exatos, para subir este projeto no GitHub: (1) git init; (2) criar o repositório remoto; (3) adicionar o remote origin; (4) ANTES de cada envio, sempre rodar "git pull" para não sobrescrever nada; (5) git add, commit e push. IMPORTANTE: antes do push, confirme comigo que nenhum arquivo .env, segredo ou .md sensível será enviado.</div></div></div>
+  <div class="prompt"><div class="pn">10</div><div class="pc"><div class="pt">Deploy na Vercel</div><div class="pq">Me guie a publicar este projeto na Vercel, passo a passo e com cliques: (1) conectar o repositório do GitHub; (2) onde e como cadastrar as variáveis de ambiente (as mesmas do meu .env.local, que não foi para o git); (3) como configurar meu domínio próprio; (4) onde ver os logs caso o deploy dê erro. Aponte o erro mais comum (variável de ambiente faltando) e como evitá-lo.</div></div></div>
+
+  <div class="cat"><span class="cl">5</span><h3>Segurança &amp; produção</h3></div>
+  <div class="prompt"><div class="pn">11</div><div class="pc"><div class="pt">Revisão de segurança (Protocolo de 5 Camadas)</div><div class="pq">Aja como auditor de segurança. Revise este código aplicando 5 camadas: (1) Entender o que ele faz; (2) Ler e descrever cada parte; (3) Blindar — procure segredos expostos, falta de validação de entrada, falhas de autenticação/autorização e exposição de dados pessoais (LGPD); (4) Testar — sugira os testes essenciais; (5) Versionar — confirme que nada sensível vai para o git. Liste os problemas por gravidade (crítico/alto/médio) e a correção de cada. Código: <span class="ph">[cole o código]</span>.</div></div></div>
+  <div class="prompt"><div class="pn">12</div><div class="pc"><div class="pt">Checklist de pré-deploy</div><div class="pq">Monte um checklist de pré-deploy para este projeto e me diga o que ainda falta: variáveis de ambiente configuradas (local e na Vercel), .env e segredos fora do git, regras do Firestore/Storage publicadas, App Check ativo, testes passando, build sem erros e um plano de backup/rollback.</div></div></div>
+  <div class="prompt"><div class="pn">13</div><div class="pc"><div class="pt">LGPD e dados pessoais</div><div class="pq">Aja como consultor de LGPD (isto não substitui um advogado). Analise este projeto e liste: quais dados pessoais ele coleta, onde ficam armazenados, quem tem acesso, e o que eu preciso para estar em conformidade (consentimento, política de privacidade, segurança dos dados). Aponte os riscos e como mitigá-los. Contexto do projeto: <span class="ph">[descreva]</span>.</div></div></div>
+  <div class="prompt"><div class="pn">14</div><div class="pc"><div class="pt">Regra permanente (não subir arquivos sensíveis)</div><div class="pq">Regra permanente para este projeto: ao me ajudar a versionar ou subir código, NUNCA inclua arquivos .env, chaves, service accounts ou .md sensíveis. Sempre me mostre e confirme a lista do que será enviado ANTES de qualquer push. Se eu esquecer, me lembre.</div></div></div>
+  <div class="prompt"><div class="pn">15</div><div class="pc"><div class="pt">Debugar um erro com segurança</div><div class="pq">Estou com este erro: <span class="ph">[cole o erro]</span>. Aja como engenheiro sênior: explique a causa provável em português simples, proponha a correção mais segura (sem gambiarra), diga como evitar que volte e confirme que a correção não introduz risco de segurança. Mude só o necessário.</div></div></div>
+
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>12</span></div>
+</section>
+
+<!-- ░░░ ENCERRAMENTO ░░░ -->
+<section class="page">
+  <div class="kicker">Para levar com você</div>
+  <h2>O dono que entende, decide melhor</h2>
+  <p class="lead">Você não precisa escrever código. Mas, sabendo o que é um bom processo, você para de ser refém — de fornecedor, de IA ou de um time sem método.</p>
+  <ul>
+    <li><b>Plano antes do código.</b> Sempre.</li>
+    <li><b>Revisão sempre</b> — com um agente especialista de segurança.</li>
+    <li><b>git pull antes de subir</b>, e <b>nunca</b> versionar .env, segredos ou .md sensíveis.</li>
+    <li><b>Firebase com regras</b>, <b>Vercel com variáveis</b>, e os dados em conformidade com a LGPD.</li>
+  </ul>
+  <div class="box amber"><p style="margin:0;font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.35">"Vibecoding não é atalho para quem não sabe o que está fazendo. É alavanca para quem tem método."</p></div>
+  <div class="rule"></div>
+  <h4>Quer adotar isso na sua empresa sem virar um risco?</h4>
+  <p>Eu ajudo donos de empresa e times a usarem IA com a velocidade da máquina e a segurança da engenharia — palestras e consultoria. Fale comigo no <b>LinkedIn (/in/rodrigoreisoda)</b> ou pelo WhatsApp.</p>
+  <p class="muted" style="font-size:13px;margin-top:24px">© Rodrigo Munhoz Reis · Vibecoding com Engenharia. Sinta-se livre para compartilhar na íntegra.</p>
+  <div class="foot"><span><span class="dot">●</span> Vibecoding para CEOs</span><span>Guia de Boas Práticas</span></div>
+</section>
+
+<div id="toast">Prompt copiado ✓</div>
+<script>
+const toast=document.getElementById('toast');let t;
+document.querySelectorAll('.pq').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const txt=el.innerText.replace(/\s+/g,' ').trim();
+    if(navigator.clipboard){navigator.clipboard.writeText(txt).then(()=>{
+      toast.classList.add('on');clearTimeout(t);t=setTimeout(()=>toast.classList.remove('on'),1600);
+    });}
+  });
+});
+</script>
+</body>
+</html>

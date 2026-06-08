@@ -33,4 +33,12 @@ export const assets: Asset[] = [
     description: "A receita do bom pedido de IA em uma página (imã de geladeira / lead magnet).",
     url: "/biblioteca/cartao-peder.html",
   },
+  {
+    id: "ebook-vibecoding-ceos",
+    title: "Vibecoding para CEOs — Guia de Boas Práticas",
+    kind: "ebook",
+    description:
+      "Guia para donos de empresa: ferramentas, Firebase, GitHub, Vercel, segurança e +15 prompts completos.",
+    url: "/biblioteca/ebook-vibecoding-ceos.html",
+  },
 ];

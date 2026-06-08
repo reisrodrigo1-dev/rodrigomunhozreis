@@ -173,8 +173,8 @@ export default function Home() {
                 <span className="text-grad"> de IA.</span>
               </h2>
               <p className="mt-5 max-w-xl text-lg text-paper/55">
-                O guia “IA Sem Medo”: o método P.E.D.E.R., um plano de 7 dias e 100 prompts para
-                usar no trabalho hoje. Direto ao ponto.
+                O guia “IA Sem Medo”: o método P.E.D.E.R., um plano de 7 dias e mais de 130 prompts
+                prontos — 100 deles para usar no trabalho hoje.
               </p>
               <ul className="mt-6 flex flex-wrap gap-2">
                 {badges.map((b) => (

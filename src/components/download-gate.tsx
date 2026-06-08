@@ -5,9 +5,24 @@ import { createLead } from "@/lib/leads";
 import { recordDownload } from "@/lib/downloads";
 import type { Material } from "@/lib/materials";
 
+/** Máscara de telefone brasileiro: (11) 91234-5678 */
+function maskPhone(value: string): string {
+  const d = value.replace(/\D/g, "").slice(0, 11);
+  if (d.length === 0) return "";
+  if (d.length <= 2) return `(${d}`;
+  if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+  if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+  return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+}
+
+/** Deixa cada palavra do nome com inicial maiúscula. */
+function maskName(value: string): string {
+  return value.replace(/\s+/g, " ").replace(/\b\p{L}/gu, (c) => c.toUpperCase());
+}
+
 /**
- * Portão de download: captura nome + e-mail + WhatsApp, grava o lead e o
- * registro de download no Firestore e então libera o arquivo.
+ * Portão de download: captura nome + e-mail + WhatsApp (com máscaras), grava o
+ * lead e o registro de download no Firestore e então libera o arquivo.
  */
 export function DownloadGate({
   material,
@@ -30,7 +45,8 @@ export function DownloadGate({
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!name || !email || !whatsapp) return;
+    const digits = whatsapp.replace(/\D/g, "");
+    if (!name.trim() || !email || digits.length < 10) return;
     setStatus("loading");
     try {
       const lead = await createLead(email, `material:${material.slug}`, name, whatsapp);
@@ -62,7 +78,7 @@ export function DownloadGate({
         required
         autoComplete="name"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e) => setName(maskName(e.target.value))}
         placeholder="Nome completo"
         className={inputCls}
       />
@@ -75,7 +91,7 @@ export function DownloadGate({
         required
         autoComplete="email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e) => setEmail(e.target.value.trim())}
         placeholder="Seu melhor e-mail"
         className={inputCls}
       />
@@ -86,10 +102,12 @@ export function DownloadGate({
         id={`wa-${material.slug}`}
         type="tel"
         required
+        inputMode="numeric"
         autoComplete="tel"
         value={whatsapp}
-        onChange={(e) => setWhatsapp(e.target.value)}
-        placeholder="WhatsApp (com DDD)"
+        onChange={(e) => setWhatsapp(maskPhone(e.target.value))}
+        placeholder="WhatsApp — (11) 91234-5678"
+        maxLength={16}
         className={inputCls}
       />
       <button
