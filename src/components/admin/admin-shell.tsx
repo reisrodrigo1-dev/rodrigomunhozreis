@@ -18,10 +18,12 @@ const nav = [
   { href: "/admin", label: "Visão geral" },
   { href: "/admin/posts", label: "Blog" },
   { href: "/admin/robos", label: "Robôs" },
+  { href: "/admin/materiais", label: "Materiais" },
   { href: "/admin/alunos", label: "Clientes" },
   { href: "/admin/leads", label: "Leads" },
   { href: "/admin/downloads", label: "Downloads" },
   { href: "/admin/biblioteca", label: "Palestras & E-books" },
+  { href: "/admin/site", label: "Conteúdo da home" },
 ];
 
 function Screen({ children }: { children: React.ReactNode }) {

@@ -51,3 +51,14 @@ export async function deleteDocById(collectionName: string, id: string): Promise
   const { db } = await import("./firebase");
   await deleteDoc(doc(db, collectionName, id));
 }
+
+/** Atualiza campos de um documento (admin). */
+export async function updateDocFields(
+  collectionName: string,
+  id: string,
+  data: Record<string, unknown>
+): Promise<void> {
+  const { doc, updateDoc } = await import("firebase/firestore");
+  const { db } = await import("./firebase");
+  await updateDoc(doc(db, collectionName, id), data);
+}

@@ -1,7 +1,75 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { fetchCollection, fmtDate, type Row } from "@/lib/admin-data";
+
+function toDate(ts: unknown): Date | null {
+  const v = ts as { toDate?: () => Date } | string | number | null;
+  try {
+    if (v && typeof v === "object" && "toDate" in v && v.toDate) return v.toDate();
+    if (v) return new Date(v as string | number);
+  } catch {}
+  return null;
+}
+
+/** Conta leads por origem (source), ordenado do maior para o menor. */
+function bySource(rows: Row[]): { label: string; n: number }[] {
+  const m = new Map<string, number>();
+  for (const r of rows) {
+    const s = String(r.source ?? "—").split(":")[0];
+    m.set(s, (m.get(s) ?? 0) + 1);
+  }
+  return [...m.entries()].map(([label, n]) => ({ label, n })).sort((a, b) => b.n - a.n);
+}
+
+/** Conta leads por dia nos últimos 7 dias. */
+function last7Days(rows: Row[]): { label: string; n: number }[] {
+  const days: { key: string; label: string; n: number }[] = [];
+  const now = new Date();
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+    days.push({
+      key: d.toDateString(),
+      label: d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }),
+      n: 0,
+    });
+  }
+  const idx = new Map(days.map((d, i) => [d.key, i]));
+  for (const r of rows) {
+    const d = toDate(r.createdAt);
+    if (!d) continue;
+    const i = idx.get(d.toDateString());
+    if (i !== undefined) days[i].n += 1;
+  }
+  return days.map(({ label, n }) => ({ label, n }));
+}
+
+function BarChart({ data, title }: { data: { label: string; n: number }[]; title: string }) {
+  const max = Math.max(1, ...data.map((d) => d.n));
+  return (
+    <div className="rounded-2xl border border-line bg-white p-6">
+      <h2 className="font-serif text-lg font-semibold">{title}</h2>
+      {data.length === 0 ? (
+        <p className="mt-3 text-sm text-muted">Sem dados ainda.</p>
+      ) : (
+        <ul className="mt-4 flex flex-col gap-2.5">
+          {data.map((d) => (
+            <li key={d.label} className="flex items-center gap-3 text-sm">
+              <span className="w-28 shrink-0 truncate text-muted" title={d.label}>{d.label}</span>
+              <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-paper">
+                <span
+                  className="block h-full rounded-full bg-amber"
+                  style={{ width: `${(d.n / max) * 100}%` }}
+                />
+              </span>
+              <span className="w-8 shrink-0 text-right font-semibold text-ink">{d.n}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 export default function AdminDashboard() {
   const [leads, setLeads] = useState<Row[]>([]);
@@ -23,6 +91,9 @@ export default function AdminDashboard() {
       }
     })();
   }, []);
+
+  const sources = useMemo(() => bySource(leads), [leads]);
+  const week = useMemo(() => last7Days(leads), [leads]);
 
   return (
     <div>
@@ -48,6 +119,11 @@ export default function AdminDashboard() {
             {state === "loading" ? "…" : downloads.length}
           </p>
         </div>
+      </div>
+
+      <div className="mt-6 grid gap-6 lg:grid-cols-2">
+        <BarChart title="Leads por origem" data={sources} />
+        <BarChart title="Leads nos últimos 7 dias" data={week} />
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">

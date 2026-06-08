@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getAllStudents, type Student } from "@/lib/students";
-import { fmtDate, downloadCSV, deleteDocById, type Row } from "@/lib/admin-data";
+import { fmtDate, downloadCSV, deleteDocById, updateDocFields, type Row } from "@/lib/admin-data";
 
 export default function AdminAlunos() {
   const [rows, setRows] = useState<Student[]>([]);
@@ -24,6 +24,15 @@ export default function AdminAlunos() {
       setRows((rs) => rs.filter((r) => r.uid !== uid));
     } catch {
       alert("Erro ao excluir.");
+    }
+  }
+
+  async function changePlan(uid: string, plan: "free" | "pro") {
+    setRows((rs) => rs.map((r) => (r.uid === uid ? { ...r, plan } : r)));
+    try {
+      await updateDocFields("students", uid, { plan });
+    } catch {
+      alert("Erro ao atualizar o plano.");
     }
   }
 
@@ -60,15 +69,16 @@ export default function AdminAlunos() {
               <th className="px-4 py-3 font-semibold">E-mail</th>
               <th className="px-4 py-3 font-semibold">WhatsApp</th>
               <th className="px-4 py-3 font-semibold">Perfil</th>
+              <th className="px-4 py-3 font-semibold">Plano</th>
               <th className="px-4 py-3 font-semibold">Cadastro</th>
               <th className="px-4 py-3"></th>
             </tr>
           </thead>
           <tbody>
             {state === "loading" ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={6}>Carregando…</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={7}>Carregando…</td></tr>
             ) : rows.length === 0 ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={6}>Nenhum cliente ainda.</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={7}>Nenhum cliente ainda.</td></tr>
             ) : (
               rows.map((r) => (
                 <tr key={r.uid} className="border-b border-line/60 last:border-0">
@@ -76,6 +86,18 @@ export default function AdminAlunos() {
                   <td className="px-4 py-3 text-muted">{r.email}</td>
                   <td className="px-4 py-3 text-muted">{r.whatsapp || "—"}</td>
                   <td className="px-4 py-3 text-muted">{r.perfil || "—"}</td>
+                  <td className="px-4 py-3">
+                    <select
+                      value={r.plan ?? "free"}
+                      onChange={(e) => changePlan(r.uid, e.target.value as "free" | "pro")}
+                      className={`rounded-lg border border-line px-2 py-1 text-xs ${
+                        (r.plan ?? "free") === "pro" ? "font-semibold text-amber-deep" : "text-muted"
+                      }`}
+                    >
+                      <option value="free">Free</option>
+                      <option value="pro">Pro</option>
+                    </select>
+                  </td>
                   <td className="px-4 py-3 text-muted">{fmtDate(r.createdAt)}</td>
                   <td className="px-4 py-3 text-right">
                     <button onClick={() => del(r.uid)} className="text-xs text-red-500 hover:underline">

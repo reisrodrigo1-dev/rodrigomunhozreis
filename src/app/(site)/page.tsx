@@ -2,6 +2,8 @@ import { Reveal } from "@/components/reveal";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { DownloadGate } from "@/components/download-gate";
 import { WorkWithMeForm } from "@/components/work-with-me-form";
+import { CalEmbed } from "@/components/cal-embed";
+import { ProofSection } from "@/components/proof-section";
 import { materials } from "@/lib/materials";
 import { LatestPosts } from "@/components/latest-posts";
 import { site } from "@/lib/site";
@@ -256,6 +258,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== PROVA SOCIAL (editável no admin) ===== */}
+      <ProofSection />
+
       {/* ===== TRABALHE COMIGO ===== */}
       <section id="trabalhe" className="border-t border-white/5 py-20 md:py-28">
         <div className="container-c">
@@ -305,6 +310,7 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
+          <CalEmbed />
         </div>
       </section>
 

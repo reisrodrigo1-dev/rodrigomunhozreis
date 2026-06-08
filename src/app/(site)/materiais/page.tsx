@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
 import { DownloadGate } from "@/components/download-gate";
-import { materials } from "@/lib/materials";
+import { getMaterialsMerged } from "@/lib/materials-db";
+
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Materiais gratuitos",
   description:
     "Baixe gratuitamente o e-book IA Sem Medo e o cartão P.E.D.E.R. — comece a usar IA com método.",
+  alternates: { canonical: "/materiais" },
 };
 
-export default function MateriaisPage() {
+export default async function MateriaisPage() {
+  const materials = await getMaterialsMerged();
   return (
     <section className="py-20 md:py-28">
       <div className="container-c">
