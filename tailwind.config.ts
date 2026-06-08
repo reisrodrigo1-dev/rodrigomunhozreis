@@ -21,6 +21,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-serif)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        accent: ["var(--font-accent)", "Georgia", "serif"],
       },
       maxWidth: { content: "1180px" },
       transitionTimingFunction: { brand: "cubic-bezier(.2,.7,.2,1)" },

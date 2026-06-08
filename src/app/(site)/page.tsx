@@ -12,80 +12,77 @@ const camadas = [
   { n: "5", t: "Versionar", d: "Commits pequenos e rollback fácil antes da produção." },
 ];
 
+const badges = ["Grátis", "+130 prompts", "Plano de 7 dias", "Método P.E.D.E.R."];
+
 export default function Home() {
   const ebook = materials.find((m) => m.id === "ebook-ia-sem-medo") ?? materials[0];
+  const proof = site.companies.map((c) => c.name).join(" · ");
 
   return (
     <>
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden bg-ink text-paper">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-70"
-          style={{
-            background:
-              "radial-gradient(80% 70% at 75% 0%, rgba(224,164,92,.18), transparent 60%)",
-          }}
-        />
-        <div className="container-c relative py-24 md:py-32">
+      <section className="relative">
+        <div className="container-c py-24 text-center md:py-32">
           <Reveal>
-            <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-amber-light">
-              <span className="inline-block h-px w-7 bg-amber-light" />
-              {site.role}
-            </p>
+            <span className="badge">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-amber" />
+              </span>
+              {site.tagline}
+            </span>
           </Reveal>
-          <Reveal delay={0.06}>
-            <h1 className="mt-6 max-w-[16ch] font-serif text-4xl font-black leading-[1.02] tracking-tight md:text-6xl lg:text-7xl">
-              Vibecoding sem virar uma bomba-relógio de segurança.
+          <Reveal delay={0.08}>
+            <h1 className="mx-auto mt-7 max-w-4xl text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
+              <span className="text-grad">Construa com IA</span>
+              <br />
+              <span className="accent text-[1.08em]">sem virar um risco.</span>
             </h1>
           </Reveal>
-          <Reveal delay={0.14}>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-paper/75">
+          <Reveal delay={0.16}>
+            <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-paper/55">
               {site.description}
             </p>
           </Reveal>
-          <Reveal delay={0.22}>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#materiais" className="btn btn-on-dark">
+          <Reveal delay={0.24}>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <a href="#materiais" className="btn btn-glow !px-7 !py-3.5">
                 Baixar o guia grátis
               </a>
-              <a
-                href="#trabalhe"
-                className="btn border border-white/20 text-paper hover:border-amber-light hover:text-amber-light"
-              >
+              <a href="#trabalhe" className="btn btn-dark-ghost !px-7 !py-3.5">
                 Trabalhe comigo
               </a>
             </div>
           </Reveal>
-          <Reveal delay={0.3}>
-            <p className="mt-12 text-sm text-paper/55">
+          <Reveal delay={0.32}>
+            <p className="mt-14 text-sm text-paper/40">
               Quem fala com você roda, em produção:{" "}
-              <span className="text-paper/80">
-                {site.companies.map((c) => c.name).join(" · ")}
-              </span>
+              <span className="text-paper/70">{proof}</span>
             </p>
           </Reveal>
         </div>
       </section>
 
       {/* ===== PROVA ===== */}
-      <section id="prova" className="border-b border-line bg-paper py-20 md:py-28">
+      <section id="prova" className="border-t border-white/5 py-20 md:py-28">
         <div className="container-c">
           <Reveal>
-            <p className="kicker">A prova vem antes do método</p>
-            <h2 className="mt-4 max-w-[18ch] text-3xl md:text-5xl">
-              Não é teoria. É produção.
+            <p className="kicker-d">A prova vem antes do método</p>
+            <h2 className="mt-5 max-w-[18ch] text-4xl font-medium tracking-tight md:text-5xl">
+              <span className="text-grad">Não é teoria. É </span>
+              <span className="accent">produção.</span>
             </h2>
-            <p className="mt-5 max-w-2xl text-lg text-muted">
-              Três empresas reais, com clientes reais, dados sensíveis e LGPD — todas
-              construídas em vibecoding feito com rigor. É essa experiência que eu ensino.
+            <p className="mt-5 max-w-2xl text-lg text-paper/55">
+              Empresas reais, com clientes reais, dados sensíveis e LGPD — todas construídas em
+              vibecoding feito com rigor. É essa experiência que eu ensino.
             </p>
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {site.companies.map((c, i) => (
               <Reveal key={c.name} delay={0.08 * i}>
-                <div className="h-full rounded-2xl border border-line bg-white p-7">
-                  <p className="font-serif text-xl font-semibold">{c.name}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{c.desc}</p>
+                <div className="glass glass-hover h-full p-7">
+                  <p className="text-xl font-semibold text-paper">{c.name}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-paper/50">{c.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -94,76 +91,68 @@ export default function Home() {
       </section>
 
       {/* ===== MÉTODO ===== */}
-      <section id="metodo" className="bg-page py-20 md:py-28">
+      <section id="metodo" className="border-t border-white/5 py-20 md:py-28">
         <div className="container-c">
           <Reveal>
-            <p className="kicker">O método</p>
-            <h2 className="mt-4 max-w-[20ch] text-3xl md:text-5xl">
-              Vibecoding com Engenharia
+            <p className="kicker-d">O método</p>
+            <h2 className="mt-5 max-w-[20ch] text-4xl font-medium tracking-tight md:text-5xl">
+              <span className="text-grad">Vibecoding com </span>
+              <span className="accent">Engenharia.</span>
             </h2>
-            <p className="mt-5 max-w-2xl text-lg text-muted">
+            <p className="mt-5 max-w-2xl text-lg text-paper/55">
               O inimigo não é a IA — é o{" "}
-              <span className="font-medium text-ink">{site.enemy}</span>: aceitar tudo o que
-              ela gera sem entender. A virada é um protocolo simples, aplicado antes de
-              aceitar qualquer linha de código.
+              <span className="font-medium text-paper">{site.enemy}</span>: aceitar tudo o que ela
+              gera sem entender. A virada é um protocolo simples, antes de aceitar qualquer linha.
             </p>
           </Reveal>
 
-          <div className="mt-12">
-            <Reveal>
-              <p className="mb-5 font-serif text-lg font-semibold text-ink">
-                O Protocolo de Revisão em 5 Camadas
-              </p>
-            </Reveal>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-              {camadas.map((c, i) => (
-                <Reveal key={c.n} delay={0.06 * i}>
-                  <div className="h-full rounded-2xl border border-line bg-white p-6">
-                    <span className="font-serif text-3xl font-black text-amber">
-                      {c.n}
-                    </span>
-                    <p className="mt-3 font-semibold">{c.t}</p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{c.d}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+          <p className="mb-5 mt-12 text-sm font-semibold uppercase tracking-widest text-paper/40">
+            O Protocolo de Revisão em 5 Camadas
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {camadas.map((c, i) => (
+              <Reveal key={c.n} delay={0.06 * i}>
+                <div className="glass glass-hover h-full p-6">
+                  <span className="font-accent text-4xl text-amber-light">{c.n}</span>
+                  <p className="mt-3 font-semibold text-paper">{c.t}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-paper/50">{c.d}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
 
           <Reveal>
-            <div className="mt-10 rounded-2xl border border-amber/30 bg-gradient-to-b from-amber-soft to-white p-7">
-              <p className="text-lg text-ink-soft">
+            <div className="glass mt-8 p-7" style={{ background: "rgba(224,164,92,0.06)" }}>
+              <p className="text-lg text-paper/75">
                 Para conversar com a IA, ensino a receita{" "}
-                <span className="font-semibold text-ink">P.E.D.E.R.</span> — Papel, Exemplo,
-                Desejo, Estilo e Refinar. Pedido vago gera resposta ruim; pedido com método
-                gera resposta sob medida.
+                <span className="accent text-xl">P.E.D.E.R.</span> — Papel, Exemplo, Desejo, Estilo
+                e Refinar. Pedido vago gera resposta ruim; pedido com método gera resposta sob medida.
               </p>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ===== LEAD MAGNET — E-BOOK GRÁTIS ===== */}
-      <section id="materiais" className="bg-ink py-20 text-paper md:py-28">
+      {/* ===== LEAD MAGNET ===== */}
+      <section id="materiais" className="border-t border-white/5 py-20 md:py-28">
         <div className="container-c">
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
             <Reveal>
-              <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-amber-light">
-                <span className="inline-block h-px w-7 bg-amber-light" />
-                100% grátis
-              </p>
-              <h2 className="mt-5 max-w-[15ch] font-serif text-3xl font-bold leading-tight md:text-5xl">
-                Baixe o e-book com <span className="text-amber-light">+130 prompts</span> de IA prontos.
+              <p className="kicker-d">100% grátis</p>
+              <h2 className="mt-5 max-w-[15ch] text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+                <span className="text-grad">Baixe o e-book com </span>
+                <span className="accent">+130 prompts</span>
+                <span className="text-grad"> de IA.</span>
               </h2>
-              <p className="mt-5 max-w-xl text-lg text-paper/70">
-                O guia “IA Sem Medo”: o método P.E.D.E.R., um plano de 7 dias e 100 prompts
-                para usar no trabalho hoje. Direto ao ponto, sem enrolação.
+              <p className="mt-5 max-w-xl text-lg text-paper/55">
+                O guia “IA Sem Medo”: o método P.E.D.E.R., um plano de 7 dias e 100 prompts para
+                usar no trabalho hoje. Direto ao ponto.
               </p>
               <ul className="mt-6 flex flex-wrap gap-2">
-                {["Grátis", "+130 prompts", "Plano de 7 dias", "Método P.E.D.E.R."].map((b) => (
+                {badges.map((b) => (
                   <li
                     key={b}
-                    className="rounded-full border border-white/15 px-3 py-1 text-sm text-paper/70"
+                    className="rounded-full border border-white/12 bg-white/5 px-3 py-1 text-sm text-paper/65"
                   >
                     {b}
                   </li>
@@ -172,27 +161,21 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="rounded-2xl border border-line bg-white p-7 text-ink shadow-2xl">
-                <p className="font-serif text-xl font-semibold">Receba agora, de graça</p>
-                <p className="mt-1.5 text-sm text-muted">
+              <div className="glass p-7">
+                <p className="text-xl font-semibold text-paper">Receba agora, de graça</p>
+                <p className="mt-1.5 text-sm text-paper/55">
                   Coloque seu e-mail e o acesso é liberado na hora.
                 </p>
                 <div className="mt-5">
-                  <DownloadGate material={ebook} />
+                  <DownloadGate material={ebook} variant="dark" />
                 </div>
-                <p className="mt-4 text-xs text-muted-soft">
-                  Sem spam. Você cancela quando quiser.
-                </p>
+                <p className="mt-4 text-xs text-paper/40">Sem spam. Você cancela quando quiser.</p>
               </div>
             </Reveal>
           </div>
-
           <Reveal delay={0.15}>
             <p className="mt-10">
-              <a
-                href="/materiais"
-                className="text-sm font-semibold text-amber-light hover:underline"
-              >
+              <a href="/materiais" className="text-sm font-semibold text-amber-light hover:underline">
                 Ver todos os materiais gratuitos →
               </a>
             </p>
@@ -201,59 +184,47 @@ export default function Home() {
       </section>
 
       {/* ===== TRABALHE COMIGO ===== */}
-      <section id="trabalhe" className="bg-ink py-20 text-paper md:py-28">
+      <section id="trabalhe" className="border-t border-white/5 py-20 md:py-28">
         <div className="container-c">
           <Reveal>
-            <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-amber-light">
-              <span className="inline-block h-px w-7 bg-amber-light" />
-              Para empresas e eventos
-            </p>
-            <h2 className="mt-4 text-3xl md:text-5xl">Trabalhe comigo</h2>
+            <p className="kicker-d">Para empresas e eventos</p>
+            <h2 className="mt-5 text-4xl font-medium tracking-tight md:text-5xl">
+              <span className="text-grad">Trabalhe </span>
+              <span className="accent">comigo.</span>
+            </h2>
           </Reveal>
-
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             <Reveal>
-              <div className="h-full rounded-2xl border border-white/15 bg-white/5 p-8">
-                <p className="font-serif text-2xl font-semibold">Palestras</p>
-                <p className="mt-3 text-paper/70">
-                  Da IA para leigos ao vibecoding seguro para times técnicos. Eventos
-                  abertos e in-company.
+              <div className="glass glass-hover h-full p-8">
+                <p className="text-2xl font-semibold text-paper">Palestras</p>
+                <p className="mt-3 text-paper/60">
+                  Da IA para leigos ao vibecoding seguro para times técnicos. Eventos abertos e
+                  in-company.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="h-full rounded-2xl border border-amber/40 bg-amber/10 p-8">
-                <p className="font-serif text-2xl font-semibold">Consultoria</p>
-                <p className="mt-3 text-paper/70">
-                  Adoção de IA e vibecoding seguro na sua empresa, com a visão de quem roda 3
-                  operações reais em produção.
+              <div
+                className="glass glass-hover h-full p-8"
+                style={{ borderColor: "rgba(224,164,92,0.35)", background: "rgba(224,164,92,0.08)" }}
+              >
+                <p className="text-2xl font-semibold text-paper">Consultoria</p>
+                <p className="mt-3 text-paper/60">
+                  Adoção de IA e vibecoding seguro na sua empresa, com a visão de quem roda operações
+                  reais em produção.
                 </p>
               </div>
             </Reveal>
           </div>
-
           <Reveal delay={0.14}>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a
-                href={site.links.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-on-dark"
-              >
+              <a href={site.links.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-glow">
                 Falar no WhatsApp
               </a>
-              <a
-                href={site.links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn border border-white/20 text-paper hover:border-amber-light hover:text-amber-light"
-              >
+              <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-dark-ghost">
                 Agendar pelo LinkedIn
               </a>
-              <a
-                href={site.links.email}
-                className="btn border border-white/20 text-paper hover:border-amber-light hover:text-amber-light"
-              >
+              <a href={site.links.email} className="btn btn-dark-ghost">
                 Enviar um e-mail
               </a>
             </div>
@@ -261,16 +232,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== NEWSLETTER FINAL ===== */}
-      <section className="bg-gradient-to-b from-amber-soft to-paper py-20 md:py-24">
-        <div className="container-c flex flex-col items-start gap-6">
+      {/* ===== CTA FINAL ===== */}
+      <section className="relative overflow-hidden border-t border-white/5 py-28">
+        <div
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{ background: "rgba(224,164,92,0.10)", filter: "blur(100px)" }}
+        />
+        <div className="container-c relative text-center">
           <Reveal>
-            <h2 className="max-w-[20ch] text-3xl md:text-4xl">
-              Aprenda a usar IA com método — toda semana.
+            <h2 className="mx-auto max-w-[20ch] text-4xl font-medium tracking-tight md:text-5xl">
+              <span className="text-grad">Aprenda a usar IA com </span>
+              <span className="accent">método</span>
+              <span className="text-grad"> — toda semana.</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.08}>
-            <NewsletterForm variant="light" source="newsletter-rodape" />
+          <Reveal delay={0.1}>
+            <div className="mt-9 flex justify-center">
+              <NewsletterForm variant="dark" source="newsletter-cta" />
+            </div>
           </Reveal>
         </div>
       </section>

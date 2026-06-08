@@ -39,19 +39,16 @@ export default async function PostPage({ params }: Props) {
   const html = await marked.parse(post.content || "");
 
   return (
-    <article className="bg-paper py-20 md:py-28">
+    <article className="py-20 md:py-28">
       <div className="container-c max-w-3xl">
-        <p className="kicker">{post.tags?.[0] ?? "Artigo"}</p>
-        <h1 className="mt-4 font-serif text-4xl font-bold leading-tight md:text-5xl">
+        <p className="kicker-d">{post.tags?.[0] ?? "Artigo"}</p>
+        <h1 className="mt-5 text-4xl font-medium leading-tight tracking-tight text-paper md:text-5xl">
           {post.title}
         </h1>
-        {post.excerpt && <p className="mt-4 text-xl text-muted">{post.excerpt}</p>}
-        <div
-          className="prose prose-stone mt-10 max-w-none prose-headings:font-serif prose-a:text-amber-deep"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-        <div className="mt-12 border-t border-line pt-6">
-          <a href="/blog" className="text-sm font-semibold text-amber-deep hover:underline">
+        {post.excerpt && <p className="mt-4 text-xl text-paper/55">{post.excerpt}</p>}
+        <div className="prose-dark mt-10" dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="mt-12 border-t border-white/10 pt-6">
+          <a href="/blog" className="text-sm font-semibold text-amber-light hover:underline">
             ← Voltar ao blog
           </a>
         </div>

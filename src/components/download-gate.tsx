@@ -9,7 +9,14 @@ import type { Material } from "@/lib/materials";
  * Portão de download: captura o e-mail, grava o lead + o registro de download
  * no Firestore e então libera o arquivo.
  */
-export function DownloadGate({ material }: { material: Material }) {
+export function DownloadGate({
+  material,
+  variant = "light",
+}: {
+  material: Material;
+  variant?: "light" | "dark";
+}) {
+  const dark = variant === "dark";
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
 
@@ -30,7 +37,7 @@ export function DownloadGate({ material }: { material: Material }) {
 
   if (status === "done") {
     return (
-      <p className="text-sm font-medium text-amber-deep">
+      <p className={`text-sm font-medium ${dark ? "text-amber-light" : "text-amber-deep"}`}>
         ✓ Seu download começou. Verifique também sua caixa de entrada.
       </p>
     );
@@ -49,17 +56,21 @@ export function DownloadGate({ material }: { material: Material }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Seu e-mail"
-        className="min-h-[44px] flex-1 rounded-full border border-line bg-paper px-4 text-sm outline-none transition-colors placeholder:text-muted focus:border-amber"
+        className={`min-h-[44px] flex-1 rounded-full border px-4 text-sm outline-none transition-colors ${
+          dark
+            ? "border-white/15 bg-white/5 text-paper placeholder:text-paper/40 focus:border-amber"
+            : "border-line bg-paper text-ink placeholder:text-muted focus:border-amber"
+        }`}
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="btn btn-primary !px-5 !py-2.5 disabled:opacity-60"
+        className={`btn ${dark ? "btn-glow" : "btn-primary"} !px-5 !py-2.5 disabled:opacity-60`}
       >
         {status === "loading" ? "Enviando…" : "Baixar grátis"}
       </button>
       {status === "error" && (
-        <p className="text-sm text-red-500">Algo deu errado. Tente de novo.</p>
+        <p className="text-sm text-red-400">Algo deu errado. Tente de novo.</p>
       )}
     </form>
   );

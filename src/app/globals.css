@@ -12,12 +12,8 @@
     @apply bg-paper text-ink font-sans;
   }
   ::selection {
-    @apply bg-amber-soft;
+    @apply bg-amber/30 text-white;
   }
-  h1, h2, h3 {
-    @apply font-serif tracking-tight;
-  }
-  /* foco visível e acessível (regra ui-ux-pro-max) */
   :focus-visible {
     outline: 2px solid theme(colors.amber.DEFAULT);
     outline-offset: 3px;
@@ -29,15 +25,10 @@
   .container-c {
     @apply mx-auto w-full max-w-content px-6 md:px-10;
   }
-  .kicker {
-    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-amber-deep;
-  }
-  .kicker::before {
-    content: "";
-    @apply inline-block h-px w-7 bg-amber;
-  }
+
+  /* ===== Botões ===== */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200;
   }
   .btn-primary {
     @apply bg-ink text-paper hover:bg-amber-deep;
@@ -48,9 +39,55 @@
   .btn-on-dark {
     @apply bg-amber text-ink hover:bg-amber-light;
   }
+  .btn-glow {
+    @apply bg-amber text-ink hover:bg-amber-light hover:-translate-y-0.5;
+    box-shadow: 0 10px 34px -8px rgba(224, 164, 92, 0.5);
+  }
+  .btn-dark-ghost {
+    @apply border border-white/15 bg-white/5 text-paper hover:border-amber-light hover:text-amber-light;
+  }
+
+  /* ===== Kicker (claro — admin) ===== */
+  .kicker {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-amber-deep;
+  }
+  .kicker::before {
+    content: "";
+    @apply inline-block h-px w-7 bg-amber;
+  }
+
+  /* ===== Tema escuro premium (site público) ===== */
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm;
+  }
+  .glass-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:border-amber/30;
+  }
+  .text-grad {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.95) 45%, rgba(255, 255, 255, 0.55) 100%);
+  }
+  .accent {
+    @apply font-accent italic text-amber-light;
+  }
+  .kicker-d {
+    @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-amber-light;
+  }
+  .kicker-d::before {
+    content: "";
+    @apply inline-block h-px w-7 bg-amber-light;
+  }
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-amber/25 bg-amber/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-amber-light;
+  }
+  /* tipografia do blog no escuro */
+  .prose-dark {
+    @apply prose prose-invert max-w-none prose-headings:font-sans prose-a:text-amber-light prose-strong:text-white;
+  }
 }
 
-/* respeita quem pediu menos movimento */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }

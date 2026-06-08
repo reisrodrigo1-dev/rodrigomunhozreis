@@ -20,34 +20,33 @@ export default async function BlogPage() {
   }
 
   return (
-    <section className="bg-paper py-20 md:py-28">
+    <section className="py-20 md:py-28">
       <div className="container-c">
         <Reveal>
-          <p className="kicker">Conteúdo</p>
-          <h1 className="mt-4 text-4xl md:text-6xl">Blog</h1>
-          <p className="mt-5 max-w-2xl text-lg text-muted">
+          <p className="kicker-d">Conteúdo</p>
+          <h1 className="mt-5 text-4xl font-medium tracking-tight md:text-6xl">
+            <span className="text-grad">Blog</span>
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg text-paper/55">
             Vibecoding com engenharia, IA sem medo e bastidores reais.
           </p>
         </Reveal>
 
         {posts.length === 0 ? (
-          <p className="mt-12 text-muted">Em breve, os primeiros artigos.</p>
+          <p className="mt-12 text-paper/50">Em breve, os primeiros artigos.</p>
         ) : (
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {posts.map((p, i) => (
               <Reveal key={p.id} delay={0.06 * i}>
-                <Link
-                  href={`/blog/${p.slug}`}
-                  className="block h-full rounded-2xl border border-line bg-white p-7 transition-colors hover:border-amber"
-                >
+                <Link href={`/blog/${p.slug}`} className="glass glass-hover block h-full p-7">
                   {p.tags?.[0] && (
-                    <span className="text-xs font-semibold uppercase tracking-wide text-amber-deep">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-amber-light">
                       {p.tags[0]}
                     </span>
                   )}
-                  <h2 className="mt-2 font-serif text-2xl font-semibold">{p.title}</h2>
-                  <p className="mt-2 text-muted">{p.excerpt}</p>
-                  <span className="mt-4 inline-block text-sm font-semibold text-amber-deep">
+                  <h2 className="mt-2 text-2xl font-semibold text-paper">{p.title}</h2>
+                  <p className="mt-2 text-paper/55">{p.excerpt}</p>
+                  <span className="mt-4 inline-block text-sm font-semibold text-amber-light">
                     Ler artigo →
                   </span>
                 </Link>
