@@ -38,7 +38,7 @@ export const site = {
   projects: [
     {
       name: "MeuCurso",
-      role: "Diretor de TI",
+      role: "Presidente do Comitê de Inovação",
       desc: "Plataforma de cursos preparatórios para OAB, concursos e pós-graduação jurídica.",
       url: "https://meucurso.com.br",
     },
