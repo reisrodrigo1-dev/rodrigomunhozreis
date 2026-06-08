@@ -1,18 +1,6 @@
-import type { Metadata } from "next";
-import { MemberArea } from "@/components/member-area";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Área do Aluno",
-  description: "Crie sua conta grátis e acesse os robôs de IA — e os próximos materiais.",
-  robots: { index: false, follow: false },
-};
-
-export default function AlunoPage() {
-  return (
-    <section className="py-20 md:py-28">
-      <div className="container-c">
-        <MemberArea />
-      </div>
-    </section>
-  );
+// Rota antiga — agora chamamos de "Área do Cliente".
+export default function AlunoRedirect() {
+  redirect("/cliente");
 }

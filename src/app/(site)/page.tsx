@@ -176,9 +176,14 @@ export default function Home() {
                 Especialistas prontos para criar sistemas e tomar decisões. Copie o prompt e leve
                 direto para a sua IA — ChatGPT, Gemini ou Claude. Em 1 clique, ela vira o especialista.
               </p>
-              <a href="/aluno" className="btn btn-glow mt-7 !px-7 !py-3.5">
-                Acessar os robôs
-              </a>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a href="/cliente" className="btn btn-glow !px-7 !py-3.5">
+                  Acessar os robôs
+                </a>
+                <a href="/robos" className="btn btn-dark-ghost !px-7 !py-3.5">
+                  Como funciona
+                </a>
+              </div>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="grid grid-cols-2 gap-3">

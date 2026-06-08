@@ -18,7 +18,7 @@ export default function AdminAlunos() {
   }, []);
 
   async function del(uid: string) {
-    if (!confirm("Excluir este aluno? Isso remove o cadastro (a conta de login continua no Firebase Auth).")) return;
+    if (!confirm("Excluir este cliente? Isso remove o cadastro (a conta de login continua no Firebase Auth).")) return;
     try {
       await deleteDocById("students", uid);
       setRows((rs) => rs.filter((r) => r.uid !== uid));
@@ -30,7 +30,7 @@ export default function AdminAlunos() {
   return (
     <div>
       <div className="flex items-center justify-between gap-4">
-        <h1 className="font-serif text-3xl font-semibold">Alunos</h1>
+        <h1 className="font-serif text-3xl font-semibold">Clientes</h1>
         <button
           onClick={() =>
             downloadCSV(
@@ -48,7 +48,7 @@ export default function AdminAlunos() {
 
       {state === "error" && (
         <p className="mt-6 text-sm text-amber-deep">
-          Não consegui ler os alunos. Verifique o Firestore e as regras.
+          Não consegui ler os clientes. Verifique o Firestore e as regras.
         </p>
       )}
 
@@ -68,7 +68,7 @@ export default function AdminAlunos() {
             {state === "loading" ? (
               <tr><td className="px-4 py-4 text-muted" colSpan={6}>Carregando…</td></tr>
             ) : rows.length === 0 ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={6}>Nenhum aluno ainda.</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={6}>Nenhum cliente ainda.</td></tr>
             ) : (
               rows.map((r) => (
                 <tr key={r.uid} className="border-b border-line/60 last:border-0">

@@ -84,7 +84,7 @@ function AuthForm() {
       <div className="text-center">
         <h1 className="text-3xl font-medium tracking-tight md:text-5xl">
           <span className="text-grad">Área do </span>
-          <span className="accent">Aluno.</span>
+          <span className="accent">Cliente.</span>
         </h1>
         <p className="mt-4 text-paper/55">
           Crie sua conta grátis para acessar os robôs — e os próximos materiais.
@@ -150,16 +150,27 @@ function Dashboard({ user }: { user: User }) {
       .finally(() => setLoaded(true));
   }, []);
 
+  const [q, setQ] = useState("");
+  const [activeCat, setActiveCat] = useState<"Todos" | Robot["category"]>("Todos");
+
   const first = (user.displayName || user.email || "").split(" ")[0];
+  const term = q.trim().toLowerCase();
+  const visible = robots.filter((r) => {
+    const okCat = activeCat === "Todos" || r.category === activeCat;
+    const okTerm =
+      !term || `${r.name} ${r.tagline} ${r.description}`.toLowerCase().includes(term);
+    return okCat && okTerm;
+  });
+  const chips: ("Todos" | Robot["category"])[] = ["Todos", ...categories];
 
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p className="kicker-d">Área do Aluno</p>
+          <p className="kicker-d">Área do Cliente</p>
           <h2 className="mt-3 text-3xl font-medium tracking-tight md:text-4xl">
             <span className="text-grad">Olá, </span>
-            <span className="accent">{first || "aluno"}.</span>
+            <span className="accent">{first || "cliente"}.</span>
           </h2>
         </div>
         <button onClick={() => signOut(auth)} className="btn btn-dark-ghost !px-5 !py-2.5">
@@ -174,26 +185,76 @@ function Dashboard({ user }: { user: User }) {
       {loaded && robots.length === 0 ? (
         <p className="mt-12 text-paper/50">Em breve, os robôs.</p>
       ) : (
-        categories.map((cat) => {
-          const list = robots.filter((r) => r.category === cat);
-          if (list.length === 0) return null;
-          return (
-            <div key={cat} className="mt-12">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">{cat}</h3>
-              <div className="mt-6 grid gap-5 md:grid-cols-3">
-                {list.map((r) => (
-                  <RobotCard key={r.id} robot={r} />
-                ))}
-              </div>
+        <>
+          {/* Filtros */}
+          <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-wrap gap-2">
+              {chips.map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setActiveCat(c)}
+                  className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                    activeCat === c
+                      ? "border-amber bg-amber text-ink"
+                      : "border-white/12 text-paper/65 hover:border-amber/50 hover:text-paper"
+                  }`}
+                >
+                  {c}
+                </button>
+              ))}
             </div>
-          );
-        })
+            <div className="relative md:w-72">
+              <input
+                type="search"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Buscar robô…"
+                aria-label="Buscar robô"
+                className="min-h-[44px] w-full rounded-full border border-white/15 bg-white/5 pl-11 pr-4 text-sm text-paper outline-none transition-colors placeholder:text-paper/40 focus:border-amber"
+              />
+              <svg
+                className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-paper/40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </div>
+          </div>
+
+          {visible.length === 0 ? (
+            <p className="mt-12 text-paper/50">Nenhum robô encontrado para esse filtro.</p>
+          ) : (
+            categories.map((catName) => {
+              const list = visible.filter((r) => r.category === catName);
+              if (list.length === 0) return null;
+              return (
+                <div key={catName} className="mt-12">
+                  <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
+                    {catName}
+                  </h3>
+                  <div className="mt-6 grid gap-5 md:grid-cols-3">
+                    {list.map((r) => (
+                      <RobotCard key={r.id} robot={r} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </>
       )}
 
       <div className="glass mt-14 p-6 text-paper/60">
         <p className="font-serif text-lg font-semibold text-paper">Em breve por aqui</p>
         <p className="mt-1 text-sm">
-          Cursos, e-books e materiais exclusivos — tudo na sua Área do Aluno. Fica de olho.
+          Cursos, e-books e materiais exclusivos — tudo na sua Área do Cliente. Fica de olho.
         </p>
       </div>
     </div>
