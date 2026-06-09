@@ -47,6 +47,7 @@ Isso é só a ponta. No e-book gratuito **"Vibecoding para CEOs"** eu detalho ca
   {
     id: "manifesto",
     slug: "manifesto",
+    contentVersion: 3,
     status: "published",
     tags: ["Manifesto"],
     publishedAt: "2026-06-08",
@@ -69,7 +70,7 @@ A segunda usa a mesma IA — mas como engenheiro. Lê cada parte antes de aceita
 Eu sou o segundo tipo. E não por talento — por **método**.
 
 ## No que eu acredito
-Acredito que o problema nunca foi a IA. É o **vibecoding às cegas**: aceitar o que a máquina cospe sem entender.
+Acredito que o problema nunca foi a IA. É o **[vibecoding às cegas](/blog/os-7-pecados-do-vibecoding-as-cegas)**: aceitar o que a máquina cospe sem entender.
 
 Acredito que você não precisa ser um programador sênior para construir com IA de forma segura. Precisa de um processo — e processo se aprende.
 
@@ -84,11 +85,12 @@ Eu quero o meio com método: a velocidade da IA **com** a segurança da engenhar
 
 > Vibecoding não é atalho para quem não sabe o que está fazendo. É alavanca para quem tem método.
 
-Se essa é a sua praia, fica por aqui. Vou te mostrar exatamente como eu faço.`,
+Se essa é a sua praia, fica por aqui. Vou te mostrar exatamente como eu faço — comece pelos [robôs de IA gratuitos](/robos) ou pelo [e-book IA Sem Medo](/#materiais).`,
   },
   {
     id: "erro-donos-de-empresa-ia-substitui-programadores",
     slug: "erro-donos-de-empresa-ia-substitui-programadores",
+    contentVersion: 3,
     status: "published",
     tags: ["Negócios"],
     publishedAt: "2026-06-06",
@@ -116,11 +118,11 @@ Porque a demo é linda. Em minutos você vê algo "funcionando" e conclui que o 
 ## A verdade que economiza dinheiro
 A IA não substitui o programador. Ela **substitui a digitação** do que já foi pensado. O julgamento de engenharia continua sendo necessário — e, com IA, fica até mais valioso.
 
-O dono esperto não pergunta "como demito o time técnico?". Pergunta: **"como faço meu time entregar 3x mais com IA, sem virar um risco?"**. A resposta é método: gente que sabe revisar o que a IA escreve, aplicando um protocolo de segurança antes de qualquer coisa ir para produção.
+O dono esperto não pergunta "como demito o time técnico?". Pergunta: **"como faço meu time entregar 3x mais com IA, sem virar um risco?"**. A resposta é método: gente que sabe revisar o que a IA escreve, aplicando um [protocolo de segurança](/blog/protocolo-de-5-camadas) antes de qualquer coisa ir para produção.
 
 > Velocidade sem engenharia não é economia. É dívida com juros — e a conta chega na pior hora.
 
-Se você quer adotar IA na sua empresa sem transformar isso numa bomba-relógio, é exatamente esse o trabalho que eu faço. Vamos conversar.
+Se você quer adotar IA na sua empresa sem transformar isso numa bomba-relógio, é exatamente esse o trabalho que eu faço. [Vamos conversar](/#trabalhe).
 
 ## Fontes
 - [Veracode — 2025 GenAI Code Security Report](https://www.veracode.com/blog/ai-generated-code-security-risks/)
@@ -129,6 +131,7 @@ Se você quer adotar IA na sua empresa sem transformar isso numa bomba-relógio,
   {
     id: "os-7-pecados-do-vibecoding-as-cegas",
     slug: "os-7-pecados-do-vibecoding-as-cegas",
+    contentVersion: 3,
     status: "published",
     tags: ["Vibecoding"],
     publishedAt: "2026-06-07",
@@ -165,7 +168,7 @@ Sem commits pequenos e sem rollback, um erro vira incêndio. Versionar é o seu 
 Esse é o pecado-mãe. Lembre: 61% do código de IA funciona, mas só 10,5% é seguro. Funcionar é o começo, não o fim.
 
 ## Como evitar todos eles
-A solução não é parar de vibecodar — é vibecodar **com engenharia**. Antes de aceitar qualquer linha, aplique um protocolo simples de revisão: entender, ler, blindar, testar e versionar. É o que separa quem rói as unhas de quem dorme tranquilo.
+A solução não é parar de vibecodar — é vibecodar **[com engenharia](/blog/vibecoding-com-engenharia)**. Antes de aceitar qualquer linha, aplique um [protocolo simples de revisão](/blog/protocolo-de-5-camadas): entender, ler, blindar, testar e versionar. É o que separa quem rói as unhas de quem dorme tranquilo.
 
 > A IA constrói rápido. Sem método, ela constrói rápido **uma bomba-relógio**.
 
@@ -178,6 +181,7 @@ A solução não é parar de vibecodar — é vibecodar **com engenharia**. Ante
   {
     id: "vibecoding-com-engenharia",
     slug: "vibecoding-com-engenharia",
+    contentVersion: 3,
     status: "published",
     tags: ["Vibecoding"],
     publishedAt: "2026-06-05",
@@ -199,12 +203,12 @@ Mas existe outro caminho, e é o que defendo: **vibecoding com engenharia**.
 4. **Você é o gargalo de qualidade — de propósito.** Nada vai pra produção sem o seu aval.
 
 ## Por que isso importa
-Porque os números do "vibecoding às cegas" são assustadores: código de IA tem **2,74x mais vulnerabilidades** (Veracode, 2025), e **67% dos desenvolvedores dizem gastar mais tempo depurando** código de IA do que antes. Velocidade sem método não é produtividade — é dívida.
+Porque os números do "[vibecoding às cegas](/blog/os-7-pecados-do-vibecoding-as-cegas)" são assustadores: código de IA tem **2,74x mais vulnerabilidades** (Veracode, 2025), e **67% dos desenvolvedores dizem gastar mais tempo depurando** código de IA do que antes. Velocidade sem método não é produtividade — é dívida.
 
 Com engenharia, a equação muda: você ganha a velocidade da IA **sem** herdar os buracos de segurança.
 
 ## Não é sobre saber programar — é sobre ter método
-Você não precisa ser um engenheiro sênior pra vibecodar com segurança. Precisa de um processo: entender o que pediu, ler o que veio, blindar os dados, testar e versionar. Método se aprende — e é mais simples do que parece.
+Você não precisa ser um engenheiro sênior pra vibecodar com segurança. Precisa de um processo — o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas): entender o que pediu, ler o que veio, blindar os dados, testar e versionar. Método se aprende — e é mais simples do que parece.
 
 > Vibecoding não é atalho para quem não sabe o que está fazendo. É alavanca para quem tem método.
 
@@ -218,6 +222,7 @@ Você não precisa ser um engenheiro sênior pra vibecodar com segurança. Preci
   {
     id: "ia-vai-roubar-seu-emprego",
     slug: "ia-vai-roubar-seu-emprego",
+    contentVersion: 3,
     status: "published",
     tags: ["IA & Carreira"],
     publishedAt: "2026-06-04",
@@ -244,7 +249,7 @@ A IA é excelente em tarefa repetitiva e sem pensamento. Então quem fazia **só
 A IA escreve o e-mail. Quem decide se ele deve ser enviado é você. Esse "decidir" é o seu valor — e ele acabou de subir de preço.
 
 ## O que fazer hoje
-Saber operar IA virou habilidade essencial, como usar computador foi em 2000. Daqui a pouco, não vão nem perguntar — vão exigir. A boa notícia: dá pra começar agora, com método.
+Saber operar IA virou habilidade essencial, como usar computador foi em 2000. Daqui a pouco, não vão nem perguntar — vão exigir. A boa notícia: dá pra começar agora, com método — pegue de graça o [e-book IA Sem Medo](/#materiais) e os [robôs de IA](/robos).
 
 > Quem aprende a usar IA não é substituído por IA. É disputado pelas empresas.
 
@@ -257,7 +262,7 @@ Saber operar IA virou habilidade essencial, como usar computador foi em 2000. Da
   {
     id: "protocolo-de-5-camadas",
     slug: "protocolo-de-5-camadas",
-    contentVersion: 2,
+    contentVersion: 3,
     status: "published",
     tags: ["Vibecoding"],
     publishedAt: "2026-06-02",
@@ -284,7 +289,7 @@ Aqui mora a segurança. Confira onde os dados sensíveis trafegam, se há chaves
 Commits pequenos, histórico limpo, rollback fácil. Quando algo quebra (e vai quebrar), você volta atrás em segundos em vez de entrar em pânico.
 
 ## P.R.O.M.P.T.E.R., o irmão do protocolo
-Enquanto o Protocolo de 5 Camadas cuida do **código**, o método **P.R.O.M.P.T.E.R.** cuida da **conversa** com a IA: Papel, Realidade, Objetivo, Marcha, Proteção, Texto de saída, Exemplos e Refino. Juntos, eles transformam vibecoding às cegas em vibecoding com engenharia.
+Enquanto o Protocolo de 5 Camadas cuida do **código**, o método **[P.R.O.M.P.T.E.R.](/blog/como-usar-ia-no-trabalho-peder)** cuida da **conversa** com a IA: Papel, Realidade, Objetivo, Marcha, Proteção, Texto de saída, Exemplos e Refino. Juntos, eles transformam [vibecoding às cegas](/blog/os-7-pecados-do-vibecoding-as-cegas) em [vibecoding com engenharia](/blog/vibecoding-com-engenharia).
 
 > Você não precisa virar programador. Precisa de método para não ser enganado pela própria ferramenta.
 
@@ -296,7 +301,7 @@ Enquanto o Protocolo de 5 Camadas cuida do **código**, o método **P.R.O.M.P.T.
   {
     id: "como-usar-ia-no-trabalho-peder",
     slug: "como-usar-ia-no-trabalho-peder",
-    contentVersion: 2,
+    contentVersion: 3,
     status: "published",
     tags: ["Produtividade"],
     publishedAt: "2026-06-01",
@@ -343,7 +348,7 @@ Mesma IA. A diferença foi só o pedido.
 ## Por que vale a pena
 Não é só conforto: nos setores mais expostos à IA, os salários estão subindo **2x mais rápido** (PwC, 2025). Quem domina a ferramenta fica mais valioso. E começar custa quase nada — dá pra usar de graça hoje à noite.
 
-Quer ir além? Eu reuni o método completo, um plano de 7 dias e **mais de 130 prompts prontos** no e-book gratuito "IA Sem Medo".
+Quer ir além? Eu reuni o método completo, um plano de 7 dias e **mais de 130 prompts prontos** no [e-book gratuito "IA Sem Medo"](/#materiais) — ou use o [Criador de Prompts](/robos) de graça.
 
 ## Fontes
 - [PwC — 2025 Global AI Jobs Barometer](https://www.pwc.com/gx/en/services/ai/ai-jobs-barometer.html)
