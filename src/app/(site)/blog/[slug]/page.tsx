@@ -6,6 +6,7 @@ import { marked } from "marked";
 import { getPostBySlug, getPublishedPosts, toIsoDate, type Post } from "@/lib/posts";
 import { renderMarkdown } from "@/lib/markdown";
 import { PostCta } from "@/components/post-cta";
+import { ViewTracker } from "@/components/view-tracker";
 import { site } from "@/lib/site";
 
 // ISR: revalida a cada 5 min.
@@ -86,6 +87,7 @@ export default async function PostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <ViewTracker slug={post.slug} />
       <div className="container-c max-w-3xl">
         <p className="kicker-d">{post.tags?.[0] ?? "Artigo"}</p>
         <h1 className="mt-5 text-4xl font-medium leading-tight tracking-tight text-paper md:text-5xl">

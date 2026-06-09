@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getAllPosts, importSeedPosts } from "@/lib/posts-admin";
+import { getViews } from "@/lib/views";
 import { fmtDate, type Row } from "@/lib/admin-data";
 import type { Post } from "@/lib/posts";
 
 export default function AdminPosts() {
   const [rows, setRows] = useState<Post[]>([]);
+  const [views, setViews] = useState<Record<string, number>>({});
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
   const [importing, setImporting] = useState(false);
 
@@ -18,7 +20,11 @@ export default function AdminPosts() {
         setState("ok");
       })
       .catch(() => setState("error"));
+    getViews().then(setViews).catch(() => {});
   }, []);
+
+  const totalViews = Object.values(views).reduce((a, b) => a + b, 0);
+  const sorted = [...rows].sort((a, b) => (views[b.slug] ?? 0) - (views[a.slug] ?? 0));
 
   async function handleImport() {
     setImporting(true);
@@ -56,6 +62,11 @@ export default function AdminPosts() {
         </div>
       </div>
 
+      <p className="mt-4 text-sm text-muted">
+        Total de visualizações: <b className="text-ink">{totalViews}</b>
+        {totalViews > 0 && " · lista ordenada pelos mais lidos"}
+      </p>
+
       {state === "error" && (
         <p className="mt-6 text-sm text-amber-deep">
           Não consegui ler os posts. Verifique o Firestore e as regras.
@@ -68,16 +79,17 @@ export default function AdminPosts() {
             <tr className="border-b border-line text-left text-xs uppercase tracking-wide text-muted">
               <th className="px-4 py-3 font-semibold">Título</th>
               <th className="px-4 py-3 font-semibold">Status</th>
+              <th className="px-4 py-3 font-semibold">Views</th>
               <th className="px-4 py-3 font-semibold">Atualizado</th>
             </tr>
           </thead>
           <tbody>
             {state === "loading" ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={3}>Carregando…</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={4}>Carregando…</td></tr>
             ) : rows.length === 0 ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={3}>Nenhum post ainda. Crie o primeiro!</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={4}>Nenhum post ainda. Crie o primeiro!</td></tr>
             ) : (
-              rows.map((p) => (
+              sorted.map((p) => (
                 <tr key={p.id} className="border-b border-line/60 last:border-0 hover:bg-paper">
                   <td className="px-4 py-3 font-medium text-ink">
                     <Link href={`/admin/posts/${p.id}`} className="hover:text-amber-deep">
@@ -95,6 +107,7 @@ export default function AdminPosts() {
                       {p.status === "published" ? "Publicado" : "Rascunho"}
                     </span>
                   </td>
+                  <td className="px-4 py-3 font-semibold text-ink">{views[p.slug] ?? 0}</td>
                   <td className="px-4 py-3 text-muted">{fmtDate((p as Row).updatedAt)}</td>
                 </tr>
               ))

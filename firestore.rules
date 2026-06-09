@@ -93,5 +93,14 @@ service cloud.firestore {
       allow read: if isAdmin();
       allow write: if false;
     }
+
+    // Contador de visualizações de post: leitura só admin; incremento público de +1.
+    match /pageviews/{slug} {
+      allow read: if isAdmin();
+      allow create: if request.resource.data.keys().hasOnly(['slug', 'count', 'updatedAt'])
+                    && request.resource.data.count == 1;
+      allow update: if request.resource.data.keys().hasOnly(['slug', 'count', 'updatedAt'])
+                    && request.resource.data.count == resource.data.count + 1;
+    }
   }
 }
