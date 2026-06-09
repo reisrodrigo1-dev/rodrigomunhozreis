@@ -85,6 +85,24 @@ a{color:var(--amber-deep)}
 .check input{width:20px;height:20px;accent-color:var(--amber-deep);cursor:pointer}
 .check label{font-weight:600;color:var(--ink-soft);cursor:pointer}
 
+/* seletor de ferramenta + blocos condicionais */
+.tools-pick{display:grid;gap:12px;margin-top:16px}
+@media(min-width:680px){.tools-pick{grid-template-columns:repeat(3,1fr)}}
+.pick{text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:border-color .15s,box-shadow .15s;font-family:var(--sans)}
+.pick:hover{border-color:var(--amber)}
+.pick.active{border-color:var(--amber-deep);box-shadow:0 0 0 3px var(--amber-soft);background:#fff}
+.pick .pi{font-size:24px}
+.pick b{display:block;margin-top:8px;font-size:16px;color:var(--ink)}
+.pick .pd{display:block;margin-top:5px;font-size:13px;color:var(--muted);line-height:1.45}
+.pick-status{margin-top:14px;font-size:13.5px;color:var(--amber-deep);font-weight:600}
+.only-claude,.only-copilot,.only-claudecode{display:none}
+body[data-tool="claude"] .only-claude{display:block}
+body[data-tool="copilot"] .only-copilot{display:block}
+body[data-tool="claudecode"] .only-claudecode{display:block}
+.choose-first{display:block;color:var(--muted);font-style:italic}
+body[data-tool] .choose-first{display:none}
+code.cmd{font-family:var(--mono);font-size:12px;background:#fff;border:1px solid var(--line);padding:2px 6px;border-radius:5px}
+
 /* bifurcação Git x Local */
 .fork{padding:36px 0;border-bottom:1px solid var(--line)}
 .fork .grid{display:grid;gap:16px;margin-top:18px}
@@ -155,7 +173,20 @@ a{color:var(--amber-deep)}
     <h2>Como usar este guia</h2>
     <p class="lead">Siga as etapas <b>na ordem</b>, de cima para baixo. Em cada uma você verá o que fazer, o porquê, as ferramentas (com links) e o <b>prompt pronto</b> para colar na sua IA.</p>
     <p><b>Clique em qualquer prompt</b> para copiá-lo. E <b>marque a caixa "concluí"</b> ao terminar cada etapa — o guia guarda o seu progresso neste navegador, então você pode parar e voltar depois.</p>
-    <div class="box"><b>Você vai usar uma IA</b> (o GitHub Copilot dentro do VS Code, ou o ChatGPT/Claude/Gemini). É ela que escreve o código — você conduz, confere e decide. A decisão final é sempre sua.</div>
+    <div class="box"><b>Você vai usar uma IA</b> para construir — e na próxima seção você escolhe qual (Claude, VS Code + Copilot ou Claude Code). O guia se adapta à sua escolha. É a IA que escreve o código; você conduz, confere e decide. A decisão final é sempre sua.</div>
+  </section>
+
+  <!-- ESCOLHA DA FERRAMENTA -->
+  <section class="sec">
+    <div class="kick">Personalize o guia</div>
+    <h2 style="margin-top:12px">Como você vai construir?</h2>
+    <p>Existem três jeitos de construir com IA. Escolha o seu — o guia se adapta às suas etapas. Pode trocar quando quiser.</p>
+    <div class="tools-pick">
+      <button class="pick" data-tool="claude" type="button"><span class="pi">💬</span><b>Claude (claude.ai)</b><span class="pd">O chat da Anthropic, no navegador. Você conversa e cola o código no editor. O mais simples para começar.</span></button>
+      <button class="pick" data-tool="copilot" type="button"><span class="pi">🧩</span><b>VS Code + Copilot</b><span class="pd">A IA dentro do editor de código, escrevendo junto com você. O caminho mais comum.</span></button>
+      <button class="pick" data-tool="claudecode" type="button"><span class="pi">⌨️</span><b>Claude Code</b><span class="pd">O agente da Anthropic no terminal: ele cria os arquivos e roda os comandos sozinho. O mais automático.</span></button>
+    </div>
+    <p class="pick-status" id="pickStatus">👆 Escolha uma ferramenta acima para o guia se adaptar a você.</p>
   </section>
 
   <!-- ETAPA 0 -->
@@ -187,17 +218,49 @@ a{color:var(--amber-deep)}
       </div>
     </div>
     <div class="body">
-      <div class="tools">
-        <div class="lh">Instale (avançar, avançar, concluir)</div>
-        <ul>
-          <li><b>VS Code</b> — onde o código mora: <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a></li>
-          <li><b>Node.js (versão LTS)</b> — o "motor" do projeto: <a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a></li>
-          <li><b>GitHub Copilot</b> — a IA que escreve o código (teste grátis; grátis para estudantes/professores): <a href="https://github.com/features/copilot" target="_blank" rel="noopener">github.com/features/copilot</a></li>
-        </ul>
+      <p class="choose-first">⬆️ Volte e escolha a sua ferramenta na seção acima — as instruções de instalação mudam conforme o seu jeito de construir.</p>
+
+      <!-- Claude (claude.ai) -->
+      <div class="only-claude">
+        <div class="tools">
+          <div class="lh">Para usar o Claude</div>
+          <ul>
+            <li><b>Conta no Claude</b> (grátis): <a href="https://claude.ai/" target="_blank" rel="noopener">claude.ai</a></li>
+            <li><b>VS Code</b> — para salvar e colar o código que o Claude escrever: <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a></li>
+            <li><b>Node.js (versão LTS)</b> — o "motor" que roda o projeto: <a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a></li>
+          </ul>
+        </div>
+        <div class="box"><b>Como funciona:</b> você cola os prompts na conversa do Claude, ele te entrega o código e as instruções, e você cola nos arquivos do VS Code. Simples e visual.</div>
       </div>
-      <p>Depois, dentro do VS Code: clique no ícone de <b>Extensões</b> (os quadradinhos, na lateral), procure por <b>GitHub Copilot</b> e <b>GitHub Copilot Chat</b> e instale os dois. Faça login com sua conta do GitHub quando ele pedir.</p>
-      <div class="box"><b>O Copilot Chat</b> é a janelinha onde você conversa com a IA em português, dentro do VS Code — é ali que você vai colar os próximos prompts.</div>
-      <label class="check"><input type="checkbox" class="done" data-step="1"><span>Concluí: VS Code, Node.js e Copilot instalados</span></label>
+
+      <!-- VS Code + Copilot -->
+      <div class="only-copilot">
+        <div class="tools">
+          <div class="lh">Instale (avançar, avançar, concluir)</div>
+          <ul>
+            <li><b>VS Code</b> — onde o código mora: <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a></li>
+            <li><b>Node.js (versão LTS)</b> — o "motor" do projeto: <a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a></li>
+            <li><b>GitHub Copilot</b> (teste grátis; grátis para estudantes/professores): <a href="https://github.com/features/copilot" target="_blank" rel="noopener">github.com/features/copilot</a></li>
+          </ul>
+        </div>
+        <p>Depois, no VS Code: clique no ícone de <b>Extensões</b> (os quadradinhos, na lateral), procure por <b>GitHub Copilot</b> e <b>GitHub Copilot Chat</b>, instale os dois e faça login com sua conta do GitHub.</p>
+        <div class="box"><b>O Copilot Chat</b> é a janelinha onde você conversa com a IA, dentro do VS Code — é ali que você vai colar os próximos prompts.</div>
+      </div>
+
+      <!-- Claude Code -->
+      <div class="only-claudecode">
+        <div class="tools">
+          <div class="lh">Instale</div>
+          <ul>
+            <li><b>Node.js (versão LTS)</b>: <a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a></li>
+            <li><b>Claude Code</b> — o agente no terminal. Abra o terminal e rode <code class="cmd">npm install -g @anthropic-ai/claude-code</code> — ou siga <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a>. Depois faça login com sua conta Claude.</li>
+            <li><b>VS Code</b> (opcional) — só para ver os arquivos: <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a></li>
+          </ul>
+        </div>
+        <div class="box"><b>Como funciona:</b> você abre o terminal na pasta do projeto, digita <code class="cmd">claude</code> e <b>conversa</b>. Ele cria os arquivos e roda os comandos sozinho, pedindo a sua confirmação. É o jeito mais automático — você diz o que quer, ele executa.</div>
+      </div>
+
+      <label class="check"><input type="checkbox" class="done" data-step="1"><span>Concluí: minhas ferramentas estão instaladas</span></label>
     </div>
   </section>
 
@@ -222,6 +285,9 @@ a{color:var(--amber-deep)}
         <li><b>R — Refino:</b> trate como conversa — ajuste até ficar bom.</li>
       </ul>
       <p>Boa notícia: <b>todos os prompts deste guia já vêm montados nesse método.</b> É só preencher o que está <span style="color:var(--amber-deep)">[entre colchetes]</span>.</p>
+      <div class="box only-claude"><b>No Claude:</b> cole cada prompt na conversa do <a href="https://claude.ai/" target="_blank" rel="noopener">claude.ai</a>. Ele responde com o código e os passos — você aplica no VS Code.</div>
+      <div class="box only-copilot"><b>No Copilot:</b> cole cada prompt no <b>Copilot Chat</b> (o ícone de balão na lateral do VS Code).</div>
+      <div class="box only-claudecode"><b>No Claude Code:</b> digite o prompt no terminal (depois de rodar <code class="cmd">claude</code> na pasta do projeto). Ele age direto nos seus arquivos — você só confirma.</div>
       <label class="check"><input type="checkbox" class="done" data-step="2"><span>Concluí: entendi como montar um bom prompt</span></label>
     </div>
   </section>
@@ -236,7 +302,10 @@ a{color:var(--amber-deep)}
       </div>
     </div>
     <div class="body">
-      <p>No VS Code, abra o <b>Copilot Chat</b> e cole o prompt. Siga os comandos que ele mandar digitar no <b>Terminal</b> (menu Terminal → Novo Terminal).</p>
+      <p>Use o prompt abaixo na sua ferramenta e siga os comandos que a IA mandar digitar no <b>Terminal</b>.</p>
+      <div class="box only-claude"><b>Claude:</b> cole no chat; ele te dá o código (copie nos arquivos do VS Code) e os comandos (rode no Terminal: menu Terminal → Novo Terminal).</div>
+      <div class="box only-copilot"><b>Copilot:</b> cole no Copilot Chat; ele aplica no editor — revise antes de aceitar — e te passa os comandos do Terminal.</div>
+      <div class="box only-claudecode"><b>Claude Code:</b> é só descrever no terminal — ele cria os arquivos e roda os comandos sozinho. Confirme cada ação.</div>
       <div class="prompt-wrap">
         <div class="lh">Prompt — O Engenheiro (base) <span class="copy-hint">(clique para copiar)</span></div>
         <div class="pq"><b>Papel:</b> Aja como um Engenheiro Full-Stack sênior e paciente, especialista em ensinar quem nunca programou.<br><b>Contexto:</b> estou no VS Code com o Copilot e já tenho o Node.js instalado; vamos seguir o plano que você me deu. Stack padrão, se eu não definir outra: Next.js + Tailwind.<br><b>Objetivo:</b> criar a base do projeto <span class="ph">[nome]</span> e deixá-lo rodando na minha tela.<br><b>Como fazer:</b> pense passo a passo e me guie com os comandos exatos para eu digitar no terminal, explicando em 1 linha o que cada comando faz. Se algum passo costuma dar erro, me avise antes.<br><b>Cuidados:</b> nunca coloque senhas ou chaves no código — use um arquivo de variáveis de ambiente (.env) e me explique como.<br><b>Formato:</b> ao final, me diga como abrir o projeto no navegador para eu ver funcionando.<br><b>Refino:</b> se eu colar um erro, explique a causa em português simples e a correção mais segura.</div>
@@ -403,6 +472,19 @@ a{color:var(--amber-deep)}
 
 <script>
 (function(){
+  // Seletor de ferramenta
+  var picks = document.querySelectorAll('.pick');
+  var pstatus = document.getElementById('pickStatus');
+  var names = { claude:'Claude (claude.ai)', copilot:'VS Code + Copilot', claudecode:'Claude Code' };
+  function setTool(t){
+    document.body.setAttribute('data-tool', t);
+    picks.forEach(function(p){ p.classList.toggle('active', p.dataset.tool === t); });
+    if(pstatus) pstatus.textContent = '✓ Guia adaptado para: ' + names[t] + '. Pode trocar quando quiser.';
+    try { localStorage.setItem('cz_tool', t); } catch(e){}
+  }
+  picks.forEach(function(p){ p.addEventListener('click', function(){ setTool(p.dataset.tool); }); });
+  try { var savedTool = localStorage.getItem('cz_tool'); if(savedTool && names[savedTool]) setTool(savedTool); } catch(e){}
+
   // Copiar prompt ao clicar
   document.querySelectorAll('.pq').forEach(function(el){
     el.addEventListener('click', function(){
