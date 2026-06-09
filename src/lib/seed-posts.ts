@@ -282,8 +282,8 @@ Aqui mora a segurança. Confira onde os dados sensíveis trafegam, se há chaves
 ## Camada 5 — Versionar
 Commits pequenos, histórico limpo, rollback fácil. Quando algo quebra (e vai quebrar), você volta atrás em segundos em vez de entrar em pânico.
 
-## P.E.D.E.R., o irmão do protocolo
-Enquanto o Protocolo de 5 Camadas cuida do **código**, a receita **P.E.D.E.R.** cuida da **conversa** com a IA: Papel, Exemplo, Desejo, Estilo e Refinar. Juntos, eles transformam vibecoding às cegas em vibecoding com engenharia.
+## P.R.O.M.P.T.E.R., o irmão do protocolo
+Enquanto o Protocolo de 5 Camadas cuida do **código**, o método **P.R.O.M.P.T.E.R.** cuida da **conversa** com a IA: Papel, Realidade, Objetivo, Marcha, Proteção, Texto de saída, Exemplos e Refino. Juntos, eles transformam vibecoding às cegas em vibecoding com engenharia.
 
 > Você não precisa virar programador. Precisa de método para não ser enganado pela própria ferramenta.
 
@@ -300,32 +300,41 @@ Enquanto o Protocolo de 5 Camadas cuida do **código**, a receita **P.E.D.E.R.**
     publishedAt: "2026-06-01",
     coverUrl:
       "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1200&q=80",
-    title: "Como usar IA no trabalho: o método P.E.D.E.R. (com exemplos)",
+    title: "Como usar IA no trabalho: o método P.R.O.M.P.T.E.R. (com exemplos)",
     excerpt:
-      "Pedido vago gera resposta ruim. Aprenda o método P.E.D.E.R. para fazer bons pedidos à IA e ganhar tempo de verdade no trabalho — com exemplos prontos.",
+      "Pedido vago gera resposta ruim. Aprenda o método P.R.O.M.P.T.E.R. para fazer bons pedidos à IA e ganhar tempo de verdade no trabalho — com exemplos prontos.",
     content: `A maior parte das pessoas usa IA do jeito errado: faz um pedido vago e recebe uma resposta genérica. Aí conclui que "a IA não serve pra muita coisa". O problema não é a ferramenta — é o pedido.
 
-A boa notícia: fazer um bom pedido é simples. Toda vez que for **pedir** algo importante, lembre da palavra **P.E.D.E.R.**
+A boa notícia: fazer um bom pedido é simples. Toda vez que for **pedir** algo importante, lembre da palavra **P.R.O.M.P.T.E.R.**
 
 ## P — Papel
 Diga quem a IA deve ser. "Aja como um redator corporativo experiente…". Dar um papel ajusta o tom e a profundidade da resposta.
 
-## E — Exemplo / Contexto
-Dê a sua situação real. Quanto mais contexto, mais a resposta serve para o **seu** caso, e não para qualquer um.
+## R — Realidade
+Dê o seu contexto real. Quanto mais contexto, mais a resposta serve para o **seu** caso, e não para qualquer um.
 
-## D — Desejo
+## O — Objetivo
 Diga exatamente o que quer: um e-mail? Uma lista? Um resumo? Um plano? Seja direto sobre o resultado.
 
-## E — Estilo
+## M — Marcha
+Peça o passo a passo: "pense antes de responder" e "me pergunte se faltar algo". Isso evita que a IA chute.
+
+## P — Proteção
+Cuide dos dados: não cole informações sigilosas sem necessidade. A decisão final é sempre sua.
+
+## T — Texto de saída
 Defina tom e formato. Formal ou descontraído? Curto ou detalhado? Em tópicos ou texto corrido?
 
-## R — Refinar
+## E — Exemplos
+Mostre um modelo do que espera. Um bom exemplo vale mais que dez instruções.
+
+## R — Refino
 Não gostou? Ajuste. "Deixa mais curto", "outro tom", "me dá 3 opções". É o passo que a maioria esquece — e o que mais faz diferença. É uma conversa, não um comando único.
 
 ## Antes e depois
 **Pedido vago:** "faça um anúncio de bolo." → genérico, serve pra qualquer um.
 
-**Pedido P.E.D.E.R.:** "Aja como um vendedor experiente. Estou vendendo bolo caseiro de cenoura para a vizinhança. Escreva um anúncio curto para WhatsApp, simpático, com emojis, em 3 linhas. Depois me dê 2 variações." → pronto para copiar e colar.
+**Pedido P.R.O.M.P.T.E.R.:** "Aja como um vendedor experiente. Estou vendendo bolo caseiro de cenoura para a vizinhança. Escreva um anúncio curto para WhatsApp, simpático, com emojis, em 3 linhas. Depois me dê 2 variações." → pronto para copiar e colar.
 
 Mesma IA. A diferença foi só o pedido.
 
