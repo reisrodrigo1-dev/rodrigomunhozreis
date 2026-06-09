@@ -14,6 +14,15 @@ export type Material = {
  */
 export const materials: Material[] = [
   {
+    id: "ebook-construa-do-zero",
+    title: "Construa do Zero — seu primeiro sistema, passo a passo",
+    slug: "construa-do-zero",
+    type: "guia",
+    description:
+      "Do zero absoluto ao sistema pronto: cada ferramenta, cada prompt, na ordem certa. Marque seu progresso e escolha subir para o Git ou rodar só localmente.",
+    fileUrl: "/biblioteca/ebook-construa-do-zero.html",
+  },
+  {
     id: "ebook-ia-sem-medo",
     title: "IA Sem Medo — Guia Prático",
     slug: "ia-sem-medo",

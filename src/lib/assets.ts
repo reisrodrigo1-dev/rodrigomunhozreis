@@ -13,6 +13,13 @@ export type Asset = {
  */
 export const assets: Asset[] = [
   {
+    id: "ebook-construa-do-zero",
+    title: "Construa do Zero — passo a passo interativo",
+    kind: "ebook",
+    description: "Guia do zero ao sistema pronto: cada ferramenta e prompt, com checkboxes de progresso e ramo Git/Local.",
+    url: "/biblioteca/ebook-construa-do-zero.html",
+  },
+  {
     id: "palestra-ia-sem-medo",
     title: "IA Sem Medo — Deck da Palestra",
     kind: "palestra",
