@@ -4,6 +4,7 @@ import { DownloadGate } from "@/components/download-gate";
 import { WorkWithMeForm } from "@/components/work-with-me-form";
 import { CalEmbed } from "@/components/cal-embed";
 import { ProofSection } from "@/components/proof-section";
+import { GiftPrompt } from "@/components/gift-prompt";
 import { materials } from "@/lib/materials";
 import { LatestPosts } from "@/components/latest-posts";
 import { site } from "@/lib/site";
@@ -165,6 +166,9 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* ===== PRESENTE: CRIADOR DE PROMPTS ===== */}
+      <GiftPrompt />
 
       {/* ===== ROBÔS DE IA ===== */}
       <section id="robos" className="border-t border-white/5 py-20 md:py-28">

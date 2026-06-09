@@ -1,4 +1,5 @@
 import seedData from "./seed-robots.json";
+import { GIFT_PROMPT } from "./gift-prompt";
 
 export type Robot = {
   id: string;
@@ -21,4 +22,19 @@ export type Robot = {
  * Mantidos em JSON (src/lib/seed-robots.json) para preservar fielmente os
  * prompts longos (com aspas, quebras de linha e {chaves}) sem risco de escape.
  */
-export const seedRobots: Robot[] = seedData as Robot[];
+// Robô-presente "Criador de Prompts" — usa o mesmo texto do presente da home
+// (fonte única em gift-prompt.ts). Entra como destaque, no topo da lista.
+const giftRobot: Robot = {
+  id: "criador-de-prompts",
+  name: "Criador de Prompts",
+  tagline: "Diga o que quer; ele monta o prompt profissional",
+  description:
+    "Você descreve o que precisa e ele constrói um prompt completo no método P.R.O.M.P.T.E.R., pronto para colar no ChatGPT, Claude ou Gemini.",
+  category: "Criar sistemas com IA",
+  prompt: GIFT_PROMPT,
+  whenToUse: "Quando você não sabe como escrever um bom prompt — ele escreve por você.",
+  promptVersion: 2,
+};
+
+export const seedRobots: Robot[] = [giftRobot, ...(seedData as Robot[])];
+
