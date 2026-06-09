@@ -357,6 +357,7 @@ Quer ir além? Eu reuni o método completo, um plano de 7 dias e **mais de 130 p
   {
     id: "configurar-vscode-copilot-primeiro-sistema",
     slug: "configurar-vscode-copilot-primeiro-sistema",
+    contentVersion: 3,
     status: "published",
     tags: ["Primeiros Passos"],
     publishedAt: "2026-06-09",
@@ -432,22 +433,22 @@ Abra o **Copilot Chat** no VS Code (ícone de balãozinho na lateral) e use os p
 ### 1) Peça o plano antes de tudo
 Copie e cole:
 
-> Aja como um Arquiteto de Produto e CTO virtual sênior, especialista em transformar ideias em planos de software simples e seguros para quem está construindo com IA pela primeira vez. Meu contexto: eu **não sei programar** e estou usando o GitHub Copilot dentro do VS Code; quero criar **[descreva sua ideia em 1 frase]**, para **[quem vai usar]**. Meu objetivo: que você monte um plano em fases, começando pelo mínimo que já funciona (o MVP). Antes de começar, se faltar alguma informação importante, me faça de 1 a 3 perguntas simples e espere minha resposta — não invente nada. Cuide da segurança desde o início (nada de senhas no código) e me explique cada termo técnico em linguagem simples. Entregue o plano em passos numerados, com uma frase de "por quê" em cada um e os nomes dos arquivos que vamos criar. No fim, diga qual é o primeiro passo prático e ofereça começar por ele. A decisão é sempre minha.
+> **Papel:** Aja como um Arquiteto de Produto e CTO virtual sênior, especialista em transformar ideias em planos de software simples e seguros para quem está construindo com IA pela primeira vez. **Contexto:** eu **não sei programar** e estou usando o GitHub Copilot dentro do VS Code; quero criar **[descreva sua ideia em 1 frase]**, para **[quem vai usar]**. **Objetivo:** que você monte um plano em fases, começando pelo mínimo que já funciona (o MVP). Antes de começar, se faltar alguma informação importante, me faça de 1 a 3 perguntas simples e espere minha resposta — não invente nada. Cuide da segurança desde o início (nada de senhas no código) e me explique cada termo técnico em linguagem simples. Entregue o plano em passos numerados, com uma frase de "por quê" em cada um e os nomes dos arquivos que vamos criar. No fim, diga qual é o primeiro passo prático e ofereça começar por ele. A decisão é sempre minha.
 
 ### 2) Prepare a base do projeto
 Copie e cole:
 
-> Aja como um Engenheiro Full-Stack sênior e paciente, especialista em ensinar quem nunca programou. Meu contexto: estou no VS Code com o Copilot e já tenho o Node.js instalado; vamos seguir o plano que você me deu. Meu objetivo: criar a base do projeto **[nome]** e deixá-lo rodando na minha tela. Pense passo a passo e me guie com os comandos exatos para eu digitar no terminal, explicando em 1 linha o que cada comando faz. Se algum passo costuma dar erro, me avise antes. Nunca coloque senhas ou chaves no código — use um arquivo de variáveis de ambiente e me explique como. Ao final, me diga como abrir o projeto no navegador para eu ver funcionando. Se eu colar um erro, explique a causa em português simples e a correção mais segura.
+> **Papel:** Aja como um Engenheiro Full-Stack sênior e paciente, especialista em ensinar quem nunca programou. **Contexto:** estou no VS Code com o Copilot e já tenho o Node.js instalado; vamos seguir o plano que você me deu. **Objetivo:** criar a base do projeto **[nome]** e deixá-lo rodando na minha tela. **Como fazer:** pense passo a passo e me guie com os comandos exatos para eu digitar no terminal, explicando em 1 linha o que cada comando faz. Se algum passo costuma dar erro, me avise antes. Nunca coloque senhas ou chaves no código — use um arquivo de variáveis de ambiente e me explique como. Ao final, me diga como abrir o projeto no navegador para eu ver funcionando. Se eu colar um erro, explique a causa em português simples e a correção mais segura.
 
 ### 3) Construa a primeira tela
 Copie e cole:
 
-> Aja como um Engenheiro Full-Stack sênior. Meu contexto: o projeto **[nome]** já está rodando; agora quero construir **[a primeira funcionalidade — ex.: a tela inicial com um formulário]**. Meu objetivo: que você implemente isso de forma limpa e simples. Antes, me explique em 1 parágrafo o que vai fazer e o que pode quebrar. Liste os arquivos que vai criar ou mudar e escreva o código comentado nos pontos importantes. Cuide de segurança e de dados pessoais (LGPD) se a tela coletar informações de pessoas. Faça só o que pedi, sem adicionar coisas extras. No fim, me diga como testar e ofereça ajustar o visual se eu quiser.
+> **Papel:** Aja como um Engenheiro Full-Stack sênior. **Contexto:** o projeto **[nome]** já está rodando; agora quero construir **[a primeira funcionalidade — ex.: a tela inicial com um formulário]**. **Objetivo:** que você implemente isso de forma limpa e simples. Antes, me explique em 1 parágrafo o que vai fazer e o que pode quebrar. Liste os arquivos que vai criar ou mudar e escreva o código comentado nos pontos importantes. Cuide de segurança e de dados pessoais (LGPD) se a tela coletar informações de pessoas. Faça só o que pedi, sem adicionar coisas extras. No fim, me diga como testar e ofereça ajustar o visual se eu quiser.
 
 ### 4) Blinde antes de publicar
 Antes de subir qualquer coisa, peça uma revisão de segurança. Copie e cole:
 
-> Aja como um Engenheiro de Segurança de Aplicações (AppSec) sênior. Vou colar abaixo o código que a IA gerou e quero que você revise antes de eu publicar, com foco em segurança. Verifique: há alguma senha, chave ou segredo escrito no código? As entradas do usuário estão validadas? Há algum dado pessoal exposto? Tem algo sensível que não deveria ir para o GitHub? Para cada problema, explique por que importa (em linguagem simples) e me dê a correção pronta. Não invente vulnerabilidade — se estiver tudo certo, diga e explique por quê. Código: **[cole aqui]**.
+> **Papel:** Aja como um Engenheiro de Segurança de Aplicações (AppSec) sênior. Vou colar abaixo o código que a IA gerou e quero que você revise antes de eu publicar, com foco em segurança. Verifique: há alguma senha, chave ou segredo escrito no código? As entradas do usuário estão validadas? Há algum dado pessoal exposto? Tem algo sensível que não deveria ir para o GitHub? Para cada problema, explique por que importa (em linguagem simples) e me dê a correção pronta. Não invente vulnerabilidade — se estiver tudo certo, diga e explique por quê. Código: **[cole aqui]**.
 
 ## Regras de ouro da segurança (decore estas)
 - **Nunca** escreva senhas, chaves ou tokens direto no código. Eles ficam num arquivo de variáveis de ambiente (a IA te ensina a criar) que **nunca** vai para o GitHub.
@@ -466,6 +467,7 @@ Você acabou de montar a bancada, contratar um cozinheiro de IA e aprender a faz
   {
     id: "publicar-site-de-graca-na-vercel",
     slug: "publicar-site-de-graca-na-vercel",
+    contentVersion: 3,
     status: "published",
     tags: ["Primeiros Passos"],
     publishedAt: "2026-06-09",
@@ -517,7 +519,7 @@ A partir de agora, **toda vez que você salvar uma mudança no GitHub, a Vercel 
 ## Prompt pronto — peça ajuda ao seu robô de Deploy
 Travou em algum passo? Cole no Copilot Chat:
 
-> Aja como um Especialista em Deploy (GitHub + Vercel) sênior, paciente, especialista em ensinar quem nunca publicou um site. Meu contexto: tenho um projeto **[descreva — ex.: um site em Next.js]** e quero colocá-lo no ar de graça na Vercel; meu nível é iniciante total. Meu objetivo: me guiar, passo a passo e com os cliques exatos, de onde estou **[ainda no meu computador / já no GitHub]** até o site publicado. Antes, me pergunte em que ponto estou se não estiver claro. Cuide da segurança: me lembre de NUNCA subir senhas ou chaves para o GitHub e de cadastrá-las nas variáveis de ambiente da Vercel. Explique cada termo técnico em uma linha e me avise do erro nº 1 de iniciante (esquecer uma variável de ambiente). No fim, me diga como ver o site no ar e como configurar um domínio próprio.
+> **Papel:** Aja como um Especialista em Deploy (GitHub + Vercel) sênior, paciente, especialista em ensinar quem nunca publicou um site. **Contexto:** tenho um projeto **[descreva — ex.: um site em Next.js]** e quero colocá-lo no ar de graça na Vercel; meu nível é iniciante total. **Objetivo:** me guiar, passo a passo e com os cliques exatos, de onde estou **[ainda no meu computador / já no GitHub]** até o site publicado. Antes, me pergunte em que ponto estou se não estiver claro. Cuide da segurança: me lembre de NUNCA subir senhas ou chaves para o GitHub e de cadastrá-las nas variáveis de ambiente da Vercel. Explique cada termo técnico em uma linha e me avise do erro nº 1 de iniciante (esquecer uma variável de ambiente). No fim, me diga como ver o site no ar e como configurar um domínio próprio.
 
 ## Próximos passos
 - Seu site no ar precisa de conteúdo bom: use o **[Criador de Prompts](/robos)** para criar textos com método.
@@ -529,6 +531,7 @@ Pronto: seu projeto saiu da sua tela e ganhou o mundo. Bem-vindo ao ar.
   {
     id: "conectar-banco-de-dados-firebase-sem-medo",
     slug: "conectar-banco-de-dados-firebase-sem-medo",
+    contentVersion: 3,
     status: "published",
     tags: ["Primeiros Passos"],
     publishedAt: "2026-06-09",
@@ -578,7 +581,7 @@ O **App Check** garante que só o **seu** site fale com o banco — bloqueando r
 ## Prompt pronto — seu robô de Firebase
 Cole no Copilot Chat:
 
-> Aja como um Engenheiro de Dados sênior, especialista em Firebase (Firestore, Authentication, App Check e regras de segurança), paciente com quem nunca usou banco de dados. Meu contexto: estou criando **[descreva o sistema]** e os dados que vou guardar são **[ex.: cadastros com nome, e-mail e telefone]**; meu nível é iniciante. Meu objetivo: me guiar a conectar o Firebase com segurança — a configuração via variáveis de ambiente (nunca no código), o modelo dos dados e as **regras de segurança restritivas** (negar por padrão, liberar só o necessário), explicando cada regra em uma frase simples. Antes, me pergunte quais dados pessoais eu coleto e quem pode ler ou escrever cada coisa. Cuide da LGPD e me lembre de NÃO usar o modo de teste e de ativar o App Check. No fim, me diga como testar se as regras estão bloqueando o acesso indevido.
+> **Papel:** Aja como um Engenheiro de Dados sênior, especialista em Firebase (Firestore, Authentication, App Check e regras de segurança), paciente com quem nunca usou banco de dados. **Contexto:** estou criando **[descreva o sistema]** e os dados que vou guardar são **[ex.: cadastros com nome, e-mail e telefone]**; meu nível é iniciante. **Objetivo:** me guiar a conectar o Firebase com segurança — a configuração via variáveis de ambiente (nunca no código), o modelo dos dados e as **regras de segurança restritivas** (negar por padrão, liberar só o necessário), explicando cada regra em uma frase simples. Antes, me pergunte quais dados pessoais eu coleto e quem pode ler ou escrever cada coisa. Cuide da LGPD e me lembre de NÃO usar o modo de teste e de ativar o App Check. No fim, me diga como testar se as regras estão bloqueando o acesso indevido.
 
 ## Regras de ouro
 - **Nunca** o modo de teste em produção.
@@ -596,6 +599,7 @@ Banco conectado e blindado. Agora seu sistema tem memória — e segurança.
   {
     id: "nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore",
     slug: "nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore",
+    contentVersion: 3,
     status: "published",
     tags: ["Primeiros Passos"],
     publishedAt: "2026-06-09",
@@ -636,7 +640,7 @@ Calma — e aja rápido:
 ## Prompt pronto — seu robô de Segurança
 Antes de subir qualquer projeto, cole no Copilot Chat:
 
-> Aja como um Engenheiro de Segurança de Aplicações (AppSec) sênior, paciente com iniciantes. Meu contexto: vou publicar meu projeto e quero ter certeza de que não estou vazando nenhum segredo; meu nível é iniciante. Meu objetivo: que você (1) configure meu .gitignore para ignorar todos os arquivos .env e segredos; (2) verifique, no código que eu colar, se há alguma senha, chave ou token escrito direto; (3) me explique, em linguagem simples, o que encontrou e como corrigir. Pense passo a passo. Se eu já tiver subido algo, me diga como revogar a chave exposta. Não invente problema — se estiver tudo certo, confirme. Código ou arquivos: **[cole aqui]**.
+> **Papel:** Aja como um Engenheiro de Segurança de Aplicações (AppSec) sênior, paciente com iniciantes. **Contexto:** vou publicar meu projeto e quero ter certeza de que não estou vazando nenhum segredo; meu nível é iniciante. **Objetivo:** que você (1) configure meu .gitignore para ignorar todos os arquivos .env e segredos; (2) verifique, no código que eu colar, se há alguma senha, chave ou token escrito direto; (3) me explique, em linguagem simples, o que encontrou e como corrigir. **Como fazer:** pense passo a passo. Se eu já tiver subido algo, me diga como revogar a chave exposta. Não invente problema — se estiver tudo certo, confirme. Código ou arquivos: **[cole aqui]**.
 
 ## Regras de ouro (cole na geladeira)
 - Segredo **nunca** no código — sempre no .env.
@@ -655,6 +659,7 @@ Segurança não é o assunto chato do final — é o que separa quem brinca de q
   {
     id: "encontrar-erros-sistema-ia-f12-console",
     slug: "encontrar-erros-sistema-ia-f12-console",
+    contentVersion: 3,
     status: "published",
     tags: ["Primeiros Passos"],
     publishedAt: "2026-06-09",
@@ -703,7 +708,7 @@ Se o problema é "cliquei em salvar e não foi" ou "não carregou", clique na ab
 ## Passo 5 — Devolva para a IA do jeito certo
 Aqui está o pulo do gato: **não cole só o erro.** A IA resolve muito melhor quando você dá **contexto** — o que você estava fazendo, o erro completo e (se souber) o trecho de código. Use este prompt:
 
-> Aja como um Engenheiro Sênior de Depuração, paciente e especialista em explicar para quem não programa. Meu contexto: estou construindo **[descreva — ex.: um site em Next.js]** com ajuda da IA e apareceu um erro; meu nível é iniciante. Eu estava tentando **[o que você fazia quando quebrou]**. Meu objetivo: que você descubra a causa e me dê a correção mais segura. Pense passo a passo: 1) explique a causa provável em português simples, em 1 ou 2 frases; 2) me dê a correção pronta, mudando **só o necessário** (sem gambiarra e sem refatorar o resto); 3) diga como evitar que o erro volte; 4) confirme que a correção não cria risco de segurança. Se precisar ver outro arquivo, me peça. O erro completo é: **[cole o erro do console aqui]**. O trecho de código relacionado, se eu souber qual é, é: **[cole aqui, ou escreva "não sei"]**.
+> **Papel:** Aja como um Engenheiro Sênior de Depuração, paciente e especialista em explicar para quem não programa. **Contexto:** estou construindo **[descreva — ex.: um site em Next.js]** com ajuda da IA e apareceu um erro; meu nível é iniciante. Eu estava tentando **[o que você fazia quando quebrou]**. **Objetivo:** que você descubra a causa e me dê a correção mais segura. **Como fazer:** pense passo a passo: 1) explique a causa provável em português simples, em 1 ou 2 frases; 2) me dê a correção pronta, mudando **só o necessário** (sem gambiarra e sem refatorar o resto); 3) diga como evitar que o erro volte; 4) confirme que a correção não cria risco de segurança. Se precisar ver outro arquivo, me peça. **O erro é:** **[cole o erro do console aqui]**. O trecho de código relacionado, se eu souber qual é, é: **[cole aqui, ou escreva "não sei"]**.
 
 ## Passo 6 — Entenda antes de aceitar
 A IA vai propor uma correção. **Não aceite no automático.** Peça para ela explicar a causa em uma frase e mudar só o necessário. Se você não entendeu o porquê, pergunte de novo. Esse é o método: rápido, mas com rigor — nada de gambiarra que volta a quebrar amanhã.
