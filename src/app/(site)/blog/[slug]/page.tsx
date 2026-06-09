@@ -3,10 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
-import { getPostBySlug, getPublishedPosts, toIsoDate, type Post } from "@/lib/posts";
+import { getPostBySlug, getPublishedPosts, slugify, toIsoDate, type Post } from "@/lib/posts";
 import { renderMarkdown } from "@/lib/markdown";
 import { PostCta } from "@/components/post-cta";
 import { ViewTracker } from "@/components/view-tracker";
+import { ReadingProgress } from "@/components/reading-progress";
+import { RelatedPosts } from "@/components/related-posts";
 import { site } from "@/lib/site";
 
 // ISR: revalida a cada 5 min.
@@ -55,7 +57,16 @@ export default async function PostPage({ params }: Props) {
   const post = await load(slug);
   if (!post) notFound();
 
-  const html = renderMarkdown(await marked.parse(post.content || ""));
+  // Renderiza o markdown e, de quebra, monta o sumário (TOC) a partir dos H2.
+  const rawHtml = await marked.parse(post.content || "");
+  const toc: { id: string; text: string }[] = [];
+  const withIds = rawHtml.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/g, (_m, inner) => {
+    const text = String(inner).replace(/<[^>]+>/g, "").trim();
+    const id = slugify(text);
+    if (text) toc.push({ id, text });
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+  const html = renderMarkdown(withIds);
   const minutes = Math.max(1, Math.round((post.content || "").trim().split(/\s+/).length / 200));
   const isoPublished = toIsoDate(post.publishedAt ?? post.createdAt);
   const isoModified = toIsoDate(post.updatedAt) ?? isoPublished;
@@ -81,6 +92,16 @@ export default async function PostPage({ params }: Props) {
     ...(isoModified ? { dateModified: isoModified } : {}),
   };
 
+  // Posts relacionados: mesma categoria primeiro, completa com os demais.
+  let related: Post[] = [];
+  try {
+    const all = await getPublishedPosts();
+    const tag = post.tags?.[0];
+    const sameTag = all.filter((p) => p.slug !== post.slug && (!tag || (p.tags ?? []).includes(tag)));
+    const others = all.filter((p) => p.slug !== post.slug && !sameTag.includes(p));
+    related = [...sameTag, ...others].slice(0, 3);
+  } catch {}
+
   return (
     <article className="py-20 md:py-28">
       <script
@@ -88,6 +109,7 @@ export default async function PostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ViewTracker slug={post.slug} />
+      <ReadingProgress />
       <div className="container-c max-w-3xl">
         <p className="kicker-d">{post.tags?.[0] ?? "Artigo"}</p>
         <h1 className="mt-5 text-4xl font-medium leading-tight tracking-tight text-paper md:text-5xl">
@@ -111,8 +133,25 @@ export default async function PostPage({ params }: Props) {
             />
           </div>
         )}
+        {toc.length >= 3 && (
+          <nav aria-label="Conteúdo do artigo" className="glass mt-10 p-5">
+            <p className="text-xs font-semibold uppercase tracking-widest text-amber-light">
+              Neste artigo
+            </p>
+            <ul className="mt-3 flex flex-col gap-1.5 text-sm">
+              {toc.map((h) => (
+                <li key={h.id}>
+                  <a href={`#${h.id}`} className="text-paper/60 transition-colors hover:text-amber-light">
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
         <div className="prose-dark mt-10" dangerouslySetInnerHTML={{ __html: html }} />
         <PostCta />
+        <RelatedPosts posts={related} />
         <div className="mt-12 border-t border-white/10 pt-6">
           <Link href="/blog" className="text-sm font-semibold text-amber-light hover:underline">
             ← Voltar ao blog

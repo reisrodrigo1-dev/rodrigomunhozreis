@@ -1,13 +1,35 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import type { Post } from "@/lib/posts";
+import { NewsletterForm } from "@/components/newsletter-form";
+import { getViews } from "@/lib/views";
+import { toIsoDate, type Post } from "@/lib/posts";
 
 function readingTime(content: string): number {
   const words = (content || "").trim().split(/\s+/).length;
   return Math.max(1, Math.round(words / 200));
+}
+
+function fmtDate(v: unknown): string {
+  const iso = toIsoDate(v);
+  return iso
+    ? new Date(iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" })
+    : "";
+}
+
+function Meta({ p }: { p: Post }) {
+  const date = fmtDate(p.publishedAt ?? p.createdAt);
+  return (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+      {p.tags?.[0] && (
+        <span className="font-semibold uppercase tracking-wide text-amber-light">{p.tags[0]}</span>
+      )}
+      {date && <span className="text-paper/40">{date}</span>}
+      <span className="text-paper/30">· {readingTime(p.content)} min</span>
+    </div>
+  );
 }
 
 function PostCard({ p }: { p: Post }) {
@@ -27,14 +49,7 @@ function PostCard({ p }: { p: Post }) {
         </div>
       )}
       <div className="flex flex-1 flex-col p-6">
-        <div className="flex items-center gap-3 text-xs">
-          {p.tags?.[0] && (
-            <span className="font-semibold uppercase tracking-wide text-amber-light">
-              {p.tags[0]}
-            </span>
-          )}
-          <span className="text-paper/40">{readingTime(p.content)} min de leitura</span>
-        </div>
+        <Meta p={p} />
         <h3 className="mt-2 text-lg font-semibold text-paper">{p.title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-paper/55">{p.excerpt}</p>
       </div>
@@ -45,6 +60,11 @@ function PostCard({ p }: { p: Post }) {
 export function BlogBrowser({ posts }: { posts: Post[] }) {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("Todos");
+  const [views, setViews] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    getViews().then(setViews).catch(() => {});
+  }, []);
 
   const categories = useMemo(
     () => ["Todos", ...Array.from(new Set(posts.flatMap((p) => p.tags ?? [])))],
@@ -61,6 +81,15 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
       }),
     [posts, q, cat]
   );
+
+  // "Mais lidos" — só quando há visualizações e nenhum filtro ativo.
+  const mostRead = useMemo(() => {
+    if (q || cat !== "Todos") return [];
+    return [...posts]
+      .filter((p) => (views[p.slug] ?? 0) > 0)
+      .sort((a, b) => (views[b.slug] ?? 0) - (views[a.slug] ?? 0))
+      .slice(0, 4);
+  }, [posts, views, q, cat]);
 
   const featured = filtered[0];
   const rest = filtered.slice(1);
@@ -114,6 +143,28 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
         </div>
       </div>
 
+      {/* Mais lidos */}
+      {mostRead.length > 0 && (
+        <div className="mt-10">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-amber-light">Mais lidos</h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {mostRead.map((p, i) => (
+              <Link
+                key={p.id}
+                href={`/blog/${p.slug}`}
+                className="glass glass-hover flex items-start gap-3 p-4"
+              >
+                <span className="font-serif text-2xl font-bold leading-none text-amber/50">{i + 1}</span>
+                <span>
+                  <span className="line-clamp-2 text-sm font-semibold text-paper">{p.title}</span>
+                  <span className="mt-1 block text-xs text-paper/40">{views[p.slug]} leituras</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {filtered.length === 0 ? (
         <p className="mt-16 text-paper/50">Nenhum artigo encontrado para sua busca.</p>
       ) : (
@@ -137,11 +188,7 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
                 <div className="flex flex-col justify-center p-8 md:p-10">
                   <div className="flex items-center gap-3 text-xs">
                     <span className="badge">Em destaque</span>
-                    {featured.tags?.[0] && (
-                      <span className="font-semibold uppercase tracking-wide text-amber-light">
-                        {featured.tags[0]}
-                      </span>
-                    )}
+                    <Meta p={featured} />
                   </div>
                   <h2 className="mt-4 text-2xl font-semibold leading-tight text-paper md:text-3xl">
                     {featured.title}
@@ -156,7 +203,7 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
           )}
 
           {rest.length > 0 && (
-            <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {rest.map((p, i) => (
                 <Reveal key={p.id} delay={0.05 * i}>
                   <PostCard p={p} />
@@ -166,6 +213,19 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
           )}
         </>
       )}
+
+      {/* Newsletter */}
+      <div className="glass mt-16 p-8 text-center md:p-10">
+        <h2 className="text-2xl font-medium tracking-tight text-paper md:text-3xl">
+          Receba os próximos artigos
+        </h2>
+        <p className="mx-auto mt-3 max-w-md text-paper/55">
+          Método, IA e bastidores reais de quem constrói com IA — direto no seu e-mail, sem spam.
+        </p>
+        <div className="mt-6 flex justify-center">
+          <NewsletterForm variant="dark" source="blog" />
+        </div>
+      </div>
     </>
   );
 }
