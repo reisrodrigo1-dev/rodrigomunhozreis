@@ -48,7 +48,13 @@ export function RobotCard({ robot }: { robot: Robot }) {
     <div className="glass glass-hover flex h-full flex-col p-7">
       <h3 className="text-xl font-semibold text-paper">{robot.name}</h3>
       <p className="mt-1 text-sm font-semibold text-amber-light">{robot.tagline}</p>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-paper/55">{robot.description}</p>
+      <p className="mt-3 text-sm leading-relaxed text-paper/55">{robot.description}</p>
+      {robot.whenToUse && (
+        <p className="mt-3 flex-1 text-xs text-paper/45">
+          <span className="font-semibold text-paper/60">Quando usar:</span> {robot.whenToUse}
+        </p>
+      )}
+      {!robot.whenToUse && <div className="flex-1" />}
 
       <button onClick={handleCopy} className="btn btn-glow mt-6 w-fit !px-5 !py-2.5">
         {copied ? "Copiado ✓" : "Copiar prompt"}

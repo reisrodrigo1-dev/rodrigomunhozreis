@@ -24,11 +24,21 @@ export function RobotEditor({
   const [category, setCategory] = useState<Robot["category"]>(
     initial?.category ?? "Criar sistemas com IA"
   );
+  const [whenToUse, setWhenToUse] = useState(initial?.whenToUse ?? "");
   const [prompt, setPrompt] = useState(initial?.prompt ?? "");
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
-    onSave({ name, tagline, description, category, prompt });
+    onSave({
+      name,
+      tagline,
+      description,
+      category,
+      prompt,
+      whenToUse: whenToUse.trim() || undefined,
+      // Preserva a versão do prompt para o importador não sobrescrever edições.
+      promptVersion: initial?.promptVersion,
+    });
   }
 
   return (
@@ -60,8 +70,16 @@ export function RobotEditor({
           <textarea className={`${field} mt-1 min-h-[70px] py-2`} value={description} onChange={(e) => setDescription(e.target.value)} />
         </label>
         <label className="block">
+          <span className="text-sm font-medium">Quando usar (no card)</span>
+          <input className={`${field} mt-1 min-h-[44px]`} value={whenToUse} onChange={(e) => setWhenToUse(e.target.value)} placeholder="Ex.: Quando você tem uma ideia e precisa de um plano." />
+        </label>
+        <label className="block">
           <span className="text-sm font-medium">Prompt (o que é copiado)</span>
           <textarea className={`${field} mt-1 min-h-[320px] py-3 font-mono`} value={prompt} onChange={(e) => setPrompt(e.target.value)} required />
+          <span className={`mt-1 block text-xs ${prompt.length > 1500 ? "text-amber-deep" : "text-muted"}`}>
+            {prompt.length} caracteres
+            {prompt.length > 1500 && " — prompts longos são entregues por “Copiar” (o botão Abrir abre a aba limpa)."}
+          </span>
         </label>
         <div className="flex flex-wrap items-center gap-3 border-t border-line pt-4">
           <button type="submit" disabled={saving} className="btn btn-primary disabled:opacity-60">

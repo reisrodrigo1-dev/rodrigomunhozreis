@@ -22,9 +22,13 @@ export default function AdminRobos() {
   async function handleImport() {
     setImporting(true);
     try {
-      const n = await importSeedRobots();
+      const { created, updated } = await importSeedRobots();
       setRows(await getAllRobots());
-      alert(n > 0 ? `${n} robô(s) importado(s) para o banco.` : "Nada novo para importar.");
+      alert(
+        created + updated > 0
+          ? `${created} criado(s) e ${updated} atualizado(s) para o padrão novo.`
+          : "Tudo já está atualizado."
+      );
     } catch {
       alert("Erro ao importar. Verifique o Firestore e as regras.");
     } finally {
@@ -38,7 +42,7 @@ export default function AdminRobos() {
         <h1 className="font-serif text-3xl font-semibold">Robôs</h1>
         <div className="flex gap-2">
           <button onClick={handleImport} disabled={importing} className="btn btn-ghost !px-4 !py-2 disabled:opacity-50">
-            {importing ? "Importando…" : "Importar robôs iniciais"}
+            {importing ? "Atualizando…" : "Importar / atualizar robôs"}
           </button>
           <Link href="/admin/robos/new" className="btn btn-primary !px-5 !py-2.5">
             Novo robô
