@@ -100,6 +100,27 @@
   animation: pulse-glow 7s ease-in-out infinite;
 }
 
+/* Aurora: manchas âmbar que derivam devagar no fundo (movimento sutil) */
+@keyframes drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(7%, 6%, 0) scale(1.12); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-8%, 4%, 0) scale(1.1); }
+}
+@keyframes drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate3d(5%, -7%, 0) scale(1.2); opacity: 1; }
+}
+.aurora-a { animation: drift-a 24s ease-in-out infinite; }
+.aurora-b { animation: drift-b 31s ease-in-out infinite; }
+.aurora-c { animation: drift-c 27s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-a, .aurora-b, .aurora-c { animation: none; }
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
