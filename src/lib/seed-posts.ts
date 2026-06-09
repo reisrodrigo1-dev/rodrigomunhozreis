@@ -458,4 +458,193 @@ Antes de subir qualquer coisa, peça uma revisão de segurança. Copie e cole:
 Você acabou de montar a bancada, contratar um cozinheiro de IA e aprender a fazer o pedido certo. Agora é construir — com a velocidade da máquina e o cuidado de quem entende de engenharia.
 `,
   },
+  {
+    id: "publicar-site-de-graca-na-vercel",
+    slug: "publicar-site-de-graca-na-vercel",
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-06-09",
+    coverUrl:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    title: "Coloque seu site no ar de graça: deploy na Vercel pelo GitHub, passo a passo",
+    excerpt:
+      "Seu projeto está pronto no computador, mas ninguém vê. Aprenda a publicá-lo de graça na Vercel — do GitHub ao ar em minutos, com domínio próprio e segredos protegidos.",
+    content: `Você construiu seu site ou sistema, ele funciona no seu computador… mas só você consegue ver. **Publicar** (ou "fazer deploy") é colocar seu projeto no ar, com um endereço que qualquer pessoa acessa. E dá para fazer isso **de graça**, em minutos, com a **Vercel**. Este é o passo a passo para quem nunca publicou nada.
+
+## O que é a Vercel (e por que ela)
+Pense na Vercel como a **gráfica + correio** do seu site: ela pega o seu projeto, monta a versão final e entrega ao mundo num endereço na internet. É gratuita para projetos pessoais, rápida e feita para iniciantes.
+
+**Pré-requisito:** seu projeto precisa estar no **GitHub** (sua "geladeira na nuvem"). Se ainda não está, peça ajuda ao Copilot — tem um prompt pronto no fim deste post.
+
+## Passo 1 — Crie sua conta na Vercel
+1. Acesse [vercel.com](https://vercel.com/) e clique em **Sign Up**.
+2. Escolha **Continue with GitHub**.
+
+**Por quê:** entrar com o GitHub já conecta as duas contas, e a Vercel passa a "enxergar" seus projetos.
+
+## Passo 2 — Importe seu projeto
+1. No painel, clique em **Add New… → Project**.
+2. Encontre o repositório do seu projeto e clique em **Import**.
+
+## Passo 3 — Publique (deploy)
+1. A Vercel detecta sozinha o tipo do seu projeto. Normalmente é só clicar em **Deploy**.
+2. Espere 1 a 2 minutos. Quando aparecer o "Congratulations", seu site **está no ar**.
+3. Clique no endereço (algo como **seu-projeto.vercel.app**) e veja funcionando.
+
+**Por que funciona "sozinho":** a Vercel já sabe construir os tipos de projeto mais comuns (como Next.js). Você não precisa configurar nada técnico.
+
+## Passo 4 — As variáveis de ambiente (segredos)
+Se o seu projeto usa senhas ou chaves (de banco de dados, pagamento etc.), elas **NUNCA** ficam no código. Vão num lugar separado e seguro:
+
+1. Na Vercel, abra seu projeto → **Settings → Environment Variables**.
+2. Adicione cada chave (nome e valor) e salve. Depois clique em **Redeploy**.
+
+**Por quê:** o código vai para o GitHub; os segredos não. Assim ninguém rouba suas chaves.
+
+## Passo 5 — Domínio próprio (opcional)
+Quer **www.seusite.com.br** no lugar do endereço .vercel.app?
+1. Compre o domínio (ex.: Registro.br, GoDaddy).
+2. Na Vercel: projeto → **Settings → Domains** → adicione o domínio e siga as instruções.
+
+## A mágica do deploy automático
+A partir de agora, **toda vez que você salvar uma mudança no GitHub, a Vercel publica sozinha** a nova versão. Você programa, salva, e o site se atualiza. Sem trabalho manual.
+
+## Prompt pronto — peça ajuda ao seu robô de Deploy
+Travou em algum passo? Cole no Copilot Chat:
+
+> Aja como um Especialista em Deploy (GitHub + Vercel) sênior, paciente, especialista em ensinar quem nunca publicou um site. Meu contexto: tenho um projeto **[descreva — ex.: um site em Next.js]** e quero colocá-lo no ar de graça na Vercel; meu nível é iniciante total. Meu objetivo: me guiar, passo a passo e com os cliques exatos, de onde estou **[ainda no meu computador / já no GitHub]** até o site publicado. Antes, me pergunte em que ponto estou se não estiver claro. Cuide da segurança: me lembre de NUNCA subir senhas ou chaves para o GitHub e de cadastrá-las nas variáveis de ambiente da Vercel. Explique cada termo técnico em uma linha e me avise do erro nº 1 de iniciante (esquecer uma variável de ambiente). No fim, me diga como ver o site no ar e como configurar um domínio próprio.
+
+## Próximos passos
+- Seu site no ar precisa de conteúdo bom: use o **[Criador de Prompts](/robos)** para criar textos com método.
+- Quer um sistema com login e banco de dados? Veja o próximo tutorial: **conectar um banco de dados sem medo**.
+
+Pronto: seu projeto saiu da sua tela e ganhou o mundo. Bem-vindo ao ar.
+`,
+  },
+  {
+    id: "conectar-banco-de-dados-firebase-sem-medo",
+    slug: "conectar-banco-de-dados-firebase-sem-medo",
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-06-09",
+    coverUrl:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    title: "Conecte um banco de dados sem medo: Firebase do zero para iniciantes",
+    excerpt:
+      "Seu sistema precisa guardar informações — cadastros, mensagens, pedidos. Aprenda a usar o Firebase do zero: salvar dados, criar login e, o mais importante, blindar tudo com as regras de segurança.",
+    content: `Todo sistema sério precisa **guardar informações**: cadastros de clientes, mensagens, pedidos, posts. Para isso existe o **banco de dados**. E o mais fácil para iniciantes é o **Firebase**, do Google. Neste guia você vai criar um banco do zero, guardar dados, fazer um login de usuário e — o pulo do gato — **proteger tudo** com as regras de segurança, explicadas em português de gente.
+
+## O que é um banco de dados (sem susto)
+Pense numa **agenda de contatos gigante na nuvem**: cada informação fica organizada e você busca quando quiser. O **Firebase** é essa agenda — pronta, segura e grátis para começar. Ele tem três partes que você vai usar:
+
+- **Firestore** — onde os dados moram (a agenda).
+- **Authentication** — o login dos usuários (a portaria com a lista de convidados).
+- **Regras de segurança** — o porteiro que decide quem entra e o que cada um pode ver.
+
+## Passo 1 — Crie seu projeto no Firebase
+1. Acesse [console.firebase.google.com](https://console.firebase.google.com/) e entre com sua conta Google.
+2. Clique em **Adicionar projeto**, dê um nome e siga.
+
+## Passo 2 — Conecte seu app
+1. Dentro do projeto, clique no ícone **</>** (Web) para registrar um app.
+2. O Firebase mostra uma configuração (umas chaves). **Não cole isso direto no código** — essas chaves vão nas **variáveis de ambiente** (a IA te ensina a fazer certo).
+
+**Por quê:** manter a configuração fora do código é o primeiro passo de segurança.
+
+## Passo 3 — Crie o banco (Firestore)
+1. No menu lateral, vá em **Firestore Database → Criar banco de dados**.
+2. **MUITO IMPORTANTE:** comece em **modo de produção** (não em modo de teste). O modo de teste deixa seu banco **aberto para o mundo inteiro** por 30 dias — qualquer um lê e escreve. É o erro nº 1 de iniciante.
+
+## Passo 4 — Ligue o login (Authentication)
+1. Vá em **Authentication → Começar**.
+2. Ative o método **E-mail/senha** (ou Google). Pronto: seus usuários já podem criar conta e entrar.
+
+## Passo 5 — O pulo do gato: as regras de segurança
+As **regras** dizem quem pode ler e escrever cada coisa. A lógica certa é: **negar tudo por padrão e liberar só o necessário.** Em português, uma boa regra diz coisas como:
+
+- "O cadastro de um cliente só pode ser lido pelo próprio cliente ou pelo admin."
+- "Os posts publicados, qualquer um lê; mas só o admin escreve."
+
+Você não precisa decorar a sintaxe — peça à IA (prompt no fim). Mas **entenda o princípio**: cada permissão é uma decisão sua, nunca um "deixa aberto pra funcionar".
+
+## Passo 6 — Ative o App Check
+O **App Check** garante que só o **seu** site fale com o banco — bloqueando robôs e scripts de fora. Ative em **App Check** no console (com reCAPTCHA). É a tranca extra que protege seu custo e seus dados.
+
+## Prompt pronto — seu robô de Firebase
+Cole no Copilot Chat:
+
+> Aja como um Engenheiro de Dados sênior, especialista em Firebase (Firestore, Authentication, App Check e regras de segurança), paciente com quem nunca usou banco de dados. Meu contexto: estou criando **[descreva o sistema]** e os dados que vou guardar são **[ex.: cadastros com nome, e-mail e telefone]**; meu nível é iniciante. Meu objetivo: me guiar a conectar o Firebase com segurança — a configuração via variáveis de ambiente (nunca no código), o modelo dos dados e as **regras de segurança restritivas** (negar por padrão, liberar só o necessário), explicando cada regra em uma frase simples. Antes, me pergunte quais dados pessoais eu coleto e quem pode ler ou escrever cada coisa. Cuide da LGPD e me lembre de NÃO usar o modo de teste e de ativar o App Check. No fim, me diga como testar se as regras estão bloqueando o acesso indevido.
+
+## Regras de ouro
+- **Nunca** o modo de teste em produção.
+- Regras **restritivas** por padrão.
+- A configuração e as chaves vão em **variáveis de ambiente**, nunca no código.
+- Dados pessoais = **LGPD**: colete só o necessário e proteja.
+
+## Próximos passos
+- Já tem banco? Aprenda a **proteger seus segredos** no próximo tutorial.
+- Use o robô **Especialista em Firebase** na [Área do Cliente](/cliente) sempre que precisar.
+
+Banco conectado e blindado. Agora seu sistema tem memória — e segurança.
+`,
+  },
+  {
+    id: "nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore",
+    slug: "nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore",
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-06-09",
+    coverUrl:
+      "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80",
+    title: "Nunca vaze uma senha: variáveis de ambiente, .gitignore e repositório privado",
+    excerpt:
+      "A falha de segurança nº 1 de quem começa a construir com IA é vazar uma senha no código. Entenda, em linguagem de gente, o que são segredos, o .env, o .gitignore e o que fazer se vazar.",
+    content: `A falha de segurança número 1 de quem começa a construir com IA é simples e perigosa: **deixar uma senha ou chave escrita no código** e, sem querer, mandar isso para a internet. Um robô acha em minutos, e o estrago vem (conta invadida, custo na sua fatura). A boa notícia: evitar isso é fácil quando você entende 3 ideias. Vamos lá — sem jargão.
+
+## O que são "segredos"
+Segredos são as **chaves da sua casa digital**: senhas, chaves de API (do banco de dados, de pagamento, de e-mail), tokens. Quem tem a chave, entra. Por isso elas **nunca** podem ficar à vista.
+
+## Ideia 1 — O arquivo de variáveis de ambiente (.env)
+Em vez de escrever a chave no código, você a guarda num arquivo separado chamado **.env** (ou .env.local). O código apenas "pede" a chave a esse arquivo, sem nunca mostrá-la.
+
+> Pense assim: o código diz "use a chave do cofre", e o cofre (.env) fica só no seu computador.
+
+## Ideia 2 — O .gitignore (a lista do "não enviar")
+Quando você manda seu projeto para o **GitHub**, nem tudo deve ir junto. O **.gitignore** é uma listinha que diz: "estes arquivos NÃO sobem". Nela entram, obrigatoriamente, o .env e qualquer arquivo de segredo.
+
+**Por que isso é o coração da segurança:** com o .env no .gitignore, suas chaves ficam só com você, mesmo que o código vá para a internet.
+
+## Ideia 3 — Repositório privado
+No GitHub, deixe o repositório do seu projeto **privado** (é grátis). Assim, só você (e quem você convidar) vê o código. Uma camada a mais de proteção.
+
+## E na hora de publicar?
+Lembra que o .env não sobe? Então, ao publicar na Vercel (ou onde for), você **recadastra** essas mesmas chaves nas **variáveis de ambiente** do painel. O segredo viaja por um caminho seguro, nunca pelo código.
+
+## Socorro, acho que vazei uma chave!
+Calma — e aja rápido:
+1. **Troque (revogue) a chave** no serviço de origem (Firebase, Stripe etc.). A chave antiga vira inútil na hora.
+2. Coloque a chave nova no .env e nas variáveis de ambiente.
+3. Garanta que o .env está no .gitignore para não repetir o erro.
+
+> Apagar o arquivo do GitHub depois **não basta** — o histórico guarda tudo. Por isso o passo 1 (revogar) é o que importa de verdade.
+
+## Prompt pronto — seu robô de Segurança
+Antes de subir qualquer projeto, cole no Copilot Chat:
+
+> Aja como um Engenheiro de Segurança de Aplicações (AppSec) sênior, paciente com iniciantes. Meu contexto: vou publicar meu projeto e quero ter certeza de que não estou vazando nenhum segredo; meu nível é iniciante. Meu objetivo: que você (1) configure meu .gitignore para ignorar todos os arquivos .env e segredos; (2) verifique, no código que eu colar, se há alguma senha, chave ou token escrito direto; (3) me explique, em linguagem simples, o que encontrou e como corrigir. Pense passo a passo. Se eu já tiver subido algo, me diga como revogar a chave exposta. Não invente problema — se estiver tudo certo, confirme. Código ou arquivos: **[cole aqui]**.
+
+## Regras de ouro (cole na geladeira)
+- Segredo **nunca** no código — sempre no .env.
+- .env **sempre** no .gitignore.
+- Repositório **privado**.
+- Vazou? **Revogue a chave** imediatamente.
+- A IA escreve; **você confere** antes de publicar.
+
+## Próximos passos
+- Use o robô **Revisor de Código & Segurança** na [Área do Cliente](/cliente) antes de cada deploy.
+- Quer o método completo de construir com IA com segurança? Baixe o e-book **IA Sem Medo** nos [materiais](/#materiais).
+
+Segurança não é o assunto chato do final — é o que separa quem brinca de quem constrói de verdade. Agora você já está do lado certo.
+`,
+  },
 ];
