@@ -347,4 +347,113 @@ Quer ir além? Eu reuni o método completo, um plano de 7 dias e **mais de 130 p
 - [PwC — 2025 Global AI Jobs Barometer](https://www.pwc.com/gx/en/services/ai/ai-jobs-barometer.html)
 `,
   },
+  {
+    id: "configurar-vscode-copilot-primeiro-sistema",
+    slug: "configurar-vscode-copilot-primeiro-sistema",
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-06-09",
+    coverUrl:
+      "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1200&q=80",
+    title:
+      "Do zero ao primeiro sistema: configure o VS Code + GitHub Copilot e comece a construir com IA",
+    excerpt:
+      "Nunca programou? Sem problema. O passo a passo completo para instalar o VS Code, ativar o GitHub Copilot e criar seu primeiro sistema com IA — com os porquês, os links e os prompts prontos para copiar.",
+    content: `Você **não precisa saber programar** para começar a construir software hoje. Com a ferramenta certa e um método, dá para sair do zero absoluto — sem nunca ter escrito uma linha de código — e colocar seu primeiro sistema de pé. Este guia é o passo a passo completo, pensado para quem **não sabe nada** de programação nem de tecnologia. Vou explicar o porquê de cada coisa, com os links e os prompts prontos.
+
+## Os 3 ingredientes (e o que cada um faz)
+Pense numa cozinha:
+
+- **VS Code** é a sua **bancada** — o programa onde o código mora e onde você trabalha.
+- **GitHub Copilot** é o seu **cozinheiro de IA** — ele escreve o código por você, ali dentro da bancada, conversando em português.
+- **GitHub** é a sua **geladeira na nuvem** — guarda seu projeto com segurança e histórico, para nada se perder.
+
+Você vai instalar os três, aprender a conversar com a IA pelo método **P.R.O.M.P.T.E.R.** e construir com segurança.
+
+## Passo 1 — Instale o VS Code
+1. Acesse [code.visualstudio.com](https://code.visualstudio.com/) e clique em **Download**.
+2. Abra o arquivo baixado e siga "avançar, avançar, concluir".
+3. Abra o VS Code.
+
+**Por quê:** é o editor de código mais usado do mundo — gratuito — e é onde a IA vai viver.
+
+## Passo 2 — Crie sua conta no GitHub
+1. Acesse [github.com](https://github.com/) e clique em **Sign up**.
+2. Escolha usuário, e-mail e senha, e confirme o e-mail.
+
+**Por quê:** o GitHub guarda seu projeto na nuvem (sua "geladeira") e é a conta que libera o Copilot.
+
+## Passo 3 — Ative o GitHub Copilot
+O Copilot é a IA que escreve o código. Ele tem **período de teste grátis** e é **gratuito para estudantes e professores** verificados; fora isso, é uma assinatura mensal baratinha.
+
+1. Acesse [github.com/features/copilot](https://github.com/features/copilot) e clique para começar.
+2. Siga o passo a passo para ativar na sua conta.
+
+**Por quê:** é ele quem transforma o que você pede em português em código de verdade.
+
+## Passo 4 — Instale a extensão no VS Code
+1. No VS Code, clique no ícone de **Extensões** (os quadradinhos) na barra lateral esquerda.
+2. Busque **GitHub Copilot** e clique em **Install**. Faça o mesmo com **GitHub Copilot Chat**.
+3. Quando pedir, faça login com sua conta do GitHub (aparece no canto inferior).
+
+**Por quê:** o **Copilot Chat** é a janelinha onde você conversa com a IA — pede, ela responde e constrói.
+
+## Passo 5 — (quando precisar) Instale o Node.js
+Se for criar um site ou sistema web, você vai precisar do **Node.js**, o "motor" que faz o projeto rodar no seu computador.
+
+- Baixe a versão **LTS** em [nodejs.org](https://nodejs.org/) e instale (avançar, avançar, concluir).
+
+Não precisa entender o que ele faz por dentro — só deixe instalado.
+
+## Como falar com a IA: o método P.R.O.M.P.T.E.R.
+A IA não adivinha. Pedido vago gera resposta ruim. Todo bom pedido tem 8 partes:
+
+- **P — Papel:** quem a IA deve ser ("aja como um engenheiro sênior…").
+- **R — Realidade:** seu contexto real (o que você está construindo, que você é iniciante).
+- **O — Objetivo:** o que você quer, exatamente.
+- **M — Marcha:** peça para pensar passo a passo e perguntar se faltar algo.
+- **P — Proteção:** nada de senhas no código; a decisão é sempre sua.
+- **T — Texto de saída:** o formato e o tom da resposta.
+- **E — Exemplos:** mostre um modelo quando ajudar.
+- **R — Refino:** trate como conversa — ajuste até ficar bom.
+
+E duas regras de engenharia que evitam 90% das dores de cabeça: **plano antes do código** e **segurança em primeiro lugar**.
+
+## Construindo seu primeiro sistema (com prompts prontos)
+Abra o **Copilot Chat** no VS Code (ícone de balãozinho na lateral) e use os prompts abaixo na ordem. Troque o que está **[entre colchetes]** pela sua situação.
+
+### 1) Peça o plano antes de tudo
+Copie e cole:
+
+> Aja como um Arquiteto de Produto e CTO virtual sênior, especialista em transformar ideias em planos de software simples e seguros para quem está construindo com IA pela primeira vez. Meu contexto: eu **não sei programar** e estou usando o GitHub Copilot dentro do VS Code; quero criar **[descreva sua ideia em 1 frase]**, para **[quem vai usar]**. Meu objetivo: que você monte um plano em fases, começando pelo mínimo que já funciona (o MVP). Antes de começar, se faltar alguma informação importante, me faça de 1 a 3 perguntas simples e espere minha resposta — não invente nada. Cuide da segurança desde o início (nada de senhas no código) e me explique cada termo técnico em linguagem simples. Entregue o plano em passos numerados, com uma frase de "por quê" em cada um e os nomes dos arquivos que vamos criar. No fim, diga qual é o primeiro passo prático e ofereça começar por ele. A decisão é sempre minha.
+
+### 2) Prepare a base do projeto
+Copie e cole:
+
+> Aja como um Engenheiro Full-Stack sênior e paciente, especialista em ensinar quem nunca programou. Meu contexto: estou no VS Code com o Copilot e já tenho o Node.js instalado; vamos seguir o plano que você me deu. Meu objetivo: criar a base do projeto **[nome]** e deixá-lo rodando na minha tela. Pense passo a passo e me guie com os comandos exatos para eu digitar no terminal, explicando em 1 linha o que cada comando faz. Se algum passo costuma dar erro, me avise antes. Nunca coloque senhas ou chaves no código — use um arquivo de variáveis de ambiente e me explique como. Ao final, me diga como abrir o projeto no navegador para eu ver funcionando. Se eu colar um erro, explique a causa em português simples e a correção mais segura.
+
+### 3) Construa a primeira tela
+Copie e cole:
+
+> Aja como um Engenheiro Full-Stack sênior. Meu contexto: o projeto **[nome]** já está rodando; agora quero construir **[a primeira funcionalidade — ex.: a tela inicial com um formulário]**. Meu objetivo: que você implemente isso de forma limpa e simples. Antes, me explique em 1 parágrafo o que vai fazer e o que pode quebrar. Liste os arquivos que vai criar ou mudar e escreva o código comentado nos pontos importantes. Cuide de segurança e de dados pessoais (LGPD) se a tela coletar informações de pessoas. Faça só o que pedi, sem adicionar coisas extras. No fim, me diga como testar e ofereça ajustar o visual se eu quiser.
+
+### 4) Blinde antes de publicar
+Antes de subir qualquer coisa, peça uma revisão de segurança. Copie e cole:
+
+> Aja como um Engenheiro de Segurança de Aplicações (AppSec) sênior. Vou colar abaixo o código que a IA gerou e quero que você revise antes de eu publicar, com foco em segurança. Verifique: há alguma senha, chave ou segredo escrito no código? As entradas do usuário estão validadas? Há algum dado pessoal exposto? Tem algo sensível que não deveria ir para o GitHub? Para cada problema, explique por que importa (em linguagem simples) e me dê a correção pronta. Não invente vulnerabilidade — se estiver tudo certo, diga e explique por quê. Código: **[cole aqui]**.
+
+## Regras de ouro da segurança (decore estas)
+- **Nunca** escreva senhas, chaves ou tokens direto no código. Eles ficam num arquivo de variáveis de ambiente (a IA te ensina a criar) que **nunca** vai para o GitHub.
+- Deixe o repositório do seu projeto **privado** (é grátis no GitHub).
+- Antes de enviar mudanças, rode **git pull** para não sobrescrever nada.
+- A IA escreve; **você confere e decide**. Sempre.
+
+## Seus próximos passos
+1. Não sabe escrever um bom prompt? Use o **[Criador de Prompts](/robos)** — meu presente grátis: você diz o que quer e a IA monta o prompt completo para você.
+2. Quer um time de IA pronto? Os **robôs** (Arquiteto de Produto, Engenheiro Full-Stack, Revisor de Segurança…) estão na [Área do Cliente](/cliente).
+3. Quer o método completo, com plano de 7 dias e +130 prompts? Baixe o e-book gratuito **IA Sem Medo** na seção de [materiais](/#materiais).
+
+Você acabou de montar a bancada, contratar um cozinheiro de IA e aprender a fazer o pedido certo. Agora é construir — com a velocidade da máquina e o cuidado de quem entende de engenharia.
+`,
+  },
 ];
