@@ -8,7 +8,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: "Materiais gratuitos",
   description:
-    "Baixe gratuitamente o e-book IA Sem Medo e o cartão P.E.D.E.R. — comece a usar IA com método.",
+    "Baixe gratuitamente o e-book IA Sem Medo e o cartão P.R.O.M.P.T.E.R. — comece a usar IA com método.",
   alternates: { canonical: "/materiais" },
 };
 

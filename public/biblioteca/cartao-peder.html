@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cartão P.E.D.E.R. · IA Sem Medo</title>
+<title>Cartão P.R.O.M.P.T.E.R. · IA Sem Medo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ===========================================================
-   CARTÃO P.E.D.E.R. — 1 página · imã de geladeira / lead magnet
+   CARTÃO P.R.O.M.P.T.E.R. — 1 página · imã de geladeira / lead magnet
    Mesma identidade do "IA Sem Medo"
    =========================================================== */
 :root{
@@ -26,7 +26,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-fo
 .card{
   width:100%;max-width:680px;aspect-ratio:1/1.414;background:var(--card);
   border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 60px rgba(27,24,19,.14);
-  padding:clamp(28px,4.6vw,52px);display:flex;flex-direction:column;position:relative;overflow:hidden;
+  padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;position:relative;overflow:hidden;
 }
 .card::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;
   background:linear-gradient(90deg,var(--amber-deep),var(--amber))}
@@ -35,38 +35,31 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-fo
 
 .head{position:relative;z-index:1}
 .kicker{font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber-deep);
-  display:flex;align-items:center;gap:9px;margin-bottom:12px}
+  display:flex;align-items:center;gap:9px;margin-bottom:10px}
 .kicker::before{content:"";width:24px;height:1px;background:var(--amber)}
-.title{font-family:var(--serif);font-weight:900;font-size:clamp(40px,8vw,66px);letter-spacing:.02em;line-height:.9;color:var(--ink)}
-.sub{font-family:var(--serif);font-size:clamp(14px,2vw,18px);color:var(--muted);margin-top:8px;max-width:34ch;line-height:1.3}
+.title{font-family:var(--serif);font-weight:900;font-size:clamp(28px,5.4vw,46px);letter-spacing:.01em;line-height:.95;color:var(--ink)}
+.sub{font-family:var(--serif);font-size:clamp(13px,1.8vw,16px);color:var(--muted);margin-top:7px;max-width:40ch;line-height:1.3}
 
-/* os 5 passos */
-.steps{margin:clamp(16px,2.6vw,26px) 0;display:flex;flex-direction:column;gap:clamp(6px,1vw,11px);position:relative;z-index:1}
-.step{display:flex;align-items:center;gap:clamp(12px,2vw,18px);padding:clamp(7px,1.1vw,11px) 0;border-bottom:1px solid var(--line)}
+/* os 8 passos */
+.steps{margin:clamp(12px,2vw,18px) 0;display:flex;flex-direction:column;gap:clamp(3px,.6vw,6px);position:relative;z-index:1}
+.step{display:flex;align-items:center;gap:clamp(10px,1.6vw,15px);padding:clamp(4px,.7vw,7px) 0;border-bottom:1px solid var(--line)}
 .step:last-child{border-bottom:none}
-.step .L{font-family:var(--serif);font-weight:900;font-size:clamp(26px,4.4vw,40px);color:var(--amber);line-height:1;
-  width:clamp(34px,5vw,48px);text-align:center;flex-shrink:0}
-.step .tx b{font-family:var(--sans);font-weight:700;font-size:clamp(14px,1.9vw,18px);color:var(--ink)}
-.step .tx span{display:block;font-size:clamp(12px,1.5vw,14.5px);color:var(--muted);line-height:1.35;margin-top:1px}
+.step .L{font-family:var(--serif);font-weight:900;font-size:clamp(20px,3.2vw,30px);color:var(--amber);line-height:1;
+  width:clamp(28px,4vw,38px);text-align:center;flex-shrink:0}
+.step .tx b{font-family:var(--sans);font-weight:700;font-size:clamp(13px,1.7vw,16px);color:var(--ink)}
+.step .tx span{display:block;font-size:clamp(11px,1.4vw,13px);color:var(--muted);line-height:1.3;margin-top:0}
 .step.accent .L{color:var(--amber-deep)}
 .step.accent{background:linear-gradient(90deg,var(--amber-soft),transparent);border-radius:10px;border-bottom:none;
   padding-left:10px;margin-left:-10px}
 
 /* template */
-.tpl{background:#fff;border:1px solid var(--line-strong);border-radius:12px;padding:clamp(12px,1.8vw,16px);position:relative;z-index:1}
-.tpl .lh{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep);font-weight:700;margin-bottom:7px}
-.tpl p{font-family:var(--mono);font-size:clamp(11px,1.5vw,13px);line-height:1.7;color:var(--ink-soft)}
+.tpl{background:#fff;border:1px solid var(--line-strong);border-radius:12px;padding:clamp(10px,1.5vw,14px);position:relative;z-index:1}
+.tpl .lh{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep);font-weight:700;margin-bottom:6px}
+.tpl p{font-family:var(--mono);font-size:clamp(10px,1.35vw,12px);line-height:1.65;color:var(--ink-soft)}
 .tpl .ph{color:var(--amber-deep)}
 
-/* exemplo preenchido */
-.example{margin-top:clamp(10px,1.6vw,14px);background:linear-gradient(180deg,var(--amber-soft),#fff);
-  border:1px solid #E6CF9F;border-radius:12px;padding:clamp(12px,1.8vw,16px);position:relative;z-index:1}
-.example .lh{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep);font-weight:700;margin-bottom:7px}
-.example p{font-family:var(--mono);font-size:clamp(11px,1.5vw,13px);line-height:1.7;color:var(--ink-soft)}
-.example p b{color:var(--ink);font-weight:600}
-
 /* rodapé */
-.foot{margin-top:auto;padding-top:clamp(12px,1.8vw,18px);border-top:1px solid var(--line);
+.foot{margin-top:auto;padding-top:clamp(10px,1.5vw,15px);border-top:1px solid var(--line);
   display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
 .tips{display:flex;gap:clamp(8px,1.4vw,16px);flex-wrap:wrap}
 .tip{font-size:clamp(10px,1.3vw,12px);color:var(--muted);display:flex;align-items:center;gap:5px}
@@ -86,9 +79,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-fo
   @page{size:A4 portrait;margin:0}
   body{background:#fff;padding:0;display:block}
   .card{max-width:none;width:210mm;height:297mm;aspect-ratio:auto;border:none;border-radius:0;box-shadow:none;
-    padding:20mm 18mm;justify-content:flex-start;gap:0}
+    padding:16mm 16mm;justify-content:flex-start;gap:0}
   .card::after{opacity:.6}
-  .steps{margin:14mm 0}
+  .steps{margin:8mm 0}
   .print-btn{display:none}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
@@ -98,27 +91,25 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-fo
 
 <div class="card">
   <div class="head">
-    <div class="kicker">A receita do bom pedido de IA</div>
-    <div class="title">P.E.D.E.R.</div>
-    <p class="sub">Toda vez que for <b style="color:var(--ink-soft)">pedir</b> algo importante para a IA, monte seu pedido assim:</p>
+    <div class="kicker">O método do prompt profissional</div>
+    <div class="title">P.R.O.M.P.T.E.R.</div>
+    <p class="sub">Toda vez que for <b style="color:var(--ink-soft)">pedir</b> algo importante à IA, monte seu prompt com as 8 partes:</p>
   </div>
 
   <div class="steps">
     <div class="step"><div class="L">P</div><div class="tx"><b>Papel</b><span>Diga quem a IA deve ser. <i>"Aja como um vendedor experiente…"</i></span></div></div>
-    <div class="step"><div class="L">E</div><div class="tx"><b>Exemplo / Contexto</b><span>Dê a sua situação real. <i>"…vendo bolo caseiro para a vizinhança…"</i></span></div></div>
-    <div class="step"><div class="L">D</div><div class="tx"><b>Desejo</b><span>Diga exatamente o que quer. <i>"…escreva um anúncio para WhatsApp…"</i></span></div></div>
-    <div class="step"><div class="L">E</div><div class="tx"><b>Estilo</b><span>Defina tom e formato. <i>"…simpático, com emojis, em 3 linhas."</i></span></div></div>
-    <div class="step accent"><div class="L">R</div><div class="tx"><b>Refinar</b><span>Não gostou? Ajuste. <i>"Deixa mais curto." "Outro tom." "Dá 3 opções."</i></span></div></div>
+    <div class="step"><div class="L">R</div><div class="tx"><b>Realidade</b><span>Dê o contexto real. <i>"…vendo bolo caseiro para a vizinhança…"</i></span></div></div>
+    <div class="step"><div class="L">O</div><div class="tx"><b>Objetivo</b><span>Diga exatamente o que quer. <i>"…escreva um anúncio para WhatsApp…"</i></span></div></div>
+    <div class="step"><div class="L">M</div><div class="tx"><b>Marcha</b><span>Peça o passo a passo. <i>"Pense antes de responder; pergunte se faltar algo."</i></span></div></div>
+    <div class="step"><div class="L">P</div><div class="tx"><b>Proteção</b><span>Cuide dos dados. <i>"Não use dados pessoais reais. A decisão é minha."</i></span></div></div>
+    <div class="step"><div class="L">T</div><div class="tx"><b>Texto de saída</b><span>Defina formato e tom. <i>"Simpático, com emojis, em 3 linhas."</i></span></div></div>
+    <div class="step"><div class="L">E</div><div class="tx"><b>Exemplos</b><span>Mostre um modelo. <i>"No estilo deste anúncio que funcionou: […]"</i></span></div></div>
+    <div class="step accent"><div class="L">R</div><div class="tx"><b>Refino</b><span>Não gostou? Ajuste. <i>"Mais curto." "Outro tom." "Dá 3 opções."</i></span></div></div>
   </div>
 
   <div class="tpl">
     <div class="lh">Modelo pronto — é só preencher</div>
-    <p>Aja como <span class="ph">[papel/especialista]</span>. Contexto: <span class="ph">[sua situação]</span>. Tarefa: <span class="ph">[o que você quer]</span>. Formato e tom: <span class="ph">[como quer a resposta]</span>. Ao final, <span class="ph">[me dê 2 opções / deixe mais curto]</span>.</p>
-  </div>
-
-  <div class="example">
-    <div class="lh">Exemplo real — repare nas 5 partes</div>
-    <p>“Aja como um <b>vendedor experiente</b>. Estou vendendo <b>bolo caseiro de cenoura para a vizinhança</b>. Escreva um <b>anúncio para WhatsApp</b>, <b>simpático, com emojis, em 3 linhas</b>. Depois me dê <b>2 variações</b>.”</p>
+    <p>Aja como <span class="ph">[papel]</span>. Realidade: <span class="ph">[sua situação]</span>. Objetivo: <span class="ph">[o que você quer]</span>. Pense passo a passo e pergunte se faltar contexto. Não exponha dados sensíveis. Formato e tom: <span class="ph">[como quer]</span>. Exemplo do que espero: <span class="ph">[referência]</span>. Ao final, <span class="ph">[me dê 2 opções / deixe mais curto]</span>.</p>
   </div>
 
   <div class="foot">

@@ -23,14 +23,14 @@ export const assets: Asset[] = [
     id: "ebook-ia-sem-medo",
     title: "IA Sem Medo — Guia Prático (E-book)",
     kind: "ebook",
-    description: "Método P.E.D.E.R., plano de 7 dias e +130 prompts. Pronto para imprimir/PDF.",
+    description: "Método P.R.O.M.P.T.E.R., plano de 7 dias e +130 prompts. Pronto para imprimir/PDF.",
     url: "/biblioteca/ebook-ia-sem-medo.html",
   },
   {
     id: "cartao-peder",
-    title: "Cartão P.E.D.E.R.",
+    title: "Cartão P.R.O.M.P.T.E.R.",
     kind: "cartao",
-    description: "A receita do bom pedido de IA em uma página (imã de geladeira / lead magnet).",
+    description: "O método P.R.O.M.P.T.E.R. em uma página (imã de geladeira / lead magnet).",
     url: "/biblioteca/cartao-peder.html",
   },
   {

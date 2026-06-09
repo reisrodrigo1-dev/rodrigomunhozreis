@@ -19,15 +19,15 @@ export const materials: Material[] = [
     slug: "ia-sem-medo",
     type: "ebook",
     description:
-      "Método P.E.D.E.R., plano de 7 dias e mais de 130 prompts prontos para o trabalho e a vida.",
+      "Método P.R.O.M.P.T.E.R., plano de 7 dias e mais de 130 prompts prontos para o trabalho e a vida.",
     fileUrl: "/biblioteca/ebook-ia-sem-medo.html",
   },
   {
     id: "cartao-peder",
-    title: "Cartão P.E.D.E.R.",
-    slug: "cartao-peder",
+    title: "Cartão P.R.O.M.P.T.E.R.",
+    slug: "cartao-prompter",
     type: "cartao",
-    description: "A receita do bom pedido de IA em uma página — para imprimir e deixar à mão.",
+    description: "O método P.R.O.M.P.T.E.R. em uma página — a receita do prompt profissional, para imprimir e deixar à mão.",
     fileUrl: "/biblioteca/cartao-peder.html",
   },
   {

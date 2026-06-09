@@ -16,7 +16,7 @@ const camadas = [
   { n: "5", t: "Versionar", d: "Commits pequenos e rollback fácil antes da produção." },
 ];
 
-const badges = ["Grátis", "+130 prompts", "Plano de 7 dias", "Método P.E.D.E.R."];
+const badges = ["Grátis", "+130 prompts", "Plano de 7 dias", "Método P.R.O.M.P.T.E.R."];
 
 export default function Home() {
   const ebook = materials.find((m) => m.id === "ebook-ia-sem-medo") ?? materials[0];
@@ -156,9 +156,10 @@ export default function Home() {
           <Reveal>
             <div className="glass mt-8 p-7" style={{ background: "rgba(224,164,92,0.06)" }}>
               <p className="text-lg text-paper/75">
-                Para conversar com a IA, ensino a receita{" "}
-                <span className="accent text-xl">P.E.D.E.R.</span> — Papel, Exemplo, Desejo, Estilo
-                e Refinar. Pedido vago gera resposta ruim; pedido com método gera resposta sob medida.
+                Para conversar com a IA, ensino o método{" "}
+                <span className="accent text-xl">P.R.O.M.P.T.E.R.</span> — Papel, Realidade, Objetivo,
+                Marcha, Proteção, Texto de saída, Exemplos e Refino. Pedido vago gera resposta ruim;
+                pedido com método gera resposta sob medida.
               </p>
             </div>
           </Reveal>
@@ -220,7 +221,7 @@ export default function Home() {
                 <span className="text-grad"> de IA.</span>
               </h2>
               <p className="mt-5 max-w-xl text-lg text-paper/55">
-                O guia “IA Sem Medo”: o método P.E.D.E.R., um plano de 7 dias e mais de 130 prompts
+                O guia “IA Sem Medo”: o método P.R.O.M.P.T.E.R., um plano de 7 dias e mais de 130 prompts
                 prontos — 100 deles para usar no trabalho hoje.
               </p>
               <ul className="mt-6 flex flex-wrap gap-2">
