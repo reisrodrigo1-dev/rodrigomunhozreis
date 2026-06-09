@@ -3,12 +3,18 @@
 import { useState } from "react";
 import type { Robot } from "@/lib/robots";
 
-/** Destinos para abrir o prompt. ChatGPT e Claude web aceitam o prompt na URL (?q=);
- *  Gemini não tem prefill confiável, então abrimos e o usuário cola (já copiamos antes). */
-const TARGETS: { key: string; label: string; url: (p: string) => string }[] = [
-  { key: "chatgpt", label: "ChatGPT", url: (p) => `https://chatgpt.com/?q=${encodeURIComponent(p)}` },
-  { key: "claude", label: "Claude", url: (p) => `https://claude.ai/new?q=${encodeURIComponent(p)}` },
-  { key: "gemini", label: "Gemini", url: () => `https://gemini.google.com/app` },
+/**
+ * Destinos para abrir o prompt. Prompts profissionais são longos e estouram o
+ * limite de tamanho de URL (~2000 chars), truncando justo nos guardrails. Por
+ * isso o padrão é COPIAR + abrir a aba LIMPA (o usuário cola com Ctrl/Cmd+V).
+ * O prefill via ?q= só é usado como atalho quando o prompt é curto o bastante.
+ */
+const URL_PREFILL_LIMIT = 1500;
+
+const TARGETS: { key: string; label: string; clean: string; q?: (p: string) => string }[] = [
+  { key: "chatgpt", label: "ChatGPT", clean: "https://chatgpt.com/", q: (p) => `https://chatgpt.com/?q=${encodeURIComponent(p)}` },
+  { key: "claude", label: "Claude", clean: "https://claude.ai/new", q: (p) => `https://claude.ai/new?q=${encodeURIComponent(p)}` },
+  { key: "gemini", label: "Gemini", clean: "https://gemini.google.com/app" },
 ];
 
 export function RobotCard({ robot }: { robot: Robot }) {
@@ -19,16 +25,23 @@ export function RobotCard({ robot }: { robot: Robot }) {
     return navigator.clipboard.writeText(robot.prompt);
   }
 
-  function handleCopy() {
-    copyPrompt().then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
-    });
+  function flash() {
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2200);
   }
 
-  function openIn(url: string) {
-    // Sempre copia antes de abrir — garante o prompt na área de transferência.
-    copyPrompt().finally(() => window.open(url, "_blank", "noopener,noreferrer"));
+  function handleCopy() {
+    copyPrompt().then(flash);
+  }
+
+  function openIn(t: (typeof TARGETS)[number]) {
+    // Sempre copia (garante o prompt inteiro na área de transferência) e abre.
+    // Só usa prefill por URL quando o prompt cabe — senão chegaria truncado.
+    const url = t.q && robot.prompt.length < URL_PREFILL_LIMIT ? t.q(robot.prompt) : t.clean;
+    copyPrompt().finally(() => {
+      window.open(url, "_blank", "noopener,noreferrer");
+      flash();
+    });
   }
 
   return (
@@ -42,11 +55,11 @@ export function RobotCard({ robot }: { robot: Robot }) {
       </button>
 
       <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-        <span className="text-paper/45">Abrir em:</span>
+        <span className="text-paper/45">Copiar e abrir:</span>
         {TARGETS.map((t) => (
           <button
             key={t.key}
-            onClick={() => openIn(t.url(robot.prompt))}
+            onClick={() => openIn(t)}
             className="rounded-full border border-white/12 px-3 py-1 text-paper/70 transition-colors hover:border-amber/50 hover:text-paper"
           >
             {t.label}
@@ -54,7 +67,7 @@ export function RobotCard({ robot }: { robot: Robot }) {
         ))}
       </div>
       <p className="mt-2 text-xs text-paper/35">
-        O prompt é copiado ao abrir — é só colar (Ctrl/Cmd + V). Funciona também no Claude Desktop.
+        O prompt é copiado automaticamente — abra a IA e cole com Ctrl/Cmd + V. Funciona também no Claude Desktop.
       </p>
     </div>
   );
