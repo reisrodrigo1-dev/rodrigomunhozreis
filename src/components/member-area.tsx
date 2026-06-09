@@ -119,7 +119,7 @@ function AuthForm() {
             <input type="tel" required inputMode="numeric" autoComplete="tel" placeholder="WhatsApp — (11) 91234-5678" value={whatsapp} onChange={(e) => setWhatsapp(maskPhone(e.target.value))} maxLength={16} className={field} />
             <select value={perfil} onChange={(e) => setPerfil(e.target.value)} className={field}>
               {perfis.map((p) => (
-                <option key={p} value={p}>
+                <option key={p} value={p} style={{ color: "#15130f", backgroundColor: "#fff" }}>
                   {p}
                 </option>
               ))}
