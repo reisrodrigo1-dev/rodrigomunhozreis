@@ -9,7 +9,13 @@ export type PostInput = {
   coverUrl?: string;
   status: "draft" | "published";
   tags?: string[];
+  contentVersion?: number;
 };
+
+/** Remove chaves com valor undefined (o Firestore Web SDK rejeita undefined). */
+function clean<T extends Record<string, unknown>>(obj: T): T {
+  return Object.fromEntries(Object.entries(obj).filter(([, v]) => v !== undefined)) as T;
+}
 
 /** Todos os posts (admin) — do Firestore. */
 export async function getAllPosts(): Promise<Post[]> {
@@ -29,23 +35,23 @@ export async function getPost(id: string): Promise<Post | null> {
 export async function createPost(data: PostInput): Promise<string> {
   const { addDoc, collection, serverTimestamp } = await import("firebase/firestore");
   const { db } = await import("./firebase");
-  const ref = await addDoc(collection(db, "posts"), {
+  const ref = await addDoc(collection(db, "posts"), clean({
     ...data,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
     publishedAt: data.status === "published" ? serverTimestamp() : null,
-  });
+  }));
   return ref.id;
 }
 
 export async function updatePost(id: string, data: PostInput): Promise<void> {
   const { doc, updateDoc, serverTimestamp } = await import("firebase/firestore");
   const { db } = await import("./firebase");
-  await updateDoc(doc(db, "posts", id), {
+  await updateDoc(doc(db, "posts", id), clean({
     ...data,
     updatedAt: serverTimestamp(),
     ...(data.status === "published" ? { publishedAt: serverTimestamp() } : {}),
-  });
+  }));
 }
 
 export async function deletePost(id: string): Promise<void> {
@@ -55,25 +61,47 @@ export async function deletePost(id: string): Promise<void> {
 }
 
 /**
- * Importa os posts iniciais (seed) para o Firestore — uma vez.
- * Idempotente: pula os que já existem (mesmo slug). Retorna quantos criou.
+ * Importa/atualiza os posts iniciais (seed) no Firestore.
+ * - Cria os que não existem (por slug).
+ * - Atualiza um existente SÓ quando o seed tem contentVersion MAIOR que o do banco
+ *   (assim correções propagam, mas posts sem versão nova não são tocados).
  */
-export async function importSeedPosts(): Promise<number> {
+export async function importSeedPosts(): Promise<{ created: number; updated: number }> {
+  const { doc, updateDoc, serverTimestamp } = await import("firebase/firestore");
+  const { db } = await import("./firebase");
   const existing = await getAllPosts();
-  const slugs = new Set(existing.map((p) => p.slug));
+  const bySlug = new Map(existing.map((p) => [p.slug, p]));
   let created = 0;
+  let updated = 0;
   for (const p of seedPosts) {
-    if (slugs.has(p.slug)) continue;
-    await createPost({
-      title: p.title,
-      slug: p.slug,
-      excerpt: p.excerpt,
-      content: p.content,
-      coverUrl: p.coverUrl,
-      status: p.status,
-      tags: p.tags,
-    });
-    created++;
+    const cur = bySlug.get(p.slug);
+    if (!cur) {
+      await createPost({
+        title: p.title,
+        slug: p.slug,
+        excerpt: p.excerpt,
+        content: p.content,
+        coverUrl: p.coverUrl,
+        status: p.status,
+        tags: p.tags,
+        contentVersion: p.contentVersion,
+      });
+      created++;
+    } else if ((p.contentVersion ?? 1) > ((cur.contentVersion as number) ?? 1)) {
+      await updateDoc(
+        doc(db, "posts", cur.id),
+        clean({
+          title: p.title,
+          excerpt: p.excerpt,
+          content: p.content,
+          coverUrl: p.coverUrl,
+          tags: p.tags,
+          contentVersion: p.contentVersion,
+          updatedAt: serverTimestamp(),
+        })
+      );
+      updated++;
+    }
   }
-  return created;
+  return { created, updated };
 }

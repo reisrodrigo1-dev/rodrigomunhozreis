@@ -7,6 +7,8 @@ export type Post = {
   coverUrl?: string;
   status: "draft" | "published";
   tags?: string[];
+  /** Versão do conteúdo. O importador atualiza quando o seed tem versão maior. */
+  contentVersion?: number;
   publishedAt?: unknown;
   createdAt?: unknown;
   updatedAt?: unknown;

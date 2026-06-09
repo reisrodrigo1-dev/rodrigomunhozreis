@@ -257,6 +257,7 @@ Saber operar IA virou habilidade essencial, como usar computador foi em 2000. Da
   {
     id: "protocolo-de-5-camadas",
     slug: "protocolo-de-5-camadas",
+    contentVersion: 2,
     status: "published",
     tags: ["Vibecoding"],
     publishedAt: "2026-06-02",
@@ -295,6 +296,7 @@ Enquanto o Protocolo de 5 Camadas cuida do **código**, o método **P.R.O.M.P.T.
   {
     id: "como-usar-ia-no-trabalho-peder",
     slug: "como-usar-ia-no-trabalho-peder",
+    contentVersion: 2,
     status: "published",
     tags: ["Produtividade"],
     publishedAt: "2026-06-01",

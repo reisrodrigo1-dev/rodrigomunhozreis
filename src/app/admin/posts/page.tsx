@@ -23,10 +23,14 @@ export default function AdminPosts() {
   async function handleImport() {
     setImporting(true);
     try {
-      const n = await importSeedPosts();
+      const { created, updated } = await importSeedPosts();
       const p = await getAllPosts();
       setRows(p);
-      alert(n > 0 ? `${n} post(s) importado(s) para o banco.` : "Nada novo para importar.");
+      alert(
+        created + updated > 0
+          ? `${created} criado(s) e ${updated} atualizado(s).`
+          : "Tudo já está atualizado."
+      );
     } catch {
       alert("Erro ao importar. Verifique o Firestore e as regras.");
     } finally {
@@ -44,7 +48,7 @@ export default function AdminPosts() {
             disabled={importing}
             className="btn btn-ghost !px-4 !py-2 disabled:opacity-50"
           >
-            {importing ? "Importando…" : "Importar posts iniciais"}
+            {importing ? "Atualizando…" : "Importar / atualizar posts"}
           </button>
           <Link href="/admin/posts/new" className="btn btn-primary !px-5 !py-2.5">
             Novo post
