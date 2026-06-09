@@ -652,4 +652,79 @@ Antes de subir qualquer projeto, cole no Copilot Chat:
 Segurança não é o assunto chato do final — é o que separa quem brinca de quem constrói de verdade. Agora você já está do lado certo.
 `,
   },
+  {
+    id: "encontrar-erros-sistema-ia-f12-console",
+    slug: "encontrar-erros-sistema-ia-f12-console",
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-06-09",
+    coverUrl:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    title: "Deu erro no sistema que a IA fez? Aprenda a achar o bug com o F12 e devolver para a IA",
+    excerpt:
+      "Construiu com IA e apareceu um erro? Calma. Aprenda a abrir o console (F12), encontrar a mensagem, copiar e devolver para a IA com o prompt certo — sem entender de código.",
+    content: `Vai acontecer: você constrói algo com IA, abre no navegador e… não funciona. Tela branca, botão que não responde, algo quebrado. **Isso é normal** — acontece até com programador experiente. A diferença é que ele sabe uma coisa simples que ninguém te ensinou: **como capturar o erro e devolver para a IA resolver.** É isso que você vai aprender aqui, sem precisar entender de código.
+
+## Erro não é fracasso — é informação
+Quando algo quebra, o computador quase sempre **diz exatamente o que aconteceu**, numa mensagem escondida. Pense nas **luzes do painel do carro**: a luz acende, você não conserta o motor sozinho — mas lê a luz e leva a informação certa ao mecânico. O "mecânico" aqui é a IA. Seu trabalho é **ler a luz** (o erro) e **passar para ela**.
+
+## Onde os erros aparecem (são 3 lugares)
+Erro tem endereço. Saber onde olhar já resolve metade:
+- **No navegador (a frente do site):** tela branca, botão que não faz nada, layout quebrado → o erro está no **Console** (é o que veremos com o F12).
+- **No seu computador (enquanto você programa):** o erro aparece no **Terminal** do VS Code (a janelinha preta embaixo).
+- **No site publicado:** os erros ficam nos **Logs** da Vercel (no painel do seu projeto).
+
+Comece sempre pelo Console — é onde aparecem 80% dos erros de iniciante.
+
+## Passo 1 — Abra o Console (o famoso F12)
+Com o seu site aberto no navegador (Chrome, Edge ou Firefox):
+- Aperte **F12**.
+- Ou clique com o **botão direito** em qualquer lugar da página → **Inspecionar**.
+- No Mac: **Cmd + Option + I**.
+
+Vai abrir um painel cheio de abas. Não se assuste — você só vai usar duas.
+
+## Passo 2 — Vá na aba "Console"
+Clique na aba **Console** (no topo desse painel).
+- Linhas em **vermelho** = erros. É o que importa.
+- Linhas em amarelo = avisos. Quase sempre dá pra ignorar.
+
+Se a tela estava branca ou algo quebrou, provavelmente tem um texto vermelho ali. **Esse texto é a "luz do painel".**
+
+## Passo 3 — Copie o erro INTEIRO
+Não anote "deu um erro vermelho". **Copie o texto:**
+- Selecione a mensagem vermelha com o mouse e **Ctrl + C** (Cmd + C no Mac).
+- Pegue **tudo**: a mensagem principal **e** as linhas de baixo (o "stack trace", que mostra o arquivo e a linha onde quebrou). Quanto mais completo, mais a IA acerta.
+- Dica de ouro: muitas vezes aparece um nome de arquivo e um número (ex.: **App.js:42**). Isso diz **exatamente** onde está o problema.
+
+## Passo 4 — Se for "salvar/carregar dados", olhe a aba "Network"
+Se o problema é "cliquei em salvar e não foi" ou "não carregou", clique na aba **Network**, repita a ação e procure uma linha **vermelha** (com status 400, 401, 403 ou 500). Clique nela para ver o detalhe. Esse número também ajuda muito a IA a entender o que houve.
+
+## Passo 5 — Devolva para a IA do jeito certo
+Aqui está o pulo do gato: **não cole só o erro.** A IA resolve muito melhor quando você dá **contexto** — o que você estava fazendo, o erro completo e (se souber) o trecho de código. Use este prompt:
+
+> Aja como um Engenheiro Sênior de Depuração, paciente e especialista em explicar para quem não programa. Meu contexto: estou construindo **[descreva — ex.: um site em Next.js]** com ajuda da IA e apareceu um erro; meu nível é iniciante. Eu estava tentando **[o que você fazia quando quebrou]**. Meu objetivo: que você descubra a causa e me dê a correção mais segura. Pense passo a passo: 1) explique a causa provável em português simples, em 1 ou 2 frases; 2) me dê a correção pronta, mudando **só o necessário** (sem gambiarra e sem refatorar o resto); 3) diga como evitar que o erro volte; 4) confirme que a correção não cria risco de segurança. Se precisar ver outro arquivo, me peça. O erro completo é: **[cole o erro do console aqui]**. O trecho de código relacionado, se eu souber qual é, é: **[cole aqui, ou escreva "não sei"]**.
+
+## Passo 6 — Entenda antes de aceitar
+A IA vai propor uma correção. **Não aceite no automático.** Peça para ela explicar a causa em uma frase e mudar só o necessário. Se você não entendeu o porquê, pergunte de novo. Esse é o método: rápido, mas com rigor — nada de gambiarra que volta a quebrar amanhã.
+
+## A regra de ouro do depurador
+- **Erro é informação, não vergonha.** Capture, não entre em pânico.
+- **Copie o erro inteiro** (mensagem + arquivo + linha).
+- **Dê contexto à IA** (o que você fez + o código).
+- **Entenda a causa** antes de aceitar a correção.
+- **Cuidado:** se aparecer alguma senha ou chave no meio do erro, **não cole isso em lugar nenhum** — troque por [XXXX] antes de enviar.
+
+## E os outros dois lugares?
+- **Travou enquanto você programa?** Olhe o **Terminal** do VS Code (menu Terminal → Novo Terminal). O texto vermelho ali é o erro — mesmo processo: copie e devolva à IA com contexto.
+- **Quebrou só depois de publicar?** Vá na **Vercel → seu projeto → aba Logs**. Os erros de produção ficam lá.
+
+## Próximos passos
+- Use o robô **Engenheiro de Depuração** na [Área do Cliente](/cliente) — ele já vem com todo esse método embutido.
+- Não sabe montar o prompt? O [Criador de Prompts](/robos) faz por você.
+- Quer o método completo de construir com IA com segurança? Baixe o [e-book IA Sem Medo](/#materiais).
+
+Erro vai aparecer sempre — para todo mundo. O que separa quem trava de quem avança é saber **ler a luz do painel e passar a informação certa**. Agora você sabe.
+`,
+  },
 ];
