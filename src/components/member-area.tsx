@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -24,59 +25,40 @@ const categories: Robot["category"][] = [
   "Marketing & Vendas",
   "Produtividade & Carreira",
 ];
-
-/** Ícone SVG de cada categoria (stroke, sem emoji). */
-const catIcons: Record<Robot["category"], React.ReactNode> = {
-  "Criar sistemas com IA": (
-    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
-    </svg>
-  ),
-  "Para o negócio": (
-    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="7" width="20" height="14" rx="2" />
-      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-    </svg>
-  ),
-  "Marketing & Vendas": (
-    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m3 11 18-5v12L3 14v-3z" />
-      <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
-    </svg>
-  ),
-  "Produtividade & Carreira": (
-    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    </svg>
-  ),
-};
 const perfis = ["Dono de empresa", "Empreendedor", "Profissional / colaborador", "Estudante", "Outro"];
 
-/** Trilhas sugeridas — sequências de robôs na ordem certa. */
+const catIcons: Record<Robot["category"], React.ReactNode> = {
+  "Criar sistemas com IA": (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+  ),
+  "Para o negócio": (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
+  ),
+  "Marketing & Vendas": (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 11 18-5v12L3 14v-3z" /><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" /></svg>
+  ),
+  "Produtividade & Carreira": (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+  ),
+};
+
+const iconTodos = (
+  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></svg>
+);
+const iconStar = (
+  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+);
+
 const trilhas: { title: string; desc: string; steps: string[] }[] = [
   {
     title: "Construa um sistema do zero",
     desc: "Do plano ao deploy. Clique em um passo para abrir o prompt.",
-    steps: [
-      "Arquiteto de Produto",
-      "Engenheiro Full-Stack",
-      "Especialista em Firebase",
-      "Revisor de Código & Segurança",
-      "Especialista em Deploy",
-      "Engenheiro de Depuração",
-    ],
+    steps: ["Arquiteto de Produto", "Engenheiro Full-Stack", "Especialista em Firebase", "Revisor de Código & Segurança", "Especialista em Deploy", "Engenheiro de Depuração"],
   },
   {
     title: "Lance seu negócio",
     desc: "Da ideia validada à primeira venda. Clique em um passo para abrir o prompt.",
-    steps: [
-      "Investidor Cético",
-      "Analista de Preço & Margem",
-      "Estrategista de Marketing",
-      "Copywriter de Vendas",
-      "Criador de Conteúdo",
-    ],
+    steps: ["Investidor Cético", "Analista de Preço & Margem", "Estrategista de Marketing", "Copywriter de Vendas", "Criador de Conteúdo"],
   },
 ];
 
@@ -86,6 +68,14 @@ const WELCOME_KEY = "robots-welcome-dismissed";
 const field =
   "min-h-[44px] w-full rounded-xl border border-white/15 bg-white/5 px-4 text-sm text-paper outline-none transition-colors placeholder:text-paper/40 focus:border-amber";
 
+function firstName(user: User): string {
+  const raw = user.displayName?.trim();
+  if (raw) return raw.split(" ")[0];
+  const local = (user.email ?? "").split("@")[0];
+  return local || "cliente";
+}
+
+/* ───────────────────────── Login ───────────────────────── */
 function AuthForm() {
   const [mode, setMode] = useState<"signup" | "login">("signup");
   const [nome, setNome] = useState("");
@@ -142,71 +132,59 @@ function AuthForm() {
   }
 
   return (
-    <div className="mx-auto mt-4 max-w-md">
-      <div className="text-center">
-        <h1 className="text-3xl font-medium tracking-tight md:text-5xl">
-          <span className="text-grad">Área do </span>
-          <span className="accent">Cliente.</span>
-        </h1>
-        <p className="mt-4 text-paper/55">
-          Crie sua conta grátis para acessar os robôs — e os próximos materiais.
-        </p>
-      </div>
-      <div className="glass mt-8 p-7">
-        <div className="mb-5 flex gap-2 rounded-full border border-white/10 p-1 text-sm">
-        <button
-          onClick={() => setMode("signup")}
-          aria-pressed={mode === "signup"}
-          className={`flex-1 rounded-full py-2 transition-colors ${mode === "signup" ? "bg-amber font-semibold text-ink" : "text-paper/60"}`}
-        >
-          Criar conta
-        </button>
-        <button
-          onClick={() => setMode("login")}
-          aria-pressed={mode === "login"}
-          className={`flex-1 rounded-full py-2 transition-colors ${mode === "login" ? "bg-amber font-semibold text-ink" : "text-paper/60"}`}
-        >
-          Entrar
-        </button>
-      </div>
-
-      <form onSubmit={submit} className="flex flex-col gap-2.5">
-        {mode === "signup" && (
-          <>
-            <input type="text" required autoComplete="name" placeholder="Nome completo" value={nome} onChange={(e) => setNome(e.target.value)} className={field} />
-          </>
-        )}
-        <input type="email" required autoComplete="email" placeholder="Seu melhor e-mail" value={email} onChange={(e) => setEmail(e.target.value.trim())} className={field} />
-        {mode === "signup" && (
-          <>
-            <input type="tel" required inputMode="numeric" autoComplete="tel" placeholder="WhatsApp — (11) 91234-5678" value={whatsapp} onChange={(e) => setWhatsapp(maskPhone(e.target.value))} maxLength={16} className={field} />
-            <select value={perfil} onChange={(e) => setPerfil(e.target.value)} className={field}>
-              {perfis.map((p) => (
-                <option key={p} value={p} style={{ color: "#15130f", backgroundColor: "#fff" }}>
-                  {p}
-                </option>
-              ))}
-            </select>
-          </>
-        )}
-        <input type="password" required autoComplete={mode === "signup" ? "new-password" : "current-password"} placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} className={field} />
-        {mode === "signup" && (
-          <div className="mt-1">
-            <ConsentCheckbox checked={consent} onChange={setConsent} dark id="cs-signup" />
+    <div className="grid min-h-screen place-items-center px-4 py-10">
+      <div className="w-full max-w-md">
+        <div className="text-center">
+          <Link href="/" className="inline-flex items-center gap-2.5">
+            <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-amber to-amber-deep font-semibold text-ink">R</span>
+            <span className="text-base font-semibold tracking-tight text-paper">Rodrigo M. Reis</span>
+          </Link>
+          <h1 className="mt-7 text-3xl font-medium tracking-tight md:text-4xl">
+            <span className="text-grad">Central de </span>
+            <span className="accent">Robôs.</span>
+          </h1>
+          <p className="mt-3 text-paper/55">Crie sua conta grátis para acessar os robôs de IA.</p>
+        </div>
+        <div className="glass mt-7 p-7">
+          <div className="mb-5 flex gap-2 rounded-full border border-white/10 p-1 text-sm">
+            <button onClick={() => setMode("signup")} aria-pressed={mode === "signup"} className={`flex-1 rounded-full py-2 transition-colors ${mode === "signup" ? "bg-amber font-semibold text-ink" : "text-paper/60"}`}>Criar conta</button>
+            <button onClick={() => setMode("login")} aria-pressed={mode === "login"} className={`flex-1 rounded-full py-2 transition-colors ${mode === "login" ? "bg-amber font-semibold text-ink" : "text-paper/60"}`}>Entrar</button>
           </div>
-        )}
-        {error && <p className="text-sm text-red-400">{error}</p>}
-        <button type="submit" disabled={loading} className="btn btn-glow mt-1 w-full disabled:opacity-60">
-          {loading ? "Aguarde…" : mode === "signup" ? "Criar conta e acessar" : "Entrar"}
-        </button>
-      </form>
-      <p className="mt-4 text-xs text-paper/40">
-        Ao criar a conta, você acessa os robôs e os próximos materiais. Sem spam.
-      </p>
+          <form onSubmit={submit} className="flex flex-col gap-2.5">
+            {mode === "signup" && (
+              <input type="text" required autoComplete="name" placeholder="Nome completo" value={nome} onChange={(e) => setNome(e.target.value)} className={field} />
+            )}
+            <input type="email" required autoComplete="email" placeholder="Seu melhor e-mail" value={email} onChange={(e) => setEmail(e.target.value.trim())} className={field} />
+            {mode === "signup" && (
+              <>
+                <input type="tel" required inputMode="numeric" autoComplete="tel" placeholder="WhatsApp — (11) 91234-5678" value={whatsapp} onChange={(e) => setWhatsapp(maskPhone(e.target.value))} maxLength={16} className={field} />
+                <select value={perfil} onChange={(e) => setPerfil(e.target.value)} className={field}>
+                  {perfis.map((p) => (
+                    <option key={p} value={p} style={{ color: "#15130f", backgroundColor: "#fff" }}>{p}</option>
+                  ))}
+                </select>
+              </>
+            )}
+            <input type="password" required autoComplete={mode === "signup" ? "new-password" : "current-password"} placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} className={field} />
+            {mode === "signup" && (
+              <div className="mt-1"><ConsentCheckbox checked={consent} onChange={setConsent} dark id="cs-signup" /></div>
+            )}
+            {error && <p className="text-sm text-red-400">{error}</p>}
+            <button type="submit" disabled={loading} className="btn btn-glow mt-1 w-full disabled:opacity-60">
+              {loading ? "Aguarde…" : mode === "signup" ? "Criar conta e acessar" : "Entrar"}
+            </button>
+          </form>
+        </div>
+        <p className="mt-5 text-center text-sm">
+          <Link href="/" className="text-paper/45 transition-colors hover:text-amber-light">← Voltar para o site</Link>
+        </p>
       </div>
     </div>
   );
 }
+
+/* ───────────────────────── Dashboard (app shell) ───────────────────────── */
+type NavKey = "Todos" | "Favoritos" | Robot["category"];
 
 function Dashboard({ user }: { user: User }) {
   const [robots, setRobots] = useState<Robot[]>([]);
@@ -215,15 +193,13 @@ function Dashboard({ user }: { user: User }) {
   const [favs, setFavs] = useState<string[]>([]);
   const [welcome, setWelcome] = useState(false);
   const [viewing, setViewing] = useState<Robot | null>(null);
+  const [q, setQ] = useState("");
+  const [activeCat, setActiveCat] = useState<NavKey>("Todos");
+  const [drawer, setDrawer] = useState(false);
 
   useEffect(() => {
-    getRobots()
-      .then(setRobots)
-      .catch(() => {})
-      .finally(() => setLoaded(true));
-    getStudent(user.uid)
-      .then((s) => s?.plan === "pro" && setPlan("pro"))
-      .catch(() => {});
+    getRobots().then(setRobots).catch(() => {}).finally(() => setLoaded(true));
+    getStudent(user.uid).then((s) => s?.plan === "pro" && setPlan("pro")).catch(() => {});
     try {
       setFavs(JSON.parse(localStorage.getItem(FAVS_KEY) ?? "[]"));
       setWelcome(localStorage.getItem(WELCOME_KEY) !== "1");
@@ -233,245 +209,229 @@ function Dashboard({ user }: { user: User }) {
   function toggleFav(r: Robot) {
     setFavs((f) => {
       const next = f.includes(r.id) ? f.filter((id) => id !== r.id) : [...f, r.id];
-      try {
-        localStorage.setItem(FAVS_KEY, JSON.stringify(next));
-      } catch {}
+      try { localStorage.setItem(FAVS_KEY, JSON.stringify(next)); } catch {}
       return next;
     });
   }
-
   function dismissWelcome() {
     setWelcome(false);
-    try {
-      localStorage.setItem(WELCOME_KEY, "1");
-    } catch {}
+    try { localStorage.setItem(WELCOME_KEY, "1"); } catch {}
+  }
+  function go(key: NavKey) {
+    setActiveCat(key);
+    setDrawer(false);
+    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  const [q, setQ] = useState("");
-  const [activeCat, setActiveCat] = useState<"Todos" | "Favoritos" | Robot["category"]>("Todos");
-
-  const first = (user.displayName || user.email || "").split(" ")[0];
+  const name = firstName(user);
   const term = q.trim().toLowerCase();
   const visible = robots.filter((r) => {
-    const okCat =
-      activeCat === "Todos" ||
-      (activeCat === "Favoritos" ? favs.includes(r.id) : r.category === activeCat);
-    const okTerm =
-      !term || `${r.name} ${r.tagline} ${r.description}`.toLowerCase().includes(term);
+    const okCat = activeCat === "Todos" || (activeCat === "Favoritos" ? favs.includes(r.id) : r.category === activeCat);
+    const okTerm = !term || `${r.name} ${r.tagline} ${r.description}`.toLowerCase().includes(term);
     return okCat && okTerm;
   });
-  const chips: ("Todos" | "Favoritos" | Robot["category"])[] = [
-    "Todos",
-    ...(favs.length > 0 ? (["Favoritos"] as const) : []),
-    ...categories,
+  const byFav = (a: Robot, b: Robot) => Number(favs.includes(b.id)) - Number(favs.includes(a.id));
+
+  const navItems: { key: NavKey; label: string; icon: React.ReactNode; count: number }[] = [
+    { key: "Todos", label: "Todos os robôs", icon: iconTodos, count: robots.length },
+    ...(favs.length ? [{ key: "Favoritos" as NavKey, label: "Favoritos", icon: iconStar, count: favs.length }] : []),
+    ...categories.map((c) => ({ key: c as NavKey, label: c, icon: catIcons[c], count: robots.filter((r) => r.category === c).length })),
   ];
 
-  // Favoritos primeiro dentro de cada categoria.
-  const byFav = (a: Robot, b: Robot) =>
-    Number(favs.includes(b.id)) - Number(favs.includes(a.id));
-
-  // Trilhas com os robôs resolvidos pelo nome (só exibe se a maioria existir).
   const trilhasResolvidas = trilhas
-    .map((t) => ({
-      ...t,
-      robots: t.steps.map((name) => robots.find((r) => r.name === name)).filter(Boolean) as Robot[],
-    }))
+    .map((t) => ({ ...t, robots: t.steps.map((n) => robots.find((r) => r.name === n)).filter(Boolean) as Robot[] }))
     .filter((t) => t.robots.length >= 4);
 
-  return (
-    <div>
-      {/* Header de dashboard */}
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p className="kicker-d">Central de Robôs</p>
-          <h2 className="mt-3 text-3xl font-medium tracking-tight md:text-4xl">
-            <span className="text-grad">Olá, </span>
-            <span className="accent">{first || "cliente"}.</span>
-          </h2>
-          <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-paper/60">
-              {loaded ? `${robots.length} robôs disponíveis` : "carregando…"}
-            </span>
-            <span
-              className={`rounded-full border px-3 py-1 font-semibold uppercase tracking-wide ${
-                plan === "pro"
-                  ? "border-amber/40 bg-amber/15 text-amber-light"
-                  : "border-white/10 bg-white/5 text-paper/50"
+  const SidebarContent = (
+    <div className="flex h-full flex-col">
+      <Link href="/" className="flex items-center gap-2.5 px-5 py-5">
+        <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-amber to-amber-deep text-sm font-semibold text-ink">R</span>
+        <span className="font-serif text-base font-semibold text-paper">Central de Robôs</span>
+      </Link>
+
+      {/* Usuário */}
+      <div className="mx-3 flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2.5">
+        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amber/20 font-serif text-base font-bold text-amber-light">
+          {name.charAt(0).toUpperCase()}
+        </span>
+        <span className="min-w-0">
+          <span className="block truncate text-sm font-medium text-paper">{name}</span>
+          <span className={`text-[11px] font-semibold uppercase tracking-wide ${plan === "pro" ? "text-amber-light" : "text-paper/40"}`}>Plano {plan === "pro" ? "Pro" : "Free"}</span>
+        </span>
+      </div>
+
+      {/* Navegação */}
+      <nav className="mt-5 flex-1 space-y-1 overflow-y-auto px-3">
+        <p className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-paper/30">Robôs</p>
+        {navItems.map((item) => {
+          const active = activeCat === item.key;
+          return (
+            <button
+              key={item.key}
+              onClick={() => go(item.key)}
+              aria-current={active ? "page" : undefined}
+              className={`flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors ${
+                active ? "bg-amber/15 font-semibold text-amber-light" : "text-paper/60 hover:bg-white/5 hover:text-paper"
               }`}
             >
-              Plano {plan === "pro" ? "Pro" : "Free"}
-            </span>
-            {favs.length > 0 && (
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-paper/50">
-                ⭐ {favs.length} favorito{favs.length > 1 ? "s" : ""}
-              </span>
-            )}
-          </div>
-        </div>
-        <button onClick={() => signOut(auth)} className="btn btn-dark-ghost !px-5 !py-2.5">
+              <span className={active ? "text-amber-light" : "text-paper/40"}>{item.icon}</span>
+              <span className="flex-1 truncate text-left">{item.label}</span>
+              <span className="font-mono text-[11px] text-paper/30">{item.count}</span>
+            </button>
+          );
+        })}
+      </nav>
+
+      {/* Rodapé */}
+      <div className="space-y-1 border-t border-white/8 p-3">
+        <Link href="/" className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-paper/55 transition-colors hover:bg-white/5 hover:text-paper">
+          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
+          Voltar ao site
+        </Link>
+        <button onClick={() => signOut(auth)} className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-paper/55 transition-colors hover:bg-red-500/10 hover:text-red-300">
+          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" y1="12" x2="9" y2="12" /></svg>
           Sair
         </button>
       </div>
+    </div>
+  );
 
-      {/* Boas-vindas (1º acesso) */}
-      {welcome && loaded && robots.length > 0 && (
-        <div className="glass relative mt-8 border-amber/25 p-6" style={{ background: "rgba(224,164,92,0.06)" }}>
-          <button
-            onClick={dismissWelcome}
-            aria-label="Dispensar boas-vindas"
-            className="absolute right-4 top-4 grid h-7 w-7 place-items-center rounded-md text-paper/50 hover:bg-white/10 hover:text-paper"
-          >
-            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-              <line x1="6" y1="6" x2="18" y2="18" />
-              <line x1="18" y1="6" x2="6" y2="18" />
-            </svg>
-          </button>
-          <p className="font-serif text-lg font-semibold text-paper">Bem-vindo à sua Central de Robôs 👋</p>
-          <p className="mt-1 max-w-2xl text-sm text-paper/60">
-            Cada robô é um especialista pronto: clique em <b className="text-paper/80">Ver prompt</b> para
-            conhecer como ele pensa, copie e cole na sua IA. Não sabe por onde começar? Use o{" "}
-            <b className="text-paper/80">Criador de Prompts</b> — ou siga a trilha abaixo para construir
-            um sistema do zero.
-          </p>
+  return (
+    <div className="flex min-h-screen">
+      {/* Sidebar desktop */}
+      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 border-r border-white/8 bg-[#0a090b] lg:block">
+        {SidebarContent}
+      </aside>
+
+      {/* Drawer mobile */}
+      {drawer && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setDrawer(false)} aria-hidden="true" />
+          <aside className="absolute left-0 top-0 h-full w-72 border-r border-white/8 bg-[#0a090b]">{SidebarContent}</aside>
         </div>
       )}
 
-      {!loaded ? (
-        <div className="mt-12 grid gap-5 md:grid-cols-3" aria-hidden="true">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="glass h-48 animate-pulse p-7">
-              <div className="h-5 w-2/3 rounded bg-white/10" />
-              <div className="mt-3 h-3 w-1/2 rounded bg-white/10" />
-              <div className="mt-5 h-3 w-full rounded bg-white/5" />
-              <div className="mt-2 h-3 w-4/5 rounded bg-white/5" />
+      {/* Conteúdo */}
+      <div className="min-w-0 flex-1">
+        {/* Top bar */}
+        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-white/8 bg-[#070608]/85 px-4 py-3 backdrop-blur md:px-7">
+          <button onClick={() => setDrawer(true)} aria-label="Abrir menu" className="grid h-9 w-9 place-items-center rounded-lg text-paper/70 hover:bg-white/5 lg:hidden">
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
+          </button>
+          <div className="relative w-full max-w-md">
+            <svg className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-paper/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+            <label htmlFor="robot-search" className="sr-only">Buscar robô</label>
+            <input id="robot-search" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar robô…" className="min-h-[40px] w-full rounded-full border border-white/12 bg-white/5 pl-10 pr-4 text-sm text-paper outline-none transition-colors placeholder:text-paper/40 focus:border-amber" />
+          </div>
+          <span className="ml-auto hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-paper/55 sm:block">
+            {loaded ? `${robots.length} robôs` : "…"}
+          </span>
+        </header>
+
+        {/* Main */}
+        <main className="mx-auto max-w-5xl px-4 py-7 md:px-7">
+          {/* Saudação */}
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="kicker-d">Central de Robôs</p>
+              <h1 className="mt-2 text-2xl font-medium tracking-tight md:text-3xl">
+                <span className="text-grad">Olá, </span>
+                <span className="accent">{name}.</span>
+              </h1>
             </div>
-          ))}
-        </div>
-      ) : robots.length === 0 ? (
-        <p className="mt-12 text-paper/50">Em breve, os robôs.</p>
-      ) : (
-        <>
-          {/* Filtros */}
-          <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-wrap gap-2">
-              {chips.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setActiveCat(c)}
-                  aria-pressed={activeCat === c}
-                  className={`rounded-full border px-4 py-2 text-sm transition-colors ${
-                    activeCat === c
-                      ? "border-amber bg-amber font-semibold text-ink"
-                      : "border-white/12 text-paper/65 hover:border-amber/50 hover:text-paper"
-                  }`}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-            <div className="relative md:w-72">
-              <input
-                type="search"
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder="Buscar robô…"
-                aria-label="Buscar robô"
-                className="min-h-[44px] w-full rounded-full border border-white/15 bg-white/5 pl-11 pr-4 text-sm text-paper outline-none transition-colors placeholder:text-paper/40 focus:border-amber"
-              />
-              <svg
-                className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-paper/40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <path d="m21 21-4.3-4.3" />
-              </svg>
-            </div>
+            {activeCat !== "Todos" && (
+              <span className="rounded-full border border-amber/25 bg-amber/10 px-3 py-1 text-xs font-semibold text-amber-light">
+                {activeCat} · {visible.length}
+              </span>
+            )}
           </div>
 
-          {/* Trilhas guiadas */}
-          {activeCat === "Todos" && !term &&
-            trilhasResolvidas.map((t) => (
-              <div key={t.title} className="glass mt-10 overflow-hidden">
-                <div className="border-b border-white/10 px-6 py-4">
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
-                    Trilha · {t.title}
-                  </h3>
-                  <p className="mt-1 text-xs text-paper/45">{t.desc}</p>
-                </div>
-                <div className="flex gap-2 overflow-x-auto px-6 py-4">
-                  {t.robots.map((r, i) => (
-                    <button
-                      key={r.id}
-                      onClick={() => setViewing(r)}
-                      className="group flex shrink-0 items-center gap-2"
-                    >
-                      <span className="flex items-center gap-2 rounded-full border border-white/12 bg-white/5 py-1.5 pl-1.5 pr-3.5 text-xs text-paper/70 transition-colors group-hover:border-amber/50 group-hover:text-paper">
-                        <span className="grid h-6 w-6 place-items-center rounded-full bg-amber/15 font-serif text-[11px] font-bold text-amber-light">
-                          {i + 1}
-                        </span>
-                        {r.name}
-                      </span>
-                      {i < t.robots.length - 1 && (
-                        <svg className="h-3.5 w-3.5 shrink-0 text-paper/25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
+          {/* Boas-vindas */}
+          {welcome && loaded && robots.length > 0 && activeCat === "Todos" && !term && (
+            <div className="glass relative mt-6 border-amber/25 p-5" style={{ background: "rgba(224,164,92,0.06)" }}>
+              <button onClick={dismissWelcome} aria-label="Dispensar" className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-md text-paper/50 hover:bg-white/10 hover:text-paper">
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" /></svg>
+              </button>
+              <p className="font-serif text-base font-semibold text-paper">Bem-vindo à sua Central 👋</p>
+              <p className="mt-1 max-w-2xl text-sm text-paper/60">
+                Cada robô é um especialista pronto: clique em <b className="text-paper/80">Ver prompt</b> para conhecer como ele pensa, copie e cole na sua IA. Não sabe por onde começar? Use o <b className="text-paper/80">Criador de Prompts</b> ou siga uma trilha abaixo.
+              </p>
+            </div>
+          )}
 
-          {visible.length === 0 ? (
-            <p className="mt-12 text-paper/50">Nenhum robô encontrado para esse filtro.</p>
-          ) : activeCat === "Favoritos" ? (
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
-              {visible.map((r) => (
-                <RobotCard key={r.id} robot={r} onView={setViewing} fav={favs.includes(r.id)} onToggleFav={toggleFav} />
+          {/* Conteúdo */}
+          {!loaded ? (
+            <div className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3" aria-hidden="true">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="glass h-44 animate-pulse p-6">
+                  <div className="h-5 w-2/3 rounded bg-white/10" />
+                  <div className="mt-3 h-3 w-1/2 rounded bg-white/10" />
+                  <div className="mt-5 h-3 w-full rounded bg-white/5" />
+                </div>
               ))}
             </div>
+          ) : robots.length === 0 ? (
+            <p className="mt-12 text-paper/50">Em breve, os robôs. (Admin → Robôs → Importar/atualizar.)</p>
           ) : (
-            categories.map((catName) => {
-              const list = visible.filter((r) => r.category === catName).sort(byFav);
-              if (list.length === 0) return null;
-              return (
-                <div key={catName} className="mt-12">
-                  <div className="flex items-center gap-3">
-                    <span className="grid h-8 w-8 place-items-center rounded-lg border border-amber/25 bg-amber/10 text-amber-light" aria-hidden="true">
-                      {catIcons[catName]}
-                    </span>
-                    <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
-                      {catName}
-                    </h3>
-                    <span className="font-mono text-xs text-paper/35">{list.length}</span>
+            <>
+              {/* Trilhas */}
+              {activeCat === "Todos" && !term &&
+                trilhasResolvidas.map((t) => (
+                  <div key={t.title} className="glass mt-7 overflow-hidden">
+                    <div className="border-b border-white/10 px-5 py-3.5">
+                      <h2 className="text-xs font-semibold uppercase tracking-widest text-amber-light">Trilha · {t.title}</h2>
+                      <p className="mt-1 text-xs text-paper/45">{t.desc}</p>
+                    </div>
+                    <div className="flex gap-2 overflow-x-auto px-5 py-4">
+                      {t.robots.map((r, i) => (
+                        <button key={r.id} onClick={() => setViewing(r)} className="group flex shrink-0 items-center gap-2">
+                          <span className="flex items-center gap-2 rounded-full border border-white/12 bg-white/5 py-1.5 pl-1.5 pr-3.5 text-xs text-paper/70 transition-colors group-hover:border-amber/50 group-hover:text-paper">
+                            <span className="grid h-6 w-6 place-items-center rounded-full bg-amber/15 font-serif text-[11px] font-bold text-amber-light">{i + 1}</span>
+                            {r.name}
+                          </span>
+                          {i < t.robots.length - 1 && (
+                            <svg className="h-3.5 w-3.5 shrink-0 text-paper/25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                          )}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                  <div className="mt-6 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
-                    {list.map((r) => (
-                      <RobotCard key={r.id} robot={r} onView={setViewing} fav={favs.includes(r.id)} onToggleFav={toggleFav} />
-                    ))}
-                  </div>
+                ))}
+
+              {visible.length === 0 ? (
+                <p className="mt-12 text-paper/50">Nenhum robô encontrado para esse filtro.</p>
+              ) : activeCat === "Favoritos" ? (
+                <div className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+                  {visible.map((r) => (
+                    <RobotCard key={r.id} robot={r} onView={setViewing} fav={favs.includes(r.id)} onToggleFav={toggleFav} />
+                  ))}
                 </div>
-              );
-            })
+              ) : (
+                categories.map((catName) => {
+                  const list = visible.filter((r) => r.category === catName).sort(byFav);
+                  if (list.length === 0) return null;
+                  return (
+                    <div key={catName} className="mt-10">
+                      <div className="flex items-center gap-3">
+                        <span className="grid h-8 w-8 place-items-center rounded-lg border border-amber/25 bg-amber/10 text-amber-light" aria-hidden="true">{catIcons[catName]}</span>
+                        <h2 className="text-sm font-semibold uppercase tracking-widest text-amber-light">{catName}</h2>
+                        <span className="font-mono text-xs text-paper/35">{list.length}</span>
+                      </div>
+                      <div className="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+                        {list.map((r) => (
+                          <RobotCard key={r.id} robot={r} onView={setViewing} fav={favs.includes(r.id)} onToggleFav={toggleFav} />
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })
+              )}
+            </>
           )}
-        </>
-      )}
+        </main>
+      </div>
 
       {viewing && <RobotViewer robot={viewing} onClose={() => setViewing(null)} />}
-
-      <div className="glass mt-14 p-6 text-paper/60">
-        <p className="font-serif text-lg font-semibold text-paper">Em breve por aqui</p>
-        <p className="mt-1 text-sm">
-          Cursos, e-books e materiais exclusivos — tudo na sua Área do Cliente. Fica de olho.
-        </p>
-      </div>
     </div>
   );
 }
@@ -486,7 +446,11 @@ export function MemberArea() {
   }), []);
 
   if (loading) {
-    return <p className="mt-12 text-paper/50">Carregando…</p>;
+    return (
+      <div className="grid min-h-screen place-items-center">
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/15 border-t-amber" />
+      </div>
+    );
   }
   if (!user) return <AuthForm />;
   return <Dashboard user={user} />;

@@ -38,6 +38,9 @@ export const metadata: Metadata = {
   description: site.description,
   authors: [{ name: site.name }],
   alternates: { canonical: "/" },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
