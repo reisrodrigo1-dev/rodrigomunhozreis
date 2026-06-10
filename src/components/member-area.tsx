@@ -10,15 +10,29 @@ import {
   type User,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
-import { createStudent } from "@/lib/students";
+import { createStudent, getStudent } from "@/lib/students";
 import { getRobots } from "@/lib/robots-db";
 import { RobotCard } from "@/components/robot-card";
+import { RobotViewer } from "@/components/robot-viewer";
 import { ConsentCheckbox } from "@/components/consent-checkbox";
 import { maskPhone } from "@/lib/format";
 import type { Robot } from "@/lib/robots";
 
 const categories: Robot["category"][] = ["Criar sistemas com IA", "Para o negócio"];
 const perfis = ["Dono de empresa", "Empreendedor", "Profissional / colaborador", "Estudante", "Outro"];
+
+/** Trilha sugerida para quem vai construir um sistema (na ordem certa). */
+const trilha = [
+  "Arquiteto de Produto",
+  "Engenheiro Full-Stack",
+  "Especialista em Firebase",
+  "Revisor de Código & Segurança",
+  "Especialista em Deploy",
+  "Engenheiro de Depuração",
+];
+
+const FAVS_KEY = "robot-favs";
+const WELCOME_KEY = "robots-welcome-dismissed";
 
 const field =
   "min-h-[44px] w-full rounded-xl border border-white/15 bg-white/5 px-4 text-sm text-paper outline-none transition-colors placeholder:text-paper/40 focus:border-amber";
@@ -148,45 +162,127 @@ function AuthForm() {
 function Dashboard({ user }: { user: User }) {
   const [robots, setRobots] = useState<Robot[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [plan, setPlan] = useState<"free" | "pro">("free");
+  const [favs, setFavs] = useState<string[]>([]);
+  const [welcome, setWelcome] = useState(false);
+  const [viewing, setViewing] = useState<Robot | null>(null);
 
   useEffect(() => {
     getRobots()
       .then(setRobots)
       .catch(() => {})
       .finally(() => setLoaded(true));
-  }, []);
+    getStudent(user.uid)
+      .then((s) => s?.plan === "pro" && setPlan("pro"))
+      .catch(() => {});
+    try {
+      setFavs(JSON.parse(localStorage.getItem(FAVS_KEY) ?? "[]"));
+      setWelcome(localStorage.getItem(WELCOME_KEY) !== "1");
+    } catch {}
+  }, [user.uid]);
+
+  function toggleFav(r: Robot) {
+    setFavs((f) => {
+      const next = f.includes(r.id) ? f.filter((id) => id !== r.id) : [...f, r.id];
+      try {
+        localStorage.setItem(FAVS_KEY, JSON.stringify(next));
+      } catch {}
+      return next;
+    });
+  }
+
+  function dismissWelcome() {
+    setWelcome(false);
+    try {
+      localStorage.setItem(WELCOME_KEY, "1");
+    } catch {}
+  }
 
   const [q, setQ] = useState("");
-  const [activeCat, setActiveCat] = useState<"Todos" | Robot["category"]>("Todos");
+  const [activeCat, setActiveCat] = useState<"Todos" | "Favoritos" | Robot["category"]>("Todos");
 
   const first = (user.displayName || user.email || "").split(" ")[0];
   const term = q.trim().toLowerCase();
   const visible = robots.filter((r) => {
-    const okCat = activeCat === "Todos" || r.category === activeCat;
+    const okCat =
+      activeCat === "Todos" ||
+      (activeCat === "Favoritos" ? favs.includes(r.id) : r.category === activeCat);
     const okTerm =
       !term || `${r.name} ${r.tagline} ${r.description}`.toLowerCase().includes(term);
     return okCat && okTerm;
   });
-  const chips: ("Todos" | Robot["category"])[] = ["Todos", ...categories];
+  const chips: ("Todos" | "Favoritos" | Robot["category"])[] = [
+    "Todos",
+    ...(favs.length > 0 ? (["Favoritos"] as const) : []),
+    ...categories,
+  ];
+
+  // Favoritos primeiro dentro de cada categoria.
+  const byFav = (a: Robot, b: Robot) =>
+    Number(favs.includes(b.id)) - Number(favs.includes(a.id));
+
+  // Robôs da trilha (na ordem), resolvidos pelo nome.
+  const trilhaRobots = trilha
+    .map((name) => robots.find((r) => r.name === name))
+    .filter(Boolean) as Robot[];
 
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-between gap-4">
+      {/* Header de dashboard */}
+      <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="kicker-d">Área do Cliente</p>
+          <p className="kicker-d">Central de Robôs</p>
           <h2 className="mt-3 text-3xl font-medium tracking-tight md:text-4xl">
             <span className="text-grad">Olá, </span>
             <span className="accent">{first || "cliente"}.</span>
           </h2>
+          <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-paper/60">
+              {loaded ? `${robots.length} robôs disponíveis` : "carregando…"}
+            </span>
+            <span
+              className={`rounded-full border px-3 py-1 font-semibold uppercase tracking-wide ${
+                plan === "pro"
+                  ? "border-amber/40 bg-amber/15 text-amber-light"
+                  : "border-white/10 bg-white/5 text-paper/50"
+              }`}
+            >
+              Plano {plan === "pro" ? "Pro" : "Free"}
+            </span>
+            {favs.length > 0 && (
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-paper/50">
+                ⭐ {favs.length} favorito{favs.length > 1 ? "s" : ""}
+              </span>
+            )}
+          </div>
         </div>
         <button onClick={() => signOut(auth)} className="btn btn-dark-ghost !px-5 !py-2.5">
           Sair
         </button>
       </div>
 
-      <p className="mt-5 max-w-2xl text-paper/55">
-        Seus robôs de IA, liberados. Copie o prompt ou abra direto na sua IA (ChatGPT, Claude, Gemini).
-      </p>
+      {/* Boas-vindas (1º acesso) */}
+      {welcome && loaded && robots.length > 0 && (
+        <div className="glass relative mt-8 border-amber/25 p-6" style={{ background: "rgba(224,164,92,0.06)" }}>
+          <button
+            onClick={dismissWelcome}
+            aria-label="Dispensar boas-vindas"
+            className="absolute right-4 top-4 grid h-7 w-7 place-items-center rounded-md text-paper/50 hover:bg-white/10 hover:text-paper"
+          >
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+            </svg>
+          </button>
+          <p className="font-serif text-lg font-semibold text-paper">Bem-vindo à sua Central de Robôs 👋</p>
+          <p className="mt-1 max-w-2xl text-sm text-paper/60">
+            Cada robô é um especialista pronto: clique em <b className="text-paper/80">Ver prompt</b> para
+            conhecer como ele pensa, copie e cole na sua IA. Não sabe por onde começar? Use o{" "}
+            <b className="text-paper/80">Criador de Prompts</b> — ou siga a trilha abaixo para construir
+            um sistema do zero.
+          </p>
+        </div>
+      )}
 
       {!loaded ? (
         <div className="mt-12 grid gap-5 md:grid-cols-3" aria-hidden="true">
@@ -246,20 +342,78 @@ function Dashboard({ user }: { user: User }) {
             </div>
           </div>
 
+          {/* Trilha: construa um sistema do zero */}
+          {trilhaRobots.length >= 4 && activeCat === "Todos" && !term && (
+            <div className="glass mt-10 overflow-hidden">
+              <div className="border-b border-white/10 px-6 py-4">
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
+                  Trilha · Construa um sistema do zero
+                </h3>
+                <p className="mt-1 text-xs text-paper/45">
+                  Use os robôs nesta ordem — do plano ao deploy. Clique em um passo para abrir o prompt.
+                </p>
+              </div>
+              <div className="flex gap-2 overflow-x-auto px-6 py-4">
+                {trilhaRobots.map((r, i) => (
+                  <button
+                    key={r.id}
+                    onClick={() => setViewing(r)}
+                    className="group flex shrink-0 items-center gap-2"
+                  >
+                    <span className="flex items-center gap-2 rounded-full border border-white/12 bg-white/5 py-1.5 pl-1.5 pr-3.5 text-xs text-paper/70 transition-colors group-hover:border-amber/50 group-hover:text-paper">
+                      <span className="grid h-6 w-6 place-items-center rounded-full bg-amber/15 font-serif text-[11px] font-bold text-amber-light">
+                        {i + 1}
+                      </span>
+                      {r.name}
+                    </span>
+                    {i < trilhaRobots.length - 1 && (
+                      <svg className="h-3.5 w-3.5 shrink-0 text-paper/25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {visible.length === 0 ? (
             <p className="mt-12 text-paper/50">Nenhum robô encontrado para esse filtro.</p>
+          ) : activeCat === "Favoritos" ? (
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+              {visible.map((r) => (
+                <RobotCard key={r.id} robot={r} onView={setViewing} fav={favs.includes(r.id)} onToggleFav={toggleFav} />
+              ))}
+            </div>
           ) : (
             categories.map((catName) => {
-              const list = visible.filter((r) => r.category === catName);
+              const list = visible.filter((r) => r.category === catName).sort(byFav);
               if (list.length === 0) return null;
               return (
                 <div key={catName} className="mt-12">
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
-                    {catName}
-                  </h3>
-                  <div className="mt-6 grid gap-5 md:grid-cols-3">
+                  <div className="flex items-center gap-3">
+                    <span className="grid h-8 w-8 place-items-center rounded-lg border border-amber/25 bg-amber/10 text-amber-light" aria-hidden="true">
+                      {catName === "Criar sistemas com IA" ? (
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="16 18 22 12 16 6" />
+                          <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                      ) : (
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="2" y="7" width="20" height="14" rx="2" />
+                          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                        </svg>
+                      )}
+                    </span>
+                    <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
+                      {catName}
+                    </h3>
+                    <span className="font-mono text-xs text-paper/35">{list.length}</span>
+                  </div>
+                  <div className="mt-6 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
                     {list.map((r) => (
-                      <RobotCard key={r.id} robot={r} />
+                      <RobotCard key={r.id} robot={r} onView={setViewing} fav={favs.includes(r.id)} onToggleFav={toggleFav} />
                     ))}
                   </div>
                 </div>
@@ -268,6 +422,8 @@ function Dashboard({ user }: { user: User }) {
           )}
         </>
       )}
+
+      {viewing && <RobotViewer robot={viewing} onClose={() => setViewing(null)} />}
 
       <div className="glass mt-14 p-6 text-paper/60">
         <p className="font-serif text-lg font-semibold text-paper">Em breve por aqui</p>
