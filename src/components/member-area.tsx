@@ -68,11 +68,17 @@ const WELCOME_KEY = "robots-welcome-dismissed";
 const field =
   "min-h-[44px] w-full rounded-xl border border-white/15 bg-white/5 px-4 text-sm text-paper outline-none transition-colors placeholder:text-paper/40 focus:border-amber";
 
-function firstName(user: User): string {
+function cap(s: string): string {
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+}
+/** Primeiro nome real (capitalizado) ou null se a conta não tem nome cadastrado. */
+function realFirstName(user: User): string | null {
   const raw = user.displayName?.trim();
-  if (raw) return raw.split(" ")[0];
-  const local = (user.email ?? "").split("@")[0];
-  return local || "cliente";
+  return raw ? cap(raw.split(" ")[0]) : null;
+}
+/** Rótulo curto pra sidebar: nome real, senão o trecho antes do @ do e-mail. */
+function shortLabel(user: User): string {
+  return realFirstName(user) ?? (user.email ?? "").split("@")[0] ?? "Cliente";
 }
 
 /* ───────────────────────── Login ───────────────────────── */
@@ -223,7 +229,8 @@ function Dashboard({ user }: { user: User }) {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  const name = firstName(user);
+  const firstReal = realFirstName(user);
+  const label = shortLabel(user);
   const term = q.trim().toLowerCase();
   const visible = robots.filter((r) => {
     const okCat = activeCat === "Todos" || (activeCat === "Favoritos" ? favs.includes(r.id) : r.category === activeCat);
@@ -252,10 +259,10 @@ function Dashboard({ user }: { user: User }) {
       {/* Usuário */}
       <div className="mx-3 flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2.5">
         <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amber/20 font-serif text-base font-bold text-amber-light">
-          {name.charAt(0).toUpperCase()}
+          {label.charAt(0).toUpperCase()}
         </span>
         <span className="min-w-0">
-          <span className="block truncate text-sm font-medium text-paper">{name}</span>
+          <span className="block truncate text-sm font-medium text-paper">{label}</span>
           <span className={`text-[11px] font-semibold uppercase tracking-wide ${plan === "pro" ? "text-amber-light" : "text-paper/40"}`}>Plano {plan === "pro" ? "Pro" : "Free"}</span>
         </span>
       </div>
@@ -329,14 +336,23 @@ function Dashboard({ user }: { user: User }) {
         </header>
 
         {/* Main */}
-        <main className="mx-auto max-w-5xl px-4 py-7 md:px-7">
+        <main className="max-w-6xl px-4 py-7 md:px-8">
           {/* Saudação */}
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
               <p className="kicker-d">Central de Robôs</p>
               <h1 className="mt-2 text-2xl font-medium tracking-tight md:text-3xl">
-                <span className="text-grad">Olá, </span>
-                <span className="accent">{name}.</span>
+                {firstReal ? (
+                  <>
+                    <span className="text-grad">Olá, </span>
+                    <span className="accent">{firstReal}.</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-grad">Bem-vindo </span>
+                    <span className="accent">de volta.</span>
+                  </>
+                )}
               </h1>
             </div>
             {activeCat !== "Todos" && (
@@ -399,7 +415,17 @@ function Dashboard({ user }: { user: User }) {
                 ))}
 
               {visible.length === 0 ? (
-                <p className="mt-12 text-paper/50">Nenhum robô encontrado para esse filtro.</p>
+                activeCat === "Favoritos" ? (
+                  <div className="glass mt-8 flex flex-col items-center px-6 py-12 text-center">
+                    <span className="grid h-12 w-12 place-items-center rounded-full border border-amber/25 bg-amber/10 text-amber-light" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                    </span>
+                    <p className="mt-4 font-serif text-lg font-semibold text-paper">Nenhum favorito ainda</p>
+                    <p className="mt-1.5 max-w-sm text-sm text-paper/55">Clique na estrela ⭐ de qualquer robô para guardá-lo aqui e acessar rápido depois.</p>
+                  </div>
+                ) : (
+                  <p className="mt-12 text-paper/50">Nenhum robô encontrado para esse filtro.</p>
+                )
               ) : activeCat === "Favoritos" ? (
                 <div className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
                   {visible.map((r) => (

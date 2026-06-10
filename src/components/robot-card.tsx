@@ -29,7 +29,7 @@ export function RobotCard({
   }
 
   return (
-    <div className="glass glass-hover group relative flex h-full flex-col p-6">
+    <div className="glass glass-hover group relative flex h-full flex-col p-6 transition-transform duration-200 hover:-translate-y-0.5">
       {onToggleFav && (
         <button
           onClick={() => onToggleFav(robot)}
@@ -47,16 +47,15 @@ export function RobotCard({
 
       <h3 className="pr-8 text-lg font-semibold text-paper">{robot.name}</h3>
       <p className="mt-1 text-sm font-semibold text-amber-light">{robot.tagline}</p>
-      <p className="mt-3 text-sm leading-relaxed text-paper/55">{robot.description}</p>
-      {robot.whenToUse ? (
-        <p className="mt-3 flex-1 text-xs text-paper/45">
+      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-paper/55">{robot.description}</p>
+      {robot.whenToUse && (
+        <p className="mt-3 line-clamp-2 text-xs text-paper/45">
           <span className="font-semibold text-paper/60">Quando usar:</span> {robot.whenToUse}
         </p>
-      ) : (
-        <div className="flex-1" />
       )}
+      <div className="flex-1" />
 
-      <div className="mt-5 flex flex-wrap items-center gap-2">
+      <div className="mt-4 flex flex-wrap items-center gap-2">
         {onView ? (
           <button onClick={() => onView(robot)} className="btn btn-glow !px-5 !py-2.5 !text-sm">
             Ver prompt
