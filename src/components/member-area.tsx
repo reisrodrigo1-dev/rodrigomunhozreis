@@ -18,7 +18,39 @@ import { ConsentCheckbox } from "@/components/consent-checkbox";
 import { maskPhone } from "@/lib/format";
 import type { Robot } from "@/lib/robots";
 
-const categories: Robot["category"][] = ["Criar sistemas com IA", "Para o negócio"];
+const categories: Robot["category"][] = [
+  "Criar sistemas com IA",
+  "Para o negócio",
+  "Marketing & Vendas",
+  "Produtividade & Carreira",
+];
+
+/** Ícone SVG de cada categoria (stroke, sem emoji). */
+const catIcons: Record<Robot["category"], React.ReactNode> = {
+  "Criar sistemas com IA": (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
+    </svg>
+  ),
+  "Para o negócio": (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2" />
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+    </svg>
+  ),
+  "Marketing & Vendas": (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m3 11 18-5v12L3 14v-3z" />
+      <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+    </svg>
+  ),
+  "Produtividade & Carreira": (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  ),
+};
 const perfis = ["Dono de empresa", "Empreendedor", "Profissional / colaborador", "Estudante", "Outro"];
 
 /** Trilha sugerida para quem vai construir um sistema (na ordem certa). */
@@ -394,17 +426,7 @@ function Dashboard({ user }: { user: User }) {
                 <div key={catName} className="mt-12">
                   <div className="flex items-center gap-3">
                     <span className="grid h-8 w-8 place-items-center rounded-lg border border-amber/25 bg-amber/10 text-amber-light" aria-hidden="true">
-                      {catName === "Criar sistemas com IA" ? (
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="16 18 22 12 16 6" />
-                          <polyline points="8 6 2 12 8 18" />
-                        </svg>
-                      ) : (
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="2" y="7" width="20" height="14" rx="2" />
-                          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                        </svg>
-                      )}
+                      {catIcons[catName]}
                     </span>
                     <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
                       {catName}

@@ -62,6 +62,8 @@ export function RobotEditor({
             >
               <option value="Criar sistemas com IA">Criar sistemas com IA</option>
               <option value="Para o negócio">Para o negócio</option>
+              <option value="Marketing & Vendas">Marketing & Vendas</option>
+              <option value="Produtividade & Carreira">Produtividade & Carreira</option>
             </select>
           </label>
         </div>

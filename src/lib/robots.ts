@@ -6,7 +6,11 @@ export type Robot = {
   name: string;
   tagline: string;
   description: string;
-  category: "Criar sistemas com IA" | "Para o negócio";
+  category:
+    | "Criar sistemas com IA"
+    | "Para o negócio"
+    | "Marketing & Vendas"
+    | "Produtividade & Carreira";
   /** Prompt completo e detalhado que o visitante copia e cola na própria IA. */
   prompt: string;
   /** Quando usar este robô — linha curta exibida no card. */
