@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { createLead } from "@/lib/leads";
 import { recordDownload } from "@/lib/downloads";
 import { maskName, maskPhone } from "@/lib/format";
@@ -19,6 +20,7 @@ export function DownloadGate({
   variant?: "light" | "dark";
 }) {
   const dark = variant === "dark";
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -41,6 +43,8 @@ export function DownloadGate({
       await recordDownload(material, email, lead.id);
       setStatus("done");
       window.open(material.fileUrl, "_blank", "noopener,noreferrer");
+      // Continua a jornada na página de obrigado (o material já abriu em nova aba).
+      setTimeout(() => router.push("/obrigado"), 600);
     } catch (err) {
       console.error(err);
       setStatus("error");
