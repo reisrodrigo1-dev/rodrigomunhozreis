@@ -92,6 +92,17 @@ export default async function PostPage({ params }: Props) {
     ...(isoModified ? { dateModified: isoModified } : {}),
   };
 
+  // Breadcrumbs estruturados (Início > Blog > Artigo) — guia de SEO do Google.
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Início", item: `https://${site.domain}` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `https://${site.domain}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: url },
+    ],
+  };
+
   // Posts relacionados: mesma categoria primeiro, completa com os demais.
   let related: Post[] = [];
   try {
@@ -107,6 +118,10 @@ export default async function PostPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <ViewTracker slug={post.slug} />
       <ReadingProgress />

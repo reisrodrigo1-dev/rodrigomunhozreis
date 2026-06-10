@@ -53,14 +53,31 @@ const catIcons: Record<Robot["category"], React.ReactNode> = {
 };
 const perfis = ["Dono de empresa", "Empreendedor", "Profissional / colaborador", "Estudante", "Outro"];
 
-/** Trilha sugerida para quem vai construir um sistema (na ordem certa). */
-const trilha = [
-  "Arquiteto de Produto",
-  "Engenheiro Full-Stack",
-  "Especialista em Firebase",
-  "Revisor de Código & Segurança",
-  "Especialista em Deploy",
-  "Engenheiro de Depuração",
+/** Trilhas sugeridas — sequências de robôs na ordem certa. */
+const trilhas: { title: string; desc: string; steps: string[] }[] = [
+  {
+    title: "Construa um sistema do zero",
+    desc: "Do plano ao deploy. Clique em um passo para abrir o prompt.",
+    steps: [
+      "Arquiteto de Produto",
+      "Engenheiro Full-Stack",
+      "Especialista em Firebase",
+      "Revisor de Código & Segurança",
+      "Especialista em Deploy",
+      "Engenheiro de Depuração",
+    ],
+  },
+  {
+    title: "Lance seu negócio",
+    desc: "Da ideia validada à primeira venda. Clique em um passo para abrir o prompt.",
+    steps: [
+      "Investidor Cético",
+      "Analista de Preço & Margem",
+      "Estrategista de Marketing",
+      "Copywriter de Vendas",
+      "Criador de Conteúdo",
+    ],
+  },
 ];
 
 const FAVS_KEY = "robot-favs";
@@ -253,10 +270,13 @@ function Dashboard({ user }: { user: User }) {
   const byFav = (a: Robot, b: Robot) =>
     Number(favs.includes(b.id)) - Number(favs.includes(a.id));
 
-  // Robôs da trilha (na ordem), resolvidos pelo nome.
-  const trilhaRobots = trilha
-    .map((name) => robots.find((r) => r.name === name))
-    .filter(Boolean) as Robot[];
+  // Trilhas com os robôs resolvidos pelo nome (só exibe se a maioria existir).
+  const trilhasResolvidas = trilhas
+    .map((t) => ({
+      ...t,
+      robots: t.steps.map((name) => robots.find((r) => r.name === name)).filter(Boolean) as Robot[],
+    }))
+    .filter((t) => t.robots.length >= 4);
 
   return (
     <div>
@@ -374,41 +394,40 @@ function Dashboard({ user }: { user: User }) {
             </div>
           </div>
 
-          {/* Trilha: construa um sistema do zero */}
-          {trilhaRobots.length >= 4 && activeCat === "Todos" && !term && (
-            <div className="glass mt-10 overflow-hidden">
-              <div className="border-b border-white/10 px-6 py-4">
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
-                  Trilha · Construa um sistema do zero
-                </h3>
-                <p className="mt-1 text-xs text-paper/45">
-                  Use os robôs nesta ordem — do plano ao deploy. Clique em um passo para abrir o prompt.
-                </p>
-              </div>
-              <div className="flex gap-2 overflow-x-auto px-6 py-4">
-                {trilhaRobots.map((r, i) => (
-                  <button
-                    key={r.id}
-                    onClick={() => setViewing(r)}
-                    className="group flex shrink-0 items-center gap-2"
-                  >
-                    <span className="flex items-center gap-2 rounded-full border border-white/12 bg-white/5 py-1.5 pl-1.5 pr-3.5 text-xs text-paper/70 transition-colors group-hover:border-amber/50 group-hover:text-paper">
-                      <span className="grid h-6 w-6 place-items-center rounded-full bg-amber/15 font-serif text-[11px] font-bold text-amber-light">
-                        {i + 1}
+          {/* Trilhas guiadas */}
+          {activeCat === "Todos" && !term &&
+            trilhasResolvidas.map((t) => (
+              <div key={t.title} className="glass mt-10 overflow-hidden">
+                <div className="border-b border-white/10 px-6 py-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-light">
+                    Trilha · {t.title}
+                  </h3>
+                  <p className="mt-1 text-xs text-paper/45">{t.desc}</p>
+                </div>
+                <div className="flex gap-2 overflow-x-auto px-6 py-4">
+                  {t.robots.map((r, i) => (
+                    <button
+                      key={r.id}
+                      onClick={() => setViewing(r)}
+                      className="group flex shrink-0 items-center gap-2"
+                    >
+                      <span className="flex items-center gap-2 rounded-full border border-white/12 bg-white/5 py-1.5 pl-1.5 pr-3.5 text-xs text-paper/70 transition-colors group-hover:border-amber/50 group-hover:text-paper">
+                        <span className="grid h-6 w-6 place-items-center rounded-full bg-amber/15 font-serif text-[11px] font-bold text-amber-light">
+                          {i + 1}
+                        </span>
+                        {r.name}
                       </span>
-                      {r.name}
-                    </span>
-                    {i < trilhaRobots.length - 1 && (
-                      <svg className="h-3.5 w-3.5 shrink-0 text-paper/25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                      </svg>
-                    )}
-                  </button>
-                ))}
+                      {i < t.robots.length - 1 && (
+                        <svg className="h-3.5 w-3.5 shrink-0 text-paper/25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M5 12h14" />
+                          <path d="m12 5 7 7-7 7" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            ))}
 
           {visible.length === 0 ? (
             <p className="mt-12 text-paper/50">Nenhum robô encontrado para esse filtro.</p>

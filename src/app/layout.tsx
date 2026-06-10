@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.description,
-  keywords: site.keywords,
   authors: [{ name: site.name }],
   alternates: { canonical: "/" },
   openGraph: {
