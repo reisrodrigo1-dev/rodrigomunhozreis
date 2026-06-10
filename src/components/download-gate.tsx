@@ -38,17 +38,29 @@ export function DownloadGate({
     const digits = whatsapp.replace(/\D/g, "");
     if (!name.trim() || !email || digits.length < 10 || !consent) return;
     setStatus("loading");
+
+    // 1) Captura do lead — é o que importa. Só isto, se falhar de verdade, vira erro.
+    let leadId: string | undefined;
     try {
       const lead = await createLead(email, `material:${material.slug}`, name, whatsapp);
-      await recordDownload(material, email, lead.id);
-      setStatus("done");
-      window.open(material.fileUrl, "_blank", "noopener,noreferrer");
-      // Continua a jornada na página de obrigado (o material já abriu em nova aba).
-      setTimeout(() => router.push("/obrigado"), 600);
+      leadId = lead.id;
     } catch (err) {
-      console.error(err);
+      console.error("[download-gate] createLead falhou:", err);
       setStatus("error");
+      return;
     }
+
+    // 2) Registro de download é só analytics — NUNCA bloqueia a entrega do material.
+    try {
+      await recordDownload(material, email, leadId);
+    } catch (err) {
+      console.error("[download-gate] recordDownload falhou (ignorado):", err);
+    }
+
+    // 3) Entrega o material e segue a jornada na página de obrigado.
+    setStatus("done");
+    window.open(material.fileUrl, "_blank", "noopener,noreferrer");
+    setTimeout(() => router.push("/obrigado"), 600);
   }
 
   if (status === "done") {
