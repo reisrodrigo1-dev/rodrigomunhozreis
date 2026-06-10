@@ -72,6 +72,7 @@ export const site = {
     { label: "Robôs", href: "/robos" },
     { label: "Materiais", href: "/#materiais" },
     { label: "Blog", href: "/blog" },
+    { label: "Sobre", href: "/sobre" },
     { label: "Trabalhe comigo", href: "/#trabalhe" },
   ],
   // Acesso à área logada — separado do menu principal.
