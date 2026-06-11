@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
 import { DownloadGate } from "@/components/download-gate";
+import { LatestPosts } from "@/components/latest-posts";
 import { getMaterialsMerged } from "@/lib/materials-db";
 import { materials as seedMaterials } from "@/lib/materials";
 import { site } from "@/lib/site";
@@ -200,6 +201,9 @@ export default async function IaSemMedoPage() {
           </div>
         </div>
       </section>
+
+      {/* DO BLOG — nutre e prova autoridade */}
+      <LatestPosts />
 
       {/* CTA FINAL */}
       <section className="border-t border-white/5 py-16 md:py-24">
