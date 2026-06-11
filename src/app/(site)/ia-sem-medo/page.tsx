@@ -79,19 +79,50 @@ export default async function IaSemMedoPage() {
                 de graça.
               </p>
 
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-8 space-y-2.5">
                 {[
-                  "Método P.R.O.M.P.T.E.R. — o prompt profissional, passo a passo",
-                  "Plano de 7 dias pra começar a usar já na primeira semana",
-                  "+130 prompts prontos pro trabalho e pra vida",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-paper/75">
+                  {
+                    node: (
+                      <>
+                        Método <strong className="font-semibold text-paper">P.R.O.M.P.T.E.R.</strong> — o
+                        prompt profissional, passo a passo
+                      </>
+                    ),
+                  },
+                  {
+                    node: (
+                      <>
+                        Plano de <strong className="font-semibold text-paper">7 dias</strong> pra começar já
+                        na primeira semana
+                      </>
+                    ),
+                  },
+                  {
+                    highlight: true,
+                    node: (
+                      <>
+                        <strong className="font-serif text-xl font-bold leading-none text-amber-light">
+                          +130 prompts
+                        </strong>{" "}
+                        <span className="font-semibold text-paper">prontos</span> pro trabalho e pra vida
+                      </>
+                    ),
+                  },
+                ].map((b, i) => (
+                  <li
+                    key={i}
+                    className={`flex items-start gap-3 ${
+                      b.highlight
+                        ? "-mx-1 rounded-xl border border-amber/25 bg-amber/[0.08] px-3 py-2.5 text-paper"
+                        : "text-paper/75"
+                    }`}
+                  >
                     <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-amber/20 text-amber-light">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     </span>
-                    {item}
+                    <span>{b.node}</span>
                   </li>
                 ))}
               </ul>
