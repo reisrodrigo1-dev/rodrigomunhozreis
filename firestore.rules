@@ -23,11 +23,15 @@ service cloud.firestore {
     // Captura pública de leads; leitura/edição/exclusão só admin.
     match /leads/{id} {
       allow create: if
-        request.resource.data.keys().hasOnly(['email','name','whatsapp','source','consentVersion','consentAt','createdAt'])
+        request.resource.data.keys().hasOnly(['email','name','whatsapp','source','utmSource','utmMedium','utmCampaign','referrer','consentVersion','consentAt','createdAt'])
         && isEmail(request.resource.data.email)
         && strOrNull(request.resource.data.name, 200)
         && strOrNull(request.resource.data.whatsapp, 40)
         && strOrNull(request.resource.data.source, 120)
+        && strOrNull(request.resource.data.utmSource, 120)
+        && strOrNull(request.resource.data.utmMedium, 120)
+        && strOrNull(request.resource.data.utmCampaign, 120)
+        && strOrNull(request.resource.data.referrer, 200)
         && strOrNull(request.resource.data.consentVersion, 40);
       allow read, update, delete: if isAdmin();
     }
