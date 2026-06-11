@@ -6,7 +6,8 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import { MetaPixel } from "@/components/meta-pixel";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// ID de medição do GA4 (público — visível no HTML). Pode ser trocado via env.
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-CPH3JR9WZ7";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
