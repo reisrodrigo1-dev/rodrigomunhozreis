@@ -23,12 +23,17 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/rodrigoreisoda/",
     instagram: "https://instagram.com/rodrigomunhozreis",
     email: "mailto:contato@rodrigomunhozreis.com.br",
-    whatsapp: "5511974696172",
-    whatsappUrl:
-      "https://wa.me/5511974696172?text=" +
-      encodeURIComponent(
-        "Olá Rodrigo! Vim pelo seu site e quero falar sobre IA e vibecoding."
-      ),
+    // WHATSAPP OCULTO temporariamente (anúncio pago rodando — não quero o número
+    // pessoal circulando). Para REATIVAR: restaure as 2 linhas comentadas abaixo,
+    // apague as 2 vazias e descomente os usos marcados "WHATSAPP OCULTO".
+    // whatsapp: "5511974696172",
+    // whatsappUrl:
+    //   "https://wa.me/5511974696172?text=" +
+    //   encodeURIComponent(
+    //     "Olá Rodrigo! Vim pelo seu site e quero falar sobre IA e vibecoding."
+    //   ),
+    whatsapp: "",
+    whatsappUrl: "",
   },
   companies: [
     { name: "MeuCurso", desc: "Diretor de TI · e-commerce jurídico (OAB e concursos)." },

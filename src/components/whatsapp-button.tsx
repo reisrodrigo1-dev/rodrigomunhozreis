@@ -1,7 +1,11 @@
-import { site } from "@/lib/site";
+// WHATSAPP OCULTO temporariamente (anúncio pago). Para reativar: descomente o
+// import e o corpo abaixo, e restaure site.links.whatsappUrl em src/lib/site.ts.
+// import { site } from "@/lib/site";
 
-/** Botão flutuante de WhatsApp (canto inferior direito). */
+/** Botão flutuante de WhatsApp (canto inferior direito) — OCULTO no momento. */
 export function WhatsAppButton() {
+  return null;
+  /*
   return (
     <a
       href={site.links.whatsappUrl}
@@ -15,4 +19,5 @@ export function WhatsAppButton() {
       </svg>
     </a>
   );
+  */
 }

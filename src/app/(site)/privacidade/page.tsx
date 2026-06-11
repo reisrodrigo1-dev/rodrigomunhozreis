@@ -67,8 +67,9 @@ const blocks: { h: string; p: React.ReactNode }[] = [
         Você pode solicitar a qualquer momento: acesso, correção, portabilidade e{" "}
         <strong>exclusão</strong> dos seus dados, além de revogar o consentimento. Para exercer,
         fale conosco pelo{" "}
-        <a href={site.links.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-amber-light hover:underline">
-          WhatsApp
+        {/* WHATSAPP OCULTO temporariamente (anúncio pago) — canal trocado para LinkedIn */}
+        <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-amber-light hover:underline">
+          LinkedIn
         </a>
         .
       </>

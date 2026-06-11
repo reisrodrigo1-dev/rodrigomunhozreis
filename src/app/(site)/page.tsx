@@ -306,9 +306,11 @@ export default function Home() {
                 <p className="text-paper/60">
                   Prefere ir direto? Fale comigo pelos canais abaixo — respondo pessoalmente.
                 </p>
+                {/* WHATSAPP OCULTO temporariamente (anúncio pago) — reativar:
                 <a href={site.links.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-dark-ghost w-fit">
                   Falar no WhatsApp
                 </a>
+                */}
                 <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-dark-ghost w-fit">
                   Conectar no LinkedIn
                 </a>

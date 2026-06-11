@@ -4,7 +4,7 @@ import { useState } from "react";
 import { createLead } from "@/lib/leads";
 import { maskPhone, maskName, isValidPhone } from "@/lib/format";
 import { ConsentCheckbox } from "@/components/consent-checkbox";
-import { site } from "@/lib/site";
+// WHATSAPP OCULTO temporariamente (anúncio pago): import { site } from "@/lib/site";
 
 const tipos = ["Palestra", "Consultoria", "Mentoria", "Outro"];
 
@@ -31,13 +31,13 @@ export function WorkWithMeForm() {
     setStatus("loading");
     try {
       await createLead(email, `trabalhe-comigo:${tipo}`, nome, whatsapp);
-      const msg =
-        `Olá Rodrigo! Sou ${nome.trim()}` +
-        (empresa.trim() ? ` (${empresa.trim()})` : "") +
-        `. Tenho interesse em: ${tipo}. Vim pelo seu site.`;
-      const url = `https://wa.me/${site.links.whatsapp}?text=${encodeURIComponent(msg)}`;
       setStatus("done");
-      window.open(url, "_blank", "noopener,noreferrer");
+      // WHATSAPP OCULTO temporariamente (anúncio pago) — redirecionamento desativado.
+      // const msg =
+      //   `Olá Rodrigo! Sou ${nome.trim()}` +
+      //   (empresa.trim() ? ` (${empresa.trim()})` : "") +
+      //   `. Tenho interesse em: ${tipo}. Vim pelo seu site.`;
+      // window.open(`https://wa.me/${site.links.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
     } catch (err) {
       console.error(err);
       setStatus("error");
@@ -49,16 +49,7 @@ export function WorkWithMeForm() {
       <div className="glass p-7 text-center">
         <p className="text-lg font-semibold text-paper">✓ Recebido, {nome.split(" ")[0]}!</p>
         <p className="mt-2 text-sm text-paper/60">
-          Abri o WhatsApp para finalizarmos. Se não abriu,{" "}
-          <a
-            href={site.links.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-amber-light hover:underline"
-          >
-            clique aqui
-          </a>
-          .
+          Anotei seu contato e retorno pessoalmente em breve.
         </p>
       </div>
     );
