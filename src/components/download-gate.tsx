@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createLead } from "@/lib/leads";
 import { recordDownload } from "@/lib/downloads";
+import { trackLead } from "@/lib/track";
 import { maskName, maskPhone } from "@/lib/format";
 import { ConsentCheckbox } from "@/components/consent-checkbox";
 import type { Material } from "@/lib/materials";
@@ -44,6 +45,7 @@ export function DownloadGate({
     try {
       const lead = await createLead(email, `material:${material.slug}`, name, whatsapp);
       leadId = lead.id;
+      trackLead(`material:${material.slug}`); // conversão p/ Meta Pixel + GA4
     } catch (err) {
       console.error("[download-gate] createLead falhou:", err);
       setStatus("error");

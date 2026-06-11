@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createLead } from "@/lib/leads";
+import { trackLead } from "@/lib/track";
 import { ConsentCheckbox } from "@/components/consent-checkbox";
 
 type Variant = "light" | "dark";
@@ -25,6 +26,7 @@ export function NewsletterForm({
     setStatus("loading");
     try {
       await createLead(email, source);
+      trackLead(source); // conversão p/ Meta Pixel + GA4
       setStatus("done");
     } catch (err) {
       console.error(err);

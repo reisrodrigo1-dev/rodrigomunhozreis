@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { MetaPixel } from "@/components/meta-pixel";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -79,6 +80,7 @@ export default function RootLayout({
         />
         {children}
         <Analytics />
+        <MetaPixel />
       </body>
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
