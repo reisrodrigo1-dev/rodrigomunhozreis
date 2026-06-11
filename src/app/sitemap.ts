@@ -13,6 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/robos`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/sobre`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/materiais`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/ia-sem-medo`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog`, changeFrequency: "weekly", priority: 0.7 },
   ];
 
