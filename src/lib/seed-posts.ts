@@ -7,6 +7,106 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "ia-deixa-banco-aberto-incidentes-2026",
+    slug: "ia-deixa-banco-aberto-incidentes-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-06-11",
+    coverUrl:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    title: "A IA deixa seu banco de dados aberto por padrão — e 2026 está cheio de provas",
+    excerpt:
+      "Os vazamentos de sistemas feitos com IA em 2026 têm um padrão: a IA monta tudo com a porta destrancada. Os casos reais, os números — e o método para não ser o próximo.",
+    content: `Em fevereiro de 2026, o **Moltbook** — uma rede social para agentes de IA, construída 100% com vibecoding — deixou o banco de dados com **leitura e escrita públicas**. Qualquer pessoa na internet podia ler e alterar tudo.
+
+O detalhe que importa: ninguém "errou" digitando. A IA criou o banco com permissões abertas durante o desenvolvimento — o padrão dela — e o sistema foi para produção **exatamente do jeito que estava**. Ninguém trocou a fechadura antes de abrir a porta ao público.
+
+Eu quase fiz o mesmo. No meu próprio site, as regras de segurança do banco só valem depois de um passo separado: publicá-las. Escrever a regra no arquivo não basta. Por um momento, o formulário "funcionava na tela" — e "funcionar na tela" não é "estar seguro".
+
+## Não é azar. É padrão.
+Os números de 2026 são desconfortáveis:
+
+- A Georgia Tech criou um "Vibe Security Radar" que atribui falhas (CVEs) a código feito com IA. Em **janeiro de 2026 foram 6**. Em **março, 35** — quase 6x em dois meses.
+- Commits feitos com auxílio de IA **expõem segredos (senhas, chaves) 2x mais** que os escritos por humanos: 3,2% contra 1,5%.
+- Uma pesquisa do início de 2026 confirmou: **24,7% do código gerado por IA tem ao menos uma falha de segurança**. A Georgetown (CSET) encontrou falha de XSS em **86% das amostras** testadas em cinco modelos diferentes.
+- A Tenzai testou cinco agentes de IA de programação no fim de 2025. **Todos os cinco** introduziram a mesma falha (SSRF) no mesmo tipo de funcionalidade. Não é "um modelo ruim" — é o comportamento da categoria.
+
+## Por que a IA faz isso
+A IA otimiza para uma única coisa: **fazer funcionar**. E "seguro" não é a mesma coisa que "funcional" — ela pega o caminho mais curto até a tela funcionando. Banco aberto funciona. Chave no código funciona. Dependência desatualizada funciona. Até o dia em que não funciona mais — e aí já virou vazamento.
+
+> A IA é um júnior brilhante e veloz. Não é um oráculo. Você não entrega produção a um júnior sem revisar.
+
+E tem o vetor que quase ninguém olha: a **cadeia de suprimentos**. Em março de 2026, invasores assumiram a conta de um mantenedor e injetaram código malicioso em atualizações **oficiais** do Axios — uma biblioteca que milhões de projetos usam. Você não escreveu o bug; você o **instalou**.
+
+## O método (não é medo, é engenharia)
+A boa notícia: dá para ter a velocidade da IA sem herdar os riscos. O básico que resolve a maioria dos casos:
+
+1. **Banco com regras — e publicadas.** Escreva as regras de segurança antes de ir ao ar e confirme que estão ativas. [Como configurar o Firebase do zero](/blog/conectar-banco-de-dados-firebase-sem-medo).
+2. **Nunca suba segredos.** Chaves e senhas ficam em variáveis de ambiente, fora do GitHub. [O passo a passo aqui](/blog/nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore).
+3. **Revise antes de aceitar.** Use um agente revisor e o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas): Entender, Ler, Blindar, Testar e Versionar.
+4. **Trave e revise as dependências.** Fixe as versões e desconfie de updates automáticos em bibliotecas críticas.
+5. **Repositório privado.** É grátis no GitHub e fecha uma porta inteira de uma vez.
+
+## A parte que ninguém vai fazer por você
+A IA não vai te avisar que deixou a porta aberta. Ela vai dizer "pronto, está funcionando" — e estará falando a verdade. A fechadura é com você.
+
+Isso é vibecoding com engenharia: a velocidade da máquina **com** a desconfiança saudável de quem já viu sistema vazar. A decisão de revisar é sua — e, em 2026, ela ficou muito mais barata que o vazamento.
+
+## Quer o método completo?
+No e-book gratuito **"Vibecoding para CEOs"** eu detalho como blindar cada etapa — banco, segredos, deploy — com 22 prompts prontos (incluindo o **Revisor de Código & Segurança**, que audita o que a IA escreveu antes de você confiar).
+
+[**→ Baixe o e-book gratuito aqui**](/materiais) ou comece pelos [robôs de IA gratuitos](/robos).`,
+  },
+  {
+    id: "qual-ia-usar-2026-modelos-empataram",
+    slug: "qual-ia-usar-2026-modelos-empataram",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Produtividade"],
+    publishedAt: "2026-06-11",
+    coverUrl:
+      "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1200&q=80",
+    title: "Qual IA usar em 2026? Os modelos empataram no topo — e a decisão é sua",
+    excerpt:
+      "GPT-5, Gemini 3 e Claude Opus 4.5 chegaram tão perto que a diferença virou detalhe. A pergunta mudou: não é 'qual é a melhor IA', é 'qual resolve o SEU problema'. Sem hype.",
+    content: `A pergunta que mais me fazem: "Rodrigo, qual IA é a melhor?" Em 2026, a resposta honesta incomoda um pouco: **para a maioria dos usos, tanto faz.** E isso é a melhor notícia possível para você.
+
+## O topo virou um empate técnico
+Os três modelos de fronteira — **GPT-5.2 (OpenAI), Claude Opus 4.5 (Anthropic) e Gemini 3 Pro (Google)** — chegaram ao que o Intelligence Index v4.0 chamou de **"platô da fronteira"**: as diferenças entre eles ficaram marginais. Todos raciocinam, todos são multimodais (texto, imagem, áudio e vídeo na mesma conversa) e todos resolvem 95% do que você precisa.
+
+Traduzindo: parar de caçar "a mais inteligente" e começar a escolher "a que encaixa no seu fluxo" deixou de ser preguiça — virou a decisão certa.
+
+## O que mudou de verdade em 2026 não foi o QI
+Foram três coisas:
+
+**1. Agentes autônomos.** OpenAI, Google e Anthropic lançaram modelos que executam tarefas de várias etapas **sozinhos** — pesquisar, escrever, testar, corrigir, repetir. É a maior mudança do ano. E o maior risco: autonomia sem revisão é como dar a chave do carro a um estagiário e dormir no banco de trás. ([Por que isso é perigoso em produção](/blog/ia-deixa-banco-aberto-incidentes-2026).)
+
+**2. Multimodal de verdade.** Mandar um print, um áudio e um PDF na mesma conversa e a IA entender tudo junto. Isso mudou como a gente trabalha — não só o número do benchmark.
+
+**3. IA em tudo.** Na CES 2026, o Google colocou o Gemini até na **geladeira**. A habilidade mais valiosa de 2026 não é "usar IA" — é **separar sinal de ruído** e não comprar hype.
+
+## Como escolher (critério, não torcida)
+Esqueça o ranking da internet. Escolha pelo SEU caso:
+
+1. **Qual é o problema?** Texto e raciocínio, código, imagem ou dados sensíveis — cada um tem um favorito diferente.
+2. **Para onde vão seus dados?** Se envolve dado de cliente, privacidade e LGPD pesam mais que meio ponto no benchmark.
+3. **Integra no que você já usa?** A melhor IA é a que está a um clique de onde você trabalha.
+4. **Quanto custa no uso real?** Quase tudo começa de graça e a conta cresce com o uso. Saiba onde ela explode antes de escalar.
+5. **Teste com o SEU exemplo.** Pegue uma tarefa real sua, rode nas três e compare. Vinte minutos valem mais que vinte reviews no YouTube.
+
+## Para quem constrói (vibecoding)
+Aqui o segredo desaponta: **o modelo importa menos que o método em volta dele.** A melhor IA mal operada perde feio para uma IA mediana bem conduzida — com um bom prompt ([o método P.R.O.M.P.T.E.R.](/blog/como-usar-ia-no-trabalho-peder)) e revisão ([o Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas)). Trocar de modelo raramente é o que vai te destravar. Melhorar o processo, quase sempre.
+
+> Não existe "a melhor IA". Existe a melhor IA para o seu problema, no seu contexto, com o seu método.
+
+## A decisão é sua
+Eu não vou te dizer "use a ferramenta X". Não tenho patrocínio e não acredito em bala de prata. Te dou os critérios; a parte difícil — escolher e testar — fica com você. Em 2026, com os modelos empatados, **errar a escolha ficou barato. Não testar é que sai caro.**
+
+## Quer ajuda para montar seu setup?
+Use o robô **Sugestão de Stack** (ele recomenda ferramentas pelo seu caso, sem te prender a nenhuma) na [Central de Robôs gratuita](/robos) — ou baixe o [e-book "Vibecoding para CEOs"](/materiais) e monte sua base do jeito certo.`,
+  },
+  {
     id: "boas-praticas-vibecoding-para-empresas",
     slug: "boas-praticas-vibecoding-para-empresas",
     status: "published",
