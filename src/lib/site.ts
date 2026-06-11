@@ -2,7 +2,7 @@ export const site = {
   name: "Rodrigo Munhoz Reis",
   shortName: "Rodrigo Munhoz Reis",
   role: "Diretor de Tecnologia (CTO)",
-  domain: "rodrigomunhozreis.com",
+  domain: "rodrigomunhozreis.com.br",
   tagline: "Vibecoding com Engenharia",
   description:
     "Aprenda a construir e usar IA do jeito certo: rápido, mas com rigor de engenheiro. Vibecoding com engenharia — sem cair no vibecoding às cegas.",
@@ -22,7 +22,7 @@ export const site = {
   links: {
     linkedin: "https://www.linkedin.com/in/rodrigoreisoda/",
     instagram: "https://instagram.com/rodrigomunhozreis",
-    email: "mailto:contato@rodrigomunhozreis.com",
+    email: "mailto:contato@rodrigomunhozreis.com.br",
     whatsapp: "5511974696172",
     whatsappUrl:
       "https://wa.me/5511974696172?text=" +
