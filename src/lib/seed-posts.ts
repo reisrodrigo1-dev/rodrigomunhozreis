@@ -7,6 +7,105 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "ia-caca-falhas-codigo-semana-2026",
+    slug: "ia-caca-falhas-codigo-semana-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-06-15",
+    coverUrl:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    title: "A IA agora caça (e explora) falhas no seu código — a semana que provou isso",
+    excerpt:
+      "Esta semana, uma IA capaz de achar e explorar vulnerabilidades fez o governo dos EUA reagir, e a Microsoft bateu recorde de falhas corrigidas. O que isso muda pra quem constrói com IA.",
+    content: `Esta semana o jogo da segurança mudou de patamar — e quem constrói software com IA precisa entender por quê.
+
+A Anthropic liberou um preview de modelo (o **Claude Mythos**) **capaz de encontrar e explorar vulnerabilidades de software sozinho**. O impacto foi tão grande que o governo dos EUA reagiu com **restrição de exportação e de acesso**. No mesmo período, o **Patch Tuesday da Microsoft** bateu um recorde sombrio: **206 vulnerabilidades** corrigidas de uma vez, incluindo seis "zero-days" já sendo explorados por um grupo de ataque. E, na sua conferência de desenvolvedores, a Microsoft dedicou o palco a uma ideia só: **proteger código, agentes e modelos ao longo de todo o ciclo de desenvolvimento.**
+
+Junte as três notícias e o recado é um só.
+
+## A IA que escreve o seu código agora também acha os buracos dele
+Por anos, achar uma falha de segurança exigia um especialista humano, horas de trabalho e conhecimento raro. Isso está virando commodity. Se um modelo consegue **varrer um sistema e apontar (ou explorar) a brecha** em minutos, duas coisas acontecem ao mesmo tempo:
+
+1. **Você** ganha uma ferramenta poderosa pra se proteger.
+2. **O atacante** ganha a mesma ferramenta pra te invadir — e ele não dorme.
+
+> Antes, código inseguro era uma bomba-relógio. Agora é um alvo que se anuncia sozinho.
+
+## Por que isso atinge em cheio o vibecoding
+Código gerado por IA já tem mais vulnerabilidades que o humano. Some a isso uma legião de pessoas subindo pra produção o que a IA cuspiu, sem ler. O que antes era "provavelmente ninguém vai notar" virou **"uma IA de ataque vai notar, automaticamente, em escala"**.
+
+A janela entre "subi inseguro" e "fui encontrado" encolheu de meses para minutos.
+
+## O que fazer (não é medo, é método)
+A defesa não mudou — ela só ficou **obrigatória**. O básico que resolve a maioria dos casos:
+
+1. **Revise antes de aceitar.** Use um agente revisor e o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas): Entender, Ler, Blindar, Testar, Versionar.
+2. **Feche o banco e os segredos.** Regras de Firestore publicadas, chaves fora do Git. [O passo a passo aqui](/blog/nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore).
+3. **Use a IA a seu favor.** A mesma capacidade que assusta é a sua melhor auditora: peça pra ela caçar as próprias falhas antes de você subir.
+4. **Trave as dependências.** O ataque não vem só do seu código — vem do que você instalou.
+
+## A virada de chave
+A segurança parou de ser "boa prática de quem tem tempo". Com IA dos dois lados — a que constrói e a que ataca —, **operar com rigor de engenheiro virou o piso, não o teto.** Quem trata a IA como júnior brilhante (que se revisa) sai na frente. Quem trata como oráculo (que se aceita) vira manchete.
+
+A decisão de revisar é sua. Em 2026, ela ficou muito mais barata que o vazamento.
+
+## Quer o método completo?
+No e-book gratuito **"Vibecoding para CEOs"** eu detalho como blindar cada etapa — banco, segredos, deploy — com 22 prompts prontos, incluindo o **Revisor de Código & Segurança**.
+
+[**→ Baixe o e-book gratuito aqui**](/materiais) ou comece pelos [robôs de IA gratuitos](/robos).`,
+  },
+  {
+    id: "ia-virou-infraestrutura-2026",
+    slug: "ia-virou-infraestrutura-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-06-15",
+    coverUrl:
+      "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80",
+    title: "Acabou o deslumbramento: 2026 é o ano em que a IA virou infraestrutura",
+    excerpt:
+      "Os analistas marcam a virada do hype pro pragmático — IA saindo das demos e entrando no fluxo de trabalho real. Por que isso é ótimo pra quem tem método (e ruim pra quem só tem a ferramenta).",
+    content: `Tem uma frase circulando entre os analistas de tecnologia neste mês, e ela resume bem onde a gente chegou: **a IA deixou de ser "ferramenta" e virou "infraestrutura".**
+
+Traduzindo: acabou a fase das demos futuristas que impressionam no palco e somem na segunda-feira. 2026 é o ano em que a IA entra no **fluxo de trabalho real** — automatizando processo, influenciando decisão, cortando custo. Menos espetáculo, mais resultado mensurável.
+
+E não é só discurso. Olha a semana: a Anthropic lançou novos modelos de ponta, a Microsoft apresentou uma família inteira de modelos próprios, o Google soltou tradução de voz ao vivo em mais de 70 idiomas, e a Casa Branca publicou uma ordem executiva sobre inovação **e segurança** em IA. Modelo virou commodity. Tem pra todo lado.
+
+## E é exatamente aí que mora a boa notícia
+Quando **todo mundo** tem acesso à mesma IA, a ferramenta para de ser o diferencial.
+
+Pensa comigo: se a IA é luz elétrica, ter luz não te diferencia de ninguém — todo concorrente também acendeu. O que diferencia é **o que você constrói com ela, e como.**
+
+> A IA virou commodity. O seu método não.
+
+## O diferencial migrou da ferramenta pro operador
+Eu vejo isso todo dia rodando empresas com IA. Duas pessoas com a **mesma** ferramenta entregam resultados a anos-luz de distância. A diferença nunca está no modelo. Está em:
+
+- **Saber pedir** — um bom prompt vale por dez tentativas no escuro.
+- **Saber revisar** — aceitar tudo o que a máquina cospe é confundir velocidade com competência.
+- **Saber proteger** — justamente porque a IA virou infraestrutura, a segurança virou parte da conta. [A semana provou isso](/blog/ia-caca-falhas-codigo-semana-2026).
+- **Saber decidir** o que faz sentido no mundo real. Isso a máquina não tem.
+
+Isso é método. E método não vem de fábrica com o modelo — se aprende.
+
+## Por que "infraestrutura" muda a sua cabeça
+Quando algo é ferramenta, você usa de vez em quando. Quando é infraestrutura, você **depende** dela — e depender de algo que você não entende é perigoso. Ninguém constrói um prédio sobre uma fundação que não inspecionou.
+
+Por isso o discurso de "qualquer um faz com IA" é meia verdade. Qualquer um **começa**. Quem termina com algo que funciona, é seguro e escala é quem trata a IA com rigor de engenheiro.
+
+## A conclusão sem hype
+Não acredito em bala de prata e não vou te dizer que a IA vai resolver sua vida. Vou dizer o contrário do que o hype diz: **agora que a ferramenta é de todos, o seu valor está no que ela nunca te deu de graça — julgamento, método e responsabilidade.**
+
+A decisão de operar com rigor é sua. E, em 2026, ela vale mais do que escolher entre o modelo A ou B.
+
+## Comece pelo método
+Quer dar o primeiro passo no caminho certo? O método P.R.O.M.P.T.E.R. está no e-book gratuito **"IA Sem Medo"** — junto de um plano de 7 dias e mais de 130 prompts prontos.
+
+[**→ Baixe de graça aqui**](/materiais) ou veja [como eu penso sobre isso](/blog/manifesto).`,
+  },
+  {
     id: "ia-deixa-banco-aberto-incidentes-2026",
     slug: "ia-deixa-banco-aberto-incidentes-2026",
     contentVersion: 1,
