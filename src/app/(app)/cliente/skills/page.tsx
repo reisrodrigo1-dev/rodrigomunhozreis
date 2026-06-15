@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const ownCount = skills.filter((s) => !s.base).length;
+
+function DownloadIcon() {
+  return (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  );
+}
+
 export default function SkillsPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 md:px-8">
@@ -32,20 +44,43 @@ export default function SkillsPage() {
         <p className="mt-4 max-w-2xl text-paper/55">
           Diferente dos robôs (prompts pra copiar em qualquer IA), as <strong className="text-paper">Skills</strong> são
           capacidades que o <strong className="text-paper">Claude Code</strong> carrega e usa sozinho — com segurança e
-          método embutidos. São o nível avançado do vibecoding com engenharia.
+          método embutidos. É o nível avançado do vibecoding com engenharia.
         </p>
       </div>
 
+      {/* Suíte completa — destaque */}
+      <div className="glass mt-7 grid items-center gap-5 p-6 md:grid-cols-[1fr_auto] md:p-8">
+        <div>
+          <h2 className="font-serif text-xl font-semibold text-paper">Baixe a suíte completa</h2>
+          <p className="mt-1.5 text-sm text-paper/55">
+            As {skills.length} skills num único arquivo ({ownCount} próprias + {skills.length - ownCount} que estendem
+            skills existentes). Descompacte, copie pra sua pasta de skills e pronto.
+          </p>
+        </div>
+        <a href="/skills/engenho-skills.zip" download className="btn btn-glow inline-flex shrink-0 items-center gap-2">
+          <DownloadIcon />
+          Baixar suíte (.zip)
+        </a>
+      </div>
+
       {/* Como instalar */}
-      <div className="glass mt-6 p-6">
-        <h2 className="font-serif text-lg font-semibold text-paper">Como ativar uma skill</h2>
-        <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm text-paper/65">
-          <li>Copie a pasta da skill para <code className="rounded bg-white/10 px-1.5 py-0.5 text-amber-light">~/.claude/skills/</code>.</li>
-          <li>Reinicie o Claude Code (as skills carregam na inicialização).</li>
-          <li>Pronto: ela dispara sozinha quando o pedido casa com o que ela faz — ou você chama pelo nome.</li>
+      <div className="glass mt-5 p-6">
+        <h2 className="font-serif text-lg font-semibold text-paper">Como instalar (1 minuto)</h2>
+        <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-paper/65">
+          <li><strong className="text-paper">Baixe</strong> a suíte completa (acima) ou uma skill avulsa (no catálogo).</li>
+          <li><strong className="text-paper">Descompacte</strong> o arquivo.</li>
+          <li>
+            <strong className="text-paper">Copie a(s) pasta(s)</strong> para a pasta de skills do Claude Code:
+            <div className="mt-1.5 space-y-1 font-mono text-xs">
+              <div className="rounded bg-white/8 px-2 py-1 text-amber-light">Windows: C:\Users\SEU_USUARIO\.claude\skills\</div>
+              <div className="rounded bg-white/8 px-2 py-1 text-amber-light">Mac/Linux: ~/.claude/skills/</div>
+            </div>
+          </li>
+          <li><strong className="text-paper">Reinicie o Claude Code.</strong> As skills carregam na inicialização.</li>
+          <li>Pronto — a skill <strong className="text-paper">dispara sozinha</strong> quando o pedido casa com o que ela faz, ou você chama pelo nome.</li>
         </ol>
         <p className="mt-3 text-xs text-paper/40">
-          As skills marcadas com <span className="text-amber-light">base</span> estendem uma skill existente — instale também a base indicada.
+          Precisa do <strong className="text-paper/60">Claude Code</strong> instalado. Skills marcadas com <span className="text-amber-light">base</span> estendem uma skill existente — instale também a base indicada.
         </p>
       </div>
 
@@ -68,11 +103,21 @@ export default function SkillsPage() {
                   </div>
                   <p className="mt-0.5 text-sm font-semibold text-amber-light">{s.tagline}</p>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-paper/55">{s.description}</p>
-                  {s.base && (
-                    <p className="mt-3 text-[11px] text-paper/40">
-                      <span className="rounded bg-white/8 px-1.5 py-0.5 font-medium text-paper/60">base: {s.base}</span>
-                    </p>
-                  )}
+                  <div className="mt-4 flex items-center justify-between gap-2">
+                    {s.base ? (
+                      <span className="rounded bg-white/8 px-1.5 py-0.5 text-[11px] font-medium text-paper/55">base: {s.base}</span>
+                    ) : (
+                      <span />
+                    )}
+                    <a
+                      href={`/skills/${s.id}.zip`}
+                      download
+                      className="inline-flex items-center gap-1.5 rounded-full border border-white/12 px-3 py-1.5 text-xs text-paper/70 transition-colors hover:border-amber/50 hover:text-paper"
+                    >
+                      <DownloadIcon />
+                      Baixar
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
@@ -82,7 +127,7 @@ export default function SkillsPage() {
 
       <div className="glass mt-12 p-6 text-center">
         <p className="text-sm text-paper/55">
-          As Skills do Engenho são atualizadas conforme o método evolui. Em breve: download direto e guia de instalação por skill.
+          As Skills do Engenho evoluem junto com o método. Baixou uma vez? Volte aqui de tempos em tempos para pegar as atualizações.
         </p>
       </div>
     </div>
