@@ -50,6 +50,14 @@ service cloud.firestore {
       allow read, update, delete: if isAdmin();
     }
 
+    // Registro de downloads de skills (área logada); leitura só admin.
+    match /skill_downloads/{id} {
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['skillId','email','createdAt'])
+        && request.resource.data.skillId is string && request.resource.data.skillId.size() <= 60;
+      allow read: if isAdmin();
+    }
+
     // Materiais: leitura pública, escrita só admin.
     match /materials/{id} {
       allow read: if true;

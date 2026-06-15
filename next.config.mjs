@@ -11,6 +11,11 @@ const securityHeaders = [
 
 const nextConfig = {
   reactStrictMode: true,
+  // Os .zip das skills moram em assets/skills/ (privado, fora de public/).
+  // Garante que entrem no bundle da função /api/skill na Vercel.
+  outputFileTracingIncludes: {
+    "/api/skill": ["./assets/skills/**"],
+  },
   images: {
     // Capas de post podem vir do Firebase Storage ou de uma URL externa.
     remotePatterns: [

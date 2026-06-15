@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { skills, skillCategories } from "@/lib/skills";
+import { SkillDownloadButton, SuiteDownloadButton } from "@/components/skill-download-buttons";
 
 export const metadata: Metadata = {
   title: "Skills",
@@ -10,15 +11,14 @@ export const metadata: Metadata = {
 
 const ownCount = skills.filter((s) => !s.base).length;
 
-function DownloadIcon() {
-  return (
-    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <polyline points="7 10 12 15 17 10" />
-      <line x1="12" y1="15" x2="12" y2="3" />
-    </svg>
-  );
-}
+// Por que começar por estas três — texto curto, sem hype, para o onboarding.
+const starterReasons: Record<string, string> = {
+  forja: "Tudo no vibecoding começa com um bom pedido. A Forja monta o prompt certo pelo método P.R.O.M.P.T.E.R. — é a base de todas as outras.",
+  cofre: "Antes de subir qualquer coisa, blinde o Firebase. A Cofre audita suas regras e entrega o conserto — segurança em vez de vibecoding às cegas.",
+  tomo: "Transforme o que você sabe em material pronto pra entregar. A Tomo cria e-books e guias no padrão editorial da casa — sua primeira isca.",
+};
+
+const starterSkills = skills.filter((s) => s.starter);
 
 export default function SkillsPage() {
   return (
@@ -57,10 +57,7 @@ export default function SkillsPage() {
             skills existentes). Descompacte, copie pra sua pasta de skills e pronto.
           </p>
         </div>
-        <a href="/skills/engenho-skills.zip" download className="btn btn-glow inline-flex shrink-0 items-center gap-2">
-          <DownloadIcon />
-          Baixar suíte (.zip)
-        </a>
+        <SuiteDownloadButton />
       </div>
 
       {/* Como instalar */}
@@ -83,6 +80,37 @@ export default function SkillsPage() {
           Precisa do <strong className="text-paper/60">Claude Code</strong> instalado. Skills marcadas com <span className="text-amber-light">base</span> estendem uma skill existente — instale também a base indicada.
         </p>
       </div>
+
+      {/* Comece por aqui — onboarding */}
+      <section className="mt-10">
+        <div className="flex items-center gap-3">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-amber-light">Comece por aqui</h2>
+          <span className="font-mono text-xs text-paper/30">{starterSkills.length}</span>
+        </div>
+        <p className="mt-2 max-w-2xl text-sm text-paper/55">
+          São muitas skills — não tente instalar tudo de uma vez. Estas <strong className="text-paper">três</strong> são
+          as mais recomendadas pra quem está começando: uma base de prompt, uma de segurança e uma de conteúdo. Baixe,
+          use por uns dias e volte pelo resto.
+        </p>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {starterSkills.map((s) => (
+            <div key={s.id} className="glass relative flex h-full flex-col p-5 ring-1 ring-amber/25">
+              <span className="absolute -top-2.5 left-5 rounded-full border border-amber/30 bg-amber/15 px-2.5 py-0.5 text-[11px] font-semibold text-amber-light">
+                Recomendada
+              </span>
+              <div className="mt-1 flex items-baseline justify-between gap-2">
+                <h3 className="font-serif text-lg font-semibold text-paper">{s.name}</h3>
+                <code className="font-mono text-[11px] text-paper/35">{s.id}</code>
+              </div>
+              <p className="mt-0.5 text-sm font-semibold text-amber-light">{s.tagline}</p>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-paper/55">{starterReasons[s.id] ?? s.description}</p>
+              <div className="mt-4 flex items-center justify-end">
+                <SkillDownloadButton skillId={s.id} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Catálogo por categoria */}
       {skillCategories.map((cat) => {
@@ -109,14 +137,7 @@ export default function SkillsPage() {
                     ) : (
                       <span />
                     )}
-                    <a
-                      href={`/skills/${s.id}.zip`}
-                      download
-                      className="inline-flex items-center gap-1.5 rounded-full border border-white/12 px-3 py-1.5 text-xs text-paper/70 transition-colors hover:border-amber/50 hover:text-paper"
-                    >
-                      <DownloadIcon />
-                      Baixar
-                    </a>
+                    <SkillDownloadButton skillId={s.id} />
                   </div>
                 </div>
               ))}

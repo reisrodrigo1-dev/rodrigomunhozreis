@@ -11,6 +11,8 @@ export type Skill = {
   description: string;
   /** Para wrappers: a skill-base que ela estende. */
   base?: string;
+  /** Marca as skills mais recomendadas para quem está começando. */
+  starter?: boolean;
 };
 
 export type SkillCategory =
@@ -33,7 +35,7 @@ export const skillCategories: SkillCategory[] = [
 export const skills: Skill[] = [
   // 🔒 Segurança
   { id: "bastiao", name: "Bastião", category: "Segurança", tagline: "Inteligência de segurança", description: "Identifica vulnerabilidades, recomenda padrões seguros por stack e prioriza riscos do crítico ao baixo." },
-  { id: "cofre", name: "Cofre", category: "Segurança", tagline: "Auditor de Firebase", description: "Audita as regras do Firestore e Storage em busca de coleções abertas, validação ausente e riscos de LGPD — e entrega o conserto." },
+  { id: "cofre", name: "Cofre", category: "Segurança", tagline: "Auditor de Firebase", description: "Audita as regras do Firestore e Storage em busca de coleções abertas, validação ausente e riscos de LGPD — e entrega o conserto.", starter: true },
   { id: "faro", name: "Faro", category: "Segurança", tagline: "Caçador de segredos", description: "Escaneia o repositório atrás de chaves de API e senhas vazadas, e diz como remediar." },
   { id: "quarentena", name: "Quarentena", category: "Segurança", tagline: "Auditor de dependências", description: "Audita as dependências (versões soltas, pacotes vulneráveis, supply-chain) e avalia um pacote novo antes de instalar." },
   { id: "crivo", name: "Crivo", category: "Segurança", tagline: "Revisor de código", description: "Revisa um código ou diff com rigor pelo Protocolo de 5 Camadas: Entender, Ler, Blindar, Testar, Versionar." },
@@ -49,7 +51,7 @@ export const skills: Skill[] = [
   { id: "garimpo", name: "Garimpo", category: "Desenvolvimento", tagline: "Pesquisa profunda", description: "Pesquisa multi-fonte na web com respostas e citações verificáveis — separa o ouro do ruído.", base: "deep-research" },
 
   // ✍️ Método & Prompts
-  { id: "forja", name: "Forja", category: "Método & Prompts", tagline: "Gerador de prompts", description: "Constrói prompts profissionais sob medida pelo método P.R.O.M.P.T.E.R., para qualquer IA." },
+  { id: "forja", name: "Forja", category: "Método & Prompts", tagline: "Gerador de prompts", description: "Constrói prompts profissionais sob medida pelo método P.R.O.M.P.T.E.R., para qualquer IA.", starter: true },
   { id: "alicerce", name: "Alicerce", category: "Método & Prompts", tagline: "Memória do projeto", description: "Gera as instruções iniciais que ensinam a IA a trabalhar com segurança e bom design desde o primeiro comando." },
 
   // 📣 Marketing
@@ -57,7 +59,7 @@ export const skills: Skill[] = [
   { id: "claquete", name: "Claquete", category: "Marketing", tagline: "Roteiros e vídeo", description: "Estrutura roteiros de vídeo (Reels, YouTube) com os ganchos e a estrutura anti-hype da casa.", base: "remotion" },
 
   // 📚 Conteúdo
-  { id: "tomo", name: "Tomo", category: "Conteúdo", tagline: "Criador de e-books", description: "Cria e-books e guias em HTML no padrão editorial da casa — prontos para ler, imprimir e entregar." },
+  { id: "tomo", name: "Tomo", category: "Conteúdo", tagline: "Criador de e-books", description: "Cria e-books e guias em HTML no padrão editorial da casa — prontos para ler, imprimir e entregar.", starter: true },
   { id: "vitrine", name: "Vitrine", category: "Conteúdo", tagline: "Landing de conversão", description: "Cria landing pages de oferta única (isca + captura), feitas para tráfego pago e orgânico." },
   { id: "correio", name: "Correio", category: "Conteúdo", tagline: "E-mails de nutrição", description: "Escreve e-mails e newsletters na voz da casa, do boas-vindas à conversão." },
   { id: "pena", name: "Pena", category: "Conteúdo", tagline: "Posts de blog & SEO", description: "Escreve posts de autoridade otimizados para SEO, ancorados no método e em notícias de IA." },
