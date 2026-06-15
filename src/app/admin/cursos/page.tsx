@@ -24,6 +24,7 @@ const cursos: Curso[] = [
     desc: "Construir software com IA e rigor de engenheiro — do plano ao produto no ar.",
     publico: "Iniciante → Avançado",
     file: "curso-vibecoding-adultos",
+    apostilas: true,
   },
   {
     grupo: "Crianças",
