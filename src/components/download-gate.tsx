@@ -5,13 +5,14 @@ import { useRouter } from "next/navigation";
 import { createLead } from "@/lib/leads";
 import { recordDownload } from "@/lib/downloads";
 import { trackLead } from "@/lib/track";
-import { maskName, maskPhone } from "@/lib/format";
+import { maskName } from "@/lib/format";
 import { ConsentCheckbox } from "@/components/consent-checkbox";
 import type { Material } from "@/lib/materials";
 
 /**
- * Portão de download: captura nome + e-mail + WhatsApp (com máscaras), grava o
- * lead e o registro de download no Firestore e então libera o arquivo.
+ * Portão de download: captura nome + e-mail (baixa fricção, sem telefone), grava
+ * o lead e o registro de download no Firestore e então libera o arquivo.
+ * Validação SEMPRE dá feedback — nunca falha em silêncio.
  */
 export function DownloadGate({
   material,
@@ -24,9 +25,9 @@ export function DownloadGate({
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [errMsg, setErrMsg] = useState("");
 
   const inputCls = `min-h-[44px] w-full rounded-xl border px-4 text-sm outline-none transition-colors ${
     dark
@@ -36,14 +37,19 @@ export function DownloadGate({
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const digits = whatsapp.replace(/\D/g, "");
-    if (!name.trim() || !email || digits.length < 10 || !consent) return;
+    setErrMsg("");
+
+    // Validação COM feedback (nunca retorna em silêncio).
+    if (!name.trim()) return setErrMsg("Digite seu nome.");
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim())) return setErrMsg("Digite um e-mail válido.");
+    if (!consent) return setErrMsg("Marque a caixinha de consentimento para liberar o download.");
+
     setStatus("loading");
 
     // 1) Captura do lead — é o que importa. Só isto, se falhar de verdade, vira erro.
     let leadId: string | undefined;
     try {
-      const lead = await createLead(email, `material:${material.slug}`, name, whatsapp);
+      const lead = await createLead(email, `material:${material.slug}`, name);
       leadId = lead.id;
       trackLead(`material:${material.slug}`); // conversão p/ Meta Pixel + GA4
     } catch (err) {
@@ -74,18 +80,17 @@ export function DownloadGate({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-2.5" noValidate>
       <label htmlFor={`nm-${material.slug}`} className="sr-only">
-        Nome completo
+        Nome
       </label>
       <input
         id={`nm-${material.slug}`}
         type="text"
-        required
         autoComplete="name"
         value={name}
         onChange={(e) => setName(maskName(e.target.value))}
-        placeholder="Nome completo"
+        placeholder="Seu nome"
         className={inputCls}
       />
       <label htmlFor={`em-${material.slug}`} className="sr-only">
@@ -94,26 +99,11 @@ export function DownloadGate({
       <input
         id={`em-${material.slug}`}
         type="email"
-        required
+        inputMode="email"
         autoComplete="email"
         value={email}
         onChange={(e) => setEmail(e.target.value.trim())}
         placeholder="Seu melhor e-mail"
-        className={inputCls}
-      />
-      <label htmlFor={`wa-${material.slug}`} className="sr-only">
-        WhatsApp
-      </label>
-      <input
-        id={`wa-${material.slug}`}
-        type="tel"
-        required
-        inputMode="numeric"
-        autoComplete="tel"
-        value={whatsapp}
-        onChange={(e) => setWhatsapp(maskPhone(e.target.value))}
-        placeholder="WhatsApp — (11) 91234-5678"
-        maxLength={16}
         className={inputCls}
       />
       <ConsentCheckbox checked={consent} onChange={setConsent} dark={dark} id={`cs-${material.slug}`} />
@@ -124,8 +114,9 @@ export function DownloadGate({
       >
         {status === "loading" ? "Enviando…" : "Quero o e-book grátis"}
       </button>
+      {errMsg && <p className="text-sm text-red-400">{errMsg}</p>}
       {status === "error" && (
-        <p className="text-sm text-red-400">Algo deu errado. Tente de novo.</p>
+        <p className="text-sm text-red-400">Algo deu errado ao enviar. Tente de novo.</p>
       )}
     </form>
   );
