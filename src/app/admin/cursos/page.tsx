@@ -6,6 +6,7 @@ type Curso = {
   desc: string;
   publico: string;
   file: string;
+  apostilas?: boolean;
 };
 
 const cursos: Curso[] = [
@@ -15,6 +16,7 @@ const cursos: Curso[] = [
     desc: "Usar todas as principais IAs com método — do primeiro 'olá' ao assistente pessoal.",
     publico: "Iniciante → Avançado",
     file: "curso-ia-adultos",
+    apostilas: true,
   },
   {
     grupo: "Adultos",
@@ -65,14 +67,38 @@ export default function AdminCursos() {
                     <span className="rounded-full bg-amber-soft px-2 py-0.5">40 aulas · 2h</span>
                     <span className="rounded-full bg-amber-soft px-2 py-0.5">{c.publico}</span>
                   </div>
-                  <a
-                    href={`/cursos/${c.file}.html`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary mt-4 !px-4 !py-2 text-sm"
-                  >
-                    Abrir ementa ↗
-                  </a>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href={`/cursos/${c.file}.html`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary !px-4 !py-2 text-sm"
+                    >
+                      Ementa ↗
+                    </a>
+                    {c.apostilas ? (
+                      <div className="flex gap-2">
+                        <a
+                          href={`/cursos/${c.file}-aluno.html`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-ghost flex-1 !px-2 !py-2 text-xs"
+                        >
+                          Apostila do aluno ↗
+                        </a>
+                        <a
+                          href={`/cursos/${c.file}-professor.html`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-ghost flex-1 !px-2 !py-2 text-xs"
+                        >
+                          Apostila do professor ↗
+                        </a>
+                      </div>
+                    ) : (
+                      <span className="text-[11px] text-muted">Apostilas em preparação…</span>
+                    )}
+                  </div>
                 </div>
               ))}
           </div>
