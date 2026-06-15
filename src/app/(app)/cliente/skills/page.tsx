@@ -103,7 +103,10 @@ export default function SkillsPage() {
                 <code className="font-mono text-[11px] text-paper/35">{s.id}</code>
               </div>
               <p className="mt-0.5 text-sm font-semibold text-amber-light">{s.tagline}</p>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-paper/55">{starterReasons[s.id] ?? s.description}</p>
+              <p className="mt-2 text-sm leading-relaxed text-paper/55">{starterReasons[s.id] ?? s.description}</p>
+              <p className="mt-2 flex-1 text-xs leading-relaxed text-paper/45">
+                <span className="font-semibold text-paper/65">Quando usar:</span> {s.whenToUse}
+              </p>
               <div className="mt-4 flex items-center justify-end">
                 <SkillDownloadButton skillId={s.id} />
               </div>
@@ -130,7 +133,10 @@ export default function SkillsPage() {
                     <code className="font-mono text-[11px] text-paper/35">{s.id}</code>
                   </div>
                   <p className="mt-0.5 text-sm font-semibold text-amber-light">{s.tagline}</p>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-paper/55">{s.description}</p>
+                  <div className="mt-2 flex-1 space-y-1.5 text-sm leading-relaxed">
+                    <p className="text-paper/60"><span className="font-semibold text-paper/80">O que faz:</span> {s.description}</p>
+                    <p className="text-paper/45"><span className="font-semibold text-paper/65">Quando usar:</span> {s.whenToUse}</p>
+                  </div>
                   <div className="mt-4 flex items-center justify-between gap-2">
                     {s.base ? (
                       <span className="rounded bg-white/8 px-1.5 py-0.5 text-[11px] font-medium text-paper/55">base: {s.base}</span>

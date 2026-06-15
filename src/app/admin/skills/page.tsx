@@ -94,7 +94,7 @@ export default function AdminSkills() {
                   <tr className="border-b border-line text-left text-xs uppercase tracking-wide text-muted">
                     <th className="px-4 py-3 font-semibold">Skill</th>
                     <th className="px-4 py-3 font-semibold">id</th>
-                    <th className="px-4 py-3 font-semibold">O que faz</th>
+                    <th className="px-4 py-3 font-semibold">O que faz · Quando usar</th>
                     <th className="px-4 py-3 font-semibold">Base</th>
                     <th className="px-4 py-3 text-right font-semibold">Downloads</th>
                   </tr>
@@ -112,7 +112,12 @@ export default function AdminSkills() {
                         <span className="block text-xs text-amber-deep">{s.tagline}</span>
                       </td>
                       <td className="px-4 py-3 font-mono text-xs text-muted">{s.id}</td>
-                      <td className="px-4 py-3 text-muted">{s.description}</td>
+                      <td className="px-4 py-3 align-top">
+                        <span className="block text-ink/80">{s.description}</span>
+                        <span className="mt-1 block text-xs text-muted">
+                          <span className="font-semibold">Quando usar:</span> {s.whenToUse}
+                        </span>
+                      </td>
                       <td className="px-4 py-3 text-xs text-muted">{s.base ?? "—"}</td>
                       <td className="px-4 py-3 text-right font-mono tabular-nums text-ink">
                         {loading ? "…" : counts[s.id] ?? 0}
