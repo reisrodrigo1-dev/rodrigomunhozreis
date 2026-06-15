@@ -32,6 +32,7 @@ const cursos: Curso[] = [
     desc: "Descobrir, criar e aprender com a IA — divertido, seguro e com supervisão de adulto.",
     publico: "9 a 13 anos",
     file: "curso-ia-criancas",
+    apostilas: true,
   },
   {
     grupo: "Crianças",
@@ -39,6 +40,7 @@ const cursos: Curso[] = [
     desc: "Criar sites e programas com a ajuda da IA — sendo o chefe da máquina, com capricho.",
     publico: "10 a 14 anos",
     file: "curso-vibecoding-criancas",
+    apostilas: true,
   },
 ];
 

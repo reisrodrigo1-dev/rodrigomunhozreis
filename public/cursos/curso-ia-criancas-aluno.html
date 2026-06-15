@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px;margin:13px 0}
+.skills h4{color:var(--amber-deep);margin-bottom:3px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px;margin:13px 0}
+.pratica h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:5px}
+.pratica p{color:var(--ink-soft);font-size:14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Apostila do Aluno · Curso presencial · Crianças</div>
+<h1>IA do Zero ao Avançado — Crianças</h1>
+<p class="sub">Seu material de acompanhamento — para usar com a ajuda de um adulto, com segurança e diversão.</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>9 a 13 anos</span></div>
+</div></div>
+<div class="wrap">
+<!-- APOSTILA DO ALUNO · IA do Zero ao Avançado — Crianças · Módulos 1 e 2 -->
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1</span><h2>Conhecendo a IA (a amiga robô)</h2></div>
+  <p class="mod-resumo">Vamos descobrir o que é Inteligência Artificial, como ela aprende e como conversar com ela. Você vai ver que a IA é um ajudante muito esperto, mas que também pode errar. E o mais importante: usar a IA sempre com um adulto perto e com muita segurança. Vamos nessa?</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1 · 2h</span><h3>O que é IA? (um ajudante super esperto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir o que é Inteligência Artificial e onde ela já está na sua vida, sem nem você perceber.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>IA quer dizer <b>Inteligência Artificial</b>. É um programa de computador feito pra ajudar a gente a pensar, responder perguntas e criar coisas. Imagine um amigo robô que leu muitos livros e gosta de ajudar!</p>
+      <p>Mas atenção: a IA <b>não é viva</b> e <b>não tem sentimentos</b>. Ela é como uma calculadora muito, muito esperta. A IA já está em vários lugares:</p>
+      <ul>
+        <li>Quando o vídeo certinho aparece pra você assistir.</li>
+        <li>Quando o celular adivinha a próxima palavra que você vai escrever.</li>
+        <li>Quando você fala com um assistente de voz e ele responde.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Você pede pra IA "me conte uma piada de dinossauro" e ela inventa uma piada na hora, só pra você rir.</p>
+      <p><b>Exemplo 2:</b> Você desenha um gato no aplicativo e a IA adivinha: "isso é um gato!". Igual a uma brincadeira de adivinhação.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Oi! Me explique o que e a Inteligencia Artificial usando palavras faceis, do jeito que uma crianca entende.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Sente perto de um adulto.</li>
+        <li>Passo 2: Peça pro adulto abrir o aplicativo de IA com você.</li>
+        <li>Passo 3: Digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 4: Leia a resposta em voz alta.</li>
+        <li>Passo 5: Conte pro adulto se você entendeu ou se achou difícil.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Olhe ao seu redor por um dia inteiro e tente achar 3 lugares onde a IA pode estar ajudando (TV, jogos, celular). Anote pra contar na próxima aula!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>Onde você já viu a IA aparecer no seu dia? Você acha legal ter um ajudante robô?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Desenhe como você imagina a "amiga robô" da IA. Ela tem qual cor? É grande ou pequena? Use sua imaginação!</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>IA significa Inteligência Artificial. Ela é um ajudante esperto, mas não é viva. A IA já está em muitos lugares da nossa vida.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2 · 2h</span><h3>Como a IA aprende (ela "leu" muita coisa!)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender de um jeito simples como a IA ficou tão esperta — ela treinou bastante, igual a gente!</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>Você sabe andar de bicicleta? No começo é difícil, mas depois de praticar bastante, fica fácil. A IA aprende mais ou menos assim: ela "leu" e "viu" muitas e muitas coisas pra ficar boa em responder.</p>
+      <p>Ela aprendeu olhando:</p>
+      <ul>
+        <li>Muitos textos, histórias e livros.</li>
+        <li>Muitas fotos e desenhos.</li>
+        <li>Muitos exemplos, até pegar o jeito.</li>
+      </ul>
+      <p>É como treinar um truque novo de skate: quanto mais a IA pratica, melhor ela fica. Mas, como ela só aprendeu com o que viu, ela não sabe tudo!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Pra reconhecer um cachorro, a IA viu milhares de fotos de cachorros até aprender "ah, isso aqui é um cachorro!".</p>
+      <p><b>Exemplo 2:</b> Pra escrever histórias, a IA leu muitas histórias antes. Por isso ela consegue inventar uma princesa, um dragão e um final feliz.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Como voce aprendeu a responder minhas perguntas? Me explique de um jeito divertido, como se eu tivesse 10 anos.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Com um adulto, digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 2: Leia a resposta com calma.</li>
+        <li>Passo 3: Pense: a IA disse que aprendeu vendo muitos exemplos?</li>
+        <li>Passo 4: Conte com suas palavras como você acha que a IA aprendeu.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Pense numa coisa que VOCÊ aprendeu praticando bastante (ler, nadar, jogar). Desenhe você fazendo isso e mostre que treinar deixa a gente bom — igual à IA!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>O que você praticou bastante até aprender? Você acha que a IA aprende mais rápido ou mais devagar que você?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva 1 coisa que a IA aprendeu vendo muitos exemplos e 1 coisa que você acha que ela ainda NÃO sabe.</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>A IA aprende vendo muitos exemplos, como textos e fotos. Praticar deixa a IA esperta, igual à gente. Mas ela não sabe tudo do mundo.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3 · 2h</span><h3>Conversando com a IA pela primeira vez</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> conversar com a IA pela primeira vez, sempre com um adulto, e ver como é divertido fazer perguntas pra ela.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>Conversar com a IA é como mandar uma mensagem pra um amigo. Você escreve o que quer e ela responde. A gente chama esse pedido de <b>prompt</b> — é só uma palavra chique pra "o que você pede pra IA".</p>
+      <p>Regra importante de segurança:</p>
+      <ul>
+        <li>Sempre converse com a IA <b>com um adulto por perto</b>.</li>
+        <li><b>Nunca</b> conte seu nome completo, endereço, escola, telefone ou senha.</li>
+        <li>Seja gentil, mesmo com a IA. Educação é sempre legal!</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Você escreve "me ajude a inventar um nome engraçado pro meu dinossauro de brinquedo" e a IA dá várias ideias divertidas.</p>
+      <p><b>Exemplo 2:</b> Você pergunta "quantas patas tem uma aranha?" e a IA responde rapidinho pra você aprender.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Oi! Me de 3 ideias de brincadeiras divertidas pra fazer em casa num dia de chuva.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Chame um adulto pra ficar do seu lado.</li>
+        <li>Passo 2: Digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 3: Aperte enviar e espere a resposta.</li>
+        <li>Passo 4: Escolha a brincadeira que você mais gostou.</li>
+        <li>Passo 5: Lembre: não escreva nenhum dado pessoal seu!</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Faça uma pergunta sobre o seu bicho ou animal favorito. Anote a resposta e veja se você já sabia ou se aprendeu algo novo.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>Qual foi a primeira coisa que você perguntou pra IA? A resposta te surpreendeu?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva a sua pergunta favorita pra fazer pra IA. Guarde pra usar de novo em outra aula.</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>Falar com a IA é como mandar mensagem; o pedido se chama prompt. Sempre converse com um adulto perto. Nunca conte seus dados pessoais.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4 · 2h</span><h3>A IA pode errar! (ela não é mágica nem sabe tudo)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que a IA pode errar e aprender a sempre conferir as respostas com um adulto.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>A IA é esperta, mas <b>não é mágica</b> e <b>não sabe tudo</b>. Às vezes ela dá uma resposta errada com toda a confiança, como se estivesse certa. Por isso a gente sempre <b>confere</b>.</p>
+      <p>É parecido com um amigo que adora contar histórias: às vezes ele inventa um pedacinho sem querer. Então a gente:</p>
+      <ul>
+        <li>Lê a resposta com cuidado.</li>
+        <li>Pergunta pra um adulto se aquilo está certo.</li>
+        <li>Procura em um livro ou site confiável também.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Você pergunta quanto é uma continha de matemática e a IA erra a conta. Por isso vale conferir na calculadora!</p>
+      <p><b>Exemplo 2:</b> A IA conta um "fato" sobre um animal que não é verdade. A gente checa num livro e descobre que estava errado.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Quanto e 7 mais 8? Depois explique passo a passo como voce chegou nesse numero.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Com um adulto, digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 2: Veja a resposta da IA.</li>
+        <li>Passo 3: Confira a continha você mesmo, contando nos dedos ou na calculadora.</li>
+        <li>Passo 4: A IA acertou? Marque "sim" ou "não".</li>
+        <li>Passo 5: Lembre sempre: é bom conferir, mesmo quando ela parece certa.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Peça pra IA um fato sobre o planeta Terra. Depois confira com um adulto se é verdade. Vire um "detetive da verdade"!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>A IA já te deu uma resposta errada? Como a gente pode saber se uma resposta está certa?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Pense: por que é importante conferir as respostas da IA? Escreva 1 motivo com suas palavras.</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>A IA pode errar, mesmo parecendo segura. Sempre confira as respostas. Pergunte a um adulto ou olhe num livro confiável.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5 · 2h</span><h3>Regras de ouro — usar IA com segurança (e com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender as regras de ouro pra usar a IA com segurança e se proteger sempre.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>Usar a IA é divertido, mas tem que ser <b>seguro</b>. Pense nas regras de atravessar a rua: a gente olha pros dois lados e segura a mão de um adulto. Com a IA é parecido. Aqui estão as <b>regras de ouro</b>:</p>
+      <ul>
+        <li><b>Sempre com um adulto:</b> use a IA junto com seus pais ou professor.</li>
+        <li><b>Segredo é segredo:</b> nunca conte nome completo, endereço, escola, telefone, senha ou fotos suas.</li>
+        <li><b>Se algo estranho aparecer, pare:</b> se ler algo que te assustou ou deixou triste, conte logo pra um adulto.</li>
+        <li><b>Confira sempre:</b> a IA pode errar, então a gente checa.</li>
+        <li><b>Seja gentil:</b> escreva com educação e respeito.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A IA pergunta seu endereço. Resposta certa: você NÃO conta e avisa o adulto.</p>
+      <p><b>Exemplo 2:</b> Apareceu algo estranho na tela. Resposta certa: você fecha e chama logo um adulto pra ajudar.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Me ajude a criar uma lista de regras de seguranca, divertidas e faceis, pra eu usar a IA sem nunca contar meus dados pessoais.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Com um adulto, digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 2: Leia as regras que a IA sugeriu.</li>
+        <li>Passo 3: Junto com o adulto, escolha as 3 regras mais importantes pra você.</li>
+        <li>Passo 4: Escreva ou desenhe essas 3 regras num cartaz.</li>
+        <li>Passo 5: Cole o cartaz perto do computador pra lembrar sempre.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Crie um "juramento do usuário seguro de IA" com 3 frases que comecem com "Eu prometo...". Leia em voz alta pra sua família!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>Qual regra de ouro você acha mais importante? O que você faria se a IA pedisse um segredo seu?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Desenhe um cartaz colorido com a sua regra de ouro favorita bem grande no meio.</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>Use a IA sempre com um adulto. Nunca conte dados pessoais nem segredos. Se algo estranho aparecer, pare e avise um adulto.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2</span><h2>Aprendendo a pedir (o jeito certo)</h2></div>
+  <p class="mod-resumo">Agora que você já conhece a IA, vamos aprender o segredo pra ela ajudar de verdade: saber pedir do jeito certo! Você vai descobrir que um bom pedido tem detalhes, pode dar um papel pra IA e pode pedir do seu jeitinho. E se não gostou? É só pedir de novo. Bora treinar!</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6 · 2h</span><h3>Pedido bom x pedido ruim</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a diferença entre um pedido ruim e um pedido bom pra IA te ajudar melhor.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>Imagine que você pede um lanche e fala só "quero comida". A pessoa não sabe o que trazer! Mas se você fala "quero um sanduíche de queijo", fica fácil. Com a IA é igual.</p>
+      <p>Um <b>pedido ruim</b> é curto demais e confuso. Um <b>pedido bom</b> explica direitinho o que você quer:</p>
+      <ul>
+        <li>Pedido ruim: "me ajuda".</li>
+        <li>Pedido bom: "me ajude a escrever uma história curta sobre um gato astronauta".</li>
+      </ul>
+      <p>Quanto mais claro o pedido, melhor a resposta!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Ruim: "desenho". Bom: "me dê ideias pra desenhar um robô amigo com um chapéu engraçado".</p>
+      <p><b>Exemplo 2:</b> Ruim: "conta algo". Bom: "me conte uma curiosidade legal sobre golfinhos".</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Me conte uma curiosidade legal e divertida sobre os golfinhos, em uma frase curta.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Com um adulto, primeiro digite só "me conta algo".</li>
+        <li>Passo 2: Veja a resposta meio sem graça.</li>
+        <li>Passo 3: Agora digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 4: Compare: qual resposta ficou melhor?</li>
+        <li>Passo 5: Você descobriu o poder de um pedido bom!</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Pegue um pedido ruim, tipo "me ajuda", e transforme num pedido bom com bastante detalhe. Escreva os dois pra comparar.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>Por que um pedido com detalhes funciona melhor? Mostre um pedido bom que você inventou.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva um pedido ruim de um lado e o mesmo pedido, agora bom, do outro lado.</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>Pedido ruim é curto e confuso. Pedido bom explica direitinho o que você quer. Quanto mais claro, melhor a resposta da IA.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7 · 2h</span><h3>Dê um papel pra IA ("seja um contador de histórias")</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a dar um papel pra IA, como num teatro, pra ela responder de um jeito divertido.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>Você já brincou de faz de conta? "Você é o médico e eu sou o paciente!" Com a IA também dá pra brincar assim. A gente dá um <b>papel</b> pra ela e ela responde naquele personagem.</p>
+      <p>É como dar uma fantasia pra IA vestir:</p>
+      <ul>
+        <li>"Seja um contador de histórias" — ela fica cheia de imaginação.</li>
+        <li>"Seja um professor gentil" — ela explica com calma.</li>
+        <li>"Seja um guia de viagem" — ela fala dos lugares legais.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> "Seja um pirata divertido e me conte como achar um tesouro." A IA responde "Arrr! Siga o mapa, marujo!".</p>
+      <p><b>Exemplo 2:</b> "Seja um cientista maluco e me explique por que o céu é azul." A resposta vira uma aula bem engraçada.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Seja um contador de historias divertido e me conte uma historia curtinha sobre um cachorro que aprende a voar.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Com um adulto, digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 2: Leia a história em voz alta.</li>
+        <li>Passo 3: Agora troque o papel: peça "seja um robô engraçado".</li>
+        <li>Passo 4: Veja como a resposta muda de jeito.</li>
+        <li>Passo 5: Escolha o papel que você mais gostou.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Invente um papel maluco pra IA, tipo "seja um dinossauro que adora dançar". Veja a resposta e ria bastante!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>Qual papel você deu pra IA? Como a resposta ficou diferente quando você trocou o personagem?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva 3 papéis divertidos que você gostaria de dar pra IA na próxima vez.</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>Dar um papel é como uma fantasia pra IA. O papel muda o jeito da resposta. Brincar de personagem deixa tudo mais divertido.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8 · 2h</span><h3>Conte os detalhes (quanto mais explica, melhor)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que dar detalhes pra IA faz a resposta ficar muito mais legal e do seu jeito.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>Imagine pedir um bolo de aniversário. Se você diz "quero bolo de chocolate, com morango em cima e velinhas", fica perfeito! Sem detalhes, vem um bolo qualquer. A IA é igual: <b>detalhes ajudam muito</b>.</p>
+      <p>Você pode contar:</p>
+      <ul>
+        <li><b>Sobre o quê:</b> "uma história de unicórnio".</li>
+        <li><b>De que tamanho:</b> "bem curtinha, só 3 frases".</li>
+        <li><b>Como deve ser:</b> "alegre e com final feliz".</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Sem detalhe: "me dê um nome". Com detalhe: "me dê um nome fofo pra uma tartaruga azul bem calma".</p>
+      <p><b>Exemplo 2:</b> Sem detalhe: "faça um desenho de ideia". Com detalhe: "me dê ideias pra desenhar um foguete colorido indo pra Lua".</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Me de o nome de um personagem: um dragao pequeno, da cor verde, que e muito amigavel e adora comer frutas.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Com um adulto, peça só "me dê um nome de personagem".</li>
+        <li>Passo 2: Veja a resposta meio comum.</li>
+        <li>Passo 3: Agora digite a frase cheia de detalhes do quadrinho "Pra testar".</li>
+        <li>Passo 4: Compare: a segunda resposta combinou mais com a sua ideia?</li>
+        <li>Passo 5: Comemore: você usou o poder dos detalhes!</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Pense num desenho que você quer fazer e descreva ele com 4 detalhes (cor, tamanho, lugar, sentimento). Peça ideias pra IA e desenhe!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>Quais detalhes você gosta de contar pra IA? O detalhe fez a resposta ficar mais a sua cara?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Escolha uma coisa e escreva 3 detalhes sobre ela (cor, tamanho e como ela é).</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>Detalhes ajudam a IA a entender você. Conte sobre o quê, o tamanho e como deve ser. Quanto mais detalhes, mais a resposta fica do seu jeito.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9 · 2h</span><h3>Peça do seu jeito (engraçado? curto? em lista?)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a pedir a resposta do seu jeito favorito — engraçada, curtinha ou em listinha.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>Você pode escolher <b>como</b> a IA vai te responder, igual escolher o sabor do sorvete. Quer engraçado? Quer curto? Quer em lista? É só pedir!</p>
+      <ul>
+        <li><b>Engraçado:</b> "me explique de um jeito bem engraçado".</li>
+        <li><b>Curtinho:</b> "responda em só uma frase".</li>
+        <li><b>Em lista:</b> "me dê a resposta em uma listinha de 3 itens".</li>
+        <li><b>Em rima:</b> "responda fazendo uma rima divertida".</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> "Me explique o que é um arco-íris em uma rima." A IA responde rimando e fica bem legal!</p>
+      <p><b>Exemplo 2:</b> "Me dê 3 ideias de brincadeira em forma de lista." A IA responde 1, 2, 3, organizadinho.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Me de 3 ideias de lanche saudavel e gostoso, em forma de listinha bem curta.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Com um adulto, digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 2: Veja a resposta em listinha.</li>
+        <li>Passo 3: Agora peça a mesma coisa, mas "de um jeito engraçado".</li>
+        <li>Passo 4: Veja como a IA muda o jeito de responder.</li>
+        <li>Passo 5: Escolha o jeito que você mais gostou.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Peça a mesma pergunta de 3 jeitos: curtinho, em lista e em rima. Veja qual ficou mais divertido pra você!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>Qual é o seu jeito favorito de resposta: engraçado, curto, lista ou rima? Por quê?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva qual jeito de resposta você mais gostou e dê um exemplo de pedido usando ele.</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>Você escolhe como a IA responde. Pode ser engraçado, curto, em lista ou em rima. É só pedir do seu jeito favorito.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10 · 2h</span><h3>Não gostou? Peça de novo!</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que, se a resposta não ficou boa, você pode pedir de novo até ficar do seu jeito.</p>
+
+    <div class="bloco">
+      <h4>Vamos entender</h4>
+      <p>Sabe quando você desenha, não gosta e faz de novo melhor? Com a IA é igual! Se a resposta não ficou legal, você <b>pede de novo</b> e explica o que mudar. Isso não é errado, é o jeito certo!</p>
+      <p>Você pode pedir:</p>
+      <ul>
+        <li>"Ficou grande demais, faça mais curto."</li>
+        <li>"Quero mais engraçado, por favor."</li>
+        <li>"Não entendi, explique mais fácil."</li>
+        <li>"Tente de novo, mas sobre um gato."</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A história ficou comprida. Você pede "agora bem curtinha, só 2 frases" e a IA encurta.</p>
+      <p><b>Exemplo 2:</b> A explicação ficou difícil. Você pede "explique de novo, do jeito que uma criança entende".</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Pra testar (com um adulto)</span>
+      <pre>Me conte uma piada. Se eu nao rir, vou pedir outra: por favor, faca uma piada bem boba e divertida.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Passo 1: Com um adulto, digite a frase do quadrinho "Pra testar".</li>
+        <li>Passo 2: Leia a piada. Você riu?</li>
+        <li>Passo 3: Se não riu, peça "faça outra mais engraçada, por favor".</li>
+        <li>Passo 4: Repita até achar uma piada que te faça rir bastante.</li>
+        <li>Passo 5: Viu? Pedir de novo deixa a resposta cada vez melhor!</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Desafio extra</h4>
+      <p>Peça uma história e melhore ela em 3 passos: primeiro mais curta, depois mais engraçada, depois com seu animal favorito. Veja como ela vai ficando do seu jeito!</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Converse com a turma</h4>
+      <p>Você já pediu pra IA tentar de novo? O que você mudou pra a resposta ficar melhor?</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva 2 frases que você pode usar pra pedir pra IA tentar de novo (ex: "faça mais curto").</p>
+    </div>
+
+    <div class="skills">
+      <h4>Resumo da aula</h4>
+      <p>Se não gostou, peça de novo — isso é normal e certo. Explique o que mudar (mais curto, mais fácil, mais engraçado). Pedir de novo melhora a resposta.</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>IA pra aprender e estudar</h2></div>
+  <p class="mod-resumo">Agora vem a parte mais legal: usar a IA pra aprender de verdade! Ela vira sua professora particular, te ajuda na lição (sem colar!), explica qualquer coisa que você curte, resume histórias enormes e ainda treina matemática e leitura com você. Lembra sempre: a IA é uma ajudante, mas quem aprende e fica esperto é você. E tudo com um adulto por perto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 2h</span><h3>A IA como professora particular</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que a IA pode te explicar coisas só pra você, no seu ritmo, do jeitinho que você entende. E vai aprender a pedir do jeito certo pra ela te ensinar bem.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Imagina ter um professor só seu, que nunca cansa, nunca fica bravo e explica de novo quantas vezes você quiser. É mais ou menos assim que a IA pode te ajudar! Você pergunta, ela explica. Não entendeu? Pede pra explicar de outro jeito, como se você tivesse 7 anos, ou usando um exemplo de futebol, de jogo ou de bichinho. A IA não sabe tudo de verdade como um humano, mas ela junta um monte de explicações e te conta de um jeito fácil. O segredo é: ela ensina, mas quem precisa pensar e aprender é você. Ela é a professora, você é o aluno esperto.</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Você não entendeu por que o céu é azul. Pede: "Me explica por que o céu é azul como se eu tivesse 8 anos." E pronto, vem uma resposta cheia de luz e cores fáceis de entender!</p><p><b>Exemplo 2:</b> Você quer saber como as abelhas fazem mel. Pergunta e a IA conta a história das abelhinhas trabalhadeiras, passo a passo, como se fosse um conto.</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me explique como funciona o arco-íris de um jeito bem fácil, como se eu tivesse 9 anos. Use um exemplo divertido.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, escolha UMA coisa que você sempre quis entender.</li>
+      <li>Escreva a pergunta começando com "Me explique..."</li>
+      <li>No fim, peça: "explique como se eu tivesse 9 anos".</li>
+      <li>Leu a resposta? Se não entendeu uma parte, peça "explica essa parte de novo, mais fácil".</li>
+      <li>Conte pro adulto com SUAS palavras o que você aprendeu. Isso prova que aprendeu de verdade!</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Peça pra IA te explicar a mesma coisa de DOIS jeitos diferentes: um com exemplo de comida e outro com exemplo de jogo. Qual ficou mais fácil de entender pra você?</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Cada um pergunta uma coisa diferente pra IA. Depois contem uns pros outros o que aprenderam. Quem descobriu a curiosidade mais legal?</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Anote a coisa nova mais legal que você aprendeu hoje. Faça um desenho dela pra nunca esquecer!</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) A IA pode te ensinar só pra você, no seu ritmo. 2) Peça pra ela explicar "como se eu tivesse 9 anos". 3) Você aprendeu de verdade quando consegue contar com suas palavras.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 2h</span><h3>Tirar dúvidas de lição (do jeito certo, sem colar)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a usar a IA pra ENTENDER a lição, e não pra copiar a resposta pronta. Você vai virar um detetive das respostas!</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Tem um jeito certo e um jeito errado de usar a IA na lição. O jeito errado é pedir a resposta pronta e copiar — isso é colar, e colar é roubar de você mesmo, porque seu cérebro não treina e você não aprende. O jeito certo é pedir pra IA te AJUDAR a entender: "me explica como resolver", "me dá uma dica", "onde eu errei?". É como ter um amigo que te ensina a pescar em vez de te dar o peixe pronto. Quando a prova chegar, quem treinou vai saber. Quem só colou vai travar. Por isso a gente sempre estuda de verdade!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1 (jeito certo):</b> "Estou aprendendo a somar frações e travei. Me explica o passo a passo com um exemplo, mas NÃO me dê a resposta do meu exercício." Aí você resolve sozinho!</p><p><b>Exemplo 2 (jeito certo):</b> "Eu respondi que 2+2x3 = 12. Está certo? Se estiver errado, me dê uma dica de onde pensar melhor, sem dizer a resposta."</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Estou aprendendo a fazer continhas de divisão. Me explique o passo a passo com um exemplo seu. Não resolva a minha lição, só me ensine como pensar.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Pegue uma lição de verdade onde você ficou com dúvida.</li>
+      <li>Com o adulto, peça pra IA EXPLICAR como se resolve (com outro exemplo, não o seu).</li>
+      <li>Agora tente resolver a SUA lição sozinho, usando o que aprendeu.</li>
+      <li>Terminou? Peça pra IA conferir: "olha minha resposta e me diga se errei e onde".</li>
+      <li>Combine com você mesmo: "eu uso a IA pra entender, nunca pra copiar".</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça de conta que VOCÊ é o professor. Explique pro adulto, com suas palavras, como se resolve aquela lição. Se você consegue ensinar, é porque aprendeu mesmo!</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que colar é ruim pra você, mesmo que ninguém descubra? O que acontece na prova com quem só copiou? Conversem sobre isso.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Anote a frase: "A IA me ajuda a entender. Quem aprende sou eu." Cole no seu caderno.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Use a IA pra entender, nunca pra copiar. 2) Peça dicas e explicações, não a resposta pronta. 3) Você só aprende de verdade quando treina sozinho.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 2h</span><h3>Aprender qualquer coisa que você curte</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA pra mergulhar fundo numa coisa que você AMA — dinossauros, espaço, futebol, desenho, o que for! Curiosidade é superpoder.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Sabe aquela coisa que você acha incrível e poderia ficar horas falando? A IA pode te ajudar a saber cada vez mais sobre ela! O legal é fazer perguntas que vão fundo: não só "o que é", mas "por quê", "como", "e se". Quanto mais você pergunta, mais você descobre. É como cavar um tesouro: cada pergunta é uma pazada de terra que revela algo novo. E como você curte o assunto, aprender vira brincadeira. Só não esqueça: às vezes a IA erra ou inventa, então o que for muito importante a gente confere com o adulto, num livro ou num site de confiança.</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Ama dinossauros? Pergunte: "Qual era o maior dinossauro de todos? Ele era mais alto que um prédio? O que ele comia?"</p><p><b>Exemplo 2:</b> Curte espaço? Pergunte: "Por que os astronautas flutuam? Como eles dormem no espaço? E como vão ao banheiro lá em cima?"</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Eu amo [coloque aqui o que você curte]. Me conte 3 curiosidades super legais sobre isso que pouca gente sabe, explicadas de um jeito fácil.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha o assunto que você MAIS curte no mundo.</li>
+      <li>Com o adulto, faça 3 perguntas: uma "o que é", uma "por que" e uma "e se".</li>
+      <li>Anote a descoberta mais surpreendente.</li>
+      <li>Confira com o adulto se aquilo faz sentido (a IA pode errar!).</li>
+      <li>Monte um "cartão de curiosidade" com o fato mais legal pra mostrar pra alguém.</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Vire um "mini especialista": junte 5 curiosidades sobre seu assunto favorito e dê uma mini palestra de 1 minuto pra sua família. Capriche!</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Cada um conta qual é a sua paixão e uma curiosidade que descobriu. Vocês têm interesses parecidos ou bem diferentes? Que legal!</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe seu assunto favorito e escreva ao lado a curiosidade nova que mais te surpreendeu hoje.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) A IA ajuda você a aprender mais do que você ama. 2) Perguntas "por quê" e "e se" levam mais fundo. 3) Coisa importante a gente sempre confere, porque a IA pode errar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 2h</span><h3>Resumir histórias e textos</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a pedir pra IA encurtar textos grandes em pouquinhas palavras, pegando só o que é importante. Mas primeiro você lê!</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Resumir é contar uma história grande em poucas palavras, guardando só o mais importante. Pensa numa esponja: ela espreme a água e sobra só o que interessa. A IA é ótima nisso! Você dá um texto e ela te devolve o resumo. Isso ajuda demais a estudar e a entender o que você leu. Mas atenção: o resumo NÃO substitui a leitura. Primeiro você lê (ou ouve a história), depois usa o resumo pra confirmar se entendeu e pra lembrar. Ler de verdade deixa seu cérebro forte. O resumo é só uma ajudinha esperta no final.</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Você leu um capítulo grande de um livro. Pede: "Resuma esta história em 3 frases bem curtas." Pronto, dá pra lembrar tudo rapidinho!</p><p><b>Exemplo 2:</b> Tem um textão sobre os planetas. Você pede: "Liste os 3 pontos mais importantes deste texto em palavras fáceis."</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Vou colar um texto. Resuma ele em 3 frases curtas e fáceis, do jeito que uma criança entende. Texto: [cole aqui um texto pequeno]</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Leia primeiro uma historinha ou um texto pequeno (de verdade, lendo!).</li>
+      <li>Com o adulto, peça pra IA resumir em 3 frases.</li>
+      <li>Compare: o resumo bateu com o que você entendeu lendo?</li>
+      <li>Faça VOCÊ um resumo de 1 frase, do seu jeito.</li>
+      <li>Veja qual ficou melhor: o seu ou o da IA. Às vezes o seu ganha!</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Pegue seu desenho ou filme favorito e tente resumir a história inteira em só 1 frase. Depois peça pra IA fazer também e comparem.</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que é importante LER primeiro e só depois usar o resumo? O que a gente perde se só lê o resumo e pula a história?</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Anote o resumo de 1 frase que VOCÊ fez. Guarde pra ver como você é bom em resumir!</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Resumir é guardar só o mais importante. 2) Sempre leia primeiro, o resumo é só ajuda. 3) Você também consegue resumir com suas palavras.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 2h</span><h3>Praticar matemática e leitura com a IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA como uma máquina de treino! Ela cria continhas e textos pra você praticar quanto quiser, no nível certo pra você.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Pra ficar bom em alguma coisa, a gente treina — igual jogador de futebol que treina chute todo dia. A IA pode ser sua máquina de treino: ela inventa continhas de matemática e textinhos de leitura sem parar, do tamanho que você precisa. Você resolve, ela confere e te explica onde errou. O melhor é que ninguém fica te julgando: você pode errar à vontade e tentar de novo, porque errar faz parte de aprender. Só lembra: VOCÊ resolve, a IA só cria e confere. O treino é seu, o cérebro que cresce é o seu!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> "Me dê 5 continhas de multiplicação fáceis pra eu treinar. Não me dê as respostas ainda!" Você resolve e depois pede pra ela conferir.</p><p><b>Exemplo 2:</b> "Crie um textinho curto e divertido pra eu ler em voz alta, com palavras que uma criança de 10 anos consegue ler."</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Crie 5 continhas de soma para eu treinar, do nível de uma criança de 10 anos. Não me dê as respostas agora. Quando eu terminar, eu te mostro e você corrige.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha: treinar matemática OU leitura hoje.</li>
+      <li>Com o adulto, peça 5 exercícios no seu nível, SEM as respostas.</li>
+      <li>Resolva tudo sozinho, com calma. Pode errar, faz parte!</li>
+      <li>Mostre suas respostas e peça pra IA corrigir e explicar os erros.</li>
+      <li>Refaça só os que errou. Sentiu que melhorou? Isso é o treino funcionando!</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Peça pra IA fazer um "desafio relâmpago": 3 continhas pra você resolver em 1 minuto. Cronometra com o adulto e veja se acerta tudo a tempo!</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que errar durante o treino é bom? O que acontece com quem nunca pratica? Façam uma competição amigável de quem treinou mais.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Anote quantos exercícios você acertou hoje. Treine de novo amanhã e veja se o número sobe!</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) A IA cria treinos sem fim no seu nível. 2) Você resolve, ela confere e explica. 3) Errar treinando é normal e te deixa cada vez melhor.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>IA pra criar</h2></div>
+  <p class="mod-resumo">Chegou a hora de soltar a imaginação! Neste módulo você vira um inventor: cria histórias malucas, personagens incríveis, mundos novos, desenhos coloridos, quadrinhos e até jogos! A IA é seu ajudante de criação, mas as melhores ideias vêm da SUA cabeça. Vamos criar coisas que nunca existiram antes — sempre com um adulto do lado pra brincar junto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 2h</span><h3>Inventar histórias com a IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> criar histórias do zero junto com a IA! Você dá as ideias e ela ajuda a montar a aventura. Você é o chefe da história.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Toda história tem um começo, um meio e um fim. Tem um herói, um problema e um jeito de resolver. A IA pode te ajudar a montar essa aventura: você diz "quero uma história sobre um gato astronauta" e ela começa a contar! Mas o melhor é quando VOCÊ comanda: você escolhe quem é o herói, o que acontece e como termina. A IA é seu ajudante de escrita, mas as ideias mais doidas e legais saem da sua cabeça. Quanto mais detalhes você dá, mais a história fica do seu jeito. Você é o diretor, a IA é o assistente!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> "Crie uma história sobre uma menina que descobre que seu cachorro fala, mas só à meia-noite." Que segredo divertido!</p><p><b>Exemplo 2:</b> "Invente uma aventura de um robô tímido que quer fazer amigos na escola, mas tem medo de errar." Fofo, né?</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Crie uma história curta e divertida sobre um [escolha um herói] que precisa resolver [escolha um problema]. Faça um começo, um meio e um final feliz. Use palavras fáceis.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha 3 coisas: um herói, um lugar e um problema.</li>
+      <li>Com o adulto, peça pra IA criar a história com essas 3 coisas.</li>
+      <li>Não gostou de uma parte? Peça pra mudar: "deixa o final mais engraçado".</li>
+      <li>Agora invente VOCÊ a próxima frase da história, do seu jeito.</li>
+      <li>Leia a história pronta em voz alta pra alguém. É sua criação!</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie uma história misturando duas coisas que normalmente não combinam — tipo um dragão que tem medo de fogo, ou um peixe que quer voar. Quanto mais maluco, mais divertido!</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Cada um conta o herói e o problema da sua história. Qual ficou mais engraçada? Quem teve a ideia mais original?</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Escreva o nome do seu herói e desenhe ele. Guarde, porque ele pode voltar na próxima história!</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Toda história tem começo, meio e fim. 2) Você comanda, a IA ajuda a escrever. 3) Quanto mais detalhes você dá, mais a história fica do seu jeito.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 2h</span><h3>Criar personagens e mundos</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> inventar personagens incríveis (com nome, jeito e poderes) e mundos novos pra eles morarem. Você vira um criador de universos!</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Um personagem bom tem nome, aparência, um jeito de ser e talvez até um poder ou um sonho. Um mundo bom tem regras, lugares e coisas que só existem ali. A IA te ajuda a dar vida a tudo isso! Você diz "quero um personagem corajoso mas atrapalhado" e ela te ajuda a montar. Depois você cria o mundo dele: será que é uma cidade nas nuvens? Um reino debaixo da água? O legal é que VOCÊ decide as regras. Pense nos seus personagens e mundos favoritos de desenhos e jogos — você também pode criar os seus, totalmente novos e só seus!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> "Me ajude a criar um personagem: um esquilo detetive que usa óculos, é muito curioso e adora resolver mistérios de comida sumida."</p><p><b>Exemplo 2:</b> "Crie um mundo onde tudo é feito de doces, mas chove limonada e as casas são de biscoito. Como seria viver lá?"</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me ajude a criar um personagem com nome, aparência, um jeito de ser e um poder especial. Ele se chama [escolha um nome] e gosta de [escolha algo].</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Invente um personagem: dê nome, aparência e um jeito de ser.</li>
+      <li>Com o adulto, peça pra IA completar os detalhes e dar um poder a ele.</li>
+      <li>Agora crie o MUNDO dele: onde mora? Quais são as regras desse lugar?</li>
+      <li>Peça pra IA descrever como é um dia normal nesse mundo.</li>
+      <li>Junte tudo numa "ficha do personagem" com nome, poder e mundo.</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie DOIS personagens que são bem diferentes e imagine o que aconteceria se eles se encontrassem. Seriam amigos ou rivais? Peça pra IA imaginar junto.</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Apresente seu personagem pra turma como se fosse um amigo: "Esse é o..., ele é... e o poder dele é...". Quem criou o mundo mais maluco?</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe seu personagem no mundo dele. Escreva o nome, o poder e uma curiosidade sobre ele.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Personagem tem nome, jeito e poder. 2) Mundo tem lugares e regras que você inventa. 3) Você é o criador; a IA só dá uma mãozinha.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 2h</span><h3>A IA que desenha (imagens!)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que existe IA que DESENHA! Você descreve com palavras e ela faz a imagem. Você vira um pintor de palavras.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Tem IA que, em vez de escrever, DESENHA o que você pede! Você descreve com palavras — "um gato laranja usando capa de super-herói voando sobre a cidade" — e ela cria a imagem. É quase mágica! O segredo é descrever bem: quanto mais detalhes (cores, lugar, o que está fazendo), mais perto fica do que você imaginou. Mas atenção, com o adulto sempre: essas imagens são INVENTADAS pela IA, não são fotos de verdade. E a gente nunca pede pra criar imagem de pessoas reais nem de coisas feias ou perigosas. A gente usa pra criar coisas legais, fofas e divertidas!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> "Desenhe um dragão azul pequenininho e fofo sentado em cima de uma montanha de marshmallow, num estilo de desenho animado." Imagina que fofura!</p><p><b>Exemplo 2:</b> "Crie uma imagem de uma casinha na árvore feita de doces, com escorregador de arco-íris, num dia ensolarado." Quem não quer morar lá?</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Desenhe um [animal] fofo, da cor [cor], fazendo [uma ação divertida], em estilo de desenho animado, num lugar [escolha um lugar].</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Imagine uma cena divertida na sua cabeça.</li>
+      <li>Com o adulto, descreva ela com MUITOS detalhes: quem, onde, cor, o que faz.</li>
+      <li>Peça a imagem e veja o resultado. Ficou parecido com o que imaginou?</li>
+      <li>Não ficou? Mude a descrição: "deixa mais colorido" ou "coloca à noite".</li>
+      <li>Lembre: a imagem é inventada, e só criamos coisas legais e seguras.</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Descreva a MESMA cena de dois jeitos: uma "de dia, alegre" e outra "à noite, com estrelas". Veja como mudar poucas palavras muda toda a imagem!</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que a gente não pede imagem de pessoas de verdade? Como dá pra saber que uma imagem foi feita por IA e não é foto real? Conversem.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Faça VOCÊ um desenho à mão da mesma cena que a IA criou. Compare: qual você gostou mais, o seu ou o da IA?</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Existe IA que desenha a partir de palavras. 2) Quanto mais detalhes, melhor a imagem. 3) Imagens de IA são inventadas; criamos só coisas legais e seguras.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 2h</span><h3>Fazer quadrinhos e revistas</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> juntar histórias e desenhos pra criar seus próprios quadrinhos! Quadrinho é história em desenho, e você vai fazer o seu.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Quadrinho é uma história contada em quadradinhos, com desenhos e balõezinhos de fala. É história e desenho juntos! A IA pode te ajudar das duas formas: criando a historinha (o que cada personagem fala) e até descrevendo como seria cada quadrinho pra você desenhar. Você decide a ordem das cenas: o começo, o problema e o final. Depois é só desenhar os quadrinhos e escrever as falas nos balõezinhos. No fim, você junta várias páginas e tem uma revistinha sua! É um projeto que mistura tudo que você já aprendeu: criar história, personagem e imagem.</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> "Me ajude a criar um quadrinho de 4 cenas sobre um cachorro que perde o osso e sai procurando pela casa toda. Diga o que acontece em cada cena."</p><p><b>Exemplo 2:</b> "Crie as falas de um quadrinho onde dois amigos alienígenas provam pizza pela primeira vez. Faça eles ficarem super animados!"</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me ajude a montar um quadrinho de 4 cenas sobre [seu personagem] vivendo [uma aventura]. Diga o que acontece em cada cena e uma fala curta para cada uma.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha um personagem e uma mini aventura pra ele.</li>
+      <li>Com o adulto, peça pra IA dividir a história em 4 cenas com uma fala cada.</li>
+      <li>Dobre uma folha em 4 quadradinhos.</li>
+      <li>Desenhe uma cena em cada quadradinho e escreva as falas nos balõezinhos.</li>
+      <li>Pronto! Faça uma capa bonita e você tem sua primeira revistinha.</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Junte com colegas e façam uma revista da turma: cada um cria 1 página de quadrinho com seu personagem. No fim vocês grampeiam tudo e viram uma equipe de criadores!</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Mostrem os quadrinhos uns pros outros. O que faz um quadrinho ser engraçado ou emocionante? Quem inventou a melhor virada de história?</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe a capa da sua revistinha com um título bem chamativo e o seu nome como autor. Você é um quadrinista agora!</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Quadrinho é história em desenho com balõezinhos. 2) A IA ajuda com as cenas e as falas; você desenha. 3) Juntando páginas, você cria sua própria revista.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 2h</span><h3>Inventar jogos e brincadeiras</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA pra inventar jogos e brincadeiras novas pra jogar com os amigos e a família! Você vira um criador de diversão.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Todo jogo tem regras: o que pode, o que não pode e como se ganha. A IA pode te ajudar a inventar jogos novos! Você diz "quero um jogo de caça ao tesouro dentro de casa" e ela te dá as regras e as ideias. Pode ser jogo de tabuleiro, brincadeira de correr, adivinhação, caça ao tesouro... o que você imaginar! O melhor é que depois você TESTA de verdade com a galera e ajusta o que não ficou legal. Inventar jogo é juntar criatividade com diversão. E o jogo só fica completo quando alguém joga e se diverte. Bora criar e brincar!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> "Invente um jogo de caça ao tesouro dentro de casa, com 5 pistas fáceis e divertidas pra uma criança seguir até achar o prêmio."</p><p><b>Exemplo 2:</b> "Crie uma brincadeira nova pra jogar no quintal com 4 amigos, que não precise de nenhum brinquedo, só do corpo. Me explique as regras."</p></div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Invente uma brincadeira nova e divertida para jogar com [quantos] amigos, em [lugar]. Me dê as regras de um jeito fácil e diga como se ganha.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha: jogo de tabuleiro, de correr ou de adivinhação.</li>
+      <li>Com o adulto, peça pra IA inventar o jogo e dar as regras simples.</li>
+      <li>Leia as regras e veja se dá pra jogar de verdade onde você está.</li>
+      <li>Chame a família ou os amigos e TESTEM o jogo!</li>
+      <li>Algo não funcionou? Mudem as regras do seu jeito. Agora o jogo é seu!</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Depois de testar, melhore o jogo: adicione uma regra nova, um poder especial ou um desafio bônus. Jogue de novo e veja se ficou mais divertido!</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Cada grupo apresenta o jogo que inventou e, se der, ensina os outros a jogar. Qual jogo a turma toda mais gostou de jogar?</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Anote as regras do SEU jogo favorito que você inventou hoje, pra poder ensinar outras pessoas a brincar depois.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Todo jogo tem regras de como jogar e como ganhar. 2) A IA ajuda a inventar, mas você testa e ajusta. 3) O jogo só fica pronto quando alguém joga e se diverte.</p></div>
+  </article>
+</section>
+<!-- ============================================================ -->
+<!-- APOSTILA DO ALUNO · IA do Zero ao Avançado — Crianças       -->
+<!-- Rodrigo Munhoz Reis · Módulos 5 e 6 · Aulas 21 a 30         -->
+<!-- Fragmentos HTML (sem <html>/<head>/<body>)                  -->
+<!-- ============================================================ -->
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>A IA que vê, ouve e fala</h2></div>
+  <p class="mod-resumo">Até agora a IA leu e escreveu palavras com você. Neste módulo ela ganha "olhos", "ouvidos" e "voz": vai olhar desenhos e fotos, criar imagens novas, conversar falando e ajudar a montar um cartão ou pôster bem legal. Lembre sempre: a IA é uma ajudante esperta, mas quem tem as ideias e quem decide é você — e tudo com um adulto por perto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 2h</span><h3>A IA que enxerga (mostre um desenho!)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que algumas IAs conseguem "olhar" uma figura e contar o que veem; mostrar um desenho ou uma foto e pedir para a IA dizer o que tem nela; e perceber que ela pode acertar muito, mas às vezes erra — por isso você confere com seus próprios olhos.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Imagina que você desenha um gato laranja e mostra para um amigo. O amigo olha e diz: "ah, é um gatinho laranja sentado!". Algumas IAs fazem parecido: você mostra uma imagem e ela tenta descrever o que está vendo, como se estivesse contando para alguém de olhos fechados. Mas atenção: a IA não "vê" igual a gente. Ela compara a sua imagem com montanhas de figuras que já viu antes e dá o melhor palpite. Por isso, às vezes ela troca um cachorro por um lobo ou não percebe um detalhe pequeno. É como um amigo meio distraído: ajuda muito, mas você ainda confere com os próprios olhos.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você tira foto do seu lanche (um sanduíche e uma maçã) e pergunta "o que tem nesta foto?". A IA responde: "Vejo um sanduíche e uma maçã vermelha sobre a mesa". Você olha e confere se está certo.</p><p><b>Exemplo 2:</b> você desenha uma casinha com sol e nuvem, mostra para a IA e pede "descreva meu desenho". Ela diz "uma casa com telhado, um sol no canto e uma nuvem". Se ela esquecer o cachorro que você desenhou no quintal, você percebe que ela não viu tudo — e aprende que ela pode falhar.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Olhe esta imagem e me diga, com palavras simples, o que você vê nela.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, escolha um desenho seu ou uma foto sem rosto de pessoas (um brinquedo, um lanche, um bicho de pelúcia).</li>
+      <li>Peça ao adulto para enviar a imagem para a IA que aceita figuras.</li>
+      <li>Escreva: "O que você vê nesta imagem?".</li>
+      <li>Leia a resposta em voz alta.</li>
+      <li>Olhe a imagem de novo e marque: o que a IA acertou? O que ela esqueceu ou errou?</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Desenhe uma figura bem cheia de detalhes (vários animais, cores e objetos). Mostre para a IA e veja quantos detalhes ela consegue listar. Faça uma "caça ao detalhe perdido": ache uma coisa do seu desenho que ela não percebeu.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>A IA acertou mais ou errou mais quando olhou os desenhos da turma? Vocês acham que ela "vê" igual a gente ou de um jeito diferente? Por quê?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe a sua figura num cantinho da folha e, ao lado, escreva uma coisa que a IA acertou e uma coisa que ela errou ao olhar.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Algumas IAs conseguem descrever imagens. 2) Elas dão um palpite esperto, não enxergam de verdade. 3) Você sempre confere com seus próprios olhos.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 2h</span><h3>A IA que faz desenhos pra você</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que existem IAs que criam imagens novas a partir das suas palavras; treinar a descrever bem o que você quer (cores, lugar, jeitinho); e entender que a ideia é sua — a IA só ajuda a desenhar.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Sabe quando você fecha os olhos e imagina "um dragão azul tomando sorvete na lua"? Algumas IAs tentam transformar essa frase numa imagem. Quanto mais você descreve direitinho — a cor, o lugar, o que está acontecendo — mais perto do seu sonho ela chega. É como pedir um desenho para um artista que nunca te viu: se você fala pouco, ele inventa do jeito dele; se você explica bem, ele acerta mais. E lembre: a imagem foi feita por um computador, não é uma foto real. É arte inventada para brincar e criar.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você pede "um gatinho astronauta flutuando no espaço, com estrelas roxas ao fundo". A IA cria uma imagem desse gatinho — e você vê sua ideia ganhar forma.</p><p><b>Exemplo 2:</b> você pede só "um carro". A IA faz um carro qualquer. Aí você melhora: "um carro de corrida vermelho com chamas amarelas, na pista". Veja como a segunda imagem combina mais com o que você queria, porque você descreveu melhor.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Crie uma imagem de um dinossauro verde feliz andando de skate num parque ensolarado.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Pense numa cena divertida e imagine os detalhes: quem, onde, fazendo o quê, de que cor.</li>
+      <li>Com um adulto, escreva uma frase bem clara descrevendo a cena.</li>
+      <li>Peça a imagem para a IA.</li>
+      <li>Olhe o resultado: ficou parecido com o que você imaginou?</li>
+      <li>Mude um detalhe na frase (uma cor ou o lugar) e peça de novo, para ver como muda.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie uma "família maluca" de imagens: o mesmo personagem em três lugares diferentes (na praia, na neve e no espaço). Mude só o lugar na frase e veja o personagem viajar.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Quem descreveu melhor a cena conseguiu uma imagem mais parecida com a ideia? O que vale a pena colocar na frase para a IA acertar mais?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Escreva a frase mágica que você usou e desenhe, do seu jeito, como a imagem da IA ficou. Sua versão e a dela são iguais ou diferentes?</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Algumas IAs criam imagens a partir de palavras. 2) Descrever bem (cor, lugar, ação) deixa a imagem mais parecida com sua ideia. 3) A ideia é sua; a IA só ajuda a desenhar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 2h</span><h3>A IA que conversa por voz</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que dá pra falar com a IA usando a voz, em vez de só digitar; treinar a falar devagar e claro para ela entender; e lembrar de combinar com o adulto o que pode e o que não pode falar.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Você já pediu música ou hora para um aparelho falando? Algumas IAs também escutam a sua voz, transformam em palavras e respondem — às vezes até falando de volta, como um amigo de conversa. É como brincar de telefone: se você fala baixinho ou muito rápido, a IA pode entender errado, igual quando a gente não escuta direito o que o colega disse. Falar com calma e clareza ajuda muito. E tem uma regra de ouro: a gente não conta segredos, nome completo, endereço ou telefone — nem para a IA, nem para ninguém na internet.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você fala "me conta uma curiosidade sobre as baleias". A IA escuta, vira texto e responde falando uma curiosidade. Você nem precisou digitar!</p><p><b>Exemplo 2:</b> você fala rápido e embolado "quantosanostemumatartaruga?". A IA entende errado e responde outra coisa. Aí você repete devagar: "Quantos... anos... vive... uma... tartaruga?" e ela acerta. Você aprende que falar com calma faz diferença.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me conte, com voz, uma curiosidade legal sobre os planetas, bem rapidinho.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, ligue o modo de voz da IA (se o aparelho tiver).</li>
+      <li>Combine antes: nada de falar nome completo, endereço, telefone ou senha.</li>
+      <li>Fale uma pergunta curtinha, devagar e olhando para o microfone.</li>
+      <li>Escute a resposta.</li>
+      <li>Se ela entendeu errado, repita falando mais devagar e mais claro.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça uma "entrevista" falada: pergunte por voz três curiosidades sobre o seu animal favorito, uma de cada vez. Depois conte para alguém da família qual foi a mais surpreendente.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Foi mais fácil falar ou digitar com a IA? O que ajuda ela a entender melhor a nossa voz? Quais informações a gente nunca deve falar?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Anote a curiosidade falada que mais te surpreendeu. Depois, desenhe um microfone e escreva ao lado: "eu falo devagar e com calma".</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Dá pra conversar com a IA usando a voz. 2) Falar devagar e claro ajuda ela a entender. 3) Nunca falamos dados pessoais (nome completo, endereço, telefone, senha).</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 2h</span><h3>A IA com fotos e figuras</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> juntar o que aprendeu: mostrar uma figura E pedir uma ajuda sobre ela (uma legenda, uma história, uma dica); usar fotos com segurança (sem rosto de pessoas e sempre com o adulto); e treinar a checar se a resposta da IA combina mesmo com a imagem.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Antes a IA só olhava a imagem e descrevia. Agora você pode pedir mais: "olhe esta figura e crie uma legenda engraçada", ou "olhe meu desenho e me ajude a inventar uma história com ele". É como mostrar uma foto para um amigo criativo e pedir uma ideia. Mas como a IA às vezes vê errado, vale conferir: a história combina com a figura mesmo? Se você desenhou um foguete e ela falou de um avião, a resposta não bateu — e você corrige. Sobre fotos: a gente usa imagens de objetos, paisagens e desenhos, e evita fotos com rosto de pessoas, para proteger a privacidade de todo mundo.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você mostra a foto do seu castelo de blocos e pede "crie uma legenda divertida". A IA responde: "O castelo mais alto do reino dos blocos coloridos!". Você confere se combina e usa se gostar.</p><p><b>Exemplo 2:</b> você mostra um desenho de uma floresta e pede "me dê 3 ideias de história com esta floresta". A IA sugere uma fada, um lobo amigo e uma árvore que fala. Você escolhe a que mais gostou para criar a sua história.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Olhe esta figura e crie uma legenda curta e divertida para ela.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, escolha uma figura segura: um desenho seu, um brinquedo ou uma paisagem (sem rosto de pessoas).</li>
+      <li>Envie a imagem para a IA.</li>
+      <li>Peça uma ajuda criativa: "crie uma legenda" ou "me dê uma ideia de história com isto".</li>
+      <li>Leia a resposta e veja se combina mesmo com a figura.</li>
+      <li>Se não combinar, escreva o que está na imagem e peça de novo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça uma "mini história ilustrada": mostre dois desenhos seus para a IA e peça uma frase que ligue um ao outro. Depois junte os dois desenhos e a frase para formar o começo de uma historinha.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>A legenda ou a ideia da IA combinou com a figura? Quando ela errou, o que vocês acham que confundiu a IA? Por que é importante não usar fotos com rosto de pessoas?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Cole ou desenhe a figura que você usou e escreva embaixo a legenda que mais te fez rir.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Dá pra mostrar uma figura e pedir uma ajuda criativa sobre ela. 2) Usamos imagens seguras, sem rosto de pessoas, sempre com um adulto. 3) Conferimos se a resposta combina mesmo com a figura.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 2h</span><h3>Mini-projeto — um cartão ou pôster com IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> juntar tudo do módulo num projeto seu: criar um cartão (de aniversário, de obrigado) ou um pôster usando texto e imagem com ajuda da IA; planejar antes de pedir; e mostrar com orgulho que a ideia é sua.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Chegou a hora de ser o chefe do projeto! Você vai criar um cartão ou pôster de verdade. A IA vira sua equipe: pode sugerir uma frase legal, criar uma imagem e dar ideias de cor. Mas o diretor é você — você decide o tema, escolhe o que entra e diz "esse eu gostei, esse não". É como montar um lanche: a IA traz os ingredientes que você pediu, e você monta do seu jeito. No fim, o cartão é seu, com a sua cara.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> cartão de "Feliz Aniversário" para a vovó. Você pede à IA "uma frase carinhosa de aniversário para a vovó" e "uma imagem de bolo colorido com balões". Junta os dois e escreve o nome dela à mão.</p><p><b>Exemplo 2:</b> pôster "Vamos cuidar do planeta". Você pede "três frases curtas sobre cuidar da natureza" e "uma imagem de uma árvore feliz e um rio limpo". Escolhe a frase favorita e monta o pôster.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me dê uma frase curta e alegre para um cartão de aniversário e uma ideia de imagem combinando.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha o tipo (cartão ou pôster) e o tema do seu projeto.</li>
+      <li>Planeje: que frase você quer? que imagem combina? que cores?</li>
+      <li>Com um adulto, peça à IA a frase e a imagem, uma de cada vez.</li>
+      <li>Escolha o que gostou e descarte o resto — quem decide é você.</li>
+      <li>Monte tudo numa folha: cole/desenhe a imagem, escreva a frase e dê um toque seu à mão.</li>
+      <li>Mostre o resultado para a turma ou para a família.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça uma versão "só sua": refaça o desenho do cartão à mão, sem a IA, copiando a ideia que você gostou. Compare as duas versões e veja como a sua mãozinha deixa o cartão único.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Mostre seu cartão ou pôster. O que a IA ajudou? O que foi 100% ideia sua? Qual parte você mais gostou de fazer?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe um rascunho do seu cartão ou pôster e escreva o tema dele numa palavra. Guarde para mostrar depois como ficou pronto.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Você juntou texto e imagem da IA num projeto seu. 2) Planejar antes deixa o resultado bem melhor. 3) A IA ajuda, mas o diretor do projeto é você.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>IA exploradora (pesquisa e curiosidade)</h2></div>
+  <p class="mod-resumo">Neste módulo a IA vira sua parceira de exploração: ajuda a pesquisar, a descobrir curiosidades, a organizar um trabalho de escola e até a planejar um projeto de ciências. Mas tem uma regra que vale para tudo: a gente sempre confere se é verdade e pensa com a própria cabeça. A IA dá pistas; quem investiga e decide é você.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 2h</span><h3>Pesquisar com a IA (e checar se é verdade)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA para começar uma pesquisa sobre um tema; aprender o passo mais importante de todos — checar se a informação é verdadeira em outro lugar; e entender que a IA pode errar com toda a confiança do mundo.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>A IA é como um colega muito lido que já viu muita coisa e fala com firmeza. Ela é ótima para começar: explica um assunto, dá um resumo, joga ideias. Mas atenção: às vezes ela "inventa" sem perceber e fala uma coisa errada com a maior segurança — a gente chama isso de "viagem da IA". Por isso existe uma regra de detetive: nunca acredite numa informação importante só porque a IA falou. Confira em outro lugar — um livro, um site de confiança, um adulto. Igual quando um amigo conta uma novidade incrível e você fala "sério? deixa eu confirmar!".</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você pergunta "por que o céu é azul?". A IA explica de um jeito simples. Você então confere num livro de ciências ou pergunta ao professor se bate com o que ela disse.</p><p><b>Exemplo 2:</b> você pergunta "quantas luas tem Júpiter?" e a IA dá um número. Como esse tipo de coisa muda e pode dar erro, você confere num site de confiança com um adulto antes de escrever no trabalho.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me explique, de um jeito simples, por que chove. Depois vou conferir se está certo.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha um tema que te dá curiosidade.</li>
+      <li>Peça à IA uma explicação simples sobre ele.</li>
+      <li>Leia e escolha UMA informação importante para checar.</li>
+      <li>Com um adulto, confira essa informação em outro lugar (livro, site de confiança, professor).</li>
+      <li>Marque: bateu ou não bateu? Se não bateu, qual era a verdade?</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Vire "caçador de erro": faça uma pergunta cheia de detalhes e confira cada parte da resposta. Veja se você consegue achar UMA coisinha que a IA disse e que não estava certa.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Alguém pegou a IA "viajando"? Como vocês descobriram? Onde é um bom lugar para conferir se uma informação é verdadeira?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Escreva uma informação que a IA te deu e, ao lado, onde você foi conferir se era verdade. Coloque um certinho se bateu ou um "x" se não bateu.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) A IA é ótima para começar uma pesquisa. 2) Ela pode errar falando com confiança ("viajar"). 3) A gente sempre confere a informação importante em outro lugar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 2h</span><h3>Descobrir curiosidades do mundo</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA para descobrir curiosidades divertidas sobre animais, planetas, países e invenções; aprender a fazer perguntas que puxam respostas surpreendentes; e continuar checando o que parece bom demais para ser verdade.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>O mundo é cheio de coisas malucas: tem peixe que brilha, planeta onde chove vidro, animal que dorme em pé. A IA é uma ótima companheira para essas descobertas, como um guia de viagem que conhece muitos cantos. Quanto melhor a pergunta, mais legal a curiosidade. Em vez de "fale sobre o mar", experimente "me conte 3 curiosidades surpreendentes sobre o fundo do mar". E aquela regra continua: se uma curiosidade parecer inacreditável, vale conferir — às vezes é verdade mesmo, às vezes a IA exagerou.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você pergunta "me dê 3 curiosidades engraçadas sobre os pinguins". A IA conta que eles "propõem casamento" com uma pedrinha. Você acha incrível e confere se é verdade num livro de animais.</p><p><b>Exemplo 2:</b> você pergunta "qual o planeta mais estranho do sistema solar e por quê?". A IA fala de um planeta com ventos super fortes. Você anota e depois confere o detalhe com um adulto.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me conte 3 curiosidades surpreendentes sobre os dinossauros, com frases curtas.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha um assunto que te encanta (espaço, bichos, corpo humano, países).</li>
+      <li>Peça "3 curiosidades surpreendentes" sobre ele.</li>
+      <li>Escolha a sua curiosidade favorita.</li>
+      <li>Com um adulto, confira se ela é verdadeira.</li>
+      <li>Conte essa curiosidade para alguém da família, como um pequeno "fato do dia".</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Monte um "caderno de curiosidades": durante a aula, junte uma curiosidade conferida de três assuntos diferentes. No fim, escolha a que mais surpreendeu a turma.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Qual foi a curiosidade mais surpreendente que apareceu? Alguma parecia mentira e era verdade? Alguma a IA exagerou?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Escreva a sua curiosidade favorita e faça um desenho dela. Marque se você já conferiu que é verdade.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) A IA ajuda a descobrir curiosidades do mundo. 2) Perguntas bem feitas trazem respostas mais legais. 3) Curiosidade incrível também passa pela checagem.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 2h</span><h3>Montar um trabalho de escola (com suas palavras)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA para organizar um trabalho de escola — pensar nas partes, achar o que pesquisar — e entender a regra de ouro: copiar é trapaça; o trabalho final tem que sair com as SUAS palavras.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>A IA pode ser uma ótima ajudante de estudo, como um colega que te ajuda a organizar a mochila antes da prova. Ela pode sugerir quais partes o seu trabalho deve ter (começo, meio, fim), lembrar de pontos importantes e explicar coisas difíceis de um jeito fácil. Mas tem uma regra muito séria: você não copia a resposta da IA e entrega como se fosse sua. Isso é trapaça e, além de tudo, você não aprende. O certo é entender o assunto, fechar a tela e escrever com as suas palavras, do seu jeito. Aí sim o trabalho é seu de verdade — e você aprende muito mais.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> trabalho sobre a água. Você pede à IA "quais partes um trabalho sobre a água pode ter?". Ela sugere: o que é, onde encontramos, por que economizar. Você usa essa lista como roteiro e escreve cada parte com suas palavras.</p><p><b>Exemplo 2:</b> você pede "me explique de forma simples o ciclo da água". A IA explica. Você fecha a tela e conta de novo, do seu jeito, para um adulto — se conseguiu explicar, é porque entendeu de verdade.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Quais partes um trabalho de escola sobre os animais da floresta pode ter? Só a lista, por favor.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha o tema do trabalho com um adulto.</li>
+      <li>Peça à IA só um roteiro: quais partes o trabalho deve ter.</li>
+      <li>Peça explicações simples dos pontos que você não entende.</li>
+      <li>Feche a tela e escreva cada parte com SUAS palavras.</li>
+      <li>Confira as informações importantes em outro lugar antes de finalizar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça o "teste do contador": depois de estudar com a IA, conte o assunto para alguém sem olhar a tela. Se você conseguir explicar com suas palavras, é sinal de que aprendeu — não só copiou.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que copiar a resposta da IA é trapaça? O que a gente perde quando copia? Como a IA pode ajudar SEM fazer o trabalho no nosso lugar?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Escreva o roteiro (as partes) do seu trabalho. Depois, escreva uma frase do trabalho totalmente com as suas palavras.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) A IA ajuda a organizar e a explicar o trabalho. 2) Copiar e entregar é trapaça e não ensina nada. 3) O trabalho final sai com as suas palavras.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 2h</span><h3>A IA como parceira de projetos de ciências</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA para planejar uma experiência de ciências simples e segura; aprender a fazer uma pergunta de investigação ("será que...?"); e descobrir que a IA dá ideias, mas é VOCÊ quem observa e tira a conclusão.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Cientista de verdade começa com uma pergunta: "será que a planta cresce mais perto da janela?". Depois faz um teste, observa e anota o que aconteceu. A IA pode ser sua parceira de laboratório: ajuda a pensar na pergunta, sugere uma experiência simples e segura e dá dicas de como observar. Mas o experimento quem faz é você, com um adulto, e a conclusão vem do que VOCÊ viu com seus olhos — não do que a IA "achou". Importante: experiências sempre com supervisão de adulto, nada de fogo, produtos perigosos ou bagunça arriscada.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você pergunta "me dê uma ideia de experiência simples e segura com água e plantas". A IA sugere colocar dois copos com feijão, um na luz e um no escuro, e observar por dias. Você faz e anota o que vê.</p><p><b>Exemplo 2:</b> você quer saber "será que o gelo derrete mais rápido no sol?". A IA ajuda a montar o teste com dois cubos de gelo. Você observa e tira a sua conclusão a partir do que aconteceu de verdade.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me dê uma ideia de experiência de ciências simples e segura para fazer em casa com supervisão de um adulto.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Pense numa pergunta "será que...?" sobre o mundo.</li>
+      <li>Peça à IA uma experiência simples e segura para testar essa pergunta.</li>
+      <li>Com um adulto, monte o teste usando materiais simples e seguros.</li>
+      <li>Observe e anote o que acontece (pode levar alguns dias).</li>
+      <li>Tire a sua conclusão com base no que VOCÊ viu, não só no que a IA disse.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Vire "cientista cuidadoso": faça o mesmo teste duas vezes para ver se dá o mesmo resultado. Cientistas repetem para ter certeza!</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>A experiência deu o resultado que a IA imaginou ou foi diferente? Por que é importante observar com os próprios olhos em vez de só acreditar no palpite da IA?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Escreva sua pergunta "será que...?", desenhe o seu experimento e anote o que você observou no fim.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) A IA ajuda a planejar uma experiência simples e segura. 2) Experimentos são sempre com um adulto e com cuidado. 3) A conclusão vem do que você observou, não do palpite da IA.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 2h</span><h3>Verdade x invenção — pensar com a própria cabeça</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fechar o módulo virando um detetive da informação: aprender a separar verdade de invenção; treinar três perguntas-chave para checar qualquer coisa; e levar para a vida a ideia mais importante do curso — pensar com a sua própria cabeça.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>A internet e a IA são cheias de informação: tem verdade, tem brincadeira e tem coisa inventada (às vezes de propósito, às vezes sem querer). Um bom detetive não acredita em tudo que ouve: ele desconfia com carinho e investiga. Para isso, três perguntas mágicas ajudam muito: "Quem disse?", "Onde mais aparece?" e "Faz sentido?". Se uma notícia é incrível demais, ou aparece em um lugar só, ou não tem como conferir, acenda o alerta. A IA é uma ferramenta poderosa, mas o pensador é você. Pensar com a própria cabeça quer dizer: ouvir, conferir e só então decidir o que acreditar.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> alguém manda "achei online: existe um animal de 7 cabeças de verdade!". Você usa as perguntas: "Quem disse? Onde mais aparece? Faz sentido?". Como não bate, você entende que é invenção.</p><p><b>Exemplo 2:</b> a IA diz "a água ferve quando esquenta muito". Você confere e vê que isso aparece em livros, faz sentido e dá para observar em casa com um adulto. Então é verdade — e você passou no teste do detetive.</p></div>
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me dê uma informação sobre os animais. Eu vou ser detetive e descobrir se é verdade ou invenção.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Pegue uma informação (da IA, de um vídeo ou de um amigo).</li>
+      <li>Pergunte: "Quem disse?" — é um lugar de confiança?</li>
+      <li>Pergunte: "Onde mais aparece?" — aparece em outros lugares sérios?</li>
+      <li>Pergunte: "Faz sentido?" — combina com o que você já sabe?</li>
+      <li>Com um adulto, decida: é verdade, é brincadeira ou é invenção?</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie um "selo de detetive": faça um desenho de um carimbo com as três perguntas mágicas. Cole no caderno e use sempre que ouvir algo difícil de acreditar.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Qual das três perguntas mais ajudou a turma? Já caíram em alguma invenção? Como pensar com a própria cabeça nos protege no dia a dia?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Escreva as três perguntas mágicas bem grandes e desenhe um detetive com lupa. Esse é o seu lembrete para a vida toda.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Nem tudo que a IA ou a internet dizem é verdade. 2) Três perguntas ajudam: "Quem disse?", "Onde mais aparece?", "Faz sentido?". 3) Quem ouve, confere e decide é você — pensando com a própria cabeça.</p></div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Criando coisas legais</h2></div>
+  <p class="mod-resumo">Agora vem a parte mais divertida: usar a IA como uma ajudante de ideias para construir coisas de verdade. Você vai montar um assistente de mentirinha, deixar tarefas chatas mais rápidas, trabalhar em grupo, criar apresentações e cartazes e, no fim, mostrar tudo numa mini-feira. Lembre: a IA dá ideias, mas quem manda é você, sempre com um adulto por perto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31 · 2h</span><h3>Seu assistente de IA pessoal (de mentirinha)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> inventar um assistente de IA com nome, jeito de falar e uma tarefa especial — tipo um amiguinho de mentirinha que ajuda você a se organizar.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Sabe quando você brinca de ter um robozinho que te ajuda? Um assistente de IA é parecido com isso, só que ele responde com palavras. Você conta para ele como quer que ele seja: o nome dele, se ele é animado ou calminho, e o que ele vai te ajudar a fazer. É como dar instruções para um personagem antes de começar a brincadeira. Quanto mais claro você fala, melhor ele te entende — é como pedir um lanche dizendo exatamente o que você quer no pão, em vez de só dizer "me dá comida".</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Lia criou um assistente chamado "Capitão Estrela" que fala animado e ajuda ela a lembrar o que levar na mochila para a escola.</p>
+      <p><b>Exemplo 2:</b> O Theo fez o "Professor Coruja", que fala calminho e ajuda ele a inventar perguntas para estudar para a prova de ciências.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Você é meu assistente chamado Capitão Estrela. Você é animado e gentil. Me ajude a fazer uma lista do que levar na mochila amanhã.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pense num nome legal para o seu assistente.</li>
+        <li>Decida o jeito dele: animado, calmo, engraçado ou sério.</li>
+        <li>Escolha UMA tarefa que ele vai te ajudar (lembrar coisas, criar perguntas, dar ideias).</li>
+        <li>Com um adulto, escreva isso para a IA e veja como ela responde.</li>
+        <li>Se não gostou, mude o jeito dele e teste de novo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Desenhe como seria o seu assistente se ele fosse um personagem de verdade. Ele tem antena? Capa? Óculos? Dê uma cara para ele!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Mostre o nome do seu assistente e diga em que ele te ajuda. Qual assistente da turma você achou mais criativo?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote o nome do seu assistente, o jeito dele e a tarefa que ele faz. Desenhe a cara dele ao lado.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Um assistente de IA é como um personagem que você cria com palavras. 2) Quanto mais claro você fala, melhor ele ajuda. 3) Você escolhe o nome, o jeito e a tarefa dele.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32 · 2h</span><h3>Pedir ajuda da IA pra tarefas chatas</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir como a IA deixa tarefas chatinhas mais rápidas e fáceis — tipo organizar uma lista ou pensar num jeito de não esquecer as coisas.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Tem tarefas que ninguém gosta muito, né? Tipo organizar a mochila, separar os deveres por dia ou lembrar de regar a plantinha. A IA pode te ajudar a deixar essas coisas mais organizadas. Ela não faz a tarefa por você (você ainda tem que arrumar a mochila!), mas ela ajuda a pensar e a montar listas. É como ter alguém que te lembra do que falta, igual quando sua mãe pergunta "já guardou o lápis?". A parte importante continua sendo você fazendo — a IA só ajuda a organizar as ideias.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> O Davi pediu para a IA montar uma lista de passos para arrumar o quarto, do mais fácil para o mais difícil.</p>
+      <p><b>Exemplo 2:</b> A Sofia pediu uma ideia para não esquecer de levar a garrafinha de água todo dia, e a IA sugeriu deixar ela em cima da mochila.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me ajude a fazer uma lista de passos simples para arrumar meu quarto, do mais fácil para o mais difícil.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pense numa tarefa chata que você precisa fazer.</li>
+        <li>Com um adulto, peça para a IA quebrar a tarefa em passos pequenos.</li>
+        <li>Leia os passos e veja se eles fazem sentido para você.</li>
+        <li>Risque o que não combina e mantenha o que ajuda.</li>
+        <li>Faça a tarefa de verdade seguindo a sua lista.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Crie uma "lista de campeão": escreva 3 tarefas da semana e marque um carimbo ou estrelinha cada vez que você terminar uma.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Qual tarefa chata a IA te ajudou a organizar? Você acha que ficou mais fácil de fazer depois? Por quê?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote uma tarefa e os passos que você criou com a IA. Pense: a tarefa ainda é sua, mas ficou mais fácil de enxergar?</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) A IA ajuda a organizar tarefas chatas em passos pequenos. 2) Quem faz a tarefa de verdade é você. 3) Listas pequenas deixam tudo mais fácil.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33 · 2h</span><h3>A IA ajudando num projeto em grupo</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a usar a IA junto com os colegas, dividir tarefas e juntar as ideias de todo mundo num projeto só.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Trabalhar em grupo é como montar um quebra-cabeça com os amigos: cada um cuida de uma parte e, no fim, tudo se encaixa. A IA pode ajudar o grupo a juntar ideias, escolher um tema e dividir quem faz o quê. Mas atenção: a IA não decide por vocês! Vocês conversam, combinam e usam a IA só para ajudar a organizar. O mais legal é que todo mundo participa: um pesquisa, outro desenha, outro escreve. A IA é como uma mesa grande onde vocês colocam todas as ideias para olhar juntos.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Um grupo escolheu fazer um projeto sobre animais do mar e pediu para a IA listar ideias de partes para dividir: peixes, baleias, corais e fundo do mar.</p>
+      <p><b>Exemplo 2:</b> Outro grupo usou a IA para juntar três ideias diferentes dos colegas num plano só, com quem ficaria responsável por cada parte.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Somos um grupo fazendo um projeto sobre animais do mar. Nos ajude a dividir o trabalho em 4 partes para cada colega cuidar de uma.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Junte o grupo e escolham um tema que todos gostem.</li>
+        <li>Conversem sobre as ideias de cada um antes de usar a IA.</li>
+        <li>Com um adulto, peçam para a IA ajudar a dividir o trabalho em partes.</li>
+        <li>Combinem quem cuida de cada parte.</li>
+        <li>Juntem tudo no fim e revisem juntos se ficou legal.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Façam um "combinado do grupo": três regrinhas para todos participarem bem, como "ninguém fala por cima do outro" e "todas as ideias valem".</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>O que foi mais legal de trabalhar em grupo? Foi fácil dividir as tarefas? A IA ajudou ou vocês decidiram quase tudo sozinhos?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote o tema do grupo e quem ficou com cada parte. Desenhe um quebra-cabeça com o nome de cada colega numa peça.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Em grupo, cada um cuida de uma parte. 2) A IA ajuda a organizar, mas o grupo decide junto. 3) No fim, todas as partes se encaixam num projeto só.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34 · 2h</span><h3>Apresentações e cartazes com IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA para te dar ideias de cartaz e apresentação — títulos legais, frases curtas e como deixar tudo bonito e fácil de entender.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Um cartaz bom é como uma capa de gibi: chama a atenção e conta logo do que se trata. A IA pode te ajudar a pensar num título chamativo, em frases curtinhas e em ideias de desenho. Mas quem pinta, escreve e cola é você! Numa apresentação, o segredo é falar poucas palavras em cada parte para todo mundo entender. A IA dá as ideias, e você escolhe as melhores e deixa do seu jeito, com a sua letra e os seus desenhos. Assim o trabalho fica seu de verdade.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Manu pediu três ideias de título para o cartaz dela sobre reciclagem e escolheu "Salve o Planeta, Recicle!".</p>
+      <p><b>Exemplo 2:</b> O Bento pediu frases curtas para colocar no cartaz, com no máximo cinco palavras cada, para caber bem grande.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me dê 3 ideias de título curto e divertido para um cartaz sobre reciclagem.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Escolha o tema do seu cartaz ou apresentação.</li>
+        <li>Com um adulto, peça para a IA ideias de título e frases curtas.</li>
+        <li>Escolha as ideias que você mais gostou.</li>
+        <li>Desenhe e escreva o cartaz com a sua mão, do seu jeito.</li>
+        <li>Treine falar sobre ele em poucas palavras.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Faça o seu cartaz com só UMA imagem grande e UM título. Será que dá para entender o assunto só de olhar de longe?</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Mostre o seu título para a turma. Qual cartaz chama mais a atenção? O que deixa um cartaz fácil de entender?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote o título escolhido e desenhe um rascunho do seu cartaz, mostrando onde vai o título e o desenho.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Um bom cartaz chama a atenção e tem poucas palavras. 2) A IA dá ideias de título e frases. 3) Você desenha e escreve do seu jeito.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35 · 2h</span><h3>Mini-feira — mostrar o que criou</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> montar uma mini-feira da turma para mostrar tudo que você criou com a ajuda da IA e ver os trabalhos dos colegas.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Uma mini-feira é como uma exposição: cada um arruma o seu cantinho e mostra o que fez. É o momento de ter orgulho do seu trabalho! Você vai explicar o que criou, contar como a IA te ajudou e o que você decidiu sozinho. Lembre que mostrar o trabalho não é competição — é compartilhar e aprender com os colegas. Quando você vê o trabalho dos outros, ganha ideias novas. E quando explica o seu, percebe o quanto você aprendeu nessas aulas todas.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Alice montou uma mesinha com o cartaz dela e ficou explicando para cada colega que passava.</p>
+      <p><b>Exemplo 2:</b> O Caio fez um cartãozinho ao lado do trabalho dele dizendo: "A IA me deu ideias, mas o desenho é meu!".</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me ajude a escrever 3 frases curtas para eu falar na feira explicando o meu projeto.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Separe o trabalho que você quer mostrar.</li>
+        <li>Arrume o seu cantinho de um jeito bonito e organizado.</li>
+        <li>Treine explicar em poucas frases o que você criou.</li>
+        <li>Conte o que a IA ajudou e o que foi ideia sua.</li>
+        <li>Visite os cantinhos dos colegas e elogie pelo menos três trabalhos.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Crie um "ingresso" desenhado para a sua mini-feira, convidando outra turma ou um adulto para visitar o seu cantinho.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Qual trabalho dos colegas você achou mais criativo? O que você aprendeu vendo os projetos dos outros?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote uma frase que você vai falar na feira e desenhe como será o seu cantinho de exposição.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) A mini-feira é para mostrar e compartilhar, não competir. 2) Você explica o que criou e como a IA ajudou. 3) Ver o trabalho dos colegas dá ideias novas.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Usar IA do jeito certo (responsabilidade)</h2></div>
+  <p class="mod-resumo">Usar IA é divertido, mas também é uma responsabilidade. Neste módulo você vai aprender o mais importante de tudo: o que NUNCA contar para uma IA, por que não dá para acreditar em tudo que ela fala, como ser gentil e justo, e como a IA pode mudar as profissões no futuro. No fim, você apresenta o seu projeto final. Regra de ouro: você é quem decide, sempre com um adulto por perto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36 · 2h</span><h3>Privacidade — o que NUNCA contar pra IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a regra mais importante de todas — quais segredos você NUNCA deve contar para uma IA, para se manter seguro.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Imagine que a internet é uma praça cheia de gente. Quando você escreve algo para uma IA, é mais ou menos como falar alto numa praça: você não sabe quem pode estar ouvindo. Por isso existe uma regra de ouro: tem coisas que são SÓ SUAS e da sua família, e que você NUNCA conta para uma IA. Isso se chama privacidade. Guardar seus segredos é como ter um cofre só seu. Se a IA pedir alguma dessas informações, você fecha o cofre e chama um adulto na hora. Você está no comando dos seus segredos.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Coisas que você NUNCA conta: seu endereço, seu telefone, a senha de qualquer coisa, em que escola você estuda e a que horas você fica sozinho.</p>
+      <p><b>Exemplo 2:</b> A Bia ia digitar onde ela mora para a IA, mas lembrou da regra, apagou tudo e chamou o pai dela.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me ajude a inventar uma história sobre um dragão, mas sem usar nenhuma informação de verdade sobre mim.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Faça uma lista de "segredos do cofre": endereço, telefone, senhas, escola, fotos.</li>
+        <li>Cole essa lista perto de onde você usa a IA, com um adulto.</li>
+        <li>Antes de escrever algo, pergunte: "isso é um segredo do cofre?".</li>
+        <li>Se for, não escreva e avise um adulto.</li>
+        <li>Use nomes inventados nas brincadeiras e histórias.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Desenhe um cofre e escreva dentro dele 5 coisas que você NUNCA conta para uma IA. Deixe esse desenho num lugar que você veja sempre.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Por que será que esses segredos são tão importantes? O que você faria se a IA pedisse o seu endereço?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote 5 coisas que ficam no seu cofre de segredos. Pense: quem você chama na hora se algo te deixar desconfortável? (Resposta: um adulto de confiança!)</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Existem segredos que você NUNCA conta para uma IA. 2) Endereço, telefone, senhas e escola ficam no seu cofre. 3) Na dúvida, não escreva e chame um adulto.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37 · 2h</span><h3>Não acreditar em tudo (pensar com a própria cabeça)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que a IA pode errar e aprender a conferir as coisas antes de acreditar — usando a sua própria cabeça.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>A IA é muito esperta, mas ela não sabe tudo e às vezes erra. Ela pode falar uma coisa com toda a certeza e mesmo assim estar errada — um pouco como um amigo que conta uma história meio inventada sem perceber. Por isso, você não acredita em tudo só porque foi a IA que disse. Você usa a sua própria cabeça! Se for algo importante, você confere com um adulto, num livro ou perguntando para o professor. Pensar com a própria cabeça é o seu superpoder: a IA dá uma ideia, mas quem decide se é verdade é você.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> O Nico perguntou quantas patas uma aranha tem e, antes de acreditar, conferiu num livro de bichos. (São oito!)</p>
+      <p><b>Exemplo 2:</b> A Lara achou estranha uma resposta da IA, perguntou para a professora e descobriu que a IA tinha se confundido.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me diga um fato sobre o espaço. Depois vou conferir com um adulto se está certo mesmo.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Faça uma pergunta de curiosidade para a IA.</li>
+        <li>Leia a resposta sem acreditar na hora.</li>
+        <li>Pergunte para si mesmo: "será que isso faz sentido?".</li>
+        <li>Confira a resposta com um adulto, um livro ou o professor.</li>
+        <li>Anote se a IA acertou ou errou.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Vire um "detetive da verdade": faça três perguntas para a IA e confira cada resposta. Quantas estavam certinhas?</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Alguma vez a IA já te deu uma resposta errada? Como vocês podem descobrir se algo é verdade ou não?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote uma resposta da IA que você conferiu e diga se estava certa ou errada. Pense: por que é importante checar antes de acreditar?</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) A IA pode errar, mesmo parecendo segura. 2) Você confere o que é importante com um adulto ou um livro. 3) Pensar com a própria cabeça é o seu superpoder.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38 · 2h</span><h3>Gentileza e ética (a IA é ferramenta, você decide)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender que a IA é só uma ferramenta e que as escolhas boas e gentis são suas — você é quem decide fazer o certo.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>A IA é uma ferramenta, como um lápis ou uma tesoura. O lápis não escolhe se vai desenhar algo bonito ou rabiscar a parede — quem escolhe é você. Com a IA é igual: ela faz o que você pede, mas a decisão de usar para o bem é sua. Ser gentil também conta: usar palavras educadas, não pedir coisas para machucar ou enganar os outros, e dar valor ao trabalho dos colegas. Ética é fazer o certo mesmo quando ninguém está olhando. A IA não tem coração nem sentimentos — o coração da história é você.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> O Téo usou a IA para criar um bilhete carinhoso de aniversário para a avó dele. Isso é usar para o bem!</p>
+      <p><b>Exemplo 2:</b> A Duda viu um colega querendo usar a IA para zoar alguém e disse que isso não era legal. Ela escolheu a gentileza.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me ajude a escrever um bilhete gentil para agradecer alguém que eu gosto muito.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pense em algo bom que você pode criar para alguém.</li>
+        <li>Com um adulto, peça a ajuda da IA para essa ideia gentil.</li>
+        <li>Use sempre palavras educadas, mesmo com a IA.</li>
+        <li>Nunca peça para a IA fazer algo que machuque ou engane alguém.</li>
+        <li>Lembre: a escolha final, boa ou ruim, é sua.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Crie uma "regra de ouro" da turma para usar a IA com gentileza. Escreva ela bem grande e combinem de seguir todos juntos.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>O que é usar a IA "para o bem"? Já que a IA é uma ferramenta, quem é o responsável pelo que ela faz?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote uma coisa boa que você criou ou pode criar com a IA. Pense: você é o responsável pelas suas escolhas, não a ferramenta.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) A IA é uma ferramenta, como um lápis. 2) Você decide usá-la para o bem e com gentileza. 3) A responsabilidade pelas escolhas é sua.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39 · 2h</span><h3>O futuro — IA e as profissões</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> imaginar como a IA pode ajudar em diferentes profissões no futuro e pensar no que VOCÊ quer ser quando crescer.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>No futuro, muita gente vai trabalhar junto com a IA, como um ajudante super rápido. O médico pode usar a IA para olhar exames mais depressa, o professor para criar atividades, o artista para testar ideias e o cientista para estudar o espaço. Mas as partes mais importantes continuam sendo das pessoas: cuidar, criar, decidir e ter ideias novas. A IA ajuda, mas não substitui o coração e a imaginação humana. O legal é que você pode aprender a usar a IA agora e, quando crescer, ser muito bom na profissão que escolher!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Uma veterinária do futuro usa a IA para descobrir rápido o que um bichinho tem, mas é ela quem cuida do animal com carinho.</p>
+      <p><b>Exemplo 2:</b> Um inventor usa a IA para testar mil ideias de brinquedo, mas a ideia mais criativa veio da cabeça dele.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Eu quero ser veterinário(a) quando crescer. Como a IA poderia me ajudar nessa profissão no futuro?</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Escolha uma profissão que você acha legal.</li>
+        <li>Com um adulto, pergunte para a IA como ela poderia ajudar nessa profissão.</li>
+        <li>Pense no que só uma pessoa consegue fazer nesse trabalho.</li>
+        <li>Desenhe você fazendo essa profissão no futuro.</li>
+        <li>Compartilhe o seu sonho com a turma.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Invente uma profissão que ainda nem existe e que vai precisar de IA. Que nome legal você daria para ela?</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Qual profissão você quer ter? O que você acha que só as pessoas conseguem fazer, e a IA não?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote a profissão dos seus sonhos e como a IA pode ajudar nela. Desenhe você grande, trabalhando feliz.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) No futuro, muita gente vai trabalhar junto com a IA. 2) As partes de cuidar, criar e decidir continuam sendo das pessoas. 3) Aprender a usar a IA agora te ajuda no futuro.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40 · 2h</span><h3>Projeto final — meu projeto com IA (apresentação)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> juntar tudo que aprendeu e apresentar o seu projeto final feito com a ajuda da IA — o grande dia de mostrar o seu talento!</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Chegou o dia mais especial do curso! O projeto final é como o show de encerramento: você escolhe uma ideia que gosta, cria com a ajuda da IA e apresenta para a turma. Pode ser uma história, um cartaz, um personagem, um plano de algo legal — o que a sua imaginação quiser. O importante é mostrar o que você criou, contar como a IA te ajudou e o que foi decisão sua. Lembre de tudo que aprendeu: ser claro ao pedir, conferir o que é importante, guardar os segredos no cofre e usar a IA com gentileza. Você está pronto. Capriche e divirta-se!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> O João criou um livrinho de histórias com a IA dando ideias, mas com os desenhos e o final escolhidos por ele.</p>
+      <p><b>Exemplo 2:</b> A Helena montou um cartaz sobre cuidar dos animais e apresentou falando três frases bem curtinhas que ela treinou.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Pra testar (com um adulto)</span><pre>Me ajude a organizar a apresentação do meu projeto em 3 partes: o que é, como fiz e o que mais gostei.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Escolha a ideia do seu projeto final.</li>
+        <li>Crie o projeto usando a IA como ajudante, com um adulto por perto.</li>
+        <li>Deixe a sua marca: seus desenhos, suas escolhas, seu jeito.</li>
+        <li>Treine apresentar em poucas frases: o que é, como fez e o que gostou.</li>
+        <li>Apresente para a turma com orgulho e aplauda os colegas.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>No fim da sua apresentação, conte uma coisa importante que você aprendeu no curso sobre usar a IA do jeito certo.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>O que você mais gostou de criar no curso? O que você vai levar para sempre sobre usar a IA com responsabilidade?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote o nome do seu projeto e as 3 partes da sua apresentação. Desenhe você apresentando, sorrindo, com a turma assistindo.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) O projeto final junta tudo que você aprendeu. 2) Você cria com a IA, mas deixa a sua marca. 3) Apresentar com orgulho é comemorar tudo que você conquistou!</p>
+    </div>
+  </article>
+</section>
+  <div class="modulo" style="margin-top:40px">
+    <p style="color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);padding-top:20px">
+      Apostila · Curso presencial · 80 horas (40 aulas de 2h) · por <b>Rodrigo Munhoz Reis</b> — Vibecoding com Engenharia.
+    </p>
+  </div>
+</div>
+</body>
+</html>

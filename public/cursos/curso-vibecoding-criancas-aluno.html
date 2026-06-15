@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px;margin:13px 0}
+.skills h4{color:var(--amber-deep);margin-bottom:3px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px;margin:13px 0}
+.pratica h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:5px}
+.pratica p{color:var(--ink-soft);font-size:14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Apostila do Aluno · Curso presencial · Crianças</div>
+<h1>Vibecoding do Zero ao Avançado — Crianças</h1>
+<p class="sub">Seu material de criador — crie sites e programas com a ajuda da IA, sendo o chefe da máquina (com um adulto por perto).</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>10 a 14 anos</span></div>
+</div></div>
+<div class="wrap">
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1</span><h2>O que é criar com IA</h2></div>
+  <p class="mod-resumo">Aqui você vai descobrir o que é "vibecoding" — criar coisas no computador com a ajuda de uma IA. Você vai entender que a IA é a sua ajudante e que VOCÊ é o chefe! Vamos conhecer as ferramentas, fazer sua primeira tela na internet aparecer e aprender a guardar tudo direitinho pra não perder nada. Lembre sempre: faça tudo com um adulto por perto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1 · 2h</span><h3>O que é "vibecoding"?</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir o que é vibecoding, entender que dá pra criar sites e programas conversando com uma IA, e ter suas primeiras ideias do que você quer criar.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Imagine que você quer construir uma casinha de blocos, mas tem um amigo gigante e super esperto que monta os blocos pra você — você só precisa dizer como quer. É mais ou menos assim o <b>vibecoding</b>: você fala (ou escreve) o que quer criar, e a <b>IA</b> (a Inteligência Artificial, uma ajudante que vive no computador) monta pra você.</p>
+      <p>Um <b>site</b> é uma página que aparece na internet — como as páginas de joguinhos ou de vídeos que você já viu. Antigamente, pra fazer um site, a pessoa precisava digitar comandos super difíceis. Agora, com a IA, você pode pedir com palavras normais, do seu jeito!</p>
+      <ul>
+        <li>Você tem uma <b>ideia</b> ("quero uma página azul com meu nome").</li>
+        <li>Você <b>pede</b> pra IA.</li>
+        <li>A IA <b>cria</b> e você <b>confere</b> se ficou do jeito que você queria.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Lara queria mostrar os desenhos dela pros avós. Ela pediu pra IA: "faça uma página com o título Galeria da Lara". Em segundos, apareceu uma página com o título bonitão!</p>
+      <p><b>Exemplo 2:</b> Téo gosta de dinossauros. Ele pediu uma página com um fundo verde e a frase "Eu amo dinossauros". A IA criou, e o Téo trocou o verde por laranja só pedindo de novo. Fácil!</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Oi! Você pode me explicar, de um jeito bem simples e divertido,
+o que é um site? Eu tenho 11 anos e estou aprendendo a criar
+coisas na internet com a sua ajuda.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Com um adulto, abra a ferramenta de IA que vocês vão usar na aula.</li>
+        <li>Diga "oi" pra IA e faça a pergunta do quadro acima.</li>
+        <li>Leia a resposta junto com o adulto. Entendeu tudo? Se não, peça pra IA explicar "ainda mais simples".</li>
+        <li>Pense em UMA coisa que você gostaria de criar e anote no espaço de baixo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Pergunte pra IA: "Me dê 3 ideias de páginas legais que uma criança pode criar". Escolha a sua favorita e guarde pra usar nas próximas aulas!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>O que você mais gostaria de criar na internet? Por quê? Se a IA pudesse te ajudar com qualquer coisa, o que você pediria primeiro?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Desenhe ou escreva aqui a ideia que você quer criar neste curso. Pode ser uma página de jogos, uma galeria de desenhos, uma página sobre seu animal favorito... vale tudo!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Vibecoding é criar coisas no computador pedindo pra IA. 2) Um site é uma página que aparece na internet. 3) Você tem a ideia, a IA ajuda, e você confere — sempre com um adulto por perto.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2 · 2h</span><h3>A IA é sua ajudante, você é o chefe</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender que VOCÊ comanda e a IA obedece, aprender a dar ordens claras (pedidos) e descobrir por que é importante conferir tudo o que a IA faz.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>A IA é muito esperta, mas ela é como uma ajudante: ela faz o que VOCÊ pede. <b>Você é o chefe!</b> Isso significa duas coisas importantes:</p>
+      <ul>
+        <li><b>Você manda.</b> Se não gostou, peça pra mudar. Quantas vezes quiser!</li>
+        <li><b>Você confere.</b> A IA às vezes erra ou entende diferente. Sempre olhe o resultado e veja se ficou bom de verdade.</li>
+      </ul>
+      <p>Um pedido pra IA se chama <b>prompt</b> (é só uma palavra chique pra "o que você pede"). Quanto mais claro o seu pedido, melhor a IA ajuda. É como pedir um lanche: "quero um pão" é diferente de "quero um pão com queijo, sem alface, cortado ao meio".</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Bia pediu "faça uma página". A IA fez uma página meio sem graça. Aí a Bia foi mais clara: "faça uma página rosa com o título Cantinho da Bia e três corações". Ficou linda! Pedido claro = resultado melhor.</p>
+      <p><b>Exemplo 2:</b> Davi pediu uma página, mas o título saiu com erro de português. Como ele é o chefe e conferiu, percebeu o erro e pediu: "corrija o título, está escrito errado". A IA corrigiu na hora.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Quero que você seja minha ajudante. Eu sou o chefe e vou te dar
+ideias. Crie uma página com o título "Minha Primeira Página" e
+um fundo de cor azul-claro. Depois me explique o que você fez.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Com o adulto, faça o pedido do quadro acima pra IA.</li>
+        <li>Olhe o resultado com atenção. O título está certo? A cor está certa?</li>
+        <li>Agora MANDE de novo: peça pra trocar a cor pra sua favorita.</li>
+        <li>Conferiu de novo? Bom trabalho, chefe! Você acabou de comandar a IA.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Faça um pedido bem detalhado, com pelo menos 3 coisas: a cor, o título e mais um detalhe (um emoji, uma frase legal...). Veja como a IA capricha quando o pedido é claro!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Já aconteceu de alguém entender errado o que você pediu? Como você explicou melhor? O que faz um pedido ser "bem claro"?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva um pedido SUPER claro pra IA, com 3 detalhes. Treine ser um bom chefe que explica direitinho o que quer!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Você é o chefe; a IA é a ajudante. 2) Pedido claro (prompt) dá resultado melhor. 3) Confira sempre o que a IA faz, porque ela pode errar.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3 · 2h</span><h3>Conhecendo as ferramentas (o computador do criador)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> conhecer as ferramentas que vamos usar pra criar, entender pra que serve cada uma e aprender a deixar tudo organizado antes de começar.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Todo criador tem suas ferramentas, como um pintor tem pincéis e tintas. Pra criar com IA, a gente usa algumas coisinhas no computador. Não se preocupe em decorar tudo — você vai aprender usando!</p>
+      <ul>
+        <li><b>O navegador:</b> é o programa que abre a internet (você já usa ele pra ver vídeos e jogar).</li>
+        <li><b>A ferramenta de IA:</b> é onde você conversa com a sua ajudante e faz os pedidos.</li>
+        <li><b>O lugar onde o site aparece:</b> uma "telinha" onde você vê o que a IA criou, igual a uma janela mágica.</li>
+      </ul>
+      <p>É como uma cozinha: tem a bancada (o computador), os ingredientes (suas ideias) e a ajudante de cozinha (a IA). Você é o chef!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Nina abriu o navegador, abriu a ferramenta de IA ao lado e deixou as duas janelas lado a lado. Assim ela pedia numa e via o resultado na outra. Organizadíssima!</p>
+      <p><b>Exemplo 2:</b> Léo não achava a janela do site. Com o adulto, ele descobriu o botão de "ver" (visualizar) e — pluft! — a página dele apareceu. Cada ferramenta tem seu jeitinho.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Estou começando a aprender a criar sites com você. Pode me fazer
+uma lista bem curtinha e simples das coisas que eu preciso saber
+abrir no computador pra começar? Sou criança, então explique fácil.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Com o adulto, abra o navegador da internet.</li>
+        <li>Abra a ferramenta de IA que a turma vai usar.</li>
+        <li>Descubra onde aparece o resultado do que a IA cria (a "telinha" do site).</li>
+        <li>Organize as janelas lado a lado, se der. Pronto: sua bancada de criador está montada!</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Desenhe um "mapa" da sua tela: onde fica a IA, onde fica o navegador e onde aparece o site. Assim você nunca mais se perde!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Qual ferramenta você achou mais legal? Tem alguma que pareceu confusa? Como a turma pode se ajudar a achar os botões?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Desenhe a sua tela de criador com as três partes: a IA, o navegador e a telinha do site. Capriche nas setinhas e nos nomes!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) As ferramentas são: navegador, ferramenta de IA e a telinha onde o site aparece. 2) Deixar tudo organizado ajuda muito. 3) Cada ferramenta tem seus botões — explore com calma e com um adulto.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4 · 2h</span><h3>Sua primeira tela na internet ("Olá, mundo!")</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> criar a sua PRIMEIRA tela na internet, fazer ela mostrar uma frase sua e sentir a alegria de ver algo seu aparecer na tela!</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Existe uma tradição muito antiga e divertida: a primeira coisa que quase todo criador faz é uma tela que diz <b>"Olá, mundo!"</b>. É como dar um "oi" pra internet pela primeira vez. Hoje é a sua vez!</p>
+      <p>Você vai pedir pra IA criar uma página simples com uma frase grandona. É pequenininho, mas é um momento gigante: é o seu começo de criador. Depois você pode trocar a frase por qualquer coisa que quiser.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Sofia pediu uma página que dizia "Olá, mundo! Eu sou a Sofia!". Quando apareceu na tela, ela deu um pulo de alegria. Era a primeira coisa que ela criava na internet!</p>
+      <p><b>Exemplo 2:</b> Pedro trocou a frase por "Bem-vindos ao meu cantinho!" e mudou a cor da letra pra roxo. Mesma página, com a cara dele.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Crie uma página bem simples que mostre, em letras grandes e
+coloridas, a frase: "Olá, mundo! Eu estou aprendendo a criar!".
+Deixe o fundo de uma cor alegre. Depois me mostre o resultado.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Com o adulto, faça o pedido do quadro pra IA.</li>
+        <li>Veja a página aparecer na telinha. Conseguiu? Comemore! 🎉</li>
+        <li>Confira: a frase está certa? As letras estão grandes?</li>
+        <li>Peça pra IA trocar a frase por algo SEU (mas sem colocar seu nome completo, endereço ou telefone — só um apelido legal, se quiser).</li>
+        <li>Peça pra mudar a cor da letra. Pronto: sua primeira tela tem a sua cara!</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Peça pra IA colocar um emoji do seu animal favorito do lado da frase. Veja como a sua tela fica ainda mais divertida!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Como você se sentiu vendo sua primeira tela aparecer? Que frase cada um escolheu? Qual frase da turma foi a mais criativa?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva aqui a frase que VAI aparecer na sua primeira tela. Capriche! Lembre: nada de dados pessoais, só uma frase legal e divertida.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) "Olá, mundo!" é a primeira tela tradicional de todo criador. 2) Dá pra trocar a frase e a cor pedindo pra IA. 3) Nunca coloque dados pessoais — só frases divertidas e seguras.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5 · 2h</span><h3>Guardar seu trabalho (sem perder nada)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a guardar tudo o que você criou pra não perder, entender por que isso é tão importante e treinar o hábito de salvar sempre.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Imagine que você fez um desenho lindo e alguém apagou sem querer. Que tristeza, né? No computador também pode acontecer — por isso a gente <b>guarda</b> (salva) o trabalho. Guardar é como tirar uma foto do seu trabalho pra ele ficar seguro pra sempre.</p>
+      <ul>
+        <li><b>Salvar:</b> guardar o que você fez agora.</li>
+        <li><b>Guardar com nome:</b> dar um nome pro seu trabalho pra você achar depois (tipo "minha-primeira-pagina").</li>
+        <li><b>Guardar sempre:</b> de vez em quando, salve de novo, pra nunca perder o que você fez.</li>
+      </ul>
+      <p>É como guardar seus brinquedos na caixa certa: assim você sempre encontra na próxima vez!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Manu criou uma página caprichada e salvou com o nome "galeria-da-manu". No dia seguinte, ela abriu de novo e estava tudo lá, certinho. Ufa!</p>
+      <p><b>Exemplo 2:</b> Caio esqueceu de salvar e o computador desligou. Ele perdeu o trabalho e teve que fazer de novo. Da próxima vez, ele salvou a cada pouquinho. Aprendeu a lição!</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Acabei de criar uma página com você. Pode me explicar, de um
+jeito simples, como eu faço pra guardar (salvar) o meu trabalho
+pra não perder? E que nome legal eu poderia dar pra ele?</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pegue uma página que você criou nas aulas anteriores.</li>
+        <li>Com o adulto, descubra onde fica o botão de salvar/guardar na ferramenta.</li>
+        <li>Dê um nome fácil pro seu trabalho (sem espaços e sem dados pessoais), tipo "minha-pagina-azul".</li>
+        <li>Salve. Depois feche e abra de novo pra ver se ficou tudo guardado.</li>
+        <li>Combine com você mesmo: "vou salvar sempre!".</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Crie uma "regrinha de criador" pra você: por exemplo, "salvo toda vez que termino uma parte". Escreva ela bem grande e cole perto do computador!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Você já perdeu algum trabalho ou desenho? Como se sentiu? Que truques a turma usa pra não esquecer de guardar as coisas?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Escreva os nomes que você deu pros seus trabalhos guardados. Assim você cria a sua própria "lista de criações"!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Guardar (salvar) protege seu trabalho de sumir. 2) Dê nomes fáceis, sem dados pessoais. 3) Salve sempre, várias vezes — é hábito de criador esperto.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2</span><h2>Criando seu primeiro site</h2></div>
+  <p class="mod-resumo">Agora começa a diversão de verdade: você vai planejar, montar e colocar no ar o SEU primeiro site! Vamos pensar antes de fazer, escolher cores, textos e botões, publicar de graça (sempre com um adulto), guardar coisinhas num "caderninho digital" e, no fim, comemorar o seu mini-site prontinho. Você é o chefe da obra!</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6 · 2h</span><h3>Planejar antes de fazer (o que vou criar?)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> planejar o seu site antes de criar, decidir o que ele vai ter e desenhar um "rascunho" pra guiar você e a IA.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Antes de construir uma casa, a gente faz um desenho dela, certo? Com um site é igual: <b>planejar antes</b> deixa tudo mais fácil e bonito. Planejar é só responder algumas perguntinhas:</p>
+      <ul>
+        <li><b>Sobre o que é?</b> (seus desenhos, seu pet, seus jogos favoritos...)</li>
+        <li><b>O que vai ter?</b> (um título, fotos, uma frase legal, botões...)</li>
+        <li><b>Que cara vai ter?</b> (cores alegres? escuras? com emojis?)</li>
+      </ul>
+      <p>Esse desenho do plano se chama <b>rascunho</b>. Não precisa ser perfeito — é só pra você não se perder. Quem planeja, capricha!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Alice quis um site sobre o gatinho dela. Ela planejou: título "O Mundo do Frajola", uma frase fofa e o lugar pra uma foto. Aí ficou fácil pedir pra IA.</p>
+      <p><b>Exemplo 2:</b> Rafa quis um site dos jogos favoritos. Ele desenhou no papel: em cima o título, no meio a lista de jogos, embaixo um botão "saber mais". Virou o mapa do site dele!</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Quero planejar um site sobre [o meu assunto favorito]. Me ajude
+com 3 perguntas simples pra eu decidir o que colocar nele.
+Não precisa criar ainda, só me ajudar a pensar.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Escolha o assunto do seu site (algo que você ama!).</li>
+        <li>Responda as 3 perguntas: sobre o quê, o que vai ter, que cara vai ter.</li>
+        <li>Faça um rascunho no papel: o que fica em cima, no meio e embaixo.</li>
+        <li>Mostre seu rascunho pro adulto e conte sua ideia. Pronto pro próximo passo!</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Dê um nome legal pro seu site, tipo um título de filme. Algo que faça as pessoas quererem visitar. Anote pelo menos 3 nomes e escolha o melhor!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Sobre o que é o seu site? Por que você escolheu esse assunto? Qual ideia de colega te deixou com vontade de visitar?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Desenhe o rascunho do seu site: um quadrado grande com o título em cima, o conteúdo no meio e os botões embaixo. Esse é o seu mapa!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Planejar antes deixa tudo mais fácil. 2) Responda: sobre o quê, o que vai ter, que cara vai ter. 3) O rascunho é o seu mapa pra guiar você e a IA.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7 · 2h</span><h3>Montando a página (cores, textos e botões)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> montar a sua página de verdade, escolher cores e textos que combinam e colocar botões pra deixar tudo com a sua cara.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Chegou a hora de dar vida ao seu rascunho! Você vai pedir pra IA montar a página com tudo o que você planejou. Pense em três ingredientes principais:</p>
+      <ul>
+        <li><b>Cores:</b> elas dão o clima. Cores claras são alegres; escuras são misteriosas. Escolha as que combinam com seu assunto.</li>
+        <li><b>Textos:</b> o título e as frases. Capriche pra ficar fácil de ler e legal de ouvir.</li>
+        <li><b>Botões:</b> são "lugares pra clicar". Servem pra ir de uma parte pra outra, tipo "ver mais" ou "voltar".</li>
+      </ul>
+      <p>Dica de chefe: mude uma coisa de cada vez e veja como fica. Assim você descobre o que combina!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Bento montou a página do gato dele: fundo azul-claro, título "O Mundo do Frajola" em letras grandes e um botão "Ver fotos". Ficou um charme!</p>
+      <p><b>Exemplo 2:</b> Duda achou o texto pequeno. Como ela é a chefe, pediu: "deixe o título maior e a cor das letras mais escura, pra ler melhor". A IA ajustou na hora.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Monte uma página com o título "[meu título]", um fundo de cor
+[cor que eu escolhi] e um botão escrito "Ver mais". Coloque também
+uma frase legal embaixo do título. Depois me mostre como ficou.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pegue o seu rascunho da aula passada.</li>
+        <li>Peça pra IA montar a página com seu título, sua cor e um botão.</li>
+        <li>Confira: ficou parecido com o seu rascunho? O texto está fácil de ler?</li>
+        <li>Mude UMA coisa de cada vez (a cor, depois o tamanho da letra...) até ficar do seu jeito.</li>
+        <li>Salve seu trabalho! (Lembra da Aula 5?)</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Peça pra IA criar dois botões diferentes e deixar eles com cores diferentes. Qual combinação você achou mais bonita?</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Que cores você escolheu e por quê? Mostre sua página pra um colega: o que ele achou fácil de ler? O que mudaria?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote as cores e o título que você usou. Desenhe os botões que você colocou. Essa é a receita da sua página!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Sua página tem cores, textos e botões. 2) Mude uma coisa de cada vez pra ver o que combina. 3) Confira se está fácil de ler e salve o trabalho.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8 · 2h</span><h3>Colocar na internet de graça (com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é "publicar", colocar a sua página na internet de graça (sempre com um adulto) e aprender a compartilhar com cuidado.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p><b>Publicar</b> é colocar a sua página na internet pra outras pessoas poderem ver — tipo pendurar o seu desenho na parede da sala, mas pra o mundo todo! Antes era só você que via, na sua telinha. Depois de publicar, vira um <b>link</b> (um endereço) que você pode mandar pra família.</p>
+      <ul>
+        <li><b>Sempre com um adulto:</b> publicar coloca seu trabalho no mundo, então um adulto precisa ajudar e conferir.</li>
+        <li><b>Nada de dados pessoais:</b> não coloque seu nome completo, escola, endereço, telefone ou foto sua na página.</li>
+        <li><b>Compartilhe com quem você confia:</b> mande o link só pra família e amigos de confiança.</li>
+      </ul>
+      <p>Existem lugares que publicam de graça. O adulto vai te ajudar a escolher um seguro!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Com a mãe ajudando, Lia publicou a página do gatinho e ganhou um link. Ela mandou pros avós, que adoraram ver a criação da neta!</p>
+      <p><b>Exemplo 2:</b> Theo ia colocar o nome completo e a escola na página. O pai dele lembrou: "nada de dados pessoais!". Theo trocou por um apelido divertido. Ficou seguro e legal.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Quero colocar a minha página na internet de graça, com a ajuda
+de um adulto. Pode me explicar, de um jeito simples e seguro,
+o que significa "publicar" e o que eu NÃO devo colocar na página?</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Antes de publicar, confira com o adulto: tem algum dado pessoal na página? Se tiver, tire!</li>
+        <li>Com o adulto, escolha um lugar seguro e gratuito pra publicar.</li>
+        <li>Publique a página seguindo os passos junto com o adulto.</li>
+        <li>Pegue o link e teste: abra ele pra ver se a página aparece direitinho.</li>
+        <li>Mande o link só pra pessoas de confiança (família, amigos próximos).</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Mostre sua página publicada pra alguém da família e peça uma opinião: o que essa pessoa mais gostou? Anote pra melhorar depois!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Por que é importante não colocar dados pessoais na internet? Pra quem você gostaria de mostrar a sua página e por quê?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Faça uma listinha de "o que eu NUNCA coloco na internet" (nome completo, endereço, escola, telefone...). Cole perto do computador!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Publicar é colocar sua página na internet pra outros verem. 2) Faça SEMPRE com um adulto e nunca coloque dados pessoais. 3) Compartilhe o link só com quem você confia.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9 · 2h</span><h3>Guardar coisas (um caderninho digital)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender como um site pode "guardar coisinhas", criar um caderninho digital simples e aprender que o computador pode lembrar de informações pra você.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Você já tem um caderno onde anota suas ideias? O computador também pode ter um <b>caderninho digital</b>: um lugarzinho na sua página onde você escreve uma coisa e ela fica <b>guardada</b>, pra aparecer de novo depois. Legal, né?</p>
+      <ul>
+        <li>Você <b>escreve</b> algo (tipo uma frase favorita ou uma lista).</li>
+        <li>O caderninho <b>guarda</b> aquilo.</li>
+        <li>Quando você volta, aquilo <b>continua lá</b>, sem você precisar escrever de novo.</li>
+      </ul>
+      <p>É como deixar um bilhete na geladeira: você sai, volta, e o bilhete está lá esperando. A IA pode te ajudar a criar esse caderninho na sua página!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Gabi criou um caderninho na página dela pra anotar "minhas frases favoritas". Cada vez que ela voltava, as frases continuavam guardadas. Virou o diário digital dela!</p>
+      <p><b>Exemplo 2:</b> Vini fez uma "lista de jogos pra jogar". Ele anotava um jogo, o caderninho guardava, e a lista ia crescendo dia após dia.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Quero adicionar na minha página um espacinho onde eu escrevo uma
+frase e ela fica guardada pra aparecer quando eu voltar. Pode
+criar esse "caderninho digital" simples e me explicar como funciona?</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Com o adulto, peça pra IA criar um caderninho simples na sua página.</li>
+        <li>Escreva uma frase de teste (sem dados pessoais!) e guarde.</li>
+        <li>Feche e abra a página de novo: a frase continua lá? Funcionou!</li>
+        <li>Se não funcionou, peça pra IA "consertar pra que a frase fique guardada quando eu voltar".</li>
+        <li>Salve seu trabalho.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Transforme o caderninho numa "lista": peça pra IA deixar você anotar VÁRIAS coisas, uma embaixo da outra. Faça a sua lista de sonhos!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>O que você gostaria que o seu caderninho guardasse? Por que é útil o computador lembrar de coisas pra gente?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Pense: se o seu caderninho digital pudesse guardar qualquer coisa, o que você anotaria primeiro? Escreva aqui sua ideia!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Um caderninho digital guarda coisas que você escreve. 2) O que você guarda continua lá quando você volta. 3) Nunca guarde dados pessoais — só ideias, frases e listas divertidas.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10 · 2h</span><h3>Seu primeiro mini-site pronto!</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> juntar tudo o que aprendeu, deixar o seu mini-site prontinho e bonito, conferir cada parte e comemorar a sua primeira grande criação!</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Chegamos ao grande dia: o seu <b>mini-site</b> vai ficar pronto! Lembra de tudo o que você aprendeu? Agora é hora de juntar as peças, como montar um quebra-cabeça:</p>
+      <ul>
+        <li>O <b>planejamento</b> (Aula 6) foi o seu mapa.</li>
+        <li>As <b>cores, textos e botões</b> (Aula 7) deram a cara.</li>
+        <li>A <b>publicação</b> (Aula 8) colocou no mundo.</li>
+        <li>O <b>caderninho</b> (Aula 9) deixou tudo mais esperto.</li>
+      </ul>
+      <p>Hoje você confere se está tudo lindo, arruma os últimos detalhes e mostra com orgulho. Você é, oficialmente, um criador de sites!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> Helena juntou tudo: a página do gatinho com botões, frases e o caderninho de frases favoritas. Publicou e mandou pra família. Todos aplaudiram a primeira criação dela!</p>
+      <p><b>Exemplo 2:</b> Igor conferiu seu site e achou um botão que não funcionava. Como ele é o chefe, pediu pra IA consertar. No fim, tudo funcionava perfeitamente. Caprichou até o último detalhe!</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Meu mini-site está quase pronto! Pode olhar comigo e me ajudar a
+deixar tudo bonito e funcionando? Me diga 3 dicas simples pra
+melhorar a minha página antes de eu mostrar pra todo mundo.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Abra o seu site e confira cada parte: título, cores, textos, botões e caderninho.</li>
+        <li>Teste os botões: todos funcionam? Se não, peça pra IA consertar.</li>
+        <li>Confira de novo: tem algum dado pessoal? Tire tudo!</li>
+        <li>Peça 3 dicas pra IA e melhore o que der.</li>
+        <li>Salve e, com o adulto, publique a versão final. Pegue o link!</li>
+        <li>Mostre com orgulho pra turma e pra família de confiança. Você conseguiu! 🎉</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Pense numa coisa nova que você quer aprender a adicionar no seu próximo site. Anote essa ideia — ela é o começo da sua próxima grande criação!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>O que você mais gostou de criar neste curso? Qual parte foi a mais difícil e como você resolveu? O que você quer criar depois?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Desenhe o seu mini-site pronto, com tudo o que ele tem. Escreva embaixo: "Eu criei isso!". Você merece esse orgulho!</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Seu mini-site junta tudo o que você aprendeu. 2) Confira cada parte, teste os botões e tire dados pessoais antes de publicar. 3) Você é o chefe e agora é um criador de verdade — comemore e sonhe com a próxima criação!</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>Fazendo com segurança</h2></div>
+  <p class="mod-resumo">Criar coisas no computador é demais, mas tem uma parte super importante: fazer com segurança! Neste módulo você vai aprender a guardar segredos (tipo senhas), a trancar a porta do seu projeto pra ninguém estragar, a deixar só as pessoas certas entrarem e a cuidar das informações das pessoas com muito carinho. Lembra sempre: VOCÊ é o chefe e o chefe confere tudo antes. E nada de fazer sozinho — sempre com um adulto do seu lado pra ajudar!</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 2h</span><h3>Senhas e segredos (o que a gente esconde)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é um segredo no computador, por que algumas coisas a gente esconde bem escondidinho e como a IA pode te ajudar a cuidar disso sem mostrar pra ninguém.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Sabe quando você tem um diário com cadeado, ou um esconderijo só seu? No computador também existem segredos que a gente esconde bem. O maior deles é a senha — é tipo a chave da sua casa. Se alguém pega sua chave, entra onde quiser! Por isso senha é só sua, você não conta pra ninguém (só pra um adulto de confiança, tipo seu pai ou sua mãe). Nos projetos no computador também tem outros segredos, tipo umas "chavinhas mágicas" que fazem o programa funcionar. Esses segredos a gente NUNCA mostra na tela nem manda pros amigos. O chefe esperto (que é você!) sabe o que é segredo e guarda bem guardado.</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Sua senha do jogo é um segredo. Se um amigo pede "me fala sua senha", você não fala! Mesmo que ele prometa não usar. Segredo é segredo.</p><p><b>Exemplo 2:</b> No seu projeto tem uma "chavinha mágica" que liga ele numa ferramenta. Essa chave é como a senha do projeto: a gente esconde num lugar especial e nunca cola ela num lugar que os outros podem ver.</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me explique, de um jeito fácil para uma criança, por que a gente nunca deve mostrar a senha nem os segredos de um projeto para outras pessoas.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, faça uma lista de coisas que são SEGREDO (senha, chavinha do projeto) e coisas que NÃO são segredo (o nome do projeto, as cores).</li>
+      <li>Pense numa senha boa: grande, com letras e números, fácil de você lembrar e difícil de alguém adivinhar.</li>
+      <li>NÃO use coisas óbvias como "1234" ou seu nome. Isso é fácil demais!</li>
+      <li>Combine com o adulto onde guardar as senhas de um jeito seguro.</li>
+      <li>Repita pra si mesmo: "Meu segredo é só meu. Eu sou o chefe e eu protejo."</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Invente uma senha "super-herói": pense numa frase divertida que só você sabe e transforme em senha. Mostre só pro adulto como você fez (sem mostrar a senha de verdade pra mais ninguém!).</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que a gente nunca conta a senha pros amigos, mesmo que eles peçam? O que poderia acontecer de ruim se alguém pegasse sua senha? Conversem juntos.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe um cofre bem forte. Dentro dele, escreva (sem ser a senha de verdade!) que tipo de coisa a gente guarda lá: senhas e segredos.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Senha é a chave da sua casa no computador: só sua. 2) Projetos também têm segredos que a gente esconde bem. 3) O chefe esperto sabe o que é segredo e nunca mostra pra ninguém.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 2h</span><h3>Trancar a porta (deixar seguro)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que todo projeto precisa de uma "porta trancada" pra ninguém entrar e bagunçar, e como pedir pra IA te ajudar a deixar tudo seguro.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Imagina que você construiu uma cabaninha incrível. Você ia deixar a porta escancarada pra qualquer um entrar e mexer? Claro que não! Você tranca. Seu projeto no computador é igual: ele precisa de uma "porta trancada" pra que só você (e quem você deixar) possa mudar as coisas. Se a porta fica aberta, qualquer pessoa pode entrar e estragar tudo, ou até pegar coisas que não são dela. Por padrão, a gente sempre começa com a porta TRANCADA e só abre o pedacinho que precisa. É bem mais seguro do que deixar tudo aberto e depois ter que correr atrás. O chefe esperto tranca a porta primeiro!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Você fez um app de recados da família. Sem porta trancada, qualquer pessoa da internet poderia apagar os recados! Com a porta trancada, só a sua família entra.</p><p><b>Exemplo 2:</b> É como o portão da escola: ele fica fechado e só abre pra quem é de lá. Seu projeto também: fechado por fora, aberto só pra quem tem permissão.</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Estou começando um projeto. Me explique de um jeito simples por que é mais seguro deixar tudo trancado por padrão e só liberar o que eu realmente preciso.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, pense no seu projeto como uma casa. Quais portas existem?</li>
+      <li>Pergunte pra IA: "como eu deixo meu projeto trancado por padrão?"</li>
+      <li>Leia a resposta junto com o adulto e veja o que faz sentido.</li>
+      <li>Antes de mostrar pro mundo, confira: "está tudo trancado? Só quem deve entrar consegue?"</li>
+      <li>Combine a regra de ouro: "primeiro eu tranco, depois eu abro só o necessário".</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Desenhe a "planta" da casinha do seu projeto com todas as portas. Marque quais portas devem ficar TRANCADAS e quais podem abrir, e pra quem. Mostre pro adulto e expliquem juntos.</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>O que pode dar errado se a gente deixar a porta do projeto aberta pra todo mundo? Por que é melhor trancar primeiro e abrir depois só um pouquinho?</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Anote a regra de ouro do chefe esperto: "Primeiro eu tranco, depois eu abro só o que precisa." Cole no seu caderno.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Todo projeto precisa de porta trancada. 2) Começa tudo fechado e abre só o necessário. 3) O chefe esperto tranca primeiro e confere antes de mostrar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 2h</span><h3>Quem pode entrar (login)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é o "login" — aquele crachá que mostra quem você é — e por que ele deixa cada pessoa entrar só no que é dela.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Sabe quando você chega na escola e tem um crachá ou alguém na portaria que sabe quem você é? O "login" é isso no computador: é o jeito do projeto saber QUEM está entrando. Cada pessoa coloca seu nome de usuário e sua senha, e aí o projeto fala "ah, é você mesmo, pode entrar!". Isso é importante porque assim cada um vê só as coisas dele. Se você entra com SEU login, você vê SEUS desenhos, não os de outra pessoa. É como ter um armário com cadeado na escola: só você abre o seu. O login é o porteiro educado que pergunta "quem é você?" antes de deixar entrar.</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Você tem login num jogo. Quando você entra, aparecem SUAS fases e SEU personagem, não os de outro jogador. O login sabe que é você!</p><p><b>Exemplo 2:</b> Num app de recados da turma, cada aluno faz login e vê os recados dele. Sem login, todo mundo veria tudo de todo mundo — uma bagunça sem privacidade!</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me explique de um jeito bem fácil o que é o login (entrar com nome e senha) e por que ele ajuda cada pessoa a ver só as coisas dela.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, pense num app que você usa que pede login. O que ele mostra só pra você?</li>
+      <li>Pergunte pra IA: "por que meu projeto deveria ter um login pra cada pessoa?"</li>
+      <li>Imagine: se duas pessoas usam seu projeto, como o login ajuda cada uma a ver só o que é dela?</li>
+      <li>Lembre que a senha do login é SEGREDO (igual você aprendeu na aula 11!).</li>
+      <li>Combine: "o login é o porteiro que confere quem é antes de deixar entrar".</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça de conta que você é o porteiro do seu projeto. Crie um "crachá" de papel pra você e outro pra um amigo. Mostre como cada crachá deixa a pessoa ver só as coisas dela.</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que é bom cada pessoa ter o próprio login em vez de todo mundo usar o mesmo? Como você se sentiria se alguém entrasse com o SEU login? Conversem.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe um porteiro simpático na porta do seu projeto perguntando "Quem é você?". Esse porteiro é o login!</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Login é o crachá que mostra quem você é. 2) Com login, cada pessoa vê só o que é dela. 3) A senha do login é segredo e o login é o porteiro que confere antes.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 2h</span><h3>Cuidar dos dados das pessoas</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que as informações das pessoas (nome, idade, foto) são como tesouros que a gente cuida com carinho, e que a gente nunca mostra os dados de um pro outro.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Quando alguém usa seu projeto, essa pessoa te confia coisas dela: o nome, talvez a idade, talvez uma foto. Isso se chama "dados das pessoas" e é tipo um tesouro que ela te emprestou pra guardar. E o que a gente faz com um tesouro emprestado? Cuida muito bem! Duas regras são super importantes. Primeira: a gente NUNCA mostra os dados de uma pessoa pra outra. O nome e a foto da Maria são só dela, não dá pra deixar o João ver. Segunda: a gente só guarda o que realmente precisa, sem ficar pedindo um monte de coisa. Cuidar dos dados das pessoas é ser um chefe gentil e responsável. As pessoas confiam em você!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> No seu app, cada pessoa tem um nome e uma foto. Você guarda isso, mas a foto da Ana só a Ana vê — o resto da turma não consegue espiar. Cada tesouro fica protegido.</p><p><b>Exemplo 2:</b> Se você só precisa do primeiro nome pra dizer "oi", não peça o endereço da casa, nem o telefone dos pais. Peça só o necessário. Menos dados, mais cuidado!</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me explique de um jeito simples por que a gente deve cuidar bem dos dados das pessoas (nome, foto) e nunca mostrar os dados de uma pessoa para outra.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, faça uma lista do que seu projeto realmente PRECISA saber das pessoas.</li>
+      <li>Risque tudo que não é necessário. Quanto menos dado, melhor!</li>
+      <li>Pergunte pra IA: "como eu garanto que cada pessoa só vê os dados dela?"</li>
+      <li>Confira com o adulto: "será que o João consegue ver a foto da Maria? Não pode!"</li>
+      <li>Combine: "dados das pessoas são tesouro emprestado. Eu cuido e nunca mostro pros outros."</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Imagine que você emprestou seu brinquedo favorito pra um amigo guardar. Como você gostaria que ele cuidasse? Agora pense: é assim que a gente cuida dos dados das pessoas no projeto.</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Como você se sentiria se um app mostrasse sua foto pra estranhos sem perguntar? Por que é importante pedir só o necessário das pessoas? Conversem sobre confiança.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe um cofre com vários tesourinhos dentro, cada um com o nome de uma pessoa. Mostra que cada tesouro fica protegido e separado.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Dados das pessoas são tesouro emprestado: cuide com carinho. 2) Nunca mostre os dados de uma pessoa pra outra. 3) Peça só o que realmente precisa, nada além.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 2h</span><h3>Conferir antes de mostrar pro mundo</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender o checklist de segurança do chefe esperto — aquela conferida final antes de deixar o projeto pronto pro mundo ver e usar.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Antes de uma peça de teatro começar, os atores fazem um ensaio e conferem tudo: as falas, o cenário, as roupas. No computador é igual: antes de mostrar seu projeto pro mundo, você faz uma última conferida de segurança. É o momento do chefe esperto colocar o capacete de detetive e perguntar: "Os segredos estão escondidos? A porta está trancada? O login está funcionando? Os dados das pessoas estão protegidos?". Se tudo estiver certo, pode mostrar! Se faltar algo, a gente conserta ANTES, com calma. Conferir parece chato, mas é o que separa um projeto seguro de um projeto que pode dar problema. E lembra: a IA ajuda muito, mas quem confere e decide é VOCÊ, o chefe. A IA pode errar, e por isso a gente sempre dá uma olhada com o adulto.</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Antes de mostrar seu app, você confere: "minha senha secreta não está aparecendo na tela, né?". Se estiver, você esconde antes de qualquer um ver!</p><p><b>Exemplo 2:</b> Você testa entrar com o login de um "amigo de faz de conta" e vê: ele consegue espiar os dados dos outros? Se conseguir, tem algo pra trancar antes de liberar pro mundo.</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me ajude a montar um checklist de segurança simples para conferir antes de mostrar meu projeto para o mundo: segredos escondidos, porta trancada, login funcionando e dados das pessoas protegidos.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, pegue o checklist: segredos, porta, login, dados das pessoas.</li>
+      <li>Confira UM por UM. Coloque um "check" verde no que está seguro.</li>
+      <li>Achou algo errado? PARE e conserte antes de continuar.</li>
+      <li>Peça pra IA conferir junto, mas lembre: a IA pode errar, então você confere também.</li>
+      <li>Só mostre pro mundo quando TODOS os itens estiverem com o check verde!</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie o seu "Crachá de Chefe de Segurança": um cartão com os 4 itens do checklist. Toda vez que terminar um projeto, passe os olhos no crachá antes de mostrar pra alguém.</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que é importante conferir ANTES de mostrar pro mundo, e não depois? Já aconteceu de você mostrar algo sem conferir e dar errado? Contem as histórias.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Faça seu checklist de segurança com 4 quadradinhos pra marcar: segredos, porta, login, dados. Esse é o seu poder de chefe esperto!</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Sempre confira a segurança antes de mostrar pro mundo. 2) O checklist tem 4 itens: segredos, porta, login e dados. 3) A IA ajuda, mas quem confere e decide é você, o chefe.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>Deixando bonito</h2></div>
+  <p class="mod-resumo">Seu projeto já é seguro — agora vamos deixar ele LINDO! Neste módulo você vira um artista e decorador: escolhe cores que combinam, letras fáceis de ler, imagens legais, faz tudo funcionar até no celular, deixa os botões gostosos de clicar e dá aquele capricho final que faz todo mundo dizer "uau!". Um projeto bonito e fácil de usar deixa as pessoas felizes. E você é o chefe que decide como tudo vai ficar — sempre com um adulto pra criar junto!</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 2h</span><h3>O que deixa um site legal</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir o segredo dos sites bonitos e fáceis de usar — e perceber que "legal" não é só bonito, é também simples de entender.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Pensa nos sites e apps que você mais gosta de usar. Por que eles são legais? Quase sempre é porque eles são bonitos E fáceis. Um site legal não enche a tela de coisas: ele deixa um espaço pra respirar, mostra o mais importante primeiro e não confunde você. É como um quarto arrumado: dá gosto de ficar nele. Um site bagunçado, cheio de coisa piscando e botão por todo lado, cansa e atrapalha. O segredo é: menos é mais. Você escolhe poucas coisas, mas bem feitas. E sempre pensa em quem vai usar: será que essa pessoa vai entender rapidinho onde clicar? Se sim, seu site é legal de verdade!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Um site legal tem um título grande dizendo do que se trata, e logo embaixo um botão claro de "Começar". Você bate o olho e já sabe o que fazer!</p><p><b>Exemplo 2:</b> Um site bagunçado tem 20 coisas piscando ao mesmo tempo, letras minúsculas e botões escondidos. Você fica perdido e cansado. Esse a gente não quer copiar!</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me explique de um jeito fácil o que deixa um site bonito e simples de usar, e por que ter espaço e poucas coisas importantes ajuda quem vai usar.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, escolha 2 sites ou apps que você acha legais.</li>
+      <li>Anote o que eles têm em comum: cores? espaço? botões grandes?</li>
+      <li>Agora escolha 1 que você acha confuso e anote o que atrapalha.</li>
+      <li>Pergunte pra IA: "como eu deixo meu projeto simples e fácil de entender?"</li>
+      <li>Combine a regra de ouro do design: "menos é mais, e o importante vem primeiro".</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Vire crítico de site! Dê uma "nota de estrelas" de 1 a 5 pra três sites que você usa, e explique pro adulto por que cada um ganhou aquela nota. O que daria pra melhorar?</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Qual é o site ou app mais legal que cada um já usou? O que faz ele ser tão bom? Façam uma lista do que todo site legal tem em comum.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe a tela do site dos seus sonhos. Capriche em deixar simples, com espaço e o importante bem grande no meio.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Site legal é bonito E fácil de usar. 2) Menos é mais: espaço e o importante primeiro. 3) Sempre pense em quem vai usar e se a pessoa vai entender rápido.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 2h</span><h3>Cores, letras e imagens</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a escolher cores que combinam, letras fáceis de ler e imagens legais pra deixar seu projeto com a SUA cara.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Cores, letras e imagens são como as roupas do seu projeto: elas dão personalidade! Mas tem um truque pra ficar bonito de verdade. Com as cores, o melhor é escolher poucas que combinam — tipo duas ou três — em vez de usar todas do arco-íris ao mesmo tempo. As letras precisam ser fáceis de ler: nem pequenininhas demais, nem todas enfeitadas. Pensa no leitor! E as imagens deixam tudo mais legal, mas a gente escolhe imagens que tenham a ver com o assunto e que sejam permitidas de usar. Com a IA você pode até criar imagens novas! O importante é: tudo combinando, sem exagero. Você é o estilista do seu projeto, e o bom estilista sabe que poucas escolhas certas valem mais que muitas escolhas confusas.</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Você escolhe azul e amarelo pro seu projeto. Combina bem e fica com cara de céu ensolarado! Se você jogasse 10 cores diferentes, ficaria uma confusão.</p><p><b>Exemplo 2:</b> Pra um site de dinossauros, você escolhe uma letra firme e fácil de ler e uma imagem de dinossauro divertida. Tudo fala "dinossauro" e tudo combina!</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Estou montando um projeto sobre [o tema que você curte]. Me sugira 3 cores que combinam bem e um tipo de letra fácil de ler para crianças.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, escolha o tema do seu projeto e o "clima" dele (alegre? calmo? aventureiro?).</li>
+      <li>Peça pra IA sugerir 2 ou 3 cores que combinam com esse clima.</li>
+      <li>Teste as letras: escreva uma frase grande e veja se dá pra ler de longe.</li>
+      <li>Escolha 1 ou 2 imagens que tenham a ver com o tema (peça permissão pro adulto ou crie com a IA).</li>
+      <li>Junte tudo e veja: combinou? Ficou fácil de ler? Se sim, ficou lindo!</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie uma "paleta de cores" do seu projeto: pinte 3 quadradinhos com as cores que você escolheu e dê um nome divertido pra elas, tipo "azul-oceano" e "amarelo-sol".</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Mostrem as cores que cada um escolheu. Quais combinações ficaram mais bonitas? Por que cores demais ao mesmo tempo cansam os olhos?</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe a frente do seu projeto usando suas cores escolhidas. Escreva o título com a letra que você achou mais fácil de ler.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Escolha poucas cores que combinam, sem exagero. 2) Letras precisam ser fáceis de ler. 3) Imagens devem ter a ver com o tema e ser permitidas de usar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 2h</span><h3>Funciona no celular também</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender que as pessoas usam celular o tempo todo, e por isso seu projeto precisa ficar bonito e fácil tanto na tela grande quanto na pequena.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Pensa em quantas pessoas usam o celular pra tudo: jogar, ver vídeo, conversar. Então o seu projeto precisa funcionar bem no celular também, não só no computador grande! O nome disso é deixar o projeto "responsivo", que é uma palavra chique pra dizer "ele se ajeita pra qualquer tela". É como uma água que toma o formato do copo: na tela grande, as coisas se espalham; na tela pequena do celular, elas se organizam em pé, uma embaixo da outra, sem ficar tudo apertado e minúsculo. Se você não pensar no celular, seu site pode ficar com letras minúsculas e botões impossíveis de apertar com o dedo. O chefe esperto sempre testa nos dois tamanhos!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> No computador, seu site mostra 3 fotos lado a lado. No celular, essas 3 fotos viram uma embaixo da outra, grandinhas, fáceis de ver. Mesmo site, ajeitado pra cada tela!</p><p><b>Exemplo 2:</b> Um botão "Jogar" precisa ser grande o bastante pra apertar com o dedo no celular. Se for minúsculo, ninguém consegue clicar direito e fica chato de usar.</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me explique de um jeito fácil por que um site precisa funcionar bem no celular também, e como deixar os botões grandes o bastante para apertar com o dedo.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, abra um site que você gosta no computador E no celular.</li>
+      <li>Veja o que muda: as coisas se organizam diferente? Os botões ficam maiores?</li>
+      <li>Pergunte pra IA: "como eu deixo meu projeto bom no celular também?"</li>
+      <li>Teste seu projeto numa tela pequena: dá pra ler? Dá pra apertar os botões com o dedo?</li>
+      <li>Combine: "eu sempre confiro nos dois tamanhos antes de dizer que está pronto".</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Pegue um site e descubra um lugar onde ele NÃO funciona bem no celular (letra pequena, botão difícil). Anote como você melhoraria pra ficar gostoso de usar com o dedo.</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Quem usa mais o celular do que o computador? Por que é tão chato quando um site não cabe direito na tela do celular? Conversem sobre isso.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe a mesma tela de dois jeitos: uma larga (computador) e uma estreita e em pé (celular). Mostre como as coisas se ajeitam em cada uma.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Muita gente usa celular, então seu projeto precisa funcionar nele. 2) "Responsivo" é o projeto que se ajeita pra qualquer tela. 3) Botões grandes pra apertar com o dedo, e sempre teste nos dois tamanhos.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 2h</span><h3>Botões e formulários</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a fazer botões gostosos de clicar e formulários (aquelas caixinhas pra preencher) fáceis e amigáveis pra quem usa.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Botões e formulários são os lugares onde a pessoa CONVERSA com o seu projeto. O botão é o convite pra fazer algo: "Clica aqui!". Um botão bom é grande, tem um nome claro (tipo "Enviar" ou "Jogar") e dá um sinalzinho quando você passa o mouse ou aperta, mostrando "você me clicou!". Já o formulário é aquela parte de preencher: nome, mensagem, escolhas. Um formulário amigável pede poucas coisas, explica o que escrever em cada caixinha e avisa com gentileza se você esqueceu algo, em vez de brigar. Lembra do Módulo 3: se o formulário pedir dados das pessoas, a gente cuida bem desses dados e pede só o necessário. Botões e formulários fáceis deixam todo mundo feliz de usar seu projeto!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Um botão escrito "Enviar mensagem" que muda de cor quando você passa o mouse. Você sabe exatamente o que ele faz e percebe que dá pra clicar. Convite perfeito!</p><p><b>Exemplo 2:</b> Um formulário que pede só "seu nome" e "sua mensagem", com um aviso gentil "ops, faltou escrever seu nome!" se você esquecer. Fácil e amigável!</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me explique de um jeito fácil como deixar um botão claro e fácil de clicar, e como fazer um formulário simples que pede só o necessário e avisa com gentileza se faltar algo.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, pense num botão pro seu projeto. Que nome claro ele vai ter?</li>
+      <li>Decida o que o botão faz quando clicado e como ele avisa "fui clicado!".</li>
+      <li>Monte um formulário simples: liste só as caixinhas que você REALMENTE precisa.</li>
+      <li>Pergunte pra IA: "como meu formulário avisa com gentileza se a pessoa esquecer de preencher?"</li>
+      <li>Lembre: se pedir dados das pessoas, peça só o necessário e cuide bem (Módulo 3!).</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Desenhe dois botões: um chato (pequeno, sem nome claro) e um ótimo (grande, com nome claro, com cor). Explique pro adulto por que o segundo é muito melhor de usar.</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Qual formulário chato vocês já tiveram que preencher (cheio de caixinhas)? O que deixa um formulário fácil e o que deixa ele irritante? Conversem.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe o botão principal do seu projeto, bem grande e com o nome dele. Embaixo, desenhe o formulário com só as caixinhas necessárias.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Botão bom é grande, com nome claro e dá sinal quando clicado. 2) Formulário amigável pede só o necessário e avisa com gentileza. 3) Se pedir dados das pessoas, cuide bem deles e peça só o preciso.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 2h</span><h3>Capricho final</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> dar o toque final no seu projeto — aquele capricho que faz tudo brilhar — e mostrar com orgulho a obra que VOCÊ, o chefe, criou.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4><p>Chegamos no melhor momento: o capricho final! É como quando você termina um desenho e dá aquela última caprichada — ajeita um detalhe, apaga um errinho, coloca seu nome no canto. O capricho final é passar os olhos no projeto inteiro e perguntar: "está bonito? está fácil de usar? está seguro? funciona no celular?". É juntar TUDO que você aprendeu — segurança do Módulo 3 e beleza do Módulo 4 — numa conferida orgulhosa. Você arruma os últimos detalhes, testa de novo com calma e, quando estiver feliz com o resultado, mostra pro mundo (com o adulto). Esse capricho é o que separa um projeto "ok" de um projeto "uau!". E o melhor: essa obra é SUA. Você é o chefe, do começo ao fim!</p></div>
+
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> Você olha seu projeto e percebe que um botão está meio torto e uma cor não combina. Ajeita os dois, testa de novo, e pronto: ficou redondinho!</p><p><b>Exemplo 2:</b> No capricho final, você confere o checklist de segurança E o de beleza juntos. Tudo certo? Você coloca seu nome como criador e mostra orgulhoso pra família!</p></div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me ajude a montar uma lista de capricho final para o meu projeto, juntando segurança (segredos, porta, login, dados) e beleza (cores, letras, celular, botões).</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, passe os olhos no projeto inteiro, com calma.</li>
+      <li>Confira a beleza: cores combinam? letras fáceis? funciona no celular? botões bons?</li>
+      <li>Confira a segurança: segredos escondidos? porta trancada? login ok? dados protegidos?</li>
+      <li>Arrume os últimos detalhes e teste mais uma vez. A IA ajuda, mas quem decide é você!</li>
+      <li>Tudo lindo e seguro? Coloque seu nome de criador e mostre pro mundo com orgulho!</li>
+    </ul></div>
+
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça uma "estreia" do seu projeto: apresente pra família como se fosse um lançamento de verdade. Conte o que ele faz, mostre o capricho e diga "fui EU que fiz!".</p></div>
+
+    <div class="bloco"><h4>Converse com a turma</h4><p>Mostrem os projetos uns pros outros. O que cada um caprichou? Qual detalhe final fez mais diferença? Deem ideias gentis de melhoria uns pros outros.</p></div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe seu projeto pronto com uma faixa escrito "FEITO POR [seu nome]". Você é o chefe que criou tudo, do zero ao avançado!</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>1) O capricho final junta segurança e beleza numa conferida orgulhosa. 2) Arrume os detalhes e teste com calma antes de mostrar. 3) A obra é sua: você é o chefe do começo ao fim!</p></div>
+  </article>
+</section>
+<!-- ============================================================ -->
+<!-- APOSTILA DO ALUNO · Vibecoding do Zero ao Avançado — Crianças -->
+<!-- Rodrigo Munhoz Reis · Módulos 5 e 6 · Aulas 21 a 30          -->
+<!-- Fragmentos HTML (sem <html>/<head>/<body>)                   -->
+<!-- ============================================================ -->
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>Fazendo o site fazer coisas</h2></div>
+  <p class="mod-resumo">Até agora você criou telas bonitas com a ajuda da IA. Neste módulo o seu site ganha "poderes": ele vai guardar informações, responder quando alguém clica, conversar com mágicas prontas que já existem, mandar avisos sozinho e ficar bem rápido. Lembre da regra de ouro: você é o chefe. A IA constrói o que você pede, mas quem manda, escolhe e confere é você — sempre com um adulto por perto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 2h</span><h3>Guardar e mostrar informação</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que um site pode ter uma "caixinha de memória" para guardar coisas; pedir para a IA criar um lugar que guarda o que você escreve e mostra depois; e perceber que, sem memória, o site esquece tudo quando você sai.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Imagina um caderninho de recados na geladeira da sua casa. Você escreve "comprar pão" e, no dia seguinte, o recado ainda está lá. O site também pode ter um caderninho assim: a gente chama de "guardar informação". Sem ele, o site é como uma lousa que alguém apaga toda vez que você vira as costas — você escreve algo, mas quando recarrega a página, sumiu. Com a memória, o que você escreveu fica guardado e aparece de novo depois. A IA sabe montar essa caixinha de memória pra você; você só precisa explicar o que quer guardar.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> uma lista de tarefas. Você escreve "arrumar a cama", aperta um botão e a tarefa aparece numa lista. Mesmo se você fechar e abrir o site, a tarefa continua lá, guardadinha.</p><p><b>Exemplo 2:</b> um mural de recados da turma. Cada pessoa escreve uma mensagem, ela é guardada e todas aparecem na tela, uma embaixo da outra, como bilhetinhos colados num mural.</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Crie uma lista simples onde eu escrevo uma tarefa, aperto um botão e ela aparece na tela e fica guardada quando eu recarrego a página.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, decida o que seu site vai guardar (tarefas, recados, frutas favoritas).</li>
+      <li>Peça à IA para criar uma caixinha de escrever e um botão de salvar.</li>
+      <li>Escreva uma coisa e aperte o botão. Veja ela aparecer na lista.</li>
+      <li>Recarregue a página (aperte atualizar) e confira: a sua informação continuou lá?</li>
+      <li>Se sumiu, conte isso para a IA e peça para ela guardar de verdade.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça uma "lista que apaga": peça à IA um pequeno "x" do lado de cada item para você poder remover quando terminar. Adicione três coisas e apague uma. A memória se atualizou certinho?</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>O que seria chato se o site esquecesse tudo toda hora? Quais coisas do dia a dia (lista de compras, recados) ficam melhores quando alguém guarda?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe a "caixinha de memória" do seu site como se fosse um caderninho. Escreva ao lado três coisas que ela vai guardar.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Sites podem guardar informação numa "caixinha de memória". 2) Sem memória, o site esquece tudo ao recarregar. 3) Você diz à IA o que quer guardar; ela monta a caixinha.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 2h</span><h3>O site que responde</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fazer o seu site reagir quando alguém faz alguma coisa (clica, escreve, escolhe); aprender que "responder" é o site fazer algo de volta; e treinar a explicar pra IA o que deve acontecer a cada clique.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Você já apertou um interruptor e a luz acendeu? Isso é uma resposta: você faz algo (apertar) e acontece algo (a luz). Um site que responde é assim: a pessoa clica num botão e aparece uma mensagem; ela escolhe uma cor e o fundo muda; ela digita o nome e o site fala "oi, Maria!". Quem ensina o site a responder é você, contando pra IA: "quando alguém apertar este botão, faça isto". É como combinar uma brincadeira: "quando eu bater palma, você pula!". O segredo é dizer claramente o que acontece e quando acontece.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> um botão "Surpresa!". Quando a pessoa clica, aparece uma piada ou um emoji na tela. Clicou de novo, aparece outra. O site responde a cada clique.</p><p><b>Exemplo 2:</b> uma caixinha de nome. A pessoa digita o nome dela e aperta "Entrar". O site responde mostrando "Bem-vindo(a), [nome]!" bem grande na tela.</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Crie um botão escrito "Surpresa!". Quando eu clico, aparece na tela uma piada curta e divertida diferente a cada vez.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Pense numa ação simples: clicar, digitar ou escolher.</li>
+      <li>Pense na resposta: o que o site deve fazer quando isso acontecer?</li>
+      <li>Com um adulto, conte pra IA: "quando alguém [faz isto], o site [faz aquilo]".</li>
+      <li>Teste clicando ou digitando. O site respondeu como você queria?</li>
+      <li>Se respondeu errado, explique melhor pra IA o que deveria acontecer.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie um botão "trocar cor": cada clique muda a cor do fundo da página. Tente fazer ele passar por três cores diferentes. Funcionou a cada clique?</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Qual resposta do site ficou mais divertida na turma? Por que é importante dizer pra IA o "quando" e o "o quê" da resposta?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe um botão do seu site. Escreva embaixo: "quando clicar, acontece ______" e complete com a resposta que você inventou.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Um site pode responder quando alguém clica, digita ou escolhe. 2) Você explica pra IA o "quando" e o "o quê" da resposta. 3) Testar mostra se o site respondeu certo.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 2h</span><h3>Conectar com outras coisas (mágicas prontas)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que existem "mágicas prontas" — peças que outras pessoas já fizeram e que você pode encaixar no seu site; entender que ninguém precisa fazer tudo do zero; e praticar pedir uma dessas peças com a ajuda da IA e de um adulto.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Sabe quando você monta com peças de encaixe? Você não fabrica cada pecinha: pega uma roda pronta, uma janela pronta, e encaixa. No mundo dos sites é parecido: existem "mágicas prontas" que outras pessoas já criaram, como um mapa, um relógio, uma figura que se mexe ou um lugar que mostra o tempo. Você não precisa inventar tudo sozinho — só encaixa a peça pronta no seu site. A IA ajuda a encontrar e a encaixar essas mágicas. Como elas vêm de fora, a gente sempre faz isso com um adulto, escolhendo só peças seguras e conhecidas.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> um relógio. Em vez de criar um do zero, você encaixa um relógio pronto que mostra a hora certa no cantinho do seu site.</p><p><b>Exemplo 2:</b> um mapa. No site da sua "loja de brinquedos imaginária", você encaixa um mapinha pronto mostrando onde ela fica — sem precisar desenhar ruas e tudo à mão.</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>No meu site, quero mostrar a hora certa num cantinho. Use uma peça pronta e simples para isso e me explique como ela funciona.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Pense numa coisinha pronta que combinaria com seu site (relógio, mapa, figura animada).</li>
+      <li>Com um adulto, peça à IA para encaixar essa "mágica pronta".</li>
+      <li>Veja a peça aparecer no site e teste se funciona.</li>
+      <li>Peça à IA para explicar, com palavras simples, o que essa peça faz.</li>
+      <li>Combine com o adulto: usar só peças seguras e conhecidas.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Encaixe duas mágicas prontas no mesmo site (por exemplo, um relógio e uma figura que se mexe). As duas funcionaram juntas sem brigar?</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que é esperto usar peças prontas em vez de fazer tudo do zero? Quando a gente deve ter cuidado ao pegar uma peça que veio de fora?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe seu site como um quebra-cabeça e mostre onde você encaixou a "mágica pronta". Escreva o nome dela ao lado.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Existem "mágicas prontas" que você encaixa no site. 2) Não precisa fazer tudo do zero. 3) A gente usa só peças seguras, sempre com um adulto.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 2h</span><h3>Avisos automáticos</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fazer o seu site mandar avisos sozinho na hora certa; entender que um aviso bom aparece no momento certo, com a mensagem certa; e treinar a pensar em quais avisos ajudam quem usa o site.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Sabe quando o microondas apita pra avisar que a pipoca ficou pronta? Esse é um aviso automático: ninguém precisou ficar olhando, a máquina avisou sozinha. O seu site também pode dar avisos: "Você esqueceu de escrever seu nome!", "Parabéns, tarefa concluída!", "Você só pode escolher três". Um bom aviso aparece na hora certa e fala de um jeito gentil e claro. A IA monta esses avisos pra você; o seu trabalho é pensar em quais avisos seriam úteis e simpáticos para quem está usando o site.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> caixinha de nome vazia. A pessoa aperta "Entrar" sem digitar nada e o site avisa, com carinho: "Ops! Escreva seu nome antes de entrar."</p><p><b>Exemplo 2:</b> lista de tarefas. Quando a pessoa marca a última tarefa como feita, aparece um aviso alegre: "Uhul! Você terminou tudo! 🎉".</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>No meu site com caixinha de nome, se a pessoa apertar "Entrar" sem escrever nada, mostre um aviso gentil pedindo para ela digitar o nome primeiro.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Pense num momento em que um aviso ajudaria (faltou algo, terminou, deu certo).</li>
+      <li>Escreva a mensagem do aviso de um jeito gentil e claro.</li>
+      <li>Com um adulto, peça à IA para o site mostrar esse aviso na hora certa.</li>
+      <li>Teste: faça acontecer aquilo e veja se o aviso apareceu no momento certo.</li>
+      <li>Se o aviso apareceu na hora errada, explique melhor pra IA quando ele deve aparecer.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie dois avisos diferentes: um de "ops, faltou algo" e um de "parabéns, deu certo!". Faça os dois aparecerem nas horas certas. Eles ficaram gentis e fáceis de entender?</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Que tipo de aviso ajuda e que tipo de aviso atrapalha? Como deixar um aviso gentil em vez de bravo?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe uma "telinha de aviso" do seu site e escreva dentro dela a mensagem gentil que você inventou.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) O site pode dar avisos automáticos na hora certa. 2) Um bom aviso é gentil e claro. 3) Você decide quais avisos ajudam quem usa o site.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 2h</span><h3>Deixar rápido</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender por que um site rápido é mais legal de usar; descobrir coisas que deixam o site lento (como imagens enormes); e pedir à IA ajuda para deixar o seu site mais leve e veloz.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Você gosta de esperar muito tempo por alguma coisa? Ninguém gosta! Com sites é igual: quando demoram pra abrir, a gente fica impaciente e até desiste. Um site rápido é como uma mochila leve: você anda mais fácil. O que deixa o site pesado? Imagens gigantes, coisas demais na tela ao mesmo tempo, peças que ficam trabalhando sem precisar. Deixar rápido é como tirar da mochila o que não vai usar. A IA pode olhar o seu site e sugerir: "essa imagem está enorme, dá pra deixá-la menor". Você decide o que enxugar.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> uma foto enorme demora pra carregar. Você pede à IA para deixar a imagem do tamanho certo, e o site abre num piscar de olhos.</p><p><b>Exemplo 2:</b> uma página com vinte figuras pesadas que se mexem ao mesmo tempo trava. Você tira algumas e mantém só as importantes — agora o site fica leve e suave.</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Meu site está demorando pra abrir. Olhe o que pode estar pesado (como imagens grandes) e me diga, em passos simples, como deixar mais rápido.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Com um adulto, abra seu site e veja se ele demora pra aparecer.</li>
+      <li>Procure o que pode estar pesado: imagens enormes ou coisas demais na tela.</li>
+      <li>Peça à IA para deixar as imagens do tamanho certo e o site mais leve.</li>
+      <li>Abra de novo e sinta: ficou mais rápido?</li>
+      <li>Tire uma coisa que você não usa muito e veja se melhora ainda mais.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça uma "corrida de carregamento": conte devagar "um, dois, três..." enquanto o site abre, antes e depois de deixar leve. Em qual versão você contou menos números?</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Como vocês se sentem quando um site demora demais? O que mais deixou os sites da turma lentos? O que ajudou a acelerar?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe uma mochila e escreva dentro as coisas pesadas que você tirou do site pra ele ficar leve e rápido.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Site rápido é mais legal de usar. 2) Imagens gigantes e coisas demais deixam o site lento. 3) A IA ajuda a enxugar; você decide o que tirar.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>Fazendo direito (qualidade)</h2></div>
+  <p class="mod-resumo">Agora você já faz o site fazer coisas. Neste módulo você aprende a fazer com capricho: ler o que a IA escreveu (sem aceitar de olhos fechados), virar detetive pra achar e consertar erros, testar se funciona de verdade, organizar a bagunça e perceber rápido quando algo quebrou. Aqui vale mais do que nunca: você é o chefe. Quem confere, decide e cuida da qualidade é você — com um adulto ao lado.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 2h</span><h3>Ler o que a IA escreveu</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender o hábito mais importante de um bom chefe — ler o que a IA fez antes de aceitar; entender que aceitar de olhos fechados pode trazer surpresas; e treinar a perguntar "o que isso faz?" para a IA explicar.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Imagina que você pede uma comida e o garçom traz um prato tampado. Você comeria sem nem olhar? Claro que não — você destampa, olha e cheira primeiro. Com a IA é igual: ela traz o que você pediu, mas você é o chefe e precisa olhar antes de aceitar. Ler o que a IA escreveu não quer dizer entender cada palavrinha difícil; quer dizer dar uma boa olhada e perguntar "o que isso faz?". Se algo parecer estranho ou diferente do que você queria, você pergunta. Um bom chefe nunca aceita de olhos fechados — ele confere primeiro.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você pediu um botão azul e, olhando o que a IA fez, percebe que tem também um botão vermelho que você não pediu. Por ter lido, você pergunta: "pra que serve esse botão vermelho?".</p><p><b>Exemplo 2:</b> você pediu uma lista de tarefas e, lendo a resposta, vê uma parte que fala de "apagar tudo". Você pergunta à IA: "o que essa parte faz?" antes de aceitar, pra não apagar nada sem querer.</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Antes de eu aceitar, me explique com palavras bem simples o que cada parte do que você acabou de fazer faz no meu site.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Peça algo simples à IA (um botão, uma lista).</li>
+      <li>Antes de usar, dê uma boa olhada no que ela fez.</li>
+      <li>Pergunte: "me explique, simples, o que isso faz?".</li>
+      <li>Marque: tem algo que você não pediu ou não entendeu?</li>
+      <li>Se tiver, pergunte sobre aquela parte antes de aceitar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Vire "chefe curioso": peça à IA para explicar três partes do seu site, uma por uma. Veja se alguma faz algo diferente do que você imaginava.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que aceitar de olhos fechados pode dar problema? O que um bom chefe faz antes de dizer "aceito"?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe um prato tampado e, do lado, o mesmo prato destampado. Escreva embaixo: "eu olho antes de aceitar".</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Você é o chefe: leia o que a IA fez antes de aceitar. 2) Ler é dar uma boa olhada e perguntar "o que isso faz?". 3) Nunca aceite de olhos fechados.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 2h</span><h3>Achar e consertar erros (vira detetive!)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> virar um detetive de erros: descobrir que todo mundo erra (até a IA) e que erro tem conserto; aprender a contar para a IA exatamente o que está estranho; e praticar achar e arrumar um probleminha no seu site.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Quando um brinquedo para de funcionar, um bom detetive não chuta: ele observa. "Hmm, a luz não acende... será a pilha?". Com o site é igual. Às vezes você clica num botão e nada acontece, ou a cor sai errada. Isso é um erro — e erro não é o fim do mundo, é uma pista pra investigar! O segredo é contar pra IA exatamente o que está estranho: "quando eu clico no botão verde, não aparece nada". Quanto mais clara a pista, mais fácil a IA ajudar a consertar. Detetive bom descreve o que vê, testa uma ideia e confere se funcionou.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> o botão "Salvar" não guarda nada. Você conta pra IA: "aperto Salvar e o item não aparece na lista". Ela acha o problema e conserta. Você testa de novo: agora salvou!</p><p><b>Exemplo 2:</b> o título devia ser azul, mas saiu cinza. Você diz: "o título está cinza, mas eu queria azul". A IA arruma e você confere se ficou da cor certa.</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>No meu site, quando eu aperto o botão Salvar, o item não aparece na lista. Me ajude a descobrir por que e a consertar, em passos simples.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Use seu site e encontre uma coisa que não está funcionando como você queria.</li>
+      <li>Observe com calma: o que exatamente está estranho?</li>
+      <li>Conte pra IA a pista bem clara: "quando eu faço isto, acontece isto de errado".</li>
+      <li>Deixe a IA sugerir um conserto e aplique com um adulto.</li>
+      <li>Teste de novo: o erro sumiu? Se não, conte mais detalhes.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Vire "detetive paciente": tente achar dois erros pequenos no seu site e conserte um de cada vez. Conserte, teste, e só depois vá para o próximo.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Como vocês descobriram onde estava o erro? Por que contar uma pista clara ajuda a IA a consertar mais rápido?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe uma lupa de detetive. Escreva ao lado o erro que você achou e como ele foi consertado.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Todo mundo erra, e erro tem conserto. 2) Conte pra IA a pista clara: o que está estranho e quando. 3) Conserte, teste e confira se funcionou.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 2h</span><h3>Testar pra ver se funciona</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que pronto de verdade é depois de testar; descobrir como testar do jeito de quem vai usar o site; e treinar a experimentar várias situações, não só a que você já sabe que dá certo.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Quando você monta uma cabana de almofadas, você não confia só de olhar: você entra pra ver se aguenta! Testar um site é igual — você usa de verdade pra ver se funciona. Mas tem um truque: bom testador não testa só do jeito fácil. Ele testa também os jeitos esquisitos: e se eu não escrever nada? E se eu clicar duas vezes rápido? E se eu colocar um nome enorme? É aí que os problemas aparecem. Testar bastante, em várias situações, é como conferir todos os cantos da cabana antes de chamar os amigos pra brincar.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> na caixinha de nome, você testa o jeito normal (digita "Ana" e entra) e também o jeito esquisito (aperta "Entrar" sem digitar nada) pra ver se o aviso aparece.</p><p><b>Exemplo 2:</b> na lista de tarefas, você testa adicionar, marcar como feita e apagar. Faz cada uma e confere se funcionou — não só a que você já sabia que ia dar certo.</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me dê uma listinha simples de coisas para eu testar no meu site, incluindo casos normais e casos esquisitos, para ver se está tudo funcionando.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Escolha uma parte do seu site para testar (um botão, uma lista, uma caixinha).</li>
+      <li>Teste o jeito normal: faça como uma pessoa faria certinho.</li>
+      <li>Teste os jeitos esquisitos: vazio, clicado duas vezes, com texto bem grande.</li>
+      <li>Marque o que funcionou e o que deu problema.</li>
+      <li>Se algo quebrou, conte pra IA e conserte (você já é detetive!).</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Seja "testador travesso": tente "estragar" seu site de propósito, fazendo coisas esquisitas. Cada problema que você achar é uma vitória — porque agora pode consertar antes que outra pessoa veja.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Qual teste esquisito achou mais erros? Por que testar só do jeito fácil pode enganar a gente?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Faça uma "lista de testes": escreva três coisas que você testou e marque um certinho nas que funcionaram.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Pronto de verdade é depois de testar usando o site. 2) Bom testador testa também os jeitos esquisitos. 3) Cada problema achado no teste é um problema a menos depois.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 2h</span><h3>Arrumar a bagunça (organizar)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender que um site organizado é mais fácil de cuidar; aprender a dar nomes claros e a deixar cada coisa no seu lugar; e pedir à IA para arrumar a bagunça sem quebrar o que já funciona.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Já tentou achar um brinquedo num quarto todo bagunçado? Demora e dá nervoso. Agora, num quarto organizado, é rapidinho. Sites também ficam bagunçados quando a gente adiciona muita coisa sem arrumar. Organizar é separar por gavetinhas: cada parte no seu lugar, com nomes claros. Um nome bom é como uma etiqueta na caixa: "botão de salvar" é melhor que "coisa1". Quando está organizado, fica fácil achar e consertar depois. A IA ajuda a arrumar, mas com um cuidado de chefe: arrumar sem quebrar o que já estava funcionando — por isso a gente testa depois de organizar.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> seu site tem nomes confusos como "coisa1" e "coisa2". Você pede à IA para trocar por nomes claros como "botão-salvar" e "lista-tarefas". Fica muito mais fácil de entender.</p><p><b>Exemplo 2:</b> tudo estava num montão só. Você pede para separar em "partes": a parte do título, a parte da lista, a parte dos botões — como organizar gavetas. Depois testa pra ver se nada quebrou.</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Meu site está bagunçado. Organize ele com nomes claros e cada parte no lugar certo, sem mudar nada que já funciona. Depois me diga o que você arrumou.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Olhe seu site e procure nomes confusos ou coisas fora do lugar.</li>
+      <li>Peça à IA nomes claros, como etiquetas: "botão-salvar", "lista-tarefas".</li>
+      <li>Peça para separar o site em partes organizadas.</li>
+      <li>Depois de organizar, teste tudo de novo (cuidado de chefe!).</li>
+      <li>Confira: ficou mais fácil de entender e continuou funcionando?</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Faça o "teste da etiqueta": escolha três partes do seu site e veja se cada uma tem um nome que explica o que ela faz. Se algum nome for confuso, troque por um melhor.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Por que um nome claro ajuda mais tarde? O que pode acontecer se a gente arrumar sem testar depois?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe caixas com etiquetas. Escreva nas etiquetas os nomes claros que você deu para as partes do seu site.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Site organizado é mais fácil de cuidar. 2) Nomes claros são como etiquetas nas caixas. 3) A gente arruma sem quebrar e testa depois de organizar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 2h</span><h3>Saber quando quebrou</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fechar o módulo aprendendo a perceber rápido quando algo quebrou no site; descobrir sinais de que algo deu errado; e levar pra vida a postura de chefe cuidadoso — olhar, perceber e agir com calma.</p>
+    <div class="bloco"><h4>Vamos entender</h4><p>Um bom capitão de navio sabe na hora quando algo está errado: uma luz pisca, um barulho diferente, e ele percebe. Com o site é igual: às vezes a tela fica branca, um botão some, uma mensagem estranha aparece ou nada acontece quando deveria. Saber quando quebrou é estar atento a esses sinais. E o mais importante: quando você percebe que quebrou, não precisa se assustar. Chefe cuidadoso respira, olha o que mudou, conta pra IA o que está estranho e conserta — igual você aprendeu de detetive. Perceber cedo é metade do conserto, porque você arruma antes que vire um problemão.</p></div>
+    <div class="bloco"><h4>Exemplos</h4><p><b>Exemplo 1:</b> você mexeu numa coisa e, de repente, a tela ficou toda branca. Esse é um sinal claro de que quebrou. Você percebe na hora, desfaz a última mudança ou conta pra IA o que aconteceu.</p><p><b>Exemplo 2:</b> um botão que antes funcionava parou de responder. Você nota a diferença e investiga: "o que mudou desde a última vez que funcionava?".</p></div>
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Meu site estava funcionando e agora a tela ficou branca depois da última mudança. Me ajude a entender o que quebrou e a voltar ao que funcionava.</pre></div>
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4><ul>
+      <li>Use seu site de vez em quando para perceber se está tudo certo.</li>
+      <li>Fique de olho nos sinais: tela branca, botão sumido, mensagem estranha.</li>
+      <li>Quando notar que quebrou, respire e pense: "o que mudou agora há pouco?".</li>
+      <li>Conte pra IA o sinal que você viu e o que mudou por último.</li>
+      <li>Conserte com calma e teste pra confirmar que voltou a funcionar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Desafio extra</h4><p>Crie um "alarme de chefe": faça uma listinha dos sinais de que algo quebrou (tela branca, botão sumido...). Sempre que ver um, você já sabe que é hora de investigar.</p></div>
+    <div class="bloco"><h4>Converse com a turma</h4><p>Quais sinais avisam que um site quebrou? Por que perceber cedo deixa o conserto mais fácil? Como ficar calmo quando algo dá errado?</p></div>
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4><p>Desenhe um capitão olhando o painel do navio. Escreva ao redor os sinais de "algo quebrou" que você vai ficar de olho.</p></div>
+    <div class="skills"><h4>Resumo da aula</h4><p>1) Saber quando quebrou é estar atento aos sinais. 2) Quebrou? Respire, veja o que mudou e conte pra IA. 3) Perceber cedo deixa o conserto mais fácil — você é o chefe cuidadoso.</p></div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Mostrar pro mundo</h2></div>
+  <p class="mod-resumo">Você já criou coisas incríveis no computador. Agora chegou a hora mais emocionante: deixar o seu programa no ar para outras pessoas usarem de verdade! Você vai aprender a publicar do jeito certo (sempre com um adulto), fazer as pessoas acharem o seu projeto, montar uma página que dá vontade de clicar, contar para os amigos e fazer um mini-lançamento de festa. Lembre da regra de ouro: você é o chefe do seu projeto, e publicar a gente faz junto com um adulto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31 · 2h</span><h3>Colocar no ar do jeito certo (com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> pegar o programa que você criou e colocar ele "no ar" — quer dizer, na internet — para que outras pessoas consigam abrir, sempre com um adulto ajudando na parte de publicar.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Sabe quando você desenha algo lindo e prega na geladeira para todo mundo ver? Colocar um programa "no ar" é parecido: você tira ele de dentro do seu computador e coloca num lugar da internet onde qualquer pessoa pode visitar. Esse lugar é como uma casinha online com um endereço, igual ao endereço da sua casa, só que feito de letras (tipo meusite.com). Publicar é apertar o botão que leva a sua criação para essa casinha. Mas tem uma parte importante: assim como você não atravessa a rua sozinho, publicar na internet a gente faz com um adulto de confiança do lado, porque é ele quem cuida das partes mais sérias, como criar a conta. Você é o chefe que decide o que vai no ar; o adulto é o ajudante de segurança.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> O Vitor fez um joguinho de adivinhar números e, com o pai dele, apertou o botão de publicar. Em poucos minutos o jogo ganhou um endereço e a avó dele conseguiu jogar do celular dela, longe!</p>
+      <p><b>Exemplo 2:</b> A Lis criou um cartão de aniversário animado para a amiga. Em vez de mandar o arquivo, ela publicou com a mãe e mandou só o link. A amiga clicou e o cartão abriu na hora, brilhando na tela.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Eu fiz um joguinho e quero publicar ele na internet pela primeira vez. Me explique, passo a passo e com palavras fáceis, o que eu e um adulto precisamos fazer para colocar no ar com segurança.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Escolha o programa que você quer mostrar para o mundo.</li>
+        <li>Chame um adulto de confiança para fazer a parte de publicar com você.</li>
+        <li>Peça para a IA explicar os passos de publicar, e leia junto com o adulto.</li>
+        <li>Aperte o botão de publicar com o adulto e espere o programa ganhar um endereço.</li>
+        <li>Abra o endereço num outro aparelho (celular ou tablet) para ver se funciona mesmo!</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Depois de publicar, mande o link para UMA pessoa especial (com o adulto ajudando) e peça para ela contar o que achou. Anote a primeira frase que ela falou.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Como você se sentiu ao ver o seu programa funcionando fora do seu computador? Por que será que a gente publica junto com um adulto?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote o endereço (link) do seu programa no ar. Desenhe a "casinha online" dele com a plaquinha do endereço na frente.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Colocar "no ar" é deixar o seu programa na internet com um endereço só dele. 2) Publicar a gente faz sempre com um adulto de confiança. 3) Você é o chefe que decide o que vai no ar.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32 · 2h</span><h3>Fazer as pessoas acharem</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir como fazer o seu programa ficar fácil de achar — com um bom nome, um endereço esperto e palavras que ajudam as pessoas a encontrarem ele.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Imagine que você abriu uma sorveteria, mas escondeu ela no fundo de um beco escuro, sem placa nenhuma. Ninguém ia achar, né? Com um programa na internet é parecido: não basta colocar no ar, as pessoas precisam conseguir encontrar. Para isso, o seu projeto precisa de um nome fácil de lembrar, um endereço curtinho e palavras que digam do que ele se trata. Essas palavras são como migalhas de pão que guiam as pessoas até você. A IA é ótima para ajudar a pensar num nome legal e em palavras que combinam com o seu projeto. Mas quem escolhe o nome final é você, o chefe!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Manu tinha um site de receitas de bolo para crianças. Ela pediu ideias de nome para a IA e escolheu "Bolo Fácil Kids" — curtinho e fácil de lembrar.</p>
+      <p><b>Exemplo 2:</b> O Théo fez um jogo de dinossauros. Ele colocou palavras como "dinossauro", "jogo" e "crianças" na descrição, então quem procurava por dinossauros achava o jogo dele mais fácil.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Eu fiz um jogo sobre dinossauros para crianças. Me dê 5 ideias de nome curto e fácil de lembrar, e 5 palavras que ajudam as pessoas a encontrarem o meu jogo.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pense: do que o meu programa fala? Diga em uma frase.</li>
+        <li>Com um adulto, peça para a IA ideias de nome curto e palavras que combinam.</li>
+        <li>Leia as ideias em voz alta e escolha o nome que você mais gostou.</li>
+        <li>Escreva uma descrição curtinha dizendo do que o seu projeto se trata.</li>
+        <li>Mostre o nome e a descrição para alguém e veja se a pessoa entende de primeira.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Faça o teste do "amigo apressado": diga só o nome do seu projeto para um colega e pergunte o que ele acha que é. Se ele adivinhar, o nome está bom!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Qual nome de projeto da turma é o mais fácil de lembrar? O que faz um nome ser bom: ser curto, ser engraçado ou dizer logo do que se trata?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote o nome escolhido e 3 palavras que combinam com o seu projeto. Desenhe uma plaquinha bem chamativa com o nome dele.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Para as pessoas acharem, o projeto precisa de um nome fácil e palavras que digam do que ele é. 2) A IA ajuda a pensar nomes e palavras. 3) Você é o chefe que escolhe o nome final.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33 · 2h</span><h3>Uma página que convida</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> criar uma página de entrada bem caprichada — com um título que chama, uma frase que explica e um botão grande — que dá vontade de clicar e usar o seu programa.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>A primeira página do seu projeto é como a porta da sua casa numa festa: se ela está bonita e tem uma plaquinha de "Entre, a festa é aqui!", todo mundo quer entrar. Essa página de entrada precisa de três coisinhas: um título grande que diz o nome, uma frase curta que explica o que dá para fazer, e um botão bem visível para começar. Se a porta estiver bagunçada ou confusa, as pessoas ficam com medo de entrar. A IA pode te ajudar a escrever um título animado e uma frase que convida. Mas é você quem decide as cores, o jeitão e o que vai escrito — porque a festa é sua!</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Bia fez a página do seu app de desenhos com o título "Pinte e se Divirta!" e um botão enorme escrito "Começar a pintar". Ninguém ficava em dúvida do que fazer.</p>
+      <p><b>Exemplo 2:</b> O Caio tinha uma página confusa, com muita letra. Ele pediu ajuda da IA, deixou só uma frase ("Adivinhe o número secreto!") e um botão. Ficou bem mais convidativo.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me ajude a escrever um título curto e animado e uma frase de uma linha para a página de entrada de um jogo de adivinhar números para crianças.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pense no título: o nome do seu projeto, bem grande e visível.</li>
+        <li>Com um adulto, peça para a IA uma frase curta que explica o que dá para fazer.</li>
+        <li>Escolha UM botão principal e escreva nele o que acontece ao clicar (ex.: "Começar").</li>
+        <li>Tire o que está sobrando: quanto menos bagunça, mais convidativo.</li>
+        <li>Mostre a página para alguém e veja se a pessoa sabe onde clicar.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Faça o "teste dos 5 segundos": mostre a sua página para um colega por 5 segundos e esconda. Ele consegue dizer do que é o projeto e onde clicar? Se sim, mandou bem!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>O que faz uma página dar vontade de clicar? Vocês acham que muita coisa na tela atrapalha ou ajuda?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Desenhe um rascunho da sua página de entrada mostrando onde fica o título, a frase e o botão grande.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) A página de entrada é a porta da festa: precisa convidar. 2) Título grande, frase curta e um botão bem visível. 3) Menos bagunça deixa tudo mais fácil de usar.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34 · 2h</span><h3>Contar pros amigos</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a contar para os amigos e a família sobre o seu programa de um jeito legal — com uma frase de convite e um link, sempre com um adulto na hora de compartilhar.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>De que adianta fazer uma festa incrível se você não convida ninguém? Contar para os amigos é o convite da sua criação. Não precisa ser um discurso enorme: basta uma frase animada dizendo o que você fez e o link para abrir. É como mostrar um desenho e dizer "olha o que eu fiz, dá uma olhada!". O jeito mais legal de convidar é ter orgulho do que criou e falar com empolgação. A IA pode te ajudar a escrever uma frase de convite bacana. E lembre: mandar mensagem e link para outras pessoas é uma coisa que a gente faz com um adulto por perto, para compartilhar só com quem a gente confia.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Sofia mandou para a família: "Oi! Eu criei um jogo de memória sozinha (com a ajuda da IA). Clica no link e tenta ganhar de mim!". Todo mundo quis jogar.</p>
+      <p><b>Exemplo 2:</b> O Davi gravou um audiozinho de 10 segundos, com o pai, contando do seu site de piadas e mandou junto com o link para os primos.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me ajude a escrever uma frase curta e animada para convidar meus amigos a testarem o jogo de memória que eu criei, sem dar nenhuma informação pessoal minha.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pense no que você mais gostou no seu projeto e quer contar.</li>
+        <li>Com um adulto, peça para a IA uma frase de convite curtinha e animada.</li>
+        <li>Junte a frase com o link do seu projeto.</li>
+        <li>Com o adulto, escolham juntos para quais pessoas de confiança vão mandar.</li>
+        <li>Mande o convite e peça para a pessoa contar o que achou!</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Desenhe um "convite de papel" para a sua criação, como se fosse o convite de uma festa, com o nome do projeto e um desenho bem legal.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Qual foi a reação mais legal de alguém que você convidou? Por que a gente compartilha link só com pessoas de confiança e junto com um adulto?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote a sua frase de convite. Pense: ela mostra o orgulho que você tem do que criou?</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Contar para os amigos é o convite da sua criação. 2) Uma frase animada e o link já bastam. 3) Compartilhar link a gente faz com um adulto e só com quem confia.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35 · 2h</span><h3>Mini-lançamento</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fazer um mini-lançamento do seu programa — um momento de festa para mostrar a sua criação para a turma e para a família, com orgulho!</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Sabe quando um filme novo vai estrear e tem toda uma festa de lançamento? Você vai fazer isso com o SEU programa! Um mini-lançamento é um momento especial onde você apresenta a sua criação, mostra como ela funciona e deixa as pessoas testarem. Não é uma competição — é uma comemoração de tudo que você aprendeu e construiu. Você prepara uma fala curtinha (o que é, como você fez, o que mais gostou), abre o programa na frente de todo mundo e convida as pessoas a usarem. É a hora de brilhar e de ter muito orgulho! A IA pode ajudar a organizar a sua fala em partes, mas o palco é todo seu.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Helena montou uma mesinha com um cartaz "Lançamento do Jogo da Helena!", abriu o jogo no tablet e cada colega que passava jogava uma rodada.</p>
+      <p><b>Exemplo 2:</b> O João fez uma contagem regressiva ("3, 2, 1, no ar!") e mostrou o link do seu site de piadas aparecendo na telona da sala. Todo mundo bateu palma.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me ajude a organizar uma fala curtinha de lançamento, em 3 partes: o que é o meu programa, como eu fiz e o que eu mais gostei de criar.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Confira com um adulto se o seu programa está no ar e funcionando.</li>
+        <li>Com a IA, organize a sua fala em 3 partes: o que é, como fez e o que gostou.</li>
+        <li>Treine a fala em voz alta umas duas vezes, sem decorar, do seu jeito.</li>
+        <li>Arrume o seu cantinho de apresentação com um cartaz ou desenho.</li>
+        <li>Faça o lançamento: apresente, deixe a turma testar e aplauda os colegas também!</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Crie um "momento surpresa" no seu lançamento: uma contagem regressiva, um cartaz que se abre ou um efeito sonoro na hora de mostrar o programa no ar.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Como você se sentiu apresentando a sua criação? Qual lançamento dos colegas te deu vontade de testar na hora?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote as 3 partes da sua fala de lançamento. Desenhe você no "palco", apresentando com a turma assistindo e batendo palma.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) O mini-lançamento é uma festa para mostrar a sua criação. 2) Uma fala em 3 partes ajuda você a se organizar. 3) É hora de ter orgulho de tudo que você construiu!</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Criador avançado</h2></div>
+  <p class="mod-resumo">Você já sabe criar e mostrar pro mundo. Agora vamos virar um criador avançado! Você vai conhecer os "ajudantes automáticos" que fazem tarefas sozinhos, aprender a criar as suas próprias "habilidades" para a IA, descobrir como mudar e melhorar um programa sem quebrar, e o que fazer quando o seu projeto cresce e fica grande. No final, o grande momento: o seu projeto final no ar, apresentado por você. Continua valendo: você é o chefe, e as partes de publicar a gente faz com um adulto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36 · 2h</span><h3>Ajudantes automáticos (agentes, de forma simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> conhecer os "ajudantes automáticos" — uns assistentes de IA que conseguem fazer uma tarefa do começo ao fim sozinhos, depois que você dá a ordem.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Imagine que você tem um robozinho de brinquedo que, quando você aperta o botão, ele anda até a cozinha, pega a sua maçã e volta — tudo sozinho, sem você empurrar passo a passo. Um "ajudante automático" (os adultos chamam de agente) é mais ou menos isso, só que feito de IA. Você dá uma tarefa grande, tipo "organize estas figurinhas por cor", e ele vai fazendo os passinhos sozinho até terminar. A diferença para um chat normal é que o ajudante não só conversa: ele AGE, faz a tarefa. Mas atenção, chefe: quem manda continua sendo você. Você dá a ordem clara, ele executa, e você confere se ficou bom. É como ter um ajudante esperto que precisa de um chefe bom para guiar.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Lia pediu para um ajudante automático "separar uma lista de animais em dois grupos: os que voam e os que não voam". Ele leu a lista, pensou e devolveu os dois grupos prontinhos.</p>
+      <p><b>Exemplo 2:</b> O Bento deu a tarefa "crie 5 perguntas de quiz sobre planetas e já me diga as respostas". O ajudante fez tudo de uma vez, sem ele precisar pedir parte por parte.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Seja meu ajudante automático: pegue esta lista de animais e separe em dois grupos, os que voam e os que não voam, e me mostre os dois grupos prontos. Lista: gato, águia, peixe, borboleta, cachorro.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pense numa tarefa que tem vários passinhos (organizar, separar, criar uma lista).</li>
+        <li>Escreva a ordem bem clara, dizendo o que você quer no final.</li>
+        <li>Com um adulto, peça para o ajudante fazer a tarefa toda de uma vez.</li>
+        <li>Leia o resultado e confira: ficou do jeito que você queria, chefe?</li>
+        <li>Se faltou algo, ajuste a ordem e mande de novo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Dê ao ajudante uma tarefa de DUAS partes de uma vez só, tipo "invente um nome de robô E escreva uma frase que ele diria". Ele consegue fazer as duas?</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Qual a diferença entre só conversar com a IA e dar uma tarefa para ela fazer sozinha? Por que o chefe (você!) precisa conferir o resultado?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote uma tarefa que você deu a um ajudante automático. Desenhe um robozinho ajudante com a sua ordem escrita num balãozinho.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Um ajudante automático faz uma tarefa inteira sozinho, não só conversa. 2) Você dá a ordem clara e confere o resultado. 3) Quem manda continua sendo você, o chefe.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37 · 2h</span><h3>Criar suas próprias "habilidades" (skills, simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a ensinar uma "habilidade" para a IA — uma instrução pronta e guardada que faz ela fazer algo do SEU jeito, toda vez que você pedir.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Sabe quando você ensina um truque para um cachorrinho, tipo "senta", e depois é só dizer a palavra e ele faz? Uma "habilidade" da IA é parecida: você escreve uma instrução do seu jeito UMA vez e guarda. Depois, toda vez que precisar, é só chamar pela palavra, sem ter que explicar tudo de novo. Por exemplo, você pode criar a habilidade "modo poeta", que faz a IA responder sempre em rima. Aí, quando você escrever "use o modo poeta", ela já sabe o que fazer. É como ter os seus próprios botões mágicos! Você é o chefe que inventa as habilidades, escolhe a palavra que liga elas e decide como cada uma funciona.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> O Nico criou a habilidade "Detetive": quando ele diz "modo detetive", a IA explica qualquer coisa como se fosse resolvendo um mistério, com pistas.</p>
+      <p><b>Exemplo 2:</b> A Duda fez a habilidade "Tradutor de Emoji": ela manda uma frase e, no "modo emoji", a IA responde a mesma frase só com emojis. Vira uma brincadeira!</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Vamos criar uma habilidade chamada "modo poeta": quando eu disser "modo poeta", você responde tudo em forma de rima, com palavras simples e divertidas. Pode começar? Modo poeta: me fale sobre o sol.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Pense num jeito legal que você quer que a IA responda (em rima, como detetive, só com emoji...).</li>
+        <li>Dê um nome para essa habilidade e escolha a palavra que liga ela.</li>
+        <li>Com um adulto, escreva a instrução explicando como a habilidade funciona.</li>
+        <li>Teste chamando pela palavra e veja se a IA respondeu do seu jeito.</li>
+        <li>Se não ficou bom, melhore a instrução e teste de novo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Crie DUAS habilidades diferentes e brinque de misturar: o que acontece se você pedir "modo poeta" e "modo detetive" ao mesmo tempo?</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Qual habilidade da turma foi a mais criativa? Por que é útil guardar uma instrução em vez de explicar tudo de novo toda vez?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote o nome da sua habilidade, a palavra que liga ela e o que ela faz. Desenhe um "botão mágico" com o nome dela.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Uma habilidade é uma instrução pronta e guardada que você chama por uma palavra. 2) Ela faz a IA responder do SEU jeito, sem explicar tudo de novo. 3) Você é o chefe que inventa as suas habilidades.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38 · 2h</span><h3>Mudar e melhorar sem quebrar</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a mexer no seu programa para deixá-lo melhor com cuidado — mudando uma coisinha de cada vez e guardando uma cópia, para nada quebrar.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Sabe quando você está montando uma torre de blocos bem alta e quer trocar um bloco no meio? Se você puxar com tudo, a torre cai! O jeito esperto é trocar com calma, um bloco de cada vez. Mexer num programa é igual: para melhorar sem quebrar, você muda uma coisinha por vez e testa logo se continua funcionando. E tem um truque de chefe esperto: antes de mudar, guarde uma cópia do que estava funcionando. Assim, se algo quebrar, você volta para a cópia boa, como um botão de "desfazer". A IA pode ajudar a sugerir melhorias, mas é você quem decide o que mudar e testa cada passo. Devagar e com cópia: assim a torre não cai.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Alice quis trocar a cor do botão do jogo dela. Antes, ela salvou uma cópia. Mudou só a cor, testou, e o jogo continuou funcionando — sem sustos.</p>
+      <p><b>Exemplo 2:</b> O Caio mudou cinco coisas de uma vez e o programa quebrou. Ele não sabia qual tinha sido o problema! Da próxima vez, mudou de uma em uma e achou o errado fácil.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Quero mudar uma coisinha no meu jogo, com cuidado para não quebrar. Me ensine como guardar uma cópia antes e como testar logo depois de cada mudança.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Escolha UMA coisinha que você quer melhorar no seu programa.</li>
+        <li>Com um adulto, guarde uma cópia do que está funcionando agora.</li>
+        <li>Faça só aquela mudança, nada além dela.</li>
+        <li>Teste na hora: ainda funciona? Ficou melhor?</li>
+        <li>Se quebrou, volte para a cópia boa e tente de um jeito diferente.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Faça três melhorias seguidas no seu programa, sempre uma de cada vez, testando entre elas. Anote qual delas deixou o programa mais legal.</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Por que mudar uma coisa de cada vez ajuda a achar o problema? Já te aconteceu de algo quebrar e você não saber o porquê?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote a mudança que você fez e se funcionou. Desenhe a "torre de blocos" do seu programa, mostrando o bloquinho que você trocou com cuidado.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Para melhorar sem quebrar, mude uma coisinha de cada vez. 2) Guarde uma cópia antes, como um botão de desfazer. 3) Teste logo depois de cada mudança.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39 · 2h</span><h3>Quando o site cresce</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que acontece quando o seu projeto fica grande e cheio de coisas, e aprender truques de organização para ele continuar fácil de cuidar.</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Imagine o seu quarto: quando tem poucos brinquedos, é fácil achar tudo. Mas se você ganha um monte de brinquedos novos e joga tudo no chão, vira uma bagunça e você não acha nada! Um programa que cresce é parecido: quando ele ganha muitas telas, muitos botões e muita gente usando, ele pode ficar bagunçado e lento. O segredo dos criadores avançados é a organização: guardar as coisas parecidas em "caixinhas" (pastas), dar nomes que fazem sentido e separar cada parte. Assim, mesmo grande, fica fácil de cuidar e mais rápido para os outros usarem. A IA pode te dar ideias de como organizar. Mas é você, o chefe, que decide como arrumar a sua "casa digital".</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Bia tinha um site com 20 desenhos jogados em qualquer lugar. Ela criou "caixinhas" por tema (animais, frutas, carros) e ficou fácil achar tudo.</p>
+      <p><b>Exemplo 2:</b> O Théo viu que o jogo dele estava ficando lento porque tinha imagens enormes. Ele deixou as imagens menores e o jogo voltou a abrir rapidinho para todo mundo.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Meu projeto está ficando grande e meio bagunçado. Me dê 3 dicas simples para organizar as partes dele em caixinhas e deixar ele mais fácil de cuidar.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Olhe o seu projeto e veja o que está bagunçado ou repetido.</li>
+        <li>Pense em "caixinhas": que coisas parecidas dá para juntar num lugar só?</li>
+        <li>Com um adulto, peça ideias para a IA de como organizar essas partes.</li>
+        <li>Dê nomes que fazem sentido para cada caixinha e cada parte.</li>
+        <li>Teste o projeto de novo: ficou mais fácil de achar as coisas e mais rápido?</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>Faça o "teste do quarto arrumado": peça para um colega achar uma parte do seu projeto. Se ele achar rápido, a sua organização está ótima!</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>Por que um projeto grande precisa ser mais organizado que um pequeno? O que deixa um programa lento para as pessoas usarem?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote 3 "caixinhas" que você criaria para organizar o seu projeto. Desenhe essas caixinhas com nomes e o que vai dentro de cada uma.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) Quando cresce, o projeto pode ficar bagunçado e lento. 2) Organizar em "caixinhas" com nomes que fazem sentido resolve a bagunça. 3) Você é o chefe que arruma a sua casa digital.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40 · 2h</span><h3>Projeto final — meu programa no ar (apresentação)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> juntar TUDO que aprendeu e apresentar o seu projeto final no ar — o seu programa de verdade, na internet, mostrado por você com muito orgulho. É o grande dia!</p>
+
+    <div class="bloco"><h4>Vamos entender</h4>
+      <p>Chegou o dia mais especial de todos! O projeto final é o seu show de encerramento: você escolhe uma ideia que ama, cria o seu programa com a ajuda da IA, coloca no ar (com um adulto) e apresenta para a turma. Pode ser um joguinho, um site, um cartão animado, um quiz — o que a sua imaginação quiser. O importante é que ele esteja FUNCIONANDO na internet e que você conte a sua história: o que é, como você fez, o que a IA ajudou e, principalmente, o que você decidiu como chefe. Lembre de tudo que você aprendeu: pedir com clareza, conferir o que é importante, guardar os segredos, publicar com um adulto e melhorar sem quebrar. Você não é mais um iniciante: você é um criador! Capriche, respire fundo e brilhe. Você merece esse momento.</p>
+    </div>
+
+    <div class="bloco"><h4>Exemplos</h4>
+      <p><b>Exemplo 1:</b> A Helena criou um site de "perguntas e respostas sobre animais", publicou com a mãe e apresentou mostrando o link no ar, deixando cada colega responder uma pergunta na hora.</p>
+      <p><b>Exemplo 2:</b> O João fez um jogo da memória, contou que mudou as cores "uma de cada vez sem quebrar" e que pediu ideias de nome para a IA, mas escolheu o nome final ele mesmo, como o chefe.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Peça pra IA (com um adulto)</span><pre>Me ajude a organizar a apresentação do meu projeto final em 4 partes: o que é o meu programa, como eu fiz, o que a IA me ajudou e o que eu decidi sozinho como chefe.</pre></div>
+
+    <div class="bloco"><h4>Mão na massa (passo a passo)</h4>
+      <ul>
+        <li>Escolha a ideia do seu projeto final e crie ele com a IA, sempre com um adulto por perto.</li>
+        <li>Com um adulto, confira que o seu programa está no ar e funcionando de verdade.</li>
+        <li>Deixe a sua marca: suas escolhas, suas cores, o seu jeito de chefe.</li>
+        <li>Organize a sua fala em partes: o que é, como fez, o que a IA ajudou, o que você decidiu.</li>
+        <li>Apresente para a turma com orgulho, deixe todo mundo testar e aplauda os colegas!</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Desafio extra</h4>
+      <p>No fim da apresentação, conte a coisa mais importante que você aprendeu no curso inteiro sobre criar com a IA do jeito certo. Em uma frase: o que você leva para sempre?</p>
+    </div>
+
+    <div class="bloco"><h4>Converse com a turma</h4>
+      <p>O que você mais gostou de criar no curso? Qual projeto dos colegas te surpreendeu? O que mudou desde a primeira aula até agora?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Desenhe / Pense</h4>
+      <p>Anote o nome do seu projeto, o link dele no ar e as partes da sua fala. Desenhe você apresentando, sorrindo, com o seu programa na tela e a turma aplaudindo.</p>
+    </div>
+
+    <div class="skills"><h4>Resumo da aula</h4>
+      <p>1) O projeto final é o seu programa de verdade, no ar, juntando tudo que você aprendeu. 2) Você cria com a IA, mas deixa a sua marca de chefe. 3) Apresentar com orgulho é comemorar o criador que você se tornou!</p>
+    </div>
+  </article>
+</section>
+  <div class="modulo" style="margin-top:40px">
+    <p style="color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);padding-top:20px">
+      Apostila · Curso presencial · 80 horas (40 aulas de 2h) · por <b>Rodrigo Munhoz Reis</b> — Vibecoding com Engenharia.
+    </p>
+  </div>
+</div>
+</body>
+</html>
