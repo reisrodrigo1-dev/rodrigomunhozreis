@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { createStudent, getStudent } from "@/lib/students";
+import { skills } from "@/lib/skills";
 import { getRobots } from "@/lib/robots-db";
 import { RobotCard } from "@/components/robot-card";
 import { RobotViewer } from "@/components/robot-viewer";
@@ -275,7 +276,7 @@ function Dashboard({ user }: { user: User }) {
         >
           <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
           <span className="flex-1 text-left">Skills</span>
-          <span className="rounded-full bg-amber/20 px-1.5 text-[10px] font-bold">25</span>
+          <span className="rounded-full bg-amber/20 px-1.5 text-[10px] font-bold">{skills.length}</span>
         </Link>
         <p className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-paper/30">Robôs</p>
         {navItems.map((item) => {
