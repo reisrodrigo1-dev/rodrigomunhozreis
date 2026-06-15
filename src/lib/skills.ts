@@ -79,4 +79,23 @@ export const skills: Skill[] = [
   { id: "ima", name: "Ímã", category: "Marketing", tagline: "Lead magnets", description: "Ajuda a escolher e criar iscas que convertem e a conectá-las ao funil." },
   { id: "painel", name: "Painel", category: "Marketing", tagline: "Leitura de métricas", description: "Lê e interpreta métricas de GA4 e anúncios e recomenda a ação." },
   { id: "sintese", name: "Síntese", category: "Conteúdo", tagline: "Resumo", description: "Resume conteúdo longo (transcrição, reunião, artigo) preservando o essencial, sem inventar." },
+
+  // 🔹 Onda 3-6 — rumo aos 50
+  { id: "resgate", name: "Resgate", category: "Segurança", tagline: "Resposta a incidente", description: "Plano pra conter, comunicar e restaurar quando vaza ou quebra — e estratégia de backup pra não perder dados." },
+  { id: "lixa", name: "Lixa", category: "Desenvolvimento", tagline: "Refatoração", description: "Melhora a estrutura do código sem mudar o comportamento, com rede de segurança." },
+  { id: "mudanca", name: "Mudança", category: "Desenvolvimento", tagline: "Migração", description: "Conduz migrações (versão de framework, troca de stack, dados/schema) sem quebrar." },
+  { id: "esquema", name: "Esquema", category: "Desenvolvimento", tagline: "Modelagem de banco", description: "Estrutura os dados (schema, relações) com foco em Firestore — modela pela query." },
+  { id: "bagagem", name: "Bagagem", category: "Método & Prompts", tagline: "Contexto", description: "Monta o contexto certo pra dar à IA: o que incluir, o que cortar e como organizar." },
+  { id: "maestro", name: "Maestro", category: "Método & Prompts", tagline: "Orquestração", description: "Quebra uma tarefa grande em passos e os coordena — encadear, paralelizar e verificar." },
+  { id: "praca", name: "Praça", category: "Marketing", tagline: "Posts de rede social", description: "Escreve posts pra LinkedIn e Instagram na voz da casa, com gancho forte e sem hype." },
+  { id: "outdoor", name: "Outdoor", category: "Marketing", tagline: "Anúncios", description: "Estrutura anúncios pagos (Meta/Google): copy, público e orçamento de teste." },
+  { id: "baralho", name: "Baralho", category: "Conteúdo", tagline: "Carrosséis", description: "Estrutura carrosséis (Instagram/LinkedIn): capa-gancho, slides de desenvolvimento e CTA." },
+  { id: "linha", name: "Linha", category: "Conteúdo", tagline: "Threads", description: "Escreve threads (X/LinkedIn): gancho no primeiro post, um ponto por post, fechamento." },
+  { id: "legenda", name: "Legenda", category: "Conteúdo", tagline: "Legendas", description: "Escreve legendas/captions pra posts e vídeos — primeira linha que prende, corpo e CTA." },
+  { id: "curriculo", name: "Currículo", category: "Conteúdo", tagline: "Cursos e aulas", description: "Estrutura um curso, aula ou trilha — objetivo, módulos, progressão e prática." },
+  { id: "acordo", name: "Acordo", category: "Negócio", tagline: "Propostas", description: "Cria propostas comerciais e orçamentos — problema, solução, escopo, preço e próximos passos." },
+  { id: "pacto", name: "Pacto", category: "Negócio", tagline: "Contratos (rascunho)", description: "Rascunha contratos simples como ponto de partida (não substitui advogado)." },
+  { id: "espelho", name: "Espelho", category: "Negócio", tagline: "Cliente ideal (ICP)", description: "Define a persona e o cliente ideal — dor, contexto, objeções e onde encontrá-lo." },
+  { id: "espiao", name: "Espião", category: "Negócio", tagline: "Concorrência", description: "Analisa concorrentes (oferta, preço, posicionamento, pontos fracos) pra achar seu diferencial." },
+  { id: "balcao", name: "Balcão", category: "Negócio", tagline: "Atendimento e vendas", description: "Cria scripts de atendimento, vendas e suporte — primeiro contato, objeções, follow-up." },
 ];
