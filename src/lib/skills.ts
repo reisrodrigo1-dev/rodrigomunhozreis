@@ -69,4 +69,14 @@ export const skills: Skill[] = [
   { id: "decolagem", name: "Decolagem", category: "Negócio", tagline: "Inteligência de lançamento", description: "Ajuda a escolher modelo de negócio, monetização, preço e go-to-market, com as métricas que importam." },
   { id: "salvaguarda", name: "Salvaguarda", category: "Negócio", tagline: "Conformidade LGPD", description: "Mapeia dados pessoais, aponta gaps e gera Política de Privacidade e fluxo de consentimento." },
   { id: "termometro", name: "Termômetro", category: "Negócio", tagline: "Estimador de custos", description: "Estima o custo de infra e IA por faixa de uso e sinaliza onde a conta explode antes de escalar." },
+
+  // 🔹 Onda 2 — núcleo
+  { id: "sentinela", name: "Sentinela", category: "Segurança", tagline: "Observabilidade", description: "Monta logs, captura de erros e alertas pra saber quando algo quebra em produção." },
+  { id: "escudo", name: "Escudo", category: "Segurança", tagline: "Hardening de login", description: "Blinda a autenticação: login seguro, MFA, sessões, recuperação de senha e rate limit." },
+  { id: "ponte", name: "Ponte", category: "Desenvolvimento", tagline: "Integrações", description: "Conecta APIs externas (pagamento, e-mail, WhatsApp, webhooks) com segurança." },
+  { id: "turbo", name: "Turbo", category: "Desenvolvimento", tagline: "Performance", description: "Otimiza Core Web Vitals, bundle e queries lentas — meça antes de otimizar." },
+  { id: "lapidador", name: "Lapidador", category: "Método & Prompts", tagline: "Refino", description: "Melhora a resposta da IA por refino iterativo — diagnostica o que ficou ruim e pede o ajuste certo." },
+  { id: "ima", name: "Ímã", category: "Marketing", tagline: "Lead magnets", description: "Ajuda a escolher e criar iscas que convertem e a conectá-las ao funil." },
+  { id: "painel", name: "Painel", category: "Marketing", tagline: "Leitura de métricas", description: "Lê e interpreta métricas de GA4 e anúncios e recomenda a ação." },
+  { id: "sintese", name: "Síntese", category: "Conteúdo", tagline: "Resumo", description: "Resume conteúdo longo (transcrição, reunião, artigo) preservando o essencial, sem inventar." },
 ];
