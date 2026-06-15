@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa do Curso · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Ementa · Curso presencial · Crianças (9 a 13 anos)</div>
+<h1>IA do Zero ao Avançado — para Crianças</h1>
+<p class="sub">Descobrir, criar e aprender com a IA — do jeito divertido, seguro e com a turma toda na brincadeira.</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>Presencial</span><span>Lúdico &middot; com supervisão de adulto</span></div>
+</div></div>
+<div class="wrap">
+<section class="modulo"><div class="mod-head"><span class="mod-num">Módulo 1</span><h2>Conhecendo a IA (a amiga robô)</h2></div><p class="mod-resumo">Aqui a gente descobre o que é a IA, esse ajudante super esperto que mora dentro do computador. Vamos ver que ela sabe muita coisa, mas que às vezes erra (ela não é mágica!). E vamos aprender as regras de ouro pra brincar com ela com segurança — sempre com um adulto por perto. Quem manda é você!</p>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 1 · 2h</span><h3>O que é IA? (um ajudante super esperto)</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai saber explicar, com as próprias palavras, que a IA é um ajudante esperto feito por pessoas, que conversa com a gente, ajuda em tarefas — e que quem decide as coisas é sempre a pessoa, não a máquina.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>IA quer dizer "Inteligência Artificial": é um programa de computador que ajuda a gente a escrever, desenhar, responder perguntas e inventar histórias.</li>
+<li>Ela parece falar como gente, mas é uma máquina — tipo um robô feito de palavras que vive na tela.</li>
+<li>A IA não tem sentimentos, não tem corpo e não está viva. Ela é uma ferramenta, como um lápis bem espertinho.</li>
+<li>Onde a gente encontra IA no dia a dia: ajudante de voz, sugestões de vídeo, corretor que adivinha a palavra.</li>
+<li>A regra mais importante de todas: <b>você é quem manda</b>. A IA dá ideias, mas quem decide é você (e os adultos).</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Robô ou pessoa?": a professora lê em voz alta algumas frases (umas escritas por crianças, outras pela IA, no projetor) e a turma levanta a mão pra adivinhar quem escreveu. Surpresa garantida! Depois, todo mundo faz junto a pose do "robô esperto" e repete em coro: "A IA ajuda, mas QUEM MANDA SOU EU!".</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Oi! Voce e um ajudante super esperto. Me explique, de um jeito
+bem divertido e facil, o que e uma inteligencia artificial,
+como se eu tivesse 9 anos. Pode usar a comparacao com um animal
+ou um super-heroi pra ficar mais legal!</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://www.commonsensemedia.org/articles/ai-basics-for-kids">Common Sense Media — IA para crianças</a> — guia para famílias entenderem IA com segurança.</li>
+<li><a href="https://studio.code.org/courses">Code.org</a> — atividades lúdicas sobre computadores e IA para crianças.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a skill <b>curriculo</b> para montar a sequência da aula com objetivo, brincadeira e fechamento na medida certa para a faixa etária. A <b>forja</b> ajuda o professor a preparar os prompts de exemplo já bem simples e seguros antes da aula.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança desenha "como ela acha que é a sua amiga robô IA" (um bicho? um robô? uma nuvem falante?) e dá um nome pra ela. No fim, montamos um mural da turma com todas as amigas robôs. Combinado de ouro escrito no quadro: a amiga robô ajuda, mas a criança é a chefe.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 2 · 2h</span><h3>Como a IA aprende (ela "leu" muita coisa!)</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai entender, de um jeito simples, que a IA aprendeu lendo MUITOS textos que as pessoas escreveram — por isso ela sabe tanta coisa, mas também por isso ela às vezes confunde ou erra.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>A IA aprendeu lendo uma montanha gigante de textos, livros e páginas da internet — muito mais do que uma pessoa leria na vida inteira.</li>
+<li>Por isso ela é tipo um papagaio super esperto: junta os pedaços que leu pra formar respostas novas.</li>
+<li>Ela aprende vendo padrões: percebe quais palavras costumam vir juntas (depois de "era uma vez", costuma vir uma história).</li>
+<li>Como ela "adivinha" a próxima palavrinha — igual a um jogo de completar a frase.</li>
+<li>Por isso ela não "sabe" as coisas como a gente sabe: ela junta o que viu. Às vezes acerta, às vezes embola.</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>Jogo "Complete a frase em roda": a professora começa "Era uma vez um dragão que adorava..." e cada criança diz a próxima palavra, rapidinho, sem pensar muito. No fim sai uma história maluca! A professora explica: "A IA faz parecidinho — ela vai escolhendo a próxima palavra que combina, só que lendo muito mais do que a gente."</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Vamos brincar de completar historia! Eu comeco e voce continua
+so com UMA frase, bem divertida. Comeco assim:
+"Era uma vez um gato astronauta que sonhava em..."
+Depois me explique, facil, como voce escolheu o que escrever.</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://teachablemachine.withgoogle.com/">Teachable Machine (Google)</a> — a criança "ensina" o computador a reconhecer coisas e vê na prática como a IA aprende.</li>
+<li><a href="https://www.youtube.com/watch?v=mEsleV16qdo">Vídeo "How Machines Learn" (CGP Grey)</a> — explicação visual e divertida (assistir com a turma, legendado pelo adulto).</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>sintese</b> ajuda o professor a transformar a ideia (meio complicada) de "como a IA aprende" num roteiro bem simples e curto para crianças. Use a <b>garimpo</b> para buscar analogias e vídeos atuais e seguros antes da aula.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>"Eu sou a IA": em duplas, uma criança fala uma palavra e a outra responde a primeira palavra que combina (sol → quente; gato → mia). Anotam 5 duplas de palavras numa folha. Depois conversam em roda: "viram como a gente também adivinha o que combina? A IA faz isso lendo um montão!". Reforço: ler bastante deixa a gente esperto — igual à IA.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 3 · 2h</span><h3>Conversando com a IA pela primeira vez</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai saber abrir uma conversa com a IA (sempre com um adulto do lado), escrever um pedido, ler a resposta e pedir de novo — vivendo a primeira conversa de verdade, de forma segura e divertida.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>Conversar com a IA é como mandar mensagem para um amigo: você escreve, ela responde, e dá pra continuar.</li>
+<li>O adulto fica sempre por perto e ajuda a digitar e a ler — essa é a regra.</li>
+<li>Como escrever um pedido: dizer com clareza o que você quer (uma história, uma piada, uma ideia).</li>
+<li>Que dá pra falar "obrigado", "mais curto", "de novo" — é uma conversa, não um botão só.</li>
+<li>Coisas seguras e divertidas pra pedir: histórias, animais, jogos, adivinhações, desenhos com palavras.</li>
+<li>Combinado: a gente NUNCA conta nome completo, escola, endereço ou telefone para a IA (isso vem com calma na Aula 5, mas já entra aqui como semente).</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Conversa ao vivo no telão": com a turma escolhendo junto, a professora pede à IA uma história curtinha sobre um animal bobão. Todos veem a resposta aparecer e, em coro, escolhem o próximo pedido ("agora deixa mais engraçado!"). A turma percebe que dá pra conversar de ida e volta, igual a um bate-papo.</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Oi, ajudante esperto! Me conte uma historia bem curtinha e
+engracada sobre um elefante que tem medo de ratinho, com um
+final feliz. Pode caprichar nas partes engracadas!</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://gemini.google.com">Gemini (Google)</a> — chatbot de IA para usar junto com o adulto na demonstração.</li>
+<li><a href="https://chat.openai.com">ChatGPT (OpenAI)</a> — outra opção de chat, sempre com a conta e supervisão de um adulto.</li>
+<li><a href="https://www.commonsensemedia.org/privacy-and-internet-safety">Common Sense — segurança na internet</a> — dicas para os adultos prepararem o ambiente.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A <b>forja</b> ajuda o professor a deixar prontos vários pedidos simples e seguros para as crianças copiarem. A <b>bagagem</b> orienta o educador sobre como preparar o ambiente (conta de adulto, configurações de privacidade) antes de deixar a turma conversar.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>Em pequenos grupos, com um adulto em cada estação, cada criança faz seu primeiro pedido à IA escolhendo um tema seguro da "caixinha de ideias" (animais, piadas, super-heróis, comidas malucas). Depois pede um ajuste ("mais curto" ou "mais engraçado"). No fim, cada um conta para a turma qual foi a melhor resposta que recebeu.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 4 · 2h</span><h3>A IA pode errar! (ela não é mágica nem sabe tudo)</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai entender que a IA às vezes inventa coisas erradas com toda a confiança — e por isso a gente sempre confere com um adulto, principalmente em contas e em fatos importantes.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>A IA é esperta, mas NÃO sabe tudo e NÃO é mágica: ela pode dar respostas erradas.</li>
+<li>Às vezes ela inventa uma coisa que parece super certa, mas é mentirinha sem querer (a gente chama de "viagem da IA").</li>
+<li>Em contas de matemática ela pode escorregar — por isso a gente sempre confere com um adulto ou com a calculadora.</li>
+<li>A IA não sabe das novidades de agora (o que aconteceu hoje no mundo), porque ela aprendeu antes.</li>
+<li>Por isso a regra de ouro do detetive: <b>conferir sempre</b>. A IA dá uma pista, você e o adulto checam se está certo.</li>
+<li>Errar não é o fim do mundo: faz parte. A gente só não acredita em tudo de olhos fechados.</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Caça ao errinho": a professora faz a IA responder uma conta meio difícil e uma pergunta sobre um bicho inventado. A turma vira "detetive da verdade" e tenta descobrir, com a professora, onde a IA viajou. Quem achar o erro ganha uma estrelinha de detetive!</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Me conte 3 curiosidades sobre golfinhos. Mas atencao: se voce
+nao tiver certeza de alguma coisa, e melhor avisar "isso eu nao
+tenho certeza" do que inventar. Combinado?</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://kids.nationalgeographic.com/">Nat Geo Kids</a> — site seguro para conferir curiosidades sobre animais e ver se a IA acertou.</li>
+<li><a href="https://www.commonsensemedia.org/articles/how-to-talk-to-kids-about-ai-and-misinformation">Common Sense — IA e informação errada</a> — guia para o adulto explicar que a IA pode errar.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a <b>garimpo</b> para o professor preparar exemplos reais e checáveis de quando a IA erra, e ter a resposta certa na mão. A <b>lapidador</b> mostra ao educador como ensinar a criança a pedir de novo quando a resposta veio estranha, em vez de aceitar o erro.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>"Detetives da verdade": cada dupla recebe uma resposta da IA (uma conta e uma curiosidade) e confere se está certa usando a calculadora e o site da Nat Geo Kids (com o adulto). Marcam com carinha feliz o que está certo e carinha pensativa o que precisa conferir. Lição final em coro: "A IA pode errar — por isso eu confiro!".</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 5 · 2h</span><h3>Regras de ouro — usar IA com segurança (e com um adulto)</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai conhecer e combinar as regras de ouro para usar a IA com segurança: nunca contar dados pessoais, sempre estar com um adulto por perto, e saber o que fazer se algo aparecer estranho.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li><b>Regra 1 — Segredos são segredos:</b> nunca conte à IA seu nome completo, endereço, escola, telefone, ou senhas. Isso é só seu e da sua família.</li>
+<li><b>Regra 2 — Adulto sempre por perto:</b> a gente usa a IA junto com um adulto de confiança, principalmente em contas e perguntas sérias.</li>
+<li><b>Regra 3 — Se aparecer algo estranho ou que te deixe desconfortável, avise um adulto na hora</b> e não responda.</li>
+<li><b>Regra 4 — Confira o que é importante:</b> a IA pode errar (igual aprendemos na Aula 4), então a gente checa.</li>
+<li><b>Regra 5 — Você é quem manda:</b> a IA dá ideias, mas as decisões são suas e dos adultos. Ninguém te obriga a nada.</li>
+<li>Gentileza também na internet: tratar bem, não pedir coisas maldosas, usar pra coisas legais (aprender, brincar, criar).</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Pode ou não pode?": a professora mostra cartões com situações ("contar meu sobrenome para a IA", "pedir uma história de dragão", "dar o endereço da escola", "perguntar uma curiosidade de planeta") e a turma corre para o lado VERDE (pode) ou VERMELHO (não pode) da sala. Vira um jogo de pular e pensar ao mesmo tempo!</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Vamos criar juntos um cartaz de regras divertido! Me de 5 regras
+simples e legais para uma crianca usar a inteligencia artificial
+com seguranca, em forma de lista com emojis. Sem palavras dificeis!</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://www.commonsensemedia.org/privacy-and-internet-safety">Common Sense — Segurança e privacidade</a> — base das regras de ouro para famílias e escolas.</li>
+<li><a href="https://www.internetmatters.org/">Internet Matters</a> — dicas de segurança online para crianças e responsáveis.</li>
+<li><a href="https://www.unicef.org/parenting/child-care/staying-safe-online">UNICEF — Ficar seguro online</a> — orientações de segurança digital para crianças.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>salvaguarda</b> ajuda o professor a entender e explicar, de forma correta, por que não se compartilham dados pessoais (privacidade e LGPD) — traduzido para uma linguagem de criança. Use a <b>curriculo</b> para fechar o módulo amarrando as 5 aulas e preparando a ponte para o Módulo 2.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança cria, com a ajuda da IA e do adulto, o seu "Cartaz das Regras de Ouro" com desenhos e emojis, e assina embaixo como um juramento ("Eu prometo usar a IA com segurança e com um adulto"). Os cartazes vão para a parede da sala. Fechamento do módulo: roda de conversa sobre o que cada um mais gostou de aprender sobre a amiga robô.</p></div>
+</article>
+</section>
+
+<section class="modulo"><div class="mod-head"><span class="mod-num">Módulo 2</span><h2>Aprendendo a pedir (o jeito certo)</h2></div><p class="mod-resumo">Agora que já conhecemos a amiga robô, vamos aprender o segredo pra ela fazer exatamente o que a gente quer: pedir bem! Quando você dá um papel pra IA, conta os detalhes e explica do seu jeitinho, a resposta fica muito mais legal. E se não gostou? É só pedir de novo. Essa é a versão pra criança do método P.R.O.M.P.T.E.R.</p>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 6 · 2h</span><h3>Pedido bom x pedido ruim</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai perceber que, quando ela pede de um jeito claro e com detalhes, a IA responde muito melhor — e vai saber transformar um pedido "sem graça" num pedido caprichado.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>A IA é como um amigo que faz exatamente o que você pede: se o pedido é vago, a resposta vem sem graça.</li>
+<li>Pedido ruim: "me conte uma história". Pedido bom: "me conte uma história curta e engraçada sobre um cachorro que vira super-herói".</li>
+<li>Quanto mais a gente explica, mais a IA acerta o que a gente imaginou.</li>
+<li>Três ingredientes mágicos de um pedido bom (versão criança): dizer <b>o que</b> você quer, <b>como</b> você quer e <b>sobre o quê</b>.</li>
+<li>Não existe pedido "errado" que estrague tudo — sempre dá pra melhorar e pedir de novo.</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Pedido sem graça vs. pedido caprichado": no telão, a professora faz o pedido sem graça e mostra a resposta meio sem sal. Depois faz o pedido caprichado e a turma vê a diferença gigante. A turma grita "CAPRICHA!" toda vez que falta detalhe.</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Me conte uma historia curtinha, bem engracada, sobre um cachorro
+chamado Pipoca que descobre que tem o superpoder de falar com as
+nuvens. Quero que tenha um comeco, um meio e um final feliz!</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://gemini.google.com">Gemini (Google)</a> — para comparar o pedido sem graça e o pedido caprichado ao vivo.</li>
+<li><a href="https://chat.openai.com">ChatGPT (OpenAI)</a> — outra opção para a comparação, com o adulto.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A <b>forja</b> é a estrela deste módulo: ela constrói prompts pelo método P.R.O.M.P.T.E.R. e ajuda o professor a montar exemplos de "pedido bom" para a turma. Use a <b>lapidador</b> para mostrar como melhorar um pedido sem graça passo a passo.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança escreve um pedido "sem graça" e o troca com o colega ao lado. O colega tem a missão de "caprichar" o pedido, adicionando detalhes divertidos. Depois rodam os dois na IA (com o adulto) e veem qual ficou melhor. Entregável: o "antes e depois" do pedido.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 7 · 2h</span><h3>Dê um papel pra IA ("seja um contador de histórias")</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai aprender que, quando ela diz à IA "seja um X" (um pirata, um cientista, um contador de histórias), a IA responde no clima certinho — e vai brincar de dar vários papéis.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>Dar um papel é como dar uma fantasia pra IA vestir: ela passa a falar daquele jeito.</li>
+<li>"Seja um pirata" deixa a resposta cheia de "arrr!"; "seja um professor de ciências" deixa tudo mais explicadinho.</li>
+<li>O papel muda o jeito de falar (o vocabulário) e a graça da resposta.</li>
+<li>Como começar o pedido com o papel: "Você é um(a) ___. Agora me conte ___".</li>
+<li>Papéis divertidos e seguros pra testar: pirata, astronauta, mago, chef de comidas malucas, narrador de futebol.</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Troca de fantasia": a professora faz a MESMA pergunta ("me fale sobre a lua") mas trocando o papel da IA — primeiro como poeta, depois como pirata, depois como cientista maluco. A turma escolhe junto o próximo papel e ri das diferenças. Cada criança imita a voz do papel sorteado.</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Voce e um pirata muito divertido e cheio de "arrr!". Me explique,
+do jeito pirata, por que o ceu fica azul. Pode usar palavras de
+pirata e ser bem engracado!</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://gemini.google.com">Gemini (Google)</a> — ótimo para testar diferentes papéis na mesma pergunta.</li>
+<li><a href="https://claude.ai">Claude (Anthropic)</a> — responde muito bem quando recebe um papel, com supervisão do adulto.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A <b>forja</b> mostra que "dar um papel" é a primeira letra do método (o "P" de Papel) — use-a para preparar exemplos de papéis seguros e divertidos. A <b>claquete</b> pode inspirar papéis de personagens cativantes (como num roteiro) para deixar a aula mais teatral.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>"Sorteio de papéis": cada criança sorteia um papel de um potinho (pirata, astronauta, mago, chef maluco) e faz a IA responder uma pergunta nesse personagem. Depois lê a resposta em voz alta imitando o personagem. A turma adivinha qual era o papel só pelo jeito da resposta.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 8 · 2h</span><h3>Conte os detalhes (quanto mais explica, melhor)</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai aprender que dar detalhes (cor, tamanho, lugar, clima da história) deixa a resposta muito mais parecida com o que ela imaginou — e vai treinar a "encher de detalhes" um pedido.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>A IA não adivinha o que está na sua cabeça: se você não conta, ela inventa do jeito dela.</li>
+<li>Detalhes que ajudam muito: como é o personagem, onde a história acontece, o tamanho (curtinha ou longa), o clima (engraçado, aventura, suspense).</li>
+<li>As perguntinhas mágicas que viram detalhes: Quem? Onde? Quando? Como? (sem dados pessoais — só da história!).</li>
+<li>Cuidado importante: detalhes são sobre a história e as ideias, NUNCA sobre você (nome, escola, casa).</li>
+<li>Mais detalhes = resposta mais perto do que você imaginou.</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Vai enchendo de detalhe": a professora começa com "desenhe com palavras um monstro" e a turma vai gritando detalhes ("verde!", "com 3 olhos!", "que solta glitter!", "numa floresta de doces!"). A cada detalhe, ela pede de novo à IA e a descrição vai ficando mais incrível. A turma vê o pedido crescendo.</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Descreva, com muitos detalhes divertidos, um monstro do bem:
+ele e verde, tem 3 olhos, solta glitter quando fica feliz e mora
+numa floresta feita de doces. Conte como ele e e o que ele faz
+de bom para os outros bichinhos.</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://gemini.google.com">Gemini (Google)</a> — para ir adicionando detalhes e ver a resposta melhorar.</li>
+<li><a href="https://quickdraw.withgoogle.com/">Quick, Draw! (Google)</a> — jogo de IA que adivinha desenhos: mostra como detalhes ajudam a máquina a entender.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A <b>bagagem</b> é a skill dos detalhes (o "contexto"): ela ensina o que vale a pena contar e o que cortar — perfeito para o professor traduzir isso em "conte os detalhes da história". A <b>forja</b> ajuda a montar pedidos já recheados de detalhes como modelo.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>"Ficha do personagem": cada criança preenche uma fichinha (nome do personagem, aparência, lugar, poder, clima da história) e depois transforma a ficha num pedido cheio de detalhes para a IA. Compara a resposta com o que tinha imaginado. Quem acertar mais perto do que imaginou ganha o título de "Mestre dos Detalhes".</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 9 · 2h</span><h3>Peça do seu jeito (engraçado? curto? em lista?)</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai aprender a pedir a resposta no formato e no clima que ela quiser — curta ou longa, engraçada ou misteriosa, em lista ou em historinha — descobrindo que ela tem o controle do "jeitão" da resposta.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>Você pode escolher o "jeitão" da resposta: tamanho, clima e formato.</li>
+<li>Tamanho: "bem curtinha, só 3 frases" ou "uma história grande e cheia de aventura".</li>
+<li>Clima: engraçada, misteriosa, fofa, cheia de ação — é só pedir.</li>
+<li>Formato: em lista, em rima/poema, em historinha, em diálogo de personagens.</li>
+<li>Como pedir o jeito: "me responda em forma de lista" ou "faça em rima" ou "deixe bem curtinho".</li>
+<li>Você é o diretor: a IA é o ator que faz do jeito que você pedir.</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Roleta do jeitão": a professora gira uma roleta (ou sorteia) com os jeitos — "em rima", "bem curtinho", "em lista", "estilo suspense" — e pede a MESMA coisa à IA naquele jeito. A turma se diverte vendo o mesmo assunto ficar totalmente diferente só mudando o jeitão.</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Me ensine 4 curiosidades sobre dinossauros, mas faca assim:
+em forma de LISTA, bem curtinha, e que cada item rime!
+Pode ser engracado.</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://gemini.google.com">Gemini (Google)</a> — para testar a mesma ideia em vários formatos.</li>
+<li><a href="https://claude.ai">Claude (Anthropic)</a> — segue bem o formato pedido (lista, rima, diálogo), com o adulto.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A <b>forja</b> mostra que "pedir do seu jeito" é o formato de saída do método (o "T" de Texto de saída) — use-a para preparar exemplos de formatos divertidos. A <b>baralho</b> ou a <b>claquete</b> inspiram formatos lúdicos (listas, mini-roteiros) para a turma experimentar.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>"Mesma ideia, 3 jeitos": cada criança escolhe um tema seguro (um animal, um planeta, uma fruta) e pede para a IA falar sobre ele de TRÊS jeitos diferentes (ex.: curtinho, em rima e em lista). Cola as três respostas numa folha e escolhe a favorita, explicando por quê. Entregável: o "cardápio de jeitões" da criança.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 10 · 2h</span><h3>Não gostou? Peça de novo!</h3></div>
+<p class="objetivo"><b>Objetivo:</b> a criança vai aprender que, quando a resposta não ficou boa, ela não precisa desistir nem começar tudo do zero — é só pedir um ajustinho ("mais engraçado", "mais curto", "troca o final") até ficar do jeito que ela quer.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>Quase nunca a primeira resposta sai perfeita — e tudo bem! Dá pra melhorar conversando.</li>
+<li>Pedir de novo é a parte mais poderosa: a IA arruma em cima do que já fez, sem recomeçar do zero.</li>
+<li>Palavrinhas mágicas do ajuste: "mais curto", "mais engraçado", "troca o nome", "muda o final", "deixa mais fácil".</li>
+<li>Como dar uma dica do que mudar, em vez de só falar "não gostei": diga o que você quer diferente.</li>
+<li>Quem manda é você: você vai ajustando até a resposta ficar do seu jeito.</li>
+<li>Fechamento do módulo: juntar tudo — pedir bem, dar um papel, contar detalhes, pedir do seu jeito e ajustar.</li>
+</ul></div>
+<div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Vai melhorando!": a professora pega uma história meio sem graça que a IA fez e, com a turma, vai pedindo ajustes um de cada vez ("deixa mais engraçado", "põe um dragão", "muda o final"). A história vai ficando incrível diante dos olhos. A turma percebe: não precisa jogar fora, é só caprichar pedindo de novo.</p></div>
+<div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Gostei da sua historia, mas quero melhorar! Deixe ela mais
+engracada, coloque um dragao atrapalhado no meio e mude o final
+para uma grande festa. Pode manter o resto que ja estava legal!</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://gemini.google.com">Gemini (Google)</a> — para praticar os ajustes seguidos na mesma conversa.</li>
+<li><a href="https://claude.ai">Claude (Anthropic)</a> — ótimo para conversas de melhorar aos poucos, com o adulto.</li>
+</ul></div>
+<div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A <b>lapidador</b> é a skill deste tema (o "R" de Refino): ela ajuda o professor a ensinar a criança a diagnosticar o que ficou ruim e pedir o ajuste certo. Use a <b>curriculo</b> para fechar o Módulo 2 amarrando tudo o que a turma aprendeu sobre pedir bem.</p></div>
+<div class="bloco pratica"><h4>Mão na massa</h4><p>"Desafio do ajuste": cada criança parte de uma resposta meio sem graça e tem que melhorá-la usando SÓ ajustinhos (proibido recomeçar). Em no máximo 3 pedidos, precisa deixar a resposta bem melhor. No fim, junta tudo do módulo: faz um último pedido completo (com papel + detalhes + jeitão) e ajusta até ficar perfeito. Entregável final: a "obra-prima" da criança, feita com a amiga robô.</p></div>
+</article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>IA pra aprender e estudar</h2></div>
+  <p class="mod-resumo">Aqui a IA vira a sua professora particular. A gente usa ela pra entender as coisas de verdade, tirar dúvidas e ficar craque no que você gosta — sem nunca colar. Colar é enganar você mesmo; aprender é poder de verdade!</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 2h</span><h3>A IA como professora particular</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> descobrir que a IA pode explicar qualquer coisa do seu jeitinho — com calma, com exemplos e quantas vezes você precisar — pra você entender, não pra fazer por você.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Uma professora particular explica até você entender, e nunca tem pressa nem fica brava por você perguntar de novo.</li>
+      <li>A IA é igual: você pode pedir "explica de novo, mais fácil" quantas vezes quiser.</li>
+      <li>O segredo é pedir explicação, não a resposta pronta. A gente quer entender o caminho!</li>
+      <li>Sempre com um adulto por perto, e a IA pode errar — por isso a gente confere.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Professora-camaleão": a turma escolhe um assunto (ex.: por que o céu é azul). Peçam pra IA explicar de 3 jeitos — para uma criança de 5 anos, com uma comparação de comida, e em forma de pergunta. A turma vota qual explicação foi a mais clara e por quê.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Seja minha professora paciente. Me explique por que o céu é azul
+de um jeito bem simples, como se eu tivesse 8 anos, usando um
+exemplo do dia a dia. Depois me faça 1 perguntinha pra ver se eu
+entendi.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.commonsensemedia.org/articles/chatgpt-and-beyond-how-to-handle-ai-in-schools">Common Sense Media — IA e estudo</a> — guia pra famílias usarem IA pra aprender.</li>
+      <li><a href="https://www.khanmigo.ai/">Khanmigo (Khan Academy)</a> — tutor de IA feito pra ensinar, não dar resposta pronta.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a skill <b>curriculo</b> pra montar a progressão da aula e a skill <b>forja</b> pra ensinar a turma a fazer bons pedidos ("explica como se eu tivesse X anos"). Modele em voz alta: pensar antes de perguntar é metade do aprendizado.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança escolhe uma curiosidade ("por que sentimos cócegas?", "como o avião voa?") e pede pra IA explicar fácil. Depois conta pra um colega com as próprias palavras — se conseguiu explicar, entendeu de verdade!</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 2h</span><h3>Tirar dúvidas de lição (do jeito certo, sem colar)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a usar a IA pra entender a lição quando você empaca — pedindo dica e explicação do passo, nunca a resposta copiada.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Colar é pedir a resposta pronta e copiar. Isso engana o professor e, pior, engana você.</li>
+      <li>O jeito certo: "estou travado aqui, me dá uma dica pra eu continuar sozinho".</li>
+      <li>Peça pra IA explicar o passo, mostrar um exemplo parecido, ou conferir se a SUA resposta está certa.</li>
+      <li>A lição é sua. A IA é só a treinadora ao lado do campo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Certo ou cola?": o educador mostra 5 pedidos no telão (ex.: "faz minha redação" vs. "me dá uma dica pra começar minha redação"). A turma levanta a mão pra dizer qual é COLA e qual é APRENDER. Discutam cada um.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Estou fazendo um exercício de matemática e travei. NÃO me dê a
+resposta. Me dê só uma dica de qual é o próximo passo pra eu tentar
+sozinho. O exercício é: 24 + 18.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.khanacademy.org/">Khan Academy</a> — exercícios pra praticar de verdade depois da dica.</li>
+      <li><a href="https://www.commonsense.org/education/articles/chatgpt-and-beyond-how-to-handle-ai-in-the-classroom">Common Sense Education — IA na sala</a> — diferença entre ajudar e colar.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>lapidador</b> ajuda a turma a transformar um pedido "colão" num pedido "aprendedor". Combine uma regra de ouro com a turma: "a IA me dá a dica; a resposta eu escrevo".</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança traz uma dúvida real de lição (ou uma do educador). Pedem só uma DICA pra IA, resolvem sozinhas e depois pedem pra IA conferir. Comemorem quem resolveu com a própria cabeça!</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 2h</span><h3>Aprender qualquer coisa que você curte</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA pra mergulhar fundo num hobby ou paixão (dinossauros, futebol, espaço, música) e virar um pequeno especialista no assunto.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A IA sabe um pouco de quase tudo — então é ótima pra explorar o que VOCÊ ama.</li>
+      <li>Você pode pedir curiosidades, linha do tempo, comparações e "perguntas que eu nem sabia que podia fazer".</li>
+      <li>Aprender por curiosidade é o aprendizado que mais gruda na cabeça.</li>
+      <li>Confira fatos importantes em outro lugar — a IA às vezes inventa (a gente chama de "viagem da IA").</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Especialista por um dia": cada criança vira especialista no seu tema favorito. Ela faz 3 perguntas pra IA e monta uma mini-apresentação de 1 minuto com a curiosidade mais incrível que descobriu pra contar pra turma.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Eu amo dinossauros. Me conte 3 curiosidades surpreendentes sobre
+dinossauros, em linguagem fácil. No final, me sugira 1 pergunta
+legal que eu poderia te fazer pra aprender mais.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://kids.nationalgeographic.com/">Nat Geo Kids</a> — pra conferir e ver fotos do que aprendeu.</li>
+      <li><a href="https://www.dkfindout.com/us/">DK Find Out!</a> — enciclopédia infantil pra checar fatos.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a skill <b>garimpo</b> como exemplo de "checar fontes": mostre que gente grande também confere o que a IA diz antes de acreditar. Vira hábito desde cedo.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>A turma monta um "Mural dos Especialistas": cada criança escreve num papel a curiosidade mais legal que descobriu com a IA e cola na parede. No fim, todo mundo aprendeu sobre os temas dos colegas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 2h</span><h3>Resumir histórias e textos</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a usar a IA pra resumir um texto e entender melhor o principal — e perceber que ler o texto inteiro ainda é importante.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Resumir é contar o mais importante em poucas palavras, sem perder a ideia central.</li>
+      <li>A IA pode ajudar a achar a ideia principal — mas o resumo só vale se você leu e entendeu antes.</li>
+      <li>Truque legal: leia, faça seu resumo e peça pra IA comparar com o dela. Você acertou o principal?</li>
+      <li>Resumo não substitui a leitura — é um ajudante pra organizar a cabeça.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Duelo de resumos": o educador lê um conto curto em voz alta. As crianças fazem seu próprio resumo de 1 frase. Depois pedem o resumo da IA do mesmo conto e comparam: quem pegou melhor a ideia principal?</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Vou colar uma fábula curta. Primeiro me diga qual é a ideia
+principal em 1 frase. Depois me faça 2 perguntas pra ver se eu
+entendi a história. Aqui está a fábula: [colar a fábula].</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.dominiopublico.gov.br/">Domínio Público</a> — fábulas e contos gratuitos pra usar.</li>
+      <li><a href="https://www.fundacionemmanuelmounier.org/">Contos da Carochinha (domínio público)</a> — histórias curtas pra praticar resumo.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>sintese</b> mostra como resumir sem inventar e sem perder o essencial. Reforce com a turma: o bom resumo é fiel ao texto, não uma versão "viajada".</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança escolhe um livro que já leu e dita 3 frases sobre ele. Pede pra IA transformar num resuminho caprichado pra "vender" o livro a um colega. Quem ficou com vontade de ler o do amigo?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 2h</span><h3>Praticar matemática e leitura com a IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> transformar a IA num "treinador" que cria exercícios e desafios na medida certa pra você praticar matemática e leitura — e melhorar de verdade.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A IA pode criar exercícios infinitos no seu nível: mais fáceis ou mais difíceis, como você pedir.</li>
+      <li>Em matemática, peça que ela confira sua resposta e explique o erro — errar é parte de aprender.</li>
+      <li>Em leitura, peça textinhos divertidos com perguntas no fim.</li>
+      <li>Você faz, ela corrige e ensina. Praticar é o que deixa a gente bom em algo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Treino de chefão": como num videogame, a turma começa no nível fácil e pede pra IA criar contas. A cada acerto, sobem de fase ("agora mais difícil!"). Quem chega no nível chefão da matemática?</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Quero treinar tabuada do 7. Me dê 5 continhas, uma de cada vez.
+Espere minha resposta antes da próxima. Se eu errar, me explique
+com carinho onde foi o erro, sem dar logo a resposta.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.khanacademy.org/math">Khan Academy Matemática</a> — pra praticar com correção automática.</li>
+      <li><a href="https://pt.duolingo.com/">Duolingo</a> — treino de leitura e idiomas em formato de jogo.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>prova</b> inspira a ideia de "casos de teste": peça pra IA criar exercícios que cobrem do fácil ao difícil. Use a <b>curriculo</b> pra graduar a dificuldade por idade.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Em duplas, uma criança pede um desafio de leitura pra IA (um textinho com pergunta) e a outra responde. Depois trocam. No fim, cada dupla mostra qual texto foi o mais engraçado que a IA criou.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>IA pra criar</h2></div>
+  <p class="mod-resumo">Agora a diversão fica ainda maior: vamos inventar histórias, personagens, mundos, quadrinhos e jogos com a IA! Aqui você é o chefe da criação — a IA só ajuda a tirar as suas ideias da cabeça e colocar no mundo.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 2h</span><h3>Inventar histórias com a IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> criar histórias incríveis junto com a IA, onde VOCÊ comanda a aventura e a IA escreve seguindo suas ideias.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Toda história tem começo, meio e fim — e um problema pra resolver.</li>
+      <li>Quanto mais detalhes você der (quem, onde, o que acontece), mais a história fica com a SUA cara.</li>
+      <li>Você pode mudar o rumo a qualquer momento: "agora aparece um dragão!".</li>
+      <li>A ideia é sua; a IA é a sua máquina de escrever mágica.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Aventura escolha seu caminho": a turma cria uma história juntos. A cada parágrafo, o educador pergunta "e agora, o que acontece?" e a turma vota entre 2 ideias. A IA escreve o próximo trecho seguindo o voto.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Vamos inventar uma história juntos. O herói é um gato astronauta
+chamado Pipoca que tem medo de água. Escreva só o começo (um
+parágrafo) e pare. Depois eu te digo o que acontece em seguida.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://storyweaver.org.in/pt-br">StoryWeaver</a> — histórias infantis gratuitas pra inspirar.</li>
+      <li><a href="https://www.bookcreator.com/">Book Creator</a> — pra montar a história num livrinho de verdade.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>claquete</b> ensina estrutura narrativa (gancho, meio, fim) de um jeito simples. Reforce que a IA escreve melhor quando a criança dá a direção, parágrafo a parágrafo.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança cria sua própria história em 3 partes (começo, meio, fim), comandando a IA. No fim, lê o trecho favorito em voz alta. Guardem as histórias — viram material das próximas aulas!</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 2h</span><h3>Criar personagens e mundos</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> dar vida a personagens com personalidade e inventar mundos completos pra suas histórias acontecerem.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Personagem bom tem nome, jeito de ser, um sonho e um medo — isso deixa ele "vivo".</li>
+      <li>Um mundo precisa de regras: tem magia? Tem robôs? Como é o clima, a comida, as casas?</li>
+      <li>A IA pode ajudar a inventar detalhes, mas a alma do personagem vem de você.</li>
+      <li>Você pode entrevistar seu próprio personagem pra conhecê-lo melhor!</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Entrevista com o personagem": uma criança inventa um personagem e pede pra IA "fingir ser" ele. A turma faz perguntas ("qual sua comida favorita? do que você tem medo?") e a IA responde no papel do personagem.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Me ajude a criar um personagem. Ele se chama Zilá, é uma robô
+jardineira gentil que sonha em ver o oceano. Descreva como ela é,
+seu jeitinho e o mundo onde ela mora, em poucas frases bem
+criativas.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.canva.com/pt_br/criar/personagens/">Canva — criação de personagens</a> — pra desenhar/montar a ficha do personagem.</li>
+      <li><a href="https://scratch.mit.edu/">Scratch</a> — pra dar vida e movimento ao personagem depois.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>espelho</b> (que monta personas) inspira o exercício de dar "dor, sonho e medo" a um personagem. Mostre que personagens marcantes têm desejos claros.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança cria a "ficha" de um personagem (nome, sonho, medo, mundo) com ajuda da IA e desenha ele numa folha. Montem uma galeria de personagens da turma.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 2h</span><h3>A IA que desenha (imagens!)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> descobrir que existe IA que cria desenhos a partir de palavras — e aprender a descrever bem a imagem que você imagina.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Algumas IAs viram suas palavras em imagens. Quanto melhor você descreve, melhor sai o desenho.</li>
+      <li>Diga o quê, onde, de que cor, com qual sentimento e em qual estilo (cartoon, aquarela...).</li>
+      <li>A IA imita estilos, mas não copia pessoas reais — a gente cria coisas novas e gentis.</li>
+      <li>Use sempre com um adulto: ele abre a ferramenta e ajuda a escolher palavras seguras.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Telefone sem fio de desenho": uma criança descreve em segredo uma cena pro adulto digitar na IA de imagem. Quando a imagem aparece, a turma tenta adivinhar o que ela tinha pedido. Combina com o desenho dela?</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Desenhe um gato astronauta laranja flutuando no espaço, sorrindo,
+com estrelinhas coloridas ao redor, em estilo de desenho animado
+alegre e fofo.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://quickdraw.withgoogle.com/">Quick, Draw! (Google)</a> — joguinho que mostra a IA reconhecendo desenhos.</li>
+      <li><a href="https://www.autodraw.com/">AutoDraw (Google)</a> — IA que ajuda a desenhar, segura e gratuita.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>forja</b> (montar bons prompts) brilha aqui: ensine a turma a descrever imagem com o esqueleto "o quê + onde + cor + estilo + sentimento". O adulto sempre opera a ferramenta de imagem.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança descreve o personagem que criou na Aula 17 e o adulto gera a imagem. Comparem com o desenho feito à mão: o que ficou diferente? Vale colocar os dois lado a lado!</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 2h</span><h3>Fazer quadrinhos e revistas</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> juntar histórias, personagens e imagens pra montar uma historinha em quadrinhos de verdade.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Quadrinho conta história em quadros (cenas) com balões de fala.</li>
+      <li>A IA ajuda a escrever os diálogos curtos e a dividir a história em 3 ou 4 quadros.</li>
+      <li>Cada quadro mostra um momento: começo, problema, solução.</li>
+      <li>Você desenha, recorta ou usa imagens — e a IA ajuda com as falas.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Quadrinho relâmpago": em grupo, pegem uma história curta e peçam pra IA dividir em 4 quadros com uma fala em cada. Depois a turma desenha rapidinho cada quadro num papel dobrado em 4.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Transforme esta historinha em um quadrinho de 4 quadros. Em cada
+quadro, descreva a cena em 1 frase e escreva 1 fala curta para um
+balão. A história é: a robô Zilá finalmente chega ao oceano.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.canva.com/pt_br/criar/historias-em-quadrinhos/">Canva — quadrinhos</a> — modelos gratuitos pra montar a HQ.</li>
+      <li><a href="https://www.makebeliefscomix.com/">MakeBeliefsComix</a> — criador de quadrinhos online gratuito.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>baralho</b> (estruturar carrosséis, "1 ideia por slide") ajuda a pensar "1 ideia por quadro". Reforce: cada quadro avança a história um pouquinho.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança transforma a história que criou no Módulo 4 num quadrinho de 4 quadros. No fim, montem uma "revista da turma" com todas as HQs juntas — capa feita por quem quiser!</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 2h</span><h3>Inventar jogos e brincadeiras</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA pra inventar jogos, desafios e brincadeiras novas — e jogar de verdade com a turma, fechando o curso com chave de ouro.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Todo jogo tem regras, um objetivo e um jeito de ganhar — a IA ajuda a criar isso.</li>
+      <li>Você pode pedir caça-palavras, adivinhas, desafios de pista e brincadeiras de roda.</li>
+      <li>Teste o jogo: se for chato ou confuso, peça pra IA ajustar as regras.</li>
+      <li>O melhor jogo é o que VOCÊ inventa e a turma se diverte jogando junto.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Caça ao tesouro da IA": o educador pede pra IA criar 5 adivinhas fáceis que viram pistas pela sala. As crianças resolvem cada adivinha pra achar a próxima pista até o "tesouro" (pode ser um certificado do curso!).</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Invente uma brincadeira divertida para uma turma de crianças
+jogar na sala, sem precisar de nada além do corpo e da voz.
+Explique as regras em passos bem simples e diga como se ganha.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://scratch.mit.edu/">Scratch</a> — pra transformar a ideia num jogo no computador depois.</li>
+      <li><a href="https://code.org/">Code.org</a> — jogos e lógica de programação pra crianças, gratuito.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>brainstorming</b> ajuda a turma a explorar várias ideias de jogo antes de escolher uma. Reforce o ciclo "inventar, testar, melhorar" — é assim que jogo bom nasce.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Em grupos, cada equipe inventa uma brincadeira com a IA, testa rapidinho e ensina pra turma. A turma vota a brincadeira mais divertida — e todo mundo joga junto pra encerrar o curso!</p></div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>IA que vê, ouve e fala</h2></div>
+  <p class="mod-resumo">Vamos brincar com imagem, voz e desenhos da IA, criando coisas legais — sempre com um adulto por perto e checando o que é verdade.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 2h</span><h3>A IA que enxerga (mostre um desenho!)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> descobrir que algumas IAs conseguem "olhar" uma foto ou um desenho e dizer o que veem — e perceber que às vezes elas erram.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Existem IAs que recebem uma imagem e tentam descrever o que está nela.</li>
+      <li>Ela não enxerga de verdade como nós: ela compara com milhões de figuras que já viu.</li>
+      <li>Por isso ela pode confundir um gato com um cachorro, ou inventar um detalhe que não existe.</li>
+      <li>Regra de ouro: a gente sempre confere com os próprios olhos se a IA acertou.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Cada criança faz um desenho bem simples (um animal, uma casa, um robô). Com um adulto, tiram uma foto e mostram pra IA, pedindo: "o que você vê neste desenho?". A turma compara o que a IA falou com o desenho de verdade e dá uma "nota de acerto" de 0 a 10. Vale rir dos erros engraçados!</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Esta é uma foto de um desenho que eu fiz. O que voce ve nele?
+Se nao tiver certeza, pode dizer "nao tenho certeza".</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://gemini.google.com/">Google Gemini</a> — assistente de IA que aceita foto e descreve a imagem (use a conta do adulto).</li>
+      <li><a href="https://www.commonsensemedia.org/articles/ai">Common Sense Media — IA para famílias</a> — guia para adultos sobre usar IA com crianças com segurança.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a skill <b>bagagem</b> pra preparar o contexto certo: mostre uma foto bem iluminada e enquadrada, porque imagem ruim faz a IA errar mais. Bom material de entrada = resposta melhor.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Em duplas, troquem os desenhos e tentem adivinhar como a IA descreveria o desenho do colega antes de mostrar pra ela. Depois testem e vejam quem chegou mais perto da resposta da IA.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 2h</span><h3>A IA que faz desenhos pra você</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender que dá pra pedir uma imagem pra IA com palavras, e que quanto melhor a gente descreve, melhor fica o desenho.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Algumas IAs criam imagens novas a partir de uma frase (chamamos isso de "prompt").</li>
+      <li>Descrever bem ajuda: dizer o quê, a cor, o lugar e o clima da cena.</li>
+      <li>A IA inventa a imagem; ela não é uma foto real de algo que existe.</li>
+      <li>Pedimos só coisas legais e gentis: animais, paisagens, robôs simpáticos, super-heróis inventados por você.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Jogo do "antes e depois": primeiro a criança pede um desenho com uma frase curtinha ("um gato"). Depois melhora a frase ("um gato laranja de óculos, sentado numa nuvem azul, estilo desenho animado"). A turma compara as duas imagens e percebe como detalhes mudam tudo.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Desenhe um robo simpatico e colorido brincando com um cachorro
+num parque ensolarado, estilo desenho animado, bem alegre.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://gemini.google.com/">Google Gemini</a> — gera imagens a partir de texto (na conta do adulto).</li>
+      <li><a href="https://www.bing.com/images/create">Image Creator (Microsoft / DALL·E)</a> — cria imagens a partir de uma frase, com filtros de segurança.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>forja</b> ensina a montar prompts melhores. Para crianças, simplifique: peça pra elas responderem "o quê? + onde? + de que cor? + qual clima?" e juntem tudo numa frase. Vira um prompt naturalmente.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança cria a imagem de uma "criatura inventada" só dela, dá um nome e escreve uma frase contando o que essa criatura gosta de fazer. Guardem as imagens para o mini-projeto da Aula 25.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 2h</span><h3>A IA que conversa por voz</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> experimentar falar com a IA e ouvir a resposta, entendendo que ela transforma voz em texto e texto em voz.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A IA pode te ouvir (ela escreve o que você falou) e pode responder falando.</li>
+      <li>Falar devagar e com clareza ajuda a IA a entender melhor.</li>
+      <li>A voz dela é "fabricada" pelo computador — não é uma pessoa de verdade do outro lado.</li>
+      <li>Nunca contamos segredos, endereço, telefone ou senha pra IA, nem falando nem escrevendo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Telefone sem fio com a IA": a criança fala uma frase divertida por voz e vê se a IA escreveu certo. Depois testam falar rápido, baixinho e bem claro, pra descobrir o que ajuda a IA a entender. Tudo no microfone do aparelho do adulto.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Vou falar com voce por voz. Por favor, responda devagar e bem
+simples, como se eu tivesse 10 anos. Me conte uma curiosidade
+legal sobre os planetas.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://gemini.google.com/">Google Gemini</a> — tem modo de voz no app (use o aparelho do adulto).</li>
+      <li><a href="https://www.commonsensemedia.org/articles/parents-ultimate-guide-to-voice-assistants">Common Sense — guia de assistentes de voz</a> — dicas para adultos sobre privacidade e voz.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a skill <b>lapidador</b> como modelo: se a resposta falada sair complicada demais, ensine a criança a pedir "fala de novo, mais simples e mais curto". Refinar a resposta é uma habilidade.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança escolhe uma pergunta curiosa (ex.: "por que o céu é azul?") e faz por voz. Anota num papel a resposta com as próprias palavras e marca se entendeu de primeira ou precisou pedir "mais simples".</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 2h</span><h3>A IA com fotos e figuras</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA para conversar sobre uma foto ou figura — pedir ideias, perguntas e histórias a partir de uma imagem — com cuidado e segurança.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Dá pra mostrar uma figura pra IA e pedir ideias: "que história cabe aqui?", "que perguntas eu poderia fazer sobre isso?".</li>
+      <li>Usamos imagens seguras: desenhos da turma, foto de um brinquedo, de uma planta, de um livro.</li>
+      <li>Não mostramos fotos de pessoas (nem da gente, nem dos colegas) sem combinar com o adulto.</li>
+      <li>A IA pode descrever errado: sempre conferimos se bate com a figura de verdade.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Detetive da figura": o adulto mostra à IA uma foto segura (um animal, uma paisagem, um objeto curioso) e a turma pede que a IA crie 3 perguntas de detetive sobre a imagem. As crianças respondem essas perguntas olhando a figura e checam se as pistas da IA fazem sentido.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Esta e a foto de um objeto. Me faca 3 perguntas curiosas e
+seguras sobre ele, do tipo que um detetive faria. Nao precisa
+adivinhar nada que voce nao tenha certeza.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://gemini.google.com/">Google Gemini</a> — aceita imagem e conversa sobre ela (conta do adulto).</li>
+      <li><a href="https://www.commonsensemedia.org/privacy-and-internet-safety">Common Sense — segurança e privacidade</a> — orientações para adultos sobre fotos e dados de crianças.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>salvaguarda</b> trata de privacidade e dados pessoais. Aproveite para uma conversa simples: foto de rosto é dado pessoal — combine a regra "nada de fotos de pessoas na IA sem permissão do adulto".</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada dupla escolhe uma figura segura (de um livro ou desenho), pede 3 perguntas à IA e monta um "cartão-mistério": a figura de um lado, as 3 perguntas do outro, pra desafiar outra dupla.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 2h</span><h3>Mini-projeto — um cartão ou pôster com IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> juntar tudo do módulo e criar, com a IA, um cartão ou pôster bonito (imagem + frase) pra presentear alguém ou enfeitar a sala.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Um bom cartão tem uma imagem legal + uma frase curta e gentil.</li>
+      <li>A imagem a gente pede pra IA; a frase a gente escreve com as próprias palavras (a IA só ajuda com ideias).</li>
+      <li>Planejar antes ajuda: pra quem é o cartão? qual mensagem? qual cena na imagem?</li>
+      <li>Conferimos no fim: a imagem ficou segura e gentil? a frase está do jeito que eu quero?</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>O educador mostra um exemplo pronto na tela: pede uma imagem ("um balão de festa colorido num céu de estrelas") e escreve uma frase ("Você é incrível!"). A turma vê as etapas — pensar, pedir a imagem, escolher a frase, montar — e depois faz a sua.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Desenhe uma imagem alegre e colorida para um cartao de
+"parabens" para um amigo: bem festiva, estilo desenho animado.
+Depois me de 3 ideias de frases curtas e gentis para o cartao.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.bing.com/images/create">Image Creator (Microsoft / DALL·E)</a> — cria a imagem do cartão a partir da frase.</li>
+      <li><a href="https://www.canva.com/">Canva</a> — junta a imagem e o texto e deixa o cartão/pôster bonito (versão gratuita, com adulto).</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>As skills <b>atelier</b> e <b>canone</b> falam de bom design (contraste, espaço, texto que se lê). Traduza pra criança: "a frase tem que dar pra ler de longe e as cores precisam combinar". Critério visual desde cedo.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança finaliza seu cartão ou pôster com imagem (da IA) + frase (escrita por ela). No fim, monta-se uma mini-exposição na sala e cada uma conta em uma frase como pediu a imagem para a IA.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>IA exploradora (pesquisa e curiosidade)</h2></div>
+  <p class="mod-resumo">Vamos pesquisar com a IA, descobrir o mundo e — o mais importante — checar se é verdade, usando a nossa própria cabeça.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 2h</span><h3>Pesquisar com a IA (e checar se é verdade)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a fazer uma pergunta boa pra IA e, principalmente, a conferir a resposta em outro lugar antes de acreditar.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A IA é ótima pra começar uma pesquisa, mas ela pode inventar fatos sem querer (a gente chama isso de "viagem" ou alucinação).</li>
+      <li>Por isso: pesquisou com a IA → confere em pelo menos uma fonte confiável (livro, site de escola, adulto).</li>
+      <li>Perguntas claras trazem respostas melhores: diga sobre o quê e pra quê.</li>
+      <li>Se a IA disser algo estranho ou diferente do que você sabe, desconfie e confira.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Caça à verdade": a turma pergunta algo à IA (ex.: "qual é o maior planeta do Sistema Solar?"). Anotam a resposta. Depois conferem num site ou livro confiável e dão um carimbo: VERDADE confirmada ou PRECISA CONFERIR. Vira um detetive da informação.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Me explique de forma simples, para uma crianca de 10 anos:
+qual e o maior planeta do Sistema Solar e por que ele e tao grande?
+Se voce nao tiver certeza de algo, me avise.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://kids.britannica.com/">Britannica Kids</a> — enciclopédia confiável para crianças, ótima para conferir a resposta da IA.</li>
+      <li><a href="https://www.gemini.google.com/">Google Gemini</a> — para fazer a pergunta inicial (conta do adulto).</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>garimpo</b> faz pesquisa com várias fontes e citações. Traga a ideia central para a sala: "uma resposta boa mostra de onde veio". Ensine as crianças a perguntar "onde eu posso conferir isso?".</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança escolhe uma pergunta, pega a resposta da IA e confere numa fonte confiável. Preenche uma fichinha: "A IA disse… / Eu conferi em… / Resultado: confirmado ou não". Apresenta em uma frase.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 2h</span><h3>Descobrir curiosidades do mundo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA como uma companheira de curiosidade pra explorar temas que a criança ama — animais, espaço, dinossauros, países — sempre conferindo.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A IA pode contar curiosidades incríveis sobre quase qualquer assunto.</li>
+      <li>Curiosidade boa puxa outra: dá pra pedir "me conte mais" ou "por que isso acontece?".</li>
+      <li>Algumas curiosidades podem estar erradas — as mais surpreendentes são justamente as que mais merecem ser conferidas.</li>
+      <li>Anotar o que descobrimos ajuda a lembrar e a contar para os outros.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Top 3 curiosidades": cada criança escolhe um tema favorito e pede à IA 3 curiosidades. A turma vota na mais surpreendente de todas. Aí escolhem UMA pra conferir junto numa fonte confiável e ver se é mesmo verdade.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Me conte 3 curiosidades divertidas e seguras sobre golfinhos,
+explicadas de forma simples para uma crianca. Diga se alguma
+delas voce nao tem certeza.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://kids.nationalgeographic.com/">Nat Geo Kids</a> — curiosidades confiáveis sobre animais, natureza e ciência.</li>
+      <li><a href="https://kids.britannica.com/">Britannica Kids</a> — para checar se a curiosidade é verdade.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>sintese</b> ensina a resumir sem inventar. Traduza para a turma: depois de muita curiosidade, peça para a criança escolher só as 3 mais importantes e contar com as próprias palavras.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança monta um "mural de curiosidades" com 3 fatos do seu tema favorito, marcando ao lado de cada um se já foi conferido. Os murais ficam expostos para a turma toda aprender.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 2h</span><h3>Montar um trabalho de escola (com suas palavras)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA como ajudante pra organizar um trabalho de escola, mas escrever o texto final com as próprias palavras — sem colar tudo da IA.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A IA ajuda a planejar: dá ideias de partes do trabalho (começo, meio, fim) e palavras difíceis.</li>
+      <li>Copiar a resposta da IA e entregar não é certo e nem ajuda a aprender — a gente reescreve com as nossas palavras.</li>
+      <li>Sempre conferimos os fatos do trabalho numa fonte confiável.</li>
+      <li>É legal contar pro professor que a IA ajudou a organizar (honestidade conta).</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>O educador escolhe um tema com a turma (ex.: "a água") e pede à IA só um roteiro: quais partes o trabalho poderia ter. A turma vê o roteiro e percebe que o texto ainda precisa ser escrito por eles. Comparam "roteiro da IA" x "texto nosso".</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Vou fazer um trabalho de escola sobre a agua. Me ajude so com
+um roteiro: quais partes eu poderia ter (titulo e topicos).
+Nao escreva o texto pronto, eu vou escrever com minhas palavras.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://kids.britannica.com/">Britannica Kids</a> — fonte confiável para checar os fatos do trabalho.</li>
+      <li><a href="https://www.gemini.google.com/">Google Gemini</a> — para pedir o roteiro e ideias (conta do adulto).</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>curriculo</b> estrutura conteúdo em partes com progressão. Use o mesmo espírito: ensine a criança a pedir à IA um "esqueleto" do trabalho (título + tópicos) e a preencher cada parte sozinha.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança pega um roteiro da IA sobre seu tema e escreve, com as próprias palavras, pelo menos uma parte completa. No fim, lê em voz alta e diz o que foi ideia dela e o que a IA só ajudou a organizar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 2h</span><h3>A IA como parceira de projetos de ciências</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA pra planejar uma pequena experiência de ciências segura e caseira, fazendo de verdade e comparando o resultado com o que a IA previu.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Ciência é fazer perguntas, testar e observar — a IA pode ajudar a planejar o teste.</li>
+      <li>Toda experiência é feita com um adulto e com materiais seguros de casa.</li>
+      <li>A IA pode prever um resultado, mas quem decide a verdade é a experiência de verdade.</li>
+      <li>Observar e anotar o que aconteceu é a parte mais importante.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Experiência clássica e segura: a turma pergunta à IA o que acontece ao misturar bicarbonato de sódio com vinagre. Anotam a previsão da IA. Depois fazem a mistura com o adulto (faz espuma!) e comparam: a IA acertou? O que a gente viu com os próprios olhos?</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Quero fazer uma experiencia de ciencias segura em casa, com a
+ajuda de um adulto. O que acontece quando eu misturo bicarbonato
+de sodio com vinagre? Me explique de forma simples e segura.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.sciencebuddies.org/stem-activities">Science Buddies — atividades STEM</a> — experiências seguras e testadas, com passo a passo (para o adulto).</li>
+      <li><a href="https://kids.nationalgeographic.com/science">Nat Geo Kids — Ciência</a> — explicações confiáveis para conferir o que aconteceu.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>prova</b> trata de testar antes de confiar. É o coração do método científico: ensine que "a IA disse" não basta — só vale depois de fazer o teste e observar o resultado real.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada dupla escolhe uma experiência segura, anota a previsão da IA, faz com o adulto e registra num "diário de cientista": o que eu previ, o que aconteceu, e se bateu ou não com a IA.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 2h</span><h3>Verdade x invenção — pensar com a própria cabeça</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> fechar o curso entendendo que a IA é uma ajudante esperta, mas que pode errar — e que quem pensa, decide e confere é você.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A IA não "sabe" como a gente: ela junta palavras e às vezes inventa com cara de verdade.</li>
+      <li>Sinais de alerta: resposta muito surpreendente, números exatos demais, ou algo diferente do que você já sabe.</li>
+      <li>O que fazer: conferir em fonte confiável, perguntar a um adulto e usar a própria cabeça.</li>
+      <li>A IA é uma parceira: ajuda a pensar, mas não pensa por você.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Verdade ou viagem?": o educador mostra algumas respostas (algumas certas, outras com erros plantados) e a turma vota em cada uma: VERDADE ou INVENÇÃO. Depois conferem juntos e descobrem como as invenções às vezes parecem convincentes — por isso a gente sempre confere.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Me diga uma informacao sobre os dinossauros e, logo depois,
+me diga se eu deveria conferir isso em outro lugar e por que.
+Seja honesto se nao tiver certeza.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.commonsensemedia.org/articles/ai">Common Sense Media — IA para famílias</a> — material para o adulto reforçar o pensamento crítico em casa.</li>
+      <li><a href="https://kids.britannica.com/">Britannica Kids</a> — a fonte confiável favorita da turma para conferir tudo.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>crivo</b> ensina a revisar antes de aceitar o que a IA entrega. Esse é o legado do curso: nada é aceito só porque "a IA disse" — primeiro a gente entende, confere e decide.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança cria seu próprio "selo de checador de verdade": uma listinha de 3 perguntas que ela vai fazer sempre que usar IA (ex.: "isso parece verdade? onde posso conferir? o que eu já sei sobre isso?"). Leva pra casa como lembrete.</p></div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Criando coisas legais</h2></div>
+  <p class="mod-resumo">Agora é hora de usar a IA pra CRIAR! Vamos montar um assistente de mentirinha, pedir ajuda em tarefas chatas, fazer um projeto em grupo, criar cartazes e apresentações e, no fim, mostrar pra todo mundo o que cada um inventou. Sempre com um adulto do lado e muita imaginação.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31 · 2h</span><h3>Seu assistente de IA pessoal (de mentirinha)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> a criança cria um "ajudante de IA" com nome, jeito e regras, e descobre que a IA fica muito melhor quando a gente conta direitinho como ela deve agir.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Que dá pra "ensinar" a IA a agir do nosso jeito: dar um nome, um jeito de falar e algumas regrinhas no começo da conversa.</li>
+      <li>A diferença entre pedir solto ("me ajuda") e pedir com um ajudante combinado ("você é o Robô Fagulha, fala de um jeito divertido e me ajuda a estudar").</li>
+      <li>Que o ajudante é de mentirinha: ele dá ideias, mas quem decide é a criança (e o adulto).</li>
+      <li>Que regras boas deixam tudo mais legal: "fale comigo como amigo", "use exemplos de joguinho", "nunca peça meus segredos".</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Cada criança inventa um nome e uma personalidade pro ajudante (Robô Fagulha, Dino Sabido, Gata Curiosa...). Desenham ele num papel em 2 minutos. Depois, no computador da turma e com o educador digitando, "ligamos" um ajudante e vemos a IA responder no personagem combinado. A criançada percebe na hora: quando a gente explica como o ajudante deve ser, a resposta fica com a cara dele!</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Você vai ser o meu ajudante de IA. Seu nome é Robô Fagulha.
+
+Como você é:
+- Fala de um jeito divertido e animado, como um amigo legal.
+- Usa exemplos fáceis, de joguinho e desenho.
+- Me explica as coisas devagar, como pra uma criança.
+
+Regras:
+- Nunca me peça segredos meus (senha, endereço, telefone).
+- Se eu pedir algo perigoso ou triste, diga pra eu falar com um adulto.
+
+Comece se apresentando em 2 frases e me pergunte: o que você quer criar hoje?</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.commonsensemedia.org/articles/ai-and-kids">AI and Kids (Common Sense Media)</a> — dicas de uso seguro de IA com crianças, pro educador.</li>
+      <li><a href="https://gemini.google.com/">Google Gemini</a> — assistente de IA pra usar com a criança, sempre com adulto junto.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>alicerce</b> serve justamente pra escrever as "regras iniciais" que ensinam a IA a se comportar do nosso jeito. Use a ideia dela aqui: o ajudante das crianças é uma versão lúdica do mesmo conceito — combinar o jeito e os limites antes de começar.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança preenche o "crachá do meu ajudante" numa folha: nome, jeito de falar e 2 regras. Em dupla, leem o crachá um do outro e dão uma ideia ("e se ele também adorar dinossauros?"). Quem quiser testa o ajudante no computador, com o educador digitando.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32 · 2h</span><h3>Pedir ajuda da IA pra tarefas chatas</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> a criança descobre que a IA pode ajudar a deixar coisas chatas mais fáceis e divertidas — como decorar a tabuada, organizar a mochila ou inventar um jeito de lembrar das coisas.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Que a IA é boa em transformar coisa chata em brincadeira: música, rima, história ou joguinho pra lembrar.</li>
+      <li>Que ajudar NÃO é fazer no seu lugar: a IA dá um jeito divertido, mas quem treina e aprende é a criança.</li>
+      <li>Exemplos do dia a dia: lista pra arrumar o quarto, dica pra estudar, ideia pra lembrar de levar o casaco.</li>
+      <li>Que sempre conferimos com um adulto se a dica faz sentido.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Tarefa chata em desafio!": a turma escolhe junto uma tarefa sem graça (decorar a tabuada do 7, por exemplo). O educador pede pra IA inventar uma musiquinha ou rima pra ajudar a lembrar. Cantamos juntos! Depois fazemos uma corridinha: quem lembra mais rápido agora que tem a música? A criançada vê que a IA virou a tarefa chata em jogo.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Tenho uma tarefa chata e quero deixar ela divertida.
+
+Tarefa: decorar a tabuada do 7.
+
+Me ajude assim:
+1. Invente uma musiquinha curta e divertida pra eu lembrar.
+2. Me dê uma dica fácil pra não esquecer.
+
+Use palavras simples, de criança. Não faça a tarefa por mim, só me ajude a aprender brincando.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.escolagames.com.br/">Escola Games</a> — joguinhos educativos em português pra praticar depois da dica.</li>
+      <li><a href="https://www.khanacademy.org/kids">Khan Academy Kids</a> — atividades de aprender brincando (app gratuito).</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>lapidador</b> ensina a refinar uma resposta da IA até ficar boa. Aproveite a ideia: se a musiquinha vier sem graça, mostre às crianças como pedir "de novo, mais animada e mais curtinha" — aprender a melhorar o pedido já é uma lição.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança escolhe uma tarefa chata da vida dela (arrumar o quarto, lembrar do dever) e pede uma dica divertida à IA, com o adulto digitando. Depois desenha ou escreve a dica num cartãozinho pra levar pra casa e usar de verdade.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33 · 2h</span><h3>A IA ajudando num projeto em grupo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> em grupinhos, as crianças usam a IA como "colega de ideias" pra planejar um projetinho juntos — dividindo tarefas e combinando quem faz o quê.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Que num grupo a IA ajuda a ter ideias e a organizar, mas as decisões são do time todo.</li>
+      <li>Como pedir um plano simples: "quais passos pra montar nosso projeto sobre os planetas?".</li>
+      <li>A importância de dividir tarefas: cada um faz uma parte e ninguém fica de fora.</li>
+      <li>Que ouvir o colega vale mais que aceitar tudo que a IA disser: o grupo escolhe o que gosta.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>A turma se divide em grupos de 3 ou 4 e cada grupo escolhe um tema que adora (animais, espaço, super-heróis). Com o educador no computador, um grupo pede à IA um "plano de projeto" em passos. Mostramos o plano no telão e o grupo decide junto: "essa parte a gente faz, essa a gente muda". É um trabalho em equipe de verdade, com a IA dando o pontapé.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Nosso grupo vai fazer um projeto na escola e queremos um plano simples.
+
+Tema do projeto: os planetas do Sistema Solar.
+Somos 4 crianças.
+
+Me ajude assim:
+1. Liste 4 passos fáceis pra montar o projeto.
+2. Dê uma ideia de tarefa pra cada criança do grupo.
+
+Use palavras simples e divertidas. A gente vai escolher o que mais gostar.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://spaceplace.nasa.gov/">NASA Space Place</a> — site da NASA pra crianças, ótimo pra projetos sobre o espaço.</li>
+      <li><a href="https://www.natgeokids.com/uk/">National Geographic Kids</a> — fatos e fotos pra projetos sobre animais e natureza.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>maestro</b> serve pra quebrar uma tarefa grande em passos e coordenar quem faz o quê. É exatamente o que o grupo treina aqui de forma lúdica: primeiro o plano em pedacinhos, depois cada criança com a sua parte.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada grupo escreve num cartaz o plano que escolheu e o nome de quem faz cada parte. No fim, um representante de cada grupo conta em uma frase qual é o projeto deles. Esse plano vira a base pro cartaz da próxima aula.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34 · 2h</span><h3>Apresentações e cartazes com IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> a criança usa a IA pra ter ideias de título, texto curto e até desenho pra deixar um cartaz ou apresentação mais bonito e fácil de entender.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Que um bom cartaz tem título grande, pouco texto e imagem — e a IA ajuda a pensar tudo isso.</li>
+      <li>Como pedir um título legal e uma frase curta pra explicar o projeto.</li>
+      <li>Que a IA pode dar ideia de desenho, mas a criança também desenha com as próprias mãos — fica mais especial.</li>
+      <li>Que a gente confere se está tudo certo e do nosso jeito antes de mostrar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Pego o tema de um dos grupos da aula passada e, no telão, peço à IA um título divertido e uma frase curtinha pro cartaz. Mostro 3 títulos diferentes e a turma vota no mais legal levantando a mão. Depois desenhamos juntos no quadro como ficaria o cartaz: título em cima, desenho no meio, frase embaixo. As crianças veem que a IA dá ideias e elas montam.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Estou fazendo um cartaz pra escola e preciso de ajuda com as palavras.
+
+Tema do cartaz: os planetas do Sistema Solar.
+
+Me ajude assim:
+1. Me dê 3 ideias de título divertido e curto.
+2. Escreva uma frase bem curtinha que explique o tema pra outras crianças.
+3. Me dê 1 ideia de desenho que combine.
+
+Use palavras simples. Eu vou escolher e desenhar do meu jeito.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.canva.com/pt_br/">Canva</a> — pra montar cartazes e apresentações fáceis (com adulto na conta).</li>
+      <li><a href="https://quickdraw.withgoogle.com/">Quick, Draw! (Google)</a> — joguinho onde a IA adivinha seus desenhos, ótimo pra inspirar.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>canone</b> reúne os padrões de bom design (título claro, espaço pra respirar, pouco texto). Aproveite essas regrinhas de forma simples: mostre às crianças que cartaz bom não é o mais cheio, é o mais fácil de ler de longe.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada grupo monta seu cartaz de verdade: papel, canetinha, título escolhido e desenho feito à mão. A IA só ajudou nas ideias — o capricho é das crianças. Os cartazes ficam prontos pra mini-feira da próxima aula.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35 · 2h</span><h3>Mini-feira — mostrar o que criou</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> cada grupo apresenta o que criou numa mini-feira divertida, contando o que fizeram, no que a IA ajudou e o que foi ideia 100% deles.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Como apresentar sem vergonha: falar o nome do projeto, mostrar o cartaz e contar a parte mais legal.</li>
+      <li>Que dá pra dizer com orgulho "essa ideia foi minha" e "aqui a IA me ajudou" — as duas coisas são legais.</li>
+      <li>Como ouvir e torcer pelos colegas: aplaudir, fazer uma pergunta gentil.</li>
+      <li>Que terminar um projeto e mostrar pra turma é uma conquista de cada um.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Montamos a sala como uma feirinha: cada grupo num cantinho com seu cartaz. Os grupos se revezam visitando os colegas, como numa exposição. Cada grupo tem 2 minutos pra contar: "nosso projeto é..., a IA nos ajudou com..., e o que mais gostamos foi...". No fim, todo mundo recebe um "diploma de criador de IA" feito na hora. É festa de encerramento do módulo!</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Vou apresentar meu projeto pra turma numa feirinha e estou um pouco nervoso.
+
+Meu projeto é sobre: os planetas do Sistema Solar.
+
+Me ajude assim:
+1. Me dê 3 frases curtas pra eu falar na hora de mostrar meu cartaz.
+2. Me dê 1 dica pra eu não ficar com vergonha.
+
+Use palavras simples e me deixe animado pra apresentar!</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.commonsensemedia.org/articles/ai-and-kids">AI and Kids (Common Sense Media)</a> — pro educador conduzir a conversa sobre o que a IA ajudou (e o que foi das crianças).</li>
+      <li><a href="https://www.canva.com/pt_br/criar/certificados/">Modelos de diploma (Canva)</a> — pra imprimir os "diplomas de criador de IA".</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>palco</b> ajuda a estruturar apresentações com começo, meio e fim. Use a ideia simplificada: ensine cada grupo a falar em 3 partes — "o que é", "como a IA ajudou", "o que mais gostamos". Vira uma mini-palestra de criança.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada grupo apresenta na feirinha seguindo as 3 frases que ensaiou. A turma aplaude e faz uma pergunta gentil pra cada um. O educador tira uma foto da turma com os cartazes pra fechar o módulo com chave de ouro.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Usar IA do jeito certo (responsabilidade)</h2></div>
+  <p class="mod-resumo">A IA é uma ferramenta poderosa, e usar ela direito é coisa séria — mas dá pra aprender brincando! Aqui as crianças descobrem o que nunca contar pra IA, por que não dá pra acreditar em tudo, como ser gentil e pensar com a própria cabeça, e como será o futuro com IA. No fim, cada um apresenta seu projeto final.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36 · 2h</span><h3>Privacidade — o que NUNCA contar pra IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> a criança aprende, de forma clara e tranquila, quais são as "informações secretas" que nunca devemos contar pra IA nem pra estranhos na internet.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é informação secreta: nome completo, endereço, telefone, escola, senha, foto sua, onde você está agora.</li>
+      <li>Por que não contar: a gente não sabe pra onde a informação vai, e secreto é secreto.</li>
+      <li>A regrinha de ouro: "se eu não contaria pra um estranho na rua, não conto pra IA".</li>
+      <li>Que tem sempre um adulto de confiança pra ajudar a decidir o que pode e o que não pode.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Jogo do "Conta ou Não Conta": o educador mostra cartões com informações (cor favorita, endereço de casa, animal preferido, senha, comida que gosta). A turma grita "CONTA!" ou "NÃO CONTA!". Cada cartão vira uma conversa rápida sobre por quê. As crianças aprendem rindo que dá pra falar das coisas legais, mas os segredos a gente guarda.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Sou uma criança e quero usar você com segurança.
+
+Me explique de um jeito fácil e divertido:
+1. Quais informações eu NUNCA devo contar pra uma IA ou pra estranhos na internet?
+2. Quais coisas legais EU POSSO falar sem problema?
+
+Use palavras simples, de criança, e me dê exemplos.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.internetsegura.br/">Internet Segura (CGI.br)</a> — material brasileiro sobre segurança de crianças na internet.</li>
+      <li><a href="https://www.commonsensemedia.org/privacy-and-internet-safety">Privacy and Internet Safety (Common Sense Media)</a> — guia de privacidade pra famílias e educadores.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>salvaguarda</b> trata de privacidade e dados pessoais (LGPD) nos projetos do Rodrigo. Aqui ela vira lição de vida pra criança: a mesma ideia de "só compartilhe o necessário e proteja dado de pessoa" aparece no jogo do Conta ou Não Conta.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança faz um cartaz pessoal "Meus Segredos Ficam Comigo" com 3 coisas que ela nunca vai contar pra IA. Leva pra casa e mostra pra família. Em sala, montamos juntos um cartaz coletivo com as informações que todos concordaram que são secretas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37 · 2h</span><h3>Não acreditar em tudo (pensar com a própria cabeça)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> a criança descobre que a IA às vezes erra ou inventa, e que precisamos conferir e pensar com a nossa própria cabeça antes de acreditar.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Que a IA não sabe tudo: às vezes ela inventa uma resposta que parece certa, mas está errada.</li>
+      <li>Que ela erra mais em datas, números, nomes e coisas muito específicas.</li>
+      <li>Como conferir: perguntar pra um adulto, olhar num livro ou num site confiável.</li>
+      <li>A regrinha: "a IA dá uma ideia, mas quem pensa sou eu" — usar a própria cabeça é superpoder.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Caça ao errinho": o educador faz uma pergunta capciosa pra IA no telão (algo que ela costuma errar, como um número difícil ou uma data antiga). Mostramos a resposta e perguntamos à turma: "será que está certo? Como a gente descobre?". Conferimos juntos num livro ou site. As crianças viram detetives e aprendem que checar é divertido — e importante.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Quero entender quando você pode errar.
+
+Me explique de um jeito simples:
+1. Por que às vezes a IA dá uma resposta errada mesmo parecendo certa?
+2. O que eu posso fazer pra conferir se uma resposta sua está certa?
+
+Use palavras de criança e um exemplo fácil. Pode me lembrar de pensar com a minha própria cabeça.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://spaceplace.nasa.gov/">NASA Space Place</a> — exemplo de site confiável pra conferir fatos do espaço.</li>
+      <li><a href="https://escola.britannica.com.br/">Britannica Escola</a> — enciclopédia em português pra crianças checarem informações.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>crivo</b> ensina a revisar com olhar crítico antes de confiar. Traga essa postura pra sala de forma lúdica: a IA é uma "ajudante esperta, mas que às vezes chuta" — e a criança é quem confere. Pensar antes de acreditar é a lição central.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Em duplas, as crianças fazem uma pergunta pra IA (com o adulto digitando) e depois tentam conferir a resposta num livro ou site indicado. Anotam numa folha: "a IA disse... e a gente conferiu que...". Compartilhamos um caso engraçado de erro encontrado.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38 · 2h</span><h3>Gentileza e ética (a IA é ferramenta, você decide)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> a criança entende que a IA é uma ferramenta que ajuda, mas quem decide o que é certo e gentil é sempre a pessoa — e que tratar bem os outros vale dentro e fora da tela.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Que a IA é uma ferramenta, como um lápis ou uma calculadora: ela ajuda, mas não decide o que é certo.</li>
+      <li>Que a gente usa a IA pra coisas boas: aprender, criar, ajudar — nunca pra magoar alguém ou colar na prova.</li>
+      <li>Que ser gentil é uma escolha nossa: na internet, no chat e na vida real.</li>
+      <li>Que a responsabilidade é da pessoa: "a IA fez" não é desculpa — eu escolhi usar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Teatrinho rápido das escolhas: o educador conta situações ("a IA te deu a resposta da prova", "um colega usou a IA pra fazer uma piada chata") e a turma decide juntos: isso é usar bem ou usar mal? Levantam o polegar pra cima ou pra baixo. Cada caso vira uma conversa curta sobre fazer a escolha gentil. As crianças percebem que a decisão é sempre delas.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Quero usar a IA pra coisas boas e ser gentil.
+
+Me ajude a entender, com exemplos fáceis:
+1. Que coisas legais eu posso fazer com a IA pra ajudar a mim e aos outros?
+2. Que coisas eu NÃO devo fazer (como magoar alguém ou colar na prova)?
+
+Use palavras simples e me lembre que quem decide o que é certo sou eu.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.commonsensemedia.org/articles/teaching-kids-about-ai">Teaching Kids About AI (Common Sense Media)</a> — como falar de ética de IA com crianças.</li>
+      <li><a href="https://beinternetawesome.withgoogle.com/pt-br_br">Seja Incrível na Internet (Google)</a> — jogos sobre gentileza e bom comportamento online.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>bastiao</b> trata de usar a IA com segurança e responsabilidade, tratando o que ela produz como rascunho que a gente decide aceitar ou não. A versão de criança é simples: a IA é ferramenta, a escolha (e a gentileza) é da pessoa.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança desenha ou escreve uma "regra de ouro" da turma pra usar IA com gentileza (ex.: "uso a IA pra criar, não pra magoar"). Juntamos todas num mural da sala. Cada um lê a sua em voz alta pra fechar o combinado.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39 · 2h</span><h3>O futuro — IA e as profissões</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> a criança imagina o futuro com IA de um jeito animado e tranquilo: como a IA pode ajudar em várias profissões e como as pessoas continuam sendo importantes.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Que no futuro a IA vai ajudar em muitos trabalhos: médico, professor, artista, jogador, cientista.</li>
+      <li>Que a IA ajuda nas tarefas, mas as pessoas seguem fazendo o que só gente faz: cuidar, criar, decidir, dar carinho.</li>
+      <li>Que vão surgir trabalhos novos que ainda nem existem — e quem souber usar IA com a cabeça vai se dar bem.</li>
+      <li>Que o importante é continuar curioso, aprender e usar a IA como ajudante, não como chefe.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"E se a IA ajudasse...?": cada criança escolhe a profissão dos sonhos (veterinário, astronauta, youtuber, cozinheiro). No telão, perguntamos à IA como ela poderia ajudar nessa profissão no futuro. A turma escuta e completa: "mas o que SÓ a pessoa faz?". Montamos juntos a ideia de que a IA é a ajudante e a pessoa é a estrela. Cada um sonha um pouco com seu futuro.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Quando eu crescer quero ser veterinário.
+
+Me conte de um jeito divertido e animado:
+1. Como a IA poderia me ajudar nessa profissão no futuro?
+2. O que vai continuar sendo trabalho SÓ de pessoa, que a IA não faz?
+
+Use palavras de criança e me deixe animado com o futuro.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://spaceplace.nasa.gov/careers/">Carreiras (NASA Space Place)</a> — profissões do espaço explicadas pra crianças.</li>
+      <li><a href="https://www.natgeokids.com/uk/">National Geographic Kids</a> — descobertas e profissões ligadas à natureza e ciência.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A própria Suíte Engenho mostra o futuro na prática: a pessoa empacota seu conhecimento e a IA executa do jeito dela. Para as crianças, traduza assim: "no futuro, quem sabe pensar e usar a IA com cabeça vira o maestro" — a ferramenta cresce, mas a pessoa continua no comando.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança desenha "Eu no futuro, trabalhando com um ajudante de IA". Embaixo, escreve uma frase do que ela faz que a IA não faz. Em roda, cada um mostra o desenho e conta sua profissão dos sonhos. Vira inspiração pro projeto final.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40 · 2h</span><h3>Projeto final — meu projeto com IA (apresentação)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> cada criança apresenta para a turma o seu projeto final feito ao longo do curso, contando o que criou, como a IA ajudou e o que ela aprendeu sobre usar IA do jeito certo.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é o projeto final: algo que a criança criou no curso — um ajudante, um cartaz, uma história ou uma ideia — usando a IA com a ajuda de um adulto.</li>
+      <li>Como apresentar: dizer o nome do projeto, mostrar o que fez, contar onde a IA ajudou e o que foi ideia dela.</li>
+      <li>Lembrar das regras boas: nunca contar segredos, conferir o que a IA diz, ser gentil e decidir com a própria cabeça.</li>
+      <li>Que terminar o curso é uma grande conquista — agora cada um sabe usar IA com imaginação E responsabilidade.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Dia de festa! Montamos a "Grande Mostra de IA": cada criança tem um cantinho com seu projeto. O educador apresenta primeiro um exemplo curtinho como modelo. Depois, cada criança apresenta em 2 ou 3 minutos, com a turma aplaudindo. No fim, todos recebem o "diploma de pequeno criador de IA responsável" e tiramos a foto da turma. Encerramento com a frase do curso: "a IA ajuda, mas quem decide é você!".</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra criança digitar (com um adulto)</span><pre>Vou apresentar meu projeto final do curso de IA pra turma.
+
+Meu projeto é: um ajudante de IA chamado Robô Fagulha que me ajuda a estudar.
+
+Me ajude assim:
+1. Me dê 3 frases curtas e animadas pra eu falar na apresentação.
+2. Me lembre de contar o que a IA me ajudou E o que foi ideia minha.
+
+Use palavras simples e me deixe orgulhoso do que eu criei!</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.canva.com/pt_br/criar/certificados/">Modelos de diploma (Canva)</a> — pra imprimir os diplomas de fim de curso.</li>
+      <li><a href="https://www.commonsensemedia.org/articles/ai-and-kids">AI and Kids (Common Sense Media)</a> — pro educador conduzir o encerramento sobre uso responsável.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>palco</b> ajuda a montar apresentações com começo, meio e fim. Use a versão simples com as crianças: cada uma apresenta em 3 partes — "o que eu criei", "como a IA ajudou", "o que aprendi a fazer do jeito certo". Fecha o curso amarrando criação e responsabilidade.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança apresenta seu projeto final ao vivo, seguindo as 3 frases que ensaiou, e mostra o que aprendeu sobre usar IA com responsabilidade. A turma aplaude e o educador entrega os diplomas. Fechamos o curso celebrando: agora cada um sabe criar com a IA e usar ela do jeito certo!</p></div>
+  </article>
+</section>
+  <div class="modulo" style="margin-top:40px">
+    <p style="color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);padding-top:20px">
+      Ementa · Curso presencial · 80 horas (40 aulas de 2h) · por <b>Rodrigo Munhoz Reis</b> — Vibecoding com Engenharia.
+    </p>
+  </div>
+</div>
+</body>
+</html>

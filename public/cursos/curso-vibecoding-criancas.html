@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa do Curso · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Ementa · Curso presencial · Crianças (10 a 14 anos)</div>
+<h1>Vibecoding do Zero ao Avançado — para Crianças</h1>
+<p class="sub">Criar sites e programas com a ajuda da IA — sendo o chefe da máquina, com capricho e segurança.</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>Presencial</span><span>Lúdico &middot; com supervisão de adulto</span></div>
+</div></div>
+<div class="wrap">
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1</span><h2>O que é criar com IA</h2></div>
+  <p class="mod-resumo">Aqui você descobre a ideia mais legal do curso: dá pra fazer programas e sites com a IA de ajudante! Você é o chefe que manda e decide, e a IA escreve o código chato pra você. Nessas primeiras aulas a gente conhece as ferramentas, faz a primeira telinha aparecer na internet e aprende a guardar tudo sem perder nada.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1 · 2h</span><h3>O que é "vibecoding"? (criar com ajuda da IA)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que dá pra criar sites e programas conversando com a IA — você fala o que quer, e ela monta. No fim, cada criança escreve numa frase o site dos sonhos que vai construir no curso.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>"Vibecoding" é criar coisas no computador conversando com a IA, sem precisar decorar um monte de comandos difíceis.</li>
+        <li>A IA é tipo um ajudante super rápido: você pede "faça uma página com meu nome", e ela escreve o código pra você.</li>
+        <li>O código é a "receita" que faz o computador desenhar uma página na tela. A IA escreve a receita, você escolhe o que vai ter nela.</li>
+        <li>Você é o <b>chefe</b>: a IA dá ideias, mas quem decide as cores, os textos e o que entra é você.</li>
+        <li>O que a gente vai construir até o fim: um site de verdade, na internet, que dá pra mostrar pros amigos e pra família!</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>No telão, o professor pede pra IA: "faça uma página colorida que diz Olá!". Em segundos aparece o código e a página pronta. Aí a turma grita o que mudar — "põe roxo!", "escreve meu nome!" — e o professor pede de novo pra IA. A criança vê que <b>quem manda na página é ela</b>, a IA só obedece.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Você é um ajudante divertido que ensina crianças a criar sites.
+Explique, com palavras bem simples e em no máximo 4 frases,
+o que é &quot;criar um site com a ajuda da IA&quot;.
+Use um exemplo legal, como criar uma página sobre um animal favorito.
+Não use palavras difíceis. Seja animado!</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://claude.ai/">Claude (IA)</a> — a ajudante que vai escrever o código com você (um adulto cria o login).</li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web">MDN — começando com a web</a> — pra ver o que é uma página por dentro, em português.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>Use a skill <b>planta</b> pra transformar a aula numa "planta de construção" simples: o que a turma vai criar, em fases bem pequenas. Assim cada criança já sai da Aula 1 com a ideia do site na cabeça.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Cada criança desenha no papel (ou conta em voz alta) o site que quer criar até o fim do curso: pode ser sobre seu jogo favorito, seu pet, um clube secreto... Vale tudo! Guardem esse desenho — ele vira o mapa do curso.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2 · 2h</span><h3>A IA é sua ajudante, você é o chefe</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a "conversar" bem com a IA — pedir as coisas com clareza — e entender que ela pode errar, então quem confere e decide é você, o chefe.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>A IA é uma ajudante muito esperta, mas ela não sabe ler sua mente: quanto melhor você explica, melhor ela faz.</li>
+        <li>Pedido caprichado: diga <b>o quê</b> você quer, de <b>que cor</b>, e <b>o que escrever</b>. Ex.: "uma página azul com o título Meu Cachorro e uma foto".</li>
+        <li>A IA às vezes inventa ou erra. Por isso o chefe sempre dá uma olhada e fala "isso eu gostei" ou "isso muda".</li>
+        <li>Se não gostou, é só pedir de novo de um jeito diferente — não tem problema nenhum errar e tentar de novo!</li>
+        <li>Regra de ouro do curso: <b>a IA ajuda, mas quem decide é você</b>.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>Jogo do "pedido bagunçado x pedido caprichado". O professor pede algo vago: "faça uma página". A IA chuta qualquer coisa. Depois faz um pedido caprichado: "faça uma página verde, com o título Meu Jardim e três frutas numa lista". A turma vê a diferença gigante e entende que <b>pedir bem é o segredo do chefe</b>.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Você é minha ajudante de criar sites e eu sou o chefe.
+Quero uma página simples em HTML com:
+- fundo verde-claro,
+- um título grande escrito &quot;Meu Jardim&quot;,
+- uma lista com 3 frutas que eu gosto.
+Não coloque nenhum dado meu de verdade (sem nome completo, sem endereço).
+Depois me explique em 2 frases o que você fez.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://claude.ai/">Claude (IA)</a> — pra praticar os pedidos caprichados.</li>
+        <li><a href="https://www.commonsensemedia.org/articles/how-to-talk-to-kids-about-ai">Common Sense Media — falando de IA com crianças</a> — pro adulto, sobre usar IA com segurança (em inglês).</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>forja</b> ajuda a montar pedidos bem feitos pra IA. Prepare com ela alguns "pedidos caprichados" de exemplo pra mostrar à turma o antes e o depois.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Em duplas, cada criança escreve um "pedido caprichado" pra IA (cor + título + uma lista). Trocam os pedidos e leem em voz alta: o pedido tá claro? Dá pra adivinhar como vai ficar a página? Quem pedir mais claro ganha aplauso.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3 · 2h</span><h3>Conhecendo as ferramentas (o computador do criador)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> conhecer as ferramentas que a gente vai usar pra criar — a IA que escreve o código e um lugar pra montar a página — e deixar tudo pronto pra começar (com um adulto ajudando a abrir as contas).</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>A IA (Claude) é onde a gente pede o código. Um adulto cria o login, porque criança não faz conta sozinha.</li>
+        <li>O navegador (Chrome, Edge, Firefox) é onde a página aparece. É como a "janela" pra ver o que você criou.</li>
+        <li>Um lugar pra montar a página: dá pra usar um editor online de graça (sem instalar nada) ou o VS Code no computador, com o adulto.</li>
+        <li>Como salvar a página que a IA fez: copiar o código que ela deu e colar no editor, com nome <code>index.html</code>.</li>
+        <li>Combinado de segurança: a gente <b>nunca</b> coloca dados de verdade (nome completo, endereço, telefone, senha) numa página ou no chat.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>Tour das ferramentas no telão: aqui peço pra IA, aqui colo o código, aqui clico e a página aparece! O professor pede uma página bem simples, copia o código, cola num editor online e mostra o resultado na hora. A turma vê o caminho completo: <b>pedir → colar → ver</b>.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Quero minha primeira página pra testar as ferramentas.
+Faça um arquivo HTML simples, em um único pedaço de código,
+com um título grande escrito &quot;Estou aprendendo a criar sites!&quot;
+e um parágrafo curto e divertido embaixo.
+Me diga, em 3 passos simples, como eu salvo esse código
+num arquivo chamado index.html e abro no navegador.
+Sem usar nenhum dado pessoal meu.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://claude.ai/">Claude (IA)</a> — onde pedimos o código.</li>
+        <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> — editor de código (instale com um adulto).</li>
+        <li><a href="https://codepen.io/pen/">CodePen</a> — editor online de graça, sem instalar nada.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>canteiro</b> prepara a "base" do projeto já organizada e segura. Use-a pra deixar o ambiente da turma pronto antes da aula, pra ninguém travar na hora de salvar o primeiro arquivo.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Cada criança (com o adulto, se precisar) salva o <code>index.html</code> da IA e abre no navegador. Conseguiu ver o título na tela? Comemora! Quem terminar primeiro ajuda o coleguinha do lado.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4 · 2h</span><h3>Sua primeira tela na internet ("Olá, mundo!")</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> fazer a primeira página de verdade aparecer no navegador, com um "Olá, mundo!" personalizado, e entender o que cada pedacinho do código faz (sem decoreba).</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Uma página tem três partes simples: o <b>título</b> (texto grande), os <b>textos</b> e, às vezes, <b>imagens</b>. A IA monta isso pra você.</li>
+        <li>O famoso "Olá, mundo!" é a primeira frase que todo criador faz aparecer. É a comemoração de que deu certo!</li>
+        <li>Ler o código com a IA: pedir pra ela apontar "aqui está o título" e "aqui está o texto", pra você saber o que mexer.</li>
+        <li>Trocar o "Olá, mundo!" por uma frase sua, salvar e atualizar o navegador pra ver a mudança.</li>
+        <li>Errar faz parte: se a página ficar estranha, é só pedir pra IA arrumar — "minha página sumiu, o que pode ter quebrado?".</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>O professor cria a página "Olá, mundo!" no telão e desafia a turma: "agora vamos trocar por Olá, eu sou o [nome do clube da turma]!". Pede a mudança pra IA, salva e atualiza o navegador — e a frase nova aparece como mágica. Cada criança grita a frase que quer na própria página.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Faça uma página HTML simples, em um único código, com:
+- um título grande escrito &quot;Olá, mundo!&quot;,
+- um parágrafo embaixo dizendo &quot;Esta é a minha primeira página!&quot;.
+Depois me mostre exatamente em qual parte do código está o título
+e em qual parte está o parágrafo, pra eu poder trocar os textos.
+Não use nenhum dado pessoal meu.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Introduction_to_HTML/Getting_started">MDN — primeiros passos com HTML</a> — o que é cada parte da página, em português.</li>
+        <li><a href="https://codepen.io/pen/">CodePen</a> — pra colar o código e ver na hora.</li>
+        <li><a href="https://claude.ai/">Claude (IA)</a> — pra pedir e ajustar a página.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>atelier</b> deixa as telinhas mais bonitas e caprichadas, fugindo do visual "sem graça". Use-a pra preparar um modelo de "Olá, mundo!" mais charmoso de mostrar à turma.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Cada criança tira o próprio "Olá, mundo!" no navegador e troca a frase por algo bem sua: "Olá, eu sou a Maria e adoro dinossauros!". Tira um print da tela pra guardar. Pronto: você já é criador de site!</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5 · 2h</span><h3>Guardar seu trabalho (sem perder nada)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a guardar o trabalho direitinho — salvar os arquivos, dar nomes claros e fazer "fotos" das versões — pra nunca chorar por ter perdido a página.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O perigo de não salvar: o computador desliga e... cadê minha página? Por isso a gente salva sempre.</li>
+        <li>Uma pasta organizada: criar uma pasta com o nome do projeto e guardar o <code>index.html</code> dentro dela.</li>
+        <li>Nomes claros vencem nomes bagunçados: "meu-site" é melhor que "coisa1", "sem-titulo-3", "AGORAVAI".</li>
+        <li>Fazer "fotos" do trabalho: a ideia de guardar versões, como tirar foto de cada etapa, pra poder voltar se algo der errado. (Quando crescer, isso se chama Git!)</li>
+        <li>Cópia de segurança: o adulto pode ajudar a guardar uma cópia na nuvem (Google Drive, OneDrive) — segurança nunca é demais.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>O professor mostra duas mesas: uma toda bagunçada (arquivos com nomes doidos) e uma organizada (pasta com nome claro, arquivo certinho). Pergunta: "em qual delas você acha sua página rápido?". Aí, ao vivo, organiza a pasta do projeto e faz uma "foto" da versão atual, explicando que é a máquina do tempo do criador.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Sou criança e estou aprendendo a criar sites.
+Me explique, com palavras bem simples e em uma listinha,
+como guardar bem o meu trabalho pra não perder:
+- onde salvar o arquivo,
+- que nome dar na pasta e no arquivo,
+- por que é bom guardar uma cópia de vez em quando.
+Sem palavras difíceis. Pode usar um exemplo divertido.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://support.google.com/drive/answer/2424384">Google Drive — enviar e guardar arquivos</a> — pra cópia de segurança (com um adulto).</li>
+        <li><a href="https://github.com/">GitHub</a> — a "máquina do tempo" de verdade, pra conhecer com o adulto mais pra frente.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>faro</b> verifica se nenhum dado secreto vazou nos arquivos antes de guardar. Use-a como "ritual de segurança" pra ensinar a turma que a gente confere antes de salvar ou publicar.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Cada criança cria uma pasta com nome bonito pro seu projeto, guarda o <code>index.html</code> dentro e faz uma "foto" da versão de hoje (uma cópia com a data no nome). Desafio: mudar a cor da página, fazer outra "foto", e ver que dá pra comparar as duas versões.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2</span><h2>Criando seu primeiro site</h2></div>
+  <p class="mod-resumo">Agora começa a obra de verdade! A gente vai planejar o site antes de fazer (igual fazer o desenho antes da casa), montar a página com cores, textos e botões, e — com a ajuda de um adulto — colocar tudo na internet de graça. No fim, cada criança tem o seu primeiro mini-site pronto pra mostrar pro mundo.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6 · 2h</span><h3>Planejar antes de fazer (o que vou criar?)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> virar um bom planejador — desenhar no papel como o site vai ser antes de pedir pra IA — pra não se perder no meio do caminho.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Planejar é fazer o desenho antes da casa: ninguém constrói sem saber quantos quartos vai ter.</li>
+        <li>Três perguntinhas mágicas: <b>sobre o que</b> é meu site? <b>quais partes</b> ele vai ter (título, fotos, lista, botão)? <b>que cores</b> eu quero?</li>
+        <li>Começar pequeno: a primeira versão pode ter só uma página caprichada. Dá pra ir crescendo depois.</li>
+        <li>Rascunho no papel: desenhar a "caixinha" de cada parte da página (aqui o título, aqui a foto, aqui o botão).</li>
+        <li>Esse rascunho vira o pedido pra IA: é muito mais fácil pedir bem quando você já sabe o que quer.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>"Arquiteto por um dia": o professor pega a ideia de um aluno (ex.: "site do meu gato") e desenha no quadro as caixinhas — título, foto, lista de coisas que o gato gosta, botão "saiba mais". A turma ajuda a decidir as cores. Pronto: nasceu a planta do site, sem escrever uma linha de código ainda.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Sou criança e quero PLANEJAR meu site antes de criar.
+Não escreva código ainda.
+Meu site vai ser sobre: [ESCREVA O TEMA EM 1 FRASE].
+Me ajude a decidir, numa listinha bem simples:
+- quais partes a página deve ter (título, foto, lista, botão),
+- duas opções de cores que combinam,
+- uma frase legal pro título.
+Sem nenhum dado pessoal meu.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.canva.com/">Canva</a> — pra rascunhar o visual do site antes (com um adulto).</li>
+        <li><a href="https://color.adobe.com/pt/create/color-wheel">Adobe Color</a> — pra escolher cores que combinam.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>planta</b> transforma a ideia da criança num plano em fases bem pequenas (versão 1 primeiro). Use-a pra ajudar cada aluno a cortar o site no tamanho certo pra caber numa aula.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Cada criança desenha no papel a planta do seu site: as caixinhas das partes, as cores escolhidas e a frase do título. Em duplas, mostram o desenho um pro outro e dão uma ideia legal. Esse papel é o mapa das próximas aulas.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7 · 2h</span><h3>Montando a página (cores, textos, botões)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> tirar o desenho do papel e montar a página de verdade — com cores, textos e um botão — pedindo pra IA construir parte por parte e dando seus toques de chefe.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Pedir a página seguindo o rascunho da Aula 6: título, textos, uma imagem e um botão.</li>
+        <li>Cores e estilo: pedir pra IA mudar a cor do fundo, a cor das letras e deixar o título bem grande e bonito.</li>
+        <li>Botões: um botão que mostra uma mensagem quando você clica ("Você clicou! Oi!"). É a primeira coisa que <b>responde</b> ao usuário.</li>
+        <li>Imagens com segurança: usar figuras livres pra usar (sem pegar foto dos outros) e nunca colocar foto pessoal real.</li>
+        <li>Capricho de chefe: ir testando — "ficou pequeno, aumenta", "essa cor não gostei, troca" — até ficar do seu jeito.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>O professor monta uma página ao vivo seguindo o rascunho de um aluno e vai pedindo mudanças que a turma grita: "fundo amarelo!", "botão vermelho!", "título gigante!". Quando o botão é clicado e aparece uma mensagem, a sala vibra. A criança vê que <b>ela manda no visual inteiro</b>.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Quero montar minha página em HTML, em um único código, com:
+- fundo na cor [ESCOLHA UMA COR],
+- um título grande escrito [SEU TÍTULO],
+- um parágrafo curto e divertido,
+- uma imagem de exemplo (use uma figura livre pra usar),
+- um botão que, ao clicar, mostra a mensagem &quot;Oi! Você clicou aqui!&quot;.
+Deixe bonito e fácil de ler.
+Não use nenhum dado pessoal meu nem foto de pessoa real.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.w3schools.com/html/html_intro.asp">W3Schools — HTML</a> — pra entender as partes da página, com exemplos.</li>
+        <li><a href="https://unsplash.com/pt-br">Unsplash</a> — fotos livres pra usar na página.</li>
+        <li><a href="https://codepen.io/pen/">CodePen</a> — pra montar e testar a página na hora.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>atelier</b> deixa as páginas bonitas e bem cuidadas, fugindo do visual genérico. Prepare com ela um exemplo caprichado de página com botão pra inspirar a turma.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Cada criança monta a própria página seguindo o rascunho: cores, título, texto, imagem livre e um botão que responde ao clique. Desafio extra: trocar a mensagem do botão por uma piadinha. Entregável: a página rodando no navegador, do jeito do chefe.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8 · 2h</span><h3>Colocar na internet de graça (com um adulto)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> tirar a página do "só no meu computador" e colocá-la na internet de verdade, de graça, com um link pra mostrar pra todo mundo — sempre com um adulto fazendo a parte de conta e publicação.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>A diferença entre a página só no seu computador e a página na internet: com um link, qualquer um pode ver!</li>
+        <li>Publicar de graça: existem sites que hospedam sua página sem custo. O adulto cria a conta e faz o envio.</li>
+        <li>O caminho simples: o adulto arrasta a pasta do projeto pro serviço, e em segundos sai um link pronto.</li>
+        <li>Cuidado de segurança antes de publicar: conferir que não tem nenhum dado pessoal na página (a regra de ouro de novo).</li>
+        <li>Mostrar com orgulho: o link funciona no celular! Dá pra abrir e mostrar pra família — e atualizar quando quiser.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>O professor (fazendo o papel do adulto) publica a página de um aluno ao vivo, recebe o link e abre no celular no telão. A turma vê a própria criação "na internet de verdade" e entende a diferença entre criar e <b>publicar</b>. Antes de publicar, todos conferem juntos: "tem dado pessoal aí? não? então pode!".</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Sou criança e um adulto vai me ajudar a publicar minha página na internet de graça.
+Me explique, em passos bem simples e numa listinha,
+como colocar um arquivo index.html no ar usando um serviço gratuito.
+Diga também o que devo conferir ANTES de publicar
+pra não deixar nenhum dado pessoal aparecer.
+Use palavras fáceis, é pra criança entender.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://app.netlify.com/drop">Netlify Drop</a> — arraste a pasta e ganhe um link (o adulto cria a conta).</li>
+        <li><a href="https://pages.github.com/">GitHub Pages</a> — publicar de graça pelo GitHub (com um adulto).</li>
+        <li><a href="https://vercel.com/">Vercel</a> — outro jeito grátis de publicar (com um adulto).</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>faro</b> faz a varredura final de segurança antes de subir pra internet, caçando qualquer dado que não deveria vazar. Rode-a como passo obrigatório antes de cada publicação da turma.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Com o adulto, cada criança publica a própria página e recebe o link. Abrem no celular e mandam o link (só pra família/turma). Desafio: mudar um texto, publicar de novo e ver a página atualizada no ar. Entregável: o link público funcionando.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9 · 2h</span><h3>Guardar coisas (um caderninho digital)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> deixar a página mais esperta — fazer ela <b>lembrar</b> de coisas, como um caderninho digital onde você escreve um item e ele continua lá quando você volta.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Páginas comuns esquecem tudo quando você fecha. Um "caderninho digital" lembra das coisas que você escreveu.</li>
+        <li>A ideia de uma listinha que guarda itens: você digita "comprar maçã", clica e fica salvo na sua lista.</li>
+        <li>Como a IA faz isso de forma simples: ela usa a "memória" do próprio navegador pra guardar a lista no seu computador.</li>
+        <li>Sem dados de pessoas: o caderninho é pra coisas simples (lista de tarefas, livros que quero ler), nunca senha ou dado secreto.</li>
+        <li>Conferir como chefe: testar — escrever um item, fechar a página, abrir de novo e ver se ele continua lá.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>O professor cria ao vivo uma "lista de desejos de aniversário": digita um item, clica e ele aparece na lista. Aí fecha a página e abre de novo — e os itens continuam lá! A turma faz "ooooh". A página agora <b>lembra</b> das coisas, como um caderninho que não apaga.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Quero uma página HTML simples, em um único código, que seja um
+&quot;caderninho digital&quot; (lista de tarefas).
+Ela deve ter:
+- um campo pra digitar um item,
+- um botão &quot;Adicionar&quot;,
+- a lista dos itens que eu adicionei,
+- e deve LEMBRAR dos itens mesmo se eu fechar e abrir a página
+  (use a memória do próprio navegador).
+Não guarde nenhum dado pessoal nem senha.
+Depois me explique em 2 frases como ela &quot;lembra&quot; das coisas.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage">MDN — localStorage</a> — a "memória" do navegador, pra curiosos e pro adulto.</li>
+        <li><a href="https://www.w3schools.com/html/html_form_input_types.asp">W3Schools — campos de digitar</a> — como funciona o campo de texto.</li>
+        <li><a href="https://codepen.io/pen/">CodePen</a> — pra testar o caderninho na hora.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>esquema</b> ajuda a pensar "que coisas a página precisa guardar" de um jeito organizado. Use-a pra preparar exemplos de caderninhos (lista de livros, de jogos, de tarefas) que cabem na aula.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Cada criança cria o próprio caderninho digital (a lista que quiser: filmes, jogos, tarefas). Teste do chefe: adicionar 3 itens, fechar a página, abrir de novo e conferir se continuam lá. Entregável: o caderninho funcionando e lembrando dos itens.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10 · 2h</span><h3>Seu primeiro mini-site pronto!</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> juntar tudo que a gente aprendeu e entregar o primeiro mini-site completo — bonito, com botão e caderninho, conferido com capricho e publicado na internet (com um adulto). Festa final!</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Juntar as peças: o visual da Aula 7 (cores, textos, botão) + o caderninho da Aula 9, tudo num mini-site só.</li>
+        <li>Caprichar antes de mostrar: revisar os textos, ver se as cores combinam, testar se o botão e o caderninho funcionam.</li>
+        <li>A "lista de conferência" do chefe (versão criança da engenharia): <b>Entendi</b> o que pedi? <b>Li/testei</b> tudo? Tem algum <b>dado pessoal</b> que precisa sair? <b>Salvei</b> uma cópia? <b>Publiquei</b> certinho?</li>
+        <li>Publicar a versão final com o adulto e pegar o link de orgulho.</li>
+        <li>Comemorar e pensar no próximo passo: que parte nova eu quero colocar no meu site depois?</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Brincadeira / demonstração</h4>
+      <p>O professor junta o visual e o caderninho num mini-site completo no telão, passa a "lista de conferência" do chefe em voz alta (testando o botão, o caderninho e procurando dado pessoal) e publica a versão final. Depois é a vez da turma: cada um mostra o seu mini-site numa "feira de criadores".</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Quero juntar tudo num único mini-site em HTML (um só código).
+Ele deve ter:
+- cores e título bonitos,
+- um parágrafo divertido e uma imagem livre pra usar,
+- um botão que mostra uma mensagem ao clicar,
+- e um caderninho (lista) que LEMBRA dos itens mesmo ao fechar a página.
+Deixe tudo organizado e fácil de ler.
+Não use nenhum dado pessoal meu.
+No final, me dê uma listinha do que eu devo CONFERIR antes de publicar.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://app.netlify.com/drop">Netlify Drop</a> — publicar o mini-site de graça (com um adulto).</li>
+        <li><a href="https://claude.ai/">Claude (IA)</a> — pra montar e revisar o mini-site.</li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn">MDN — aprender web</a> — pra continuar aprendendo depois do curso.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>Feche com a skill <b>crivo</b> (revisa o trabalho final com uma listinha de conferência simples) e a <b>faro</b> (última varredura de segurança antes de publicar). Reforce pra turma: a IA ajuda muito, mas <b>quem diz "tá pronto" é o chefe — você!</b></p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Mão na massa</h4>
+      <p>Cada criança entrega o mini-site completo (visual + botão + caderninho), passa a lista de conferência do chefe e publica a versão final com o adulto. Feira de criadores: todo mundo abre o próprio link e mostra a criação. Entregável final dos Módulos 1 e 2: o link do mini-site no ar!</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>Fazendo com segurança</h2></div>
+  <p class="mod-resumo">Aprender a esconder segredos, trancar a porta do nosso site e cuidar bem dos dados das pessoas — tudo do jeitinho que uma criança entende.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 2h</span><h3>Senhas e segredos (o que a gente esconde)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que existem coisas que a gente mostra pra todo mundo e coisas que a gente esconde — e por que algumas precisam ficar bem guardadas.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Tem coisa que pode aparecer (o nome do site, as cores, os desenhos) e coisa que a gente esconde (senhas e chaves).</li>
+        <li>Senha é como a chave da nossa casa: a gente não cola na porta pra todo mundo ver.</li>
+        <li>Uma boa senha é grande e difícil de adivinhar — nada de "1234" ou o nome do cachorro.</li>
+        <li>A gente nunca conta senha pra estranho, nem escreve no meio do código que todo mundo pode ver.</li>
+        <li>Quando a IA precisar de uma chave secreta, ela vai num lugar escondido chamado ".env" — a "caixinha de segredos".</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "mostra ou esconde": o educador fala várias coisas (o nome do site, a senha do e-mail, a cor do botão, a chave de um serviço) e as crianças levantam a mão verde pra "mostra" e a mão vermelha pra "esconde". Depois cada um inventa uma senha forte juntando 3 palavras malucas e um número, tipo "DragãoPipocaLua7".</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Me explique, com palavras de criança, a diferença entre
+informações que podem aparecer no site e segredos que
+precisam ficar escondidos. Dê 3 exemplos de cada.
+Depois me mostre o que é um arquivo .env e por que
+ele serve pra guardar segredos.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.commonsense.org/education/digital-citizenship/lesson/password-power-up">Common Sense Education — Password Power-Up</a> — aula pronta sobre senhas fortes pra crianças.</li>
+        <li><a href="https://www.cisa.gov/secure-our-world/use-strong-passwords">CISA — Use Strong Passwords</a> — guia oficial e simples de senha forte.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>Use a skill <b>faro</b> pra mostrar, num projeto de mentira, como a gente procura segredos que vazaram sem querer. É ótimo pra a criança ver que "esquecer um segredo aberto" acontece — e tem conserto.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>Cada criança cria a sua "senha forte de 3 palavras + número" num papel e guarda dobrado. Com o adulto, abrem o arquivo .env do projeto e escrevem uma chave de mentira (ex.: SEGREDO=meu-segredo-de-teste) só pra ver onde os segredos moram.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 2h</span><h3>Trancar a porta (deixar seguro)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que um site também tem "portas" e que a gente precisa trancar as portas que não devem ficar abertas.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Um site tem portas: a porta da frente (que todo mundo pode usar) e portas dos fundos (que só a gente pode usar).</li>
+        <li>Deixar uma porta dos fundos aberta é como sair de casa e esquecer a janela escancarada.</li>
+        <li>"Trancar a porta" é avisar o computador: só pode entrar aqui quem tem permissão.</li>
+        <li>A gente sempre confere se trancou antes de mostrar o site pro mundo.</li>
+        <li>O cadeado (https) na barra do navegador é o sinal de que o caminho está protegido.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "a casa das portas": desenhe uma casa grande no quadro com várias portas. Em cada porta, escreva o que tem dentro (fotos, recados, segredos). As crianças decidem juntas qual porta fica aberta pra visita e qual fica trancada — e desenham um cadeado nas trancadas.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Explique pra uma criança o que são "regras de segurança"
+num site, como se fossem portas que a gente tranca.
+Depois me mostre um exemplo simples de regra que diz
+"só pode entrar quem tem permissão", com palavras fáceis.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://firebase.google.com/docs/rules/basics">Firebase — Regras de segurança (básico)</a> — como o "trancar a porta" funciona de verdade (pro adulto explicar).</li>
+        <li><a href="https://www.cloudflare.com/pt-br/learning/ssl/what-is-https/">Cloudflare — O que é HTTPS</a> — o cadeado do navegador explicado de forma simples.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>As skills <b>cofre</b> e <b>bastiao</b> ajudam a conferir, com o adulto, se as "portas" do projeto estão trancadas. Mostre só o resultado simples: "trancado" ou "precisa trancar".</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>No projeto do site, peça pra IA explicar quais portas existem e desenhem juntos no caderno um cadeado em cada uma que deve ficar trancada. Conferir o cadeado (https) no navegador quando o site abrir.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 2h</span><h3>Quem pode entrar (login)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que é fazer login — dizer "sou eu!" pro site — e por que isso protege as nossas coisas.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Login é como mostrar a sua carteirinha na entrada: o site confere se é você mesmo.</li>
+        <li>A gente usa um nome (ou e-mail) e uma senha que só a gente sabe.</li>
+        <li>Cada pessoa tem o seu cantinho: o que é meu eu vejo, o que é do amigo o amigo vê.</li>
+        <li>Nunca pedimos a senha de ninguém e nunca usamos a conta de outra pessoa sem permissão.</li>
+        <li>Se errar a senha, tudo bem tentar de novo com calma — e o adulto ajuda a recuperar.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "porteiro da festa": uma criança é o porteiro com uma lista de convidados. As outras chegam dizendo o nome e uma "senha secreta" combinada. Só entra quem está na lista e fala a senha certa. Assim elas sentem na prática o que o login faz.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Crie uma tela de login bem simples e bonita pro meu site,
+com um campo de e-mail, um campo de senha e um botão "Entrar".
+Explique, com palavras de criança, como o login confere
+se a pessoa é ela mesma. Deixe seguro por padrão.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://firebase.google.com/docs/auth">Firebase Authentication</a> — o serviço que cuida do login com segurança (pro adulto).</li>
+        <li><a href="https://www.commonsense.org/education/digital-citizenship/lesson/strong-passwords">Common Sense — Strong Passwords</a> — reforça por que a senha do login precisa ser forte.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>Use <b>escudo</b> pra revisar com o adulto se o login ficou seguro (senha protegida, sem deixar segredo à mostra). A criança só dirige: pede a tela e confere se funciona.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>Com a IA, a turma cria uma tela de login simples e testa entrar com um e-mail de teste. Depois cada um faz logout e entra de novo, pra ver o "sou eu!" funcionando.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 2h</span><h3>Cuidar dos dados das pessoas</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que, quando alguém escreve o nome ou o e-mail no nosso site, isso é uma coisa importante da pessoa — e a gente cuida com carinho.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Nome, e-mail e foto são coisas das pessoas — a gente trata como tesouro emprestado.</li>
+        <li>A gente só pede o que precisa: se não precisa do telefone, não pede o telefone.</li>
+        <li>A gente avisa pra que serve, do mesmo jeito que pedimos "posso?" antes de pegar algo.</li>
+        <li>Nunca mostramos os dados de uma pessoa pra outra sem permissão.</li>
+        <li>Se a pessoa quiser que a gente apague os dados dela, a gente apaga.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "tesouro emprestado": cada criança empresta um objeto pequeno (uma borracha, um chaveiro) pra outra cuidar por 5 minutos. No fim, conversam: foi bom confiar? E se quebrasse? Isso é o que sentimos quando alguém confia o nome e o e-mail no nosso site.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Quero um formulário que pede só o primeiro nome e o e-mail,
+nada além disso. Escreva uma frase curta e gentil avisando
+pra que a gente vai usar essas informações. Explique pra
+uma criança por que a gente pede só o necessário.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.gov.br/anpd/pt-br">ANPD — Autoridade Nacional de Proteção de Dados</a> — quem cuida da privacidade no Brasil (LGPD), pro adulto entender.</li>
+        <li><a href="https://www.commonsense.org/education/digital-citizenship/lesson/protecting-private-information">Common Sense — Protecting Private Information</a> — aula sobre cuidar de informações privadas.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>salvaguarda</b> ajuda o adulto a ver se o site cuida bem dos dados (pede só o necessário, avisa pra quê). Use o resultado pra ensinar "pedir só o que precisa".</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>A turma cria um formulário que pede só nome e e-mail, com a frasinha gentil avisando pra que serve. Depois discutem: o que NÃO precisaríamos pedir? Riscam juntos os campos a mais.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 2h</span><h3>Conferir antes de mostrar pro mundo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> criar o hábito de revisar tudo com uma listinha antes de colocar o site no ar — porta trancada, segredo escondido, dados cuidados.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Antes de mostrar pro mundo, a gente confere — como olhar no espelho antes de sair de casa.</li>
+        <li>Fazemos uma listinha: porta trancada? segredo escondido? só pedi o necessário? o cadeado (https) apareceu?</li>
+        <li>Se algo estiver faltando, a gente conserta primeiro e só depois mostra.</li>
+        <li>Conferir não é desconfiar de você — é capricho e cuidado.</li>
+        <li>Sempre dá pra pedir a um adulto pra olhar junto.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "checklist do astronauta": antes de um foguete (de papel) decolar, a turma lê uma lista em voz alta e responde "confere!" pra cada item. Depois adaptam a lista pro site: "segredo escondido — confere!", "porta trancada — confere!". Só aí o foguete (o site) decola.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Faça uma lista de conferência simples, com palavras de
+criança, pra eu checar antes de colocar meu site no ar:
+segredos escondidos, portas trancadas, só pedi o que precisa
+e o cadeado de segurança apareceu. Explique cada item.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://vercel.com/docs/deployments">Vercel — Deployments</a> — como colocar o site no ar (o adulto cuida das contas/deploy).</li>
+        <li><a href="https://www.cisa.gov/secure-our-world">CISA — Secure Our World</a> — dicas oficiais e simples de segurança pra revisar junto.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>Use <b>crivo</b> com o adulto pra uma última revisão antes de publicar. Transforme o resultado na "listinha do astronauta" que a turma lê em voz alta.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>Cada criança preenche a listinha de conferência do próprio projeto e marca "confere!" em cada item. Onde faltar, pede o conserto pra IA. Com o adulto, fazem o deploy e veem o site no ar pela primeira vez.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>Deixando bonito</h2></div>
+  <p class="mod-resumo">Brincar com cores, letras e imagens, deixar tudo com capricho e fazer o site funcionar bem também no celular.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 2h</span><h3>O que deixa um site legal</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> descobrir, olhando sites de verdade, o que faz a gente gostar de uma página — e o que deixa ela confusa.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Site legal é fácil de entender: dá pra achar as coisas sem se perder.</li>
+        <li>Espaço pra respirar: nem tudo grudado, nem tudo solto.</li>
+        <li>Pouca bagunça: poucas cores, poucas letras diferentes, tudo combinando.</li>
+        <li>O mais importante aparece primeiro e grandão.</li>
+        <li>Cada site tem um clima: pode ser divertido, calminho ou cheio de energia — a gente escolhe o nosso.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "detetive de sites": o educador mostra dois sites — um organizado e um bagunçado. A turma vira detetive e aponta o que está bom e o que está confuso em cada um. Depois cada criança fala uma coisa que quer no site dela: "quero que seja divertido", "quero que seja calminho".</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Me explique, com palavras de criança, 5 coisas que deixam
+um site legal e fácil de usar. Depois me dê ideias de
+"clima" pro meu site (divertido, calminho, cheio de energia)
+e o que muda em cada um.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.canva.com/learn/design-elements-principles/">Canva — Princípios de design</a> — o que deixa algo bonito, explicado de forma fácil.</li>
+        <li><a href="https://www.nngroup.com/articles/childrens-websites-usability-issues/">Nielsen Norman — Sites para crianças</a> — o que funciona pra esse público (pro educador).</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>canone</b> traz o "jeito certo" de boa interface (cores, espaços, tipografia). Use as ideias pra guiar as escolhas da turma sem complicar.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>Cada criança escolhe o "clima" do site dela e desenha no caderno um rascunho bem simples: onde vai o título, onde vai a imagem, onde vai o botão. Esse rascunho vira o mapa das próximas aulas.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 2h</span><h3>Cores, letras e imagens</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> escolher cores que combinam, letras fáceis de ler e imagens legais — e pedir tudo isso pra IA.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Cores combinam melhor em grupinhos pequenos: uma cor principal e uma ou duas pra acompanhar.</li>
+        <li>Letra boa é a que dá pra ler fácil, sem apertar os olhos.</li>
+        <li>Cor da letra precisa contrastar com o fundo (letra escura no fundo claro, ou o contrário).</li>
+        <li>Imagem tem que ter a ver com o assunto — e a gente usa imagens que pode usar (livres ou que a gente fez).</li>
+        <li>Menos é mais: três cores bem escolhidas ficam melhor que dez cores brigando.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "paleta mágica": cada criança escolhe 3 lápis de cor que combinam e pinta um quadradinho de cada. Depois testam escrever uma palavra com a cor da letra dentro de cada fundo, pra ver qual dá pra ler bem. A combinação vencedora vira a paleta do site.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Quero deixar meu site com clima divertido. Sugira uma
+combinação de 3 cores que combinam e 1 fonte fácil de ler.
+Mostre como fica o título e um parágrafo com essas cores,
+garantindo que dá pra ler bem (bom contraste).</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://coolors.co/">Coolors</a> — gera paletas de cores que combinam, num clique.</li>
+        <li><a href="https://fonts.google.com/">Google Fonts</a> — várias letras gratuitas pra escolher.</li>
+        <li><a href="https://unsplash.com/">Unsplash</a> — fotos livres pra usar no site.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>Use <b>atelier</b> pra a IA gerar telas já bonitas e com bom contraste por padrão. A criança escolhe o clima e a paleta; a skill cuida do capricho visual.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>A turma escolhe a paleta no Coolors e uma fonte no Google Fonts, e pede pra IA aplicar no site. Depois conferem juntos se dá pra ler tudo bem — se não der, pedem mais contraste.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 2h</span><h3>Funciona no celular também</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que muita gente usa celular, e fazer o site ficar bonito tanto na tela grande quanto na telinha.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O site precisa caber em telas de tamanhos diferentes: computador, tablet e celular.</li>
+        <li>No celular, as coisas ficam uma embaixo da outra, em vez de lado a lado.</li>
+        <li>Botões precisam ser grandes o bastante pra clicar com o dedo.</li>
+        <li>Letra não pode ficar minúscula no celular — tem que dar pra ler sem dar zoom.</li>
+        <li>A gente sempre testa nos dois jeitos antes de dizer "tá pronto".</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "elástico da tela": com uma folha que dobra, mostre o mesmo desenho "esticado" (tela grande) e "encolhido" (celular). A turma decide o que muda de lugar quando a tela encolhe. Depois, no navegador, o educador estica e encolhe a janela e todos veem o site se ajeitar.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Faça meu site funcionar bem no celular também: as coisas
+uma embaixo da outra, botões grandes pra clicar com o dedo
+e letras fáceis de ler sem zoom. Me explique, de forma
+simples, o que você mudou pra caber na telinha.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://web.dev/learn/design/">web.dev — Responsive design (aprender)</a> — como sites se ajustam a cada tela.</li>
+        <li><a href="https://developer.chrome.com/docs/devtools/device-mode/">Chrome DevTools — Modo dispositivo</a> — ver o site como num celular, dentro do navegador.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>A skill <b>atelier</b> já entrega telas que se ajustam ao celular por padrão. Use o modo dispositivo do navegador pra a turma ver o site "encolher" e checar os botões.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>Cada criança pede pra IA deixar o site bom no celular e testa no modo dispositivo do navegador (com ajuda do adulto). Conferem juntos: dá pra ler? dá pra clicar com o dedo? Se não, pedem o ajuste.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 2h</span><h3>Botões e formulários</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> deixar os botões e os campos do site fáceis de usar, claros e gentis — pra ninguém ficar perdido.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Botão bom diz o que faz: "Enviar", "Salvar", "Voltar" — nada de "clique aqui" misterioso.</li>
+        <li>Botão muda de jeitinho quando o mouse passa por cima, pra avisar "dá pra clicar!".</li>
+        <li>Formulário fica mais fácil com uma dica em cada campo (ex.: "seu primeiro nome").</li>
+        <li>Quando a pessoa erra, a gente avisa com carinho e mostra como arrumar.</li>
+        <li>Depois de enviar, a gente agradece: "Pronto, recebemos!".</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "robô obediente": uma criança é o robô e só faz o que o botão diz. As outras "apertam botões" falando o texto — se o botão for confuso ("clique aqui"), o robô fica perdido; se for claro ("dê dois pulos"), o robô faz certinho. Assim elas veem por que o texto do botão importa.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Deixe os botões do meu site claros e com um efeito legal
+quando o mouse passa por cima. No meu formulário, coloque
+uma dica em cada campo, um aviso gentil se a pessoa errar
+e uma mensagem de "obrigado" depois de enviar.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.nngroup.com/articles/error-message-guidelines/">Nielsen Norman — Mensagens de erro</a> — como avisar erros com gentileza (pro educador).</li>
+        <li><a href="https://web.dev/learn/forms/">web.dev — Learn Forms</a> — como fazer formulários fáceis de usar.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>Use <b>atelier</b> pra os botões e formulários já saírem bonitos e claros. A criança decide os textos ("Enviar", "Obrigado!"); a skill cuida do visual e dos estados.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>A turma melhora os botões e o formulário do site com a IA e testa: passar o mouse, enviar certo (aparece o "obrigado") e enviar errado de propósito (aparece o aviso gentil). Ajustam os textos até ficarem claros.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 2h</span><h3>Capricho final</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> dar os últimos retoques no site com capricho, conferir tudo de novo e deixar pronto pra mostrar com orgulho.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Capricho final é olhar o site inteiro com calma, do começo ao fim.</li>
+        <li>Conferir se está tudo combinando: cores, letras, espaços e imagens.</li>
+        <li>Ler os textos procurando palavras erradas ou frases confusas.</li>
+        <li>Testar de novo no computador e no celular — e dar uma última olhada na segurança do Módulo 3.</li>
+        <li>Site bem cuidado é como um desenho que a gente caprichou: dá orgulho de mostrar.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira "galeria de arte": cada criança mostra o site pra turma como se fosse um quadro numa galeria. Os colegas dizem uma coisa que amaram e dão uma dica gentil de melhoria. Depois cada um escolhe 1 ou 2 dicas pra aplicar como capricho final.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span>
+<pre>Faça uma revisão final do meu site, com palavras de criança:
+veja se as cores e letras combinam, se os textos estão certos,
+se funciona no celular e se está seguro. Liste o que está
+ótimo e o que eu posso melhorar com pequenos retoques.</pre>
+    </div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://pagespeed.web.dev/">PageSpeed Insights</a> — vê se o site está rápido e bem feito (o adulto ajuda a ler).</li>
+        <li><a href="https://wave.webaim.org/">WAVE — Teste de acessibilidade</a> — confere se todo mundo consegue usar o site.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4>
+      <p>Combine <b>crivo</b> (revisão final do capricho e do código) com <b>lapidador</b> (refinar o que ficou quase bom) pra dar os últimos retoques junto com a turma.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Mão na massa</h4>
+      <p>Cada criança aplica 1 ou 2 retoques finais, passa pela listinha de conferência do Módulo 3 mais uma vez e apresenta o site pronto pra turma. Festa da galeria: todos mostram o que construíram com orgulho.</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>Fazendo o site fazer coisas</h2></div>
+  <p class="mod-resumo">Até agora seu site era uma vitrine bonita. Agora ele vira um ajudante esperto: guarda informação, responde quando alguém clica, usa "mágicas prontas" que outras pessoas já criaram, manda avisos sozinho e fica rapidinho de carregar.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 2h</span><h3>Guardar e mostrar informação</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que o site pode ter uma "caixa de memória" onde ele guarda coisas (uma lista de tarefas, recados, nomes) e depois mostra de volta na tela.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O que é "guardar informação": é como um caderninho do site. Você escreve algo e ele lembra.</li>
+        <li>Diferença entre "mostrar para sempre" (texto que já está escrito) e "guardar o que a pessoa digitou".</li>
+        <li>Uma lista simples: a criança digita um item, aperta um botão, o item aparece na lista embaixo.</li>
+        <li>Que existe um lugar onde a informação fica guardada (na própria página, por enquanto, para ficar fácil).</li>
+        <li>Ler junto o que a IA escreveu: "onde está a parte que guarda?" e "onde está a parte que mostra?".</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "caderninho mágico": uma criança é o site e segura um caderno. Os colegas falam tarefas ("escovar o dente", "dar comida pro gato") e ela anota. Quando alguém pergunta "qual é a lista?", ela lê tudo de volta. Aí o adulto mostra a mesma coisa acontecendo na tela: digitar, apertar o botão, e o item aparece na lista. É exatamente o caderninho, só que dentro do site.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Crie uma página simples de lista de tarefas, só com HTML, CSS e
+JavaScript em um arquivo, sem internet e sem login.
+Tenha uma caixinha pra escrever e um botão "Adicionar".
+Quando eu clicar, a tarefa aparece numa lista embaixo.
+Use cores alegres e letras grandes. Explique com comentários
+curtos onde a informação é guardada e onde ela é mostrada.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Arrays">MDN — Listas (Arrays) em português</a> — pro adulto entender como o site guarda vários itens.</li>
+        <li><a href="https://scratch.mit.edu/projects/editor/">Scratch — editor</a> — pra brincar com "variáveis" (caixinhas de memória) de um jeito visual.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a abordagem da skill <b>esquema</b> para conversar sobre "onde os dados moram": antes de mandar a IA codar, pergunte à turma o que precisa ser guardado (nome, data, feito ou não feito). Modelar o dado em voz alta deixa o prompt muito mais claro e ensina a criança a pensar antes de pedir.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada dupla cria a própria lista de tarefas e adiciona 3 itens de verdade da semana. Depois trocam de computador e leem em voz alta a lista do colega: "o site guardou certinho?". Ganha um joinha quem conseguir explicar para o adulto onde, no código, a tarefa é guardada.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 2h</span><h3>O site que responde</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> fazer o site reagir ao que a pessoa faz — clicou, escreveu, escolheu — e responder de um jeito divertido na hora.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O site pode "ouvir" o que a pessoa faz: clicar num botão, digitar o nome, mover o mouse.</li>
+        <li>"Se isso, então aquilo": se a pessoa escrever o nome e clicar, então aparece "Oi, Maria!".</li>
+        <li>Respostas diferentes para coisas diferentes (se clicar no botão verde acontece A, no vermelho acontece B).</li>
+        <li>Mensagens carinhosas e claras: o site fala com a pessoa.</li>
+        <li>Testar apertando os botões: será que responde sempre igual? Será que quebra se eu não escrever nada?</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do robô "se-então": uma criança vira robô e só obedece a ordens no formato "SE eu bater palma, ENTÃO você pula". Os colegas inventam regras e testam. Depois o adulto mostra na tela um botão que, quando clicado, troca a cor do fundo ou mostra um emoji. A turma percebe: o site é um robô que segue regrinhas de "se-então".</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Crie uma página simples num arquivo só (HTML, CSS e JavaScript),
+sem internet e sem login.
+Tenha uma caixinha pra escrever um nome e um botão "Dizer oi".
+Quando eu clicar, mostre na tela "Oi, &lt;nome&gt;! Que bom te ver!".
+Se a caixinha estiver vazia, mostre com carinho "Escreva seu nome
+primeiro :)". Use letras grandes e cores alegres.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Element/click_event">MDN — Evento de clique</a> — pro adulto ver como o site "ouve" um clique.</li>
+        <li><a href="https://blockly.games/">Blockly Games</a> — jogos gratuitos pra praticar lógica "se-então" arrastando blocos.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>lupa</b> ensina a investigar quando algo não responde. Transforme isso num jogo: quando o botão não fizer nada, abra o console (F12) com a turma e pergunte "o site reclamou de alguma coisa?". Ler a mensagem de erro junto tira o medo e mostra que erro é pista, não bicho-papão.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança escolhe uma "resposta" divertida para o site dar: um elogio, uma piada, um emoji surpresa. Implementam com a IA e testam clicando várias vezes, inclusive deixando a caixinha vazia de propósito para ver se o site responde com educação em vez de quebrar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 2h</span><h3>Conectar com outras coisas (mágicas prontas)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> descobrir que existem "mágicas prontas" feitas por outras pessoas (mapas, vídeos, figurinhas) que dá para colar no seu site sem precisar fazer tudo do zero.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O que é uma "peça pronta": algo que alguém já construiu e deixou pronto pra usar, como uma peça de Lego.</li>
+        <li>Exemplos seguros e fáceis: colocar um vídeo do YouTube, um mapa, ou uma figurinha animada.</li>
+        <li>"Encaixar" a peça no site copiando um pedacinho de código que o próprio serviço entrega.</li>
+        <li>Regra de ouro: sempre com um adulto, e só de lugares conhecidos e confiáveis.</li>
+        <li>Que peça emprestada pode parar de funcionar — então a gente testa depois de colar.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "empréstimo de peça": cada criança traz uma peça de Lego e empresta para o colega encaixar no castelo dele — ninguém precisa fabricar a peça, só encaixar. Depois o adulto mostra na tela como colar um mapa pronto (do OpenStreetMap) ou um vídeo dentro de uma página. A turma vê que dá para fazer coisas incríveis usando peças que já existem.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Crie uma página simples num arquivo só (HTML e CSS), sem login.
+Quero uma seção "Meu lugar favorito" com um título grande, um
+parágrafo curto e um mapa pronto encaixado (use um iframe do
+OpenStreetMap apontando para uma cidade que eu vou escolher com
+o adulto). Explique com um comentário curto onde eu troco o lugar
+do mapa. Deixe bonito e colorido.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.openstreetmap.org/">OpenStreetMap</a> — mapa gratuito; tem a opção "Compartilhar" para pegar o código de encaixe.</li>
+        <li><a href="https://support.google.com/youtube/answer/171780?hl=pt-BR">YouTube — Como incorporar um vídeo</a> — passo a passo oficial para colar um vídeo numa página.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>ponte</b> trata de conectar serviços de fora com segurança. Aqui, na versão infantil, fixe duas regras: (1) peça pronta sempre vem de um lugar confiável e (2) sempre testar depois de encaixar. Aproveite para falar, em linguagem de criança, que "coisa de fora pode falhar", então a gente confere.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada dupla escolhe um lugar especial (a escola, a casa da vovó, um parque) e encaixa o mapa desse lugar no site. Depois testam: o mapa carregou? Dá para arrastar? Se não funcionou, viram detetives e olham junto com o adulto o que pode ter acontecido.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 2h</span><h3>Avisos automáticos</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> fazer o site avisar a pessoa na hora certa — uma mensagem de parabéns, um lembrete, um alerta — sem ninguém precisar mandar à mão.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O que é um "aviso automático": o site percebe que algo aconteceu e fala sozinho.</li>
+        <li>Quando avisar: quando a tarefa é concluída, quando o tempo acaba, quando a pessoa acerta.</li>
+        <li>Avisos bons são curtos, claros e gentis (nada de assustar a pessoa).</li>
+        <li>Diferença entre um avisinho na própria tela e uma notificação (a notificação precisa de permissão).</li>
+        <li>Testar o aviso: ele aparece na hora certa? Aparece toda vez?</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "sino da vitória": sempre que alguém termina um desafio, a turma faz "tlim-tlim!" e aplaude. É um aviso automático humano. Depois o adulto mostra na tela uma listinha de tarefas que, quando todas estão marcadas como feitas, faz aparecer um "Parabéns! Você conseguiu! 🎉". As crianças veem o site comemorando junto com elas.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Pegue minha página de lista de tarefas (HTML, CSS e JavaScript
+num arquivo só, sem internet e sem login).
+Cada tarefa tem uma caixinha de "feito".
+Quando TODAS as tarefas estiverem marcadas como feitas, mostre
+uma mensagem grande e alegre "Parabéns! Você terminou tudo! 🎉".
+Se eu desmarcar uma, a mensagem some. Explique com comentários
+curtos a parte que decide quando mostrar o aviso.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Window/alert">MDN — alert (aviso na tela)</a> — o aviso mais simples de todos, para o adulto demonstrar.</li>
+        <li><a href="https://web.dev/articles/push-notifications-overview?hl=pt-br">web.dev — Notificações (visão geral)</a> — para o adulto entender que notificação de verdade pede permissão.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>sentinela</b> fala de "saber quando algo acontece" em sistemas de verdade (alertas e logs). Traga a ideia em miniatura: um bom aviso avisa a coisa certa, na hora certa, sem encher o saco. Peça à turma para julgar avisos "bons" e "chatos" — isso desenvolve o senso de qualidade desde cedo.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança cria um aviso automático para o seu site: pode ser parabéns ao terminar, um lembrete "ainda falta 1 tarefa!", ou uma contagem. Depois testam de propósito: marcam e desmarcam tarefas para ver se o aviso aparece e some na hora certa.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 2h</span><h3>Deixar rápido</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que site rápido é site gostoso de usar, e aprender truques simples para o site abrir voando (imagens menores, menos enrolação).</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Por que rapidez importa: ninguém gosta de esperar uma página travada.</li>
+        <li>O maior vilão costuma ser imagem gigante: imagem pesada deixa tudo lento.</li>
+        <li>Truques fáceis: usar imagens do tamanho certo, não colocar coisa demais na mesma tela.</li>
+        <li>Como medir: dá para "pesar" o site com uma ferramenta e ver uma nota.</li>
+        <li>Testar antes e depois: a gente mede, melhora e mede de novo para ver se ajudou.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira da "mochila pesada": uma criança corre com a mochila vazia e depois cheia de livros. Todo mundo vê que com peso ela fica lenta. O site é igual: quanto mais coisa pesada (imagens grandes), mais devagar ele "corre". Depois o adulto mostra uma imagem enorme deixando a página lenta e, ao trocar por uma menor, a página abre rapidinho.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Olhe o código da minha página (HTML e CSS num arquivo só).
+Me diga, em linguagem de criança, 3 coisas simples que deixam um
+site mais rápido. Depois ajuste minha página para carregar mais
+rápido sem mudar o visual: imagens no tamanho certo e nada
+desnecessário. Explique cada mudança com um comentário curto.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://pagespeed.web.dev/">PageSpeed Insights</a> — cola o endereço do site e ganha uma nota de velocidade (com o adulto).</li>
+        <li><a href="https://squoosh.app/">Squoosh</a> — ferramenta gratuita do Google para deixar imagens mais leves sem ficarem feias.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>turbo</b> é sobre performance de verdade (Core Web Vitals, imagens, carregamento). Use a régua dela só como bússola: para crianças, foque em uma coisa por vez — imagens leves. Faça medir-melhorar-medir virar rotina; é o primeiro contato com "testar antes e depois".</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada dupla mede o próprio site no PageSpeed e anota a nota. Depois passam uma imagem pelo Squoosh, trocam no site e medem de novo. Comemoram a nota que subiu e desenham um "antes e depois" num papel para mostrar ao adulto.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>Fazendo direito (qualidade)</h2></div>
+  <p class="mod-resumo">A IA é uma ajudante incrível, mas não é perfeita. Neste módulo a criança vira chefe da IA: aprende a ler o que ela escreveu, a virar detetive de erros, a testar tudo, a organizar a bagunça e a perceber rapidinho quando alguma coisa quebrou.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 2h</span><h3>Ler o que a IA escreveu (não aceitar de olhos fechados)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> criar o hábito de ler e entender o que a IA fez antes de aceitar, em vez de só clicar em "ok" sem olhar.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>A IA é ajudante, não chefe — quem manda é você.</li>
+        <li>Antes de aceitar, a gente lê: "o que esse pedaço faz?".</li>
+        <li>Pedir para a IA explicar com palavras simples também é ler junto.</li>
+        <li>Procurar coisas estranhas: nomes que não combinam, partes que a gente não pediu.</li>
+        <li>Está tudo bem não entender tudo — o importante é perguntar até entender o principal.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "chef provador": ninguém serve um prato sem provar antes. O adulto finge ser um cozinheiro que entrega um prato (um código) e a criança é o chef que prova: "tem sal a mais? veio algo que eu não pedi?". Depois, na tela, leem juntos um trecho que a IA escreveu e a criança explica com as próprias palavras o que entendeu.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Me explique, como se eu tivesse 10 anos, o que este código faz,
+linha por linha e em poucas palavras. Avise se tem alguma parte
+que eu não preciso, alguma coisa estranha ou algo que pode dar
+problema. Não mude nada ainda; só me explique.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">MDN — HTML em português</a> — pra conferir o que cada "tijolinho" do site significa.</li>
+        <li><a href="https://www.commonsensemedia.org/articles/ai-basics-for-parents-and-kids">Common Sense — Noções de IA para crianças e famílias</a> — por que sempre checar o que a IA faz (em inglês, ótimo para o adulto).</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>crivo</b> traz o Protocolo de 5 Camadas (Entender, Ler, Blindar, Testar, Versionar). Aqui treinamos as duas primeiras: <b>Entender</b> e <b>Ler</b>. Faça a regra "ninguém aceita o que não leu" virar lema da turma. É a semente da engenharia dentro do vibecoding.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>A IA gera um pedacinho de site. Cada criança lê e, sem ajuda, conta para a dupla o que aquele trecho faz. Depois pedem para a IA explicar e comparam: "acertei? entendi direito?". Quem achar uma parte que não tinha pedido marca com uma estrela.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 2h</span><h3>Achar e consertar erros (vira detetive!)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a investigar quando algo dá errado — olhar pistas, descobrir a causa e fazer o menor conserto possível.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Erro não é fracasso, é uma pista: o site está dizendo onde doeu.</li>
+        <li>Onde achar pistas: a tela do site e o "console" (a janela secreta que abre com F12).</li>
+        <li>Passo de detetive: o que eu esperava? o que aconteceu? o que mudou antes de quebrar?</li>
+        <li>Mudar uma coisa de cada vez — senão a gente não sabe o que resolveu.</li>
+        <li>Pedir ajuda à IA mostrando a mensagem de erro exata.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "detetive das pistas": o adulto esconde, num site, um errinho de propósito (um botão que não faz nada). A turma abre o F12, lê a mensagem vermelha e procura a pista junto. Cada criança ganha uma "lupa de papel" e, quando aponta a causa certa, vira detetive oficial. Depois consertam uma coisinha só e testam de novo.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Meu botão não está funcionando. Apareceu esta mensagem no console
+do navegador: "&lt;cole aqui a mensagem exata&gt;".
+O que eu esperava: ao clicar, mostrar a tarefa na lista.
+Me ajude como detetive: diga a causa provável e o MENOR conserto
+possível. Mude só o necessário e explique o que mudou.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/console">MDN — Console do navegador</a> — o que é e como ler as mensagens (com o adulto).</li>
+        <li><a href="https://developer.chrome.com/docs/devtools/console?hl=pt-br">Chrome DevTools — Console</a> — guia oficial de como abrir e usar o F12.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>As skills <b>lupa</b> e <b>systematic-debugging</b> ensinam o método: reproduzir, ler o erro, isolar a causa, fazer o menor conserto e verificar. Para crianças, transforme em "jogo do detetive" e insista numa regra de ouro: mudar UMA coisa por vez. Isso vale ouro contra o "muda tudo e reza".</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>O adulto entrega para cada dupla um site com um errinho plantado. Elas têm 15 minutos para virar detetives: abrir o F12, achar a pista, formar uma hipótese e consertar uma coisa só. Quem conserta e testa com sucesso ganha o "distintivo de detetive de bugs".</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 2h</span><h3>Testar pra ver se funciona</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a testar o site de propósito — apertando tudo, escrevendo coisas malucas — para descobrir problemas antes que outra pessoa descubra.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Testar é experimentar de propósito: clicar em tudo, escrever vazio, escrever demais.</li>
+        <li>O "caminho feliz" (tudo certo) e o "caminho travesso" (deixar vazio, apertar duas vezes).</li>
+        <li>Fazer uma listinha de testes: o que tem que funcionar? Conferir um por um.</li>
+        <li>Testar no computador e no celular — às vezes muda.</li>
+        <li>Se achar um problema, não esconder: anotar e consertar.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "quebrador do bem": cada criança ganha a missão de tentar "quebrar" o site do colega sem trapacear — clicando rápido, deixando campos vazios, escrevendo coisas bobas. Não é maldade, é virar inspetor de qualidade! Depois o adulto mostra uma listinha de testes na tela e a turma marca cada item que passou com um joinha verde.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Olhe minha página de lista de tarefas (HTML, CSS e JavaScript).
+Me dê uma listinha simples de testes, em linguagem de criança,
+para eu conferir se está tudo funcionando — incluindo casos
+travessos, como apertar o botão com a caixinha vazia ou adicionar
+a mesma tarefa duas vezes. Não mude o código; só liste os testes.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Extensions/Testing">MDN — Testando código de site</a> — visão geral de por que e como testar (para o adulto).</li>
+        <li><a href="https://developer.chrome.com/docs/devtools/device-mode?hl=pt-br">Chrome DevTools — Modo dispositivo</a> — como ver o site "no celular" pelo próprio computador.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>As skills <b>prova</b> e <b>test-driven-development</b> começam pelos casos de borda — exatamente o "caminho travesso". Ensine a turma a sempre testar o vazio, o repetido e o exagerado. Uma listinha de testes feita à mão já é um teste; é o primeiro passo para a cultura de "não confiar, conferir".</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada dupla escreve numa folha 5 testes para o próprio site (3 caminhos felizes e 2 travessos) e executa um por um, marcando passou/falhou. Acharam um problema? Anotam e tentam consertar com a IA. No fim, mostram a folha de testes ao adulto.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 2h</span><h3>Arrumar a bagunça (organizar)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que código e arquivos organizados são mais fáceis de mexer, e aprender a arrumar a casa sem quebrar nada.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Por que organizar: site bagunçado é como quarto bagunçado — ninguém acha nada.</li>
+        <li>Dar nomes bons: nomes que dizem o que a coisa é ("botao-enviar", não "coisa1").</li>
+        <li>Tirar o que não usa: lixo no código atrapalha (com cuidado!).</li>
+        <li>Separar em pedaços: um cantinho pro visual, um cantinho pro que o site faz.</li>
+        <li>Organizar SEM mudar o que o site faz — e testar depois para confirmar.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "arruma-quarto": o adulto espalha brinquedos misturados (representando código) e a turma os separa em caixas com etiqueta: "cor", "som", "botões". Tudo fica mais fácil de achar. Depois, na tela, o adulto mostra um código bagunçado e pede à IA para organizar sem mudar o que ele faz; testam antes e depois e veem que continua funcionando igual.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Organize meu código deixando ele mais limpo, SEM mudar nada do
+que o site faz. Dê nomes claros, tire pedaços que não são usados
+e separe o visual da parte que faz as coisas funcionarem.
+Explique o que você mudou em uma lista curtinha. Quero testar
+antes e depois para ver que continua igual.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Structuring_content">MDN — Estruturando conteúdo (HTML organizado)</a> — como deixar a página arrumadinha.</li>
+        <li><a href="https://www.w3.org/standards/webdesign/htmlcss">W3C — HTML e CSS</a> — referência confiável sobre separar visual e estrutura (para o adulto).</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>As skills <b>lixa</b> e <b>refactoring</b> têm uma regra de ouro: organizar NÃO muda o comportamento. Ensine a criança a testar antes e depois da arrumação para provar que continua igual. Dar bons nomes é, sozinho, uma das habilidades mais valiosas de quem cria com IA.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança testa o site, anota que ele funciona, pede para a IA organizar e testa de novo: "continua igual?". Em seguida, viram caçadores de nomes ruins — procuram no código um nome confuso e pedem para a IA trocar por um nome claro.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 2h</span><h3>Saber quando quebrou</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a perceber rapidinho quando algo parou de funcionar — e ter um plano calmo para descobrir e consertar.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Sinais de que quebrou: página em branco, botão mudo, mensagem vermelha no console.</li>
+        <li>Ter um "checklist do site saudável": as 3 coisas que sempre têm que funcionar.</li>
+        <li>Não entrar em pânico: respirar, olhar a pista, pensar no que mudou por último.</li>
+        <li>Voltar para a última versão que funcionava (por isso a gente guarda versões).</li>
+        <li>Pedir ajuda do jeito certo: contar o que quebrou, o que aparece e o que mudou.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4>
+      <p>Brincadeira do "termômetro do site": a turma cria um cartaz com 3 carinhas — feliz (tudo ok), pensativo (algo estranho) e triste (quebrou). O adulto mexe num site ao vivo, às vezes quebrando de propósito, e a turma levanta a carinha certa. Quando aparece a carinha triste, todos juntos seguem o plano calmo: olhar a pista, ver o que mudou e voltar para a versão que funcionava.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Quero um plano simples, em linguagem de criança, para perceber
+quando meu site quebrou. Faça um checklist com as 3 coisas que
+sempre têm que funcionar na minha página de tarefas (abrir,
+adicionar uma tarefa e mostrar parabéns ao terminar).
+Diga, em passos calmos, o que eu faço quando alguma delas falha.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Howto/Solve_HTML_problems">MDN — Como resolver problemas de HTML</a> — um guia calmo de "deu errado, e agora?".</li>
+        <li><a href="https://developer.chrome.com/docs/devtools/console/understand-messages?hl=pt-br">Chrome DevTools — Entender as mensagens do console</a> — pra decifrar o aviso vermelho com o adulto.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>As skills <b>sentinela</b> e <b>resgate</b> falam de perceber a quebra e ter um plano de volta. Para crianças, a lição mais poderosa é: a gente guarda versões para poder voltar para a que funcionava. Encerre o curso com a mensagem-chave — quebrar faz parte; quem cria com engenharia sabe perceber, manter a calma e consertar.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada dupla monta o "checklist do site saudável" com 3 itens e o cola perto do computador. O adulto quebra um site de propósito; as crianças usam o termômetro de carinhas, seguem o plano calmo e tentam voltar à versão boa. Encerramento: cada criança fala uma coisa que aprendeu a fazer com qualidade.</p></div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Mostrar pro mundo</h2></div>
+  <p class="mod-resumo">Agora que seu programa funciona, vamos colocá-lo no ar do jeito certo, fazer as pessoas acharem ele e contar pros seus amigos. Tudo com a ajuda de um adulto!</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31 · 2h</span><h3>Colocar no ar do jeito certo (com um adulto)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> publicar seu programa na internet de um jeito seguro, sempre junto de um adulto, pra qualquer pessoa conseguir abrir.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é "colocar no ar": deixar seu programa numa casa na internet que fica aberta dia e noite.</li>
+      <li>O endereço do site (o link) é como o número da sua casa: é por ele que as pessoas chegam.</li>
+      <li>Antes de publicar, sempre testar tudo mais uma vez junto do adulto.</li>
+      <li>Nunca colocar no ar senhas, telefone, endereço de casa ou nome completo. Segredo é segredo!</li>
+      <li>Ferramentas gratuitas e fáceis pra publicar, sempre com a conta de um adulto.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Faça de conta que o programa é um desenho lindo que você fez. Publicar é como pendurar esse desenho na janela da casa, virado pra rua, pra todo mundo que passar conseguir ver. O educador mostra ao vivo um projeto sendo publicado e, em poucos segundos, abre o link num celular. A turma vibra: "tá no ar de verdade!".</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Sou uma criança e estou com um adulto. Tenho um site simples
+pronto. Me explique, em passos bem fáceis, como publicar ele de
+graça e em segurança. Não use palavras difíceis. Antes de cada
+passo, me lembre de checar com o adulto.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://pages.github.com/">GitHub Pages</a> — coloca sites simples no ar de graça (com conta de adulto).</li>
+      <li><a href="https://www.netlify.com/">Netlify</a> — publica seu site arrastando uma pasta, bem fácil.</li>
+      <li><a href="https://vercel.com/">Vercel</a> — outra opção gratuita e rápida pra colocar projetos no ar.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a skill <b>canteiro</b> pra preparar a base do projeto com os defaults de segurança já ligados (repositório privado, nada de segredo no código). E rode a skill <b>faro</b> antes de publicar: ela varre o projeto atrás de segredos vazados, então nenhuma chave ou senha vai pro ar sem querer.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Com o adulto, cada criança publica seu próprio programinha e abre o link no celular ou tablet de alguém da turma. Quando o programa aparecer na tela, ela escreve o link num papel pra levar pra casa e mostrar pra família.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32 · 2h</span><h3>Fazer as pessoas acharem</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender, de um jeito simples, como dar um bom nome e uma boa descrição pro seu programa, pra que ele seja fácil de achar e de entender.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Todo programa precisa de um <b>título</b> claro: quem bate o olho já entende o que é.</li>
+      <li>Uma <b>descrição</b> curtinha conta, em uma frase, o que o programa faz.</li>
+      <li>Uma <b>imagem de capa</b> ajuda as pessoas a lembrarem do seu projeto.</li>
+      <li>Palavras importantes (o assunto do seu programa) ajudam os buscadores a entender.</li>
+      <li>Nome bom é simples, fácil de falar e de escrever.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Brincadeira do "título de uma frase": cada criança tenta explicar seu programa em só uma frase curtinha, como se fosse o nome de um filme. A turma vota em qual frase deu mais vontade de clicar. Depois o educador mostra como o título e a capa aparecem quando alguém compartilha o link numa conversa.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Meu programa faz: (conte aqui o que ele faz). Me ajude a criar:
+1) um título curtinho e legal,
+2) uma frase de uma linha explicando o que ele faz,
+3) três palavras importantes sobre o assunto.
+Use linguagem de criança e nada de palavra difícil.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.canva.com/">Canva</a> — cria uma imagem de capa bonita pro seu projeto (com conta de adulto).</li>
+      <li><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=pt-br">Guia da Google "como ser achado"</a> — explica pro adulto como os sites são encontrados.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>espelho</b> ajuda a criança a pensar "pra quem é o meu programa?" — quem vai usar, do que essa pessoa gosta. Com isso na cabeça, o título e a descrição saem muito mais certeiros e fáceis de achar.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança escreve o título e a descrição de uma frase do seu programa, cria uma capa simples no Canva com o adulto e coloca tudo na página do projeto. No fim, troca com um coleguinha pra ver se ele entende, só pelo título, o que o programa faz.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33 · 2h</span><h3>Uma página que convida</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> criar uma página de boas-vindas simples que convida a pessoa a usar seu programa e mostra do que ele é capaz.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A primeira tela é como o sorriso na porta: ela recebe quem chega.</li>
+      <li>Partes de uma página que convida: um título grande, uma frase explicando, uma imagem e um botão "começar".</li>
+      <li>Pouco texto, letras grandes e um botão bem visível ajudam muito.</li>
+      <li>Cores e desenhos combinando deixam tudo mais bonito e fácil de usar.</li>
+      <li>Um botão claro diz pra pessoa o que fazer: "clique aqui pra brincar".</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Brincadeira do "vitrine de loja": as crianças imaginam que o programa é uma loja e a página de boas-vindas é a vitrine. O que colocar na vitrine pra dar vontade de entrar? O educador mostra duas páginas, uma bagunçada e uma caprichada, e a turma adivinha em qual dá mais vontade de clicar.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Quero uma página de boas-vindas simples pro meu programa, que faz:
+(conte aqui). Coloque um título grande, uma frase curta, espaço pra
+uma imagem e um botão escrito "Começar". Use cores alegres e letras
+grandes. Faça simples, pra uma criança entender o resultado.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.figma.com/">Figma</a> — desenha como sua página vai ficar antes de montar (com adulto).</li>
+      <li><a href="https://fonts.google.com/">Google Fonts</a> — letras bonitas e gratuitas pra usar no título.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Use a skill <b>atelier</b> pra gerar uma página de boas-vindas bonita de verdade, com visual caprichado e acessível, fugindo daquele jeitão genérico. A skill <b>canone</b> ajuda a escolher cores, letras e espaçamento que combinam.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança monta a página de boas-vindas do seu programa com título, frase, uma imagem e o botão "Começar". Depois clica no botão pra ver se ele leva mesmo pro programa. Quem terminar ajuda um colega a deixar a página dele mais bonita.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34 · 2h</span><h3>Contar pros amigos</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a contar pros amigos e pra família sobre o seu programa, do jeito certo e com segurança, com a ajuda de um adulto.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Compartilhar é mandar o link pra pessoa conseguir abrir o seu programa.</li>
+      <li>Um jeito legal de contar: "olha o que eu fiz, ele serve pra...".</li>
+      <li>Sempre compartilhar junto de um adulto, e só com pessoas conhecidas.</li>
+      <li>Nada de colocar dados pessoais no recado: nem telefone, nem endereço.</li>
+      <li>Pedir pra pessoa testar e dizer o que achou ajuda você a melhorar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Brincadeira do "recado de 10 segundos": cada criança tem 10 segundos pra convencer a turma a abrir seu programa. Quem fizer o melhor convite ganha aplausos. O educador mostra como mandar o link num grupo de família, sempre com o adulto por perto, e lembra: link sim, dados pessoais não.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Me ajude a escrever um recado curtinho e animado pra contar pros
+meus amigos e pra minha família sobre o programa que eu criei. Ele
+faz: (conte aqui). O recado tem que ser alegre, sem dados pessoais,
+e terminar convidando a pessoa a testar.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.commonsensemedia.org/articles/cyberbullying-haters-and-trolls">Common Sense Media — segurança online</a> — dicas pro adulto sobre compartilhar com segurança.</li>
+      <li><a href="https://novaescola.org.br/">Nova Escola</a> — ideias do educador pra falar de internet segura com a turma.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>legenda</b> ajuda a escrever um recado com uma primeira linha que prende e um convite no fim. Pra um anúncio mais caprichado pra família e amigos, a skill <b>praca</b> monta um pequeno post sem exagero.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Com o adulto, cada criança escreve seu recado curtinho e manda o link do programa pra uma pessoa da família. Depois anota uma coisa que a pessoa elogiou e uma coisa que ela achou que dava pra melhorar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35 · 2h</span><h3>Mini-lançamento</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> fazer um pequeno "lançamento" do seu programa pra turma, juntando tudo que você aprendeu: site no ar, página que convida e recado pros amigos.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é um lançamento: o dia em que você mostra seu programa prontinho pra todo mundo.</li>
+      <li>Checklist do lançamento: programa no ar, link funcionando, capa pronta e recado escrito.</li>
+      <li>Testar tudo de novo antes do grande momento, junto do adulto.</li>
+      <li>Combinar uma data e um horário pro lançamento na turma.</li>
+      <li>Comemorar! Cada programa pronto é uma conquista de verdade.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Feira de lançamentos": cada criança vira o dono de uma barraquinha (o computador ou tablet dela) e os colegas passam de barraca em barraca abrindo cada programa. Cada visitante deixa uma carinha feliz num papel quando gosta de algo. No fim, a turma conta as carinhas e dá uma salva de palmas geral.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Vou fazer um mini-lançamento do meu programa pra minha turma. Me dê
+uma lista simples de coisas pra conferir antes: se o link abre, se a
+página de boas-vindas aparece, se os botões funcionam. Escreva como
+uma listinha de marcar, com linguagem de criança.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.netlify.com/">Netlify</a> — confira de novo se seu site está mesmo no ar.</li>
+      <li><a href="https://pagespeed.web.dev/">PageSpeed Insights</a> — o adulto checa se o site abre rapidinho.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>decolagem</b> ajuda a pensar um lançamento de verdade em versão mini: o que mostrar, em que ordem, como deixar todo mundo animado. E a skill <b>maestro</b> quebra o lançamento em passinhos, pra nenhuma criança se perder no meio.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança roda sua listinha de conferência, conserta o que estiver faltando com o adulto e participa da feira de lançamentos da turma, abrindo o programa dos colegas e deixando carinhas felizes. No fim, todo mundo escolhe a parte mais legal do dia.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Criador avançado</h2></div>
+  <p class="mod-resumo">Hora de virar um criador avançado: programar ajudantes automáticos, criar suas próprias "habilidades", melhorar o seu programa sem quebrar nada e, no fim, apresentar o seu projeto final no ar!</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36 · 2h</span><h3>Ajudantes automáticos (agentes, de forma simples)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender, de um jeito bem simples, o que é um "ajudante automático" (um agente) e imaginar um ajudante que faria uma tarefa sozinho pra você.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Um ajudante automático é um programinha que faz uma tarefa sozinho quando você manda.</li>
+      <li>Exemplos do dia a dia: o despertador que toca toda manhã, o robô que aspira a casa.</li>
+      <li>Um ajudante segue um plano: "quando acontecer isso, faça aquilo".</li>
+      <li>Você dá uma missão clara, e o ajudante tenta cumprir do começo ao fim.</li>
+      <li>Ajudantes são ótimos pra coisas repetidas e chatas, pra você ter tempo de criar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Brincadeira do "robô da sala": uma criança é o robô e só faz exatamente o que a turma mandar, passo a passo ("dê 3 passos, vire, pegue o lápis"). Logo todo mundo percebe que o ajudante precisa de ordens bem claras. O educador mostra a IA cumprindo uma missão simples sozinha, como organizar uma lista.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Me explique, como se eu tivesse 10 anos, o que é um ajudante
+automático (um agente). Dê 3 exemplos do dia a dia. Depois, me ajude
+a imaginar um ajudante simples pro meu programa, que faça uma
+tarefinha repetida sozinho.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://blockly.games/">Blockly Games</a> — ensina a dar ordens passo a passo, do jeito que um ajudante segue.</li>
+      <li><a href="https://studio.code.org/">Code.org Studio</a> — jogos de programar comandos em sequência.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>maestro</b> mostra na prática como quebrar uma tarefa grande em passinhos e encadear até o fim — exatamente o que um ajudante automático faz. É uma ótima forma de a criança sentir o conceito antes de pedir à IA.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança desenha num papel o seu "ajudante dos sonhos": qual missão ele faz sozinho e quais passos ele segue. Depois, com o adulto, pede à IA pra explicar como um ajudante assim funcionaria no programa dela. No fim, a turma compartilha as ideias mais criativas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37 · 2h</span><h3>Criar suas próprias "habilidades" (skills, simples)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que dá pra ensinar truques novos pra IA, criando suas próprias "habilidades" — receitinhas que a IA segue sempre que você pedir.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Uma "habilidade" é como uma receita: um passo a passo que a IA aprende a seguir.</li>
+      <li>Você escreve a receita uma vez e usa quantas vezes quiser.</li>
+      <li>Toda habilidade tem um nome, pra que serve e os passos pra fazer.</li>
+      <li>Habilidades deixam você pedir coisas difíceis com um pedido curtinho.</li>
+      <li>Quanto mais clara a receita, melhor a IA segue.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Brincadeira do "livro de receitas da turma": cada criança inventa uma habilidade boba e divertida, tipo "transformar qualquer frase numa rima". A turma testa a receita de um colega pra ver se funciona. O educador mostra que, com uma habilidade pronta, basta dizer o nome dela pra IA já saber o que fazer.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Quero criar uma "habilidade" minha pra você. O nome dela é: (escolha
+um nome). Ela serve pra: (explique). Os passos são: 1)... 2)... 3)...
+Me ajude a deixar essa receita bem clara, com linguagem de criança,
+pra você seguir sempre que eu pedir.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://scratch.mit.edu/">Scratch</a> — criar "blocos" próprios é bem parecido com criar uma habilidade.</li>
+      <li><a href="https://www.anthropic.com/news/skills">O que são Skills (Anthropic)</a> — o adulto entende a ideia de habilidades reutilizáveis.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>Mostre que a própria Suíte Engenho do Rodrigo é cheia de habilidades prontas, cada uma com nome e missão. A skill <b>forja</b> ajuda a criança a escrever o passo a passo da habilidade dela de um jeito claro, pra IA seguir certinho.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança cria uma habilidade simples e divertida, escreve a receita (nome, pra que serve, passos) e testa pedindo pra IA usar. Depois troca a habilidade com um colega pra ver se a receita dele também funciona na primeira tentativa.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38 · 2h</span><h3>Mudar e melhorar sem quebrar</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a mudar e melhorar o seu programa com cuidado, testando cada passo, pra não quebrar o que já estava funcionando.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Melhorar é bom, mas com cuidado: uma mudança de cada vez.</li>
+      <li>Sempre guardar uma cópia que funciona antes de mexer (é a sua rede de proteção).</li>
+      <li>Depois de cada mudança, testar pra ver se nada quebrou.</li>
+      <li>Se quebrou, dá pra voltar pra cópia que estava boa. Errar faz parte!</li>
+      <li>Mudanças pequenas são mais fáceis de consertar do que uma mudança gigante.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Brincadeira da "torre de blocos": a turma monta uma torre e tenta trocar um bloco do meio por outro, com cuidado, sem derrubar. Quando alguém troca devagar e testa, a torre fica de pé; quando faz tudo de uma vez, cai. O educador mostra como guardar uma versão que funciona antes de mexer no programa.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Quero mudar uma coisinha no meu programa, mas tenho medo de quebrar
+o resto. Me ensine, em passos bem simples: como guardar uma cópia que
+funciona antes, fazer só uma mudança de cada vez e testar depois. Use
+linguagem de criança.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://desktop.github.com/">GitHub Desktop</a> — guarda versões do seu projeto pra poder voltar atrás (com adulto).</li>
+      <li><a href="https://learngitbranching.js.org/?locale=pt_BR">Learn Git Branching</a> — jogo que ensina a guardar e voltar versões.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>lixa</b> mostra como melhorar o código sem mudar o que ele faz — refatorar com segurança. E a skill <b>crivo</b> revisa cada mudança antes de aceitar, pra criança pegar o hábito de testar antes de confiar.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Com o adulto, cada criança guarda uma cópia que funciona do seu programa, faz uma única melhoria pequena (uma cor, um texto, um botão) e testa. Se quebrar, pratica voltar pra cópia boa. No fim, conta pra turma qual melhoria fez.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39 · 2h</span><h3>Quando o site cresce</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que acontece quando muita gente usa o seu programa ao mesmo tempo e como deixá-lo organizado pra aguentar crescer.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Quando muita gente entra de uma vez, o programa precisa dar conta de todo mundo.</li>
+      <li>Programa organizado, em pedacinhos arrumados, é mais fácil de crescer.</li>
+      <li>Imagens leves e páginas que abrem rápido deixam tudo melhor pra todo mundo.</li>
+      <li>É bom saber quando algo deu errado: por isso programas grandes "avisam" os donos.</li>
+      <li>Crescer aos poucos é melhor do que crescer tudo de uma vez.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>Brincadeira da "fila do parquinho": a turma faz fila num escorregador. Com poucas crianças, anda rápido; com muitas, forma fila. A turma pensa em como organizar pra todo mundo brincar sem empurrar. O educador mostra um site abrindo rápido e um abrindo devagar, e a turma sente a diferença.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Imagine que muitas pessoas começaram a usar o meu programa ao mesmo
+tempo. Me explique, com exemplos de criança, o que pode acontecer e
+3 coisas simples pra deixar o programa pronto pra crescer (como abrir
+rápido e ficar organizado).</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://pagespeed.web.dev/">PageSpeed Insights</a> — mostra se o site abre rápido (o adulto ajuda a ler).</li>
+      <li><a href="https://squoosh.app/">Squoosh</a> — deixa as imagens mais leves pra página abrir rapidinho.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>turbo</b> ensina a deixar o site rápido (imagens leves, páginas ágeis) — perfeito pra quando muita gente usa. E a skill <b>sentinela</b> mostra como o programa "avisa" quando algo quebra, pra você descobrir antes dos usuários.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança passa as imagens do seu programa pelo Squoosh pra deixá-las leves, troca no projeto e mede no PageSpeed se a página ficou mais rápida. Depois conta pra turma quantos pontos o site ganhou.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40 · 2h</span><h3>Projeto final — meu programa no ar (apresentação)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> apresentar pra turma e pra família o seu projeto final, já no ar, mostrando o que ele faz, como você criou e o que aprendeu na jornada.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Como contar a história do seu projeto: a ideia, o que você criou e o resultado.</li>
+      <li>Mostrar o programa funcionando ao vivo, abrindo o link na frente de todos.</li>
+      <li>Falar com calma, olhar pra plateia e mostrar do que você tem mais orgulho.</li>
+      <li>Contar uma dificuldade que apareceu e como você resolveu com a IA e o adulto.</li>
+      <li>Agradecer e responder perguntas dos colegas e da família.</li>
+    </ul></div>
+    <div class="bloco"><h4>Brincadeira / demonstração</h4><p>"Tapete vermelho dos criadores": cada criança caminha até a frente como uma estrela, apresenta seu programa no ar e a turma faz perguntas curiosas. O educador mostra antes um exemplo de apresentação de 3 minutos: o que é, demonstração ao vivo e a parte favorita. No fim, todos recebem um diploma de "Criador Vibecoder".</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra pedir à IA (com um adulto)</span><pre>Vou apresentar meu projeto final pra minha turma e minha família. Ele
+faz: (conte aqui). Me ajude a montar uma fala curtinha de 3 minutos:
+o que é, mostrar funcionando, o que eu mais gostei de criar e o que eu
+aprendi. Use linguagem de criança e me deixe animado.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.canva.com/pt_br/apresentacoes/">Canva Apresentações</a> — monta slides simples e bonitos pra sua fala (com adulto).</li>
+      <li><a href="https://scratch.mit.edu/">Scratch</a> — caso queira mostrar também versões anteriores do seu projeto.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Dica pro educador (Skills do Engenho)</h4><p>A skill <b>palco</b> ajuda a montar a apresentação com começo, meio e fim e uma história que prende — perfeita pra criança brilhar no projeto final. E a skill <b>sintese</b> resume a jornada do curso em poucos pontos, pra cada um lembrar do quanto evoluiu.</p></div>
+    <div class="bloco pratica"><h4>Mão na massa</h4><p>Cada criança prepara sua fala de 3 minutos, ensaia uma vez com um colega e apresenta o projeto final no ar pra turma e pra família, mostrando o programa funcionando e contando o que mais gostou. No encerramento, todos comemoram juntos a jornada do Zero ao Avançado!</p></div>
+  </article>
+</section>
+  <div class="modulo" style="margin-top:40px">
+    <p style="color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);padding-top:20px">
+      Ementa · Curso presencial · 80 horas (40 aulas de 2h) · por <b>Rodrigo Munhoz Reis</b> — Vibecoding com Engenharia.
+    </p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa do Curso · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Ementa · Curso presencial · Adultos</div>
+<h1>Vibecoding do Zero ao Avançado</h1>
+<p class="sub">Construa software com IA e rigor de engenheiro — do plano ao produto no ar, com segurança em cada etapa.</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>Presencial</span><span>Iniciante &rarr; Avançado</span></div>
+</div></div>
+<div class="wrap">
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1</span><h2>Fundamentos do Vibecoding</h2></div>
+  <p class="mod-resumo">O mindset e as ferramentas pra construir software com IA — sem hype, com engenharia. Aqui você instala a base mental (a IA é um júnior brilhante, não um oráculo) e a base prática (editor, IA no terminal, primeiro deploy, Git) pra nunca mais ficar travado na frente da tela em branco.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1 · 2h</span><h3>O que é vibecoding (com engenharia)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que é vibecoding de verdade, separar o hype da prática, e apresentar a espinha dorsal do curso — o Protocolo de 5 Camadas e a frase que governa tudo: "a decisão é sua".</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Definição honesta: vibecoding é construir software descrevendo a intenção em linguagem natural e deixando a IA escrever o código — mas <b>vibecoding com engenharia</b> é fazer isso sem terceirizar o julgamento.</li>
+        <li>Por que "vibe" sozinho dá errado: código que "funciona na demo" e quebra em produção, segredos vazados, banco aberto, dependências podres.</li>
+        <li>O Protocolo de 5 Camadas como rede de segurança: <b>Entender → Ler → Blindar → Testar → Versionar</b>. Toda saída de IA passa por essas 5 camadas antes de virar produto.</li>
+        <li>A regra de ouro do curso: <b>a IA propõe, você decide</b>. Você é o engenheiro responsável, não o passageiro.</li>
+        <li>O que você vai construir até o fim: um sistema real (CRUD com banco, no ar, com login) — não um slide.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>No projetor, peça à IA "faça um app de lista de tarefas". Mostre o código que sai. Em seguida, passe esse mesmo código pelas 5 camadas em voz alta: o que ele faz? eu li tudo? tem buraco de segurança? tem teste? está versionado? Mostre que a IA esqueceu de validar a entrada e deixou o banco aberto — e que <b>quem pegou isso foi você, não ela</b>.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é um instrutor de programação direto e sem hype.
+Explique o conceito de "vibecoding com engenharia" para um adulto
+que nunca programou, em no máximo 5 frases.
+Deixe claro a diferença entre:
+(1) deixar a IA escrever código e aceitar cego, e
+(2) deixar a IA escrever código mas revisar com método antes de usar.
+Não use jargão. Não prometa que &quot;qualquer um vira programador em 1 dia&quot;.
+Termine com uma frase sobre por que a decisão final é sempre do humano.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://claude.com/claude-code">Claude Code</a> — a ferramenta de IA no terminal que será o motor do curso.</li>
+        <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> — o editor onde o código vai morar.</li>
+        <li><a href="https://nextjs.org/">Next.js</a> — o framework do sistema que vamos construir.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Apresente o ecossistema do curso: <b>planta</b> (vira ideia em plano de construção), <b>canteiro</b> (cria a base do projeto já segura), <b>forja</b> (monta prompts pelo método P.R.O.M.P.T.E.R.) e <b>alicerce</b> (escreve as instruções que ensinam a IA a trabalhar do seu jeito). Não use nenhuma ainda — só plante os nomes na cabeça da turma.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno escreve, em uma frase, o sistema que gostaria de construir até o fim do curso. Em duplas, aplicam as 5 perguntas do Protocolo de 5 Camadas sobre uma tela gerada por IA projetada na sala. Discussão: onde a IA "mentiu com confiança"?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2 · 2h</span><h3>O mindset — IA como júnior brilhante, não oráculo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> calibrar a relação com a IA: ela é um desenvolvedor júnior extremamente rápido e bem-lido, mas que erra, inventa e precisa de contexto e revisão. Você é o sênior que delega e responde pelo resultado.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>A metáfora do júnior brilhante: rápido, sabe muita sintaxe, mas sem julgamento de negócio e sem responsabilidade. Trate como tal — delegue tarefas claras, revise tudo.</li>
+        <li>Alucinação não é bug, é característica: a IA preenche lacunas com o que "parece certo". Por isso a Camada 1 (Entender) e a Camada 2 (Ler) existem.</li>
+        <li>Contexto é tudo: a mesma pergunta com 3 linhas de contexto vira uma resposta 10x melhor. Introduza a ideia do método <b>P.R.O.M.P.T.E.R.</b> (Papel, Resultado, Objetivo, Material, Parâmetros, Tom, Exemplos, Refino).</li>
+        <li>Como dar feedback à IA: aponte o erro específico, não "tá errado". É exatamente como você corrigiria um júnior.</li>
+        <li>Quando NÃO usar IA: decisões de arquitetura críticas, regras de negócio sensíveis, segurança — aí ela ajuda a pensar, mas a decisão é sua.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Peça à IA algo ambíguo ("crie uma função de desconto"). Veja-a inventar regras. Depois reescreva o pedido com P.R.O.M.P.T.E.R. (papel: dev sênior; resultado: função; objetivo: 10% acima de R$100; parâmetros: validar valor negativo; exemplos: 2 casos). Compare as duas saídas lado a lado no projetor.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>PAPEL: Você é um desenvolvedor sênior cuidadoso.
+RESULTADO: uma função JavaScript chamada calcularDesconto(valor).
+OBJETIVO: aplicar 10% de desconto apenas quando valor &gt; 100;
+caso contrário, retornar o valor original.
+PARÂMETROS: rejeitar com erro claro se valor for negativo ou
+não for número. Não inventar regras que eu não pedi.
+TOM: comentários curtos explicando cada decisão.
+EXEMPLOS: calcularDesconto(50) =&gt; 50 ; calcularDesconto(200) =&gt; 180.
+REFINO: depois liste 2 casos de borda que eu deveria testar.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://docs.claude.com/en/docs/claude-code/overview">Documentação do Claude Code</a> — como dar contexto e instruções à IA.</li>
+        <li><a href="https://www.anthropic.com/engineering/claude-code-best-practices">Claude Code: best practices (Anthropic)</a> — práticas de quem usa IA pra programar de verdade.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Hora de usar a <b>forja</b> de verdade: ela transforma um pedido vago num prompt P.R.O.M.P.T.E.R. completo. Mostre como a forja pega "crie uma função de desconto" e devolve o prompt estruturado da própria aula. Mencione o <b>lapidador</b> como o passo seguinte (refinar a resposta quando ela vier quase boa).</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno pega um pedido ruim (lista no quadro) e o reescreve usando P.R.O.M.P.T.E.R. Rodam os dois prompts na IA e comparam. Entregável: a tabela "prompt cru vs. prompt com método" com o que mudou na resposta.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3 · 2h</span><h3>As ferramentas (VS Code, Copilot, Claude Code)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> instalar e entender o trio de trabalho — VS Code (onde você lê e edita), Claude Code (a IA que constrói com você no terminal) e o papel do Copilot — e deixar todo mundo com o ambiente pronto pra construir.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>VS Code: instalar, abrir uma pasta, o terminal integrado, a barra lateral de arquivos. Por que o editor é o seu "canteiro de obras".</li>
+        <li>Node.js e npm: o motor que roda o JavaScript fora do navegador — instalar e checar a versão.</li>
+        <li>Claude Code no terminal: instalar, autenticar, dar o primeiro comando. A diferença entre conversar num chat e ter a IA <b>agindo nos seus arquivos</b>.</li>
+        <li>GitHub Copilot: o que é (autocompletar dentro do editor), quando ajuda e por que neste curso o Claude Code é o protagonista (ele entende o projeto inteiro, não só a linha atual).</li>
+        <li>Higiene de ambiente: nunca colar chave de API no chat, onde os segredos vão morar (arquivo .env, que veremos no Módulo 2).</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Do zero: instale Node, abra o VS Code numa pasta vazia, suba o Claude Code no terminal integrado e peça "crie um arquivo ola.txt com a frase Bem-vindo ao vibecoding". Mostre o arquivo aparecendo sozinho na barra lateral. Esse é o "momento mágico" — mas lembre: você ainda vai ler o que ele criou.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Estou começando agora com o Claude Code e o VS Code.
+Crie um arquivo chamado ola.txt nesta pasta com o texto:
+&quot;Bem-vindo ao vibecoding com engenharia&quot;.
+Depois me explique, em 3 linhas e sem jargão, o que você acabou
+de fazer e como eu confirmo que o arquivo realmente existe.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://code.visualstudio.com/download">Download do VS Code</a> — o editor.</li>
+        <li><a href="https://nodejs.org/">Node.js</a> — runtime e npm (baixe a versão LTS).</li>
+        <li><a href="https://docs.claude.com/en/docs/claude-code/setup">Instalação do Claude Code</a> — passo a passo oficial.</li>
+        <li><a href="https://github.com/features/copilot">GitHub Copilot</a> — autocompletar com IA no editor.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>alicerce</b> pela primeira vez: gere o arquivo de instruções do projeto (a "memória" que ensina a IA seus padrões e seus limites de segurança). Explique que toda obra do curso começa com um bom alicerce — assim a IA já nasce sabendo como você trabalha.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Checklist de ambiente: cada aluno instala VS Code + Node + Claude Code e roda o prompt do ola.txt. Quem terminar ajuda o vizinho (pareamento). Entregável: print do terminal com o arquivo criado e a explicação da IA.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4 · 2h</span><h3>Sua primeira tela no ar ("Olá, mundo")</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> tirar a primeira página de verdade do papel — uma tela que roda no navegador, na máquina do aluno — entendendo o que é um servidor de desenvolvimento e o que cada arquivo faz.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O que é uma página web por baixo: HTML é estrutura, e o navegador desenha. Onde a IA entra: gerando essa estrutura por você.</li>
+        <li>Criar um projeto Next.js mínimo e rodar <code>npm run dev</code> — o servidor local em <code>localhost:3000</code>. Explicar que "no ar local" ainda não é "publicado".</li>
+        <li>Anatomia do que apareceu: a pasta do projeto, o arquivo da página inicial, onde está o texto que você vê na tela.</li>
+        <li>Editar o "Olá, mundo": mudar o título e ver o navegador atualizar sozinho (hot reload). Camada 2 do Protocolo: <b>ler</b> antes de aceitar — onde exatamente o texto mudou?</li>
+        <li>Erro é normal: provoque um erro de propósito (apague um colchete) e mostre a mensagem. Adiante a ideia da aula de depuração lá no curso.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pelo Claude Code, crie um projeto Next.js, rode <code>npm run dev</code>, abra <code>localhost:3000</code> e mude o texto da home para "Olá, mundo — sou eu construindo com engenharia". Mostre a página atualizando ao salvar. Depois abra o arquivo da página e leia, linha por linha, o que a IA escreveu.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero minha primeira página no ar localmente.
+1. Crie um projeto Next.js mínimo nesta pasta (App Router, sem TypeScript por enquanto).
+2. Faça a página inicial mostrar um &lt;h1&gt; com o texto:
+   &quot;Olá, mundo — construído com vibecoding e engenharia&quot;.
+3. Me diga exatamente qual arquivo abrir pra editar esse texto
+   e qual comando rodar pra ver no navegador.
+Não adicione bibliotecas extras. Explique cada passo em 1 linha.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://nextjs.org/docs/app/getting-started/installation">Next.js — instalação e primeiro projeto</a> — guia oficial.</li>
+        <li><a href="https://nextjs.org/learn">Next.js Learn</a> — tutorial interativo gratuito.</li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web">MDN — começando com a web</a> — HTML/CSS do zero, em português.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Apresente a <b>canteiro</b> em ação: em vez de criar o projeto "na unha", a canteiro inicia a base já com os defaults certos (gitignore, .env, repositório privado). Nesta aula você cria simples pra entender; nas próximas, deixa a canteiro fazer o trabalho pesado com segurança.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno tira o próprio "Olá, mundo" no ar local e personaliza o texto com o nome e o projeto-sonho da Aula 1. Entregável: print do <code>localhost:3000</code> com a tela personalizada rodando.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5 · 2h</span><h3>Git e GitHub sem medo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> dominar a Camada 5 do Protocolo — <b>versionar</b>. Entender o que é Git (a máquina do tempo do seu código), o que é GitHub (a cópia na nuvem) e nunca mais ter medo de perder ou quebrar o trabalho.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O problema que o Git resolve: "projeto_final_v3_AGORAVAI.zip". Git guarda cada versão e deixa você voltar no tempo.</li>
+        <li>Os 4 verbos do dia a dia, sem decoreba: <b>add</b> (separar o que vai salvar), <b>commit</b> (tirar a foto), <b>push</b> (mandar pra nuvem), <b>pull</b> (trazer da nuvem).</li>
+        <li>GitHub: criar conta, criar um repositório <b>privado</b>, conectar o projeto local a ele.</li>
+        <li>O que NUNCA vai pro Git: segredos. Apresente o <code>.gitignore</code> e o motivo — uma chave de API no GitHub público é dinheiro vazando.</li>
+        <li>Commit com mensagem honesta: descreva o que mudou e por quê. A IA pode sugerir a mensagem, mas você revisa.</li>
+        <li>Deixe a IA operar o Git por você no terminal — mas leia o que ela vai commitar antes de confirmar (Camada 2 de novo).</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pegue o projeto da Aula 4. Pelo Claude Code: inicialize o Git, crie um <code>.gitignore</code>, faça o primeiro commit, crie um repositório privado no GitHub e dê push. Depois mude o texto da home, mostre o <code>git status</code> apontando o que mudou, e faça um segundo commit. Por fim, mostre no GitHub o histórico das duas "fotos".</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero versionar este projeto com segurança.
+1. Inicialize o Git aqui.
+2. Crie um .gitignore adequado para um projeto Next.js
+   (incluindo node_modules e .env).
+3. Faça o primeiro commit com uma mensagem clara em português.
+ANTES de cada passo, me mostre o que você vai fazer e ESPERE eu confirmar.
+Ao final, liste os comandos exatos que você rodou e o que cada um significa.
+Não suba nada pra nuvem ainda — só local.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://github.com/">GitHub</a> — crie sua conta e o repositório privado.</li>
+        <li><a href="https://docs.github.com/pt/get-started/quickstart/hello-world">GitHub Hello World</a> — guia inicial oficial em português.</li>
+        <li><a href="https://git-scm.com/book/pt-br/v2">Pro Git (livro gratuito, PT-BR)</a> — referência completa de Git.</li>
+        <li><a href="https://docs.github.com/pt/get-started/getting-started-with-git/ignoring-files">GitHub — ignorando arquivos (.gitignore)</a> — por que e como.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Conecte com a segurança: a <b>faro</b> escaneia o repositório atrás de segredos vazados (chave de API, .env commitado) antes do push. Rode a faro como ritual: "antes de mandar pra nuvem, passa o faro". Reforce que a canteiro já entrega o repositório privado com .gitignore certo de fábrica.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno versiona o próprio projeto: Git iniciado, .gitignore, dois commits e push pra um repositório privado no GitHub. Desafio: alterar um texto, commitar, e depois "voltar no tempo" para a versão anterior. Entregável: link do repositório privado (compartilhado com o instrutor) mostrando 2+ commits.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2</span><h2>Do Plano ao Primeiro Sistema</h2></div>
+  <p class="mod-resumo">Da ideia ao deploy, com Next.js + Firebase + Vercel. Aqui você sai do "Olá, mundo" e constrói um sistema real: planeja antes de codar, monta a base, publica de graça na internet, conecta um banco de dados e entrega seu primeiro CRUD completo — sempre passando tudo pelo Protocolo de 5 Camadas.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6 · 2h</span><h3>Plano antes do código (MVP, arquitetura)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> internalizar que o código é a última etapa, não a primeira. Transformar uma ideia em um plano de construção em fases (MVP primeiro) e desenhar a arquitetura antes de pedir uma linha à IA.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Por que planejar: sem plano, a IA constrói rápido na direção errada. Planejar é a forma mais barata de evitar retrabalho.</li>
+        <li>O que é um MVP: a menor versão que entrega valor de verdade. Cortar escopo é a habilidade, não o defeito.</li>
+        <li>Arquitetura em linguagem de gente: telas, dados (o que guardar) e ações (o que o usuário faz). Desenhar isso num papel antes do código.</li>
+        <li>A stack do sistema do curso e o porquê de cada peça: <b>Next.js</b> (a aplicação), <b>Firebase</b> (banco e login), <b>Vercel</b> (publicação), <b>GitHub</b> (versão).</li>
+        <li>Definir o MVP do projeto que cada aluno vai construir: um app com uma lista de itens que dá pra criar, ler, editar e apagar (o CRUD da Aula 10).</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pegue uma ideia da turma ("app de controle de gastos"). No projetor, recuse codar. Em vez disso, liste com a IA: telas (lista, novo gasto), dados (descrição, valor, data), ações (adicionar, editar, apagar) e o corte de MVP (sem login na v1, sem gráfico na v1). Saída: um plano de 2 fases.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Sou iniciante e quero planejar antes de programar. NÃO escreva código ainda.
+Minha ideia: um app simples de [DESCREVA A IDEIA EM 1 FRASE].
+Me ajude a definir:
+1. O MVP (a menor versão útil) — e o que ficar de fora da v1.
+2. As telas necessárias (liste cada uma em 1 linha).
+3. Os dados que preciso guardar (campos e tipos).
+4. As ações do usuário (criar, ler, editar, apagar).
+Apresente como um plano em fases, fase 1 = MVP.
+Stack alvo: Next.js + Firebase + Vercel. Aponte riscos do plano.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://nextjs.org/docs">Documentação do Next.js</a> — entender as capacidades antes de planejar.</li>
+        <li><a href="https://firebase.google.com/docs/firestore/data-model">Firestore — modelo de dados</a> — como o banco organiza os dados.</li>
+        <li><a href="https://vercel.com/docs">Documentação da Vercel</a> — onde o app será publicado.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>O coração da aula é a <b>planta</b>: ela transforma a ideia vaga em plano de fases com MVP primeiro. Complemente com a <b>bussola</b> (recomenda stack e arquitetura com trade-offs) e a <b>esquema</b> (modela as coleções do banco). Deixe claro: a planta decide o caminho, mas a decisão final de cortar escopo é sua.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno roda a planta sobre o próprio projeto-sonho e sai com um plano de fases escrito. Em duplas, criticam o MVP um do outro: "isso aqui dá pra cortar da v1?". Entregável: o documento de plano (telas, dados, ações, corte de MVP) que vai guiar todas as próximas aulas.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7 · 2h</span><h3>Montando a base (Next.js + Tailwind)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> sair do plano para a base real do sistema — um projeto Next.js estruturado com Tailwind para estilizar — e construir as telas do MVP (ainda sem banco), lendo e entendendo o que a IA gera.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Recapitular o projeto Next.js e adicionar <b>Tailwind CSS</b>: o que é (estilizar direto na marcação com classes) e por que acelera muito o visual.</li>
+        <li>Estrutura de pastas do App Router: páginas, componentes reutilizáveis, e onde cada tela do plano vai morar.</li>
+        <li>Montar a tela de lista do MVP com dados "de mentira" (fixos no código) — primeiro a casca, depois o banco (Aula 9).</li>
+        <li>Componentes: quebrar a tela em pedaços reutilizáveis (ex.: um cartão de item). Pedir à IA para componentizar e <b>ler</b> o resultado.</li>
+        <li>Responsivo desde o começo: a tela tem que funcionar no celular. Tailwind ajuda com classes de breakpoint.</li>
+        <li>Camada 2 do Protocolo na veia: a IA vai gerar bastante código aqui — pare e leia cada arquivo, pergunte o que não entender.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Adicione Tailwind ao projeto e construa, com dados fixos, a tela de lista do app de gastos: um título, uma lista de cartões (descrição + valor) e um botão "novo". Mostre o visual mudando ao trocar classes do Tailwind. Componentize o cartão e leia, junto com a turma, o componente gerado.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>No meu projeto Next.js (App Router), quero montar a tela de lista do MVP.
+1. Configure o Tailwind CSS se ainda não estiver.
+2. Crie a página inicial com:
+   - um título &quot;Meus gastos&quot;,
+   - uma lista de cartões com descrição e valor (use 3 itens de exemplo FIXOS no código por enquanto),
+   - um botão &quot;Novo gasto&quot; (ainda sem ação).
+3. Crie um componente reutilizável CartaoGasto para cada item.
+4. Deixe responsivo (bom no celular e no desktop).
+Depois me explique a estrutura de arquivos que você criou, em lista.
+Não conecte banco de dados ainda.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://tailwindcss.com/docs/installation/framework-guides/nextjs">Tailwind CSS com Next.js</a> — guia de instalação oficial.</li>
+        <li><a href="https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts">Next.js — páginas e layouts</a> — estrutura do App Router.</li>
+        <li><a href="https://tailwindcss.com/docs/responsive-design">Tailwind — design responsivo</a> — classes de breakpoint.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>canteiro</b> para iniciar/estruturar a base com os defaults seguros e a <b>atelier</b> (ou <b>canone</b>) para que as telas saiam na identidade visual premium em vez do visual genérico de protótipo. Lembre que toda essa geração deve obedecer ao <b>alicerce</b> criado no Módulo 1.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno monta a tela de lista do próprio MVP com Tailwind e dados fixos, componentizando pelo menos um item. Entregável: a tela rodando em <code>localhost:3000</code>, responsiva, com um componente reutilizável — e o aluno consegue explicar onde fica cada parte.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8 · 2h</span><h3>Publicar de graça (deploy na Vercel)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> tirar o projeto do "só na minha máquina" e colocá-lo de verdade na internet, com um link público, de graça, na Vercel — entendendo o que é deploy e o fluxo "push no GitHub vira site no ar".</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>A diferença entre <code>localhost</code> (só você vê) e produção (o mundo vê). O que significa "fazer deploy".</li>
+        <li>Conectar GitHub à Vercel: a Vercel observa o repositório e publica sozinha a cada <code>git push</code> (deploy contínuo).</li>
+        <li>Importar o projeto, primeiro deploy, e receber a URL pública. Abrir no celular pra sentir que está mesmo no ar.</li>
+        <li>O ciclo de trabalho real do curso: edito → commit → push → Vercel publica. Toda a Camada 5 (versionar) agora vira também "publicar".</li>
+        <li>Pré-visualizações: cada push gera um link de preview antes de virar produção — ótimo pra revisar.</li>
+        <li>Antecipar o cuidado com segredos: ainda não temos chaves, mas na Aula 9 elas vão como variáveis de ambiente na Vercel, nunca no código.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Com o projeto da Aula 7 já no GitHub, conecte a Vercel, importe o repositório e faça o primeiro deploy ao vivo. Abra a URL pública no celular no projetor. Depois mude um texto, dê <code>git push</code> e mostre a Vercel republicando sozinha em segundos. "Isso é deploy contínuo."</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Meu projeto Next.js já está num repositório no GitHub.
+Quero publicá-lo de graça na Vercel.
+Me guie, passo a passo e em linguagem simples:
+1. Como conectar minha conta GitHub à Vercel.
+2. Como importar este repositório e fazer o primeiro deploy.
+3. Como encontrar a URL pública do site.
+4. Como funciona o deploy automático quando eu der git push.
+Para cada passo, diga onde clicar. Avise sobre qualquer configuração
+que eu NÃO devo mexer agora.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://vercel.com/">Vercel</a> — crie a conta (login com GitHub).</li>
+        <li><a href="https://vercel.com/docs/deployments/git">Vercel — deploy via Git</a> — como o push vira deploy.</li>
+        <li><a href="https://nextjs.org/docs/app/building-your-application/deploying">Next.js — deploying</a> — guia oficial de publicação.</li>
+        <li><a href="https://vercel.com/docs/projects/environment-variables">Vercel — variáveis de ambiente</a> — onde os segredos vão (Aula 9).</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Antes do deploy, ritual de segurança: <b>faro</b> (caça segredo vazado no repo) e, como visão geral de riscos antes de produção, a <b>bastiao</b> (prioriza vulnerabilidades do crítico ao baixo na stack Next.js/Vercel). Mencione a <b>sentinela</b> para começar a pensar em observabilidade quando algo está no ar de verdade.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno publica o próprio projeto na Vercel e abre a URL pública no celular. Desafio: alterar um texto, dar push e cronometrar quanto a Vercel leva pra republicar. Entregável: o link público do site no ar (compartilhado com a turma).</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9 · 2h</span><h3>Conectando um banco (Firebase)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> dar memória ao app — conectar o Firestore (banco de dados do Firebase) para que os dados parem de ser fixos e passem a ser salvos de verdade — com as regras de segurança fechadas desde o primeiro minuto.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O que é um banco de dados e por que dados "fixos no código" não servem pra um sistema real.</li>
+        <li>Firebase e Firestore: criar um projeto no console, criar o banco, entender "coleções" e "documentos" (a modelagem da Aula 6 vira realidade).</li>
+        <li>Conectar o app: pegar a configuração do Firebase e colocá-la no projeto via <b>variáveis de ambiente</b> (<code>.env</code> local + variáveis na Vercel), nunca chumbada no código nem commitada.</li>
+        <li>Ler dados do banco: substituir a lista fixa da Aula 7 por dados vindos do Firestore.</li>
+        <li><b>Segurança não é opcional</b>: o Firestore começa aberto — fechar as regras é parte da entrega. Banco aberto = vazamento garantido. Isso é a Camada 3 (Blindar).</li>
+        <li>LGPD em 5 minutos: se guarda dado de pessoa, há responsabilidade — só colete o necessário.</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Crie um projeto no Firebase, ative o Firestore, e conecte ao app de gastos. Coloque a config no <code>.env.local</code> (e mostre que ele está no <code>.gitignore</code>). Crie a coleção "gastos" com 2 documentos pelo console e faça a tela ler essa lista. Depois abra as regras de segurança e mostre a diferença entre "aberto pra qualquer um" e fechado.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero conectar meu app Next.js ao Firebase Firestore com segurança.
+1. Liste os passos para criar o projeto e o banco no console do Firebase.
+2. No código, configure o Firebase usando variáveis de ambiente
+   (.env.local), NUNCA colando as chaves direto no código.
+   Confirme que .env.local está no .gitignore.
+3. Faça a página inicial LER os documentos da coleção &quot;gastos&quot;
+   e mostrar na tela (substituindo os dados fixos).
+4. Me mostre uma regra de segurança inicial do Firestore que NÃO
+   deixe o banco aberto para qualquer pessoa, e explique-a.
+Pare antes de cada etapa sensível e me explique o que vai fazer.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://firebase.google.com/">Firebase</a> — crie o projeto no console.</li>
+        <li><a href="https://firebase.google.com/docs/web/setup">Firebase — configurar no app web</a> — pegar a config e conectar.</li>
+        <li><a href="https://firebase.google.com/docs/firestore/security/get-started">Firestore — regras de segurança</a> — fechar o banco.</li>
+        <li><a href="https://firebase.google.com/docs/firestore/quickstart">Firestore — quickstart</a> — ler e escrever dados.</li>
+        <li><a href="https://vercel.com/docs/projects/environment-variables">Vercel — variáveis de ambiente</a> — levar os segredos para produção.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Aula de segurança pesada: a <b>cofre</b> audita as regras do Firestore/Storage atrás de coleções abertas e gaps de LGPD e entrega o conserto; a <b>esquema</b> garante a modelagem das coleções. Reforce o ritual da <b>faro</b> antes de commitar (a config do Firebase não pode vazar). Tudo apoiado no que o <b>alicerce</b> definiu.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno conecta o Firestore ao próprio app, lê uma coleção de exemplo na tela e fecha as regras de segurança (testando que "aberto pra todos" não passa). Entregável: app lendo dados reais do banco + print das regras de segurança fechadas, validadas pela cofre.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10 · 2h</span><h3>Seu primeiro CRUD completo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> fechar os Módulos 1 e 2 entregando um sistema de verdade: criar, ler, editar e apagar registros (CRUD) salvos no Firebase, publicado na Vercel — e validado de ponta a ponta pelo Protocolo de 5 Camadas.</p>
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O que é CRUD: <b>C</b>reate, <b>R</b>ead, <b>U</b>pdate, <b>D</b>elete — as quatro ações que todo sistema de dados precisa.</li>
+        <li>Criar (Create): um formulário que adiciona um novo registro no Firestore. Validar a entrada antes de salvar (campo vazio não passa).</li>
+        <li>Ler (Read): já feito na Aula 9 — agora a lista atualiza ao adicionar/editar/apagar.</li>
+        <li>Editar (Update): abrir um item, mudar e salvar de volta no banco.</li>
+        <li>Apagar (Delete): remover um registro, com confirmação pra não apagar sem querer.</li>
+        <li>O Protocolo de 5 Camadas aplicado na entrega final: <b>Entender</b> o que pedi, <b>Ler</b> tudo que a IA gerou, <b>Blindar</b> (validação + regras do Firestore), <b>Testar</b> os casos de borda, <b>Versionar</b> e publicar. "A decisão de dizer 'está pronto' é sua."</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Construa ao vivo o CRUD completo do app de gastos: formulário que cria um gasto no Firestore, lista que atualiza sozinha, botão de editar que abre e salva, botão de apagar com confirmação. Depois rode os 5 passos do Protocolo na frente da turma — incluindo testar "valor vazio" e "valor negativo" — e faça o push pra Vercel publicar a versão final.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vamos completar o CRUD do meu app de gastos no Firestore.
+Já leio a coleção &quot;gastos&quot;. Agora implemente, um passo de cada vez:
+1. CREATE: um formulário (descrição, valor) que salva um novo gasto.
+   Valide: descrição não vazia, valor numérico e maior que zero.
+2. UPDATE: editar um gasto existente e salvar a alteração.
+3. DELETE: apagar um gasto, pedindo confirmação antes.
+A lista deve refletir cada mudança automaticamente.
+Mantenha as regras de segurança do Firestore fechadas.
+Ao final, liste os casos de borda que eu devo testar manualmente.
+Pare entre os passos pra eu revisar o código antes de seguir.</pre></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Antes de eu dizer que está pronto, aplique o Protocolo de 5 Camadas
+ao meu CRUD e me devolva um checklist preenchido:
+ENTENDER: o código faz exatamente o que pedi? (sim/não, onde divergiu)
+LER: aponte trechos que eu deveria entender melhor.
+BLINDAR: há validação de entrada e as regras do Firestore impedem
+acesso indevido? aponte qualquer brecha.
+TESTAR: liste os casos de borda (valor vazio, negativo, item inexistente)
+e o resultado esperado de cada um.
+VERSIONAR: sugira a mensagem de commit em português.
+Seja crítico. A decisão final de subir é minha.</pre></div>
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://firebase.google.com/docs/firestore/manage-data/add-data">Firestore — adicionar e atualizar dados</a> — o Create e o Update.</li>
+        <li><a href="https://firebase.google.com/docs/firestore/manage-data/delete-data">Firestore — apagar dados</a> — o Delete.</li>
+        <li><a href="https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations">Next.js — mutações de dados</a> — formulários e ações.</li>
+        <li><a href="https://firebase.google.com/docs/firestore/security/rules-conditions">Firestore — condições nas regras</a> — blindar o acesso.</li>
+      </ul>
+    </div>
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Entrega final com método: a <b>crivo</b> revisa o CRUD pelo Protocolo de 5 Camadas; a <b>prova</b> escreve testes começando pelos casos de borda; a <b>cofre</b> confirma que as regras do Firestore seguem fechadas com as novas ações de escrita. Feche reforçando: as skills aceleram e blindam, mas <b>a decisão de declarar "pronto" é sua</b>.</p>
+    </div>
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno entrega o CRUD completo do próprio MVP: criar, listar, editar e apagar funcionando, salvo no Firebase e publicado na Vercel. Antes de declarar pronto, roda o checklist do Protocolo de 5 Camadas (segundo prompt). Entregável final dos Módulos 1 e 2: o link público do sistema no ar + o checklist das 5 camadas preenchido.</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>Segurança Desde o Início</h2></div>
+  <p class="mod-resumo">Blindar o projeto desde o primeiro dia: segredos fora do código, banco com regras fechadas, login que aguenta ataque real, LGPD na prática e o hábito de revisar tudo que a IA escreve. Segurança não é a última etapa — é o ambiente em que se constrói.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 2h</span><h3>Nunca vaze um segredo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que é um segredo, por que ele nunca pode ir parar no Git, e configurar o projeto para que isso seja impossível por acidente — variáveis de ambiente, <code>.gitignore</code> e repositório privado.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O que é um segredo: chave de API, service account do Firebase, token de pagamento, string de conexão. Se vazar, alguém usa em seu nome — e a conta vem pra você.</li>
+        <li>A diferença entre <code>NEXT_PUBLIC_*</code> (vai pro navegador, qualquer um vê) e variável de servidor (fica só no backend). Regra de ouro: chave secreta NUNCA leva o prefixo <code>NEXT_PUBLIC_</code>.</li>
+        <li><code>.env.local</code> para os segredos, <code>.env.example</code> (sem valores) versionado pra documentar quais variáveis existem.</li>
+        <li><code>.gitignore</code> com <code>.env*</code> ANTES do primeiro commit — porque o Git lembra para sempre: o que entrou no histórico continua lá mesmo depois de apagado.</li>
+        <li>Repositório privado por padrão. Público é uma decisão consciente, não o estado inicial.</li>
+        <li>Onde os segredos moram em produção: variáveis de ambiente da Vercel, nunca no código.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>No projeto, mostrar um <code>.env.local</code> com a config do Firebase e uma chave de servidor falsa. Rodar <code>git status</code> e provar que o <code>.env.local</code> NÃO aparece (está ignorado). Depois, abrir o painel da Vercel em Settings &rarr; Environment Variables e cadastrar a mesma chave lá, mostrando que código e segredo vivem em lugares separados. Encerrar simulando o pesadelo: buscar no GitHub por <code>filename:.env</code> e mostrar a turma quantos milhares de segredos reais vazam por dia.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é meu parceiro de segurança neste projeto Next.js + Firebase hospedado na Vercel.
+Quero blindar os segredos antes do primeiro commit. Faça nesta ordem e me explique cada passo:
+
+1. Crie/ajuste o .gitignore para ignorar .env, .env.local, .env*.local e qualquer arquivo de service account (.json de credencial).
+2. Crie um .env.example listando TODAS as variáveis que o projeto usa, com valores em branco e um comentário curto explicando cada uma.
+3. Liste quais variáveis precisam do prefixo NEXT_PUBLIC_ (config pública do Firebase) e quais NÃO podem ter (chaves de servidor), explicando o porquê de cada classificação.
+4. Me dê o passo a passo para cadastrar essas variáveis em Environment Variables na Vercel.
+
+Não invente chaves. Onde precisar de um valor, deixe um placeholder claro como COLOQUE_SUA_CHAVE_AQUI.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://nextjs.org/docs/app/building-your-application/configuring/environment-variables">Next.js — Environment Variables</a> — diferença entre variável de servidor e <code>NEXT_PUBLIC_</code>.</li>
+        <li><a href="https://vercel.com/docs/projects/environment-variables">Vercel — Environment Variables</a> — como cadastrar segredos por ambiente (dev/preview/prod).</li>
+        <li><a href="https://git-scm.com/docs/gitignore">Git — gitignore</a> — referência oficial do padrão de ignorar arquivos.</li>
+        <li><a href="https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning">GitHub — Secret scanning</a> — como o GitHub detecta segredos vazados em repositórios.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>faro</b> escaneia o repositório atrás de segredos vazados (chaves, <code>.env</code> commitado) e diz como remediar — rode antes de qualquer push. <b>bastiao</b> prioriza o risco e confirma o padrão seguro de segredos para a stack Next.js + Firebase + Vercel.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno configura <code>.gitignore</code> + <code>.env.example</code> no próprio projeto e roda <code>git status</code> para provar que o <code>.env.local</code> sumiu do rastreamento. Em dupla, rodam a skill <b>faro</b> um no repositório do outro e relatam o que ela encontrou (ou confirmou estar limpo).</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 2h</span><h3>Regras de banco (Firestore seguro)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender que o Firestore nasce aberto e que a única coisa entre os dados dos seus usuários e a internet inteira são as Security Rules — e escrever regras que só deixam cada um ler e escrever o que é seu.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O erro nº 1 do vibecoding: deixar o banco em modo teste (<code>allow read, write: if true;</code>) e esquecer. Isso é o banco inteiro exposto pra qualquer pessoa do planeta.</li>
+        <li>As regras rodam no servidor do Google, não no seu app. Esconder um botão no frontend não protege nada — a proteção real está nas rules.</li>
+        <li>Padrão do dono: só o usuário autenticado lê/escreve seus próprios documentos (<code>request.auth.uid == resource.data.ownerId</code>).</li>
+        <li>Negar por padrão: o que a regra não permitir explicitamente fica bloqueado.</li>
+        <li>Validar dados na escrita: tipo, tamanho e campos obrigatórios — a regra também valida o que entra, não só quem entra.</li>
+        <li>Testar antes de publicar com o Rules Playground / emulador, sem tocar nos dados de produção.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Abrir uma coleção <code>posts</code> em modo aberto e, no console do navegador, ler documentos de "outro usuário" pra provar que está tudo exposto. Depois reescrever as rules para o padrão do dono, publicar, e tentar a mesma leitura — agora <code>permission-denied</code>. Mostrar o Rules Playground simulando uma leitura autenticada vs. anônima.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em Firebase Security Rules. Meu app Next.js tem estas coleções no Firestore:
+- users: cada documento tem o id igual ao uid do usuário (perfil dele).
+- posts: cada documento tem um campo ownerId (uid de quem criou) e campos title (string) e body (string).
+
+Escreva o arquivo firestore.rules com estas garantias:
+1. Negue tudo por padrão.
+2. Em users, o usuário só pode ler e escrever o próprio documento (id == request.auth.uid).
+3. Em posts, qualquer usuário autenticado pode ler; só o dono (ownerId == request.auth.uid) pode atualizar/excluir; na criação, force ownerId == request.auth.uid e valide que title e body são strings não vazias com até 200 e 5000 caracteres.
+4. Comente cada bloco explicando o que protege.
+
+No fim, me diga como testar essas regras no Rules Playground antes de publicar, com um caso que deve passar e um que deve falhar.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://firebase.google.com/docs/firestore/security/get-started">Firebase — Get started with Security Rules</a> — base de como as regras funcionam.</li>
+        <li><a href="https://firebase.google.com/docs/rules/rules-language">Firebase — Rules language</a> — sintaxe completa (<code>request</code>, <code>resource</code>, <code>match</code>).</li>
+        <li><a href="https://firebase.google.com/docs/firestore/security/rules-conditions">Firebase — Writing conditions</a> — autenticação, validação de dados e acesso por dono.</li>
+        <li><a href="https://firebase.google.com/docs/rules/simulator">Firebase — Rules Playground</a> — testar regras sem afetar produção.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>cofre</b> audita as regras do Firestore e do Storage atrás de coleções abertas, validação ausente e risco de LGPD — e entrega o conserto. <b>esquema</b> ajuda a modelar as coleções (com <code>ownerId</code> desde o início) para que as regras fiquem simples de escrever.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno escreve as rules da sua coleção principal no padrão do dono e publica. Depois roda a skill <b>cofre</b> no próprio <code>firestore.rules</code> e corrige o que ela apontar. Validação final: tentar ler dado de "outro dono" e ver o <code>permission-denied</code> aparecer.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 2h</span><h3>Autenticação (login seguro, sessões)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> implementar login com Firebase Authentication entendendo a diferença entre autenticar (quem é você) e autorizar (o que você pode fazer), e tratar sessão, logout e recuperação de senha sem deixar buracos.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Autenticação vs. autorização: o login diz quem é a pessoa; as rules do Firestore (aula 12) dizem o que ela pode acessar. Um não substitui o outro.</li>
+        <li>Nunca guardar senha você mesmo. O Firebase Auth cuida de hash, sessão e tokens — usar o provedor é mais seguro que reinventar.</li>
+        <li>E-mail/senha + provedores sociais (Google). Verificação de e-mail e fluxo de "esqueci minha senha" prontos no Firebase.</li>
+        <li>Sessão: o token JWT do Firebase é a prova de identidade; nunca confie só no que o frontend diz — valide o token no servidor para ações sensíveis.</li>
+        <li>Proteger rotas: redirecionar quem não está logado; checar o usuário no servidor, não só esconder a tela.</li>
+        <li>Rate limit e mensagens de erro genéricas no login pra não entregar dica a quem tenta força bruta.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Montar tela de login com e-mail/senha + botão "Entrar com Google" usando Firebase Auth. Mostrar o usuário logado, o token no DevTools, e uma rota protegida que redireciona o anônimo pro login. Disparar o e-mail de recuperação de senha ao vivo e mostrar a chegada. Encerrar provando que esconder a tela não basta: as rules é que barram o acesso ao dado.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em autenticação com Firebase em projetos Next.js (App Router).
+Implemente login seguro com Firebase Authentication. Quero:
+
+1. Inicialização do Firebase Auth no cliente, usando as variáveis NEXT_PUBLIC_ do .env (não invente chaves).
+2. Tela de login com e-mail/senha e botão "Entrar com Google", com tratamento de erro que mostre mensagens genéricas ao usuário (sem revelar se o e-mail existe).
+3. Fluxo de "esqueci minha senha" usando sendPasswordResetEmail.
+4. Um jeito de proteger rotas: redirecionar usuário não autenticado para /login.
+5. Logout funcional.
+
+Explique onde a validação realmente acontece (cliente vs. servidor) e me diga o que ainda preciso fazer nas Firestore Rules para que esconder a tela não seja a única proteção. Use componentes simples e comentados.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://firebase.google.com/docs/auth">Firebase Authentication — visão geral</a> — provedores, sessão e tokens.</li>
+        <li><a href="https://firebase.google.com/docs/auth/web/password-auth">Firebase — Password Authentication (Web)</a> — cadastro, login e recuperação de senha.</li>
+        <li><a href="https://firebase.google.com/docs/auth/admin/verify-id-tokens">Firebase — Verificar ID tokens no servidor</a> — validar a identidade no backend.</li>
+        <li><a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a> — referência dos riscos mais comuns (inclui falhas de autenticação).</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>escudo</b> endurece a autenticação: login seguro, MFA, sessões, recuperação de senha e rate limit — use ao implementar ou revisar qualquer fluxo de acesso. <b>bastiao</b> cruza o resultado com os riscos de autenticação do OWASP e prioriza o que corrigir primeiro.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno coloca login funcional (e-mail/senha + Google) no próprio projeto e protege uma rota. Testa o fluxo de "esqueci minha senha" de ponta a ponta. Depois roda a skill <b>escudo</b> sobre o código de auth e anota as melhorias sugeridas (rate limit, mensagens genéricas, verificação de e-mail).</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 2h</span><h3>LGPD pra quem constrói</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender a LGPD na visão de quem programa — quais dados pessoais o app coleta, com que base legal, por quanto tempo guarda — e gerar uma Política de Privacidade e um fluxo de consentimento que não sejam só enfeite.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O que é dado pessoal na prática: nome, e-mail, telefone, IP, geolocalização, até o <code>uid</code> que liga uma ação a uma pessoa. Se identifica alguém, é dado pessoal.</li>
+        <li>Base legal: você precisa de um motivo legítimo pra coletar (consentimento, execução de contrato, etc.). Coletar "porque pode ser útil depois" não é base legal.</li>
+        <li>Minimização: só peça o que vai usar. Cada campo a mais é risco a mais.</li>
+        <li>Consentimento de verdade: opt-in claro, sem caixa pré-marcada, com link pra política — diferente do "aceito tudo" forçado.</li>
+        <li>Direitos do titular: acesso, correção e exclusão dos dados. O app precisa de um caminho pra apagar a conta e os dados.</li>
+        <li>Retenção e terceiros: por quanto tempo guarda e com quem compartilha (Firebase/Google, ferramenta de e-mail, analytics) — isso entra na política.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Mapear ao vivo, num quadro, todos os dados que o projeto da turma coleta (cadastro, formulário de lead, analytics) e classificar cada um por finalidade e base legal. Mostrar onde isso vira risco (campo coletado e nunca usado). Depois gerar uma Política de Privacidade e um checkbox de consentimento real (não pré-marcado, com link) no formulário de cadastro.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em LGPD aplicada a software, na visão de quem desenvolve.
+Meu app (Next.js + Firebase) coleta: nome, e-mail e telefone no cadastro; e-mail no formulário de captura de leads; e usa Firebase Analytics.
+
+Faça três coisas:
+1. Monte uma tabela: para cada dado pessoal coletado, indique finalidade, base legal sugerida (LGPD) e tempo de retenção recomendado. Aponte se algum dado parece desnecessário (minimização).
+2. Liste os terceiros que processam esses dados (Google/Firebase, ferramenta de e-mail) e o que precisa constar na política sobre isso.
+3. Gere uma Política de Privacidade em português claro, adaptada a esse app, e o texto de um checkbox de consentimento (opt-in, NÃO pré-marcado) para o formulário de cadastro, com link para a política.
+
+Avise explicitamente que isto é um ponto de partida e não substitui revisão jurídica.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">Lei nº 13.709/2018 (LGPD)</a> — texto oficial da lei.</li>
+        <li><a href="https://www.gov.br/anpd/pt-br">ANPD — Autoridade Nacional de Proteção de Dados</a> — guias e orientações oficiais.</li>
+        <li><a href="https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guia-orientativo-tratamento-de-dados-pessoais-pelo-poder-publico.pdf">ANPD — Guias orientativos</a> — material prático sobre bases legais e tratamento.</li>
+        <li><a href="https://firebase.google.com/support/privacy">Firebase — Privacy and Security</a> — o que o Firebase processa e como, para citar na sua política.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>salvaguarda</b> mapeia os dados pessoais que o produto coleta, aponta os gaps (consentimento, base legal, retenção, terceiros) e gera Política de Privacidade e fluxo de consentimento. <b>cofre</b> garante que esses dados também estejam protegidos no banco — privacidade no papel sem regra de banco não vale nada.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno mapeia os dados pessoais do próprio projeto numa tabela (dado, finalidade, base legal, retenção) e roda a skill <b>salvaguarda</b> pra gerar a Política de Privacidade e o checkbox de consentimento. Implementa o opt-in real no formulário de cadastro.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 2h</span><h3>O Protocolo de 5 Camadas</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> instalar o hábito que separa vibecoding amador de vibecoding com engenharia — nunca aceitar código da IA sem passar pelas 5 camadas: Entender, Ler, Blindar, Testar, Versionar.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li><b>1. Entender</b> — antes de aceitar, saber o que aquele código faz e por quê. Se você não consegue explicar, não pode aprovar.</li>
+        <li><b>2. Ler</b> — ler de fato o que a IA escreveu, linha a linha nas partes que importam. A IA erra com confiança; o leitor é você.</li>
+        <li><b>3. Blindar</b> — segurança: tem segredo exposto? regra de banco aberta? validação de entrada? auth checada no servidor? (é a soma das aulas 11 a 14).</li>
+        <li><b>4. Testar</b> — provar que funciona, incluindo os casos de borda e o caminho do erro, não só o "feliz".</li>
+        <li><b>5. Versionar</b> — commit pequeno e descritivo, pra poder voltar atrás quando algo quebrar. Histórico limpo é rede de segurança.</li>
+        <li>O protocolo é um checklist, não um sermão: vira automático com a prática e cabe em poucos minutos por mudança.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pegar um trecho real gerado nas aulas anteriores (o login ou as rules) e passar ele pelas 5 camadas ao vivo, em voz alta: "entendo o que faz? li mesmo? tem furo de segurança? está testado? está versionado?". Mostrar que o protocolo PEGA coisas — achar de propósito um <code>console.log</code> com dado sensível ou uma validação faltando, e corrigir antes do commit.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é meu revisor pelo Protocolo de 5 Camadas. Vou colar um trecho de código gerado por IA.
+Revise nesta ordem exata e seja direto:
+
+1. ENTENDER: explique em 2-3 frases o que esse código faz e qual problema resolve.
+2. LER: aponte trechos confusos, mortos, ou que não fazem o que parecem fazer.
+3. BLINDAR: liste riscos de segurança — segredo exposto, regra de banco aberta, falta de validação de entrada, autorização não checada no servidor, dado sensível em log.
+4. TESTAR: liste os casos que eu precisaria testar, incluindo borda e caminho de erro (não só o caso feliz).
+5. VERSIONAR: sugira uma mensagem de commit curta e descritiva para essa mudança.
+
+No fim, dê um veredito: pode subir como está, ou precisa de ajuste? Se precisar, mostre o conserto mínimo.
+
+CÓDIGO:
+[cole aqui]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a> — checklist de referência para a camada Blindar.</li>
+        <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html">OWASP — Input Validation Cheat Sheet</a> — como validar entrada de verdade.</li>
+        <li><a href="https://www.conventionalcommits.org/pt-br/v1.0.0/">Conventional Commits (PT-BR)</a> — padrão de mensagem de commit para a camada Versionar.</li>
+        <li><a href="https://git-scm.com/book/pt-br/v2">Pro Git (PT-BR)</a> — fundamentos de Git para versionar com segurança.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>crivo</b> é o Protocolo de 5 Camadas em forma de skill: revisa um código ou diff por Entender, Ler, Blindar, Testar, Versionar antes de aceitar. <b>prova</b> cobre a camada Testar (começa pelos casos de borda) e <b>bastiao</b> reforça a camada Blindar com priorização de risco.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno pega uma mudança real do próprio projeto e roda a skill <b>crivo</b> nela, anotando o que cada camada pegou. Fecha com um commit pequeno e descritivo. Meta da aula: sair com o protocolo virando reflexo — nada sobe sem passar pelas 5 camadas.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>Frontend e Design</h2></div>
+  <p class="mod-resumo">Criar interfaces profissionais, responsivas e acessíveis — sem cair no visual genérico de protótipo de IA. Do raciocínio de UI/UX a um design system enxuto, layout que funciona no celular e no desktop, formulários que capturam leads de verdade e o polimento que dá identidade visual ao produto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 2h</span><h3>Pensando em UI/UX</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender a diferença entre UI (como parece) e UX (como funciona), e aprender a guiar a IA com critérios de design em vez de aceitar o primeiro layout genérico que ela cospe.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>UI vs. UX: interface bonita que confunde é UX ruim; fluxo claro feio é UX bom mas vende mal. O objetivo é os dois.</li>
+        <li>Hierarquia visual: o olho precisa saber o que ler primeiro. Uma única ação principal por tela (um CTA dominante).</li>
+        <li>Os fundamentos que a IA esquece sozinha: espaçamento generoso, contraste, alinhamento, agrupamento por proximidade.</li>
+        <li>Por que IA entrega o "visual genérico de protótipo": tudo cinza, centralizado, sem identidade. Você corrige dando referência e critério, não pedindo "deixa bonito".</li>
+        <li>Carga cognitiva: menos opções por tela, texto curto, padrões que o usuário já conhece (não reinvente o menu).</li>
+        <li>Mobile-first como mentalidade: pensar primeiro na tela pequena força priorizar o essencial.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pedir à IA "faça uma landing page" sem critério e mostrar o resultado genérico. Depois pedir a MESMA tela dando hierarquia, paleta, referência de estilo e uma única ação principal — e comparar lado a lado. A turma vê na hora que o que muda o resultado é o briefing, não o modelo. Mostrar três telas reais (uma boa, uma confusa) e a turma aponta os problemas de hierarquia.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é um designer de produto sênior. Antes de escrever qualquer código, me ajude a pensar a UX desta tela.
+
+Tela: [descreva — ex: página inicial de um app de agendamento].
+Público: [quem usa].
+Objetivo número 1 da tela: [a ação que o usuário PRECISA fazer].
+
+Me responda:
+1. Qual é a ÚNICA ação principal desta tela e como ela deve dominar visualmente?
+2. Qual a hierarquia de informação — o que o olho lê primeiro, segundo, terceiro?
+3. O que dá pra CORTAR pra reduzir carga cognitiva?
+4. Como essa tela se comporta no celular (mobile-first)?
+5. Três decisões de UI concretas (espaçamento, contraste, agrupamento) que evitam o visual genérico de protótipo.
+
+Não gere código ainda. Quero a estratégia primeiro.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Nielsen Norman — 10 Heurísticas de Usabilidade</a> — os princípios clássicos de UX.</li>
+        <li><a href="https://lawsofux.com/">Laws of UX</a> — leis de psicologia aplicadas à interface (Hick, Fitts, Miller).</li>
+        <li><a href="https://www.refactoringui.com/">Refactoring UI</a> — guia prático de hierarquia, espaçamento e cor para quem programa.</li>
+        <li><a href="https://www.w3.org/WAI/fundamentals/">W3C WAI — Fundamentos de acessibilidade</a> — UX que inclui todo mundo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>canone</b> é o padrão de boa interface — estilos, paletas, tipografia, espaçamento e regras de UX — para decidir o estilo antes de codar. <b>atelier</b> gera telas de alta fidelidade na identidade do Rodrigo (escuro premium + âmbar), fugindo do visual genérico de protótipo.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno escolhe uma tela do próprio projeto e, antes de codar, define com a IA a ação principal, a hierarquia e o que cortar. Depois compara o "primeiro chute" da IA com a versão guiada por critério. Quem quiser usa <b>canone</b> pra fechar a paleta e a tipografia.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 2h</span><h3>Componentes e design system</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> parar de repetir estilo em cada tela e montar um pequeno design system com Tailwind — tokens (cores, espaçamento, tipografia) e componentes reutilizáveis (botão, card, input) que garantem consistência.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O problema sem sistema: cada tela com um azul diferente, um botão diferente — incoerência que grita "amador".</li>
+        <li>Design tokens: definir uma vez cor primária, espaçamentos e fontes (no <code>tailwind.config</code> / variáveis CSS) e usar em todo lugar.</li>
+        <li>Componente reutilizável: um <code>&lt;Button&gt;</code>, um <code>&lt;Card&gt;</code>, um <code>&lt;Input&gt;</code> — muda num lugar, atualiza no app inteiro.</li>
+        <li>Variantes e estados: primário/secundário, hover, focus, disabled, loading — o que diferencia produto de protótipo.</li>
+        <li>Tailwind sem virar sopa de classes: usar <code>@apply</code> ou componentes pra não repetir 30 classes em cada botão.</li>
+        <li>Por que isso acelera o vibecoding: com sistema pronto, a IA monta telas novas já consistentes.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Definir tokens no <code>tailwind.config</code> (cor primária âmbar, escala de espaçamento, fonte) e construir um <code>&lt;Button&gt;</code> com variantes (primário/secundário) e estados (hover, focus, disabled, loading). Trocar a cor primária no token e mostrar todos os botões do app mudando de uma vez — o "momento mágico" do design system.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em design systems com Tailwind CSS em Next.js (App Router).
+Quero a base de um design system pequeno e consistente. Faça:
+
+1. No tailwind.config (ou via variáveis CSS), defina tokens: cor primária (âmbar), cor de fundo escura, cores de texto, escala de espaçamento e a família de fonte. Comente cada token.
+2. Crie um componente Button reutilizável com:
+   - variantes: primary e secondary;
+   - estados: hover, focus-visible (acessível), disabled e loading (com spinner);
+   - tamanhos: sm e md.
+3. Crie um componente Card e um Input no mesmo padrão de tokens.
+4. Mostre um exemplo de tela usando esses componentes para eu ver a consistência.
+
+Evite o visual genérico: bom contraste, espaçamento generoso, foco visível. Código comentado.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://tailwindcss.com/docs/theme">Tailwind CSS — Theme configuration</a> — definir tokens (cores, espaçamento, fontes).</li>
+        <li><a href="https://tailwindcss.com/docs/reusing-styles">Tailwind CSS — Reusing styles</a> — componentes e <code>@apply</code> sem repetição.</li>
+        <li><a href="https://ui.shadcn.com/">shadcn/ui</a> — componentes acessíveis prontos (Radix + Tailwind) como referência.</li>
+        <li><a href="https://www.radix-ui.com/primitives">Radix UI Primitives</a> — comportamento acessível por baixo dos componentes.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>atelier</b> gera os componentes já na identidade visual do Rodrigo, com acessibilidade e bom contraste de fábrica. <b>canone</b> define os tokens (paleta, tipografia, espaçamento) que alimentam o design system pra tudo sair coerente.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno define tokens no próprio projeto e cria pelo menos um <code>&lt;Button&gt;</code> e um <code>&lt;Card&gt;</code> reutilizáveis com variantes e estados. Prova final: trocar a cor primária no token e ver o app inteiro mudar de uma vez. Quem quiser usa <b>atelier</b> pra acelerar os componentes.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 2h</span><h3>Responsivo e acessível</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> fazer a interface funcionar bem do celular ao desktop (responsivo) e ser usável por todo mundo, inclusive com leitor de tela e teclado (acessível) — duas exigências, não dois luxos.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Mobile-first com Tailwind: estilo base é o celular; <code>md:</code> e <code>lg:</code> adaptam pra telas maiores — não o contrário.</li>
+        <li>Layout fluido: <code>flex</code> e <code>grid</code>, unidades relativas, imagens responsivas — nada de largura fixa em pixel quebrando no celular.</li>
+        <li>Alvos de toque: botões grandes o suficiente pro dedo (mínimo ~44px), espaçamento que não erra o clique.</li>
+        <li>Acessibilidade não é opcional (e é exigência legal): HTML semântico (<code>button</code> é botão, não <code>div</code> clicável), <code>alt</code> em imagem, <code>label</code> em input.</li>
+        <li>Teclado e foco: tudo navegável por Tab, com foco visível. Contraste de cor que passa no AA.</li>
+        <li>Testar de verdade: DevTools no modo dispositivo, navegar a tela só com o teclado, rodar um checador de contraste.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pegar uma tela que quebra no celular e consertar com classes responsivas do Tailwind (de <code>grid-cols-1</code> a <code>md:grid-cols-3</code>), mostrando no DevTools mobile. Depois rodar uma auditoria de acessibilidade (Lighthouse) ao vivo, achar os erros comuns — input sem <code>label</code>, imagem sem <code>alt</code>, contraste baixo — e corrigir um a um, vendo a nota subir.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em frontend responsivo e acessível com Tailwind em Next.js.
+Vou colar um componente/tela. Faça duas coisas:
+
+RESPONSIVO (mobile-first):
+- Reescreva o layout começando pelo celular e adaptando com md:/lg:.
+- Garanta que nada quebre em telas estreitas e que alvos de toque tenham tamanho confortável.
+
+ACESSÍVEL (mirar WCAG AA):
+- Use HTML semântico (button real, headings em ordem).
+- Adicione label associada a cada input, alt em imagens e aria-* só onde necessário.
+- Garanta foco visível no teclado e contraste de cor suficiente.
+
+No fim, liste como EU testo isso: passos no DevTools (modo dispositivo), navegação só por teclado e o que olhar no Lighthouse.
+
+COMPONENTE:
+[cole aqui]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://tailwindcss.com/docs/responsive-design">Tailwind CSS — Responsive design</a> — breakpoints e mobile-first.</li>
+        <li><a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1 — Quick Reference</a> — critérios de acessibilidade (nível AA).</li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/Accessibility">MDN — Acessibilidade</a> — HTML semântico, ARIA e teclado, em português.</li>
+        <li><a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Lighthouse — Auditoria de acessibilidade</a> — como medir e interpretar a nota.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>atelier</b> e <b>canone</b> já entregam contraste e foco acessíveis de fábrica. <b>turbo</b> ajuda quando o responsivo cobra performance (imagens pesadas, layout que trava no celular) e mira os Core Web Vitals.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno pega a tela mais quebrada do próprio projeto no celular e a deixa responsiva com Tailwind mobile-first. Depois roda Lighthouse de acessibilidade, corrige os três erros mais comuns (label, alt, contraste) e tenta navegar a tela só com o teclado. Meta: nota de acessibilidade subindo na tela.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 2h</span><h3>Formulários e captura de leads</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> construir formulários que convertem e não frustram — com validação clara, bons estados (erro, sucesso, carregando), acessíveis — e capturar leads salvando no Firestore com segurança e consentimento LGPD.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Anatomia de um bom formulário: poucos campos, labels claras, ordem lógica, um botão de ação evidente.</li>
+        <li>Validação que ajuda: mensagem específica ("e-mail inválido", não "erro"), no campo certo, na hora certa. Validar no cliente E no servidor/regras.</li>
+        <li>Estados que dão confiança: botão em loading (sem clique duplo), mensagem de sucesso, mensagem de erro que diz o que fazer.</li>
+        <li>Captura de lead na prática: salvar e-mail no Firestore, com a regra de banco da aula 12 validando o que entra.</li>
+        <li>Consentimento (LGPD, aula 14): checkbox opt-in não pré-marcado, com link pra política, antes de capturar.</li>
+        <li>Anti-spam básico e por que validar no servidor: o frontend pode ser burlado; a validação real fica nas Firestore Rules.</li>
+        <li>Conectar a isca ao funil: o lead capturado é o começo da nutrição por e-mail.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Montar um formulário de captura (nome + e-mail + consentimento) com validação, estado de loading e mensagem de sucesso. Submeter e mostrar o documento aparecendo no Firestore. Depois tentar gravar um e-mail inválido ou sem consentimento e mostrar a regra de banco BARRANDO no servidor — provando que a validação não vive só no frontend.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em formulários acessíveis e captura de leads em Next.js + Firebase.
+Crie um formulário de captura de leads que salva no Firestore (coleção "leads"). Requisitos:
+
+1. Campos: nome e e-mail. Mais um checkbox de consentimento (opt-in, NÃO pré-marcado) com link para a política de privacidade.
+2. Validação: nome obrigatório, e-mail em formato válido, consentimento obrigatório. Mensagens de erro específicas, no campo certo, com aria para leitor de tela.
+3. Estados: botão "Enviar" vira loading durante o envio (sem permitir clique duplo); mensagem de sucesso após salvar; mensagem de erro amigável se falhar.
+4. Salvar no Firestore com createdAt (timestamp do servidor) e o texto do consentimento aceito.
+5. Me dê também a Firestore Rule da coleção "leads" que valida no SERVIDOR: e-mail string não vazia, consentimento == true, e bloqueia campos extras — pra validação não viver só no frontend.
+
+Código comentado, Tailwind, acessível.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://react-hook-form.com/">React Hook Form</a> — validação de formulário performática e acessível em React.</li>
+        <li><a href="https://zod.dev/">Zod</a> — validação de schema (mesma regra no cliente e no servidor).</li>
+        <li><a href="https://firebase.google.com/docs/firestore/manage-data/add-data">Firebase — Adicionar dados ao Firestore</a> — salvar o lead na coleção.</li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn/Forms">MDN — Formulários web</a> — fundamentos de formulários acessíveis, em português.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>atelier</b> monta o formulário acessível na identidade visual; <b>cofre</b> escreve e audita a regra da coleção <code>leads</code> pra validar no servidor; <b>salvaguarda</b> garante o consentimento LGPD; e <b>ima</b> conecta esse lead capturado a uma isca e ao funil de nutrição.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno constrói um formulário de captura com validação, estados e consentimento, salvando na coleção <code>leads</code> do próprio Firestore. Escreve (com a <b>cofre</b>) a regra que valida no servidor e testa enviando um dado inválido pra ver o banco barrar. Lead real aparecendo no Firestore = entregável da aula.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 2h</span><h3>Polimento e identidade visual</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> dar o acabamento que separa "funciona" de "parece produto" — identidade visual coerente, microinterações, estados vazios e de carregamento, e os detalhes finais que transmitem cuidado e profissionalismo.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Identidade visual: logo, paleta consistente, tipografia com personalidade, um tom. É o que faz lembrarem do produto.</li>
+        <li>Os detalhes que vendem confiança: cantos, sombras e espaçamento coerentes; transições suaves; nada desalinhado.</li>
+        <li>Estados que faltam no protótipo: estado vazio (lista sem itens com um convite à ação), loading (skeleton em vez de tela branca), erro tratado com elegância.</li>
+        <li>Microinterações com propósito: hover, foco, feedback de clique — sutis, rápidos, nunca exagerados.</li>
+        <li>Os finais esquecidos: favicon, título da aba, metadados de compartilhamento (Open Graph), página 404 decente.</li>
+        <li>Saber a hora de parar: polimento é acabamento, não retrabalho infinito — o Protocolo de 5 Camadas (aula 15) define o "bom o bastante" pra subir.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pegar o projeto da turma "funcional mas cru" e dar o passe de polimento ao vivo: aplicar a paleta da marca de ponta a ponta, trocar a tela branca de carregamento por um skeleton, criar um estado vazio convidativo, adicionar favicon + título de aba + Open Graph, e uma transição suave nos botões. Comparar o antes e depois — mesma funcionalidade, percepção de produto completamente diferente.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é diretor de arte e frontend sênior. Meu app Next.js + Tailwind funciona, mas parece cru.
+Faça um passe de polimento e identidade visual, mantendo o que já funciona:
+
+1. IDENTIDADE: aplique uma paleta coerente (base escura + acento âmbar), tipografia com personalidade e espaçamento consistente em todo o app.
+2. ESTADOS QUE FALTAM: crie um estado vazio convidativo (lista sem itens), um loading com skeleton no lugar de tela branca, e um tratamento elegante de erro.
+3. MICROINTERAÇÕES: adicione transições sutis em hover/focus dos botões e cards (rápidas, nunca exageradas), com foco visível acessível.
+4. FINAIS ESQUECIDOS: favicon, título de aba por página (metadata do Next), tags Open Graph para compartilhamento e uma página 404 decente.
+
+Liste as mudanças em ordem de impacto visual e me diga quando PARAR — o que é polimento essencial vs. retrabalho desnecessário.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://nextjs.org/docs/app/building-your-application/optimizing/metadata">Next.js — Metadata (título, favicon, Open Graph)</a> — os finais esquecidos, feitos certo.</li>
+        <li><a href="https://tailwindcss.com/docs/transition-property">Tailwind CSS — Transitions</a> — microinterações suaves sem exagero.</li>
+        <li><a href="https://www.refactoringui.com/">Refactoring UI</a> — os detalhes de polimento (sombra, cor, espaçamento) que dão acabamento.</li>
+        <li><a href="https://fonts.google.com/">Google Fonts</a> — tipografia com personalidade para a identidade visual.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>atelier</b> aplica a identidade visual (escuro premium + âmbar) com acabamento de produto; <b>canone</b> garante a coerência de paleta, tipografia e espaçamento. <b>brand</b> ajuda a consolidar logo, tom e identidade quando o produto vira marca.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno dá o passe de polimento no próprio projeto: paleta coerente, um estado vazio, um loading com skeleton, favicon + título de aba + Open Graph. Apresenta o antes e depois pra turma em 1 minuto. Encerramento do módulo: o app deixou de parecer protótipo e passou a parecer produto.</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>Backend, Dados e Integrações</h2></div>
+  <p class="mod-resumo">Onde o app deixa de ser uma tela bonita e vira um sistema de verdade: modelar os dados certos, criar rotas que servem e gravam informação, conectar pagamento, e-mail e WhatsApp sem vazar credencial, ouvir webhooks com segurança e enxergar onde a conta de infra e de IA pode explodir antes de escalar.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 2h</span><h3>Modelando os dados (schema, relações no Firestore)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> sair da aula com um modelo de dados desenhado para o app de cada aluno, entendendo coleções, documentos e relações em NoSQL — e por que modelar errado vira query cara e tela lenta depois.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Firestore não é tabela: pensar em <b>coleções → documentos → campos</b>, e não em linhas e JOIN.</li>
+        <li>A pergunta que guia tudo: "quais telas eu vou montar e quais consultas elas precisam?" — modelar a partir da leitura, não da teoria.</li>
+        <li>Relações em NoSQL: referência (guardar o <code>id</code>) vs. desnormalização (duplicar o dado pra ler rápido) — quando usar cada uma.</li>
+        <li>Subcoleções vs. coleção raiz: quando aninhar (ex.: <code>pedidos</code> dentro de <code>usuarios</code>) e quando deixar no topo.</li>
+        <li>Campos que sempre valem a pena: <code>createdAt</code>, <code>updatedAt</code>, <code>ownerId</code> — e por que <code>ownerId</code> é a base das regras de segurança.</li>
+        <li>O custo escondido: no Firestore você paga por leitura de documento. Modelo errado = ler 500 docs pra montar uma lista.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pego um app de agendamento (cliente marca horário com um profissional) e modelo ao vivo no quadro: coleções <code>usuarios</code>, <code>servicos</code> e <code>agendamentos</code>. Mostro a decisão real: dentro de cada <code>agendamento</code> eu guardo só o <code>profissionalId</code> (referência) ou copio o nome e o preço do serviço junto (desnormalização)? Faço as duas e mostro a tela de "meus agendamentos" sendo montada — com referência ela puxa 3 documentos extras por linha; com a cópia ela lê 1. Aí a turma sente o trade-off na pele em vez de decorar.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é um arquiteto de dados em Firestore (NoSQL). Vou te descrever meu app e
+as telas que ele vai ter. Antes de propor qualquer schema, faça isto:
+
+1. Liste as CONSULTAS que cada tela precisa (o que ela lê e como filtra/ordena).
+2. Só então proponha as coleções e os campos de cada documento.
+3. Para CADA relação, diga se você usou referência (guardar o id) ou
+   desnormalização (copiar o dado), e justifique com base no custo de leitura.
+4. Inclua em todo documento: createdAt, updatedAt e ownerId (id do dono).
+5. Aponte 2 consultas que ficariam caras nesse modelo e como evitá-las.
+
+NÃO escreva código de regras de segurança ainda — só o modelo de dados.
+
+Meu app: [DESCREVA O APP]
+Minhas telas principais: [LISTE AS TELAS E O QUE CADA UMA MOSTRA]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://firebase.google.com/docs/firestore/data-model">Cloud Firestore Data model</a> — o modelo oficial de coleções e documentos, base de tudo.</li>
+        <li><a href="https://firebase.google.com/docs/firestore/manage-data/structure-data">Choose a data structure</a> — guia do Firebase sobre aninhar, referenciar ou desnormalizar.</li>
+        <li><a href="https://firebase.google.com/docs/firestore/query-data/queries">Queries no Firestore</a> — o que dá e o que não dá pra consultar (limita o modelo).</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>Use a <b>esquema</b> (modelagem de dados) como copiloto da aula inteira: ela conduz a decisão de coleções, relações e desnormalização com foco em Firestore e já alerta quando uma query vai ficar difícil ou cara.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno modela o próprio app: primeiro escreve à mão a lista de telas e consultas, depois roda o prompt acima e critica a resposta da IA com a skill <b>esquema</b>. Entrega: um diagrama de coleções (pode ser texto indentado) com pelo menos uma relação por referência e uma por desnormalização, justificadas. Em duplas, um revisa a modelagem do outro procurando a query mais cara.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 2h</span><h3>APIs e rotas (route handlers)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que é uma rota de API, por que ela roda no servidor (e não no navegador) e criar route handlers no Next.js que leem e gravam dados no Firestore com validação de entrada.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>A diferença que muda tudo: <b>client</b> (roda no navegador do usuário, ninguém confia) vs. <b>server</b> (roda no servidor, onde ficam os segredos).</li>
+        <li>Route Handlers no App Router: arquivo <code>app/api/.../route.ts</code> exportando <code>GET</code>, <code>POST</code>, etc.</li>
+        <li>O ciclo de uma rota: recebe a requisição → valida a entrada → faz a operação (ler/gravar no banco) → devolve resposta com o status certo.</li>
+        <li>Status HTTP que importam no dia a dia: 200 ok, 201 criado, 400 entrada inválida, 401 não autenticado, 403 sem permissão, 500 erro do servidor.</li>
+        <li><b>Nunca confie na entrada</b>: validar tudo que chega com Zod antes de tocar no banco.</li>
+        <li>Firebase Admin SDK (no servidor) vs. SDK do cliente: por que operações sensíveis vão pelo Admin, no route handler.</li>
+        <li>Por que o segredo (chave do Admin) nunca pode ir pro client — ele vive só em variável de ambiente no servidor.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Construo ao vivo uma rota <code>POST /api/agendamentos</code> que recebe um agendamento do front, valida com Zod (data no futuro, profissional existe, campos obrigatórios), grava no Firestore via Admin SDK e devolve 201 com o id criado. Aí faço de propósito uma requisição com data no passado e mostro a rota respondendo 400 com mensagem clara — em vez de gravar lixo no banco. Mostro também a versão "ingênua" que aceita qualquer coisa e por que ela é uma bomba.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Crie um Route Handler no Next.js (App Router, arquivo app/api/RECURSO/route.ts)
+em TypeScript. Requisitos não-negociáveis:
+
+- A operação roda no SERVIDOR. Use o Firebase Admin SDK, nunca o SDK de cliente.
+- Valide TODA a entrada com Zod antes de tocar no banco. Se inválida, responda
+  400 com a lista de erros — não grave nada.
+- Use os status corretos: 201 ao criar, 400 entrada inválida, 401 sem auth,
+  500 erro inesperado (com try/catch).
+- Adicione createdAt e ownerId ao documento gravado.
+- NÃO exponha mensagens de erro internas do banco para o cliente; logue no
+  servidor e devolva uma mensagem genérica no 500.
+
+Recurso: [EX.: agendamentos]
+Campos esperados no corpo: [LISTE OS CAMPOS E SEUS TIPOS]
+Operação: [criar / listar / etc.]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://nextjs.org/docs/app/building-your-application/routing/route-handlers">Next.js · Route Handlers</a> — a referência oficial de GET/POST e Request/Response.</li>
+        <li><a href="https://zod.dev/">Zod</a> — validação de entrada com tipos; o jeito padrão de blindar o que chega.</li>
+        <li><a href="https://firebase.google.com/docs/admin/setup">Firebase Admin SDK · setup</a> — como rodar Firestore no servidor com a credencial certa.</li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status">Status HTTP (MDN, PT-BR)</a> — o que cada código significa, em português.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>A <b>ponte</b> (integrações) entra aqui na regra de ouro "credenciais no servidor": ela reforça por que o Admin SDK e os segredos vivem só no route handler. E a <b>esquema</b> volta pra garantir que o que a rota grava bate com o modelo desenhado na Aula 21.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno cria uma rota <code>POST</code> e uma <code>GET</code> para o recurso principal do seu app, com validação Zod. Teste obrigatório em sala: enviar pelo menos 3 requisições inválidas (campo faltando, tipo errado, valor fora de faixa) e confirmar que a API responde 400 sem gravar lixo. Quem terminar implementa o 401 quando não há usuário autenticado.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 2h</span><h3>Integrações (pagamento, e-mail, WhatsApp)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> conectar três serviços externos de verdade — Stripe (pagamento), Resend (e-mail) e WhatsApp (Cloud API) — sempre do servidor, com a credencial protegida e tratamento de erro, sem improviso.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O padrão de toda integração: chave secreta em <code>.env</code> no servidor, chamada feita dentro de um route handler, nunca no client.</li>
+        <li><b>Pagamento (Stripe):</b> criar uma Checkout Session no servidor e redirecionar o usuário; o app nunca toca no número do cartão.</li>
+        <li><b>E-mail (Resend):</b> enviar um e-mail transacional (confirmação, recibo) com domínio verificado — e por que e-mail de "test" cai no spam.</li>
+        <li><b>WhatsApp (Cloud API da Meta):</b> mandar mensagem por template aprovado; a janela de 24h e por que não dá pra mandar texto livre a qualquer hora.</li>
+        <li>Tratamento de erro em integração: a chamada externa <b>vai</b> falhar às vezes (timeout, serviço fora) — try/catch, mensagem clara, não derrubar o app.</li>
+        <li>Modo teste vs. produção: chaves de teste do Stripe, sandbox, e como não cobrar de verdade durante a aula.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Fluxo completo de "comprar": clico no botão, o front chama <code>POST /api/checkout</code>, a rota cria uma Stripe Checkout Session (chave de teste) e me redireciona pra tela de pagamento do Stripe. Pago com o cartão de teste <code>4242 4242 4242 4242</code>. Em seguida disparo um e-mail de confirmação pelo Resend e mostro ele chegando na caixa. Faço questão de quebrar de propósito: removo a chave do <code>.env</code> e mostro a rota respondendo com erro tratado em vez de explodir uma stack trace na cara do usuário.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Implemente uma integração de pagamento com Stripe num Route Handler do Next.js
+(App Router, TypeScript). Regras:
+
+- Use a chave SECRETA do Stripe via process.env.STRIPE_SECRET_KEY (servidor).
+  Nunca exponha chave secreta no client; no client use só a publishable key.
+- A rota POST /api/checkout cria uma Checkout Session (mode: 'payment') com os
+  itens recebidos, e retorna a URL de redirecionamento.
+- Valide os itens com Zod antes de criar a sessão.
+- Envolva a chamada ao Stripe em try/catch: em erro, logue no servidor e
+  responda 502 com mensagem genérica, sem vazar detalhe interno.
+- Defina success_url e cancel_url a partir de uma env de base URL.
+
+Itens que o carrinho envia: [DESCREVA: nome, preço em centavos, quantidade]</pre></div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Crie uma função no servidor (Next.js Route Handler, TypeScript) que envia um
+e-mail transacional de confirmação usando a API do Resend.
+
+- Use process.env.RESEND_API_KEY (nunca no client).
+- Remetente a partir de um domínio verificado (use uma env FROM_EMAIL).
+- Parâmetros: e-mail do destinatário, nome e um resumo do pedido.
+- HTML simples e legível, com fallback em texto puro.
+- try/catch: se o envio falhar, logue o erro e NÃO derrube o fluxo principal —
+  retorne um indicador de "e-mail não enviado" para quem chamou decidir.
+
+Conteúdo do e-mail: [DESCREVA O QUE A MENSAGEM DEVE DIZER]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://docs.stripe.com/checkout/quickstart">Stripe Checkout · quickstart</a> — criar uma sessão de pagamento hospedada pelo Stripe.</li>
+        <li><a href="https://docs.stripe.com/testing">Stripe · cartões de teste</a> — o <code>4242…</code> e os cenários de falha pra testar sem cobrar.</li>
+        <li><a href="https://resend.com/docs/send-with-nextjs">Resend · enviar com Next.js</a> — e-mail transacional do servidor, passo a passo.</li>
+        <li><a href="https://developers.facebook.com/docs/whatsapp/cloud-api/get-started">WhatsApp Cloud API · começar</a> — credenciais, templates e a janela de 24h.</li>
+        <li><a href="https://www.twilio.com/docs/whatsapp/quickstart">Twilio WhatsApp (alternativa)</a> — caminho mais simples pra mandar WhatsApp sem montar a Meta API direto.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>Esta é a aula da <b>ponte</b> (integrações): ela é exatamente sobre conectar pagamento, e-mail e WhatsApp com credenciais no servidor, tratamento de erro e validação. Use também a <b>bastiao</b> pra checar que nenhuma chave secreta escapou pro client.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno integra <b>um</b> serviço de ponta a ponta no seu app (a maioria escolhe Stripe em modo teste; quem não vende nada escolhe Resend pra um e-mail de confirmação). Critério de pronto: a chave está em <code>.env</code> e nunca no client, a chamada está dentro de um route handler com try/catch, e o aluno consegue demonstrar o caminho feliz <b>e</b> o caminho de erro (chave removida ou item inválido).</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 2h</span><h3>Webhooks e automações</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que é um webhook (o serviço externo te avisando, em vez de você perguntar), receber o webhook do Stripe com segurança — validando a assinatura — e usar isso pra automatizar o que acontece depois do pagamento.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>A virada de chave: em vez do seu app ficar perguntando "já pagou? já pagou?", o Stripe te <b>liga de volta</b> quando o pagamento confirma. Isso é o webhook.</li>
+        <li>Um webhook é só uma rota <code>POST</code> sua que um serviço externo chama — com um detalhe crítico de segurança.</li>
+        <li><b>Validar a assinatura</b> é obrigatório: sem isso, qualquer um pode chamar sua rota e fingir que um pagamento aconteceu. O Stripe assina cada evento com um segredo.</li>
+        <li>Por que o webhook precisa do <b>corpo bruto</b> (raw body) pra validar a assinatura — e como configurar isso no Next.js.</li>
+        <li><b>Idempotência:</b> o mesmo evento pode chegar duas vezes; processar duas vezes não pode cobrar nem enviar e-mail dobrado. Guardar o id do evento já tratado.</li>
+        <li>Responder rápido (200) e fazer o trabalho pesado depois — webhook que demora é reenviado pelo Stripe.</li>
+        <li>Automações que nascem daí: pagamento confirmado → marca pedido como pago → envia e-mail → libera acesso.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Crio a rota <code>POST /api/webhooks/stripe</code> que valida a assinatura com <code>stripe.webhooks.constructEvent</code> e, no evento <code>checkout.session.completed</code>, marca o pedido como pago no Firestore e dispara o e-mail da Aula 23. Uso a <b>Stripe CLI</b> (<code>stripe listen</code>) pra encaminhar eventos reais pro meu <code>localhost</code> durante a aula. Depois faço a demonstração que prende a turma: mando uma requisição "falsa" pela mão (sem assinatura) e mostro a rota recusando com 400 — provando por que validar assinatura não é opcional.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Crie um Route Handler do Next.js (App Router, TypeScript) para receber webhooks
+do Stripe com segurança. Requisitos:
+
+- Leia o RAW BODY da requisição (necessário pra validar a assinatura) e o
+  header 'stripe-signature'.
+- Valide o evento com stripe.webhooks.constructEvent usando
+  process.env.STRIPE_WEBHOOK_SECRET. Se a assinatura for inválida, responda 400
+  e NÃO processe nada.
+- Trate o evento 'checkout.session.completed': marque o pedido como pago no
+  Firestore (Admin SDK) e dispare o e-mail de confirmação.
+- IDEMPOTÊNCIA: antes de processar, grave/cheque o event.id numa coleção
+  'webhookEvents'; se já existir, responda 200 e saia sem reprocessar.
+- Responda 200 rápido; envolva tudo em try/catch e logue erros no servidor.
+
+Mostre também o trecho de config necessário para receber o raw body nessa rota.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://docs.stripe.com/webhooks">Stripe · Webhooks</a> — conceito, eventos e boas práticas oficiais.</li>
+        <li><a href="https://docs.stripe.com/webhooks/signatures">Verificar assinatura de webhook</a> — o passo de segurança que não pode faltar.</li>
+        <li><a href="https://docs.stripe.com/stripe-cli">Stripe CLI</a> — <code>stripe listen</code> pra testar webhooks no localhost durante a aula.</li>
+        <li><a href="https://docs.stripe.com/api/idempotent_requests">Stripe · idempotência</a> — como evitar processar o mesmo evento duas vezes.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>A <b>ponte</b> (integrações) cobre webhooks de ponta a ponta: validação de assinatura, idempotência e tratamento de erro são exatamente o checklist dela. Quando o assunto vira "estou recebendo dado de fora, como blindo isso?", chame também a <b>bastiao</b>.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno cria o webhook do Stripe com validação de assinatura e roda a Stripe CLI pra ver um pagamento de teste virar "pedido pago" no Firestore. Desafio de verificação: enviar uma requisição sem assinatura válida e confirmar o 400. Quem terminar adiciona a checagem de idempotência e testa enviando o mesmo evento duas vezes pela CLI.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 2h</span><h3>Performance e custo (onde a conta explode)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a enxergar — antes de escalar — os dois lugares onde a conta explode em apps vibecoded: leituras desnecessárias no Firestore e chamadas de IA caras. Estimar custo por faixa de uso e cortar o desperdício.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Como você é cobrado: no Firestore, por <b>documento lido/escrito</b>; na IA, por <b>token</b> de entrada e saída; na Vercel, por execução e banda.</li>
+        <li>O vilão silencioso do Firestore: a tela que lê 1.000 documentos pra mostrar 10. Paginação, <code>limit()</code> e contadores agregados em vez de "ler tudo e contar".</li>
+        <li>A "leitura N+1": pra cada item da lista, uma consulta extra — multiplique por mil usuários e veja a conta.</li>
+        <li>Cache: o que pode ser cacheado (dados que mudam pouco) pra não bater no banco e na IA toda hora.</li>
+        <li>Custo de IA: prompt gordo é dinheiro queimado. Enviar só o contexto necessário, escolher o modelo certo pra cada tarefa, cachear respostas repetidas.</li>
+        <li>Estimar <b>antes</b>: "com 100 / 1.000 / 10.000 usuários por mês, quanto isso custa?" — fazer a conta no guardanapo em vez de descobrir na fatura.</li>
+        <li>Core Web Vitals de relance: por que uma tela lenta também é problema de custo (mais execução, mais reload).</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pego a tela "meus agendamentos" da Aula 21 e mostro no painel do Firebase quantas leituras ela gera. Versão ingênua: lê todos os agendamentos e filtra no cliente — 800 leituras. Aí aplico <code>where()</code> + <code>limit(20)</code> + paginação e a mesma tela cai pra 20 leituras. Faço a conta ao vivo: 800 vs. 20 leituras por abertura × 5.000 aberturas/dia × 30 dias — e a turma vê a diferença virar reais na estimativa. Em seguida pego um prompt de IA inchado e mostro o custo em tokens caindo pela metade só removendo contexto inútil.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Aja como engenheiro focado em CUSTO e performance. Vou te dar uma tela do meu
+app e a consulta que ela faz no Firestore. Faça:
+
+1. Estime quantas LEITURAS de documento essa tela gera por abertura.
+2. Aponte leituras desnecessárias (ex.: ler tudo e filtrar no cliente,
+   padrão N+1, falta de limit/paginação).
+3. Reescreva a consulta para reduzir leituras (where, limit, paginação,
+   contador agregado quando for só contagem).
+4. Monte uma tabela de custo estimado por faixa de uso: 100, 1.000 e 10.000
+   aberturas por dia, usando o preço atual de leitura do Firestore.
+5. Diga em qual faixa essa tela começa a doer no bolso.
+
+Tela: [DESCREVA]
+Consulta atual: [COLE O CÓDIGO DA QUERY]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://firebase.google.com/pricing">Firebase · preços</a> — quanto custa leitura, escrita e armazenamento (faça a conta com números reais).</li>
+        <li><a href="https://firebase.google.com/docs/firestore/query-data/aggregation-queries">Firestore · aggregation queries</a> — <code>count()</code> em vez de ler tudo pra contar.</li>
+        <li><a href="https://vercel.com/docs/pricing">Vercel · pricing</a> — como execução e banda entram na conta.</li>
+        <li><a href="https://web.dev/articles/vitals">Core Web Vitals</a> — referência de performance percebida pelo usuário.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>Dupla da aula: <b>termometro</b> (custos) estima a fatura de infra e de IA por faixa de uso e sinaliza onde a conta explode antes de escalar; <b>turbo</b> (performance) ataca o lado técnico — queries lentas, bundle e Core Web Vitals.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno escolhe a tela mais "pesada" do próprio app, conta as leituras com a skill <b>termometro</b> e reescreve a consulta com a <b>turbo</b> pra reduzir o número. Entrega: uma tabelinha de custo estimado em 3 faixas (100 / 1.000 / 10.000 usos) e a frase "minha conta explode quando ___". Quem usa IA no app refaz o prompt mais caro pra cortar tokens.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>Qualidade</h2></div>
+  <p class="mod-resumo">Garantir que funciona e está pronto pra alguém usar de verdade. Revisar com método o que a IA escreve, achar e corrigir bugs com as ferramentas do navegador, escrever testes começando pelos casos de borda, refatorar sem quebrar e montar observabilidade pra saber na hora — e não pelo cliente reclamando — quando algo quebra em produção.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 2h</span><h3>Revisar o que a IA escreve (Protocolo de 5 Camadas na prática)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> parar de aceitar código gerado por IA no automático. Aplicar o Protocolo de 5 Camadas — Entender, Ler, Blindar, Testar, Versionar — num código real, e desenvolver o reflexo de revisar antes de confiar.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>A premissa do vibecoding com engenharia: a IA escreve rápido, mas a <b>responsabilidade é sua</b>. Aceitar sem ler é onde nasce o bug em produção.</li>
+        <li><b>Camada 1 — Entender:</b> você consegue explicar, em voz alta, o que esse código faz e por quê? Se não, não aceita.</li>
+        <li><b>Camada 2 — Ler:</b> ler linha a linha procurando o que a IA inventou — variável que não existe, lógica trocada, "alucinação" de função.</li>
+        <li><b>Camada 3 — Blindar:</b> e quando a entrada vier errada? Validação, tratamento de erro, e o ponto de segurança (segredo no lugar certo, query do banco fechada).</li>
+        <li><b>Camada 4 — Testar:</b> rodar e provar — caminho feliz e pelo menos um caso de borda — antes de dizer "tá pronto".</li>
+        <li><b>Camada 5 — Versionar:</b> commit pequeno e descritivo, pra poder voltar quando der ruim.</li>
+        <li>Os erros típicos da IA: confiança total numa resposta errada, biblioteca que não existe, código que "parece certo" mas ignora o caso de borda.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Peço pra IA gerar, na hora, um route handler que "calcula o desconto e cobra o cliente". Aí em vez de aceitar, aplico as 5 camadas na frente da turma: explico o que faz (Entender), leio e acho um <code>parseInt</code> sem base e um campo que a IA assumiu existir (Ler), descubro que ela não valida valor negativo nem trata erro do Stripe (Blindar), rodo com um valor de borda e quebra (Testar), e só então — depois de consertar — faço o commit (Versionar). A turma vê que o "pronto" da IA não é o pronto de verdade.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Revise o código abaixo aplicando o Protocolo de 5 Camadas. Para CADA camada,
+seja específico e aponte linha:
+
+1. ENTENDER — explique em 2 frases o que esse código faz e qual o objetivo dele.
+2. LER — liste tudo que parece inventado ou inconsistente: funções/bibliotecas
+   que talvez não existam, variáveis usadas e não definidas, lógica suspeita.
+3. BLINDAR — o que acontece com entrada inválida/maliciosa? Aponte falta de
+   validação, tratamento de erro e qualquer risco de segurança (segredo
+   exposto, query aberta, dado sensível em log).
+4. TESTAR — liste os casos que EU preciso rodar pra confiar, começando pelos
+   casos de borda (vazio, negativo, nulo, muito grande).
+5. VERSIONAR — sugira uma mensagem de commit curta e descritiva.
+
+Não reescreva o código ainda — só a revisão crítica, camada por camada.
+
+Código:
+[COLE O CÓDIGO GERADO PELA IA]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://google.github.io/eng-practices/review/reviewer/">Google Engineering Practices · Code Review</a> — como um engenheiro lê código de outro (vale pra ler o da IA).</li>
+        <li><a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a> — o catálogo das falhas de segurança que a camada "Blindar" procura.</li>
+        <li><a href="https://www.conventionalcommits.org/pt-br/v1.0.0/">Conventional Commits (PT-BR)</a> — padrão de mensagem de commit pra camada "Versionar".</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>A <b>prova</b> (testes) sustenta a camada "Testar" desta aula, ajudando a transformar a revisão em casos concretos de verificação. Para a leitura crítica e o lado de segurança, a turma vai sentir a ponte natural com as ferramentas de revisão e blindagem que aparecem nas próximas aulas.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno pega um trecho de código que a IA gerou pra ele em aulas anteriores e roda o Protocolo de 5 Camadas — preenchendo as 5 por escrito. Em duplas, trocam os achados: quase sempre um acha um problema que o outro deixou passar. Entrega: a lista de problemas encontrados + o commit final do código já blindado.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 2h</span><h3>Achar e corrigir bugs (F12, console, network)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> dominar as ferramentas do desenvolvedor do navegador (F12) pra depurar com método em vez de chutar: ler o console, inspecionar a aba Network e isolar a causa de um bug antes de pedir conserto pra IA.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>F12 / DevTools: o painel que todo vibecoder precisa abrir antes de gritar "não funciona".</li>
+        <li><b>Console:</b> ler o erro de verdade — a mensagem vermelha e o stack trace dizem o arquivo e a linha; aprender a não ignorar warnings.</li>
+        <li><b>Network:</b> ver a chamada de API acontecer — status (200? 400? 500?), o que foi enviado, o que voltou. A maioria dos bugs de "tela em branco" mora aqui.</li>
+        <li>Front quebrou ou back quebrou? A aba Network responde: se a chamada voltou 500, o problema é no servidor; se nem saiu, é no front.</li>
+        <li>O método anti-chute: <b>reproduzir → ler o erro → formar hipótese → testar a hipótese → menor conserto possível → verificar</b>.</li>
+        <li>Dar à IA o erro <b>completo</b> (mensagem + stack + o que você já tentou), não "deu erro, conserta".</li>
+        <li><code>console.log</code> estratégico e os breakpoints pra olhar o valor das variáveis no meio da execução.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Planto um bug no app de agendamento: o botão "salvar" não faz nada. Em vez de adivinhar, abro o F12 ao vivo: console mostra um <code>TypeError</code> apontando a linha; vou na aba Network e vejo que a chamada pra <code>/api/agendamentos</code> voltou <b>400</b> com a mensagem "data obrigatória". Aí está a causa — o front não estava enviando a data. Formo a hipótese, conserto o menor pedaço, e o botão volta a funcionar. A turma vê o método: o navegador já estava me contando o problema, eu só precisava abrir e ler.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vou te dar um bug pra depurar com método. NÃO chute o conserto: primeiro me
+ajude a achar a causa.
+
+Sintoma (o que eu vejo): [DESCREVA]
+Como reproduzir: [PASSOS]
+Mensagem do console (completa, com stack trace):
+[COLE]
+Aba Network — a requisição que falhou: [MÉTODO, URL, STATUS, corpo enviado,
+resposta recebida]
+O que eu já tentei: [LISTE]
+
+Faça nesta ordem:
+1. Diga qual é a causa mais provável e por quê (com base nos dados acima).
+2. Diga se o problema está no FRONT ou no SERVIDOR e como você concluiu isso.
+3. Proponha o MENOR conserto possível.
+4. Diga exatamente o que eu devo testar pra confirmar que resolveu.</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://developer.chrome.com/docs/devtools">Chrome DevTools (docs oficiais)</a> — o painel inteiro do F12, explicado.</li>
+        <li><a href="https://developer.chrome.com/docs/devtools/console">DevTools · Console</a> — ler erros, warnings e usar log estratégico.</li>
+        <li><a href="https://developer.chrome.com/docs/devtools/network">DevTools · Network</a> — inspecionar requisições, status e payloads.</li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools">MDN · ferramentas do desenvolvedor (PT-BR)</a> — introdução em português ao F12.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>A <b>lupa</b> (depuração) é a skill desta aula: ela conduz o método reproduzir → ler console/network (F12) → isolar a causa → hipótese → menor conserto → verificar, exatamente o anti-chute que a aula treina.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Distribuo (ou os alunos trocam entre si) um app com 2 bugs plantados. Cada um precisa, usando só o F12, dizer por escrito: qual a mensagem de erro, se é front ou back, qual a causa e qual o menor conserto — antes de tocar no código. Depois consertam usando o prompt acima e verificam. Regra da casa: ninguém pede ajuda pra IA sem colar o erro completo do console.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 2h</span><h3>Escrever testes (casos de borda primeiro)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> escrever testes automatizados pra uma função ou rota do próprio app, começando deliberadamente pelos casos de borda — porque é lá que o app quebra — usando Vitest.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Por que testar: o teste é a rede de segurança que deixa você (e a IA) mexer no código sem medo de quebrar o que já funcionava.</li>
+        <li>Anatomia de um teste: <b>arranjar</b> (preparar a entrada), <b>agir</b> (chamar a função), <b>verificar</b> (o resultado bate?).</li>
+        <li>A inversão que muda o jogo: <b>casos de borda primeiro</b> — vazio, nulo, zero, negativo, valor enorme, string com acento/emoji — antes do caminho feliz.</li>
+        <li>O caminho feliz quase sempre funciona; o app quebra na borda. Testar a borda é onde está o retorno.</li>
+        <li>Vitest na prática: <code>describe</code>, <code>it</code>/<code>test</code>, <code>expect</code> — e rodar em modo watch.</li>
+        <li>Usar a IA pra <b>gerar</b> os testes, mas revisar: ela tende a só testar o caminho feliz se você não pedir as bordas.</li>
+        <li>Teste de regressão: todo bug corrigido vira um teste, pra ele nunca mais voltar.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pego a função de cálculo de desconto da Aula 26. Antes de testar o caminho feliz (desconto de 10% em R$ 100 = R$ 90), escrevo os testes de borda ao vivo: desconto de 0%, de 100%, desconto negativo (deve recusar), valor zero, valor nulo. Rodo o Vitest em watch e <b>um dos testes de borda quebra</b> — exatamente o bug que a função tinha escondido. Conserto, o teste fica verde, e mostro que agora esse bug não consegue mais voltar sem o teste avisar.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Escreva testes com Vitest para a função abaixo. Regra inegociável: comece
+pelos CASOS DE BORDA, não pelo caminho feliz.
+
+Cubra, no mínimo:
+- entradas vazias, nulas e indefinidas;
+- zero, números negativos e valores muito grandes;
+- strings com acento, espaço e emoji (se aplicável);
+- limites das regras de negócio (ex.: desconto 0% e 100%);
+- e SÓ DEPOIS, 1 ou 2 testes do caminho feliz.
+
+Para cada teste, use a estrutura arranjar/agir/verificar e um nome descritivo
+que diga o que está sendo testado. Aponte qualquer caso de borda em que você
+suspeita que a função atual vá falhar.
+
+Função:
+[COLE A FUNÇÃO]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://vitest.dev/guide/">Vitest · guia</a> — instalar, escrever e rodar testes no projeto.</li>
+        <li><a href="https://vitest.dev/api/expect.html">Vitest · expect</a> — os matchers (<code>toBe</code>, <code>toThrow</code>, etc.) pra verificar resultados.</li>
+        <li><a href="https://testing-library.com/docs/react-testing-library/intro/">React Testing Library</a> — quando o teste for de componente de tela, não só de função.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>A <b>prova</b> (testes) é a skill central desta aula: ela escreve testes começando pelos casos de borda, exatamente a filosofia "borda primeiro" — ideal pra cobrir uma feature crítica ou travar um bug antes de subir pra produção.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno escolhe uma função do próprio app e escreve, no mínimo, 4 testes de borda + 1 de caminho feliz com Vitest, rodando em watch. Meta da aula: pelo menos um teste de borda precisa <b>falhar</b> de primeira (revelando um bug real ou uma suposição errada). Quem corrigir transforma o conserto num teste de regressão e mostra a suíte inteira verde.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 2h</span><h3>Refatorar com segurança</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> melhorar a estrutura do código — legibilidade, duplicação, dívida técnica — sem mudar o comportamento, usando os testes da Aula 28 como rede de segurança pra refatorar sem medo.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>A definição que evita encrenca: refatorar é mudar a <b>forma</b> sem mudar o <b>comportamento</b>. Se o resultado mudou, não foi refatoração, foi um bug novo.</li>
+        <li>Pré-requisito inegociável: <b>ter teste antes de refatorar</b>. Sem teste, você está editando no escuro. (Por isso a Aula 28 vem antes.)</li>
+        <li>Cheiros de código que pedem refatoração: função gigante, código copiado e colado, nomes ruins, número mágico, aninhamento profundo.</li>
+        <li>Refatorações seguras e pequenas: extrair função, renomear pra deixar claro, remover duplicação, simplificar condicional.</li>
+        <li>O ritmo certo: um passo pequeno → rodar os testes (verdes?) → próximo passo. Nunca refatorar tudo de uma vez.</li>
+        <li>Usar a IA pra sugerir a refatoração, mas exigir que ela mantenha o comportamento — e provar isso rodando os testes.</li>
+        <li>Commit antes de começar, commit depois de cada passo seguro — pra voltar fácil se algo sair do esperado.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pego um route handler que cresceu demais — valida, calcula, grava no banco e envia e-mail, tudo numa função de 80 linhas com lógica duplicada. Primeiro garanto que tem teste cobrindo (rodo, verde). Aí refatoro em passos pequenos ao vivo: extraio a validação pra uma função, extraio o cálculo, removo a duplicação, renomeio variáveis confusas — e <b>rodo os testes depois de cada passo</b>. A turma vê os testes continuarem verdes o tempo todo: prova de que o comportamento não mudou, só a clareza melhorou.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Refatore o código abaixo SEM mudar o comportamento. Restrições:
+
+- A assinatura pública (entradas e saídas) e o comportamento observável devem
+  permanecer idênticos. Se algo precisar mudar de comportamento, PARE e me
+  avise em vez de mudar.
+- Trabalhe em PASSOS PEQUENOS e numerados. Para cada passo, descreva: o que
+  mudou e por que é seguro (extrair função, renomear, remover duplicação,
+  simplificar condicional, eliminar número mágico).
+- Aponte os "cheiros de código" que você encontrou antes de mexer.
+- Ao final, liste quais testes eu devo rodar pra confirmar que o comportamento
+  não mudou.
+
+Código:
+[COLE O CÓDIGO]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://refactoring.com/">Refactoring (Martin Fowler)</a> — a referência sobre o que é refatorar e por que em passos pequenos.</li>
+        <li><a href="https://refactoring.guru/refactoring/smells">Refactoring Guru · code smells</a> — catálogo dos cheiros de código, com exemplos.</li>
+        <li><a href="https://refactoring.guru/refactoring/techniques">Refactoring Guru · técnicas</a> — extrair função, renomear e as outras refatorações seguras.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>A <b>lixa</b> (refatoração) conduz a melhoria de estrutura sem mudar comportamento — reduzir duplicação e dívida técnica em passos seguros. A <b>prova</b> (testes) entra como a rede de segurança que torna a refatoração confiável: testes verdes antes e depois.</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno escolhe o trecho mais bagunçado do próprio app (a "função monstro"), garante que há teste cobrindo (escreve um se faltar) e refatora em pelo menos 3 passos pequenos, rodando os testes entre cada passo. Regra: se um teste ficar vermelho, desfaz o último passo. Entrega: o antes e o depois + a confirmação de que a suíte continuou verde do começo ao fim.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 2h</span><h3>Observabilidade (saber quando quebra em produção)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> montar o mínimo de observabilidade pra descobrir que algo quebrou em produção <b>por um alerta, e não pelo cliente reclamando</b> — captura de erros com Sentry, logs úteis e um alerta que chega no seu celular.</p>
+
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>A verdade desconfortável: funcionar na sua máquina não é nada. Em produção, usuários reais fazem coisas que você nunca testou — e você precisa <b>saber</b> quando quebra.</li>
+        <li>Os três pilares, em versão prática pra vibecoder: <b>erros</b> (capturados automaticamente), <b>logs</b> (o rastro do que aconteceu) e <b>alertas</b> (alguém é avisado).</li>
+        <li>Captura de erros com <b>Sentry</b>: instalar no Next.js e ver o erro real do usuário — com stack trace, navegador e os passos até o erro — no painel.</li>
+        <li>Log que serve pra alguma coisa: o que logar (operação, id, resultado) e o que <b>nunca</b> logar (senha, token, dado pessoal sensível — LGPD).</li>
+        <li>Alerta que chega onde você vê: e-mail, Slack ou WhatsApp quando a taxa de erro sobe — pra reagir em minutos, não em dias.</li>
+        <li>Diferenciar erro esperado (entrada inválida, 400) de erro inesperado (500, "isso nunca deveria acontecer") — só o segundo merece alerta urgente.</li>
+        <li>O ciclo fechado: produção quebrou → alerta → Sentry mostra o stack → método da Aula 27 pra consertar → teste de regressão da Aula 28 pra não voltar.</li>
+      </ul>
+    </div>
+
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Instalo o Sentry no app de agendamento ao vivo e forço um erro em produção (deploy na Vercel com um bug proposital). Em segundos o erro aparece no painel do Sentry — com stack trace, qual usuário, qual navegador e os passos até quebrar — e um alerta cai no e-mail. A turma vê a diferença gritante: sem isso, eu só descobriria o bug quando um cliente irritado mandasse mensagem; com isso, eu já estou consertando antes de alguém reclamar. Fecho mostrando um log com dado sensível e por que aquilo é um problema de LGPD.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Me ajude a configurar observabilidade mínima num app Next.js (App Router)
+hospedado na Vercel, usando Sentry. Entregue:
+
+1. Passos pra instalar e inicializar o Sentry no Next.js (client + servidor),
+   usando o DSN via variável de ambiente.
+2. Como capturar erros não tratados nas rotas de API e registrar contexto útil
+   (rota, ownerId, id da operação) — SEM logar senha, token ou dado pessoal
+   sensível (LGPD).
+3. A diferença, no código, entre tratar um erro ESPERADO (ex.: 400 de validação,
+   não alerta) e capturar um erro INESPERADO (500, manda pro Sentry).
+4. Como configurar um ALERTA que me avise (e-mail/Slack) quando a taxa de erro
+   subir.
+
+Meu app: [DESCREVA RAPIDAMENTE]</pre></div>
+
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://docs.sentry.io/platforms/javascript/guides/nextjs/">Sentry · Next.js</a> — instalar captura de erros no App Router (client e servidor).</li>
+        <li><a href="https://docs.sentry.io/product/alerts/">Sentry · Alerts</a> — configurar o alerta que avisa quando a coisa pega fogo.</li>
+        <li><a href="https://vercel.com/docs/observability/runtime-logs">Vercel · Runtime Logs</a> — onde ver os logs das suas funções em produção.</li>
+        <li><a href="https://www.gov.br/anpd/pt-br">ANPD (LGPD)</a> — a autoridade da LGPD; referência pra não logar dado pessoal sensível.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p>A <b>sentinela</b> (observabilidade) monta logs, captura de erros e alertas pra você saber quando algo quebra em produção — exatamente o foco desta aula. Quando o alerta dispara e vira incidente de verdade (vazou dado, app fora), a continuação natural é a <b>resgate</b> (resposta a incidente e backup).</p>
+    </div>
+
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno instala o Sentry no próprio app, faz deploy na Vercel e força um erro pra vê-lo aparecer no painel com stack trace — e configura um alerta por e-mail. Checklist de pronto: erro inesperado captura no Sentry, erro esperado (400) <b>não</b> dispara alerta, e nenhum log contém dado sensível. Encerramento do curso: cada um mostra o ciclo fechado — alerta → diagnóstico (F12/Sentry) → conserto → teste de regressão.</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Lançar e Crescer</h2></div>
+  <p class="mod-resumo">Colocar no ar do jeito certo, ser achado e começar a crescer e monetizar. Sem pular etapa: primeiro a aplicação sobe estável e segura, depois você é encontrado, captura contato, testa um primeiro anúncio e olha os números que dizem se o negócio fecha a conta. A decisão de crescer é sua — mas com base em dados, não em achismo.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31 · 2h</span><h3>Checklist de deploy: subir sem susto</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> levar o projeto para produção na Vercel seguindo um checklist que evita os erros clássicos de quem sobe no improviso — build quebrado, variável de ambiente faltando e regras do Firebase abertas no público.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A diferença entre "funciona no meu PC" e "está no ar": ambiente local x produção.</li>
+      <li>Fluxo de deploy real: <code>git pull</code> para sincronizar, resolver conflito se houver, depois <code>npm run build</code> local antes de subir.</li>
+      <li>Ler o erro de build com calma — quase sempre é import quebrado, tipo errado ou variável ausente. Build local pega isso antes da Vercel.</li>
+      <li>Variáveis de ambiente: o que vai em <code>.env.local</code> (nunca no Git) x o que cadastrar no painel da Vercel; diferença entre <code>NEXT_PUBLIC_</code> (vai pro navegador) e segredo de servidor.</li>
+      <li>Publicar as regras do Firestore e do Storage: regra escrita no arquivo só vale depois de <code>firebase deploy --only firestore:rules,storage</code>. Regra não publicada = banco aberto.</li>
+      <li>Smoke test pós-deploy: abrir o site em aba anônima, testar login, uma escrita e uma leitura, conferir o console (F12) sem erro vermelho.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>No projeto da turma, rodo o checklist na tela: <code>git pull</code>, <code>npm run build</code> (e mostro de propósito um erro de variável faltando pra todos verem a mensagem real), corrijo, cadastro as envs no painel da Vercel, faço <code>git push</code> e acompanho o deploy automático. Em seguida publico as regras do Firebase pelo terminal e abro a aba anônima pra fazer o smoke test ao vivo, mostrando o console limpo.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é meu engenheiro de deploy. Minha stack é Next.js + Firebase, hospedo na Vercel.
+Antes de subir para produção, gere um checklist de pré-deploy no formato de lista de verificação (caixinhas) cobrindo:
+1) git: como sincronizar com `git pull` e o que fazer se der conflito;
+2) build local: rodar `npm run build` e como interpretar os 3 erros mais comuns (import quebrado, tipo errado no TypeScript, variável de ambiente ausente);
+3) variáveis de ambiente: quais vão em .env.local (fora do Git) e quais cadastrar no painel da Vercel, explicando a diferença entre NEXT_PUBLIC_ e segredo de servidor;
+4) Firebase: o comando exato para publicar as regras de Firestore e Storage e por que regra não publicada deixa o banco aberto;
+5) smoke test pós-deploy: 5 verificações manuais em aba anônima.
+Para cada item, escreva o comando exato e o que eu devo observar na tela. Não pule etapas e não suponha que algo "provavelmente está ok".</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://vercel.com/docs/deployments/overview">Vercel — Deployments</a> — como funciona o deploy automático por commit.</li>
+      <li><a href="https://vercel.com/docs/projects/environment-variables">Vercel — Environment Variables</a> — onde e como cadastrar as envs em produção.</li>
+      <li><a href="https://firebase.google.com/docs/cli#deployment">Firebase CLI — Deploy</a> — publicar regras e o que cada flag faz.</li>
+      <li><a href="https://nextjs.org/docs/app/api-reference/cli/next#next-build-options">Next.js — next build</a> — referência do comando de build.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>Use a <b>cofre</b> para auditar as regras do Firestore e Storage antes de publicar (coleção aberta = vazamento). Rode a <b>faro</b> para garantir que nenhum segredo ou <code>.env</code> foi para o Git. A <b>sentinela</b> entra logo após o deploy, para você ter logs e alerta quando algo quebrar em produção.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno faz o deploy do próprio projeto na Vercel seguindo o checklist, cadastra as variáveis de ambiente no painel, publica as regras do Firebase pelo terminal e executa o smoke test em aba anônima. Critério de pronto: site no ar respondendo em uma URL pública, login funcionando e console sem erro vermelho.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32 · 2h</span><h3>SEO e ser achado: aparecer no Google</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> fazer o projeto ser encontrado por quem busca, configurando o básico de SEO técnico (title, description, sitemap, canonical, Open Graph) e entendendo que conteúdo é o que sustenta o ranqueamento no longo prazo.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Como o Google acha uma página: rastrear → indexar → ranquear. Sem indexação, você não existe na busca.</li>
+      <li>Metadados no Next.js (App Router): <code>title</code>, <code>description</code> e <code>openGraph</code> pela API <code>metadata</code> — por que cada página precisa do seu próprio.</li>
+      <li><code>sitemap.xml</code> e <code>robots.txt</code> gerados pelo Next.js (<code>app/sitemap.ts</code> e <code>app/robots.ts</code>): para que servem e como o buscador os usa.</li>
+      <li>Canonical: evitar conteúdo duplicado dizendo qual é a URL "oficial" de cada página.</li>
+      <li>Submeter o site ao Google Search Console e acompanhar indexação e termos de busca.</li>
+      <li>Por que conteúdo (artigos que respondem dúvidas reais do seu público) é o que traz tráfego orgânico sustentável — SEO técnico abre a porta, conteúdo enche a casa.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>No projeto da turma, crio <code>app/sitemap.ts</code> e <code>app/robots.ts</code>, defino <code>metadata</code> com title, description e Open Graph na home e em uma página interna, e mostro o resultado abrindo <code>/sitemap.xml</code> no navegador. Depois acessamos o Search Console, submetemos o sitemap e olhamos o relatório de cobertura ao vivo.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em SEO técnico para Next.js (App Router). Meu site está hospedado na Vercel.
+Quero ser achado no Google. Implemente, com código pronto para colar:
+1) `app/sitemap.ts` gerando o sitemap.xml com as URLs do meu site;
+2) `app/robots.ts` permitindo rastreio e apontando para o sitemap;
+3) export `metadata` em uma página, com title (até 60 caracteres), description (até 155 caracteres) e bloco openGraph para preview em redes sociais;
+4) a tag canonical via campo `alternates.canonical`.
+Depois explique, em passos numerados, como submeter o sitemap no Google Search Console e o que observar no relatório de cobertura nas primeiras semanas.
+Use português do Brasil nos textos de exemplo e me diga onde cada arquivo fica na estrutura do projeto.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://nextjs.org/docs/app/api-reference/functions/generate-metadata">Next.js — generateMetadata</a> — definir title, description e Open Graph por página.</li>
+      <li><a href="https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap">Next.js — sitemap.ts</a> — gerar o sitemap.xml.</li>
+      <li><a href="https://search.google.com/search-console/about">Google Search Console</a> — submeter o site e acompanhar indexação.</li>
+      <li><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide">Google — Guia de SEO para iniciantes</a> — fundamentos oficiais.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>pena</b> ajuda a escrever posts de blog de autoridade otimizados para SEO na voz do Rodrigo — é o que transforma SEO técnico em tráfego de verdade. Para a parte de velocidade (Core Web Vitals contam no ranqueamento), a <b>turbo</b> otimiza performance antes de escalar.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno adiciona <code>sitemap.ts</code>, <code>robots.ts</code> e <code>metadata</code> (title, description, Open Graph, canonical) ao próprio projeto, faz o deploy e submete o sitemap ao Google Search Console. Critério de pronto: <code>/sitemap.xml</code> abrindo no ar e o sitemap aceito no Search Console.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33 · 2h</span><h3>Landing page de conversão: isca + captura</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> construir uma landing page de oferta única que troca um material gratuito (isca) pelo e-mail do visitante, com hero acima da dobra, prova de autoridade, FAQ e um único CTA — pronta para receber tráfego.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Anatomia de uma landing que converte: uma promessa, uma ação. Sem menu, sem distração, sem dez links.</li>
+      <li>A lógica isca → captura → e-mail: você entrega valor real (e-book, checklist, mini-curso) em troca do contato para nutrir depois.</li>
+      <li>Hero acima da dobra: headline clara, subheadline, formulário visível sem rolar a tela.</li>
+      <li>Prova de autoridade e FAQ: por que confiar e como derrubar a objeção antes que ela vire desistência.</li>
+      <li>Captura segura: salvar o e-mail no Firestore com validação, regra de escrita controlada e proteção contra spam/bot.</li>
+      <li>Confirmação e entrega: o que acontece depois do clique — tela de obrigado e envio da isca.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Monto ao vivo uma landing da isca da turma ("Checklist de deploy sem susto"): hero com headline e formulário de e-mail, bloco de autoridade, FAQ de 4 perguntas e CTA único. Conecto o formulário a uma coleção <code>leads</code> no Firestore com validação, mostro a regra de segurança que só permite criar (e não ler) e testo a captura na frente da turma vendo o documento aparecer no console do Firebase.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em landing pages de conversão. Stack: Next.js + Firebase (Firestore), deploy na Vercel.
+Crie uma landing page de oferta única que captura e-mail em troca de uma isca (um checklist em PDF). Requisitos:
+- Hero acima da dobra: headline (promessa clara), subheadline e formulário com campo de e-mail + botão CTA;
+- Seção de prova de autoridade e FAQ com 4 perguntas que derrubam objeções;
+- Um único CTA repetido (nada de menu ou links que dispersam);
+- Ao enviar, salvar o e-mail numa coleção `leads` no Firestore com: validação de formato de e-mail no cliente E no servidor, carimbo de data/hora, e proteção contra envio duplicado;
+- Tela de "obrigado" após o envio.
+Entregue o código do componente e, separadamente, a REGRA de segurança do Firestore para a coleção `leads` que permita CRIAR um lead mas NÃO permita ler a lista publicamente. Explique por que essa regra é segura.
+Use português do Brasil e o tom direto, sem hype.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://firebase.google.com/docs/firestore/security/get-started">Firestore — Regras de segurança</a> — controlar quem cria e quem lê.</li>
+      <li><a href="https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations">Next.js — Server Actions</a> — processar o formulário no servidor com validação.</li>
+      <li><a href="https://web.dev/articles/lcp">web.dev — LCP</a> — manter o hero rápido (carregamento acima da dobra).</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>vitrine</b> é a skill central desta aula: cria landing pages de conversão de oferta única (isca + captura de e-mail) com hero, prova de autoridade, FAQ e CTA. A <b>ima</b> ajuda a escolher e criar a isca certa que converte, e a <b>cofre</b> valida a regra do Firestore da coleção de leads antes de subir.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno cria a landing da própria isca, conecta a captura ao Firestore com regra de segurança correta (cria sim, lê não) e testa o envio vendo o lead aparecer no console. Critério de pronto: e-mail capturado e gravado, tela de obrigado funcionando e regra de leitura fechada ao público.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34 · 2h</span><h3>Tráfego pago: seu primeiro anúncio no Meta</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> subir o primeiro anúncio no Meta Ads (Facebook/Instagram) levando tráfego para a landing da isca, com público, criativo, copy e orçamento de teste definidos com critério — não no chute.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Estrutura do Meta Ads: Campanha (objetivo) → Conjunto de anúncios (público, orçamento) → Anúncio (criativo + copy). Saber em qual nível mexe o quê.</li>
+      <li>Objetivo certo para captar lead: tráfego para a landing x objetivo de conversão (e por que medir conversão exige o Pixel).</li>
+      <li>Pixel do Meta: instalar no Next.js para medir quem chegou e quem converteu — sem isso você anuncia às cegas.</li>
+      <li>Público: interesses x semelhante (lookalike) x retargeting. Começar simples e deixar a plataforma aprender.</li>
+      <li>Criativo e copy: gancho na primeira linha, uma promessa, um CTA. Testar 2 a 3 variações.</li>
+      <li>Orçamento de teste: quanto colocar para validar sem queimar dinheiro, e o que é CPL (custo por lead).</li>
+      <li>LGPD e tráfego: consentimento de cookies/Pixel e política de privacidade — obrigatório antes de rodar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>No Gerenciador de Anúncios, crio ao vivo uma campanha apontando para a landing da isca: defino objetivo, monto um público por interesse, escrevo a copy do anúncio (com a turma sugerindo o gancho), configuro um orçamento de teste pequeno e deixo a campanha pronta para publicar. Mostro também onde o Pixel registra os eventos de quem visitou e quem converteu.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é estrategista de tráfego pago no Meta Ads. Vou anunciar uma ISCA gratuita (um checklist) levando tráfego para minha landing de captura de e-mail.
+Monte minha primeira campanha de teste. Entregue:
+1) Estrutura recomendada: qual objetivo de campanha, como organizar o conjunto de anúncios e quantos anúncios testar;
+2) Definição de público: 2 opções de público por interesse para meu nicho (descreva o nicho assim: [DESCREVA SEU NICHO E PÚBLICO]);
+3) Copy do anúncio: 3 variações (gancho na 1ª linha + corpo + CTA), em português, sem hype;
+4) Sugestão de criativo: o que mostrar na imagem/vídeo;
+5) Orçamento de teste: quanto investir por dia e por quantos dias para validar, e qual CPL (custo por lead) eu devo considerar bom, ruim ou de alerta;
+6) Critério de decisão: depois de quantos leads / quanto gasto eu decido pausar, ajustar ou escalar.
+Liste também o que preciso ter pronto antes de publicar (Pixel instalado, consentimento de cookies, política de privacidade).</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.facebook.com/business/tools/ads-manager">Meta — Gerenciador de Anúncios</a> — onde a campanha é criada e gerida.</li>
+      <li><a href="https://www.facebook.com/business/help/952192354843755">Meta — Pixel</a> — medir visitas e conversões da landing.</li>
+      <li><a href="https://www.facebook.com/business/help/717368264947302">Meta — Estrutura de campanhas</a> — campanha, conjunto e anúncio.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>outdoor</b> estrutura o anúncio pago — copy, público e orçamento — para Meta Ads e Google Ads. A <b>alavanca</b> dá a inteligência de funil e o método isca → e-mail → nutrição que conecta o anúncio ao resto. Para o consentimento de cookies e a política de privacidade exigidos antes de rodar, use a <b>salvaguarda</b> (LGPD).</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno monta no Gerenciador de Anúncios a estrutura da própria campanha de teste: objetivo, público por interesse, 3 variações de copy e orçamento de teste — deixando tudo pronto para publicar (publicação fica a critério de cada um). Critério de pronto: campanha estruturada, Pixel instalado na landing e consentimento de cookies no ar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35 · 2h</span><h3>Monetização e métricas: modelo, preço, CAC e LTV</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> escolher um modelo de negócio e um preço para o produto e entender as métricas que dizem se o negócio fecha a conta — principalmente CAC (custo de aquisição) e LTV (valor do cliente ao longo do tempo).</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Modelos de monetização: pagamento único, assinatura, freemium, uso/consumo — quando cada um faz sentido.</li>
+      <li>Precificação: por valor x por custo; ancoragem; por que "barato demais" muitas vezes vende menos.</li>
+      <li>CAC: quanto custa conquistar um cliente (soma do que gastou em ads e esforço ÷ clientes ganhos).</li>
+      <li>LTV: quanto um cliente deixa ao longo do relacionamento. A regra de bolso LTV &gt; 3× CAC.</li>
+      <li>Métricas de funil que importam em cada estágio: visitante → lead → cliente; taxa de conversão de cada etapa.</li>
+      <li>Onde ler os números: GA4 para o site, Meta/Google Ads para a campanha — e como cruzar gasto com resultado.</li>
+      <li>A decisão é sua: os números informam; investir mais, mudar preço ou parar é escolha de negócio.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Pego os números reais (ou simulados) da campanha da aula anterior e calculo ao vivo, numa planilha simples: quanto gastei, quantos leads gerei, CPL, taxa de conversão de lead para cliente, CAC e LTV estimado. Mostro o cruzamento com o GA4 e tomamos juntos uma decisão fundamentada: continuar, ajustar o preço ou pausar.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é consultor de monetização e métricas para produtos digitais.
+Meu produto é: [DESCREVA O PRODUTO]. Meu público é: [DESCREVA O PÚBLICO].
+Me ajude a fechar a conta:
+1) Recomende o modelo de monetização mais adequado (pagamento único, assinatura, freemium ou uso) com o porquê e os trade-offs;
+2) Sugira uma faixa de preço inicial e como ancorar (compare com 1 alternativa que o público já paga);
+3) Explique, com a fórmula, como eu calculo CAC e LTV no meu caso e qual a relação saudável entre os dois;
+4) Liste as 5 métricas que eu DEVO acompanhar nesta fase (com a definição de cada uma e onde a leio — GA4, Meta Ads ou Firestore);
+5) Dê os critérios objetivos para eu decidir: quando subir o preço, quando investir mais em anúncio e quando parar.
+Seja direto, sem hype, e deixe claro onde a decisão é minha e não da fórmula.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://support.google.com/analytics/answer/9304153">GA4 — Configurar e ler relatórios</a> — métricas do site.</li>
+      <li><a href="https://support.google.com/analytics/answer/9267735">GA4 — Conversões</a> — marcar e medir a conversão que importa.</li>
+      <li><a href="https://stripe.com/br/resources/more/what-is-ltv">Stripe — O que é LTV</a> — conceito de valor do cliente.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>decolagem</b> é a skill desta aula: ajuda a escolher modelo de negócio, monetização, preço e go-to-market com as métricas que importam. O <b>painel</b> lê e interpreta GA4, Meta Ads e Google Ads e recomenda a ação (continuar, parar ou escalar). Para projetar quanto a infraestrutura vai custar conforme crescer, use a <b>termometro</b>.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno monta uma planilha simples com os números do próprio projeto (gasto, leads, conversão), calcula CPL, CAC e LTV estimado e escreve a decisão de negócio que tomaria com base neles. Critério de pronto: modelo de monetização escolhido, preço inicial definido e a relação CAC × LTV calculada.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Avançado</h2></div>
+  <p class="mod-resumo">Agentes, skills próprias, manutenção e escala. Aqui você sai do "construir uma tela" para "fazer a IA trabalhar para você": automatizar tarefas com agentes, empacotar seu próprio jeito de trabalhar em Skills do Claude Code, atualizar o projeto sem quebrar e decidir — com critério — quando e como escalar. Fecha com o projeto final no ar, apresentado para a turma.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36 · 2h</span><h3>Agentes e automação: a IA trabalhando por você</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que é um agente (uma IA que executa uma tarefa em passos, usando ferramentas) e montar uma automação simples e útil, com limites claros e supervisão humana onde importa.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Diferença entre um prompt único e um agente: o agente planeja, executa passos, usa ferramentas e verifica o resultado.</li>
+      <li>Quando agente vale a pena x quando é exagero (nem toda tarefa precisa de agente — às vezes uma função resolve).</li>
+      <li>Anatomia: objetivo, ferramentas disponíveis, limites (o que NÃO pode fazer) e ponto de aprovação humana.</li>
+      <li>Exemplos práticos: responder e-mails de leads, gerar resumo diário de métricas, triagem de mensagens.</li>
+      <li>Segurança em agentes: nunca dar acesso amplo sem necessidade; chaves no servidor; aprovar ações que gastam dinheiro ou enviam mensagem.</li>
+      <li>Custo: agente roda em loop e consome tokens — estimar antes de soltar em produção.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Monto ao vivo um agente simples que lê os leads novos do Firestore, gera um resumo do dia e prepara um rascunho de e-mail de boas-vindas para revisão humana antes do envio. Mostro onde coloco o ponto de aprovação (nada sai sem o "ok") e como limito as ferramentas que o agente pode usar.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é arquiteto de agentes de IA. Quero automatizar uma tarefa do meu negócio com um agente, com segurança e supervisão humana.
+A tarefa é: [DESCREVA A TAREFA, ex.: "ler leads novos do Firestore e preparar um rascunho de e-mail de boas-vindas"].
+Projete o agente respondendo:
+1) Objetivo único e claro do agente;
+2) Passos que ele executa, em ordem;
+3) Ferramentas/integrações que ele precisa (e só essas) e por quê;
+4) Limites explícitos: o que o agente NÃO pode fazer sem aprovação humana (especialmente: gastar dinheiro, enviar mensagem para cliente, apagar dados);
+5) Onde fica o ponto de aprovação humana no fluxo;
+6) Riscos de segurança e como mitigá-los (credenciais, escopo de acesso);
+7) Estimativa grosseira de custo por execução e como evitar loop infinito.
+Stack: Next.js + Firebase. Responda em português, direto, e diga onde a decisão de soltar em produção é minha.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic — Building effective agents</a> — quando usar agente e padrões eficazes.</li>
+      <li><a href="https://docs.claude.com/en/docs/claude-code/sub-agents">Claude Code — Subagents</a> — orquestrar agentes especializados.</li>
+      <li><a href="https://firebase.google.com/docs/functions">Firebase — Cloud Functions</a> — onde rodar a automação no servidor.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>O <b>maestro</b> ajuda a quebrar uma tarefa grande em passos e a coordená-los até o fim — encadear, paralelizar e verificar entre etapas — que é exatamente a lógica de um agente. Para conectar o agente a serviços externos com segurança (e-mail, WhatsApp, pagamento), use a <b>ponte</b>; e a <b>bastiao</b> para revisar os riscos de segurança antes de soltar.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno projeta no papel (e, quem conseguir, monta) um agente para uma tarefa real do próprio projeto, definindo objetivo, ferramentas, limites e o ponto de aprovação humana. Critério de pronto: fluxo do agente desenhado com os limites de segurança e o ponto de "ok humano" explícitos.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37 · 2h</span><h3>Criar suas próprias Skills no Claude Code</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> empacotar seu jeito de trabalhar em uma Skill do Claude Code — uma pasta com instruções que a IA carrega quando o assunto aparece — para padronizar e acelerar tarefas que você repete.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é uma Skill: instruções reutilizáveis que a IA carrega sozinha quando o contexto bate (não é prompt copiado toda vez).</li>
+      <li>Anatomia: a pasta da skill, o <code>SKILL.md</code> com nome e <code>description</code>, e arquivos de apoio.</li>
+      <li>A <code>description</code> é o gatilho: ela diz à IA QUANDO usar a skill. Escrever bem isso é metade do trabalho.</li>
+      <li>Onde instalar: <code>~/.claude/skills</code> (global) x skill por projeto.</li>
+      <li>Boas práticas: uma skill, uma responsabilidade; instruções claras; exemplos; testar o gatilho.</li>
+      <li>Como o Rodrigo construiu a Suíte Engenho — 25 skills que aparecem ao longo do curso — e como você cria a sua primeira.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Crio ao vivo uma skill simples do zero — por exemplo, "padrão de commit do meu time": uma pasta com <code>SKILL.md</code>, nome, <code>description</code> que dispara quando eu falo em commit, e as regras de mensagem. Instalo em <code>~/.claude/skills</code>, abro o Claude Code e mostro a skill sendo carregada sozinha quando peço um commit.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é especialista em criar Skills do Claude Code. Quero empacotar uma tarefa que repito num skill que a IA carregue sozinha na hora certa.
+A tarefa/padrão é: [DESCREVA, ex.: "meu padrão de mensagem de commit" ou "como eu escrevo a descrição de um produto"].
+Entregue:
+1) Um nome curto e memorável para a skill;
+2) O conteúdo completo do arquivo SKILL.md, incluindo o campo `description` escrito para DISPARAR no momento certo (deixe claro QUANDO a IA deve usar a skill e com quais palavras-gatilho);
+3) As instruções passo a passo que a skill deve conter para executar a tarefa do meu jeito;
+4) 1 exemplo de entrada e saída;
+5) Onde salvar a pasta (~/.claude/skills para global) e como testar se o gatilho funciona.
+Mantenha o princípio "uma skill, uma responsabilidade". Português do Brasil.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://docs.claude.com/en/docs/claude-code/skills">Claude Code — Skills</a> — documentação oficial de como criar e instalar.</li>
+      <li><a href="https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview">Anthropic — Agent Skills (visão geral)</a> — o conceito e a estrutura de uma skill.</li>
+      <li><a href="https://www.anthropic.com/news/skills">Anthropic — Anúncio das Skills</a> — contexto e exemplos.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>Esta aula mostra por dentro a própria Suíte Engenho do Rodrigo. A <b>forja</b> constrói prompts profissionais pelo método P.R.O.M.P.T.E.R. — útil para escrever as instruções da sua skill — e a <b>lapidador</b> refina a saída quando o gatilho ou as instruções ainda não estão redondos.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno cria a primeira skill própria (uma pasta com <code>SKILL.md</code>, nome e <code>description</code>-gatilho) para uma tarefa que repete, instala em <code>~/.claude/skills</code> e testa se a IA a carrega sozinha. Critério de pronto: skill instalada e disparando no contexto certo.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38 · 2h</span><h3>Migrações e manutenção: atualizar sem quebrar</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> manter o projeto vivo e atualizado com método — subir versão de framework e dependências, migrar dados/schema e fazer manutenção sem derrubar o que já funciona.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Por que software "parado" envelhece: dependências desatualizadas viram brecha de segurança e bug.</li>
+      <li>Tipos de mudança: patch x minor x major (semver) e por que a major é a que exige cuidado.</li>
+      <li>Migração de framework/dependência: ler o changelog, atualizar em branch separada, rodar build e testes, só então subir.</li>
+      <li>Migração de dados/schema no Firestore: como mudar a forma dos documentos sem perder dado nem quebrar a leitura antiga (campo novo opcional, script de migração, backfill).</li>
+      <li>Rede de segurança: backup antes de migrar, branch separada, possibilidade de reverter (rollback na Vercel).</li>
+      <li>Manutenção contínua: rotina de atualizar dependências e revisar segurança periodicamente.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Faço ao vivo uma atualização de dependência numa branch separada: leio o changelog, rodo <code>npm run build</code> e os testes, e mostro o que fazer quando algo quebra (ler o erro, ajustar, testar de novo). Em seguida demonstro uma micro-migração de schema no Firestore — adicionar um campo novo opcional e um pequeno script de backfill — sem derrubar a leitura dos documentos antigos.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é engenheiro responsável por manutenção e migrações. Stack: Next.js + Firebase (Firestore), deploy na Vercel.
+Preciso fazer esta mudança com segurança, sem quebrar produção: [DESCREVA, ex.: "atualizar o Next.js para a versão maior nova" ou "mudar o schema da coleção `pedidos` para adicionar o campo status"].
+Monte um plano de migração com:
+1) Análise de risco: o que pode quebrar e por quê;
+2) Passo a passo seguro: branch separada, backup, leitura do changelog (se for upgrade), ordem das ações;
+3) Como validar a cada passo (build, testes, smoke test);
+4) Para migração de dados: como mudar o schema sem perder dado nem quebrar a leitura antiga (campo opcional, script de backfill com exemplo de código);
+5) Plano de rollback: como reverter rápido se der errado (incluindo rollback na Vercel);
+6) Checklist final antes de considerar a migração concluída.
+Português do Brasil, direto. Deixe claro o que NÃO devo fazer (ex.: migrar direto em produção sem backup).</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://nextjs.org/docs/app/guides/upgrading">Next.js — Guias de upgrade</a> — passo a passo oficial entre versões.</li>
+      <li><a href="https://vercel.com/docs/deployments/instant-rollback">Vercel — Instant Rollback</a> — reverter para um deploy anterior.</li>
+      <li><a href="https://firebase.google.com/docs/firestore/manage-data/export-import">Firestore — Export/Import de dados</a> — backup antes de migrar.</li>
+      <li><a href="https://semver.org/lang/pt-BR/">Semantic Versioning (PT-BR)</a> — entender patch, minor e major.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>mudanca</b> conduz migrações com segurança — versão de framework/dependência, troca de stack ou migração de dados/schema. A <b>quarentena</b> audita as dependências (versões soltas, pacotes vulneráveis) antes de atualizar, e a <b>resgate</b> cobre a estratégia de backup para você nunca migrar sem rede.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno atualiza uma dependência do próprio projeto numa branch separada, roda build e testes, e escreve o plano de rollback. Quem tiver schema para evoluir faz uma micro-migração com campo opcional. Critério de pronto: dependência atualizada com build passando e plano de reversão documentado.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39 · 2h</span><h3>Escala: quando e como crescer sem estourar a conta</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> reconhecer os sinais de que chegou a hora de escalar e saber como fazer isso com critério — performance, custo e arquitetura — sem otimizar cedo demais nem tarde demais.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>"Otimização prematura é a raiz de muito retrabalho": escalar antes da hora gasta tempo e dinheiro à toa.</li>
+      <li>Os sinais reais de que é hora: site lento sob carga, custo de infra subindo, queries caras, limite de plano batendo.</li>
+      <li>Performance primeiro: Core Web Vitals, cache, imagens, queries — muitas vezes resolve sem trocar arquitetura.</li>
+      <li>Custo na stack: onde a conta do Firebase e da Vercel cresce (leituras do Firestore, funções, banda) e como prever.</li>
+      <li>Gargalos de banco: índices no Firestore, paginação, evitar leitura em massa; quando desnormalizar.</li>
+      <li>Arquitetura: quando faz sentido cache, fila, CDN ou separar um serviço — e quando ainda NÃO faz.</li>
+      <li>A decisão é sua: escalar é trade-off entre custo, complexidade e ganho real para o usuário.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Rodo o Lighthouse no projeto da turma e mostro como interpretar os Core Web Vitals; identifico um gargalo (uma imagem pesada e uma query sem índice) e corrijo ao vivo. Depois abro o painel de uso do Firebase e mostro onde a conta cresceria com mais usuários e como uma simples paginação corta leituras.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é engenheiro de performance e escala. Stack: Next.js + Firebase (Firestore), deploy na Vercel.
+Meu projeto é: [DESCREVA O PROJETO E O VOLUME ATUAL DE USO]. Estou avaliando se devo escalar.
+Me ajude a decidir com critério:
+1) Liste os SINAIS objetivos de que chegou a hora de escalar (e os sinais de que ainda NÃO chegou — para eu não otimizar cedo demais);
+2) Diga a ordem certa de ataque: o que tentar PRIMEIRO (performance/cache/queries) antes de mexer em arquitetura;
+3) Aponte onde minha conta de Firebase e Vercel tende a crescer (leituras do Firestore, funções, banda) e como prever isso por faixa de usuários;
+4) Para o Firestore, recomende padrões de escala: índices, paginação, quando desnormalizar;
+5) Diga quando faz sentido (e quando NÃO faz) introduzir cache, fila, CDN ou separar serviço;
+6) Resuma o trade-off custo × complexidade × ganho real, deixando a decisão final clara para mim.
+Português do Brasil, direto, sem empurrar complexidade que eu ainda não preciso.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://web.dev/articles/vitals">web.dev — Core Web Vitals</a> — as métricas de performance que importam.</li>
+      <li><a href="https://firebase.google.com/docs/firestore/query-data/indexing">Firestore — Índices</a> — acelerar e viabilizar queries em escala.</li>
+      <li><a href="https://firebase.google.com/docs/firestore/query-data/query-cursors">Firestore — Paginação</a> — cortar leituras com cursores.</li>
+      <li><a href="https://vercel.com/docs/edge-network/caching">Vercel — Caching</a> — cache e CDN para aguentar carga.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>turbo</b> otimiza performance (Core Web Vitals, bundle, queries lentas) — o primeiro ataque antes de mudar arquitetura. A <b>termometro</b> estima o custo de infra e IA por faixa de uso e sinaliza onde a conta explode antes de escalar. A <b>esquema</b> ajuda a remodelar o banco (índices, desnormalização) quando o gargalo é de dados.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno roda o Lighthouse no próprio projeto, lista os gargalos encontrados e estima onde a conta de infra cresce com 10× usuários. Critério de pronto: relatório de performance lido, ao menos um gargalo corrigido e a decisão de escalar (ou não) justificada com números.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40 · 2h</span><h3>Projeto final: seu produto no ar (apresentação)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> consolidar tudo o que foi construído no curso em um produto real, no ar, e apresentá-lo para a turma — da ideia ao deploy, com segurança, captura, métricas e a decisão de negócio por trás.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Como fechar um projeto: do MVP no ar à apresentação — o que conta como "pronto o suficiente para mostrar".</li>
+      <li>Estrutura de uma boa apresentação técnica: problema → solução → demo ao vivo → como foi construído → números/decisão.</li>
+      <li>Fazer a demo ao vivo sem susto: ter o site no ar, um plano B (vídeo/gravação) e o smoke test feito antes.</li>
+      <li>Contar a engenharia por trás: quais decisões de segurança, stack e arquitetura você tomou — e por quê.</li>
+      <li>Receber e dar feedback: o que melhorar, o que está bom, próximos passos reais.</li>
+      <li>O caminho daqui: como continuar evoluindo o produto depois do curso.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Apresento um projeto-modelo completo do começo ao fim, no formato que os alunos vão usar: mostro o produto no ar, faço a demo de uma jornada (visitante → lead capturado), conto as decisões de segurança e arquitetura por trás e fecho com os números e a decisão de negócio. Serve de molde para as apresentações da turma.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é meu coach de apresentação de projeto técnico. Vou apresentar, em até 8 minutos, o produto que construí no curso (Next.js + Firebase, no ar na Vercel).
+Meu produto é: [DESCREVA O PRODUTO, PÚBLICO E O QUE ELE RESOLVE].
+Monte o roteiro da apresentação, sem hype, com:
+1) Abertura (30s): o problema real e para quem;
+2) A solução e uma demo ao vivo: que jornada mostrar (passo a passo) para impressionar sem risco;
+3) "Como foi construído": as 3 decisões de engenharia mais importantes que eu tomei (stack, segurança, arquitetura) e o porquê de cada uma;
+4) Números e decisão de negócio: o que mostrar de métrica e qual decisão eu tomei com base nela;
+5) Fechamento: próximos passos reais do produto;
+6) Plano B caso a demo ao vivo falhe.
+Para cada parte, diga quanto tempo dedicar e qual a frase-chave. Português do Brasil, tom direto e honesto.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://vercel.com/docs/deployments/overview">Vercel — Deployments</a> — garantir o produto no ar para a demo.</li>
+      <li><a href="https://docs.google.com/presentation/">Google Apresentações</a> — montar os slides de apoio.</li>
+      <li><a href="https://web.dev/articles/vitals">web.dev — Core Web Vitals</a> — checar a saúde do produto antes de apresentar.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>O <b>palco</b> estrutura a apresentação na voz e identidade do Rodrigo — do roteiro narrativo aos slides. O <b>acordo</b> ajuda a transformar o projeto em proposta comercial (problema, solução, escopo, preço) para quem quiser vender o que construiu. Antes da demo, rode a <b>crivo</b> e a <b>cofre</b> para garantir que nada inseguro vai ao ar na frente da turma.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno apresenta o próprio produto no ar em até 8 minutos seguindo o roteiro (problema → solução → demo → engenharia → números) e recebe feedback estruturado da turma e do instrutor. Critério de pronto: produto acessível por URL pública, demo de uma jornada completa funcionando e as decisões de engenharia explicadas.</p></div>
+  </article>
+</section>
+  <div class="modulo" style="margin-top:40px">
+    <p style="color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);padding-top:20px">
+      Ementa · Curso presencial · 80 horas (40 aulas de 2h) · por <b>Rodrigo Munhoz Reis</b> — Vibecoding com Engenharia.
+    </p>
+  </div>
+</div>
+</body>
+</html>

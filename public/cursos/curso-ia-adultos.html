@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa do Curso · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Ementa · Curso presencial · Adultos</div>
+<h1>IA do Zero ao Avançado</h1>
+<p class="sub">Aprenda a usar todas as principais IAs com método — do primeiro "olá" ao seu assistente pessoal de IA.</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>Presencial</span><span>Iniciante &rarr; Avançado</span></div>
+</div></div>
+<div class="wrap">
+<section class="modulo"><div class="mod-head"><span class="mod-num">Módulo 1</span><h2>Fundamentos da IA</h2></div><p class="mod-resumo">Aqui a gente tira o mistério da frente: o que a IA realmente é, como ela funciona por dentro e quem são os principais modelos em 2026. No fim do módulo você já tem suas primeiras conversas produtivas — sem hype, sem medo, sabendo o que está fazendo.</p>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 1 · 2h</span><h3>O que é IA (e o que não é) — desmistificando</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno sai sabendo explicar, com as próprias palavras, o que é uma IA generativa, o que ela consegue e não consegue fazer, e por que ela "erra com confiança".</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>A diferença entre IA, machine learning e IA generativa — sem matemática, com analogias do dia a dia.</li>
+<li>O que é um "modelo de linguagem": uma máquina treinada para prever a próxima palavra mais provável, não um banco de dados de verdades.</li>
+<li>Por que a IA não "pensa" nem "entende" como um humano — ela reconhece padrões em texto.</li>
+<li>O conceito de alucinação: por que a IA inventa fatos com tom seguro e por que isso não é um "bug", e sim como ela funciona.</li>
+<li>O que a IA faz muito bem (escrever, resumir, traduzir, estruturar, dar ideias) e o que ela faz mal (cálculo exato, fatos recentes sem fonte, garantir verdade).</li>
+<li>A mentalidade "a decisão é sua": a IA é copiloto, você é o piloto e o responsável.</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>No projetor, o professor pede ao ChatGPT a biografia de uma pessoa pouco conhecida (ou inventada) e mostra a IA criando datas e prêmios falsos com total confiança. Em seguida, pede algo que ela domina — resumir um texto colado — e mostra o resultado excelente. Contraste claro: a mesma ferramenta, brilhante e perigosa, dependendo do uso.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>Explique, em linguagem simples e com uma analogia do cotidiano,
+a diferença entre estes três termos para alguém que nunca
+estudou tecnologia: "inteligência artificial", "machine learning"
+e "IA generativa". Use no máximo 4 frases por termo e termine
+com uma frase resumindo como os três se encaixam.</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://chat.openai.com">ChatGPT (OpenAI)</a> — ferramenta usada na demonstração ao vivo.</li>
+<li><a href="https://claude.ai">Claude (Anthropic)</a> — alternativa para comparar respostas lado a lado.</li>
+<li><a href="https://www.youtube.com/watch?v=LPZh9BOjkQs">Vídeo "But what is a neural network?" (3Blue1Brown)</a> — para o aluno curioso que quer ver o que há por baixo.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>Use a <b>garimpo</b> para preparar exemplos atuais e verificáveis de alucinação (casos reais noticiados), em vez de improvisar na hora. A <b>sintese</b> ajuda o professor a condensar este conteúdo denso em um roteiro de 2h sem perder o essencial.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Em duplas: cada aluno faz a IA escrever um parágrafo sobre si mesmo (nome, profissão, cidade) e marca com caneta o que ela inventou de errado. Discussão em roda: "onde ela acertou e onde ela inventou?". Objetivo: sentir na pele que a IA preenche lacunas com plausibilidade, não com verdade.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 2 · 2h</span><h3>Como a IA "pensa" — modelos de linguagem na prática</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno entende, de forma prática, o que são tokens, contexto e "temperatura", e por que isso explica o comportamento da IA — para parar de tratar a ferramenta como mágica.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>Token: a IA não lê palavras, lê pedaços de palavras. Por que isso afeta custo, limite e velocidade.</li>
+<li>Janela de contexto: a "memória de trabalho" da conversa — o que ela lembra e por que esquece o começo de chats muito longos.</li>
+<li>Previsão da próxima palavra na prática: por que a mesma pergunta gera respostas diferentes a cada vez.</li>
+<li>Criatividade x precisão (a ideia de "temperatura"): quando você quer respostas mais seguras e quando quer mais variadas.</li>
+<li>Data de corte do treinamento: por que a IA "não sabe" de eventos recentes a menos que busque na web.</li>
+<li>Por que ser específico melhora a resposta: você está estreitando o caminho de previsão do modelo.</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor abre o Tokenizer da OpenAI no projetor e cola frases em português e inglês, mostrando ao vivo como a mesma ideia "custa" mais tokens em português. Depois, faz a mesma pergunta criativa três vezes no ChatGPT para mostrar que a resposta muda — e explica o porquê.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero entender, na prática, o conceito de "janela de contexto".
+Faça o seguinte: invente uma palavra-código secreta e me diga
+qual é. Depois escreva 3 parágrafos sobre qualquer assunto.
+No final, repita exatamente a palavra-código que você inventou
+no começo, sem olhar de novo. Em seguida, me explique o que isso
+demonstra sobre como você guarda informação dentro de uma conversa.</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://platform.openai.com/tokenizer">Tokenizer da OpenAI</a> — mostra ao vivo como o texto vira tokens.</li>
+<li><a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">Ajuda OpenAI: o que são tokens</a> — referência oficial para tirar dúvidas.</li>
+<li><a href="https://docs.anthropic.com/en/docs/build-with-claude/context-windows">Doc da Anthropic sobre janela de contexto</a> — explicação clara do conceito.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>bagagem</b> entra aqui como ponte natural: agora que o aluno entende a janela de contexto, ele compreende <i>por que</i> montar o contexto certo (e cortar o resto) faz a IA responder melhor. Use também a <b>sintese</b> para o professor resumir grandes textos antes de colá-los, respeitando o limite de contexto.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno cola uma frase própria no Tokenizer e anota quantos tokens deu. Depois reescreve a mesma frase de forma mais curta e compara. Em seguida, faz a IA contar de 1 a 100 e pergunta um número aleatório no meio — observando como ela lida (ou erra) com tarefas de precisão. Lição: a IA é um previsor de linguagem, não uma calculadora.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 3 · 2h</span><h3>O ecossistema de IAs em 2026 — quem é quem</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno sai sabendo quais são as principais IAs disponíveis, para que cada uma é mais forte, e como escolher a ferramenta certa para cada tarefa — sem achar que existe "uma IA melhor que todas".</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>Os principais players: ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google) e o que cada um faz de melhor.</li>
+<li>Versões gratuitas x pagas: o que muda na prática (limite de uso, modelos melhores, acesso à web, arquivos, imagem).</li>
+<li>IAs de texto x imagem x código x voz: panorama rápido de cada categoria.</li>
+<li>O conceito de "modelos abertos" (rodar IA no seu computador) — visão geral, sem aprofundar.</li>
+<li>Critérios honestos para escolher: tipo de tarefa, privacidade dos dados, custo e onde você já trabalha.</li>
+<li>Por que vale ter conta em pelo menos duas: comparar respostas é uma técnica, não desperdício.</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor faz a <i>mesma</i> pergunta de redação em ChatGPT, Claude e Gemini, lado a lado no projetor, e a turma vota qual resposta ficou melhor — descobrindo que "melhor" depende da tarefa e do gosto. Mostra também o Gemini buscando uma notícia do dia para evidenciar o diferencial de acesso à web.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>Escreva um e-mail curto e cordial para um cliente avisando que
+a entrega do projeto vai atrasar 3 dias por um imprevisto técnico,
+mantendo a confiança e oferecendo uma compensação simples.
+Tom: profissional, humano, sem desculpas exageradas.
+
+(Cole este MESMO prompt no ChatGPT, no Claude e no Gemini e
+compare: qual tom soou mais natural? Qual você usaria?)</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://chat.openai.com">ChatGPT</a> — chat.openai.com.</li>
+<li><a href="https://claude.ai">Claude</a> — claude.ai.</li>
+<li><a href="https://gemini.google.com">Gemini</a> — gemini.google.com.</li>
+<li><a href="https://lmarena.ai">LMArena</a> — ranking público onde modelos competem por voto cego, ótimo para ver "quem é quem".</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>Use a <b>garimpo</b> para o professor trazer o panorama atualizado de modelos e preços de 2026 com fontes (o mercado muda rápido). A <b>espiao</b> ajuda a comparar as ferramentas como se fossem concorrentes — forças, fraquezas e diferencial de cada uma.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno cria (ou confirma) conta gratuita em ao menos duas das três IAs principais. Em seguida, roda o prompt do e-mail nas duas e anota numa tabela simples: qual respondeu mais rápido, qual soou mais humana, qual ele escolheria. Entregável: a "tabela pessoal de quem é quem" do aluno.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 4 · 2h</span><h3>Sua primeira conversa produtiva com a IA</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno sai sabendo conduzir uma conversa real com a IA do início ao fim — abrir, refinar, corrigir e chegar a um resultado útil para o seu próprio trabalho.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>A IA é uma conversa, não um buscador: você não digita e aceita o primeiro resultado, você vai e volta.</li>
+<li>Como abrir bem: dê papel, contexto e objetivo já na primeira mensagem (prévia do método que vem no Módulo 2).</li>
+<li>Como pedir ajustes: "deixe mais curto", "mude o tom", "dê 3 opções" — a IA refina em cima do que já fez.</li>
+<li>Quando começar um chat novo x continuar o atual (e por quê, ligando à janela de contexto da Aula 2).</li>
+<li>Como pedir para a IA fazer perguntas a você antes de responder — um dos truques mais poderosos.</li>
+<li>Salvar o que funcionou: o começo da ideia de biblioteca de prompts (que fecha o Módulo 2).</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor resolve uma tarefa real ao vivo — por exemplo, escrever o texto de um anúncio de vaga — começando vago de propósito, recebendo algo genérico, e então refinando em 4 ou 5 mensagens até chegar a um resultado que ele usaria de verdade. A turma vê o "ir e voltar" acontecendo na tela.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é meu assistente para uma tarefa de escrita. Antes de
+escrever qualquer coisa, me faça de 3 a 5 perguntas objetivas
+para entender exatamente o que eu preciso (público, tom, tamanho,
+objetivo e o que NÃO incluir). Espere minhas respostas e só
+depois produza o texto final. A tarefa é: [DESCREVA AQUI O QUE
+VOCÊ QUER ESCREVER].</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://claude.ai">Claude</a> — ótimo para conversas longas de refino.</li>
+<li><a href="https://chat.openai.com">ChatGPT</a> — para a demonstração ao vivo.</li>
+<li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">Notas de versão do ChatGPT</a> — para acompanhar novidades da ferramenta.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>forja</b> aparece pela primeira vez aqui em modo leve: mostre que existe um método por trás de "abrir bem" uma conversa (papel + contexto + objetivo). Use a <b>lapidador</b> para ensinar o aluno a diagnosticar uma resposta fraca e pedir o ajuste certo — em vez de só repetir o pedido frustrado.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno escolhe uma tarefa real do próprio trabalho e conduz uma conversa de no mínimo 5 mensagens até um resultado que ele aprovaria. Regra: começar deixando a IA fazer perguntas. No fim, três voluntários mostram a tela e contam o que mudou da primeira para a última resposta.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 5 · 2h</span><h3>Os 3 erros que fazem a IA te decepcionar</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno reconhece e corrige os três erros mais comuns de iniciante — pedido vago, falta de contexto e confiar cego na resposta — saindo da aula imune à frustração que faz a maioria desistir.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li><b>Erro 1 — Pedido vago:</b> "escreva sobre marketing" gera lixo genérico. Por que a especificidade mudou tudo (ponte direta com o Módulo 2).</li>
+<li><b>Erro 2 — Falta de contexto:</b> a IA não conhece seu negócio, seu cliente, seu tom. Se você não conta, ela inventa.</li>
+<li><b>Erro 3 — Confiar cego:</b> aceitar números, fatos e fontes sem checar. Como verificar rápido e quando exigir fontes.</li>
+<li>O reflexo de checagem: tratar a saída da IA como rascunho de um estagiário talentoso, não como verdade final.</li>
+<li>Como pedir fontes e como pedir que a IA admita quando não sabe.</li>
+<li>Fechamento do Módulo 1 e gancho para o Módulo 2: "agora que você sabe os erros, vamos ao método que os elimina".</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor mostra os três erros e suas correções lado a lado: o pedido vago "escreva um post sobre produtividade" virando um pedido sob medida com público, formato e tom; e uma resposta cheia de "fatos" sendo confrontada com o pedido "cite as fontes verificáveis de cada afirmação" — revelando quais a IA não consegue sustentar.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>Antes de responder a pergunta abaixo, siga estas regras:
+1) Se você não tiver certeza de um fato, diga "não tenho certeza"
+   em vez de inventar.
+2) Para cada afirmação factual, indique se é algo amplamente
+   conhecido ou se eu deveria verificar em uma fonte.
+3) Não cite estatísticas ou números sem deixar claro que preciso
+   confirmá-los.
+
+Pergunta: [SUA PERGUNTA AQUI]</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://gemini.google.com">Gemini</a> — útil para checar fatos recentes por ter acesso à web.</li>
+<li><a href="https://www.perplexity.ai">Perplexity</a> — IA de busca que sempre mostra as fontes, ótima para o reflexo de checagem.</li>
+<li><a href="https://claude.ai">Claude</a> — para comparar como a IA reage ao pedido de admitir incerteza.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>bagagem</b> ataca diretamente o Erro 2 (falta de contexto): use-a para ensinar o que incluir e o que cortar. A <b>garimpo</b> ataca o Erro 3 (confiar cego): pesquisa com fontes verificáveis para validar o que a IA afirmou. E a <b>lapidador</b> ajuda a corrigir respostas que vieram genéricas pelo Erro 1.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Estação de "caça ao erro": cada dupla recebe um pedido vago e tem 10 minutos para transformá-lo em um pedido sob medida (corrigindo os erros 1 e 2). Depois, rodam o prompt de verificação acima sobre uma resposta cheia de números e marcam quantas afirmações a IA não conseguiu sustentar. Encerramento: cada aluno escreve em uma frase qual dos três erros ele mais cometia.</p></div>
+</article>
+</section>
+
+<section class="modulo"><div class="mod-head"><span class="mod-num">Módulo 2</span><h2>O Método de Pedir (P.R.O.M.P.T.E.R.)</h2></div><p class="mod-resumo">Aqui você aprende o método que transforma pedido vago em resposta sob medida, letra por letra do P.R.O.M.P.T.E.R. No fim, você sai com uma biblioteca pessoal de prompts prontos para reusar no seu dia a dia.</p>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 6 · 2h</span><h3>Por que prompt é tudo — pedido vago x pedido sob medida</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno entende, com evidência na tela, que a qualidade da resposta é consequência direta da qualidade do pedido — e sai motivado a aprender o método como um sistema, não como sorte.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>A regra de ouro: a IA é um espelho do seu pedido. Entrada fraca, saída fraca.</li>
+<li>Anatomia de um pedido sob medida: papel, contexto, objetivo, formato e exemplos (visão geral antes de destrinchar).</li>
+<li>Por que "prompt" não é truque mágico, e sim engenharia de comunicação clara.</li>
+<li>Apresentação do método P.R.O.M.P.T.E.R. como um checklist mental: Papel, Realidade, Objetivo, Marcha, Proteção, Texto de saída, Exemplos, Refino.</li>
+<li>Quando usar o método completo e quando um pedido rápido basta (nem tudo precisa das 8 letras).</li>
+<li>A mentalidade de engenharia: pedir bem é uma habilidade treinável, não talento.</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor coloca dois prompts lado a lado: o vago "me ajude com uma apresentação" e o sob medida usando as letras do método. As duas respostas aparecem na tela e o contraste é gritante — a turma vê, sem precisar de convencimento, que o método não é teoria, é resultado.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>Compare estes dois pedidos e me explique, em uma tabela, por que
+o segundo gera uma resposta muito melhor:
+
+Pedido A: "escreva um texto sobre alimentação saudável".
+
+Pedido B: "Você é nutricionista. Escreva um texto de 200 palavras
+sobre alimentação saudável para pais de crianças de 6 a 10 anos
+que têm pouco tempo para cozinhar. Tom acolhedor, sem culpar
+ninguém. Termine com 3 dicas práticas para a semana."
+
+Depois, gere a resposta do Pedido B.</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://chat.openai.com">ChatGPT</a> — para a comparação ao vivo dos dois pedidos.</li>
+<li><a href="https://www.anthropic.com/news/prompt-engineering-for-business-performance">Anthropic: prompt engineering na prática</a> — material oficial sobre por que pedir bem importa.</li>
+<li><a href="https://platform.openai.com/docs/guides/prompt-engineering">Guia de prompt engineering da OpenAI</a> — referência oficial e didática.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>forja</b> é a estrela deste módulo inteiro: é a skill que constrói prompts profissionais exatamente pelo método P.R.O.M.P.T.E.R. Apresente-a aqui como "o método virou ferramenta". Use a <b>lapidador</b> como dupla: a forja constrói, a lapidador refina.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno pega o pior prompt que já escreveu na vida (de verdade) e roda do jeito vago. Depois reescreve aplicando os elementos do pedido sob medida e roda de novo. Compara as duas saídas e mede, em uma frase, o tamanho do salto. Entregável: o "antes e depois" do próprio aluno.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 7 · 2h</span><h3>P.R.O.M.P.T.E.R. parte 1 — Papel, Realidade, Objetivo</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno domina as três primeiras letras do método e consegue, sozinho, dar à IA um papel claro, o contexto da sua realidade e um objetivo bem definido.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li><b>P — Papel:</b> dizer quem a IA deve "ser" (nutricionista, advogado, copywriter) afina vocabulário e perspectiva. Como escolher o papel certo.</li>
+<li><b>R — Realidade:</b> o contexto do SEU caso — público, situação, restrições, dados. É o que separa resposta genérica de resposta sob medida (liga direto com a skill bagagem).</li>
+<li><b>O — Objetivo:</b> o que você quer alcançar com a resposta, não só o que quer que ela faça. Qual problema isso resolve?</li>
+<li>O erro de pular a Realidade: por que é a letra mais esquecida e a que mais melhora a saída.</li>
+<li>Como descrever sua realidade sem escrever um romance: o essencial, organizado.</li>
+<li>Montando um mini-prompt só com P + R + O e vendo o ganho imediato.</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor constrói um prompt camada por camada na tela: primeiro só o Papel, roda; adiciona a Realidade, roda de novo; adiciona o Objetivo, roda mais uma vez. A turma vê a resposta ficando mais precisa a cada letra acrescentada — o método ganhando corpo diante dos olhos.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>[PAPEL] Você é um consultor de carreira com 15 anos de experiência
+em transição profissional.
+
+[REALIDADE] Eu tenho 38 anos, trabalho há 12 anos com vendas no
+varejo e quero migrar para a área de tecnologia, mas tenho medo
+de recomeçar do zero e perder renda. Tenho família para sustentar
+e posso estudar 1 hora por dia.
+
+[OBJETIVO] Quero um plano realista de 90 dias para dar o primeiro
+passo concreto nessa transição, respeitando meu tempo e sem
+fantasias de "fique rico rápido".
+
+Comece confirmando se entendeu meu contexto e só então apresente
+o plano.</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://claude.ai">Claude</a> — responde muito bem a papéis e contexto detalhado.</li>
+<li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts">Doc da Anthropic sobre papéis (system prompts)</a> — base técnica do "P".</li>
+<li><a href="https://chat.openai.com">ChatGPT</a> — para a construção camada por camada.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>bagagem</b> é a skill da letra "R" (Realidade): ela ensina exatamente o que incluir e o que cortar do contexto. A <b>forja</b> monta o esqueleto P + R + O automaticamente. Use a <b>espelho</b> quando a Realidade envolver um público-alvo: ela ajuda a descrever a persona com precisão.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno escolhe uma tarefa real e preenche um cartão com três campos em branco: Papel, Realidade, Objetivo. Troca o cartão com o colega ao lado, que tenta adivinhar a tarefa só lendo os três campos — se conseguir, o prompt está claro. Depois rodam na IA e ajustam.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 8 · 2h</span><h3>P.R.O.M.P.T.E.R. parte 2 — Marcha, Proteção, Texto de saída</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno domina o miolo do método: como guiar o passo a passo da IA, como blindar a resposta contra o que você não quer, e como definir o formato exato de saída.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li><b>M — Marcha:</b> guiar o raciocínio em etapas ("primeiro faça X, depois Y"). Por que pedir o passo a passo melhora tarefas complexas.</li>
+<li><b>P — Proteção:</b> dizer o que a IA NÃO deve fazer (não inventar dados, não usar jargão, não passar de X palavras, não dar opinião médica). As barreiras que evitam decepção.</li>
+<li><b>T — Texto de saída:</b> definir o formato exato — lista, tabela, e-mail, JSON, tópicos, número de itens. A IA acerta o formato quando você o descreve.</li>
+<li>Como combinar as três letras com o P + R + O da aula anterior num prompt completo.</li>
+<li>O poder das restrições: por que "limites" deixam a IA mais útil, não menos.</li>
+<li>Exemplos de proteções essenciais que todo prompt sério deveria ter.</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor pega o prompt da Aula 7 e adiciona Marcha ("primeiro liste as opções, depois recomende uma"), Proteção ("não invente vagas que não existem; não prometa salários") e Texto de saída ("entregue em uma tabela de 3 colunas"). A turma vê a resposta ficar organizada, segura e no formato exato pedido.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>[PAPEL] Você é um especialista em comunicação empresarial.
+[REALIDADE] Preciso comunicar à minha equipe de 8 pessoas uma
+mudança de horário de trabalho que vai gerar resistência.
+
+[MARCHA] Faça nesta ordem: (1) liste os 3 principais receios que
+a equipe provavelmente terá; (2) escreva o comunicado já
+endereçando esses receios.
+
+[PROTEÇÃO] Não use linguagem corporativa vazia ("sinergia",
+"momento desafiador"). Não prometa nada que eu não pedi. Não
+ultrapasse 200 palavras no comunicado.
+
+[TEXTO DE SAÍDA] Entregue em duas partes: primeiro uma lista
+numerada dos receios; depois o comunicado em um único bloco
+de texto, pronto para copiar.</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://platform.openai.com/docs/guides/prompt-engineering">Guia OpenAI de prompt engineering</a> — seção sobre instruções passo a passo (Marcha).</li>
+<li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct">Anthropic: seja claro e direto</a> — base da Proteção e do Texto de saída.</li>
+<li><a href="https://claude.ai">Claude</a> — excelente para seguir formatos de saída estritos.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>forja</b> incorpora Marcha, Proteção e Texto de saída como campos do método — mostre como ela já pergunta por essas restrições. Para tarefas grandes, a <b>maestro</b> ilustra a ideia de "Marcha": quebrar em passos e coordená-los. A <b>lapidador</b> entra quando o Texto de saída não saiu no formato pedido.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno pega o prompt P + R + O que fez na Aula 7 e adiciona as três novas letras. Desafio do formato: o professor anuncia um formato surpresa (ex.: "agora quero em tabela de exatamente 4 linhas") e cada aluno ajusta o Texto de saída e roda. Quem acertar o formato de primeira mostra o prompt para a turma.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 9 · 2h</span><h3>P.R.O.M.P.T.E.R. parte 3 — Exemplos e Refino</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno fecha o método dominando as duas letras que mais elevam a qualidade: dar exemplos do que quer e refinar a resposta de forma cirúrgica em vez de recomeçar do zero.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li><b>E — Exemplos:</b> mostrar à IA um modelo do que você quer ("escreva no estilo deste texto") vale mais que mil instruções. Como dar 1 a 3 bons exemplos.</li>
+<li><b>R — Refino:</b> a resposta quase nunca sai perfeita na primeira. Como diagnosticar o que ficou ruim e pedir o ajuste exato.</li>
+<li>O vocabulário do refino: "mais curto", "menos formal", "troque o exemplo do parágrafo 2", "mantenha o resto e mude só X".</li>
+<li>Por que recomeçar do zero é o erro do iniciante — e refinar é o hábito do profissional.</li>
+<li>Como dar feedback à IA como você daria a um estagiário: específico, sobre o resultado, não sobre a pessoa.</li>
+<li>Fechamento do método completo: as 8 letras juntas em um prompt real e maduro.</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor pede um texto, recebe algo mediano, e em vez de jogar fora faz três refinos cirúrgicos seguidos — "encurte o segundo parágrafo", "troque esse exemplo por um do setor de saúde", "deixe a abertura mais direta" — chegando a um resultado excelente. Depois mostra o poder do "E": cola um texto-modelo e pede "escreva no mesmo estilo".</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero que você escreva uma legenda de Instagram para o meu
+negócio, seguindo EXATAMENTE o estilo do exemplo abaixo
+(mesmo tom, mesmo tamanho, mesma estrutura de gancho + corpo
++ chamada para ação):
+
+[EXEMPLO]
+"Você não precisa de mais tempo. Precisa de menos tarefa inútil.
+Hoje eu cortei 3 reuniões e ganhei minha tarde de volta.
+Qual reunião da sua semana podia ser um e-mail? Conta aqui 👇"
+
+Agora escreva uma legenda no MESMO estilo para divulgar:
+[DESCREVA SEU PRODUTO OU POST AQUI]</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/multishot-prompting">Anthropic: prompting com exemplos (multishot)</a> — a base técnica do "E".</li>
+<li><a href="https://chat.openai.com">ChatGPT</a> — para os refinos sucessivos ao vivo.</li>
+<li><a href="https://claude.ai">Claude</a> — segue exemplos de estilo com fidelidade.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>lapidador</b> é a skill da letra "R" (Refino): ela diagnostica o que ficou ruim e pede o ajuste certo, em vez de recomeçar. A <b>forja</b> ajuda a embutir exemplos ("E") no prompt desde o início. Para refino de textos de marca, a <b>legenda</b> e a <b>praca</b> mostram o estilo-alvo a ser imitado.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Rodada de refino cronometrada: cada aluno parte de uma resposta propositalmente mediana e tem 8 minutos para chegar ao "bom" usando só refinos cirúrgicos (proibido recomeçar o prompt). Depois, o desafio do "E": colar um texto-modelo do próprio aluno e fazer a IA escrever algo novo no mesmo estilo. Encerramento: montagem do primeiro prompt completo com as 8 letras.</p></div>
+</article>
+
+<article class="aula"><div class="aula-head"><span class="aula-num">Aula 10 · 2h</span><h3>Montando sua biblioteca de prompts</h3></div>
+<p class="objetivo"><b>Objetivo:</b> o aluno sai com uma biblioteca pessoal de prompts reutilizáveis, organizada e pronta para o dia a dia — transformando o método aprendido em produtividade permanente.</p>
+<div class="bloco"><h4>O que ensinar</h4><ul>
+<li>Por que prompt bom é ativo, não descartável: o que funcionou uma vez funciona de novo.</li>
+<li>O conceito de prompt-modelo com lacunas: criar um "molde" com [CAMPOS] para preencher a cada uso.</li>
+<li>Onde guardar: documento simples, planilha, app de notas ou os "GPTs"/Projetos das próprias ferramentas.</li>
+<li>Como organizar por categoria: escrita, e-mail, resumo, ideias, atendimento — o que faz sentido para a vida do aluno.</li>
+<li>Recursos das ferramentas que viram "biblioteca viva": Projetos no Claude, GPTs personalizados no ChatGPT, Gems no Gemini.</li>
+<li>Hábito de manutenção: revisar e melhorar os prompts com o tempo (liga com o Refino da Aula 9).</li>
+</ul></div>
+<div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>O professor transforma, ao vivo, um prompt já testado em um modelo reutilizável: substitui as partes específicas por [LACUNAS], dá um nome e uma categoria, e salva. Depois mostra como criar um GPT personalizado (ou Projeto no Claude) embutindo esse prompt para chamar com um clique no futuro.</p></div>
+<div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é meu organizador de biblioteca de prompts. Vou colar abaixo
+um prompt que funcionou bem. Faça três coisas:
+1) Transforme-o em um MODELO reutilizável, trocando as partes
+   específicas por campos no formato [ASSIM].
+2) Sugira um nome curto e uma categoria para ele (ex.: "E-mails",
+   "Resumos", "Redes sociais").
+3) Liste, em uma linha, quando eu devo usar esse modelo.
+
+Prompt que funcionou:
+[COLE AQUI O SEU PROMPT]</pre></div>
+<div class="bloco"><h4>Recursos e links</h4><ul>
+<li><a href="https://claude.ai">Projetos no Claude</a> — guarde prompts e contexto reutilizável por tema (claude.ai).</li>
+<li><a href="https://chatgpt.com/gpts">GPTs personalizados (ChatGPT)</a> — crie assistentes com seu prompt embutido.</li>
+<li><a href="https://gemini.google.com">Gems no Gemini</a> — assistentes personalizados do Google (gemini.google.com).</li>
+<li><a href="https://docs.anthropic.com/en/resources/prompt-library/library">Biblioteca de prompts da Anthropic</a> — exemplos prontos para se inspirar.</li>
+</ul></div>
+<div class="bloco skills"><h4>Skills do Engenho</h4><p>A <b>forja</b> é o coração da biblioteca: cada prompt-modelo nasce dela. A <b>bagagem</b> ajuda a guardar, junto do prompt, o contexto reutilizável do aluno (sobre seu negócio, seu tom). E a <b>lapidador</b> mantém a biblioteca viva, refinando os modelos conforme o uso revela o que melhorar.</p></div>
+<div class="bloco pratica"><h4>Prática em sala</h4><p>Construção da biblioteca: cada aluno escolhe os 5 melhores prompts que criou ao longo dos Módulos 1 e 2, transforma cada um em modelo com lacunas, nomeia e organiza em categorias num documento ou app de notas. Quem terminar cria um GPT ou Projeto com o prompt favorito. Entregável final do módulo: a biblioteca pessoal de 5 prompts, pronta para usar na segunda-feira.</p></div>
+</article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>Conhecendo as principais IAs</h2></div>
+  <p class="mod-resumo">Cada IA tem uma personalidade e um ponto forte. Aqui você para de usar "uma IA pra tudo" e aprende a escolher a ferramenta certa pra cada tarefa: o ChatGPT, o Claude, o Gemini e os especialistas. No fim do módulo você sai com um mapa de decisão prático — qual abrir pra quê, sem achismo. A decisão é sua; a gente só te dá os critérios.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 2h</span><h3>ChatGPT (OpenAI) — forças e quando usar</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender onde o ChatGPT brilha de verdade, conhecer seus recursos práticos (voz, imagens, GPTs, navegação) e saber em quais tarefas do dia a dia ele é a primeira escolha.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O que é o ChatGPT e quem é a OpenAI — sem mística: é um modelo de linguagem com uma interface muito boa.</li>
+        <li>Diferença entre o plano gratuito e o pago, e por que isso muda a experiência (modelo mais novo, limites maiores).</li>
+        <li>Forças reais: respostas rápidas e versáteis, modo de voz para conversar, geração de imagens, leitura de arquivos e navegação na web.</li>
+        <li>GPTs personalizados: o que são e quando vale usar um pronto da galeria em vez de criar do zero.</li>
+        <li>Limites honestos: pode inventar dados (alucinação), nem sempre cita fontes, e o conhecimento tem data de corte.</li>
+        <li>Quando ele é a melhor escolha: rascunhos rápidos, brainstorming, tarefas do dia a dia, conversas por voz.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Abra o ChatGPT no projetor. Faça a mesma pergunta de três formas: vaga ("me ajuda com um e-mail"), depois com contexto ("escreve um e-mail cobrando um cliente que está 15 dias atrasado, tom firme mas cordial") e por fim usando o modo de voz para mostrar a conversa falada. Suba um PDF curto e peça um resumo na frente da turma. O objetivo é mostrar versatilidade e velocidade — e também flagrar, ao vivo, um momento em que ele "chuta" algo, reforçando o senso crítico.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é meu assistente de comunicação no trabalho.
+
+Contexto: sou [seu cargo] em [tipo de empresa]. Preciso escrever um e-mail
+para [quem vai receber] sobre [assunto].
+
+O que quero comunicar: [explique em 2 ou 3 frases, do seu jeito].
+
+Tom desejado: [profissional e cordial / firme / informal].
+Tamanho: curto, no máximo 6 linhas.
+
+Antes de escrever, me faça até 3 perguntas se faltar alguma informação
+importante. Depois, escreva o e-mail e sugira 2 assuntos para o campo
+"Assunto".</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://chatgpt.com">chatgpt.com</a> — onde acessar e criar conta.</li>
+        <li><a href="https://help.openai.com/en/">help.openai.com</a> — central de ajuda oficial, boa pra tirar dúvidas de planos e recursos.</li>
+        <li><a href="https://openai.com/chatgpt/pricing/">openai.com/chatgpt/pricing</a> — comparativo atualizado dos planos.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> para montar prompts profissionais pelo método P.R.O.M.P.T.E.R. quando o aluno tiver uma tarefa concreta. Quando a resposta do ChatGPT vier genérica, a <b>lapidador</b> ajuda a diagnosticar o que ficou ruim e pedir o ajuste certo, em vez de começar tudo de novo.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno escolhe uma tarefa real da própria semana e escreve um prompt usando a estrutura "papel + contexto + tom + tamanho" demonstrada. Roda no ChatGPT, lê o resultado para o colega ao lado e usa uma rodada de refino para melhorar. Fechamos comparando: quem deu mais contexto, recebeu resposta melhor?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 2h</span><h3>Claude (Anthropic) — forças e quando usar</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> conhecer o Claude, entender por que ele é referência em textos longos, raciocínio cuidadoso e leitura de documentos grandes, e identificar as tarefas em que ele entrega melhor que os concorrentes.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O que é o Claude e quem é a Anthropic — empresa focada em IA segura e confiável.</li>
+        <li>Forças reais: lida muito bem com textos e documentos longos, segue instruções com fidelidade e tende a "inventar" menos quando não sabe.</li>
+        <li>Os Projetos do Claude: como guardar contexto e arquivos para conversas recorrentes sobre o mesmo tema.</li>
+        <li>Os Artefatos: quando ele gera um documento, tabela ou página, aparece numa janela ao lado, fácil de copiar e reaproveitar.</li>
+        <li>Quando ele é a melhor escolha: revisar contratos e relatórios, escrever textos longos com qualidade, analisar transcrições, trabalhar com material extenso.</li>
+        <li>Limites honestos: também tem data de corte de conhecimento e pode errar — o senso crítico continua valendo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Cole um texto longo de verdade — um capítulo de um manual, um contrato de 4 páginas ou uma transcrição de reunião — e peça ao Claude para resumir em tópicos, apontar pontos de atenção e listar dúvidas. Mostre como ele mantém o fio da meada num documento grande. Em seguida, peça um Artefato (por exemplo, uma tabela comparativa) e mostre como ele abre na janela lateral, pronto para copiar.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um revisor cuidadoso. Vou colar abaixo um documento.
+
+Sua tarefa:
+1. Resumir em até 8 tópicos o que o documento diz.
+2. Apontar pontos de atenção, riscos ou cláusulas que merecem cuidado.
+3. Listar o que ficou ambíguo ou faltando.
+
+Regra importante: se algo não estiver claro no texto, diga
+"não está no documento" em vez de supor. Não invente informação.
+
+DOCUMENTO:
+[cole aqui o texto]</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://claude.ai">claude.ai</a> — onde acessar e criar conta.</li>
+        <li><a href="https://support.anthropic.com/">support.anthropic.com</a> — central de ajuda oficial da Anthropic.</li>
+        <li><a href="https://www.anthropic.com/news">anthropic.com/news</a> — anúncios e novidades direto da fonte.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>A <b>bagagem</b> ensina a montar o contexto certo pra entregar ao Claude — o que incluir e o que cortar num documento longo — pra resposta sair pro caso real do aluno. Para condensar transcrições e relatórios sem inventar, a <b>sintese</b> guia o resumo preservando o essencial.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno traz (ou recebe) um documento de pelo menos 2 páginas relacionado ao próprio trabalho. Usa o prompt de revisão no Claude, lê os pontos de atenção que ele levantou e marca quais fazem sentido e quais ele exagerou. Discussão final: em que situações reais do dia a dia esse "segundo par de olhos" economizaria tempo de verdade?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 2h</span><h3>Gemini (Google) — forças e quando usar</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> conhecer o Gemini e suas vantagens por estar dentro do ecossistema Google — busca, Gmail, Docs, Drive — e saber quando ele é a escolha mais prática.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O que é o Gemini e como ele se conecta ao que você já usa: Gmail, Google Docs, Drive, Agenda e a Busca.</li>
+        <li>Forças reais: integração com o ecossistema Google, acesso a informação atualizada via Busca e bom trabalho com imagens e arquivos.</li>
+        <li>O Gemini dentro do Workspace: como ele aparece ajudando a escrever no Gmail e no Docs.</li>
+        <li>O recurso de áudio que transforma um tema em uma conversa em formato de podcast — útil para estudar ouvindo.</li>
+        <li>Quando ele é a melhor escolha: quem vive no Google, pesquisas com informação recente, tarefas ligadas a e-mail e documentos do Workspace.</li>
+        <li>Limites honestos: integração não é mágica — sempre confira o que ele escreveu antes de enviar.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Mostre o Gemini respondendo uma pergunta sobre algo recente (uma notícia da semana) e compare com a resposta de uma IA sem acesso à web — o contraste de atualidade fica evidente. Depois, demonstre o Gemini ajudando a redigir um rascunho de e-mail. Se possível, mostre o recurso de áudio gerando uma "conversa" curta sobre um tema do curso, para a turma ouvir como soa.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Pesquise informações atualizadas sobre [tema] e me entregue:
+
+1. Um resumo do cenário atual em até 5 tópicos.
+2. As fontes que você usou, com os links.
+3. O que mudou recentemente nesse assunto.
+
+Se houver informações conflitantes entre fontes, aponte a divergência
+em vez de escolher uma sozinho. Escreva em português claro, sem jargão.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://gemini.google.com">gemini.google.com</a> — onde acessar.</li>
+        <li><a href="https://support.google.com/gemini">support.google.com/gemini</a> — central de ajuda oficial.</li>
+        <li><a href="https://workspace.google.com/solutions/ai/">workspace.google.com/solutions/ai</a> — como o Gemini funciona dentro do Workspace.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Quando a tarefa for pesquisa séria com fontes verificáveis, a <b>garimpo</b> orienta a separar o ouro do ruído e exigir citações — útil para confiar (ou desconfiar) do que o Gemini traz da web. A <b>correio</b> ajuda a transformar um rascunho de e-mail em algo com a voz certa, sem hype.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Em duplas, os alunos pesquisam no Gemini um assunto atual da própria área e checam se os links citados existem e dizem mesmo o que ele afirmou. Anotam um caso em que a fonte confirmou e, se aparecer, um caso em que não bateu. Fechamento: confiar é bom, conferir é melhor.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 2h</span><h3>Outras IAs e especialistas (Perplexity, Copilot e cia.)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> conhecer ferramentas que fazem uma coisa muito bem — pesquisa com fontes, IA dentro do trabalho, transcrição, imagem — e entender quando vale sair das três grandes e usar um especialista.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li><b>Perplexity:</b> um buscador com IA que responde citando as fontes — ótimo para pesquisar com rastreabilidade.</li>
+        <li><b>Microsoft Copilot:</b> IA integrada ao Windows e ao Office (Word, Excel, PowerPoint, Outlook) — útil para quem vive nesse ecossistema.</li>
+        <li><b>Ferramentas de transcrição e reunião</b> (como o Otter e similares): transformam áudio de reunião em texto e resumo.</li>
+        <li><b>Geração de imagem</b> (Midjourney, Ideogram e os recursos das próprias grandes): quando você precisa de visual e não só de texto.</li>
+        <li>A ideia central: não existe "a melhor IA", existe a IA certa para a tarefa. Especialistas valem quando você faz aquilo com frequência.</li>
+        <li>Cuidado com custo e com excesso de ferramentas — comece com poucas e domine.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Faça a mesma pergunta de pesquisa no Perplexity e em uma das IAs grandes, lado a lado. Mostre como o Perplexity entrega as fontes numeradas, prontas para conferir. Se houver acesso ao Copilot, mostre rapidamente ele ajudando a resumir um texto dentro do Word ou a montar uma fórmula no Excel. O ponto é tangibilizar a ideia de "ferramenta especialista".</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Pesquise sobre [pergunta específica] e responda apenas com base
+em fontes confiáveis e recentes.
+
+Para cada afirmação importante, indique de qual fonte veio.
+No final, liste todas as fontes com título e link.
+
+Se as fontes discordarem entre si, mostre os dois lados em vez de
+escolher por mim. Quero decidir com a informação na mão.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.perplexity.ai">perplexity.ai</a> — pesquisa com IA e fontes citadas.</li>
+        <li><a href="https://copilot.microsoft.com">copilot.microsoft.com</a> — Copilot da Microsoft.</li>
+        <li><a href="https://otter.ai">otter.ai</a> — transcrição e resumo de reuniões.</li>
+        <li><a href="https://ideogram.ai">ideogram.ai</a> — geração de imagem (boa com texto na imagem).</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>A <b>garimpo</b> é a parceira natural do Perplexity: pesquisa profunda com múltiplas fontes e respostas com citações verificáveis. Para condensar a transcrição que uma ferramenta de reunião gerou, a <b>sintese</b> resume sem inventar, preservando o essencial.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno define uma pergunta de pesquisa da própria realidade e roda no Perplexity. Avalia: as fontes são confiáveis? São recentes? Conferem com o que eu já sabia? Quem quiser testa a mesma pergunta numa IA grande e compara. Encerramos montando, no quadro, uma lista de "qual especialista para qual situação".</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 2h</span><h3>Qual IA pra qual tarefa — o mapa de decisão</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> consolidar o módulo num mapa prático e pessoal: dada uma tarefa, qual IA abrir primeiro — sem decoreba, com critérios claros que o aluno leva pra vida.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Os critérios de decisão: a tarefa é longa ou curta? Precisa de fontes atuais? Vive dentro do Google ou do Office? Exige cuidado e precisão ou velocidade?</li>
+        <li>Um mapa simples de partida: texto curto e rápido / brainstorming → ChatGPT; documento longo e revisão cuidadosa → Claude; tarefa no ecossistema Google e info recente → Gemini; pesquisa com fontes → Perplexity.</li>
+        <li>Por que vale ter duas ou três IAs e não casar com uma só.</li>
+        <li>Quando NÃO usar IA: decisões que dependem só de você, dados sigilosos sem permissão, ou quando conferir daria mais trabalho que fazer à mão.</li>
+        <li>O lembrete do método: a IA propõe, você decide. "A decisão é sua."</li>
+        <li>Como o aluno monta o próprio mapa, com base nas tarefas que ele realmente faz.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Construa o mapa de decisão no quadro, ao vivo, com a turma. Pegue 4 ou 5 tarefas reais ditas pelos próprios alunos ("escrever proposta", "resumir reunião", "pesquisar fornecedor", "revisar contrato") e, para cada uma, conduza a turma pelos critérios até chegar na IA recomendada. O mapa nasce da sala, não de um slide pronto.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Quero montar meu mapa pessoal de "qual IA usar pra qual tarefa".
+
+Vou te listar as tarefas que mais faço no trabalho. Para cada uma,
+me ajude a decidir o melhor tipo de ferramenta considerando:
+- se o texto é curto ou longo;
+- se preciso de informação atualizada da internet;
+- se preciso de precisão e cuidado ou de velocidade;
+- se a tarefa vive dentro do Google ou do Office.
+
+No fim, monte uma tabela: Tarefa | Ferramenta sugerida | Por quê.
+
+Minhas tarefas:
+[liste de 5 a 10 tarefas reais suas]</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://chatgpt.com">chatgpt.com</a>, <a href="https://claude.ai">claude.ai</a>, <a href="https://gemini.google.com">gemini.google.com</a> e <a href="https://www.perplexity.ai">perplexity.ai</a> — abertos lado a lado para a comparação final.</li>
+        <li><a href="https://lmarena.ai">lmarena.ai</a> — arena pública onde modelos são comparados às cegas, bom pra mostrar que "a melhor" muda com o tempo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>A <b>forja</b> garante que, escolhida a IA, o pedido saia bem construído pelo método P.R.O.M.P.T.E.R. Quando a tarefa for grande e exigir vários passos em ferramentas diferentes, a <b>maestro</b> ajuda a quebrar em etapas e coordenar até o fim, sem se perder no caminho.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno preenche o próprio mapa de decisão (a tabela do prompt) com as tarefas reais que faz toda semana. Esse mapa é o entregável do módulo: vai pra parede da mesa de trabalho. Encerramos com 3 alunos apresentando o mapa deles e a turma debatendo se concorda com as escolhas.</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>IA no Trabalho</h2></div>
+  <p class="mod-resumo">Agora a IA sai do "legal de testar" e entra na rotina profissional. Cinco frentes que aparecem em quase toda função: escrever, analisar e decidir, conduzir reuniões e e-mails, se organizar e produzir, e aplicar à sua área específica. O foco é tempo ganho com responsabilidade — a IA faz o rascunho e o trabalho pesado, mas a palavra final, a assinatura e a decisão continuam suas.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 2h</span><h3>Escrever melhor e mais rápido com IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA como parceira de escrita — do rascunho ao texto final — mantendo a voz e o julgamento do aluno, e cortando pela metade o tempo de "papel em branco".</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>O fluxo profissional de escrita: rascunho rápido com a IA → revisão crítica sua → ajuste de tom → versão final.</li>
+        <li>Como descrever o tom que você quer (formal, próximo, direto) e o tamanho, em vez de aceitar o padrão genérico da IA.</li>
+        <li>Como não soar robótico: dar exemplos do seu jeito de escrever e pedir para a IA seguir.</li>
+        <li>Adaptar um mesmo texto para públicos diferentes (chefe, cliente, equipe).</li>
+        <li>A regra de ouro: você revisa e assina. A IA escreve o rascunho, não a sua reputação.</li>
+        <li>Erros comuns: aceitar o primeiro texto, deixar marcas de "IA" no resultado, não conferir números e nomes.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pegue um pedido real ("preciso comunicar à equipe que a reunião de segunda mudou de horário") e mostre o ciclo completo no projetor: rascunho da IA, sua leitura crítica apontando o que ficou empolado, um refino pedindo "mais curto e mais humano", e a versão final. Mostre também o mesmo recado reescrito em dois tons — para a equipe e para a diretoria.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você vai me ajudar a escrever, mas o texto tem que soar como eu.
+
+Tarefa: escrever [tipo de texto: comunicado / post / mensagem]
+sobre [assunto].
+
+Público: [quem vai ler].
+Tom: [direto e cordial, sem formalidade exagerada].
+Tamanho: [curto / médio].
+
+Meu jeito de escrever (siga este estilo): [cole 2 ou 3 frases suas reais].
+
+Escreva uma primeira versão. Depois liste 3 perguntas que, se eu
+responder, deixariam o texto melhor. Não invente dados, nomes ou números.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://chatgpt.com">chatgpt.com</a> e <a href="https://claude.ai">claude.ai</a> — para rascunho e revisão de textos.</li>
+        <li><a href="https://languagetool.org/pt-BR">languagetool.org/pt-BR</a> — revisão gramatical em português, como segunda checagem.</li>
+        <li><a href="https://support.google.com/docs/answer/13447609">Ajuda do Google Docs</a> — recursos de escrita assistida no Docs.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>A <b>pena</b> escreve textos de autoridade na voz do Rodrigo, sem hype — referência de como dar personalidade a um rascunho. Quando o texto sai "quase bom", a <b>lapidador</b> diagnostica o que falta (tom errado, longo demais, genérico) e pede o ajuste certo, em vez de recomeçar do zero.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno escreve um texto real que precisa entregar nesta semana, usando o ciclo rascunho → revisão → refino. Obrigatório: pelo menos uma rodada de "deixe mais parecido comigo". Troca com o colega: o outro tenta adivinhar se o texto final "tem cara de pessoa". Discussão sobre o que entrega que um texto foi só copiado da IA.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 2h</span><h3>Analisar e decidir com IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA para organizar informação, comparar opções e enxergar prós e contras — acelerando a análise sem terceirizar a decisão, que continua sendo do aluno.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>A IA como organizadora de pensamento: listar opções, critérios, riscos e cenários.</li>
+        <li>Como pedir uma análise estruturada: prós e contras, matriz de decisão, "o que pode dar errado".</li>
+        <li>Colar dados (uma tabela, números de vendas, uma lista) e pedir leitura e tendências — sempre conferindo as contas.</li>
+        <li>O perigo de pedir para a IA "decidir por você": ela não tem responsabilidade, contexto completo nem pele em jogo. Você tem.</li>
+        <li>Como usar a IA para o lado contrário: "me dê os argumentos contra essa ideia" (advogado do diabo).</li>
+        <li>Reforço do método: a IA ilumina as opções; a decisão é sua.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Traga uma decisão concreta e cotidiana ("contratar um freelancer ou fazer internamente?"). Peça à IA uma matriz de prós e contras com critérios (custo, prazo, qualidade, controle). Depois faça a virada: "agora me dê os 3 maiores riscos da opção que parece melhor". Mostre que o valor não é a resposta pronta, e sim ter o quadro completo na frente para decidir melhor.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Estou decidindo entre estas opções: [opção A], [opção B] (e [opção C]).
+
+Contexto da decisão: [explique a situação e o que importa pra você].
+
+Me ajude a pensar, sem decidir por mim:
+1. Monte uma tabela comparando as opções pelos critérios:
+   [custo, prazo, qualidade, risco — ajuste à sua realidade].
+2. Liste o maior risco de cada opção.
+3. Aponte qual informação me falta para decidir melhor.
+
+Não me diga "qual escolher". Me dê o quadro completo para EU decidir.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://claude.ai">claude.ai</a> — bom para análise cuidadosa e leitura de tabelas/documentos.</li>
+        <li><a href="https://support.google.com/docs/answer/9582941">Análise de dados no Google Sheets</a> — recursos para olhar números antes de pedir à IA.</li>
+        <li><a href="https://www.perplexity.ai">perplexity.ai</a> — para trazer dados de mercado com fontes na hora de decidir.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>A <b>painel</b> lê e interpreta métricas e recomenda a ação — modelo de como transformar números em decisão sem chutar. Para garantir que os dados que embasam a decisão vêm de fontes reais, a <b>garimpo</b> traz pesquisa com citações verificáveis em vez de "achismo com cara de fato".</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno traz uma decisão real (pequena, profissional) e roda a matriz de prós, contras e riscos. Depois, faz a IA bancar o advogado do diabo da opção favorita. Compartilha com a turma: a análise mudou a inclinação inicial? Encerramos com o lembrete escrito no quadro: "a IA não assina por você".</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 2h</span><h3>Reuniões, e-mails e documentos</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> tirar peso da rotina de comunicação — preparar reuniões, transcrever e resumir, redigir e responder e-mails, e produzir documentos padronizados — com a IA cuidando do trabalho repetitivo.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Antes da reunião: usar a IA para montar pauta, objetivos e perguntas-chave.</li>
+        <li>Durante e depois: transcrever o áudio e transformar em resumo com decisões e responsáveis ("quem ficou de fazer o quê").</li>
+        <li>E-mails: redigir, responder e cuidar dos difíceis (cobrança, recusa, desculpa) com tom profissional.</li>
+        <li>Documentos: criar modelos reaproveitáveis (ata, briefing, proposta) para não começar do zero toda vez.</li>
+        <li>Cuidado com sigilo: o que pode e o que não pode colar numa IA (dados de cliente, informação confidencial) — sempre cheque a política da empresa.</li>
+        <li>A revisão humana antes de enviar continua obrigatória.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Cole a transcrição de uma reunião (pode ser uma fictícia preparada por você) e peça à IA: resumo em tópicos, lista de decisões e tabela de "responsável + tarefa + prazo". Mostre como em 30 segundos nasce uma ata que tomaria 20 minutos. Em seguida, demonstre um e-mail difícil: recusar um pedido de desconto sem queimar o cliente.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou colar a transcrição (ou minhas anotações) de uma reunião.
+
+Transforme em uma ata organizada com:
+1. Resumo em até 6 tópicos.
+2. Decisões tomadas (lista objetiva).
+3. Tabela de ações: Responsável | Tarefa | Prazo.
+4. Pendências ou pontos que ficaram em aberto.
+
+Se algo não estiver claro nas anotações, marque como
+"a confirmar" em vez de inventar. Escreva em português direto.
+
+TRANSCRIÇÃO/ANOTAÇÕES:
+[cole aqui]</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://otter.ai">otter.ai</a> — transcrição de reuniões em tempo real.</li>
+        <li><a href="https://support.google.com/meet/answer/14951883">Anotações com IA no Google Meet</a> — resumo automático de reuniões.</li>
+        <li><a href="https://support.microsoft.com/copilot-outlook">Copilot no Outlook</a> — redação e resumo de e-mails.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>A <b>sintese</b> resume transcrição e reunião preservando o essencial e sem inventar — exatamente o que a ata exige. Para os e-mails (boas-vindas, cobrança, oferta) na voz certa e sem hype, a <b>correio</b> dá a estrutura; e a <b>balcao</b> ajuda nos contatos com cliente, incluindo objeções e reclamações.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Metade da turma gera uma ata a partir de uma transcrição-exemplo; a outra metade redige um e-mail difícil real do próprio trabalho. Todos revisam à mão antes de "enviar" e marcam o que mudaram. Compartilhamento: o que a IA acertou de cara e o que só um humano que estava na reunião saberia corrigir.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 2h</span><h3>Planejamento e produtividade pessoal</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA para organizar a própria semana — priorizar tarefas, quebrar projetos grandes em passos e criar rotinas — sem cair na armadilha de produtividade pela produtividade.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li>Transformar uma lista bagunçada de tarefas em um plano com prioridades e ordem.</li>
+        <li>Quebrar um projeto grande ("organizar o evento da empresa") em etapas e prazos realistas.</li>
+        <li>Usar a IA como apoio para focar: o que fazer hoje, o que adiar, o que delegar ou descartar.</li>
+        <li>Criar rotinas e checklists reaproveitáveis para tarefas que se repetem.</li>
+        <li>O limite saudável: a IA organiza, mas o tempo e a energia são seus — não vire escravo da lista.</li>
+        <li>Cuidado com colar a própria agenda e dados pessoais sem critério.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Despeje, ao vivo, uma lista caótica de 12 tarefas misturadas (urgentes, bobas, grandes) e peça à IA para organizar por prioridade, separando "fazer hoje", "agendar" e "delegar/descartar". Depois pegue uma das tarefas grandes e mostre a IA quebrando em passos com prazos. A turma vê o caos virar plano em dois prompts.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou colar tudo que preciso fazer esta semana, sem ordem nenhuma.
+
+Me ajude a organizar:
+1. Separe as tarefas em: Fazer hoje | Agendar | Delegar/descartar.
+2. Dentro de "Fazer hoje", ordene por prioridade e diga o porquê.
+3. Para qualquer tarefa grande, sugira como quebrá-la em passos menores.
+4. No fim, me diga o que eu provavelmente posso simplesmente NÃO fazer.
+
+Seja realista com meu tempo. Não encha minha semana só pra parecer produtivo.
+
+MINHAS TAREFAS:
+[cole a lista]</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://todoist.com">todoist.com</a> — lista de tarefas simples para registrar o plano.</li>
+        <li><a href="https://www.notion.com">notion.com</a> — organização de projetos pessoais e profissionais.</li>
+        <li><a href="https://support.google.com/calendar">Ajuda do Google Agenda</a> — para transformar o plano em blocos de tempo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>A <b>maestro</b> ensina a quebrar uma tarefa grande em passos e coordená-los até o fim — exatamente o que um projeto pessoal pede. Quando o aluno quiser estruturar um plano de aprendizado ou uma trilha de hábitos, a <b>curriculo</b> ajuda a organizar objetivo, etapas e progressão.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Cada aluno joga a própria lista real da semana no prompt e sai da aula com um plano organizado por prioridade e um projeto grande já quebrado em passos. Desafio honesto: identificar pelo menos uma tarefa que dá pra simplesmente não fazer. Encerramos discutindo a diferença entre estar ocupado e ser produtivo.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 2h</span><h3>IA pra sua área (vendas, marketing, jurídico, RH)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aterrissar tudo na função de cada aluno — mostrar aplicações concretas por área e garantir que cada um saia com pelo menos um uso de IA pronto para a própria rotina profissional.</p>
+
+    <div class="bloco">
+      <h4>O que ensinar</h4>
+      <ul>
+        <li><b>Vendas:</b> scripts de abordagem, respostas a objeções, follow-up e personalização de propostas.</li>
+        <li><b>Marketing:</b> ideias de conteúdo, legendas, e-mails, variações de anúncio e análise de público.</li>
+        <li><b>Jurídico:</b> resumir contratos, comparar versões, explicar cláusulas em linguagem simples — sempre com revisão de um profissional, a IA não substitui advogado.</li>
+        <li><b>RH:</b> descrições de vaga, triagem inicial de currículos, perguntas de entrevista, comunicados internos.</li>
+        <li>O fio comum: em toda área, a IA faz o rascunho e o trabalho repetitivo; o julgamento técnico e a responsabilidade são do profissional.</li>
+        <li>Cuidados de cada área: sigilo de dados, vieses na triagem, limites legais.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo / demonstração ao vivo</h4>
+      <p>Faça uma "rodada por área": pergunte a profissão de 3 ou 4 alunos e gere, na hora, um uso de IA para cada um — um script de objeção para o vendedor, uma descrição de vaga para o de RH, um resumo de cláusula para o da área jurídica. Mostrar a IA se adaptando a realidades diferentes na mesma aula deixa claro que isso serve para todos.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um assistente especializado em apoiar quem trabalha com [sua área:
+vendas / marketing / jurídico / RH].
+
+Minha função: [seu cargo]. Minha empresa: [tipo de empresa].
+
+Tarefa concreta de hoje: [descreva a tarefa real, ex.: "responder um
+cliente que disse que está caro", "resumir este contrato",
+"escrever uma descrição de vaga para analista financeiro"].
+
+Faça o rascunho. Depois:
+- aponte o que EU preciso revisar antes de usar;
+- alerte se houver algum risco da minha área (sigilo, viés, limite legal).
+
+Não invente dados, valores ou cláusulas. Onde faltar informação, pergunte.</pre>
+    </div>
+
+    <div class="bloco">
+      <h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://chatgpt.com">chatgpt.com</a> e <a href="https://claude.ai">claude.ai</a> — bases para os usos por área.</li>
+        <li><a href="https://www.gov.br/lgpd">gov.br/lgpd</a> — referência sobre proteção de dados, essencial para RH e jurídico.</li>
+        <li><a href="https://www.gov.br/anpd">gov.br/anpd</a> — Autoridade Nacional de Proteção de Dados, para os limites de uso de dados pessoais.</li>
+      </ul>
+    </div>
+
+    <div class="bloco skills">
+      <h4>Skills do Engenho</h4>
+      <p>Por área, o Engenho tem ferramenta dedicada: <b>balcao</b> para scripts de vendas e atendimento (objeções, follow-up), <b>alavanca</b> para marketing e funil, <b>acordo</b> para propostas comerciais, e <b>pacto</b> para rascunhos de contrato (lembrando: ponto de partida, não substitui advogado). Para qualquer dúvida de dados pessoais, a <b>salvaguarda</b> orienta a adequação à LGPD.</p>
+    </div>
+
+    <div class="bloco pratica">
+      <h4>Prática em sala</h4>
+      <p>Entregável final do curso: cada aluno cria um uso de IA pronto para a própria função, usando o prompt adaptado à sua área. Roda, revisa e ajusta até ficar utilizável de verdade na segunda-feira. Encerramento do módulo: cada um apresenta seu caso em 1 minuto — a sala vira um catálogo vivo de aplicações reais, e fica claro que a decisão de como usar é sempre de cada um.</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>IA Multimodal</h2></div>
+  <p class="mod-resumo">Até aqui a IA leu e escreveu texto. Agora ela vê, desenha, ouve, fala e entende documentos e vídeo. Neste módulo você sai do chat só de texto e passa a trabalhar com imagem, voz, áudio, PDF, planilha e vídeo — sempre conferindo o que a máquina entregou. A decisão continua sendo sua: a IA produz, você revisa e assina.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 2h</span><h3>IA que vê — analisar imagens e prints</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a colar uma foto, um print de tela ou um gráfico no chat e pedir para a IA descrever, extrair texto, explicar um erro ou interpretar o que está na imagem — checando se ela acertou.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O que é IA multimodal: o mesmo modelo (ChatGPT, Gemini, Claude) que lê texto também "enxerga" imagens.</li>
+        <li>Como anexar uma imagem no celular e no computador: arrastar, colar (Ctrl+V) ou clicar no clipe.</li>
+        <li>Usos do dia a dia: ler um print de mensagem de erro, transcrever um cardápio/recibo, descrever uma foto, explicar um gráfico, traduzir um aviso em outra língua.</li>
+        <li>A pergunta certa muda tudo: "o que tem nessa imagem?" é fraco; "transcreva o texto desta nota fiscal em tabela: data, item, valor" é forte.</li>
+        <li>Limites: a IA pode "ler errado" números, datas e nomes próprios. Print borrado = resposta ruim. Sempre confira valores antes de usar.</li>
+        <li>Privacidade: print pode ter dado pessoal (CPF, endereço, saldo). Pense duas vezes antes de subir.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Tire um print da própria tela com uma mensagem de erro qualquer (ou use o print de um app), cole no ChatGPT e peça: "o que esse erro significa e o que eu faço?". Depois cole a foto de um recibo e peça a transcrição em tabela. Mostre na tela um caso em que a IA leu um número errado e como você percebeu conferindo com o original — esse é o ponto: a decisão é sua.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Analise a imagem que enviei. Faça três coisas, nesta ordem:
+1) Descreva objetivamente o que aparece (sem opinião).
+2) Transcreva TODO o texto legível exatamente como está.
+3) Diga o que NÃO conseguiu ler com certeza (números, nomes ou
+   datas duvidosos) para eu conferir no original.
+Se for um print de erro de sistema, explique em linguagem simples
+o que provavelmente causou e qual o primeiro passo para resolver.
+Não invente nada que não esteja visível na imagem.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://chatgpt.com">ChatGPT (OpenAI)</a> — anexar imagem e pedir análise/transcrição (visão integrada).</li>
+        <li><a href="https://gemini.google.com">Google Gemini</a> — forte em leitura de imagem e prints, integrado ao Google.</li>
+        <li><a href="https://claude.ai">Claude (Anthropic)</a> — bom para descrever e transcrever imagens com cuidado.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>bagagem</b> ajuda a montar o contexto certo junto com a imagem (o que a IA precisa saber além da foto). <b>lapidador</b> entra quando a primeira leitura veio genérica e você precisa refinar o pedido até a IA extrair exatamente o que importa.</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno tira um print do próprio celular (uma conta, um cardápio, um print de conversa sem dado sensível) e pede para a IA transcrever em tabela ou explicar. Em dupla, conferem se a IA leu algum número errado. Quem achar um erro de leitura ganha o "troféu do dia": provou na prática que a decisão é do humano.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 2h</span><h3>IA que cria imagens</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> gerar imagens do zero a partir de texto (geração) e editar imagens existentes, escrevendo um bom prompt visual e entendendo direitos de uso e limites.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Como funciona: você descreve em palavras, a IA desenha. Quanto melhor a descrição, melhor o resultado.</li>
+        <li>Anatomia de um prompt de imagem: assunto + ação + estilo + enquadramento + luz + cor + proporção (ex.: 16:9, quadrado).</li>
+        <li>As ferramentas e seus jeitos: DALL·E/ChatGPT e Gemini (dentro do chat, fácil), Midjourney (qualidade alta, via site/Discord), Adobe Firefly (foco em uso comercial seguro).</li>
+        <li>Editar em vez de criar: trocar fundo, remover objeto, expandir a cena, mudar cor — descrevendo a alteração.</li>
+        <li>Limites reais: mãos e texto dentro da imagem ainda saem tortos; rostos de pessoas reais e logos de marcas são problema (direito de imagem e marca).</li>
+        <li>Direitos e ética: cada ferramenta tem regra própria de uso comercial. Não copiar o estilo "no jeito de [artista vivo]". A decisão de publicar é sua — e a responsabilidade também.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Gere ao vivo uma imagem para um post fictício de uma cafeteria: primeiro um prompt fraco ("um café") e depois um prompt completo (assunto, estilo, luz, proporção) para mostrar o salto de qualidade. Em seguida, pegue uma foto simples e peça para a IA trocar o fundo. Comente onde a imagem "errou" e por que ainda precisa do olho humano.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Crie uma imagem para o Instagram de uma cafeteria de bairro.
+Assunto: uma xícara de café coado sobre uma mesa de madeira clara,
+com grãos de café espalhados ao lado.
+Estilo: fotografia realista, aconchegante, foco no primeiro plano,
+fundo levemente desfocado.
+Luz: manhã, luz natural lateral suave e quente.
+Cores: tons de marrom, creme e madeira.
+Proporção: quadrada (1:1).
+Sem texto na imagem, sem mãos, sem pessoas.</pre></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Edite a imagem que enviei: mantenha o produto exatamente igual,
+mas troque o fundo por uma parede lisa cor creme, com sombra suave.
+Não altere as cores nem a forma do produto. Entregue em alta
+resolução, proporção quadrada, pronta para post.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.midjourney.com">Midjourney</a> — geração de imagem de alta qualidade (via site, requer assinatura).</li>
+        <li><a href="https://openai.com/dall-e-3">DALL·E 3</a> — geração de imagem dentro do ChatGPT, fácil para começar.</li>
+        <li><a href="https://gemini.google.com">Google Gemini (geração de imagem)</a> — criar e editar imagem direto no chat.</li>
+        <li><a href="https://www.adobe.com/products/firefly.html">Adobe Firefly</a> — geração com foco em uso comercial seguro (modelo treinado com licença).</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>atelier</b> orienta a parte visual com a identidade certa (paleta, estilo, enquadramento) quando a imagem vai virar peça de marca. <b>canone</b> entra como referência de bom design — cores, tipografia e composição — para o aluno não cair no visual genérico de "imagem de IA".</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno cria uma imagem para um negócio real ou imaginário (capa de perfil, post, banner) usando a anatomia do prompt. Depois faz uma edição (troca de fundo ou cor) numa foto própria. No fim, votação rápida das três melhores e conversa sobre quais poderiam ser publicadas sem problema de direitos.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 2h</span><h3>IA que ouve e fala — voz e áudio</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA por voz (falar em vez de digitar), transcrever áudios e reuniões em texto e gerar narração/áudio a partir de texto — sabendo onde isso ajuda de verdade.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Falar com a IA: o modo de voz do ChatGPT e do Gemini no celular — útil dirigindo, cozinhando, andando.</li>
+        <li>Transcrição: transformar áudio de WhatsApp, reunião ou aula em texto pesquisável; depois pedir resumo.</li>
+        <li>Texto em voz (TTS): gerar uma narração para um vídeo, um áudio de aviso, um teste de locução.</li>
+        <li>Clonagem de voz: existe (ElevenLabs), é poderosa e perigosa — só com consentimento de quem é dono da voz. Golpe de "voz do parente" é real.</li>
+        <li>Limites: transcrição erra nomes próprios, gírias e áudio com barulho. Sempre revisar antes de usar como ata oficial.</li>
+        <li>Privacidade: transcrever reunião com outras pessoas envolve consentimento. Não é porque dá que deve.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Abra o modo de voz do ChatGPT no celular e faça uma pergunta falando, ao vivo. Depois pegue um áudio (pode ser um trecho gravado na hora) e mostre a transcrição + resumo automático. Por fim, gere uma narração curta com TTS a partir de um texto e compare uma voz que soa natural com uma que soa robótica.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vou colar a transcrição de um áudio/reunião abaixo. Faça:
+1) Limpe os "é", "tipo", repetições e ruídos, sem mudar o sentido.
+2) Resuma em até 8 pontos as decisões e informações principais.
+3) Liste as tarefas combinadas em formato: responsável — tarefa — prazo.
+4) Marque com [CONFERIR] qualquer nome, número ou data que pareça
+   incerto na transcrição, para eu validar.
+Não invente tarefas nem prazos que não estejam no texto.
+
+Transcrição:
+"""
+[cole aqui]
+"""</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://chatgpt.com">ChatGPT (modo de voz)</a> — conversar falando e transcrever áudios no app.</li>
+        <li><a href="https://elevenlabs.io">ElevenLabs</a> — geração de voz/narração realista e clonagem (usar com consentimento).</li>
+        <li><a href="https://otter.ai">Otter.ai</a> — transcrição automática de reuniões em texto.</li>
+        <li><a href="https://github.com/openai/whisper">Whisper (OpenAI)</a> — modelo aberto de transcrição de áudio, referência da área.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>sintese</b> é o coração da aula na hora de transformar uma transcrição longa em pontos-chave sem inventar. <b>bagagem</b> ajuda a dar à IA o contexto da reunião (quem é quem, qual o objetivo) para o resumo sair certo.</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Em duplas, um aluno grava um recado de 30 segundos no próprio celular; o outro transcreve com a IA e gera o resumo em tarefas. Depois conferem juntos o que a IA errou (nome, número). Quem quiser, testa o modo de voz fazendo uma pergunta falada. Encerramento com a conversa sobre voz clonada e golpes — "a decisão é sua, e a checagem também".</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 2h</span><h3>IA com documentos (PDF, planilhas)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> subir um PDF, contrato, manual ou planilha para a IA e fazer perguntas, extrair dados, comparar versões e resumir — sem cair na armadilha de confiar cegamente na resposta.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Como anexar arquivos no ChatGPT, Gemini e Claude (PDF, Word, Excel/CSV) e "conversar" com o documento.</li>
+        <li>Perguntas úteis: "resuma este contrato em 10 pontos", "quais são minhas obrigações?", "tem alguma cláusula de multa?", "extraia os valores em tabela".</li>
+        <li>Comparar dois documentos: "o que mudou entre a versão 1 e a 2 deste contrato?".</li>
+        <li>Cuidado com documento longo: a IA pode "pular" partes. Pergunte por seção, não tudo de uma vez.</li>
+        <li>A regra de ouro: pedir que a IA cite de qual página/trecho tirou cada resposta, para você conferir na fonte.</li>
+        <li>Privacidade e sigilo: contrato, holerite e dado de cliente — pense onde está subindo e o que a ferramenta faz com isso. Documento jurídico sério: IA ajuda a entender, advogado decide.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Suba um contrato de exemplo (modelo de aluguel ou prestação de serviço) e peça um resumo em 10 pontos com as obrigações e prazos, exigindo a citação da cláusula de origem. Depois suba uma planilha simples (vendas por mês) e peça o total, o melhor mês e um gráfico. Mostre como conferir um número na planilha original — a IA é assistente, não auditora.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é meu assistente de leitura de documentos. Anexei um contrato.
+Faça, em português claro:
+1) Resumo em até 10 pontos do que o documento trata.
+2) Minhas obrigações e os prazos (lista).
+3) Cláusulas de risco: multa, rescisão, renovação automática, reajuste.
+4) Para CADA ponto acima, cite a cláusula ou a página de origem.
+5) Liste 3 dúvidas que eu deveria perguntar a um advogado.
+Se algo não estiver no documento, diga "não consta" — não suponha.</pre></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Anexei uma planilha de vendas (uma linha por venda, com data e valor).
+Analise e responda:
+1) Total geral e total por mês (em tabela).
+2) Mês de maior e de menor venda.
+3) Ticket médio.
+4) Uma observação sobre tendência (crescendo, caindo, estável).
+Mostre as contas de forma simples e me diga em qual coluna você se
+baseou, para eu conferir. Não invente linhas que não existem.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://claude.ai">Claude (Anthropic)</a> — forte em ler documentos longos e PDFs com fidelidade.</li>
+        <li><a href="https://chatgpt.com">ChatGPT</a> — análise de PDF e planilha (incluindo cálculos sobre os dados).</li>
+        <li><a href="https://gemini.google.com">Google Gemini</a> — integra com Google Drive/Docs/Planilhas para trabalhar com seus arquivos.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>bagagem</b> ensina a preparar o documento e o contexto certo antes de jogar tudo na IA (o que incluir, o que cortar). <b>sintese</b> resume o documento longo preservando o essencial. Para conferir o que a IA afirmou, <b>garimpo</b> ajuda a validar uma cláusula ou afirmação contra fontes externas confiáveis.</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno sobe um documento próprio sem dado sigiloso (um manual, um termo de serviço de app, um regulamento) e faz três perguntas reais a ele. Tarefa obrigatória: pedir a citação da página/trecho e abrir o documento para conferir uma resposta. Discussão final: o que você confiaria e o que você levaria para um especialista.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 2h</span><h3>IA e vídeo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que a IA já faz com vídeo hoje — resumir e perguntar sobre um vídeo, gerar legendas e cortes, e criar trechos de vídeo a partir de texto — com olhar crítico sobre qualidade e deepfakes.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Entender vídeo: colar o link de um vídeo longo e pedir resumo, pontos principais e "em que minuto fala sobre X".</li>
+        <li>Legendas e cortes: gerar legenda automática, transcrever e cortar os melhores trechos para Reels/Shorts.</li>
+        <li>Texto para vídeo (geração): ferramentas que criam clipes a partir de descrição (Sora, Runway) e avatares que falam um roteiro (HeyGen) — o que dá e o que ainda não dá.</li>
+        <li>Limites honestos: vídeo gerado é curto, caro, às vezes "estranho", e a coerência entre cenas ainda falha. Não é botão mágico.</li>
+        <li>Deepfake e responsabilidade: dá para fazer alguém "dizer" o que não disse. Isso é sério — ética e lei. A decisão de usar (ou não) é sua, e você responde por ela.</li>
+        <li>Fluxo realista de quem produz conteúdo: roteiro → narração/avatar → legenda → cortes, com a IA ajudando em cada etapa e o humano dirigindo.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pegue um vídeo do YouTube (uma palestra ou aula) e, com a IA, gere o resumo e a lista de tópicos com marcação de tempo — mostrando como pular direto para o trecho que interessa. Em seguida, mostre um exemplo de avatar/locução gerada (HeyGen) e um clipe de geração de vídeo, comentando onde "denuncia" que é IA. Fecha com a conversa sobre deepfake.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vou te passar a transcrição (ou o link) de um vídeo. Quero:
+1) Resumo do vídeo em até 10 pontos.
+2) Os 5 trechos mais fortes para virar cortes curtos (Reels/Shorts),
+   com a marcação aproximada de minuto e o motivo de cada um.
+3) Para cada corte, uma legenda-gancho de até 1 linha.
+4) Uma lista de tópicos com tempo, para navegar (00:00 — assunto).
+Baseie-se só no conteúdo do vídeo; se algo não foi dito, não inclua.
+
+Conteúdo:
+"""
+[cole a transcrição ou o link]
+"""</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://openai.com/sora">Sora (OpenAI)</a> — geração de vídeo a partir de texto.</li>
+        <li><a href="https://runwayml.com">Runway</a> — geração e edição de vídeo com IA (texto/imagem para vídeo).</li>
+        <li><a href="https://www.heygen.com">HeyGen</a> — avatares que falam um roteiro, com dublagem e legenda.</li>
+        <li><a href="https://gemini.google.com">Google Gemini</a> — resumir e perguntar sobre vídeos do YouTube.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>sintese</b> condensa o vídeo longo em pontos e tópicos com tempo. Para roteirizar o que vira vídeo, as habilidades de conteúdo do Engenho ajudam no gancho e na estrutura anti-hype; <b>lapidador</b> refina os cortes e legendas até ficarem afiados, sem encheção.</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Em grupos, escolhem um vídeo do YouTube de até 15 min, geram o resumo com marcação de tempo e definem 3 cortes para Reels com legenda-gancho. Quem quiser testa um avatar/locução curta. Encerramento do módulo: cada grupo aponta um trecho onde a IA exagerou ou errou — reforço do "a decisão é sua".</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>Dados, Pesquisa e Conhecimento</h2></div>
+  <p class="mod-resumo">A IA vira sua sala de pesquisa, sua analista de dados e seu professor particular — desde que você cobre fontes. Aqui você aprende a pesquisar a fundo com citações verificáveis, analisar planilhas e dados, resumir conteúdo longo sem perder o essencial, usar a IA como tutor para aprender qualquer coisa e montar sua própria base de conhecimento pessoal. O fio condutor é um só: checar a fonte antes de acreditar. A decisão é sua.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 2h</span><h3>Pesquisar a fundo com IA (e checar fontes)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA para pesquisar um tema com profundidade e, principalmente, exigir e conferir as fontes — separando o que é fato verificável do que é "invenção confiante" (alucinação).</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>A diferença entre chat comum (pode inventar) e modo de pesquisa com web (busca e cita): Perplexity, ChatGPT com busca, Gemini, Deep Research.</li>
+        <li>O que é alucinação: a IA preenche lacunas com algo plausível e errado. Citação inventada existe.</li>
+        <li>Como pedir bem: tema claro, pedir fontes com link, pedir datas, pedir visões divergentes.</li>
+        <li>Checar a fonte: clicar no link, ver se o site é sério, ver a data, ver se a fonte realmente diz aquilo.</li>
+        <li>Triangular: bater a mesma afirmação em duas ou três fontes independentes antes de acreditar.</li>
+        <li>Quando NÃO confiar: saúde, dinheiro, lei e decisões importantes — IA orienta, especialista confirma.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Faça a mesma pergunta no ChatGPT comum e no Perplexity (com fontes), ao vivo, sobre um tema atual. Mostre as citações do Perplexity, clique em um link e confira se a fonte realmente afirma aquilo. Depois force uma "pegadinha": peça uma referência específica e mostre como verificar se ela existe de verdade — o momento mais importante da aula.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Pesquise a fundo o seguinte tema e responda com rigor:
+TEMA: [escreva aqui]
+
+Regras:
+- Traga apenas informações que você possa sustentar com fonte.
+- Para cada afirmação importante, inclua a fonte com LINK e a DATA.
+- Use pelo menos 3 fontes independentes e diga se elas concordam.
+- Separe claramente FATO (com fonte) de OPINIÃO/ESTIMATIVA.
+- Se não houver fonte confiável para algo, escreva
+  "não encontrei fonte confiável" — não preencha com suposição.
+- Ao final, liste 3 pontos que eu deveria verificar por conta própria.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://www.perplexity.ai">Perplexity</a> — busca com IA que responde citando as fontes com link.</li>
+        <li><a href="https://chatgpt.com">ChatGPT (com busca na web)</a> — pesquisa atual com referências.</li>
+        <li><a href="https://gemini.google.com">Google Gemini / Deep Research</a> — pesquisa aprofundada com relatório e fontes.</li>
+        <li><a href="https://scholar.google.com">Google Acadêmico</a> — conferir se um estudo/fonte citado existe mesmo.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>garimpo</b> é a habilidade central desta aula: pesquisa profunda na web com múltiplas fontes e respostas com citações verificáveis — separa o ouro do ruído. <b>bagagem</b> ajuda a delimitar bem o tema e o contexto para a pesquisa não sair genérica.</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno pesquisa um tema do seu interesse (do trabalho ou pessoal) exigindo fontes com link. Tarefa obrigatória: abrir pelo menos uma fonte e confirmar se ela diz mesmo o que a IA afirmou. Quem encontrar uma fonte que não bate (ou um link quebrado) compartilha — vira a lição do dia sobre por que a checagem não é opcional.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 2h</span><h3>Analisar dados e planilhas</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> jogar uma planilha ou um conjunto de dados na IA e tirar respostas úteis — totais, médias, tendências, gráficos e até sugestões de fórmula — conferindo os números na fonte.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Subir CSV/Excel no ChatGPT e Gemini e fazer perguntas em linguagem natural ("qual produto mais vendeu?").</li>
+        <li>Pedir cálculos: total, média, ticket médio, crescimento mês a mês, top 5.</li>
+        <li>Gerar gráficos a partir dos dados e ler o que o gráfico está dizendo.</li>
+        <li>Pedir a fórmula de Excel/Planilhas em vez de só o resultado ("me dê o PROCV/SOMASE para isso").</li>
+        <li>Limpar dados bagunçados: padronizar datas, separar colunas, remover duplicados — descrevendo o problema.</li>
+        <li>O risco: a IA pode errar conta com muitos dados ou "arredondar a realidade". Confira os totais com a planilha original antes de decidir.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Suba uma planilha de vendas de exemplo e peça ao vivo: total por mês, produto campeão, ticket médio e um gráfico de evolução. Depois peça a fórmula de Planilhas Google para calcular o total por categoria e mostre colando na planilha real. Confira um total da IA contra a soma da própria planilha — se bater, ótimo; se não, é a prova viva de por que conferir.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Anexei uma planilha de [vendas/gastos/clientes]. Aja como analista
+de dados e me entregue, em português simples:
+1) Visão geral: quantas linhas, que colunas, período coberto.
+2) Os 5 números que mais importam (ex.: total, média, maior, menor,
+   crescimento), em tabela.
+3) Um gráfico que ajude a enxergar a tendência.
+4) Duas observações práticas que esses dados sugerem.
+5) Diga em quais colunas você se baseou em cada cálculo, para eu
+   conferir na planilha. Se houver dados faltando ou estranhos
+   (datas vazias, valores negativos), aponte antes de calcular.</pre></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>No Google Planilhas, tenho a coluna A com a categoria do produto e
+a coluna B com o valor da venda. Quero somar o total vendido por
+categoria. Me dê a fórmula pronta para colar, explique em uma linha
+o que ela faz e diga onde colá-la. Se houver uma forma mais simples
+com tabela dinâmica, descreva o passo a passo também.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://chatgpt.com">ChatGPT (análise de dados)</a> — sobe CSV/Excel, calcula e gera gráficos.</li>
+        <li><a href="https://gemini.google.com">Google Gemini</a> — integra com Google Planilhas e ajuda com fórmulas.</li>
+        <li><a href="https://workspace.google.com/products/sheets/">Google Planilhas</a> — onde colar fórmulas e montar tabelas dinâmicas.</li>
+        <li><a href="https://support.microsoft.com/excel">Microsoft Excel — ajuda de fórmulas</a> — referência oficial das funções.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>bagagem</b> ajuda a preparar e organizar os dados antes de mandar (o que incluir, como limpar) para a análise sair confiável. <b>sintese</b> transforma o resultado da análise em poucos pontos-chave para você decidir. <b>garimpo</b> entra se você precisar validar um número contra uma referência externa (ex.: um índice de mercado).</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno usa uma planilha própria sem dado sigiloso (gastos do mês, vendas, lista de contatos) e pede três respostas + um gráfico. Tarefa obrigatória: conferir um total da IA contra a soma da planilha. Quem trabalha com Excel pede uma fórmula e testa na hora. Roda de troca: que pergunta deu o insight mais útil.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 2h</span><h3>Resumir e sintetizar conteúdo longo</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> transformar textos longos (artigos, relatórios, e-mails, transcrições) em resumos fiéis e úteis — no formato e no tamanho certos para cada situação — sem distorcer o original.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>Resumir não é cortar pela metade: é preservar o essencial e jogar fora o supérfluo.</li>
+        <li>Escolher o formato: tópicos, parágrafo, "explique para um leigo", tabela, TL;DR de uma linha.</li>
+        <li>Ajustar o público: resumo para o chefe, para o cliente, para você mesmo daqui a seis meses.</li>
+        <li>Resumir uma pilha: vários documentos ou e-mails de uma vez, achando o que se repete e o que diverge.</li>
+        <li>O risco da síntese: a IA pode cortar a ressalva importante ou inverter um sentido. Confira o resumo contra o original nos pontos que vão virar decisão.</li>
+        <li>Boa prática: pedir que a IA não invente nada que não esteja no texto e marque o que ficou em dúvida.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Pegue um artigo longo ou um relatório e gere três resumos diferentes do MESMO texto: um TL;DR de uma linha, um em 7 tópicos e um "explique para minha avó". Mostre como o formato muda o uso. Depois faça o teste de fidelidade: pergunte "isso que você resumiu está mesmo no texto?" e confira um ponto no original.</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Resuma o texto abaixo SEM inventar nada que não esteja nele.
+Entregue em três versões:
+1) TL;DR em uma frase.
+2) Resumo em até 7 tópicos com os pontos principais.
+3) "Explique para um leigo" em um parágrafo simples.
+Regras:
+- Preserve ressalvas, exceções e números importantes (não corte).
+- Se houver algo ambíguo no texto, marque com [DÚVIDA].
+- Não adicione conclusões ou opiniões que o texto não traz.
+
+Texto:
+"""
+[cole aqui]
+"""</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://claude.ai">Claude (Anthropic)</a> — excelente para sintetizar textos longos com fidelidade.</li>
+        <li><a href="https://chatgpt.com">ChatGPT</a> — resumos em vários formatos e ajuste de público.</li>
+        <li><a href="https://notebooklm.google.com">NotebookLM (Google)</a> — resume e cruza vários documentos seus, citando o trecho de origem.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>sintese</b> é a estrela da aula: resume conteúdo longo preservando o essencial e sem inventar. <b>lapidador</b> entra quando o resumo veio bom mas no tom ou tamanho errado, ajustando até ficar exatamente como você precisa. <b>bagagem</b> ajuda quando há muitos documentos: o que reunir e como organizar antes de resumir.</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno traz um texto longo real (um artigo, um e-mail extenso, um regulamento) e gera dois resumos em formatos diferentes para públicos diferentes. Teste de fidelidade obrigatório: escolher um ponto do resumo e achar a frase correspondente no original. Quem detectar a IA "comendo" uma ressalva importante compartilha o achado.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 2h</span><h3>IA como tutor — aprender qualquer coisa</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> usar a IA como professor particular paciente para aprender um assunto novo do zero, no seu ritmo — com plano de estudo, explicações no seu nível, exercícios e correção — sem deixar a IA "fazer por você".</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>A IA como tutor 24h: explica do jeito que você entende, repete sem perder a paciência, dá exemplos do seu dia a dia.</li>
+        <li>Pedir um plano de estudo: do zero ao intermediário, em passos, com tempo realista.</li>
+        <li>Aprender de verdade: pedir que ela faça PERGUNTAS para você, não só dê respostas; pedir exercícios e correção comentada.</li>
+        <li>Ajustar o nível: "explique como se eu tivesse 12 anos", depois "agora aprofunde".</li>
+        <li>Técnica de estudo: explicar o que aprendeu de volta para a IA e ela aponta o que você ainda não entendeu (efeito Feynman).</li>
+        <li>O limite: a IA pode ensinar algo errado com confiança. Em temas técnicos/sensíveis, confira com fonte oficial — e o esforço de aprender continua sendo seu.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Escolha um tema que a turma não domina (ex.: "como funciona o Pix por trás", "noções de investimento", "o básico de fotografia") e monte ao vivo um plano de 7 dias. Depois peça à IA para te ensinar a primeira lição fazendo perguntas em vez de despejar texto. Mostre o truque do "me explica de novo, mas como se eu tivesse 10 anos".</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero aprender [ASSUNTO] partindo do zero. Seja meu tutor paciente.
+Sobre mim: [seu nível atual e por que quer aprender].
+Faça assim:
+1) Monte um plano de estudo em 7 passos, do básico ao intermediário,
+   com o que estudar em cada passo e quanto tempo leva.
+2) Comece pelo passo 1: explique com exemplos do dia a dia e,
+   ao final, me faça 3 perguntas para testar se entendi.
+3) Espere minhas respostas, corrija com gentileza e só então avance.
+Use linguagem simples. Quando o tema for técnico ou sensível, avise
+que eu devo conferir em fonte oficial. Não avance sem eu responder.</pre></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vou te explicar com minhas palavras o que entendi sobre [tópico].
+Aja como professor: aponte onde acertei, onde errei e o que ficou
+faltando. Não reescreva tudo — só corrija os pontos fracos e me
+faça UMA pergunta para fechar a lacuna. Aqui vai minha explicação:
+"""
+[escreva o que você entendeu]
+"""</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://chatgpt.com">ChatGPT</a> — tutor versátil, com plano de estudo, exercícios e correção.</li>
+        <li><a href="https://claude.ai">Claude (Anthropic)</a> — bom para explicações claras e pacientes no seu ritmo.</li>
+        <li><a href="https://gemini.google.com">Google Gemini</a> — explica temas e integra com material da web.</li>
+        <li><a href="https://notebooklm.google.com">NotebookLM</a> — estudar a partir dos SEUS materiais (apostila, PDF, anotações).</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>bagagem</b> ajuda a dar à IA o contexto do seu nível e objetivo para a explicação cair no ponto. <b>lapidador</b> refina a explicação quando vem genérica ou difícil demais ("muito técnico", "muito raso"). <b>garimpo</b> entra para conferir, em fonte confiável, aquilo que você aprendeu em tema sensível.</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno escolhe algo que sempre quis entender e pede à IA um plano de 7 dias + a primeira lição com perguntas. Em dupla, um "ensina" para a IA o que entendeu e mostra a correção ao colega. Fechamento: a IA é a melhor tutora paciente do mundo, mas quem estuda é você — a decisão e o esforço são seus.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 2h</span><h3>Construindo uma base de conhecimento pessoal</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> reunir seus próprios materiais (anotações, PDFs, links, documentos) em um lugar onde a IA pesquisa, responde e cita SÓ a partir do que é seu — montando um "segundo cérebro" confiável e privado.</p>
+    <div class="bloco"><h4>O que ensinar</h4>
+      <ul>
+        <li>O conceito de base de conhecimento pessoal ("segundo cérebro"): em vez de perguntar à internet, você pergunta aos SEUS documentos.</li>
+        <li>NotebookLM na prática: criar um caderno, subir fontes (PDF, texto, link, áudio) e fazer perguntas que vêm com citação do trecho de origem.</li>
+        <li>Vantagem decisiva: a IA responde a partir das suas fontes e cita de onde tirou — muito menos alucinação, fácil de conferir.</li>
+        <li>Organização: separar por assunto/projeto, dar nomes claros, manter atualizado.</li>
+        <li>Usos reais: estudar para uma prova, dominar o material de um produto, guardar a memória de um projeto, montar um FAQ do seu negócio.</li>
+        <li>Privacidade e dono do conhecimento: é seu material; entenda onde está hospedado e o que a ferramenta pode fazer com ele. Você é o curador — a decisão do que entra é sua.</li>
+      </ul>
+    </div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
+      <p>Crie um caderno no NotebookLM ao vivo e suba 2 ou 3 fontes (um PDF, um texto colado, um link). Faça perguntas e mostre como cada resposta vem com a citação do trecho — clique na citação para abrir a fonte. Peça um resumo geral e um "guia de estudo" gerado a partir só desses materiais. Compare com perguntar a mesma coisa para o ChatGPT comum (que não conhece seus arquivos).</p>
+    </div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Use SOMENTE as fontes que adicionei a este caderno. Não use
+conhecimento externo. Faça:
+1) Um resumo geral do que estas fontes cobrem (em tópicos).
+2) Os 10 conceitos-chave, cada um com a citação do trecho de origem.
+3) Um guia de estudo: 8 perguntas e respostas baseadas nas fontes.
+4) Aponte contradições ou lacunas entre as fontes, se houver.
+Se eu perguntar algo que não está nas fontes, responda
+"não consta nos materiais" — não complete com suposição.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4>
+      <ul>
+        <li><a href="https://notebooklm.google.com">NotebookLM (Google)</a> — base de conhecimento pessoal: sobe suas fontes e responde citando o trecho.</li>
+        <li><a href="https://obsidian.md">Obsidian</a> — anotações pessoais em arquivos seus, base do "segundo cérebro".</li>
+        <li><a href="https://www.notion.com">Notion (Notion AI)</a> — organizar documentos e perguntar à sua própria base.</li>
+        <li><a href="https://claude.ai/projects">Claude (Projects)</a> — guardar arquivos de contexto e conversar sempre com eles.</li>
+      </ul>
+    </div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4>
+      <p><b>bagagem</b> é a habilidade-mãe desta aula: ensina o que incluir, o que cortar e como organizar o contexto para a IA responder pro SEU caso. <b>sintese</b> condensa cada fonte antes de entrar na base. <b>garimpo</b> ajuda a achar e validar boas fontes externas para enriquecer o caderno antes de subir.</p>
+    </div>
+    <div class="bloco pratica"><h4>Prática em sala</h4>
+      <p>Cada aluno cria seu primeiro caderno no NotebookLM com 2 ou 3 materiais próprios (sobre o trabalho, um estudo, um hobby) e faz três perguntas, conferindo as citações. Tarefa final do curso: definir UM tema pessoal e listar quais fontes vai reunir nessa base ao longo do próximo mês. Encerramento: você agora tem ferramentas de sobra — a decisão do que construir é sua.</p>
+    </div>
+  </article>
+</section>
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Automação e Agentes</h2></div>
+  <p class="mod-resumo">Fazer a IA agir, não só responder — conectar ao seu fluxo. Aqui a IA sai do chat e entra no seu dia: dispara tarefas, lê planilhas, manda e-mails e coordena trabalhos grandes. Você decide o que automatizar e onde mantém a mão no volante. A decisão é sua.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31 · 2h</span><h3>O que são agentes de IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender, sem mística, a diferença entre um chatbot que responde e um agente que executa uma sequência de passos com ferramentas, e quando faz sentido (ou não) usar um.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Chatbot vs. agente: o chatbot devolve texto; o agente recebe um objetivo, planeja passos, usa ferramentas (busca, calendário, e-mail, planilha) e verifica o resultado.</li>
+      <li>O ciclo de um agente em linguagem simples: objetivo → plano → ação → observa o que voltou → corrige → repete até terminar.</li>
+      <li>O que é uma "ferramenta" para a IA: uma ação que ela pode disparar no mundo real (mandar um e-mail, criar um evento, consultar um site).</li>
+      <li>Onde agente brilha: tarefas repetitivas, com passos claros e baixo risco. Onde NÃO usar: decisões irreversíveis, dinheiro saindo, dado sensível sem revisão humana.</li>
+      <li>O princípio do humano no controle: agente sugere e executa o operacional; quem aprova o que importa é você.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>No projetor, dou à IA um objetivo de várias etapas: "pesquise os 3 principais concorrentes da minha padaria no bairro, resuma preço e diferencial de cada um e monte uma tabela comparativa". A turma vê a IA quebrar sozinha em sub-passos (buscar, ler, resumir, organizar) em vez de cuspir uma resposta única. Depois faço o contraste: peço a mesma coisa como pergunta solta e mostro como fica mais raso. Fica visível a diferença entre "responder" e "agir por etapas".</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Aja como um agente que trabalha por etapas, não me dê tudo de uma vez.
+
+Objetivo: montar uma tabela comparativa dos 3 principais concorrentes do meu negócio.
+Meu negócio: [descreva: padaria artesanal no bairro X, cidade Y].
+
+Trabalhe assim, mostrando cada etapa antes de seguir:
+1. Liste quais informações você precisa buscar (preço, diferencial, horário, avaliação).
+2. Para cada concorrente, organize o que encontrar.
+3. Monte uma tabela comparativa final.
+4. No fim, aponte 1 oportunidade clara onde meu negócio pode se diferenciar.
+
+Antes de cada etapa, diga em uma linha o que vai fazer. Se faltar algum dado, me pergunte em vez de inventar.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents (Anthropic)</a> — referência sóbria sobre o que é (e não é) um agente.</li>
+      <li><a href="https://www.ibm.com/think/topics/ai-agents">What are AI agents? (IBM)</a> — explicação introdutória e neutra do conceito.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p><b>maestro</b> (orquestração) entra como a mentalidade-base da aula: ele ajuda a quebrar uma tarefa grande em passos encadeados e a verificar entre etapas — exatamente o raciocínio que um agente automatiza.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno escolhe uma tarefa de várias etapas do próprio trabalho e reescreve o prompt acima para ela. Em duplas, um lê os passos que a IA propôs e o outro avalia: "isso eu deixaria a IA fazer sozinha? Onde eu colocaria um freio?". Compartilhamos 3 exemplos no telão.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32 · 2h</span><h3>Conectando IAs ao seu fluxo (ferramentas no-code)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> sair do chat e ligar a IA às ferramentas que o aluno já usa (e-mail, planilha, formulário) usando plataformas no-code como Zapier e Make, sem escrever código.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O conceito de gatilho → ação: "quando chega um formulário novo (gatilho), a IA resume e manda no meu e-mail (ação)".</li>
+      <li>Zapier e Make: o que são, quando um é mais simples (Zapier) e quando o outro dá mais controle visual (Make).</li>
+      <li>Conectar uma etapa de IA no meio do fluxo: receber um texto, pedir para a IA classificar/resumir/responder, e mandar o resultado adiante.</li>
+      <li>Casos do dia a dia: triagem de e-mails, resposta automática de dúvidas frequentes, resumo de respostas de formulário, organização de leads em planilha.</li>
+      <li>Cuidados: comece com volume baixo, teste com dados de mentira, e sempre deixe um passo de revisão antes de algo sair para um cliente.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Monto ao vivo um fluxo simples no Make: um Google Forms de "fale conosco" como gatilho, uma etapa de IA que classifica a mensagem em "elogio / dúvida / reclamação" e resume em uma frase, e o resultado caindo organizado numa linha de Google Sheets. Envio uma resposta de teste pelo celular e a turma vê a linha aparecer classificada. Mostro o painel de execução para deixar claro que dá para auditar cada passo.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é a etapa de IA dentro de uma automação. Recebe o texto bruto de um formulário de contato e devolve um resultado curto e padronizado.
+
+Texto recebido:
+"""
+{{mensagem_do_formulario}}
+"""
+
+Devolva EXATAMENTE neste formato, sem texto extra:
+Categoria: [Elogio | Dúvida | Reclamação | Orçamento]
+Urgência: [Baixa | Média | Alta]
+Resumo: [uma frase de no máximo 15 palavras]
+Sugestão de resposta: [2 frases curtas e educadas]
+
+Se a mensagem estiver vazia ou ilegível, responda apenas: Categoria: Indefinido.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://zapier.com/">Zapier</a> — automação no-code com plano gratuito para começar.</li>
+      <li><a href="https://www.make.com/">Make</a> — automação visual com mais controle sobre cada passo.</li>
+      <li><a href="https://zapier.com/ai">Zapier AI</a> — recursos de IA já integrados aos fluxos do Zapier.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p><b>maestro</b> ajuda a desenhar a sequência gatilho→etapas→verificação antes de montar o fluxo. <b>salvaguarda</b> (LGPD) entra para lembrar que, se o formulário coleta nome/e-mail/telefone, isso é dado pessoal e precisa de consentimento e cuidado no armazenamento.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno cria uma conta gratuita no Zapier ou Make e monta o fluxo mais simples possível: um gatilho real do próprio trabalho + uma etapa de IA com o prompt acima adaptado. Quem não tiver caso próprio usa o de "fale conosco". Circulo pela sala ajudando a destravar conexões.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33 · 2h</span><h3>Orquestrando tarefas grandes (quebrar e coordenar)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> aprender a transformar um pedido grande e confuso ("organize meu lançamento") em uma sequência de etapas menores que a IA executa e você coordena, sem ela se perder no meio.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>Por que a IA se perde em tarefas grandes: pedido vago demais, contexto comprido, muitos objetivos misturados.</li>
+      <li>A técnica de decomposição: primeiro pedir o plano, revisar o plano, e só então executar passo a passo.</li>
+      <li>Coordenar etapas: usar a saída de uma etapa como entrada da próxima (ex.: o roteiro vira o roteiro detalhado, que vira a lista de tarefas).</li>
+      <li>Pontos de verificação ("checkpoints"): onde você para, confere e corrige antes de deixar seguir.</li>
+      <li>Quando paralelizar (fazer duas frentes ao mesmo tempo) e quando manter em fila (uma depende da outra).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Pego um pedido propositalmente grande — "organize o lançamento do meu curso online" — e mostro o resultado quando jogado de uma vez (genérico e raso). Depois aplico a decomposição: peço primeiro só o plano em etapas, corrijo uma etapa no ar com a turma, e então executo apenas a primeira ("cronograma de 4 semanas"). Fica evidente que coordenar em pedaços entrega muito mais qualidade do que um megaprompt.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vou te dar uma tarefa grande. NÃO execute ainda. Primeiro vamos planejar.
+
+Tarefa: [ex.: organizar o lançamento do meu curso online sobre confeitaria].
+Contexto: [público, prazo, orçamento, o que já existe].
+
+Etapa 1 — Plano:
+Quebre a tarefa em no máximo 6 etapas, em ordem, cada uma com uma frase explicando o resultado esperado. Diga quais podem ser feitas em paralelo e quais dependem de uma anterior.
+
+Pare aqui e me mostre o plano. Vou revisar e te dizer "ok" ou pedir ajustes.
+Só depois que eu aprovar é que executamos UMA etapa por vez, sempre me mostrando o resultado antes de seguir para a próxima.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents (Anthropic)</a> — os padrões de "prompt chaining" e orquestração explicados.</li>
+      <li><a href="https://www.promptingguide.ai/techniques/decomposition">Prompt Decomposition (Prompting Guide)</a> — guia da técnica de quebrar problemas grandes.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p><b>maestro</b> é a skill central desta aula: ele existe justamente para quebrar uma tarefa grande em passos, encadear, paralelizar o que dá e verificar entre etapas — a versão estruturada do que o aluno faz à mão aqui.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno traz uma "coisa grande" travada (mudar de sistema, organizar um evento, reformular um material) e usa o prompt para arrancar só o plano em etapas. Em trio, discutem: "onde colocar os checkpoints?" e marcam no plano onde param para conferir. Não executamos tudo — o exercício é aprender a coordenar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34 · 2h</span><h3>Skills e capacidades — IA que faz, não só responde</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o conceito de "skill" (uma capacidade reutilizável que ensina a IA a executar bem um tipo de tarefa) e como dar à IA habilidades específicas em vez de recomeçar do zero toda vez.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é uma skill na prática: um conjunto de instruções, padrões e exemplos que você guarda e reaproveita, em vez de reescrever o mesmo prompt sempre.</li>
+      <li>A diferença entre pedir uma resposta e dar uma capacidade: "me ajude a escrever um e-mail" vs. "use minha skill de e-mails, que já sabe meu tom, meu público e minhas regras".</li>
+      <li>Como nasce uma skill boa: pega uma tarefa que você repete, documenta o passo a passo e os critérios de qualidade, e transforma num molde.</li>
+      <li>Skills + agentes: a skill é o "como fazer bem"; o agente é "quem executa". Juntas, viram automação confiável.</li>
+      <li>Apresentação da Suíte Engenho como exemplo real de skills prontas (orquestração, segurança, LGPD, design, marketing).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Mostro no telão duas execuções da mesma tarefa: escrever um post de divulgação. A primeira, com um pedido solto, sai genérica. A segunda, "carregando" uma skill — um bloco fixo que define tom sem hype, estrutura gancho→valor→CTA e proibições (nada de promessa milagrosa) — sai com a cara do negócio. A turma percebe que a skill é conhecimento empacotado e reaproveitável, não um truque de prompt.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vamos criar uma SKILL minha reutilizável para uma tarefa que eu repito.
+
+Tarefa que eu repito: [ex.: responder dúvidas de clientes no WhatsApp].
+
+Me ajude a empacotar isso como uma skill, no formato:
+1. Quando usar esta skill (gatilho).
+2. Tom e estilo (como eu falo: [descreva]).
+3. Passo a passo do que fazer.
+4. Regras e proibições (o que NUNCA fazer — ex.: prometer prazo que não posso cumprir).
+5. Um exemplo de entrada e a saída ideal.
+
+Escreva isso como um bloco que eu possa colar no começo de qualquer conversa futura para a IA já "saber" fazer essa tarefa do meu jeito. Pergunte o que faltar antes de finalizar.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.anthropic.com/news/skills">Agent Skills (Anthropic)</a> — anúncio e explicação do conceito de skills para agentes.</li>
+      <li><a href="https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview">Documentação de Agent Skills (Claude)</a> — como skills são estruturadas e usadas.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>A aula inteira usa a Suíte Engenho como vitrine viva: <b>maestro</b> (orquestração), <b>alicerce</b> (define como a IA deve trabalhar no seu projeto), <b>salvaguarda</b> (LGPD) e <b>bastiao</b> (segurança) são apresentadas como exemplos de capacidades empacotadas — o aluno vê que skills não são teoria, são moldes prontos.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno escreve sua primeira skill para uma tarefa que repete toda semana, usando o prompt acima. Em seguida testa: abre uma conversa nova, cola a skill e pede a tarefa. Compara o resultado com uma versão sem skill. Discutimos em sala: "o que melhorou e qual regra faltou?".</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35 · 2h</span><h3>Montando um assistente pessoal de IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> juntar tudo do módulo (agente + conexões + orquestração + skills) e montar um assistente pessoal que conhece seu contexto e ajuda no seu dia, com limites claros do que ele pode e não pode fazer.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é um assistente pessoal de IA: uma configuração fixa que já sabe quem você é, o que você faz e como você gosta das coisas.</li>
+      <li>Os ingredientes: contexto pessoal (perfil), conjunto de skills, conexões com ferramentas (agenda, e-mail, notas) e regras de comportamento.</li>
+      <li>Definir o "manual do assistente": tom, o que priorizar, o que sempre perguntar antes de fazer, e o que ele nunca deve fazer sozinho.</li>
+      <li>Memória e contexto: como manter o assistente sabendo do seu mundo sem repetir tudo toda vez.</li>
+      <li>Onde traçar a linha: o assistente organiza, lembra, rascunha e sugere — você aprova o que vira ação no mundo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Construo ao vivo o "manual" do meu assistente: quem sou, meu negócio, meu tom, minhas prioridades da semana e minhas regras (ex.: "nunca confirme reunião sem me perguntar"). Colo esse manual numa conversa nova e mostro como o assistente passa a responder já contextualizado — sugere a pauta do dia, rascunha um e-mail no meu tom, organiza minhas pendências. Deixo claro o limite: ele rascunha, eu envio.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é o meu assistente pessoal de IA. Leia este manual e aja sempre dentro dele.
+
+QUEM SOU: [nome, profissão, negócio].
+MEU MUNDO: [clientes, projetos atuais, ferramentas que uso].
+COMO FALO: direto, claro, sem enrolação e sem promessas exageradas.
+MINHAS PRIORIDADES AGORA: [liste 2 ou 3].
+O QUE VOCÊ FAZ: organiza minha agenda mental, rascunha textos no meu tom, resume o que eu colar, lembra do que combinamos e sugere próximos passos.
+REGRAS:
+- Sempre me pergunte antes de assumir algo que eu não disse.
+- Nunca prometa prazo, valor ou resultado em meu nome sem eu aprovar.
+- Quando rascunhar algo para um cliente, marque claramente "RASCUNHO - revisar antes de enviar".
+- Se faltar contexto, pergunte em vez de inventar.
+
+Comece se apresentando em 2 linhas e me perguntando qual é a primeira tarefa de hoje.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/system-prompts">System prompts / definir papel (Claude)</a> — como dar identidade e regras fixas a um assistente.</li>
+      <li><a href="https://help.openai.com/en/articles/8554397-creating-a-gpt">Creating a GPT (OpenAI)</a> — montar um assistente personalizado reutilizável.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p><b>alicerce</b> é o coração desta aula: ela gera as instruções iniciais que ensinam a IA a trabalhar do seu jeito — o "manual do assistente". <b>maestro</b> coordena as tarefas que o assistente executa, e <b>salvaguarda</b> garante que, se o assistente lida com dados de clientes, isso seja tratado com cuidado.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno escreve o manual do próprio assistente com o prompt acima, preenchendo com seu contexto real. Testa por 15 minutos pedindo 3 tarefas do dia. Em duplas, trocam manuais e dão um feedback: "que regra você esqueceu de colocar?". Os melhores manuais viram base para o projeto final do Módulo 8.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Avançado, Ética e Futuro</h2></div>
+  <p class="mod-resumo">Usar IA com critério, segurança e responsabilidade. Aqui você aprende o que a IA erra, o que nunca colar nela, o que a LGPD exige e como pensar o seu trabalho daqui pra frente — sem pânico e sem hype. O módulo fecha com você apresentando o seu próprio sistema de IA pessoal. A decisão de como usar continua sendo sua.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36 · 2h</span><h3>Privacidade, LGPD e dados na IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> entender o que a LGPD exige quando você usa IA com dados de pessoas, o que conta como dado pessoal, e como usar essas ferramentas sem se expor nem expor seus clientes.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O básico da LGPD em linguagem de gente: dado pessoal é qualquer informação que identifica alguém (nome, CPF, e-mail, telefone, foto, até hábitos).</li>
+      <li>O que muda ao colar dados num chat de IA: para onde vai, se pode ser usado para treino, e por que ler os termos importa.</li>
+      <li>Base legal e consentimento: você só pode tratar dado de alguém com um motivo legítimo, e a pessoa precisa saber.</li>
+      <li>Boas práticas: minimizar (só o necessário), anonimizar quando der, e nunca colar dado sensível de cliente em ferramenta sem garantia.</li>
+      <li>Configurações que ajudam: desligar histórico/treino em contas pessoais, preferir versões empresariais com contrato quando há dado de cliente.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Mostro um caso concreto: alguém colaria a planilha de clientes inteira (nome, CPF, telefone) pedindo "organize isso". Demonstro como fazer certo — anonimizar antes (trocar nomes por "Cliente 1, 2, 3", remover CPF) e só então pedir a análise. Mostro também onde, nas configurações da ferramenta, desligar o uso dos dados para treino. A turma vê a diferença entre usar com critério e vazar sem perceber.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero analisar uma lista de clientes com IA, mas SEM expor dados pessoais.
+
+Antes de qualquer análise, me ajude a preparar os dados com segurança:
+1. Liste quais campos da minha planilha são dados pessoais sob a LGPD (ex.: nome, CPF, telefone, e-mail).
+2. Diga quais desses eu posso REMOVER ou ANONIMIZAR sem perder a análise que quero (que é: [ex.: ver de quais cidades vêm meus melhores clientes]).
+3. Me mostre como ficaria uma versão anonimizada de exemplo (use "Cliente 1, 2, 3" e mantenha só cidade e valor de compra).
+
+Não me peça para colar os dados reais ainda. Primeiro me ajude a decidir o que NÃO precisa ir para a IA.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.gov.br/anpd/pt-br">ANPD — Autoridade Nacional de Proteção de Dados</a> — fonte oficial brasileira sobre LGPD.</li>
+      <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">Lei 13.709/2018 (LGPD na íntegra)</a> — o texto da lei.</li>
+      <li><a href="https://privacy.anthropic.com/">Central de Privacidade da Anthropic</a> — como controlar o uso dos seus dados (exemplo de fornecedor).</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p><b>salvaguarda</b> (LGPD) é a skill desta aula: ela mapeia quais dados pessoais um fluxo coleta, aponta os gaps de consentimento, base legal e retenção, e ajuda a gerar política de privacidade e fluxo de consentimento — exatamente o que o aluno precisa antes de jogar dado de cliente numa IA.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno pega um arquivo real do trabalho (planilha, cadastro, lista) e, sem colar nada na IA ainda, marca a lápis quais campos são dados pessoais e quais dá para remover. Depois usa o prompt para validar a decisão. Fechamos com cada um ajustando, na própria conta de IA, a configuração de uso de dados para treino.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37 · 2h</span><h3>Alucinação, viés e limites — usar com critério</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> reconhecer quando a IA inventa (alucina), quando reproduz vieses, e desenvolver o hábito de verificar antes de confiar — para usar a ferramenta com critério, não cegamente.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é alucinação: a IA gera texto plausível e confiante mesmo quando está errada — ela não "sabe", ela completa.</li>
+      <li>Onde ela mais erra: datas, números, citações, leis, nomes próprios, fontes e qualquer coisa muito específica ou recente.</li>
+      <li>O que é viés: a IA aprende dos dados do mundo e pode reproduzir estereótipos e desequilíbrios — fica atento em temas de pessoas, gênero, raça, contratação.</li>
+      <li>Técnicas para reduzir o estrago: pedir fontes, pedir o nível de confiança, pedir que ela diga "não sei", e checar o que for crítico em fonte externa.</li>
+      <li>A regra de ouro: a IA é estagiária brilhante e rápida, não oráculo — você assina embaixo, então você confere.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Provoco uma alucinação ao vivo: peço "me cite 3 artigos científicos sobre X com autor e ano". A IA frequentemente inventa referências que parecem reais. Mostro como cair nessa seria desastroso num trabalho. Depois aplico a defesa: refaço o pedido obrigando a marcar o que é incerto e a dizer "não tenho certeza". A turma vê a mesma ferramenta ficar muito mais confiável só pela forma de pedir e pelo hábito de checar.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vou usar sua resposta em algo importante, então preciso que você seja honesto sobre o que sabe e o que não sabe.
+
+Pergunta: [sua pergunta].
+
+Responda assim:
+1. Sua melhor resposta.
+2. Nível de confiança: [Alto | Médio | Baixo] e por quê.
+3. O que nesta resposta eu DEVO checar em fonte externa antes de usar (datas, números, nomes, leis, citações).
+4. Se você não tem certeza de algo, diga "não tenho certeza" explicitamente em vez de preencher com algo plausível.
+
+Não invente fontes nem dados. Prefiro um "não sei" a uma informação errada.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.ibm.com/think/topics/ai-hallucinations">AI hallucinations (IBM)</a> — explicação clara do fenômeno e por que acontece.</li>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework (NIST)</a> — referência sobre riscos e vieses de IA.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p><b>bastiao</b> (segurança ao usar IA) reforça o hábito de não confiar cegamente na saída e de tratar o que a IA produz como rascunho a ser verificado — a mesma postura crítica que esta aula instala contra alucinação e viés.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Em duplas, os alunos tentam fazer a IA alucinar de propósito (pedir fontes, estatísticas, leis específicas) e depois checam uma das respostas numa fonte externa pelo celular. Registram um caso real de erro que encontraram. Compartilhamos os mais surpreendentes e discutimos onde, no trabalho de cada um, esse erro custaria caro.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38 · 2h</span><h3>Segurança ao usar IA (o que nunca colar)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> criar uma lista mental clara do que jamais colar numa IA, reconhecer golpes e ferramentas falsas, e adotar hábitos simples de segurança que protegem você, sua empresa e seus clientes.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>A lista do "nunca cole": senhas, chaves de API, dados bancários, CPF/documentos de terceiros, contratos sigilosos, código com segredos, dados médicos.</li>
+      <li>Por que: o que entra numa ferramenta pode ser armazenado, registrado em log ou, em alguns casos, usado para treino — você perde o controle.</li>
+      <li>Ferramentas falsas e golpes: apps "de IA grátis" que pedem login do Google, extensões suspeitas, sites clonados. Como verificar antes de usar.</li>
+      <li>Higiene básica: conta separada para testes, não reusar senha, ativar verificação em duas etapas, preferir ferramentas conhecidas.</li>
+      <li>No trabalho: combinar com a equipe o que pode e não pode ir para IA, e ter uma versão empresarial quando há dado de cliente.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Mostro um exemplo real e perigoso: um trecho de código com uma chave de API e uma senha de banco no meio. Explico que colar isso num chat público pode significar vazar acesso ao sistema da empresa. Demonstro a forma certa — substituir o segredo por um placeholder (CHAVE_AQUI) antes de pedir ajuda. Mostro também como identificar um site de "IA grátis" suspeito olhando o domínio e as permissões que ele pede.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Vou te mostrar um texto/código antes de colar de verdade em qualquer IA. Atue como meu filtro de segurança.
+
+Analise o conteúdo abaixo e me diga, em lista:
+1. O que aqui é SENSÍVEL e eu NÃO deveria colar em uma IA (senhas, chaves, CPF, dados bancários, segredos, dados de clientes).
+2. Para cada item sensível, como eu substituo por um placeholder seguro (ex.: trocar a senha real por SENHA_AQUI).
+3. Uma versão "limpa" do conteúdo, já sem os dados sensíveis, que eu posso usar com segurança.
+
+Conteúdo:
+"""
+[cole aqui o texto ou código que você ia usar]
+"""
+
+Seja rigoroso: na dúvida, trate como sensível.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP Top 10 para LLMs</a> — principais riscos de segurança ao usar IA.</li>
+      <li><a href="https://www.gov.br/govbr/pt-br/contate-nos/seguranca-digital">Segurança Digital (gov.br)</a> — orientações oficiais de higiene digital e golpes.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p><b>bastiao</b> (segurança ao usar IA) é a skill central: ela identifica o que é arriscado expor e recomenda o jeito seguro de proceder. <b>salvaguarda</b> (LGPD) complementa quando o dado sensível é dado pessoal de cliente, somando a obrigação legal ao cuidado de segurança.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno escreve sua própria "lista do nunca cole" personalizada para o trabalho dele (o que, no contexto dele, jamais pode ir para uma IA). Depois pega um texto/código real, passa pelo prompt-filtro e gera a versão limpa. Em sala, montamos juntos uma lista coletiva no quadro com os itens mais citados.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39 · 2h</span><h3>O futuro do trabalho com IA</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> olhar para frente sem pânico nem euforia: o que tende a mudar no trabalho, como se posicionar para usar a IA a seu favor, e por que a decisão de como usar continua sendo sua.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que muda e o que permanece: tarefas repetitivas e de digitação tendem a ser automatizadas; julgamento, relação humana, contexto e responsabilidade permanecem com você.</li>
+      <li>Não é "IA te substitui", é "quem usa IA com critério ganha vantagem sobre quem não usa" — e como entrar nesse grupo.</li>
+      <li>Novas habilidades que valem ouro: saber pedir bem (prompt), verificar, orquestrar, e decidir quando NÃO usar IA.</li>
+      <li>Como se manter atualizado sem virar refém do hype: poucas fontes confiáveis, testar na prática, ignorar promessa milagrosa.</li>
+      <li>Posicionamento pessoal: identificar onde a IA libera seu tempo para o que só você faz bem.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Faço um exercício de mapa ao vivo com a turma: pego uma profissão da sala (ex.: contador, vendedor, professor) e listamos juntos no quadro as tarefas dela em duas colunas — "a IA pode acelerar" e "só humano resolve". Em quase todo caso, a coluna humana é a mais valiosa. Uso a IA para me ajudar a montar esse mapa e mostro como cada aluno pode fazer o dele para se posicionar, não para se assustar.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero me posicionar bem para o futuro do meu trabalho com IA, sem pânico e sem hype.
+
+Minha profissão / atividade: [descreva o que você faz no dia a dia].
+
+Me ajude a montar um mapa honesto:
+1. Tarefas que a IA pode acelerar ou automatizar (e como eu começaria).
+2. Tarefas que dependem de julgamento humano, relação ou responsabilidade — onde EU continuo insubstituível.
+3. 3 habilidades que vale a pena eu desenvolver para usar IA a meu favor.
+4. 1 primeiro passo concreto para esta semana.
+
+Seja realista e direto. Nada de promessa exagerada nem de catastrofismo.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/">Future of Jobs Report 2025 (WEF)</a> — dados sobre como a IA muda o mercado de trabalho.</li>
+      <li><a href="https://www.oecd.org/en/topics/artificial-intelligence.html">OECD — Artificial Intelligence</a> — análises sobre IA, trabalho e políticas.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>A própria existência da Suíte Engenho é o argumento desta aula: as 25 skills mostram que o futuro não é "a IA faz tudo", e sim "você empacota seu conhecimento e critério (com <b>alicerce</b>, <b>maestro</b>, <b>bastiao</b>) para a IA executar do seu jeito". O diferencial continua sendo humano.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno monta o mapa da própria profissão com o prompt acima e escolhe UM primeiro passo concreto para a semana. Em roda, cada um diz em uma frase qual é o passo. Eu anoto e fecho reforçando: a ferramenta é poderosa, mas a decisão de como usá-la é sua — e é isso que te mantém à frente.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40 · 2h</span><h3>Projeto final — seu sistema de IA pessoal (apresentação)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> consolidar todo o curso entregando e apresentando um sistema de IA pessoal real — seu assistente, suas skills e seus fluxos — que você vai usar de verdade a partir de amanhã, com segurança e critério.</p>
+    <div class="bloco"><h4>O que ensinar</h4><ul>
+      <li>O que é o sistema de IA pessoal: a soma do que você construiu no curso — assistente configurado, ao menos uma skill própria, um fluxo automatizado e suas regras de segurança e LGPD.</li>
+      <li>Como estruturar a apresentação: que problema seu sistema resolve, como funciona, o que você delegou à IA e onde você manteve a mão no volante.</li>
+      <li>Critérios de um bom sistema: resolve uma dor real, é seguro (não vaza dado), é honesto (verifica antes de confiar) e é reutilizável.</li>
+      <li>Como evoluir depois do curso: revisar, adicionar skills, ajustar regras conforme o uso real revela o que falta.</li>
+      <li>Encerramento: a decisão é sua — agora você tem ferramenta, método e critério para decidir como e onde usar IA.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4><p>Eu apresento primeiro, como modelo, o meu próprio sistema em 5 minutos: o problema que resolve, o manual do assistente, uma skill, um fluxo no-code e minhas regras de segurança/LGPD — terminando com "onde eu mantenho o controle". Isso dá o formato e o tom para as apresentações dos alunos: prático, honesto, sem hype, mostrando funcionando.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Me ajude a preparar a apresentação final do MEU sistema de IA pessoal, que vou mostrar para a turma em 5 minutos.
+
+O que eu construí no curso:
+- Assistente: [resuma o manual do seu assistente].
+- Skill própria: [qual tarefa ela resolve].
+- Fluxo automatizado: [o que ele faz, em que ferramenta].
+- Regras de segurança/LGPD: [o que você nunca cola, como protege dados].
+
+Monte um roteiro de apresentação curto e honesto, sem hype, na ordem:
+1. O problema real que isso resolve no meu dia.
+2. Como o sistema funciona (em linguagem simples).
+3. O que eu deleguei à IA e ONDE eu mantenho o controle humano.
+4. Próximo passo de evolução.
+
+Me dê também 3 perguntas que a turma pode fazer e como eu responderia.</pre></div>
+    <div class="bloco"><h4>Recursos e links</h4><ul>
+      <li><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview">Guia de Prompt Engineering (Claude)</a> — para refinar prompts e skills do sistema depois do curso.</li>
+      <li><a href="https://zapier.com/blog/all-articles/automation/">Blog de automação (Zapier)</a> — ideias para evoluir seus fluxos com o tempo.</li>
+    </ul></div>
+    <div class="bloco skills"><h4>Skills do Engenho</h4><p>O projeto final amarra a suíte inteira: <b>alicerce</b> (o manual do assistente), <b>maestro</b> (orquestração dos fluxos), <b>salvaguarda</b> (LGPD nos dados que o sistema toca) e <b>bastiao</b> (segurança no uso). O aluno sai entendendo que um bom sistema de IA é conhecimento humano empacotado com critério.</p></div>
+    <div class="bloco pratica"><h4>Prática em sala</h4><p>Cada aluno apresenta seu sistema em até 5 minutos, ao vivo e funcionando, seguindo o roteiro do prompt. A turma faz uma pergunta a cada um. Eu dou um feedback curto focado em "o que está pronto para usar amanhã" e "o próximo passo de evolução". Encerramento do curso reforçando a frase-guia: a ferramenta é poderosa, a decisão é sua.</p></div>
+  </article>
+</section>
+  <div class="modulo" style="margin-top:40px">
+    <p style="color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);padding-top:20px">
+      Ementa · Curso presencial · 80 horas (40 aulas de 2h) · por <b>Rodrigo Munhoz Reis</b> — Vibecoding com Engenharia.
+    </p>
+  </div>
+</div>
+</body>
+</html>
