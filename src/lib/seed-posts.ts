@@ -7,6 +7,79 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "seguranca-no-prompt-nao-e-seguranca-2026",
+    slug: "seguranca-no-prompt-nao-e-seguranca-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-06-16",
+    coverUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Se a segurança mora no prompt, não é segurança",
+    excerpt:
+      "O system prompt de uma IA de ponta vazou no GitHub e revelou que a defesa era só texto. A lição pra quem constrói com IA: trava de verdade mora em camadas.",
+    content: `Dia 10 de junho, um pesquisador anunciou que tinha furado as defesas do **Fable 5**, um dos modelos de IA mais avançados do mundo. Dois dias depois, o governo dos EUA tirou o modelo do ar. Aí veio a parte que interessa pra quem constrói com IA: o **system prompt completo do modelo vazou no GitHub** — cerca de **120 mil caracteres**.
+
+Lendo aquilo, a comunidade descobriu algo desconfortável. Boa parte da segurança do modelo era texto. Instruções em linguagem natural pedindo pra ele se comportar.
+
+## O que aconteceu
+A linha do tempo, segundo o [resumo de notícias de IA do dia](https://www.buildfastwithai.com/blogs/ai-news-today-june-15-2026):
+
+- **10/06** — o pesquisador "Pliny the Liberator" divulga um jailbreak: um ataque coordenado com vários agentes, truques de caracteres Unicode pra driblar filtros e uma técnica de "decompor e recompor" (perguntas inofensivas isoladas, montadas depois numa resposta perigosa).
+- **12/06** — o governo dos EUA derruba o Fable 5 globalmente com uma ordem de controle de exportação.
+- **Na sequência** — vaza o system prompt inteiro, ~120 mil caracteres. É o primeiro vazamento integral de um prompt de segurança de um modelo desse porte.
+
+E a frase da análise técnica que vale o post inteiro:
+
+> "A arquitetura de segurança depende fortemente de instruções em linguagem natural embutidas no system prompt, em vez de lógica de recusa codificada no modelo."
+
+Traduzindo: a defesa era um texto longo pedindo "não faça isso". Quando o texto vazou, o atacante ganhou o mapa.
+
+## O que isso revela
+Instrução não é trava.
+
+Pedir educadamente pra um sistema não fazer algo não é o mesmo que **impedir** que ele faça. Quando a sua defesa é texto, ela carrega duas fraquezas de nascença:
+
+1. **Pode ser contornada** — é só achar a frase certa, o caractere certo, o caminho que a instrução não previu.
+2. **Pode vazar** — e quando vaza, deixa de ser defesa e vira manual de ataque.
+
+Um laboratório bilionário, com os melhores times de segurança do mundo, tropeçou nisso. A lição não é "a IA é insegura". É **onde** a segurança estava.
+
+## Por que isso é a sua realidade no vibecoding
+Você não treina modelos de fronteira. Mas comete o mesmo erro, em escala menor, o tempo todo — principalmente construindo rápido com IA:
+
+- **"Validei no front."** A regra que impede o usuário de mandar lixo está só no navegador. E o navegador é do usuário.
+- **A chave de API "escondida" no código do cliente.** Ela está no bundle. O F12 acha em segundos.
+- **Confiar que a API só vai ser chamada "do jeito certo".** Quem te garante? O cliente faz a chamada que quiser.
+- **A regra de "quem pode ver o quê" na lógica da tela**, não no banco.
+
+Tudo isso é segurança que mora no prompt: **instrução, não trava.** Funciona lindamente — até alguém abrir o capô.
+
+## Onde a segurança mora de verdade
+A regra é antiga e a notícia só reforçou: **o que protege é o que roda no servidor, onde o usuário não alcança.** O cliente pede; o servidor decide.
+
+- **Banco fechado por regra.** Não importa o que o código do cliente tente — o servidor recusa o que a regra não permite. Isso é trava, não instrução. É o oposto do erro que já [derrubou apps inteiros com o banco aberto](/blog/ia-deixa-banco-aberto-incidentes-2026).
+- **Segredos fora do código.** Chave de API vive no servidor, nunca no bundle. [O passo a passo está aqui](/blog/nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore).
+- **Validação no servidor, sempre.** A do front é conveniência pro usuário, não defesa.
+- **Revisão com método.** Antes de aceitar o que a IA escreveu, passe pelo [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) — Entender, Ler, **Blindar**, Testar, Versionar. "Blindar" é exatamente perguntar: essa proteção é trava ou é só texto?
+
+Um teste rápido pra qualquer defesa que você escrever: **se ela pode ser lida, copiada ou contornada com jeitinho a partir do navegador, ela não é segurança.** É pedido.
+
+## A janela encolheu
+Tem um agravante de 2026. Com IA dos dois lados — a que constrói e a que ataca —, o tempo entre "subi inseguro" e "fui encontrado" caiu de meses para minutos. [A semana em que a IA virou caçadora de falhas](/blog/ia-caca-falhas-codigo-semana-2026) mostrou isso na prática. Não dá mais pra contar com "provavelmente ninguém vai notar". Uma IA nota. Automaticamente. Em escala.
+
+E isso importa agora porque construir com IA deixou de ser nicho: metade das empresas já usa ferramentas de IA pra programar, contra um quarto um ano atrás. Mais gente construindo rápido é mais gente subindo defesa de texto pra produção.
+
+## Conclusão
+O Fable 5 não caiu porque a IA é burra. Caiu porque a defesa estava no lugar errado — num texto que podia ser lido e contornado. O seu app cai pelo mesmo motivo quando a trava mora no cliente, no prompt, na boa vontade do usuário.
+
+> Se a defesa pode ser lida, copiada ou pedida com jeitinho, ela é instrução — não segurança. A trava de verdade mora onde o usuário não chega: no servidor.
+
+Quer o método completo pra blindar cada etapa — banco, segredos, deploy — com prompts prontos? Está no e-book gratuito [**IA Sem Medo**](/materiais), e dá pra começar agora pelos [robôs de IA gratuitos](/robos).
+
+A decisão é sua.`,
+  },
+  {
     id: "ia-caca-falhas-codigo-semana-2026",
     slug: "ia-caca-falhas-codigo-semana-2026",
     contentVersion: 1,
