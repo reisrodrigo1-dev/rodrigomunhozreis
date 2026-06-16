@@ -54,7 +54,9 @@ service cloud.firestore {
     match /skill_downloads/{id} {
       allow create: if request.auth != null
         && request.resource.data.keys().hasOnly(['skillId','email','createdAt'])
-        && request.resource.data.skillId is string && request.resource.data.skillId.size() <= 60;
+        && request.resource.data.skillId is string && request.resource.data.skillId.size() <= 60
+        && isEmail(request.resource.data.email)
+        && request.resource.data.createdAt is timestamp;
       allow read: if isAdmin();
     }
 
