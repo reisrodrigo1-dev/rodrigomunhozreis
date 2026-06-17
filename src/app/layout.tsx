@@ -61,6 +61,7 @@ export const metadata: Metadata = {
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `https://${site.domain}/#person`,
   name: site.name,
   jobTitle: site.role,
   url: `https://${site.domain}`,

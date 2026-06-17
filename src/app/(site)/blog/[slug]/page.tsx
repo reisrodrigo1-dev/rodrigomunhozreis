@@ -9,6 +9,7 @@ import { PostCta } from "@/components/post-cta";
 import { ViewTracker } from "@/components/view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { RelatedPosts } from "@/components/related-posts";
+import { AuthorBio } from "@/components/author-bio";
 import { site } from "@/lib/site";
 
 // ISR: revalida a cada 5 min.
@@ -80,7 +81,7 @@ export default async function PostPage({ params }: Props) {
     headline: post.title,
     description: post.excerpt,
     ...(post.coverUrl ? { image: post.coverUrl } : {}),
-    author: { "@type": "Person", name: site.name, url: `https://${site.domain}` },
+    author: { "@id": `https://${site.domain}/#person` },
     publisher: {
       "@type": "Organization",
       name: site.name,
@@ -166,6 +167,7 @@ export default async function PostPage({ params }: Props) {
         )}
         <div className="prose-dark mt-10" dangerouslySetInnerHTML={{ __html: html }} />
         <PostCta />
+        <AuthorBio />
         <RelatedPosts posts={related} />
         <div className="mt-12 border-t border-white/10 pt-6">
           <Link href="/blog" className="text-sm font-semibold text-amber-light hover:underline">
