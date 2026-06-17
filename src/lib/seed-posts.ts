@@ -7,6 +7,69 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "ia-escreve-codigo-humano-virou-arquiteto-2026",
+    slug: "ia-escreve-codigo-humano-virou-arquiteto-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-06-17",
+    coverUrl:
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80",
+    title: "A IA escreve 90% do código da Anthropic. E o humano?",
+    excerpt:
+      "A Anthropic confirma: mais de 90% do código dos modelos novos é escrito por IA. O cargo humano não sumiu — subiu pra arquiteto e revisor. O que isso muda pra você.",
+    content: `A Anthropic — a empresa que faz o Claude — confirmou um número que assusta quem lê rápido e anima quem lê com atenção: **mais de 90% do código dos seus modelos novos já é escrito por IA**, não por humanos.
+
+O CEO, Dario Amodei, chamou isso de "transição de fase". O desenvolvimento interno deixou de girar em torno de gente digitando código. A IA virou a desenvolvedora principal. E os humanos? Subiram de cargo: viraram **arquitetos de alto nível e auditores de segurança**.
+
+Guarda essa última frase. É o post inteiro.
+
+## O que aconteceu
+A confirmação veio do próprio CEO da Anthropic e foi reforçada nas notícias de junho ([cobertura aqui](https://markets.financialcontent.com/woonsocketcall/article/tokenring-2026-1-13-90-of-claudes-code-is-now-ai-written-anthropic-ceo-confirms-historic-shift-in-software-development)). No mesmo período, a empresa lançou o **Claude Opus 4.8**, descrito como seu modelo de programação mais capaz, e uma camada de orquestração de agentes ([Dynamic Workflows](https://aimagazine.com/news/anthropics-claude-code-is-changing-enterprise-workflows)).
+
+E não é só a Anthropic. Na **Microsoft Build 2026**, a conversa do setor virou de "agentes de IA são reais?" para "**qual parte da minha empresa vira agente primeiro?**". O GitHub passou a tratar o agente de código como algo que gera, depura, refatora e ajuda a corrigir falhas de segurança — sozinho.
+
+O recado, somando tudo: escrever código deixou de ser a parte escassa. A máquina faz, rápido e em volume.
+
+## O que isso revela
+A leitura preguiçosa é "pronto, programador acabou". Está errada.
+
+Olha de novo o que os humanos da Anthropic foram fazer: **arquitetura e auditoria de segurança.** Eles não saíram do processo. Saíram da digitação e foram pra parte que decide se o sistema presta.
+
+> A IA assumiu o "como escrever". O humano ficou com o "o quê construir", o "por que assim" e o "isso está seguro?".
+
+Isso não é o fim do trabalho técnico. É a migração dele pra cima — pra camada onde julgamento vale mais que velocidade de digitação.
+
+## Por que essa é a melhor notícia pra quem tem método
+Aqui está o ponto que quase ninguém fala. Se a IA escreve o código pra todo mundo — pro engenheiro da Anthropic e pro vibecoder de primeira viagem —, então **digitar código parou de ser o diferencial.** O que separa um resultado do outro é o que sobra:
+
+- **Saber o que pedir.** Arquitetar a solução antes de mandar a IA codar. Um plano ruim gera código bonito e inútil.
+- **Saber revisar.** Aceitar tudo que a máquina cospe é confundir velocidade com competência. Auditar é o novo trabalho.
+- **Saber blindar.** Justo a função que a Anthropic deu aos humanos: auditor de segurança. [Ontem mesmo escrevi por que a defesa que mora no prompt não é defesa](/blog/seguranca-no-prompt-nao-e-seguranca-2026) — alguém precisa olhar isso, e esse alguém é você.
+- **Saber decidir** o que faz sentido no mundo real. A máquina não tem essa parte.
+
+É literalmente a definição de [vibecoding com engenharia](/blog/vibecoding-com-engenharia): a IA constrói, você dirige e responde pelo resultado. A maior empresa de IA do planeta organizou o trabalho dela exatamente assim. Não é teoria minha — é o estado da arte.
+
+## O que muda na prática pra você
+Se você constrói com IA (ou quer começar), pare de se medir pela coisa errada.
+
+1. **Não se orgulhe de "quantas linhas a IA gerou".** Orgulhe-se de quão bem você revisou o que ela gerou.
+2. **Planeje antes de pedir.** Decida arquitetura, telas e dados primeiro. O código é a última etapa, não a primeira.
+3. **Trate revisão como o trabalho, não como burocracia.** Use um método — o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas): Entender, Ler, Blindar, Testar, Versionar.
+4. **Assuma o chapéu de auditor de segurança.** Banco fechado, segredo fora do código, validação no servidor. Se a Anthropic colocou humano nessa função, é porque ela não é opcional.
+
+O medo de que "a IA vai substituir o programador" mira no lugar errado. [Já falei sobre isso](/blog/erro-donos-de-empresa-ia-substitui-programadores): a IA não substitui quem constrói com método. Ela substitui quem só sabia digitar e parou de aprender.
+
+## Conclusão
+A IA escrever 90% do código não é o fim do humano técnico. É a promoção dele — de digitador a arquiteto e auditor. O detalhe incômodo é que promoção exige competência nova. Quem desenvolve o olho de arquiteto e o rigor de auditor sobe junto com a maré. Quem só queria que a IA "fizesse tudo" fica pra trás, agora com código que ninguém revisou.
+
+> A ferramenta ficou igual pra todo mundo. O método, não.
+
+Quer construir já no papel de arquiteto — com plano, revisão e segurança em cada etapa? Está tudo no e-book gratuito [**IA Sem Medo**](/materiais), com prompts prontos pra cada fase. Ou comece pelos [robôs de IA gratuitos](/robos).
+
+A decisão é sua.`,
+  },
+  {
     id: "seguranca-no-prompt-nao-e-seguranca-2026",
     slug: "seguranca-no-prompt-nao-e-seguranca-2026",
     contentVersion: 1,
