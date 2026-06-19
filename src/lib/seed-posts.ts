@@ -7,6 +7,68 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "agente-de-ia-sem-revisar-permissao-2026",
+    slug: "agente-de-ia-sem-revisar-permissao-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-06-18",
+    coverUrl:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    title: "Você soltou um agente de IA sem revisar o que ele pode",
+    excerpt:
+      "88% das empresas já tiveram incidente com agente de IA, mas só 14% subiram com aval de segurança. O que esse abismo ensina pra quem constrói com IA.",
+    content: `Um número de um relatório novo devia tirar o sono de quem constrói com IA em 2026: **88% das empresas já tiveram — ou suspeitam ter tido — um incidente de segurança com agentes de IA** no último ano.
+
+E o detalhe que explica tudo: **80,9% já colocaram agentes em teste ou produção, mas só 14,4% subiram com aprovação completa de segurança.** A pressa de dar autonomia à IA passou na frente da pergunta "isso é seguro?".
+
+## O que está acontecendo
+Os dados são do relatório [State of AI Agent Security 2026](https://www.gravitee.io/blog/state-of-ai-agent-security-2026-report-when-adoption-outpaces-control) (Gravitee, com mais de 900 executivos e técnicos). Além do 88%:
+
+- **45,6%** usam a **mesma chave de API compartilhada** para autenticar um agente com o outro.
+- **Mais de 50%** dos agentes operam **sem monitoramento ou log** de segurança.
+- Só **21,9%** tratam o agente como uma identidade própria (com permissões próprias).
+
+E não é cenário hipotético. Em 2025 a Anthropic detectou um grupo estatal (GTG-1002) que **sequestrou instâncias do Claude Code** para rodar espionagem cibernética **autônoma** contra cerca de 30 alvos. A IA tocou **80–90% das operações sozinha**, achando e explorando falhas a milhares de requisições por segundo. Foi o primeiro ataque documentado rodado, em escala, quase sem humano no comando.
+
+Enquanto isso, o mercado só acelera: a conversa do setor virou "qual parte da minha empresa eu transformo em agente primeiro?".
+
+## O que isso revela
+Junte as duas pontas — todo mundo dando autonomia, quase ninguém revisando — e a lição salta:
+
+> Um agente que age sozinho não é mágica. É uma permissão que **você** concedeu.
+
+Quando você dá a um agente acesso ao código, ao banco, às chaves e às APIs, você está **concedendo privilégios**. Sem mínimo necessário, sem revisão e sem log, isso é uma escalada de privilégio esperando acontecer — do seu lado, por um erro do agente, ou do lado de quem sequestrar esse agente.
+
+## Por que isso é a sua realidade no vibecoding
+Você talvez não rode uma frota de agentes corporativos. Mas, construindo com IA, você faz a versão pessoal disso o tempo todo:
+
+- Dá ao agente (Claude Code e afins) acesso **total** ao repositório, ao deploy e ao banco — porque é mais rápido.
+- Usa **a mesma chave pra tudo** (os tais 45,6%). Uma vaza, vazou tudo.
+- Não tem **log** do que o agente fez (os mais de 50%). Se der ruim, você não sabe nem o que aconteceu.
+- Subiu sem perguntar **"o que esse agente pode fazer de pior?"** (os 85,6% sem aval de segurança).
+
+É o mesmo erro de [subir com o banco de dados aberto](/blog/ia-deixa-banco-aberto-incidentes-2026) — só que agora o banco tem um agente com a chave na mão.
+
+## Como construir com agentes sem virar estatística
+A defesa é a de sempre — só que aplicada ao que o agente **pode** fazer, não só ao que ele fez:
+
+1. **Mínimo necessário (least privilege).** Dê ao agente acesso só ao que a tarefa exige, nada além. É a camada "Blindar" do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas).
+2. **Uma chave por agente, não uma chave pra tudo.** Credencial separada e revogável — o oposto de [reusar segredo em todo lugar](/blog/nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore).
+3. **Humano no loop para ação crítica.** Deletar, mexer em produção, mover dinheiro → exige confirmação. Autonomia não é cheque em branco.
+4. **Log e observabilidade.** Registre o que o agente fez. Sem isso, você é cego quando o incidente chega.
+5. **Revise a permissão, não só o resultado.** Antes de soltar, pergunte: "qual o pior que ele consegue fazer com esse acesso?". Essa é a mentalidade de [virar o auditor de segurança da própria IA](/blog/ia-escreve-codigo-humano-virou-arquiteto-2026).
+
+## Conclusão
+A pergunta de 2026 deixou de ser "a IA consegue fazer sozinha?" — ela consegue. Virou **"o que ela pode fazer sozinha, e quem autorizou isso?"**. Dar autonomia sem revisar a permissão é o novo subir com o banco aberto: funciona lindamente, até alguém — ou outro agente — perceber.
+
+> Autonomia sem mínimo necessário não é produtividade. É um incidente agendado.
+
+Quer construir com IA e agentes sem deixar essa porta aberta? O método de blindar cada etapa está no e-book gratuito [**IA Sem Medo**](/materiais), com prompts prontos — e dá pra começar pelos [robôs de IA gratuitos](/robos).
+
+A decisão é sua.`,
+  },
+  {
     id: "ia-escreve-codigo-humano-virou-arquiteto-2026",
     slug: "ia-escreve-codigo-humano-virou-arquiteto-2026",
     contentVersion: 1,
