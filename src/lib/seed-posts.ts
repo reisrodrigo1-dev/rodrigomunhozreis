@@ -7,6 +7,71 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "observabilidade-e-o-produto-falha-silenciosa-ia-2026",
+    slug: "observabilidade-e-o-produto-falha-silenciosa-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-06-19",
+    coverUrl:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    title: "Num produto de IA, a observabilidade é parte do produto",
+    excerpt:
+      "Lancei um corretor automático por IA, validei com +1.280 usos — e um bug invisível me ensinou que, em IA, robustez e observabilidade são o produto, não detalhe técnico.",
+    content: `Noventa e seis pessoas usaram um produto meu, esperaram a resposta e nunca receberam. O pior: por um tempo, **eu também não sabia disso**. Elas enviaram o trabalho, a tela disse "processando", e a correção simplesmente nunca chegou. Sem erro vermelho, sem alerta, sem reclamação imediata.
+
+Uma falha silenciosa — o tipo mais perigoso num produto de IA. E foi ela que me ensinou a lição mais valiosa de tudo o que construí.
+
+## A aposta que eu precisava validar
+Eu tinha lançado uma plataforma de IA para preparação de uma prova profissional de alto risco, com **correção automática** de questões e peças discursivas. A aposta arriscada não era "as pessoas querem estudar para essa prova" — isso eu já sabia. Era outra, bem mais perigosa:
+
+> A IA consegue corrigir uma resposta discursiva com qualidade boa o bastante pra ser realmente útil ao aluno — e na hora?
+
+Correção humana desse tipo é cara, lenta e não escala. Se a IA entregasse um **feedback estruturado** (nota + análise por critério) em segundos, isso mudaria a economia inteira do produto. Mas só se a correção fosse confiável.
+
+## Como validei sem construir tudo
+Não construí a plataforma inteira. Fiz um **MVP enxuto**, focado no fluxo central: o aluno envia o treino, a IA corrige, ele recebe o feedback na hora. Coloquei na frente de usuários reais o quanto antes e medi só duas coisas:
+
+- Eles **voltavam** para fazer de novo? (sinal de utilidade real, não novidade)
+- A correção era **confiável**?
+
+Validar a aposta mais arriscada primeiro, com o mínimo de código, é o oposto de gastar três meses construindo tudo para só então descobrir se a premissa se sustenta.
+
+## O que funcionou
+- **Mais de 1.280 treinos corrigidos** com feedback automático, e gente voltando para fazer mais.
+- A validação mais forte veio do **B2B**: uma universidade adotou a plataforma e rodou um **simulado oficial com 845 alunos**. Não era interesse individual — uma instituição confiou no produto.
+
+No papel, validação concluída. A IA corrigia bem, as pessoas voltavam, uma instituição apostou. Foi aí que o problema apareceu.
+
+## O erro que me ensinou a lição
+No meio da operação, descobri as **96 correções que falharam silenciosamente**. As causas eram técnicas e banais: créditos da IA esgotados em um pico e **race conditions** quando várias correções aconteciam ao mesmo tempo. O usuário enviava, o sistema engasgava, e ninguém era avisado — nem ele, nem eu.
+
+Numa aplicação comum, um erro costuma ser barulhento: a tela trava, aparece um vermelho, a pessoa reclama. Num produto de IA, a falha tende a ser **silenciosa**: a chamada externa falhou, o saldo acabou, duas requisições colidiram — e o resultado é "nada acontece". O pior estado possível, porque ninguém percebe até ser tarde.
+
+## A lição: num produto de IA, robustez e observabilidade SÃO o produto
+Quando o seu produto é uma resposta gerada por IA, você não está entregando "uma resposta". Está entregando a **confiança de que ela chega, certa, sempre**.
+
+Eu tratava a robustez da correção como detalhe técnico — algo pra arrumar depois. Errado. Para o aluno que enviou e não recebeu, a qualidade do modelo é irrelevante: o produto simplesmente não funcionou. A confiabilidade e a capacidade de **enxergar** o que está acontecendo não são infraestrutura por baixo do produto. Elas **são** o produto.
+
+> A funcionalidade que entrega 95% das vezes não é um produto de IA bom. É um protótipo perigoso. O que separa demo de produto é o que acontece nos 5% que falham.
+
+## O que passei a fazer (e o que você deveria)
+1. **Taxa de sucesso da correção virou métrica de produto**, não de infra. Se ela cai, é um problema de negócio.
+2. **Idempotência e retries** nas chamadas de IA — pra sobreviver a timeout, pico e race condition sem duplicar nem perder.
+3. **Alertas** quando saldo, fila ou taxa de erro saem da faixa. Eu quero saber antes do usuário.
+4. **Reprocessamento:** detectei as 96, reprocessei e entreguei o feedback atrasado. Recuperar é parte do trabalho.
+5. **Observabilidade desde o início** — é a camada "saber quando quebra em produção", a mesma lógica de [revisar antes de confiar](/blog/protocolo-de-5-camadas) e de [auditar o que a IA faz sozinha](/blog/agente-de-ia-sem-revisar-permissao-2026).
+
+## Conclusão
+A parte difícil de um produto de IA não é fazer a IA responder bem uma vez, na demo. É garantir que ela responde **toda vez** — e que, quando não responder, você descobre na hora, não pelo cliente irritado uma semana depois.
+
+> Num produto de IA, a resposta certa é metade do trabalho. A outra metade é garantir que ela sempre chega — e saber, na hora, quando não chegou.
+
+É exatamente isso que eu chamo de **vibecoding com engenharia**: a velocidade de construir com IA, com o rigor de quem trata produção a sério. O método completo está no e-book gratuito [**IA Sem Medo**](/materiais), e dá pra começar pelos [robôs de IA gratuitos](/robos).
+
+A decisão é sua.`,
+  },
+  {
     id: "agente-de-ia-sem-revisar-permissao-2026",
     slug: "agente-de-ia-sem-revisar-permissao-2026",
     contentVersion: 1,
