@@ -9,9 +9,9 @@ import { site } from "@/lib/site";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "IA Sem Medo — guia gratuito (método P.R.O.M.P.T.E.R. + 130 prompts)",
+  title: "IA Sem Medo — kit gratuito: e-book + 10 robôs + 20 skills",
   description:
-    "Baixe grátis o guia IA Sem Medo: o método P.R.O.M.P.T.E.R., um plano de 7 dias e mais de 130 prompts prontos. Use IA com a velocidade da máquina e o rigor de um engenheiro.",
+    "Baixe grátis: o e-book IA Sem Medo (método P.R.O.M.P.T.E.R., plano de 7 dias e +130 prompts) MAIS 10 robôs de IA prontos e 20 skills do Engenho. Use IA com método.",
   alternates: { canonical: "/ia-sem-medo" },
 };
 
@@ -19,16 +19,16 @@ const SLUG = "ia-sem-medo";
 
 const dentro = [
   {
-    t: "O método P.R.O.M.P.T.E.R.",
-    d: "A receita do prompt profissional, passo a passo. Pare de pedir torto e receber torto.",
+    t: "E-book IA Sem Medo",
+    d: "O método P.R.O.M.P.T.E.R., um plano de 7 dias e +130 prompts prontos pro trabalho e pra vida.",
   },
   {
-    t: "Plano de 7 dias",
-    d: "Um roteiro pra sair do zero e já usar IA no trabalho na primeira semana — sem se perder.",
+    t: "10 robôs de IA prontos",
+    d: "Especialistas pra copiar e colar: Copiloto do CEO, Estrategista de Marketing, Copywriter de Vendas, Negociador e mais.",
   },
   {
-    t: "+130 prompts prontos",
-    d: "Pra trabalho e pra vida: escrever, decidir, organizar, vender, aprender. É só copiar e adaptar.",
+    t: "20 skills do Engenho",
+    d: "Skills profissionais de prompting, conteúdo, marketing e negócio — é só baixar e usar na sua IA.",
   },
   {
     t: "Sem hype, sem mágica",
@@ -75,8 +75,9 @@ export default async function IaSemMedoPage() {
               </h1>
               <p className="mt-6 max-w-xl text-lg text-paper/60">
                 A maioria usa IA na superfície e acha que é só isso. Quem tem método larga na
-                frente. O <strong className="text-paper">IA Sem Medo</strong> te dá a receita —
-                de graça.
+                frente. O kit <strong className="text-paper">IA Sem Medo</strong> te dá a receita —
+                e ainda <strong className="text-paper">10 robôs de IA</strong> e{" "}
+                <strong className="text-paper">20 skills</strong>. Tudo de graça.
               </p>
 
               <ul className="mt-8 space-y-2.5">
@@ -84,16 +85,16 @@ export default async function IaSemMedoPage() {
                   {
                     node: (
                       <>
-                        Método <strong className="font-semibold text-paper">P.R.O.M.P.T.E.R.</strong> — o
-                        prompt profissional, passo a passo
+                        E-book com o método{" "}
+                        <strong className="font-semibold text-paper">P.R.O.M.P.T.E.R.</strong> + plano de 7 dias
                       </>
                     ),
                   },
                   {
                     node: (
                       <>
-                        Plano de <strong className="font-semibold text-paper">7 dias</strong> pra começar já
-                        na primeira semana
+                        <strong className="font-semibold text-paper">+130 prompts</strong> prontos pro
+                        trabalho e pra vida
                       </>
                     ),
                   },
@@ -102,9 +103,9 @@ export default async function IaSemMedoPage() {
                     node: (
                       <>
                         <strong className="font-serif text-xl font-bold leading-none text-amber-light">
-                          +130 prompts
+                          + 10 robôs de IA e 20 skills
                         </strong>{" "}
-                        <span className="font-semibold text-paper">prontos</span> pro trabalho e pra vida
+                        <span className="font-semibold text-paper">liberados de bônus</span>
                       </>
                     ),
                   },
@@ -148,15 +149,16 @@ export default async function IaSemMedoPage() {
                     <span className="mt-auto font-serif text-[9px] font-bold text-amber-light">+130 prompts</span>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-paper">Seu guia, na hora, no seu e-mail</p>
+                    <p className="text-sm font-semibold text-paper">Seu kit, liberado na hora</p>
                     <p className="mt-1 text-xs leading-relaxed text-paper/55">
-                      Método P.R.O.M.P.T.E.R. + plano de 7 dias + 130 prompts prontos.
+                      E-book + 130 prompts + <strong className="text-paper/80">10 robôs de IA</strong> +{" "}
+                      <strong className="text-paper/80">20 skills</strong>.
                     </p>
                   </div>
                 </div>
-                <h2 className="text-2xl font-semibold text-paper">Receba agora, de graça</h2>
+                <h2 className="text-2xl font-semibold text-paper">Receba o kit, de graça</h2>
                 <p className="mt-1.5 text-sm text-paper/55">
-                  Coloque seu e-mail e o acesso é liberado na hora.
+                  Coloque seu e-mail e o acesso ao kit é liberado na hora.
                 </p>
                 <div className="mt-5">
                   <DownloadGate material={material} variant="dark" />
