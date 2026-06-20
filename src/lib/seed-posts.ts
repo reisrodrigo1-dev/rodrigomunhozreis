@@ -7,6 +7,70 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "claude-code-cursor-antigravity-qual-usar-2026",
+    slug: "claude-code-cursor-antigravity-qual-usar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-06-20",
+    coverUrl:
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80",
+    title: "Claude Code, Cursor ou Antigravity? Qual usar em 2026",
+    excerpt:
+      "As ferramentas de IA pra programar viraram agentes autônomos em 2026. Comparo Claude Code, Cursor e Antigravity — e explico por que a ferramenta é a sua menor decisão.",
+    content: `Em 2026, a pergunta "qual editor eu uso pra programar?" virou outra coisa. Não é mais sobre autocompletar código mais rápido.
+
+As ferramentas de IA pra programar — **Claude Code, Cursor, o novo Antigravity do Google**, Codex, Copilot, Windsurf — pararam de te ajudar a digitar e começaram a **construir sozinhas**: planejam, escrevem, testam e até verificam o resultado no navegador. O mercado dessas ferramentas saltou para **US$ 16 bilhões em 2026**, com projeção de **US$ 79 bilhões até 2031** ([comparativo de agentes de código](https://ssojet.com/blog/ai-coding-agents-compared)). Se você constrói com IA, vale entender o que mudou — e o que escolher.
+
+## O que mudou em 2026
+A geração anterior era **autocomplete e chat** dentro do editor. A de agora é **agente autônomo de desenvolvimento**: você descreve o objetivo e o agente planeja, escreve em vários arquivos, roda, testa e corrige.
+
+- O Google lançou o **Antigravity** (com o time que criou o Windsurf): um IDE inteiro construído em torno de agentes, com **navegador embutido** pra verificar visualmente o que foi feito. A versão 2.0 virou uma plataforma de orquestração multi-agente.
+- O **Claude Code** roda no terminal com acesso ao seu sistema de arquivos, shell e git — forte em raciocínio sobre vários arquivos.
+- O **Cursor** turbinou a edição do dia a dia (autocomplete, Tab, mudanças inline).
+
+O resumo: a IA deixou de ser a caneta e virou a mão.
+
+## Um mapa rápido (sem tribalismo)
+Cada uma brilha num uso. Sem religião:
+
+- **Cursor** — edição do dia a dia, pra quem vive dentro do editor.
+- **Claude Code** — tarefas complexas, multi-arquivo, no terminal, com acesso total ao projeto.
+- **Antigravity** — tarefas autônomas de ponta a ponta: o agente planeja, coda, testa e verifica no navegador. Grátis em preview.
+- **Open source (Aider, Cline, OpenCode)** — você paga só os tokens do modelo; mais controle e custo previsível.
+
+A maioria das pagas começa em **~US$ 20/mês**, e dá pra migrar de uma pra outra em um dia. Guarde isso — é importante pro próximo ponto.
+
+## A virada que de fato importa
+Quando o agente planeja, escreve, testa e ainda verifica sozinho, o **gargalo deixa de ser digitar código**. A parte escassa passa a ser duas:
+
+1. **Saber o que construir** — spec, arquitetura, a decisão certa.
+2. **Verificar se está certo e seguro** — porque a ferramenta cospe um sistema inteiro em horas, **incluindo os erros, na mesma velocidade**.
+
+> Quanto mais autônoma a ferramenta, mais cara fica a sua falta de critério.
+
+Já vi gente achar que trocar de IDE ia resolver a produtividade. Não resolve. A ferramenta acelera o que você já sabe fazer — e acelera também o desastre, se você não souber.
+
+## Por isso a ferramenta é a sua MENOR decisão
+Todas as principais são boas. Trocar custa um dia. O que **compõe valor ao longo do tempo** não é o editor — é o método: especificar antes, revisar depois, blindar a segurança.
+
+É a diferença entre [virar o arquiteto e auditor da própria IA](/blog/ia-escreve-codigo-humano-virou-arquiteto-2026) e virar refém de um [agente que você nem revisou o que pode fazer](/blog/agente-de-ia-sem-revisar-permissao-2026). A ferramenta muda a cada seis meses; o método compõe a vida inteira.
+
+## O que eu recomendo na prática
+1. **Pega UMA e domina.** Trocar de brinquedo toda semana é fuga disfarçada de produtividade. Se está começando, comece simples; se já programa, Claude Code ou Cursor resolvem 90% dos casos.
+2. **Aplica método no que o agente entrega.** Rode o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) — Entender, Ler, Blindar, Testar, Versionar — em tudo que a IA gerar. Autonomia não dispensa revisão; exige mais.
+3. **Do zero?** [Configure o básico primeiro](/blog/configurar-vscode-copilot-primeiro-sistema) antes de soltar um agente autônomo no seu projeto.
+
+## Conclusão
+A ferramenta ficou dez vezes mais poderosa. A sua responsabilidade também. Escolher entre Claude Code, Cursor e Antigravity é uma decisão de uma tarde — e qualquer uma delas é uma boa escolha. O que separa quem constrói coisa séria de quem só faz demo bonita não está no editor.
+
+> Em 2026, a melhor ferramenta de IA pra programar é a que você domina **com método**. O resto é detalhe.
+
+Quer construir com qualquer uma dessas sem virar estatística de bug em produção? O método completo está no e-book gratuito [**IA Sem Medo**](/materiais), e dá pra começar pelos [robôs de IA gratuitos](/robos).
+
+A decisão é sua.`,
+  },
+  {
     id: "observabilidade-e-o-produto-falha-silenciosa-ia-2026",
     slug: "observabilidade-e-o-produto-falha-silenciosa-ia-2026",
     contentVersion: 1,
