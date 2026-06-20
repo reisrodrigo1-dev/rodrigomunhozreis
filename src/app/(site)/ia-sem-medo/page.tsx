@@ -136,6 +136,24 @@ export default async function IaSemMedoPage() {
             {/* Formulário */}
             <Reveal delay={0.1}>
               <div id="baixar" className="glass scroll-mt-24 p-7 md:p-8">
+                {/* Mini-capa: mostra o "produto" que a pessoa vai receber (lift de conversão). */}
+                <div className="mb-5 flex items-center gap-4">
+                  <div className="flex h-24 w-[68px] shrink-0 flex-col rounded-md border border-amber/30 bg-gradient-to-b from-[#241d12] to-[#0e0b07] p-2 shadow-lg">
+                    <span className="text-[6.5px] font-semibold uppercase tracking-wider text-amber-light/80">
+                      Guia gratuito
+                    </span>
+                    <span className="mt-1 font-serif text-[10px] font-bold leading-tight text-paper">
+                      IA Sem Medo
+                    </span>
+                    <span className="mt-auto font-serif text-[9px] font-bold text-amber-light">+130 prompts</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-paper">Seu guia, na hora, no seu e-mail</p>
+                    <p className="mt-1 text-xs leading-relaxed text-paper/55">
+                      Método P.R.O.M.P.T.E.R. + plano de 7 dias + 130 prompts prontos.
+                    </p>
+                  </div>
+                </div>
                 <h2 className="text-2xl font-semibold text-paper">Receba agora, de graça</h2>
                 <p className="mt-1.5 text-sm text-paper/55">
                   Coloque seu e-mail e o acesso é liberado na hora.

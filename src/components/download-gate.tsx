@@ -39,8 +39,8 @@ export function DownloadGate({
     e.preventDefault();
     setErrMsg("");
 
-    // Validação COM feedback (nunca retorna em silêncio).
-    if (!name.trim()) return setErrMsg("Digite seu nome.");
+    // Validação COM feedback (nunca retorna em silêncio). Nome é opcional — só o
+    // e-mail importa pra capturar o lead; menos atrito = mais conversão.
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim())) return setErrMsg("Digite um e-mail válido.");
     if (!consent) return setErrMsg("Marque a caixinha de consentimento para liberar o download.");
 
@@ -72,9 +72,10 @@ export function DownloadGate({
   }
 
   if (status === "done") {
+    const first = name.trim().split(" ")[0];
     return (
       <p className={`text-sm font-medium ${dark ? "text-amber-light" : "text-amber-deep"}`}>
-        ✓ Tudo certo, {name.split(" ")[0]}! Seu download já começou.
+        ✓ Tudo certo{first ? `, ${first}` : ""}! Seu download já começou.
       </p>
     );
   }
@@ -90,7 +91,7 @@ export function DownloadGate({
         autoComplete="name"
         value={name}
         onChange={(e) => setName(maskName(e.target.value))}
-        placeholder="Seu nome"
+        placeholder="Seu nome (opcional)"
         className={inputCls}
       />
       <label htmlFor={`em-${material.slug}`} className="sr-only">
