@@ -52,6 +52,18 @@ export function DownloadGate({
       const lead = await createLead(email, `material:${material.slug}`, name);
       leadId = lead.id;
       trackLead(`material:${material.slug}`); // conversão p/ Meta Pixel + GA4
+      // E-mail de boas-vindas com o acesso (via Resend). Fire-and-forget + keepalive:
+      // sobrevive à navegação e NUNCA bloqueia/atrasa a entrega do material.
+      try {
+        fetch("/api/lead-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, name }),
+          keepalive: true,
+        }).catch(() => {});
+      } catch {
+        /* ignora — e-mail é bônus, não pode quebrar o download */
+      }
     } catch (err) {
       console.error("[download-gate] createLead falhou:", err);
       setStatus("error");
