@@ -11,6 +11,9 @@ const securityHeaders = [
 
 const nextConfig = {
   reactStrictMode: true,
+  // firebase-admin (usado no webhook do Resend) é Node puro — não deve ser
+  // empacotado pelo Next (evita o erro de @opentelemetry/api e deps nativas).
+  serverExternalPackages: ["firebase-admin"],
   // Os .zip das skills moram em assets/skills/ (privado, fora de public/).
   // Garante que entrem no bundle da função /api/skill na Vercel.
   outputFileTracingIncludes: {

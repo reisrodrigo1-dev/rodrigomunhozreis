@@ -69,6 +69,7 @@ export default function AdminLeads() {
               <th className="px-4 py-3 font-semibold">E-mail</th>
               <th className="px-4 py-3 font-semibold">WhatsApp</th>
               <th className="px-4 py-3 font-semibold">Origem</th>
+              <th className="px-4 py-3 font-semibold">E-mail</th>
               <th className="px-4 py-3 font-semibold">Status</th>
               <th className="px-4 py-3 font-semibold">Data</th>
               <th className="px-4 py-3"></th>
@@ -76,9 +77,9 @@ export default function AdminLeads() {
           </thead>
           <tbody>
             {state === "loading" ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={7}>Carregando…</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={8}>Carregando…</td></tr>
             ) : rows.length === 0 ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={7}>Nenhum lead ainda.</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={8}>Nenhum lead ainda.</td></tr>
             ) : (
               rows.map((r) => (
                 <tr key={r.id} className="border-b border-line/60 last:border-0">
@@ -86,6 +87,23 @@ export default function AdminLeads() {
                   <td className="px-4 py-3 text-muted">{String(r.email ?? "—")}</td>
                   <td className="px-4 py-3 text-muted">{String(r.whatsapp ?? "—")}</td>
                   <td className="px-4 py-3 text-muted">{String(r.source ?? "—")}</td>
+                  <td className="px-4 py-3">
+                    {r.emailStatus ? (
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                          String(r.emailStatus).match(/bounced|complained/)
+                            ? "bg-red-50 text-red-600"
+                            : String(r.emailStatus).match(/opened|clicked/)
+                              ? "bg-green-50 text-green-700"
+                              : "bg-amber-soft text-amber-deep"
+                        }`}
+                      >
+                        {String(r.emailStatus).replace(/^email\./, "")}
+                      </span>
+                    ) : (
+                      <span className="text-muted">—</span>
+                    )}
+                  </td>
                   <td className="px-4 py-3">
                     <select
                       value={String(r.status ?? "novo")}

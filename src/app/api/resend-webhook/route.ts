@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import crypto from "node:crypto";
+import { adminDb } from "@/lib/firebase-admin";
+import { FieldValue } from "firebase-admin/firestore";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -69,25 +71,43 @@ export async function POST(req: Request) {
 
   const type = event.type ?? "unknown";
   const d = event.data ?? {};
-  const to = Array.isArray(d.to) ? d.to.join(", ") : d.to ?? "";
+  const recipients = Array.isArray(d.to) ? d.to : d.to ? [d.to] : [];
+  const recipient = recipients[0] ?? "";
+  const toStr = recipients.join(", ");
 
   // Observabilidade: aparece nos logs da Vercel (Deployments → Logs).
   console.log(
-    `[resend-webhook] ${type} · to=${to} · subject=${d.subject ?? ""} · id=${d.email_id ?? ""}`
+    `[resend-webhook] ${type} · to=${toStr} · subject=${d.subject ?? ""} · id=${d.email_id ?? ""}`
   );
 
-  // Ganchos por tipo de evento — estenda conforme a operação crescer.
-  switch (type) {
-    case "email.bounced":
-    case "email.complained":
-      // E-mail inválido / reclamou de spam → candidato a remover da nutrição.
-      break;
-    case "email.opened":
-    case "email.clicked":
-      // Lead engajado → candidato a marcar como quente.
-      break;
-    default:
-      break;
+  // Persiste no Firestore via Admin SDK (ignora as regras — seguro porque a
+  // assinatura já foi validada). Degrada com elegância se o admin não estiver
+  // configurado: o webhook ainda responde 200 e loga.
+  const adb = adminDb();
+  if (adb) {
+    try {
+      await adb.collection("email_events").add({
+        type,
+        to: toStr,
+        subject: d.subject ?? null,
+        emailId: d.email_id ?? null,
+        createdAt: FieldValue.serverTimestamp(),
+      });
+
+      // Marca o(s) lead(s) com esse e-mail (ex.: bounced/opened/clicked).
+      if (recipient.includes("@")) {
+        const snap = await adb.collection("leads").where("email", "==", recipient).get();
+        if (!snap.empty) {
+          const batch = adb.batch();
+          snap.forEach((doc) =>
+            batch.update(doc.ref, { emailStatus: type, emailStatusAt: FieldValue.serverTimestamp() })
+          );
+          await batch.commit();
+        }
+      }
+    } catch (err) {
+      console.error("[resend-webhook] falha ao persistir:", err);
+    }
   }
 
   return NextResponse.json({ ok: true });
