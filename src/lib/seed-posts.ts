@@ -7,6 +7,69 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "como-criar-assistente-de-ia-personalizado-sem-codigo-2026",
+    slug: "como-criar-assistente-de-ia-personalizado-sem-codigo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-06-22",
+    coverUrl:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
+    title: "Como criar seu assistente de IA personalizado (sem código)",
+    excerpt:
+      "Agentes de IA são a onda de 2026 — a Gartner prevê 40% das empresas usando até o fim do ano. E você não precisa programar pra ter o seu. O passo a passo, com método.",
+    content: `Tem uma mudança acontecendo na IA em 2026 que vale entender: ela deixou de ser só um assistente que responde e virou parte do time, que executa. A Gartner prevê que **40% das aplicações empresariais terão agentes de IA específicos até o fim de 2026**, e o mercado desses agentes cresce quase **50% ao ano**.
+
+A boa notícia: a porta de entrada pra isso **não exige programar**. Começa com um **assistente de IA personalizado** — e você monta o seu hoje. Este é o passo a passo.
+
+## O que é um assistente personalizado (e por que é melhor que "só usar o ChatGPT")
+Usar o ChatGPT solto é começar do zero toda vez: você explica de novo quem ele deve ser, o contexto, o tom. Um **assistente personalizado** é um chat com **papel e instruções fixos** — você configura uma vez e ele já "acorda" sabendo a tarefa.
+
+É a mesma ideia dos [robôs de IA](/robos) que eu disponibilizo: cada um é um especialista pronto. A diferença é que aqui você cria **o seu**, pra uma tarefa que só a sua rotina tem.
+
+## Por que isso está em alta
+Porque resolve o problema certo. Atendimento ao cliente com assistente de IA já corta cerca de **30%** da carga da equipe. Times montam um assistente por função — um pra e-mail, um pra proposta, um pra primeiro rascunho de relatório. Não é hype: é a IA virando ferramenta de trabalho repetível, não brinquedo de tirar dúvida.
+
+## Onde montar (sem código)
+Os três grandes têm a função, de graça ou no plano pago:
+- **ChatGPT** → "GPTs" (Explorar → Criar).
+- **Claude** → "Projects" (cria um projeto com instruções).
+- **Gemini** → "Gems".
+
+Todos funcionam igual: você dá um nome, cola as instruções e pronto. O segredo não é a ferramenta — é **o que você escreve nas instruções**. E é aí que entra o método.
+
+## Passo a passo com o método P.R.O.M.P.T.E.R.
+Não escreva as instruções no chute. Use as oito partes do [método P.R.O.M.P.T.E.R.](/blog/como-usar-ia-no-trabalho-peder):
+
+1. **P — Papel:** quem é o assistente. "Você é um atendente de suporte da [empresa], experiente e cordial."
+2. **R — Realidade (contexto):** o que ele precisa saber. Produto, política de troca, tom da marca, o que NÃO pode prometer.
+3. **O — Objetivo:** o resultado de cada interação. "Resolver a dúvida do cliente em até 2 mensagens, ou encaminhar pro humano."
+4. **M — Marcha (passo a passo):** como ele deve raciocinar. "Primeiro entenda o problema, depois consulte a política, só então responda."
+5. **P — Proteção:** os limites. "Nunca invente prazo. Nunca dê desconto. Se não souber, diga que vai verificar."
+6. **T — Texto de saída:** o formato. "Responda em até 4 linhas, tom gentil, sem jargão."
+7. **E — Exemplos:** 2 ou 3 perguntas reais com a resposta ideal. Isso é o que mais melhora o resultado.
+8. **R — Refino:** teste com casos reais e ajuste as instruções até acertar.
+
+## Um exemplo pronto (copie e adapte)
+Cole isto nas instruções de um GPT/Project/Gem e troque os colchetes:
+
+> Você é o assistente de atendimento da [sua empresa], cordial e objetivo. **Contexto:** vendemos [produto]; nossa política de troca é [X]; nosso tom é [informal/formal]. **Objetivo:** resolver a dúvida do cliente em até 2 mensagens ou encaminhar pro humano. **Regras:** nunca invente prazos, preços ou políticas; se não tiver a informação, diga "vou verificar e te retorno". **Formato:** respostas de até 4 linhas, sem jargão, sempre terminando com uma pergunta que ajuda a avançar. **Exemplos:** [cole 2-3 perguntas reais de clientes e a resposta ideal].
+
+Em 5 minutos você tem um atendente que responde no seu tom e dentro das suas regras — pronto pra usar e reusar.
+
+## O próximo nível: de assistente a agente
+O assistente **responde**. O **agente** age — ele usa ferramentas, acessa sistemas, executa tarefas de ponta a ponta. É pra lá que 2026 está indo. Mas vale o aviso de engenheiro: quanto mais autonomia você dá, mais importa revisar **o que ele pode fazer** — [dar acesso sem revisar a permissão é o erro de segurança da vez](/blog/agente-de-ia-sem-revisar-permissao-2026). Comece pelo assistente, domine, e suba o nível com critério.
+
+## Conclusão
+Você não precisa esperar virar programador pra surfar a onda dos agentes. Precisa de **uma tarefa repetitiva, um bom conjunto de instruções e método** pra escrevê-las. O assistente que você monta hoje já economiza tempo amanhã — e é o primeiro degrau pro resto.
+
+> A ferramenta de montar é grátis. O que separa um assistente que funciona de um que decepciona são as instruções — e isso é método, não sorte.
+
+Quer pular a parte de montar do zero? Eu já deixei [robôs de IA prontos](/robos) — assistentes especialistas pra copiar e usar — e o método completo está no e-book gratuito [**IA Sem Medo**](/materiais).
+
+A decisão é sua.`,
+  },
+  {
     id: "comprar-ia-nao-deixa-empresa-produtiva-2026",
     slug: "comprar-ia-nao-deixa-empresa-produtiva-2026",
     contentVersion: 1,
