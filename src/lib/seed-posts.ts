@@ -7,6 +7,66 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "comprar-ia-nao-deixa-empresa-produtiva-2026",
+    slug: "comprar-ia-nao-deixa-empresa-produtiva-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-06-21",
+    coverUrl:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+    title: "Comprar IA não deixou sua empresa produtiva. Eis o porquê",
+    excerpt:
+      "A Bain mostrou: empresa que só compra IA colhe ganho 'micro'. O salto — 10 a 25% de EBITDA — vai pra quem muda processo E pessoas, não a ferramenta.",
+    content: `Tem um número de uma consultoria que devia estar na mesa de todo dono de empresa que comprou IA esperando produtividade. A **Bain & Company** mediu o resultado real dessas adoções — e a conclusão incomoda: quem só adota a ferramenta colhe o que eles chamam de **"microprodutividade"**. Ganho pequeno, que some no balanço.
+
+O salto de verdade vai pra quem fez **outra coisa junto**.
+
+## O que a Bain achou
+No estudo [Want More Out of Your AI Investments? Think People First](https://rhmagazine.pt/produtividade-com-ia-automatizar-nao-chega-o-bloqueio-esta-no-modelo-de-talento/) (março de 2026), os números separam dois grupos:
+
+- Empresas que **alinham a modernização do processo com a das pessoas**: **10% a 15%** de ganho de produtividade, **10% a 25%** de aumento de EBITDA conforme o programa escala, e **2,3×** mais retorno ao acionista que as de baixo desempenho.
+- Empresas que **só automatizam**: microprodutividade.
+
+A frase da Bain é cirúrgica: **"o problema é organizacional"**. Falta a ponte entre modernizar o *fluxo de trabalho* e modernizar a *força de trabalho*. Automatizar sem reformar o trabalho, as competências e os times entrega só ganho "micro".
+
+## O que isso revela
+> A IA não é o gargalo da sua produtividade. O seu processo é.
+
+Comprar a licença e entregar pra equipe usar do jeito que ela já trabalhava é como dar um carro de Fórmula 1 pra quem vai continuar dirigindo no trânsito de sempre. A máquina ficou melhor; o resultado, quase igual.
+
+É a mesma lição que vale pra quem constrói: [a ferramenta virou commodity, o método não](/blog/ia-virou-infraestrutura-2026). Agora ela aparece no nível da empresa inteira.
+
+## Por que a maioria trava
+A sequência errada é quase sempre a mesma:
+
+1. A empresa compra licenças de IA pra todo mundo.
+2. Anuncia: "agora somos uma empresa de IA".
+3. E... nada muda no **como** o trabalho é feito.
+
+Mesmo processo, mesmas tarefas, mesma divisão de quem faz o quê — só que agora com um copiloto do lado. Cada pessoa economiza uns minutos no e-mail, e ninguém vê isso no resultado do trimestre. A ferramenta entrou; a empresa continuou igual.
+
+## O que de fato muda a conta
+A ferramenta é a parte fácil (e barata). O trabalho real é redesenhar em volta dela:
+
+1. **Repense a tarefa, não só a ferramenta.** Pergunte "esse processo ainda precisa existir assim?" antes de "como a IA faz isso mais rápido?". Às vezes a etapa toda some.
+2. **Capacite as pessoas de verdade.** Não é "liberamos o ChatGPT". É ensinar a pedir bem, revisar e decidir — [como usar IA no trabalho com método](/blog/como-usar-ia-no-trabalho-peder). Sem isso, a ferramenta vira brinquedo caro.
+3. **Redesenhe o fluxo.** Quem faz o quê muda quando a IA assume parte do trabalho. Se o organograma não mexe, o ganho não aparece.
+4. **Meça o que importa.** Produtividade de verdade aparece em entrega e margem — não em "quantos usaram a IA".
+5. **Governe com segurança.** Dado de cliente, LGPD, o que pode e não pode entrar na ferramenta. Adoção sem governança vira o próximo incidente.
+
+A IA não substitui o dono que pensa o negócio. Ela amplia quem [já tinha clareza do processo](/blog/erro-donos-de-empresa-ia-substitui-programadores) — e expõe quem não tinha.
+
+## Conclusão
+Comprar IA é o primeiro passo, e é o mais fácil. Ele te coloca no mesmo lugar que todo concorrente, que também comprou. O que separa quem teve 14% de produtividade de quem teve "micro" não está na ferramenta — está em **reorganizar a empresa em volta dela**: tarefa, pessoas, fluxo, medição.
+
+> A IA virou commodity. A forma como você reorganiza a empresa em torno dela, não.
+
+É exatamente esse trabalho — usar IA com método e segurança, do operacional ao estratégico — que eu detalho no e-book gratuito [**IA Sem Medo**](/materiais), com robôs prontos como o **Copiloto do CEO**. Comece por lá, ou pelos [robôs de IA gratuitos](/robos).
+
+A decisão é sua.`,
+  },
+  {
     id: "claude-code-cursor-antigravity-qual-usar-2026",
     slug: "claude-code-cursor-antigravity-qual-usar-2026",
     contentVersion: 1,
