@@ -7,6 +7,61 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026",
+    slug: "risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-06-23",
+    coverUrl:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    title: "O risco não é o código que você escreve. É o que você instala",
+    excerpt:
+      "Hackers injetaram malware no open source da Microsoft. A lição pra quem constrói com IA: seu maior risco não é o código que você escreve — é o que você instala.",
+    content: `Esta semana a Microsoft fez algo drástico: **cortou o acesso a dezenas dos próprios projetos open source no GitHub**. O motivo? Hackers invadiram esses projetos e **injetaram malware que rouba senhas** direto no código — muitos deles ligados ao Azure e a ferramentas que desenvolvedores usam pra construir com IA.
+
+Ou seja: código "confiável", da Microsoft, virou armadilha. E quem usava esses projetos **baixou a armadilha junto**.
+
+## O que aconteceu
+A Microsoft removeu projetos do ar enquanto investiga como os invasores plantaram código malicioso de roubo de credenciais ([cobertura](https://techstartups.com/2026/06/22/top-tech-news-today-june-22-2026/)). E não é um caso isolado — 2026 está sendo o ano dos vazamentos:
+
+- O **iFood** confirmou exposição de dados de cerca de **1,2 milhão de usuários** ([fonte](https://www.opovo.com.br/noticias/tecnologia/2026/06/03/amp/ifood-confirma-vazamento-de-dados-de-12-milhao-de-usuarios.html)).
+- Pesquisas apontam **700 milhões de ataques a bancos de dados** no Brasil.
+- Mais de **2 milhões de pessoas** tiveram documentos (passaporte, CNH) expostos por falhas básicas de configuração.
+
+O recado de tudo isso junto é um só — e mira em cheio quem constrói rápido com IA.
+
+## O que isso revela
+> O código que você **instala** é código que você **executa** — com as suas permissões.
+
+Quando você roda um \`npm install\`, copia um repositório ou aceita a biblioteca que a IA sugeriu, está rodando **código de terceiros** na sua máquina e no seu servidor, com o seu acesso. Se esse código foi comprometido — como o da Microsoft —, o estrago é seu.
+
+É o **ataque de cadeia de suprimentos** (supply chain): o invasor não tenta furar o seu código. Ele contamina algo que você **confia e instala**. Muito mais barato pra ele, muito mais perigoso pra você.
+
+## Por que isso atinge o vibecoding em cheio
+Construir com IA é montar rápido em cima de blocos prontos. Você instala dezenas de pacotes sem ler nenhum. A IA diz "instala essa biblioteca" e você instala. Cada \`install\` é um ato de confiança.
+
+E tem um agravante novo, da era da IA: às vezes o modelo **inventa o nome de um pacote** que não existe — e atacantes registram exatamente esse nome com código malicioso, esperando que alguém (ou alguma IA) mande instalar. Chamam isso de *slopsquatting*. Seu app pode estar 100% correto no código que **você** escreveu e ainda assim vazar senhas por uma dependência podre.
+
+## Como se proteger (não é medo, é método)
+1. **Trave as versões.** Use o lockfile (\`package-lock.json\`). Sem isso, uma atualização silenciosa troca a dependência por baixo de você.
+2. **Audite antes de instalar.** Rode \`npm audit\` e olhe a lib: quem mantém? quantos downloads? última atualização? Nome estranho ou pacote novo com zero histórico = sinal vermelho.
+3. **Menos é mais.** Cada dependência é uma porta. Não instale uma biblioteca obscura pra resolver o que 5 linhas resolvem.
+4. **Revise o que a IA manda instalar.** Confirme que o pacote **existe e é o oficial** antes de rodar o comando — não confie no nome que o modelo cuspiu.
+5. **Segredos fora do alcance.** Se um malware rodar, que ele não ache suas chaves no código. É o básico de [nunca vazar um segredo](/blog/nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore).
+
+É a camada **Blindar** do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) aplicada ao que você **não** escreveu — a mesma lógica de [não confiar cegamente no que a IA entrega](/blog/seguranca-no-prompt-nao-e-seguranca-2026).
+
+## Conclusão
+Você pode revisar cada linha que a IA gera e ainda assim ser pego — porque o maior pedaço do seu app é código que **outra pessoa escreveu e você instalou**. Em 2026, com ataque de cadeia de suprimentos virando rotina, "de quem é esse pacote?" é pergunta de segurança, não de curiosidade.
+
+> Você é responsável pelo código que roda no seu app — inclusive (e principalmente) o que você não escreveu.
+
+Quer construir com IA sem deixar essa porta aberta? O método de blindar cada etapa está no e-book gratuito [**IA Sem Medo**](/materiais), e dá pra começar pelos [robôs de IA gratuitos](/robos) — incluindo um Revisor de Código & Segurança.
+
+A decisão é sua.`,
+  },
+  {
     id: "como-criar-assistente-de-ia-personalizado-sem-codigo-2026",
     slug: "como-criar-assistente-de-ia-personalizado-sem-codigo-2026",
     contentVersion: 1,
