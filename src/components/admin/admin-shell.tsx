@@ -27,6 +27,7 @@ const I = {
   chart: <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>,
   zap: <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>,
   cap: <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z" /><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5" /></svg>,
+  deck: <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>,
 };
 
 const nav = [
@@ -36,6 +37,7 @@ const nav = [
   { href: "/admin/robos", label: "Robôs", group: "Conteúdo", icon: I.bot },
   { href: "/admin/skills", label: "Skills", group: "Conteúdo", icon: I.zap },
   { href: "/admin/cursos", label: "Cursos", group: "Conteúdo", icon: I.cap },
+  { href: "/admin/apresentacoes", label: "Apresentações", group: "Conteúdo", icon: I.deck },
   { href: "/admin/materiais", label: "Materiais", group: "Conteúdo", icon: I.material },
   { href: "/admin/biblioteca", label: "Palestras & E-books", group: "Conteúdo", icon: I.library },
   { href: "/admin/site", label: "Conteúdo da home", group: "Conteúdo", icon: I.home },
