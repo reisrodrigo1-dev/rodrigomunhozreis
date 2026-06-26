@@ -7,6 +7,7 @@ import { getViews, getLastViews } from "@/lib/views";
 import { fmtDate, type Row } from "@/lib/admin-data";
 import type { Post } from "@/lib/posts";
 import { BlogAnalytics } from "@/components/admin/blog-analytics";
+import { GA4Overview } from "@/components/admin/ga4-overview";
 
 const PAGE_SIZE = 10;
 
@@ -177,8 +178,11 @@ export default function AdminPosts() {
         </div>
       )}
 
-      {/* Dashboard de métricas */}
+      {/* Dashboard de métricas próprias (Firestore) */}
       <BlogAnalytics />
+
+      {/* Métricas oficiais do GA4 */}
+      <GA4Overview />
     </div>
   );
 }
