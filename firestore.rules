@@ -115,6 +115,13 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    // Visitas detalhadas (telemetria de blog: pais, dispositivo, referrer).
+    // Leitura só admin; escrita só via Admin SDK (rota /api/track-view).
+    match /page_visits/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
     // Contador de visualizações de post: leitura pública (para "Mais lidos"); incremento público de +1.
     match /pageviews/{slug} {
       allow read: if true;

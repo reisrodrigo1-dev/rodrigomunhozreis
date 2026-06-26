@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { getAllPosts, importSeedPosts } from "@/lib/posts-admin";
 import { getViews, getLastViews } from "@/lib/views";
 import { fmtDate, type Row } from "@/lib/admin-data";
 import type { Post } from "@/lib/posts";
+import { BlogAnalytics } from "@/components/admin/blog-analytics";
+
+const PAGE_SIZE = 10;
 
 function fmtRelativo(iso?: string): string {
   if (!iso) return "—";
@@ -28,6 +31,7 @@ export default function AdminPosts() {
   const [lastViews, setLastViews] = useState<Record<string, string>>({});
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
   const [importing, setImporting] = useState(false);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     getAllPosts()
@@ -41,7 +45,13 @@ export default function AdminPosts() {
   }, []);
 
   const totalViews = Object.values(views).reduce((a, b) => a + b, 0);
-  const sorted = [...rows].sort((a, b) => (views[b.slug] ?? 0) - (views[a.slug] ?? 0));
+  const sorted = useMemo(
+    () => [...rows].sort((a, b) => (views[b.slug] ?? 0) - (views[a.slug] ?? 0)),
+    [rows, views]
+  );
+  const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+  const pageRows = sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   async function handleImport() {
     setImporting(true);
@@ -107,7 +117,7 @@ export default function AdminPosts() {
             ) : rows.length === 0 ? (
               <tr><td className="px-4 py-4 text-muted" colSpan={5}>Nenhum post ainda. Crie o primeiro!</td></tr>
             ) : (
-              sorted.map((p) => (
+              pageRows.map((p) => (
                 <tr key={p.id} className="border-b border-line/60 last:border-0 hover:bg-paper">
                   <td className="px-4 py-3 font-medium text-ink">
                     <Link href={`/admin/posts/${p.id}`} className="hover:text-amber-deep">
@@ -136,6 +146,39 @@ export default function AdminPosts() {
           </tbody>
         </table>
       </div>
+
+      {/* Paginação */}
+      {sorted.length > PAGE_SIZE && (
+        <div className="mt-4 flex items-center justify-between text-sm">
+          <p className="text-muted">
+            Mostrando <b className="text-ink">{(currentPage - 1) * PAGE_SIZE + 1}</b>–
+            <b className="text-ink">{Math.min(currentPage * PAGE_SIZE, sorted.length)}</b> de{" "}
+            <b className="text-ink">{sorted.length}</b>
+          </p>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className="rounded-lg border border-line px-3 py-1.5 text-xs disabled:opacity-40"
+            >
+              ← Anterior
+            </button>
+            <span className="text-xs text-muted">
+              Página <b className="text-ink">{currentPage}</b> de <b className="text-ink">{totalPages}</b>
+            </span>
+            <button
+              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              className="rounded-lg border border-line px-3 py-1.5 text-xs disabled:opacity-40"
+            >
+              Próximo →
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Dashboard de métricas */}
+      <BlogAnalytics />
     </div>
   );
 }

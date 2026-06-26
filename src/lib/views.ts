@@ -6,6 +6,7 @@
  */
 export async function recordView(slug: string): Promise<void> {
   if (!slug) return;
+  // 1) contador rápido (já existia)
   const { doc, setDoc, increment, serverTimestamp } = await import("firebase/firestore");
   const { db } = await import("./firebase");
   await setDoc(
@@ -13,6 +14,21 @@ export async function recordView(slug: string): Promise<void> {
     { slug, count: increment(1), updatedAt: serverTimestamp() },
     { merge: true }
   );
+  // 2) telemetria detalhada (país, dispositivo, referrer) — fire-and-forget,
+  // nunca bloqueia a leitura nem é fatal se a rota não responder.
+  try {
+    let leadEmail: string | null = null;
+    try {
+      const { auth } = await import("./firebase");
+      leadEmail = auth.currentUser?.email ?? null;
+    } catch { /* sem auth, ok */ }
+    fetch("/api/track-view", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug, leadEmail }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch { /* nunca quebra a UX */ }
 }
 
 /** Mapa slug -> total de visualizações (admin). */
