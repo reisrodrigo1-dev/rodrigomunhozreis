@@ -141,10 +141,7 @@ export async function getGA4Snapshot(days = 30): Promise<GA4Snapshot | { error: 
     };
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : "unknown";
-    console.error("[ga4] erro:", msg);
-    if (msg.includes("PERMISSION_DENIED") || msg.includes("does not have")) {
-      return { error: "no-access" };
-    }
-    return { error: msg.slice(0, 200) };
+    console.error("[ga4] erro completo:", msg);
+    return { error: msg.slice(0, 500) };
   }
 }
