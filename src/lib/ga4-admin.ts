@@ -30,10 +30,13 @@ function propertyId(): string | null {
 
 export type Bucket = { key: string; value: number };
 
-function rows(res: { rows?: { dimensionValues?: { value?: string | null }[]; metricValues?: { value?: string | null }[] }[] }): Bucket[] {
-  return (res.rows ?? []).map((r) => ({
-    key: r.dimensionValues?.[0]?.value ?? "—",
-    value: Number(r.metricValues?.[0]?.value ?? 0),
+type GA4Row = { dimensionValues?: ({ value?: string | null } | null)[] | null; metricValues?: ({ value?: string | null } | null)[] | null };
+type GA4Resp = { rows?: GA4Row[] | null };
+function rows(res: unknown): Bucket[] {
+  const r = (res as GA4Resp).rows ?? [];
+  return r.map((row) => ({
+    key: row.dimensionValues?.[0]?.value ?? "—",
+    value: Number(row.metricValues?.[0]?.value ?? 0),
   }));
 }
 
