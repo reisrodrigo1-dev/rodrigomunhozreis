@@ -7,6 +7,216 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "gta-vi-ia-controlada-vs-generativa-2026",
+    slug: "gta-vi-ia-controlada-vs-generativa-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-06-25",
+    coverUrl:
+      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1200&q=80",
+    title: "O que GTA VI ensina sobre construir com IA de verdade",
+    excerpt:
+      "GTA VI tem NPCs incrivelmente espertos — e Rockstar fez questão de NÃO usar IA generativa. Por que isso é a maior aula de vibecoding com engenharia.",
+    content: `Saiu o jogo mais esperado da década com NPCs (personagens do jogo) inteligentíssimos: lembram do que você fez, têm rotinas próprias, mudam de humor, reagem ao clima. Parece que a Rockstar enfiou um ChatGPT dentro de cada um deles.
+
+Mas não. **A Rockstar fez questão de NÃO usar IA generativa nos NPCs.** E essa decisão é a maior aula de engenharia com IA que saiu este ano.
+
+## O que de fato tem dentro
+A imprensa especializada esclareceu o boato: o GTA VI **não roda em GPT-6** nem em nenhum modelo de linguagem por trás dos NPCs ([cobertura aqui](https://medium.com/@mattcopp_77295/no-gta6-is-not-going-to-have-generative-ai-for-npcs-c3b533472d18)). Os NPCs são incríveis, mas a inteligência deles é uma engenharia caseira da Rockstar, baseada em uma engine própria (RAGE 9) e em uma patente de IA específica para jogos (US11684855B2) que entrega **200× mais NPCs com comportamento realista** — pathfinding hierárquico, modelagem de personalidade, processamento no servidor.
+
+Resultado: NPCs com rotinas diárias complexas, que reagem a fogo, explosões, chuva, congestionamento; lembram se você foi gentil ou agressivo; vão à praia em certos dias e ficam em casa em outros.
+
+Tudo isso **sem** um modelo de linguagem solto improvisando.
+
+## Por que a Rockstar decidiu não usar IA generativa
+Pensa no que precisa funcionar em GTA VI:
+- **Milhões de jogadores ao mesmo tempo.**
+- **Centenas de NPCs por tela**, com lógica em tempo real.
+- **Zero tolerância** a um NPC dizer algo racista, vazar um spoiler, ou inventar uma missão que não existe.
+- O jogo precisa rodar **igual** pra todo mundo, sempre.
+
+Agora pensa o que uma IA generativa faz num cenário desses: alucina, demora, custa milhões em token por hora, é imprevisível e — pior — é manipulável (alguém escreve algo proibido na tela e o NPC repete).
+
+A Rockstar fez a conta e escolheu o caminho difícil de engenharia: **construir IA específica, controlada, determinística** — em vez de pendurar tudo num modelo genérico mágico.
+
+> O jogo mais esperado da década escolheu IA que ela controla, em vez de IA que controla ela.
+
+## A lição pra quem constrói com IA
+Você não está fazendo um jogo bilionário. Mas o princípio é exatamente o mesmo do [vibecoding com engenharia](/blog/vibecoding-com-engenharia):
+
+1. **A pergunta certa não é "uso IA?".** É: **"o que precisa funcionar SEMPRE, e o que pode ser não-determinístico?"**
+2. **No núcleo crítico, IA controlada.** Regras explícitas, scripts, prompts calibrados, validações — a parte que **não pode falhar** precisa de algo que você consiga prever e testar.
+3. **Na periferia, IA generativa.** Onde a criatividade ajuda e o erro não derruba o produto (rascunho de texto, ideia de variação, primeiro esboço) — aí a IA brilha.
+4. **Observabilidade em tudo.** Como [já escrevi por aqui](/blog/observabilidade-e-o-produto-falha-silenciosa-ia-2026), num produto de IA o que separa demo de produto é o que acontece nos 5% que falham.
+
+É a mesma lição da semana passada: [agente que age sozinho é permissão que você concedeu](/blog/agente-de-ia-sem-revisar-permissao-2026). Autonomia bonita na demo, problema sério em produção.
+
+## E o desafio que a Rockstar nem precisou enfrentar
+Se a Rockstar tivesse colocado GPT-6 dentro de cada NPC, em 24 horas alguém ia conseguir:
+- Fazer um NPC vazar dados de outros jogadores.
+- Soltar conteúdo proibido na voz do personagem.
+- Quebrar a economia do jogo com truques de prompt.
+
+É o mesmo erro que [a defesa morando no prompt](/blog/seguranca-no-prompt-nao-e-seguranca-2026) provoca em qualquer sistema: vira manchete.
+
+## Conclusão
+GTA VI mostra que a IA mais inteligente nem sempre é a mais cara, mais nova ou mais "mágica". Às vezes é a mais **engenheirada** — a que você escolheu não usar nos lugares errados.
+
+> A maior empresa de jogos do mundo construiu IA com regra, não com mágica. É engenharia. É vibecoding com engenharia.
+
+Quer construir com IA com esse rigor — saber onde vale IA generativa e onde vale IA controlada? O método está no e-book gratuito [**IA Sem Medo**](/materiais), e dá pra começar pelos [robôs de IA gratuitos](/robos).
+
+A decisão é sua.`,
+  },
+  {
+    id: "notebooklm-pesquisador-pessoal-tutorial-2026",
+    slug: "notebooklm-pesquisador-pessoal-tutorial-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-06-25",
+    coverUrl:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80",
+    title: "Tutorial: como usar o NotebookLM como seu pesquisador pessoal",
+    excerpt:
+      "Suba 50 documentos, pergunte e a IA responde só com base no que você subiu — sem alucinar. O passo a passo do NotebookLM, com método.",
+    content: `Você tem PDFs, contratos, transcrições de reunião, artigos salvos e uma pilha de "vou ler depois". Aí pergunta pro ChatGPT e ele inventa metade da resposta. Faz sentido pedir uma coisa que ele não leu?
+
+Tem ferramenta gratuita feita exatamente pra resolver isso, e é uma das mais subestimadas de 2026: o **NotebookLM**, do Google.
+
+## O que é, em uma frase
+Você sobe **até 50 fontes** (PDFs, Google Docs, sites, vídeos do YouTube, áudios), e uma IA passa a responder **só com base no que você subiu**. Cada resposta vem com **citação direta** da fonte. Se não está lá, ela não inventa.
+
+É a diferença entre um estagiário inventando e um analista que leu o material. ([Documentação oficial](https://notebooklm.google/))
+
+## Por que isso é grande
+Resolve três problemas de uma vez:
+- **Alucinação:** ela só responde do que você subiu — com link da fonte.
+- **Tempo:** você lê 1 hora; ela responde sobre 500 páginas em segundos.
+- **Memória:** o "vou ler depois" vira um conhecimento consultável.
+
+E tem um truque que está fazendo gente trocar de podcast: o **Audio Overview** transforma seus documentos numa conversa entre dois "apresentadores" de IA, formato podcast. Ouve no carro, na academia, lavando louça.
+
+## Passo a passo
+**1. Crie a conta e o notebook**
+- Vá em [notebooklm.google.com](https://notebooklm.google.com) e entre com sua conta Google. É grátis.
+- Clique em **"+ Novo notebook"**.
+
+**2. Suba as fontes (a parte crítica)**
+- Clique em **"Adicionar fonte"**. Aceita PDF, .txt, Google Docs, link de site, link do YouTube (transcreve), áudio (transcreve).
+- Regra de ouro: **um notebook por projeto** — não por tema. O poder do NotebookLM é cruzar fontes, e isso só funciona dentro do mesmo notebook.
+- Exemplo prático: "Caso do cliente X" (todos os PDFs, e-mails e atas viram um notebook).
+
+**3. Pergunte com método**
+Use o [P.R.O.M.P.T.E.R.](/blog/como-usar-ia-no-trabalho-peder) aplicado ao notebook. Pergunte em três níveis:
+
+- **Visão geral:** "Quais são os principais temas que aparecem em todas as fontes?"
+- **Aprofundamento:** "Sobre o tema X, qual evidência específica cada fonte traz?"
+- **Confronto:** "Há fontes que se contradizem? Onde?"
+
+A última é a melhor. É onde o NotebookLM brilha — ele aponta a divergência e mostra a citação de cada lado. Você decide o que vale.
+
+**4. Gere um Audio Overview (sério, faça)**
+- No painel, clique em **"Audio Overview"** → "Generate".
+- 5 a 10 minutos depois, você tem um podcast de uns 12 a 20 min com **duas vozes de IA** discutindo o material.
+- Antes de gerar, dá pra personalizar: "Foque em X", "tom formal", "20 minutos".
+
+**5. Use o que ele cospe — com critério**
+Cada resposta tem um número clicável que abre **a passagem exata** da fonte. **Sempre confira.** O NotebookLM é menos sujeito a alucinação que um modelo solto, mas pode interpretar mal um trecho. É a sua camada de revisão — o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) aplicado ao conhecimento.
+
+## Casos de uso que valem ouro
+- **Estudo de prova/concurso:** apostilas e leis sobem como fontes → você pergunta, simula, ouve no áudio.
+- **Cliente:** todos os documentos do caso/projeto viram um notebook consultável.
+- **Reuniões:** salva as transcrições do mês → pergunta "o que decidimos sobre X?".
+- **Pesquisa de mercado:** 10 relatórios sobem juntos → você pede "compare as previsões e me dê o consenso e a divergência".
+- **Onboarding de equipe:** documentação interna vira um notebook que responde dúvidas do novato.
+
+## O limite honesto
+- É **leitura**, não criação. Pra escrever do zero, use ChatGPT/Claude/Gemini direto.
+- 50 fontes por notebook. Em projetos imensos, vale ter mais de um e cruzar à mão.
+- **Privacidade:** não suba documento sensível sem checar a política do Google Workspace da sua empresa.
+
+## Conclusão
+A IA que responde "do nada" sempre vai te decepcionar em algum momento. A IA que responde **só do que você deu pra ela** muda a conta toda — você termina de ler em segundos, sem inventar, com fonte clicável.
+
+> NotebookLM é o oposto do hype: é IA chata, controlada, citada. E é por isso que vale.
+
+Quer mais ferramentas e métodos pra usar IA com critério? Tudo está no e-book gratuito [**IA Sem Medo**](/materiais), com 130+ prompts prontos.
+
+A decisão é sua.`,
+  },
+  {
+    id: "modelo-do-mes-mudou-de-novo-o-que-importa-2026",
+    slug: "modelo-do-mes-mudou-de-novo-o-que-importa-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-06-24",
+    coverUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "O modelo do mês mudou de novo. Por que isso não importa pra você",
+    excerpt:
+      "Gemini 2.5 Pro tomou a liderança esta semana. Daqui a 30 dias outro toma. O que muda pra quem constrói com IA — e o que não muda.",
+    content: `Essa semana o ranking dos modelos de IA virou de novo. **Gemini 2.5 Pro chegou e bateu todo mundo** em vários benchmarks (89,8% no MMLU-Pro, o mais alto entre os modelos públicos). O **GPT-5.5-Cyber** da OpenAI tomou o lugar do Mythos 5 da Anthropic em segurança (85,6% no CyberGym). Em outro canto, **John Jumper, ganhador do Nobel** pelo AlphaFold, deixou a DeepMind e foi pra Anthropic. E a SpaceX assinou contrato pra pagar **US$ 150 milhões por mês** em GPUs da Nvidia.
+
+Tudo isso. Em uma semana.
+
+## O que acabou de acontecer
+- **22/jun — Gemini 2.5 Pro lançado** com "Deep Think" (modo de raciocínio profundo). Ficou na frente do Fable 5 da Anthropic em GPQA Diamond (82,4% vs 79,1%) e bateu o recorde público em MMLU-Pro. ([cobertura](https://www.buildfastwithai.com/blogs/ai-news-today-june-24-2026))
+- **GPT-5.5-Cyber da OpenAI** ultrapassou o Mythos 5 em testes de cibersegurança.
+- **John Jumper (Nobel de Química 2024)** trocou a DeepMind pela Anthropic.
+- **SpaceX-xAI: US$ 150M/mês, US$ 6,3 bi até 2029** em GPUs.
+- **Anthropic** anunciou que **65% do código** do time de produto já sai do "Claude Tag" — um agente que vive dentro do Slack.
+
+E tem mais. Mas pra que listar?
+
+## Por que isso não importa pra você (tanto)
+Eu sei como essa enxurrada de notícia faz a gente sentir: que está perdendo a janela, que precisa trocar de modelo, que é melhor esperar o próximo lançamento pra começar.
+
+É exatamente o tipo de ansiedade que **paralisa**.
+
+Olha o ritmo: o **Claude Fable 5** foi a referência absoluta em maio. Em junho, [foi tirado do ar pelo governo dos EUA](/blog/seguranca-no-prompt-nao-e-seguranca-2026), [voltou na semana passada](/blog/claude-code-cursor-antigravity-qual-usar-2026), e essa semana o Gemini 2.5 Pro está na frente. Daqui a 30 dias, outro modelo lidera.
+
+> O modelo que está no topo essa semana não é o que está no topo o mês que vem. E não é o que vai estar no topo quando você precisar entregar.
+
+Quem trocou de IDE/modelo toda semana esse ano não entregou nada. Quem escolheu **um** e usou com método entregou produto.
+
+## O que de fato muda
+Três coisas dessa semana **importam** pra quem constrói:
+
+1. **A liderança virou commodity.** Quando 3 modelos diferentes alternam na ponta a cada 30 dias, "o melhor modelo" deixou de ser vantagem competitiva. Você usa o que está acessível e bom o suficiente. O Gemini melhor 5% no benchmark X não te faz entregar 5% mais.
+2. **IA está virando colega de equipe, não ferramenta.** O Claude Tag dentro do Slack (escrevendo 65% do código de um time da Anthropic) é o sinal: a IA não vai mais "abrir uma janela à parte". Vai conversar com você nos canais onde o trabalho já acontece. [Como já apontei aqui](/blog/ia-escreve-codigo-humano-virou-arquiteto-2026), o humano sobe pra arquiteto e auditor.
+3. **A infraestrutura virou geopolítica.** US$ 150 milhões/mês em GPUs, Nobel mudando de empresa, governo derrubando modelo. Quem opera IA hoje opera num campo que não obedece mais só ao mercado.
+
+## O que NÃO muda
+Aqui está a parte que ninguém posta no LinkedIn:
+
+- **Saber pedir.** Modelo novo, mesma necessidade de um prompt bem feito ([método P.R.O.M.P.T.E.R.](/blog/como-usar-ia-no-trabalho-peder)).
+- **Saber revisar.** [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas). Modelo mais inteligente alucina mais convincente.
+- **Saber blindar.** Segurança não mora no prompt. [Continua não morando](/blog/seguranca-no-prompt-nao-e-seguranca-2026).
+- **Saber escolher.** Onde vale IA generativa, onde vale IA controlada (a Rockstar acabou de mostrar isso em [GTA VI](/blog/gta-vi-ia-controlada-vs-generativa-2026)).
+
+Essas quatro habilidades **se acumulam**. Você não perde elas quando o modelo muda. É o seu juros composto.
+
+## A recomendação prática
+Se você está construindo algo agora:
+
+1. **Pega o modelo que está bom o suficiente** (Claude, GPT, Gemini — qualquer um). Não troca por benchmark.
+2. **Investe no método.** Prompt, revisão, segurança, arquitetura.
+3. **Olha o ranking 1x por mês**, no máximo. Não toda semana.
+4. **Só troca de modelo** se aparecer um ganho real pra **sua** tarefa específica, medido com **sua** métrica.
+
+## Conclusão
+A liderança da IA virou um cabo de guerra semanal entre 3 empresas. É emocionante de assistir. É péssimo de seguir.
+
+> Construa com o modelo de hoje, com método de engenheiro. Quando o de amanhã chegar, você troca a peça — e mantém o que vale: o método.
+
+Quer construir com IA sem virar refém do "melhor da semana"? O método está no e-book gratuito [**IA Sem Medo**](/materiais), e dá pra começar pelos [robôs de IA gratuitos](/robos).
+
+A decisão é sua.`,
+  },
+  {
     id: "risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026",
     slug: "risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026",
     contentVersion: 1,
