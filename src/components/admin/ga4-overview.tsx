@@ -9,7 +9,6 @@ type State =
   | { status: "loading" }
   | { status: "unauth" }
   | { status: "ok"; data: GA4Snapshot }
-  | { status: "no-credentials" }
   | { status: "no-property-id" }
   | { status: "no-access" }
   | { status: "error"; msg: string };
@@ -76,8 +75,7 @@ export function GA4Overview() {
         const data = (await r.json()) as GA4Snapshot | { error: string };
         if (!alive) return;
         if ("error" in data) {
-          if (data.error === "no-credentials") setState({ status: "no-credentials" });
-          else if (data.error === "no-property-id") setState({ status: "no-property-id" });
+          if (data.error === "no-property-id") setState({ status: "no-property-id" });
           else if (data.error === "no-access") setState({ status: "no-access" });
           else setState({ status: "error", msg: data.error });
         } else {
@@ -106,24 +104,25 @@ export function GA4Overview() {
 
       {state.status === "loading" && <p className="mt-5 text-sm text-muted">Consultando GA4…</p>}
 
-      {(state.status === "no-credentials" || state.status === "no-property-id" || state.status === "no-access") && (
+      {(state.status === "no-property-id" || state.status === "no-access") && (
         <div className="mt-5 rounded-xl border border-amber/30 bg-amber-soft/40 p-5">
           <p className="text-sm font-semibold text-ink">GA4 ainda não está conectado.</p>
           {state.status === "no-property-id" && (
-            <p className="mt-1 text-xs text-ink/70">Falta a variável <code>GA4_PROPERTY_ID</code> na Vercel (o número da propriedade, ex.: <code>317945612</code>).</p>
-          )}
-          {state.status === "no-credentials" && (
-            <p className="mt-1 text-xs text-ink/70">Falta a variável <code>FIREBASE_SERVICE_ACCOUNT</code> na Vercel (já é usada pelo webhook do Resend).</p>
+            <p className="mt-1 text-xs text-ink/70">Falta a variável <code>GA4_PROPERTY_ID</code> na Vercel (o número da propriedade).</p>
           )}
           {state.status === "no-access" && (
             <p className="mt-1 text-xs text-ink/70">A service account não tem acesso à propriedade GA4. Adicione o <i>client_email</i> da SA como <b>Leitor (Viewer)</b> no Admin do GA4.</p>
           )}
-          <p className="mt-3 text-xs text-ink/70">Veja os 3 passos no topo da página <code>/admin/posts</code>.</p>
         </div>
       )}
 
       {state.status === "unauth" && <p className="mt-5 text-sm text-muted">Faça login como admin para ver os dados.</p>}
-      {state.status === "error" && <p className="mt-5 text-sm text-red-600">Erro: {state.msg}</p>}
+      {state.status === "error" && (
+        <div className="mt-5 rounded-xl border border-red-300 bg-red-50 p-5">
+          <p className="text-sm font-semibold text-red-700">Erro ao consultar GA4</p>
+          <p className="mt-1 break-all font-mono text-xs text-red-700">{state.msg}</p>
+        </div>
+      )}
 
       {state.status === "ok" && (
         <>

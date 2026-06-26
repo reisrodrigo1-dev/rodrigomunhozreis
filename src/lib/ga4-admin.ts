@@ -6,13 +6,16 @@ import { BetaAnalyticsDataClient } from "@google-analytics/data";
  * "Viewer" ao e-mail dessa service account dentro da propriedade GA4.
  */
 let cached: BetaAnalyticsDataClient | null = null;
-function client(): BetaAnalyticsDataClient | null {
+function client(): BetaAnalyticsDataClient | { error: string } {
   if (cached) return cached;
   const raw = process.env.FIREBASE_SERVICE_ACCOUNT;
-  if (!raw) return null;
+  if (!raw) return { error: "FIREBASE_SERVICE_ACCOUNT não está setada (var vazia ou ausente neste deploy)" };
   let creds: { project_id?: string; client_email?: string; private_key?: string };
-  try { creds = JSON.parse(raw); } catch { return null; }
-  if (!creds.client_email || !creds.private_key) return null;
+  try { creds = JSON.parse(raw); } catch (e) {
+    return { error: `FIREBASE_SERVICE_ACCOUNT não é JSON válido (${e instanceof Error ? e.message : "?"})` };
+  }
+  if (!creds.client_email) return { error: "JSON do service account não tem 'client_email'" };
+  if (!creds.private_key) return { error: "JSON do service account não tem 'private_key'" };
   cached = new BetaAnalyticsDataClient({
     credentials: {
       client_email: creds.client_email,
@@ -52,7 +55,7 @@ export type GA4Snapshot = {
 export async function getGA4Snapshot(days = 30): Promise<GA4Snapshot | { error: string }> {
   const c = client();
   const p = propertyId();
-  if (!c) return { error: "no-credentials" };
+  if ("error" in c) return { error: c.error };
   if (!p) return { error: "no-property-id" };
 
   const range = { startDate: `${days}daysAgo`, endDate: "today" };
