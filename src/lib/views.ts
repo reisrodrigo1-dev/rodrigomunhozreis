@@ -27,3 +27,19 @@ export async function getViews(): Promise<Record<string, number>> {
   });
   return map;
 }
+
+/** Mapa slug -> ISO da última visita (timestamp do servidor). */
+export async function getLastViews(): Promise<Record<string, string>> {
+  const { collection, getDocs } = await import("firebase/firestore");
+  const { db } = await import("./firebase");
+  const snap = await getDocs(collection(db, "pageviews"));
+  const map: Record<string, string> = {};
+  snap.docs.forEach((d) => {
+    const data = d.data() as { updatedAt?: { toMillis?: () => number; toDate?: () => Date } };
+    const t = data.updatedAt;
+    if (!t) return;
+    const ms = typeof t.toMillis === "function" ? t.toMillis() : t.toDate?.().getTime();
+    if (ms) map[d.id] = new Date(ms).toISOString();
+  });
+  return map;
+}

@@ -3,13 +3,29 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getAllPosts, importSeedPosts } from "@/lib/posts-admin";
-import { getViews } from "@/lib/views";
+import { getViews, getLastViews } from "@/lib/views";
 import { fmtDate, type Row } from "@/lib/admin-data";
 import type { Post } from "@/lib/posts";
+
+function fmtRelativo(iso?: string): string {
+  if (!iso) return "—";
+  const ms = Date.parse(iso);
+  if (!ms) return "—";
+  const diff = Date.now() - ms;
+  const min = Math.floor(diff / 60_000);
+  if (min < 1) return "agora";
+  if (min < 60) return `há ${min} min`;
+  const h = Math.floor(min / 60);
+  if (h < 24) return `há ${h} h`;
+  const d = Math.floor(h / 24);
+  if (d < 7) return `há ${d} d`;
+  return new Date(ms).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", year: "2-digit", hour: "2-digit", minute: "2-digit" });
+}
 
 export default function AdminPosts() {
   const [rows, setRows] = useState<Post[]>([]);
   const [views, setViews] = useState<Record<string, number>>({});
+  const [lastViews, setLastViews] = useState<Record<string, string>>({});
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
   const [importing, setImporting] = useState(false);
 
@@ -21,6 +37,7 @@ export default function AdminPosts() {
       })
       .catch(() => setState("error"));
     getViews().then(setViews).catch(() => {});
+    getLastViews().then(setLastViews).catch(() => {});
   }, []);
 
   const totalViews = Object.values(views).reduce((a, b) => a + b, 0);
@@ -80,14 +97,15 @@ export default function AdminPosts() {
               <th className="px-4 py-3 font-semibold">Título</th>
               <th className="px-4 py-3 font-semibold">Status</th>
               <th className="px-4 py-3 font-semibold">Views</th>
+              <th className="px-4 py-3 font-semibold">Última visita</th>
               <th className="px-4 py-3 font-semibold">Atualizado</th>
             </tr>
           </thead>
           <tbody>
             {state === "loading" ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={4}>Carregando…</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={5}>Carregando…</td></tr>
             ) : rows.length === 0 ? (
-              <tr><td className="px-4 py-4 text-muted" colSpan={4}>Nenhum post ainda. Crie o primeiro!</td></tr>
+              <tr><td className="px-4 py-4 text-muted" colSpan={5}>Nenhum post ainda. Crie o primeiro!</td></tr>
             ) : (
               sorted.map((p) => (
                 <tr key={p.id} className="border-b border-line/60 last:border-0 hover:bg-paper">
@@ -108,6 +126,9 @@ export default function AdminPosts() {
                     </span>
                   </td>
                   <td className="px-4 py-3 font-semibold text-ink">{views[p.slug] ?? 0}</td>
+                  <td className="px-4 py-3 text-muted" title={lastViews[p.slug] ? new Date(lastViews[p.slug]).toLocaleString("pt-BR") : ""}>
+                    {fmtRelativo(lastViews[p.slug])}
+                  </td>
                   <td className="px-4 py-3 text-muted">{fmtDate((p as Row).updatedAt)}</td>
                 </tr>
               ))
