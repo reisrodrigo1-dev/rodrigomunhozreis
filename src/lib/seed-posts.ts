@@ -7,6 +7,168 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "biblioteca-de-prompts-pessoal-tutorial-2026",
+    slug: "biblioteca-de-prompts-pessoal-tutorial-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-06-26",
+    coverUrl:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80",
+    title: "O ativo que ninguém tem: sua biblioteca de prompts",
+    excerpt:
+      "Você criou um prompt que funcionou e jogou fora. Quem organiza compõe valor. O passo a passo da biblioteca de prompts pessoal, com método.",
+    content: `Toda vez que você escreve um prompt que funciona, dois caminhos:
+
+1. Copia a resposta, fecha a aba e amanhã reescreve do zero.
+2. Salva o prompt, refina, reusa.
+
+A maioria faz o caminho 1. Por isso a maioria sente que "aprendeu IA" e mês que vem está no mesmo lugar. **Prompt que funciona é ativo.** Quem não organiza, joga fora seu próprio trabalho.
+
+## Por que isso importa
+Especialistas de marketing relatam ganho de até **10× na velocidade de primeiros rascunhos** quando trabalham com prompts bem montados e reusáveis ([fonte](https://genesysgrowth.com/blog/ai-prompt-engineering-for-marketers-complete-guide)). Não é mágica do modelo — é o **mesmo prompt afiado mil vezes**. Esse é o ativo. Vou te ensinar a construir o seu.
+
+## A biblioteca de prompts (definição)
+Um lugar único onde você guarda prompts que funcionam, organizados por tarefa, com **as melhores versões evoluindo no tempo**. Pode ser tão simples quanto um documento. O importante não é a ferramenta — é o **hábito**.
+
+## Onde guardar (3 opções, escolha 1 e siga)
+- **Notion/Google Docs** — fácil, busca decente, dá pra organizar em pastas. Recomendado pra começar.
+- **Obsidian** — pra quem gosta de markdown e busca por tag.
+- **Os próprios "Projects" do Claude / "GPTs" do ChatGPT** — você guarda o prompt **dentro** do assistente. Bom pra prompts que viram um especialista (como [já mostrei aqui](/blog/como-criar-assistente-de-ia-personalizado-sem-codigo-2026)), ruim pra varrer/comparar.
+
+Comece pelo Notion ou Google Docs. Otimize depois.
+
+## A estrutura de UM prompt na biblioteca
+Cada prompt salvo precisa ter **5 partes**. Sem isso ele vira "rabisco que você não lembra por que funcionou".
+
+\`\`\`
+## Nome do prompt
+(curto, descritivo: "E-mail de cobrança gentil")
+
+## Quando usar
+(o gatilho — "cliente atrasou 7 dias e ainda não respondeu")
+
+## O prompt
+(o texto que você cola na IA, com [variáveis] entre colchetes)
+
+## Resultado esperado
+(o que uma boa resposta deve conter — pra você revisar)
+
+## Histórico
+v1: 25/06 — funcionou bem com clientes médios
+v2: 03/07 — ajustei o tom pra clientes grandes; melhorou
+\`\`\`
+
+Esse "Histórico" é o segredo. Você não escreve um prompt perfeito de cara. Você **evolui o mesmo**.
+
+## Como organizar a biblioteca
+Categorize por **tarefa**, não por ferramenta. A IA muda toda semana ([nem ligo mais](/blog/modelo-do-mes-mudou-de-novo-o-que-importa-2026)); o seu trabalho não.
+
+Sugestão de categorias iniciais:
+- **Escrita** (e-mail, post, copy, proposta)
+- **Análise** (resumo, comparativo, pesquisa)
+- **Decisão** (pró e contra, priorização)
+- **Reuniões** (preparação, ata, follow-up)
+- **Aprendizado** (estudar tema, explicar pra leigo)
+- **Pessoal** (rotina, planejamento, lista)
+
+Cada categoria, uma página/pasta. Cada prompt, um arquivo.
+
+## Como construir o prompt certo (método)
+Não copie prompt aleatório da internet. Construa o seu pelo método [P.R.O.M.P.T.E.R.](/blog/como-usar-ia-no-trabalho-peder) — as 8 partes que fazem um prompt deixar de ser pedido e virar uma instrução profissional.
+
+Para cada novo prompt da biblioteca:
+1. **Papel** que a IA assume.
+2. **Realidade** (contexto que ela precisa).
+3. **Objetivo** claro do resultado.
+4. **Marcha** (passo a passo de raciocínio).
+5. **Proteção** (limites e o que não pode).
+6. **Texto de saída** (formato).
+7. **Exemplos** de boa resposta.
+8. **Refino** depois de testar.
+
+Sem método, você acumula prompts ruins.
+
+## A regra dos 5 minutos
+Antes de fechar a janela da IA, pergunte: **"isso vai acontecer de novo?"**.
+- Se sim → 5 minutos pra salvar na biblioteca, no formato acima.
+- Se não → tudo bem, fecha mesmo.
+
+Esses 5 minutos são onde mora o juros composto. Daqui a 6 meses você tem **dezenas de prompts afiados** que outros vão tentar reinventar do zero toda vez.
+
+## Erros comuns (e como evitar)
+- **Salvar tudo:** vira lixo. Salve só o que você reusaria. Qualidade > quantidade.
+- **Salvar sem o "Quando usar":** daqui a 1 mês você não lembra. Sempre escreva o gatilho.
+- **Nunca revisitar:** uma vez por mês, abra os 5 mais usados e refine. É o "Histórico".
+- **Misturar idiomas e formatos:** padronize. Tudo em português ou tudo em inglês. Decida e segue.
+
+## Bônus: o pacote inicial
+Se você quer começar com base, eu já organizei **+130 prompts prontos** no e-book gratuito [**IA Sem Medo**](/materiais). Não pra copiar e colar — pra usar como **ponto de partida** da sua biblioteca, e ir adaptando pelo método.
+
+## Conclusão
+Modelo de IA é commodity. Ferramenta muda. **A sua biblioteca de prompts não muda — ela cresce.** É o ativo mais barato que você pode construir hoje e o que mais paga ao longo dos anos.
+
+> Em 6 meses, quem organizou tem 50 prompts afiados. Quem não organizou tem 50 conversas perdidas. Mesma quantidade de trabalho, resultados opostos.
+
+A decisão é sua.`,
+  },
+  {
+    id: "a24-deepmind-ia-equipa-criador-2026",
+    slug: "a24-deepmind-ia-equipa-criador-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-06-26",
+    coverUrl:
+      "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80",
+    title: "A24 fez parceria com o DeepMind. O que isso ensina sobre IA e criadores",
+    excerpt:
+      "Estúdio mais artístico de Hollywood + laboratório de IA mais avançado do mundo. Tese: a IA não substitui o criador. Equipa o criador.",
+    content: `Saiu esta semana e devia ser obrigatório pra quem ainda acha que IA "vai matar a criatividade": a **A24** — o estúdio de cinema mais artístico/respeitado de Hollywood, dos diretores autorais, dos filmes premiados — fechou parceria de **US$ 75 milhões com o Google DeepMind** pra desenvolver **ferramentas de IA específicas pra produção e distribuição de filmes**.
+
+A casa que escolheu lançar *Tudo em Todo o Lugar ao Mesmo Tempo* e *O Brutalista* não escolheu **resistir** à IA. Escolheu **construir com ela**.
+
+## O que está em jogo
+Hollywood teve uma das maiores greves da história em 2023, em grande parte por causa de IA — atores e roteiristas temendo (com razão) ser substituídos. Em 2026, o vento mudou: o estúdio **mais autoral do mercado** está jogando US$ 75 milhões num laboratório de IA pra construir **as próprias ferramentas**, em vez de comprar Sora ou outro modelo genérico.
+
+A diferença é tudo. Eles não querem IA **fazendo filme**. Querem IA **equipando o time** que faz filme.
+
+## O que isso revela
+A grande pergunta da IA não é "ela substitui o criador?". É **"quem controla as ferramentas que o criador usa?"**.
+
+Quando você usa o modelo genérico do Google ou da OpenAI, a ferramenta é deles. O fluxo é deles. As limitações são deles. Você vira refém — e quando o produto vira commodity, os 30% mais experientes não conseguem se destacar dos 70% que acabaram de chegar.
+
+Quando você **constrói a ferramenta sob medida** (ou contrata pra construir, como fez a A24), você mantém o que te faz único: o **ofício**.
+
+> A IA virou commodity. O método como você usa, não.
+
+É a mesma tese que [escrevi sobre os modelos virando líderes semanais](/blog/modelo-do-mes-mudou-de-novo-o-que-importa-2026), e que a **Rockstar** demonstrou ao [escolher IA controlada em vez de generativa](/blog/gta-vi-ia-controlada-vs-generativa-2026) pros NPCs do GTA VI. Agora a A24 confirma do lado da arte.
+
+## Não é nova — mas agora é institucional
+O que mudou em 2026 é o **enquadramento**. Em 2023, "usar IA" em Hollywood era praticamente palavrão. Em 2026, o estúdio mais prestigiado da indústria assina contrato com a empresa que ganhou um **Nobel** (DeepMind, AlphaFold) e fala abertamente sobre isso.
+
+Pra quem cria conteúdo — texto, design, código, vídeo, qualquer coisa — a mensagem é a mesma:
+- **Resistir** virou estratégia perdedora.
+- **Substituir** o ofício pela IA é virar mais um de milhões.
+- **Equipar** o ofício com IA é o caminho que sobra. É o vibecoding aplicado à criatividade.
+
+## Pra você que constrói com IA (em qualquer área)
+A lição prática:
+
+1. **Não delegue o ofício.** A IA escreve, desenha, codifica. Você decide o que vale e o que não vale — esse é o seu valor.
+2. **Construa suas próprias ferramentas.** Não precisa de US$ 75 mi: um [assistente de IA personalizado bem feito](/blog/como-criar-assistente-de-ia-personalizado-sem-codigo-2026) e uma [biblioteca de prompts pessoal](/blog/biblioteca-de-prompts-pessoal-tutorial-2026) já te colocam acima de quem só usa o ChatGPT cru.
+3. **Especialize-se.** A IA genérica é commodity. O que você sabe sobre **seu** nicho — direito, vendas, ensino, engenharia — é o que vira o cano por onde a IA passa.
+
+## Conclusão
+A24 não vai ser substituída por IA. Vai ser **amplificada** por ela. Quem escolher o caminho contrário (resistir, ou se entregar) vai ser substituído — não pela IA, mas por quem aprendeu a usar IA com método.
+
+> A próxima onda não é "IA fazendo arte". É **IA dentro do workflow de quem faz arte**. E essa onda já começou.
+
+Quer entrar nela com método? O e-book gratuito [**IA Sem Medo**](/materiais) te dá o caminho — 130+ prompts e o método P.R.O.M.P.T.E.R. — pra usar IA como amplificador do **seu** trabalho, não substituto.
+
+A decisão é sua.`,
+  },
+  {
     id: "gta-vi-ia-controlada-vs-generativa-2026",
     slug: "gta-vi-ia-controlada-vs-generativa-2026",
     contentVersion: 2,
