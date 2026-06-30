@@ -7,6 +7,68 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "foxconn-agentes-ia-chao-de-fabrica-2026",
+    slug: "foxconn-agentes-ia-chao-de-fabrica-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-06-27",
+    coverUrl:
+      "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1200&q=80",
+    title: "A Foxconn pôs centenas de agentes de IA no chão de fábrica. E acabou a piada",
+    excerpt:
+      "Foxconn lançou agentes de IA monitorando produção em escala industrial — não demo, fábrica real. O que isso muda pra quem ainda acha 'agente' coisa de PowerPoint.",
+    content: `Esta semana morreu a piada de "agente de IA é só hype de PowerPoint". A **Foxconn** — sim, a que monta seu iPhone — lançou o **MoMClaw**, um sistema multi-agente de manufatura rodando em **NVIDIA FOX** que liga **sensores de máquina a centenas de agentes de IA coordenados**. Cada agente é responsável por monitorar, ajustar ou disparar alerta em uma parte do processo de produção.
+
+Não é piloto. Não é demo. É **chão de fábrica de verdade**, montando produto que vai pro mercado, em escala industrial ([cobertura](https://www.devflokers.com/blog/ai-news-june-2026-models-research-developments)).
+
+E isso muda o jogo de quem ainda achava que "agente" era brincadeira de SaaS.
+
+## O que isso significa
+Há 6 meses, "agente de IA" era um ChatGPT com plugin. Você pedia "marca uma reunião" e ele às vezes acertava. Era teatro.
+
+Em 2026, a Gartner projeta que **40% das aplicações empresariais terão agentes integrados até o fim do ano** — e a Foxconn acabou de provar com produto físico saindo da linha. Agente parou de ser feature, virou **operação**.
+
+A pergunta deixou de ser "agente funciona?". Virou: **"o seu já está rodando, ou você ainda vai começar?"**
+
+## Por que a Foxconn conseguiu (e a maioria não consegue)
+Olha o que a Foxconn fez diferente:
+
+1. **Não é UM agente fazendo tudo.** São **centenas**, cada um responsável por uma parte pequena e bem definida (uma máquina, um sensor, uma decisão). É o oposto do "agente mágico" que tenta resolver o mundo.
+2. **Rodou em escala antes de "lançar".** Você não vê a Foxconn postando demo no LinkedIn. Você vê a fábrica funcionando.
+3. **Falha de UM agente não derruba a linha.** Cada agente é isolado, tem domínio próprio, e o sistema sobrevive a falhas individuais. Engenharia de verdade.
+4. **Observabilidade em tudo.** Quando você rola 200 agentes monitorando 5 mil sensores, [você precisa saber quando um deles para de funcionar](/blog/observabilidade-e-o-produto-falha-silenciosa-ia-2026) — antes do cliente reclamar. Isso na fábrica significa antes da linha parar.
+
+## A lição pra quem constrói com IA
+Você não tem uma fábrica. Mas a engenharia é a mesma:
+
+1. **Quebre o problema em N agentes pequenos.** "Agente que faz minha empresa rodar" é fantasia. "Agente que classifica e-mails de suporte por prioridade" é produto.
+2. **Cada agente tem dono e domínio.** Quando algo dá errado, você sabe qual agente foi.
+3. **Mínimo necessário em cada um.** Já escrevi sobre isso: [agente sem revisar permissão é o erro de segurança da vez](/blog/agente-de-ia-sem-revisar-permissao-2026). A Foxconn não dá acesso total da fábrica pra um agente só — você também não deveria.
+4. **Observabilidade SEMPRE.** Sem isso, você vai descobrir que um agente parou de funcionar quando o problema já é grande.
+
+É o oposto do que a maioria das startups está fazendo: **um** super-agente, com **todos** os privilégios, sem observabilidade, lançado **como demo** pra mostrar pro investidor.
+
+## O que muda a partir daqui
+Se a Foxconn — que tem **margem apertada** e **zero tolerância a parada de linha** — escolheu agentes de IA pra rodar a fábrica, é sinal claro que a tecnologia saiu do estágio de novidade. Em 6 meses, todo concorrente sério vai ter alguma coisa parecida no fluxo de trabalho deles.
+
+A vantagem competitiva está se movendo:
+- **Antes:** quem tinha IA tinha vantagem.
+- **Agora:** todo mundo tem. Vantagem é **quem tem agente bem implantado e observado**.
+- **Em 1 ano:** todo mundo terá agentes. Vantagem será **quem cruza dados entre agentes** (o que a IA do MoMClaw faz coordenando os 100+ agentes entre si).
+
+Se você ainda está esperando "a hora certa", a hora passou.
+
+## Conclusão
+A IA virou commodity. **A engenharia de IA não.** A Foxconn não ganhou implantando "uma IA" — ganhou implantando **arquitetura de agentes** com método, isolamento, observabilidade e foco. É vibecoding com engenharia em escala industrial.
+
+> "Agente de IA" parou de ser apresentação de PowerPoint e virou linha de produção. Quem ainda está fazendo apresentação vai descobrir tarde demais.
+
+Quer começar a construir com agentes do jeito certo — pequenos, isolados, observados — em vez do super-agente de demo? O método está no e-book gratuito [**IA Sem Medo**](/materiais), com prompts prontos.
+
+A decisão é sua.`,
+  },
+  {
     id: "gta-vi-foco-single-player-licao-startup-2026",
     slug: "gta-vi-foco-single-player-licao-startup-2026",
     contentVersion: 2,
