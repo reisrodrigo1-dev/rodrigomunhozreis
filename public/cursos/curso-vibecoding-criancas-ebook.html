@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa do Curso · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">E-book acompanhante · Curso presencial · Crianças (10 a 14 anos)</div>
+<h1>Vibecoding do Zero ao Avançado — Crianças</h1>
+<p class="sub">Você é o chefe da máquina. A IA é a sua ajudante. Um livro pra criar sites e programas do zero, com capricho e segurança.</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>10 a 14 anos</span><span>Com supervisão de adulto</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Antes de começar</span><h2>Como usar este livro</h2></div>
+  <p class="mod-resumo">Pra quem é, como ler, e três verdades pra levar.</p>
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Oi!</span><h3>Três verdades pra começar</h3></div>
+    <p class="objetivo"><b>Nessa leitura você vai:</b> entender como esse livro te ajuda a criar coisas reais.</p>
+    <div class="bloco"><h4>Três verdades</h4><ul>
+      <li>Você é o chefe. A IA é a ajudante.</li>
+      <li>A IA erra sim. Sempre teste o que ela fez.</li>
+      <li>Pra publicar na internet, chame um adulto pra revisar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Como ler esse livro</h4>
+      <p>Cada aula tem quatro partes. "Entendendo" explica a ideia. "Passo a passo" mostra o que fazer. "Fica esperto" te avisa das pegadinhas. "Pergunte pra pensar" te faz refletir. Você pode ler na ordem ou pular pro assunto que quer agora. Mas se está começando, ordem é melhor. Cada aula puxa a próxima.</p>
+    </div>
+    <div class="bloco"><h4>Pra quem é</h4>
+      <p>Se você tem entre 10 e 14 anos e curte a ideia de criar sites, jogos e programas usando IA, esse livro é seu. Não precisa saber programar. Não precisa ser gênio de matemática. Precisa de curiosidade e paciência pra testar. E de um adulto por perto pra ajudar na hora de publicar.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca coloque seu nome completo, endereço, telefone ou senhas em nada que você criar. Se a IA pedir, você não dá. Regra do jogo.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se a IA fosse uma pessoa, quem ela seria pra você? Uma amiga que sabe muito? Uma professora paciente? Isso ajuda a lembrar: ela ajuda, você decide.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1</span><h2>O que é criar com IA</h2></div>
+  <p class="mod-resumo">Vibecoding sem mistério: você conversa, a IA constrói, você aprova.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1</span><h3>O que é "vibecoding"? (criar com ajuda da IA)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é vibecoding e por que você é o chefe.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Vibecoding é criar coisas no computador conversando com uma IA. Você não precisa escrever o código sozinho. Você pede o que quer, com palavras claras, e a IA monta pra você.</p>
+      <p>Pensa numa cozinha. Você é o chef. Você decide o prato: um bolo de chocolate com granulado. A IA é o ajudante que corta, mistura e assa. Mas quem escolhe o gosto, prova e aprova é você. Se ficou ruim, você refaz o pedido.</p>
+      <p>Isso muda tudo. Antes, pra criar um site você precisava passar meses aprendendo códigos difíceis. Agora, você aprende a pedir bem. E o que você cria pode ser tão bom quanto o de gente grande.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: pense no que você quer criar. Dois: escreva um pedido claro pra IA. Três: leia o que ela fez. Quatro: teste. Cinco: se não gostou, peça de novo, de outro jeito. Repita até ficar bom.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Me explique, com palavras simples, o que é criar um site com sua ajuda. Depois me dê 3 ideias de site que uma pessoa da minha idade poderia criar.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Pedido claro traz resposta boa. Pedido vago traz resposta vaga. Sempre diga o que você quer e pra quem é.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual das três ideias que a IA te deu você acharia mais divertido criar? Por quê?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2</span><h3>A IA é sua ajudante, você é o chefe</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender por que quem manda no processo é você, não a IA.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>A IA parece muito inteligente. Ela responde rápido, sabe muita coisa, escreve bonito. Mas ela não pensa igual você. Ela junta palavras que costumam aparecer juntas. Às vezes acerta em cheio. Às vezes inventa besteira com cara de verdade.</p>
+      <p>Por isso você é o chefe. Chefe não aceita tudo. Chefe confere. Se a IA te disser que o Brasil tem 50 estados, você percebe o erro. Se ela te fizer um botão que não funciona, você testa e pede pra consertar.</p>
+      <p>Ser o chefe também é escolher. A IA vai te dar várias opções. Só você sabe qual combina com o que você imaginou. Ninguém sabe do seu projeto melhor do que você.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: pediu, recebeu, leia com calma. Dois: pergunte "isso é o que eu queria?". Três: teste sempre. Quatro: se algo cheirar estranho, confira em outro lugar. Cinco: se ficar em dúvida, chame um adulto.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca copie e cole nada da IA num trabalho de escola sem entender. Se você não sabe explicar o que tá lá, não é seu.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se um amigo te desse uma resposta pronta pra sua prova, você usaria sem entender? Por que com a IA seria diferente?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3</span><h3>Conhecendo as ferramentas (o computador do criador)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> conhecer os "brinquedos" que a gente usa pra criar.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Todo criador tem uma bancada com ferramentas. A do artista tem lápis e tinta. A do pedreiro tem colher e nível. A sua tem três coisas principais: um navegador (pra ver o que você criou), um editor (onde a IA escreve o código) e a IA de conversa (a sua ajudante).</p>
+      <p>Você não precisa entender de tudo hoje. Precisa saber pra que serve cada uma. Igual quando você entra num jogo novo: primeiro você entende os botões, depois joga de verdade.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: abra o navegador (Chrome, Edge, Firefox). Dois: abra a IA no navegador. Três: peça pro adulto abrir o editor de código junto com você. Quatro: veja como o editor mostra o código de um lado e o resultado do outro. Cinco: pronto, sua bancada tá montada.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Me mostre uma página HTML bem simples com o título "Meu primeiro site" e um parágrafo dizendo oi. Depois me explique o que cada pedaço faz.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Não instale programa nenhum sem o adulto do lado. Tem gente ruim que faz programa parecendo brinquedo pra roubar dados.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual das três ferramentas te parece mais estranha? O que você não entendeu ainda?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4</span><h3>Sua primeira tela na internet ("Olá, mundo!")</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> criar sua primeira página e ver ela funcionar de verdade.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Toda pessoa que aprende a criar coisas na internet começa pelo mesmo lugar: uma tela que escreve "Olá, mundo!". Parece bobo. Mas é o momento em que você prova pra si mesmo que consegue fazer algo aparecer numa tela.</p>
+      <p>Um site é como uma casa. O HTML são as paredes e cômodos. O CSS é a pintura e a decoração. Se o HTML tá lá, o site existe, mesmo feio. Hoje a gente só precisa das paredes.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: peça pra IA criar um arquivo HTML com "Olá, mundo!" bem grande no meio. Dois: peça pro adulto salvar o arquivo no computador. Três: dê dois cliques no arquivo. Ele vai abrir no navegador. Quatro: comemore. Você acabou de criar uma página de verdade.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Crie um arquivo index.html com um &lt;h1&gt; escrito "Olá, mundo! Sou o(a) [seu apelido]" e um parágrafo dizendo o que eu gosto de fazer. Fundo azul claro, letras escuras.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Use apelido, não seu nome completo. Depois você tira antes de mostrar pra internet.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Que sensação deu ver seu nome aparecer numa página que você mesmo criou?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5</span><h3>Guardar seu trabalho (sem perder nada)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a nunca mais perder o que você criou.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Tem coisa pior que passar horas fazendo um desenho no computador e perder tudo porque a bateria acabou? Tem sim: passar dias criando um site e perder porque você não salvou direito.</p>
+      <p>Existe uma ferramenta que os criadores usam pra isso, chamada Git. Pensa nela como uma máquina do tempo pro seu projeto. Toda vez que você termina uma parte, você tira uma "foto" do projeto. Se der ruim depois, você volta pra foto boa.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: com o adulto, instale o Git. Dois: crie uma conta no GitHub. É como uma nuvem só pros seus projetos. Três: aprenda a fazer "commit" (que é tirar a foto) toda vez que terminar algo que funciona. Quatro: faça "push" pra mandar pra nuvem. Cinco: durma tranquilo.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Me ensine, em 5 passos bem simples, como salvar meu projeto no GitHub pela primeira vez. Pode assumir que o Git já está instalado.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Deixe seu projeto no GitHub como privado no começo. Só torne público quando o adulto revisar e você tiver certeza que não tem nada de pessoal no código.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Você já perdeu algum trabalho que deu raiva? Como você se sentiu? Agora imagina esse hábito de salvar te livrando disso pra sempre.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2</span><h2>Criando seu primeiro site</h2></div>
+  <p class="mod-resumo">Do plano na cabeça até o site no ar, passo a passo, com um adulto.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6</span><h3>Planejar antes de fazer (o que vou criar?)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a pensar antes de mandar a IA construir.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Quando você vai montar um Lego grande, você olha o manual antes. Não sai encaixando peça sem saber. Com site é igual. Se você abre a IA e pede "faz um site legal", você vai receber qualquer coisa. Se você pede com detalhe, recebe o que quer.</p>
+      <p>Planejar é responder três perguntas: pra quem é esse site, o que ele faz, e como ele se parece. Se você souber isso, a IA vira uma máquina de acertar.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: pegue um papel. Dois: escreva o nome do site. Três: escreva pra quem é ("pra mostrar meus desenhos", "pra meus amigos jogarem"). Quatro: liste três coisas que ele precisa ter. Cinco: escreva as cores que você quer. Só depois abra a IA.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Me ajude a planejar um site chamado [nome]. Ele é pra [quem]. Tem que ter: [item 1], [item 2], [item 3]. Cores: [cores]. Me dê uma lista das páginas que ele precisa ter e o que vai em cada uma.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Menos é mais. Um site com 3 coisas boas é melhor que um site com 20 coisas mal feitas.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você tivesse que explicar seu site em uma frase pra sua avó, qual seria?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7</span><h3>Montando a página (cores, textos, botões)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> montar a primeira página do seu site de verdade.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Agora a diversão começa. Com o plano na mão, você vai pedir pra IA construir a página. Ela vai colocar título, textos, imagens e botões. Você vai olhar, testar cada botão, e mudar o que não gostou.</p>
+      <p>Lembra da casa? HTML são as paredes. CSS é a pintura. A IA faz os dois de uma vez, mas você pode pedir pra mudar cor, tamanho de letra, espaçamento. Cada coisinha muda o clima do site.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: mostre seu plano pra IA. Dois: peça a primeira versão. Três: abra no navegador. Quatro: aponte três coisas pra mudar (cor, tamanho, texto). Cinco: peça as mudanças. Repita até ficar bom.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Com base nesse plano [cole seu plano], crie a página inicial em HTML e CSS. Fundo escuro, letras claras, um botão grande no meio dizendo "Começar". Deixe bonito, moderno, sem enfeite demais.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se ficou feio, não é o fim. É só o começo. Bom site é feito no ajuste, não no primeiro chute.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual parte da sua página você mais gostou? E qual parte te incomoda? Por quê?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8</span><h3>Colocar na internet de graça (com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> ver seu site aparecer num endereço de verdade.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Até agora seu site só abre no seu computador. Ninguém mais consegue ver. Publicar é colocar ele num lugar da internet pra qualquer pessoa acessar.</p>
+      <p>Existem serviços gratuitos que fazem isso. Vercel, Netlify e GitHub Pages são três deles. Eles pegam seu projeto e dão um endereço web (URL). É como se você desse a chave da sua casa pra todo mundo poder visitar.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: chame o adulto responsável. Isso é obrigatório. Dois: escolham juntos um serviço (Vercel é fácil). Três: conecte com seu GitHub. Quatro: aperte "Deploy". Cinco: aguarde. Seis: abra o link. Site no ar.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Antes de publicar, revise página por página. Tem alguma foto sua? Nome completo? Escola? Tire. O que tá na internet, tá no mundo.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se um estranho abrisse seu site hoje, o que ele saberia sobre você? É pouco ou é demais?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9</span><h3>Guardar coisas (um caderninho digital)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender o que é banco de dados usando uma imagem simples.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Todo site que faz coisa legal precisa lembrar. Lembrar quem entrou, quantas curtidas teve, qual foi o último desenho enviado. Isso é banco de dados. Pense nele como um caderno digital gigante, com folhas separadas por assunto.</p>
+      <p>Você não escreve nada nesse caderno na mão. Você pede pra IA guardar e buscar. Ela cuida da parte chata. Você cuida do que vai ser guardado e por quê.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: com o adulto, crie uma conta no Firebase (grátis pra começar). Dois: crie um "banco" novo. Três: peça pra IA conectar seu site ao Firebase. Quatro: teste guardando uma frase de teste. Cinco: veja aparecer no caderno digital.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Me ajude a conectar meu site ao Firebase Firestore. Quero uma coleção chamada "recados" com apenas dois campos: texto e data. Explique cada passo como se eu fosse iniciante.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Banco aberto é banco perigoso. Nas próximas aulas você vai aprender a trancar. Por enquanto, só guarde coisas fake pra testar.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se seu site fosse um cachorro robô, o que ele precisaria lembrar toda vez que você chegasse em casa?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10</span><h3>Seu primeiro mini-site pronto!</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> juntar tudo e ter um mini-site funcionando.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Você chegou até aqui. Tem plano, tem página, tem publicação, tem banco de dados. Agora é hora de juntar. Mini-site é um site pequeno mas completo. Uma coisa simples que funciona de verdade.</p>
+      <p>Comemore essa etapa. Muita gente que começa nunca chega aqui. Você chegou. E o mais importante: você entendeu como as peças se encaixam.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: revise seu plano. Dois: confira que tudo do plano tá no site. Três: teste em outro computador ou celular. Quatro: peça pro adulto revisar segurança e dados. Cinco: mande o link pra um amigo. Seis: peça feedback.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Feedback é ouro. Ouça sem se ofender. Quem te aponta um problema tá te dando um presente.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>O que você faria diferente se começasse esse mini-site do zero hoje?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>Fazendo com segurança</h2></div>
+  <p class="mod-resumo">Site legal é site seguro. Aqui você aprende a trancar as portas.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11</span><h3>Senhas e segredos (o que a gente esconde)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que nunca pode aparecer no seu código.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Todo serviço da internet dá pra você uma chave. Chave do Firebase, chave da IA, chave do e-mail. Essas chaves são secretas. Se alguém copiar, essa pessoa pode entrar na sua conta e fazer estrago.</p>
+      <p>Muita criança (e muito adulto também) coloca essas chaves no código e sobe pro GitHub. Aí um robô que fica varrendo a internet acha e usa. Já vi gente perder mil reais em uma noite assim.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: crie um arquivo chamado .env. Dois: coloque suas chaves lá. Três: crie um arquivo .gitignore. Quatro: escreva ".env" dentro dele. Cinco: o Git nunca mais vai mandar suas chaves pra nuvem.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Configure meu projeto pra usar variáveis de ambiente. Crie um .env.example (sem valores reais), coloque .env no .gitignore, e me mostre como usar essas variáveis no código.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Já mostrou uma chave sem querer? Não apague só. Vá no serviço e apague a chave inteira. Crie uma nova. A antiga já era.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Você deixaria a chave da sua casa embaixo do capacho? Por que faria isso com a chave do seu site?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12</span><h3>Trancar a porta (deixar seguro)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a fechar as portas do seu banco de dados.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Quando você cria um Firebase, ele vem com as portas abertas. Qualquer pessoa na internet pode ler e escrever no seu caderno digital. Isso é perigo. Alguém pode apagar tudo. Ou colocar coisas feias.</p>
+      <p>Fechar é escrever regras. Regras dizem quem pode ler e quem pode escrever. É como as regras da sua casa: só entra quem você deixa.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: abra as regras do Firestore. Dois: apague as regras padrão (as abertas). Três: peça pra IA escrever regras que só deixam pessoas logadas escrever. Quatro: publique. Cinco: teste tentando escrever sem estar logado. Tem que falhar.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Escreva regras de segurança do Firestore que: só usuários logados podem ler e escrever. Ninguém pode ler ou escrever dados de outra pessoa. Explique cada linha das regras.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca publique um site com Firebase em modo teste. Se a IA te sugerir "permitir tudo", diga não. Sempre.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se seu site ficasse aberto pra qualquer um mexer, qual seria a coisa mais chata que alguém poderia fazer?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13</span><h3>Quem pode entrar (login)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> criar a porta de entrada do seu site.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Login é a porta com fechadura. Sem ele, qualquer um entra. Com ele, só quem tem chave (usuário e senha) passa.</p>
+      <p>Você não precisa inventar como fazer login do zero. Existem serviços prontos que cuidam disso. O Firebase Authentication é um dos mais fáceis. Ele lida com senha, cadastro, esqueci minha senha, tudo.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: ative o Firebase Authentication. Dois: escolha o método (email e senha é o mais simples). Três: peça pra IA criar as telas de cadastro e login. Quatro: teste criando um usuário fake. Cinco: teste entrando com ele.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Crie uma tela de login e outra de cadastro usando Firebase Authentication com email e senha. Mostre mensagem de erro clara se a senha for fraca ou o email estiver inválido.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Senha forte tem letra, número e é longa. "123456" não é senha, é convite pra ladrão.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Que dados você acha que uma tela de cadastro deveria pedir? E o que ela não deveria pedir de jeito nenhum?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14</span><h3>Cuidar dos dados das pessoas</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que dado dos outros também precisa de respeito.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Quando alguém se cadastra no seu site, essa pessoa te dá informação. Email, senha, talvez o nome. Isso não é seu. Você tá cuidando pra pessoa. Igual quando um amigo te empresta um brinquedo: você usa, mas devolve inteiro.</p>
+      <p>Existe uma lei no Brasil chamada LGPD. Ela diz que quem coleta dados precisa cuidar direito. Isso vale pra criança também, quando cria site. Não é brincadeira.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: peça só o dado que você precisa. Se não precisa do telefone, não peça. Dois: mostre pra pessoa o que você vai fazer com os dados. Três: nunca compartilhe com ninguém. Quatro: se a pessoa quiser sair, apague os dados dela.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se seu site cadastra pessoas, peça pro adulto revisar antes de publicar. LGPD é sério e envolve responsabilidade legal.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se alguém pegasse seus dados pessoais e mostrasse pra outras pessoas sem te avisar, como você se sentiria?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15</span><h3>Conferir antes de mostrar pro mundo</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender uma lista rápida de checagem antes de publicar.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Publicar é como abrir a porta da sua casa pra festa. Antes você confere: tá limpo? Tem comida? Tá seguro? Com site é igual. Você confere antes de deixar entrar.</p>
+      <p>Uma lista curta te salva de vergonha e problema. Vale a pena criar a sua e usar sempre.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: as chaves estão no .env? Dois: as regras do Firebase estão fechadas? Três: os textos estão sem erro? Quatro: tem algum dado pessoal aparecendo? Cinco: funciona no celular? Seis: chame o adulto pra revisar. Só então publique.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Faça uma revisão de segurança e privacidade do meu site. Procure: chaves expostas, dados pessoais visíveis, regras de Firebase abertas, textos sem sentido. Liste o que achou por ordem de importância.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Pressa é inimiga do capricho. Publicar sábado é melhor que publicar quarta com erro que fica no ar até domingo.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Que item você acha que falta nessa lista? Escreva o seu.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>Deixando bonito</h2></div>
+  <p class="mod-resumo">Site bonito não é enfeitado. É claro, organizado e gostoso de usar.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16</span><h3>O que deixa um site legal</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que faz um site parecer profissional.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Você já entrou num site e pensou "que legal"? E em outro e pensou "que estranho"? Muitas vezes não é o assunto. É a forma. Espaço no lugar certo, letra do tamanho certo, cor combinando.</p>
+      <p>Site legal é como quarto arrumado. Tudo tem seu lugar. Não é vazio, mas também não é abarrotado. Você respira ao olhar.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: abra três sites que você acha bonitos. Dois: observe: quantas cores? Quantos tamanhos de letra? Quanto espaço em volta das coisas? Três: escreva as respostas. Quatro: use essas respostas no seu site.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Site com 10 cores e 5 fontes vira uma festa de aniversário no shopping. Escolha 2 ou 3 cores e uma ou duas fontes. Descanse os olhos.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual site você abre mais e por quê? O que ele faz que você gosta?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17</span><h3>Cores, letras e imagens</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> escolher as cores, fontes e imagens do seu site com critério.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Cor tem sentimento. Azul passa calma. Vermelho passa energia. Amarelo puxa atenção. Escolha cores que combinam com a mensagem do seu site.</p>
+      <p>Fonte também. Fonte com serifa (aqueles rabinhos) parece mais séria. Fonte sem serifa parece mais moderna. Fonte engraçadinha só cabe em site pra criança, não em site sério.</p>
+      <p>Imagem, tome cuidado. Não pegue foto na internet à toa. Muita foto tem direitos. Use bancos gratuitos como Unsplash ou peça pra IA gerar.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escolha uma cor principal. Dois: escolha uma cor secundária que combine. Três: escolha uma fonte pra títulos e uma pra textos. Quatro: use isso no site todo. Cinco: coloque imagens só onde ajudam a entender.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Meu site é sobre [tema]. Me sugira uma paleta de 3 cores e uma combinação de 2 fontes do Google Fonts que combinem com esse tema. Explique por que escolheu cada uma.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Texto branco em fundo amarelo é ilegível. Sempre teste contraste. Existe um site chamado "WebAIM Contrast Checker" que te diz se tá bom.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se seu site fosse um sabor, qual seria? E como a cor traduz esse sabor?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18</span><h3>Funciona no celular também</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fazer seu site funcionar bem no celular.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Mais gente acessa a internet pelo celular do que pelo computador. Se seu site fica quebrado no celular, você tá perdendo a maioria das pessoas.</p>
+      <p>Site que se ajusta ao tamanho da tela chama-se "responsivo". A IA sabe fazer isso, mas você precisa pedir. E precisa testar. Sempre.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: peça pra IA fazer o site responsivo. Dois: abra no navegador. Três: aperte F12 pra abrir o inspetor. Quatro: clique no ícone de celular. Cinco: veja como fica em tela pequena. Seis: se algo tá cortado, peça pra ajustar.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Deixe meu site responsivo. No celular: menu vira botão de hambúrguer, imagens ocupam a largura total, textos ficam legíveis sem precisar dar zoom. Use CSS moderno com Flexbox ou Grid.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Testar no seu celular de verdade sempre é melhor que só no simulador. As duas coisas juntas é o ideal.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual site você odeia usar no celular? O que ele faz de errado que você não vai fazer?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19</span><h3>Botões e formulários</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> criar botões e formulários que funcionam bem.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Botão bom é claro. A pessoa olha e sabe o que vai acontecer se apertar. "Comprar" é bom. "Clique aqui" é ruim. Diga o que faz.</p>
+      <p>Formulário é onde o site pergunta e a pessoa responde. Nome, email, mensagem. Formulário bom é curto. Só o essencial. E sempre confirma que deu certo depois de enviar.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escreva o botão dizendo o que ele faz. Dois: deixe grande o suficiente pra clicar no celular. Três: no formulário, use rótulos claros ("seu nome" em vez de "campo 1"). Quatro: mostre uma mensagem quando enviar. Cinco: mostre erro claro se algo faltou.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Crie um formulário de contato com campos: nome, email e mensagem. Valide que o email é válido. Ao enviar, mostre uma mensagem de sucesso. Se der erro, mostre uma mensagem simpática e clara.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se seu formulário guarda mensagens de gente na internet, alguém vai tentar mandar spam ou coisa feia. Sempre valide antes de guardar.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual formulário você já preencheu e desistiu no meio? Por quê?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20</span><h3>Capricho final</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> dar o retoque que separa o site bom do site profissional.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Capricho é o extra que ninguém pediu, mas todo mundo sente. Uma animação sutil quando o botão é clicado. Um cantinho arredondado. Uma sombra suave. Detalhes que dizem "aqui tem cuidado".</p>
+      <p>Não é enfeite. É respeito com quem tá usando. Igual comida bem apresentada: você come com os olhos primeiro.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: revise cada tela do seu site. Dois: em cada uma, ache uma coisinha pra melhorar. Três: adicione transições suaves nos botões. Quatro: alinhe tudo direito. Cinco: teste com um amigo do lado sem falar nada. Vê o que ele acha.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Animação demais atrapalha. Se cada botão pula, pisca e gira, ninguém consegue ler. Menos é mais, sempre.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual o pequeno detalhe do seu site que te dá mais orgulho? Por que ele importa?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>Fazendo o site fazer coisas</h2></div>
+  <p class="mod-resumo">Sair do site parado pro site que reage, guarda, avisa e conversa.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21</span><h3>Guardar e mostrar informação</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fazer seu site guardar o que a pessoa escreve e mostrar depois.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Aqui a mágica começa. Até agora seu site era como um cartaz. Você olhava, mas não mexia. Agora ele vira um mural. A pessoa escreve um recado, aperta enviar, e o recado aparece pra todo mundo ver.</p>
+      <p>Isso funciona porque o site fala com o banco de dados. Ele pega o texto do formulário, manda pro caderno digital, e depois lê tudo o que tá lá pra mostrar.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: crie um formulário simples com um campo de texto. Dois: peça pra IA salvar o texto no Firestore quando enviar. Três: peça pra ler tudo do Firestore e mostrar na tela. Quatro: teste enviando 3 recados. Cinco: veja aparecer.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Crie uma página tipo mural: um formulário com um campo de texto que salva no Firestore (coleção "recados", campos texto e data). Abaixo do formulário, mostre a lista dos últimos 10 recados. Sem login por enquanto, mas com regras que só deixam adicionar, não apagar.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Cuidado com o que a pessoa pode escrever. Alguém pode tentar colocar código malicioso. Escape o texto antes de mostrar.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Que tipo de mural seria mais divertido pro seu grupo de amigos? Recados? Piadas? Desafios?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22</span><h3>O site que responde</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fazer seu site reagir quando a pessoa mexe nele.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Site que responde é mais legal que site parado. Aperto um botão, some uma parte. Passo o mouse, muda a cor. Escrevo, aparece a contagem de letras. Isso é interação.</p>
+      <p>Quem faz isso é o JavaScript, que é a linguagem que dá vida pro site. Você não precisa aprender ela na mão. Você pede pra IA e ela escreve. Você só entende o que aconteceu.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escolha uma interação que seu site precisa. Dois: descreva pra IA com detalhe. Três: peça o código. Quatro: cole e teste. Cinco: se não funcionou, peça pra ela consertar.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>No meu formulário de recados, quero que apareça em tempo real quantos caracteres a pessoa já escreveu, com um limite de 200. Se passar de 200, o botão de enviar fica desabilitado.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Interação bacana ajuda. Interação demais irrita. Pense: isso resolve algo pra quem usa ou é só firula?</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual interação de algum app que você usa te agrada? Você consegue explicar por que ela funciona?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23</span><h3>Conectar com outras coisas (mágicas prontas)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que existem serviços prontos pra usar no seu site.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Existe uma coisa chamada API. Pensa nela como uma máquina pronta que você chama por telefone. Você pede "me diz o clima aí em São Paulo" e ela responde. Você não precisa saber como ela sabe.</p>
+      <p>Isso é ouro. Precisa de mapa? Tem API. Clima? Tem. Tradução? Tem. Pagamento? Tem. Você pluga a mágica pronta no seu site.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: pense numa função que seu site precisa. Dois: pesquise se tem API pra isso. Três: leia como usar (a IA ajuda). Quatro: pegue a chave da API. Guarde no .env. Cinco: peça pra IA fazer o site chamar a API.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Quero mostrar o clima da cidade que a pessoa escrever, usando a API do OpenWeather. Já tenho a chave. Escreva o código pra chamar a API do lado do servidor (não exponha minha chave no navegador) e mostrar temperatura e descrição.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Chave de API sempre no servidor, nunca no navegador. Se botar no lado do navegador, qualquer pessoa vê e usa.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você pudesse plugar qualquer serviço no seu site, qual escolheria e por quê?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24</span><h3>Avisos automáticos</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fazer seu site avisar você quando algo acontece.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Seu site não precisa dormir. Ele pode ficar de olho e te avisar. Alguém mandou um recado? Você recebe email. Deu erro? Você recebe alerta.</p>
+      <p>Isso é feito com serviço de email tipo Resend ou com notificação pelo Firebase. É simples de plugar. E te economiza checar o site 20 vezes por dia.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escolha um serviço de email (Resend é fácil). Dois: crie conta. Três: pegue a chave. Guarde no .env. Quatro: peça pra IA mandar email toda vez que alguém enviar formulário. Cinco: teste.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Toda vez que alguém enviar o formulário de contato do meu site, quero receber um email no meu endereço com o conteúdo do formulário. Use Resend. Chave está no .env como RESEND_KEY. Mande no servidor, nunca no cliente.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Sem limite, você pode receber 500 emails de spam num dia só. Sempre coloque um limite de envio por hora (rate limit).</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Que evento no seu site você mais gostaria de saber na hora? Por que esse?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25</span><h3>Deixar rápido</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender por que site rápido é site que fica visitado.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Ninguém tem paciência com site lento. Se demora mais que 3 segundos, metade das pessoas vai embora. Rápido não é luxo. É essencial.</p>
+      <p>O que deixa site lento é geralmente imagem pesada, código bagunçado, ou muita coisa carregando ao mesmo tempo. Com poucos ajustes você acelera muito.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: use o site "PageSpeed Insights" do Google. Cole seu link. Dois: veja a nota. Três: leia as sugestões. Quatro: peça pra IA aplicar as principais. Cinco: teste de novo. Repita até chegar acima de 90.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Imagem pesada é o vilão número um. Antes de subir, sempre passe em algo tipo TinyPNG. Corta o tamanho em 70% sem perder qualidade visível.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Você já saiu de um site porque tava lento? Onde? Isso te ensina o quê?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>Fazendo direito (qualidade)</h2></div>
+  <p class="mod-resumo">A parte que separa criador amador de criador de verdade.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26</span><h3>Ler o que a IA escreveu (não aceitar de olhos fechados)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> pegar o hábito de sempre olhar o que a IA fez antes de aceitar.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>A IA é rápida, mas não pensa igual você. Ela às vezes faz mais do que você pediu. Às vezes deixa um erro escondido. Se você aceita sem ler, o problema vira seu.</p>
+      <p>Ler o código não é entender cada símbolo. É passar o olho e ver se faz sentido. É perguntar "o que essa parte faz?". Se a IA não conseguir explicar direito, é sinal de erro.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: quando a IA te der código, respire. Dois: peça pra ela explicar cada parte em português, como se você fosse iniciante. Três: pergunte "isso faz o que eu pedi ou faz mais?". Quatro: só então cole no projeto. Cinco: teste.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Você escreveu esse código: [cole o código]. Me explique linha por linha o que ele faz, em português simples. Me avise se tem alguma coisa que pode dar problema ou que você teve dúvida ao escrever.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se você não consegue explicar o que o código faz pra outra pessoa, você não deveria usá-lo. É a regra do "só uso o que entendo".</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Você já usou algo que não entendeu e deu ruim depois? Como se sentiu?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27</span><h3>Achar e consertar erros (vira detetive!)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender o método pra caçar bugs sem ficar chutando.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Todo criador vive isso: você tá feliz, aperta o botão, e nada acontece. Ou aparece uma mensagem de erro esquisita. Bem-vindo ao clube. Isso é bug.</p>
+      <p>Bug não se resolve chutando. Se resolve virando detetive. Reproduzir (fazer o erro acontecer de novo). Investigar (abrir o console do navegador com F12). Formar hipótese (o que você acha que causou?). Testar a hipótese. Confirmar ou tentar outra.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: refaça o passo que causou o erro. Dois: abra o F12 e olhe a aba Console. Vermelho é erro. Três: leia o erro. Copie ele. Quatro: cole pra IA e explique o que estava fazendo. Cinco: siga a sugestão. Teste.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Meu site deu esse erro: [cole o erro]. Eu estava tentando [descreva]. Me ajude a entender a causa e me sugira o menor ajuste possível pra consertar. Não reescreva tudo, só o que precisa.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca peça pra IA "reescrever tudo" quando dá bug. Ela pode quebrar outras coisas. Peça a menor mudança possível.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Que sensação você tem quando descobre a causa de um bug? Isso é vício, e vício bom.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28</span><h3>Testar pra ver se funciona</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que testar é mais importante que criar.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Criador iniciante escreve e acha que funciona. Criador de verdade escreve, testa, e só então acredita. Porque quase tudo tem um "canto do mapa" que quebra.</p>
+      <p>Teste é tentar quebrar. Você aperta o botão sem preencher o campo. Coloca 10 mil caracteres. Coloca emoji. Coloca uma aspa. Tudo que um usuário curioso ou sem paciência faria.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: liste as 5 principais ações do seu site (login, enviar formulário, ver lista). Dois: pra cada uma, invente 3 jeitos de testar (normal, vazio, esquisito). Três: faça cada teste. Quatro: anote o que quebrou. Cinco: conserte.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se você não achou nenhum problema testando, é porque não testou direito. Sempre tem algo. Continue procurando.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>O que aconteceria com seu site se sua avó tentasse usar? Ele resistiria?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29</span><h3>Arrumar a bagunça (organizar)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender por que código organizado te salva o futuro.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Código bagunçado funciona hoje. Mas quando você quiser mudar algo daqui a um mês, não vai lembrar o que é o quê. Você mesmo vai achar seu código estranho.</p>
+      <p>Organizar é dar nomes claros, separar em partes menores, deixar cada arquivo com uma responsabilidade só. Igual seu quarto: tudo tem seu lugar.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: veja seus arquivos. Tem alguma coisa com nome estranho? Renomeie. Dois: tem função que faz mil coisas? Quebre em várias. Três: tem código igual em vários lugares? Junte num só. Quatro: comente o que não é óbvio. Cinco: teste tudo depois.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Refatore esse código pra ficar mais organizado: nomes claros, funções menores, sem repetição. Mas não mude o comportamento. Depois liste o que você mudou e por quê.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Refatorar sem teste é perigoso. Antes de mexer, tenha certeza que tudo funcionava. Depois de mexer, teste tudo de novo.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Você conseguiria voltar num projeto seu de 3 meses atrás e entender tudo? Se não, por quê?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30</span><h3>Saber quando quebrou</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> descobrir problemas antes das pessoas te avisarem.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Nada pior que descobrir que seu site tá quebrado porque um amigo mandou mensagem "tá dando erro aí". Você quer saber antes. Sempre.</p>
+      <p>Existem serviços que ficam de olho no seu site. Se der erro, eles te avisam. Sentry é um dos mais usados. Ele te manda até o print do erro.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: crie conta grátis no Sentry. Dois: pegue a chave. Guarde no .env. Três: peça pra IA instalar o Sentry no seu projeto. Quatro: cause um erro de propósito pra testar. Cinco: veja chegar o alerta.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Alerta demais vira barulho e você ignora. Configure pra receber só o que importa. Erro crítico manda. Erro fofinho fica no log.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual seria pior: um erro no seu site que só você percebe, ou um que todos veem antes de você? Por quê?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Mostrar pro mundo</h2></div>
+  <p class="mod-resumo">Site pronto é só metade. A outra metade é fazer chegar em quem importa.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31</span><h3>Colocar no ar do jeito certo (com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> publicar seu site pra valer, com todas as checagens feitas.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Você já publicou antes, na aula 8. Agora é diferente. Agora seu site é maior. Tem login, tem banco, tem interação. O risco de deixar algo aberto é maior.</p>
+      <p>Publicar do jeito certo é seguir a lista. Não pular. Não confiar na memória. Adulto do lado. Cabeça fria.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: revise a lista de segurança da aula 15. Dois: teste em celular. Três: teste em modo anônimo pra ver como estranho vê. Quatro: peça pro adulto ler o código de segurança. Cinco: publique. Seis: teste no ar. Sete: comemore.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Publicou e algo tá errado? Tira do ar primeiro. Consertar com o site no ar é como trocar pneu com o carro andando.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Como você se sente quando algo seu vira público? Alívio, medo, orgulho? Tudo junto é normal.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32</span><h3>Fazer as pessoas acharem</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender por que ninguém acha seu site sem ajuda.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Muita gente acha que publicar já resolve. Errado. Publicar é como abrir uma barraca no meio do deserto. Alguém precisa saber que ela tá lá.</p>
+      <p>Existem duas formas de fazer as pessoas chegarem. Uma é orgânica: você aparece nas buscas do Google (isso é SEO). A outra é ativa: você compartilha, conta pros amigos, posta em rede social.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: coloque um título claro em cada página. Dois: descreva do que trata em uma frase (a meta description). Três: peça pra IA otimizar o SEO básico. Quatro: cadastre no Google Search Console (com adulto). Cinco: peça indexação.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Meu site é sobre [tema]. Escreva um bom title, meta description, e Open Graph tags pra cada página. Sem enrolar, direto ao ponto, com palavras que as pessoas procurariam no Google.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>SEO é maratona, não corrida. Site novo demora semanas ou meses pra aparecer bem. Não desanime.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você fosse procurar seu site no Google sem saber o nome dele, o que digitaria?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33</span><h3>Uma página que convida</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> criar uma página que faz a pessoa querer usar seu site.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>A primeira página que a pessoa vê define se ela fica ou vai embora. Isso é a landing page. Ela precisa responder três coisas em 5 segundos: o que é, pra quem é, e por que vale a pena.</p>
+      <p>Se você faz isso bem, a pessoa continua. Se você enrola, ela fecha. Simples assim.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escreva um título forte que diz o que é. Dois: uma frase curta que explica pra quem serve. Três: um botão claro dizendo o que fazer ("Começar", "Ver mais"). Quatro: três benefícios em ícones ou frases. Cinco: um exemplo de uso.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Crie uma landing page pro meu site [tema], com hero (título forte + subtítulo + botão), três blocos de benefício, e um exemplo visual. Sem hype, sem palavra difícil, direto.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Palavra difícil espanta. "Solução inovadora que revoluciona o paradigma" perdeu a pessoa. Fale como você conversaria com um amigo.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você tivesse 10 segundos pra explicar seu site pra alguém no elevador, o que diria?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34</span><h3>Contar pros amigos</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a divulgar sem parecer chato.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Todo mundo torce o nariz pra propaganda. Mas ninguém odeia amigo mostrando algo legal que fez. A diferença é a honestidade.</p>
+      <p>Compartilhe porque tá orgulhoso. Peça feedback de verdade, não só elogio. Melhora com base no que ouvir. Faça isso ciclo e seu site cresce sozinho.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escolha 5 pessoas que confiam em você. Dois: mande mensagem pessoal, não em grupo. Três: peça pra testar e dar UMA sugestão. Quatro: agradeça mesmo se a sugestão for dura. Cinco: aplique a que fizer sentido. Volte a mostrar.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca compre curtida ou visualização. Isso não vira usuário de verdade. E o Google pune.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Quem são as 3 pessoas que você mais gostaria de mostrar seu trabalho? Por que essas?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35</span><h3>Mini-lançamento</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fazer um lançamento simples, mas marcante.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Lançamento não é festa cara. É um dia em que você diz "tá pronto, vem ver". Você marca uma data. Prepara. E naquele dia, foca em mostrar pra muita gente ao mesmo tempo.</p>
+      <p>Isso funciona porque energia junta é maior que energia esparramada. Todo mundo vendo ao mesmo tempo comenta, compartilha, e vira momento.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escolha uma data (uma semana pra frente). Dois: revise seu site como se fosse dia da prova. Três: prepare uma postagem legal com print, título forte e link. Quatro: no dia, poste em redes e mande pra pessoas queridas. Cinco: responda comentários com carinho.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Vai receber crítica também. Respire. Nem toda crítica é sobre você. Algumas são só barulho. Fique com as construtivas.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Como você quer se sentir no dia do lançamento? O que precisa fazer hoje pra sentir isso naquele dia?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Criador avançado</h2></div>
+  <p class="mod-resumo">Depois do básico, o que separa quem cria como brincadeira de quem cria de verdade.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36</span><h3>Ajudantes automáticos (agentes, de forma simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que são agentes de IA sem complicação.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Até agora você conversa com a IA de um em um. Você pergunta, ela responde. Agente é diferente. Agente é uma IA que você programa pra fazer uma sequência de coisas sozinha.</p>
+      <p>Pensa num assistente de biblioteca. Você não fica repetindo "pega esse livro, agora esse". Você diz uma vez "organize a estante alfabeticamente" e ele faz. Agente é isso pro seu site.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escolha uma tarefa repetitiva que seu site tem (responder pergunta comum, resumir texto). Dois: descreva pra IA passo a passo o que o agente deve fazer. Três: peça pra ela criar. Quatro: teste com casos reais. Cinco: ajuste até funcionar.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Crie um agente simples pro meu site que, quando alguém enviar uma dúvida no formulário, tente responder automaticamente usando essa base de perguntas frequentes: [cole aqui]. Se não conseguir responder com confiança, encaminhe pra mim por email.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Agente errado atende mal. Sempre tenha uma saída pra humano quando ele não souber. E revise o que ele respondeu no começo, todo dia.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Que tarefa repetitiva você faz no seu dia que um agente poderia resolver pra você?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37</span><h3>Criar suas próprias "habilidades" (skills, simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a ensinar a IA a fazer coisa do jeito que você quer.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>A IA responde do jeito dela. Mas você pode ensinar ela a responder do seu jeito. Isso é uma skill. É uma folha de instruções que você dá pra ela seguir sempre.</p>
+      <p>Você pode ter uma skill "escreve como eu escrevo". Uma skill "explica pra minha idade". Uma skill "corrige bug do meu jeito". Cada uma é sua e você reutiliza.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: escolha um tipo de tarefa que você faz sempre. Dois: escreva com detalhes como você quer que fique feito. Três: dê exemplos bons e ruins. Quatro: salve essa instrução. Cinco: use ela toda vez que fizer essa tarefa.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Toda vez que eu pedir pra você escrever um texto no meu site, siga estas regras: frases curtas, sem palavra difícil, sem hype, e sempre com um exemplo concreto. Confirma que entendeu antes de começar.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Skill demais confunde. Skill boa é simples e específica. Se você não consegue explicar em duas frases, tá complexa demais.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual instrução você repete pra IA toda vez? Essa é sua primeira skill.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38</span><h3>Mudar e melhorar sem quebrar</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a evoluir seu site com segurança.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Seu site vai crescer. Você vai querer mudar coisa que já funciona. Todo criador vive esse medo: "e se eu quebrar?". Tem jeito de reduzir esse risco a quase zero.</p>
+      <p>O truque é mudar aos poucos, testar cada pedaço, e ter como voltar atrás. Isso é o Git te salvando de novo. Cada mudança é uma foto. Se der ruim, você volta pra foto boa.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: antes de mudar, tira uma foto (commit). Dois: faça UMA mudança pequena. Três: teste tudo que ela toca. Quatro: se funcionou, foto de novo. Cinco: se não funcionou, volte pra foto anterior. Nunca perca o que tava bom.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca mude tudo de uma vez. Um bug some no meio de 20 mudanças e vira caça ao tesouro. Uma mudança por vez.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual mudança você tem medo de fazer no seu site? Como você faria ela em pedaços pequenos?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39</span><h3>Quando o site cresce</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender o que muda quando seu site tem muita gente usando.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Site com 10 usuários é fácil. Site com 10 mil é outro bicho. Coisas que funcionavam começam a ficar lentas. A conta do Firebase pula. O banco de dados fica cheio.</p>
+      <p>Isso é bom problema. Quer dizer que tá crescendo. Mas exige que você saiba o que fazer. Otimizar consultas, colocar cache, cuidar do custo.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: fique de olho no painel do Firebase e do serviço de hosting. Dois: veja onde tá gastando mais. Três: peça pra IA otimizar as consultas mais caras. Quatro: coloque cache no que não muda muito. Cinco: teste que não quebrou.</p>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Coloque um limite de gasto no seu Firebase. Sem limite, um bug pode virar conta de mil reais numa noite.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se seu site bombasse do dia pra noite, que parte dele quebraria primeiro? Como você prepararia?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40</span><h3>Projeto final — meu programa no ar (apresentação)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> apresentar seu projeto pra outras pessoas, com orgulho.</p>
+    <div class="bloco"><h4>Entendendo</h4>
+      <p>Você chegou. Fez do zero. Aprendeu a pedir bem, a construir, a publicar, a cuidar. Agora falta o último passo: mostrar o que fez pra outras pessoas de forma que fique claro o quanto isso vale.</p>
+      <p>Apresentação não é vender. É contar uma história. O que você quis resolver. Como resolveu. O que aprendeu. Onde tá agora. Sem hype. Com verdade. Isso emociona.</p>
+    </div>
+    <div class="bloco"><h4>Passo a passo</h4>
+      <p>Um: pegue 5 minutos. Dois: conte por que fez esse projeto. Três: mostre ele funcionando. Quatro: fale de UMA dificuldade que teve e como venceu. Cinco: diga o que quer fazer daqui pra frente. Seis: agradeça quem te ajudou. Adulto, colegas, IA.</p>
+    </div>
+    <div class="prompt">
+      <span class="ptag">Prompt pra você usar (com um adulto)</span>
+      <pre>Me ajude a preparar uma apresentação de 5 minutos do meu projeto [descreva]. Comece por que fiz, mostre funcionando, conte uma dificuldade, e termine com meus próximos passos. Sem enrolar, com voz de gente jovem que sabe do que tá falando.</pre>
+    </div>
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nervoso é normal. Respira. Fala devagar. Se travar, respira de novo. Ninguém percebe metade do que você acha que aparece.</p>
+    </div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se essa fosse a última aula da sua vida sobre criar com IA, o que você levaria pra frente? Anota. Isso é o seu manual.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+</body>
+</html>

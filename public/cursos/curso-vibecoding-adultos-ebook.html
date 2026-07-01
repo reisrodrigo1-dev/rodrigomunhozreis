@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa do Curso · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">E-book acompanhante &middot; Curso presencial</div>
+<h1>Vibecoding do Zero ao Avançado</h1>
+<p class="sub">Guia consumível pra levar o curso pra casa. Construir com IA e rigor de engenheiro. Do plano ao produto no ar.</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>Adultos</span><span>Protocolo de 5 Camadas</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Introdução</span><h2>Como usar este livro</h2></div>
+  <p class="mod-resumo">Pra quem é, como acompanhar o curso presencial, o que esperar.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Ler antes</span><h3>Três formas de usar este livro</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> te dar uma leitura que sobrevive fora da sala de aula.</p>
+
+    <div class="bloco">
+      <h4>O que você vai levar</h4>
+      <ul>
+        <li>Um resumo editorial de cada aula, pra reler no ônibus, no almoço ou antes de dormir.</li>
+        <li>Um exemplo concreto por aula, do tipo que gruda na cabeça.</li>
+        <li>Prompts prontos, com variáveis entre colchetes, pra colar e adaptar.</li>
+        <li>Skills do Engenho pra aplicar cada tema com método, não na base do achismo.</li>
+        <li>Perguntas de reflexão pra você olhar pro seu próprio código com honestidade.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Como ler</h4>
+      <p>Este e-book não substitui a apostila do aluno. Ele acompanha. A apostila mergulha; o e-book condensa. Leia o capítulo da aula antes de chegar em sala pra já ter o mapa na cabeça. Reveja depois pra fixar. E no meio da semana, quando você estiver construindo algo em casa, use os prompts como atalho: cole, ajuste as variáveis, teste. O livro é seu, rabisque nele. Ele foi feito pra virar caderno de guerra, não relíquia.</p>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> pra orquestrar sua leitura semanal com o curso: o que ler antes, o que praticar depois. Use a <b>forja</b> pra adaptar cada prompt ao seu contexto real, colocando sua stack e seu produto no lugar das variáveis.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você quer construir com IA ou quer só assistir a IA construir? Uma resposta te leva de turista a engenheiro. A outra te mantém dependente. Qual das duas você está escolhendo hoje?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1</span><h2>Fundamentos do Vibecoding</h2></div>
+  <p class="mod-resumo">Mindset, ferramentas, primeira tela no ar, Git. O tijolo de base.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1</span><h3>O que é vibecoding (com engenharia)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você separa o vibecoding de internet do vibecoding de profissional, e entende por que disciplina não te freia. Ela te sustenta.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Vibecoding é descrever o que você quer em linguagem natural e deixar a IA gerar o código. Isso libera velocidade. Também esconde um risco: código sem critério vira dívida técnica e furo de segurança. A versão hype diz "é só pedir". A versão profissional diz "peça, leia, blinde, teste, versione".</p>
+      <p>Chamo isso de vibecoding com engenharia. Você acelera com IA. Mantém os princípios que a engenharia acumulou em décadas. Não é abrir mão de método. É fazer método com um copiloto rápido.</p>
+      <p>O framework que vai atravessar o curso inteiro é o Protocolo de 5 Camadas: Entender, Ler, Blindar, Testar, Versionar. Ele não te deixa lento. Deixa você confiável. Velocidade sem confiança é dívida que você paga com juros depois.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Dois devs pedem o mesmo formulário de cadastro. O primeiro cola o código e sobe. Duas semanas depois, a senha estava em texto puro no banco. Vazamento. O segundo pediu o formulário e pediu também os riscos de segurança. A IA apontou a senha em texto puro, sugeriu hash e regras de banco. Mesmo tempo. Resultado profissional. A diferença não foi a ferramenta. Foi o método.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro de software sênior atuando como meu mentor.
+
+Tarefa: explique em linguagem simples a diferença entre "copiar
+código gerado por IA sem ler" e "usar IA com método de engenharia".
+
+Para a explicação:
+- use uma analogia do mundo real
+- liste 3 riscos concretos de copiar sem entender
+- liste 3 hábitos que reduzem esses riscos
+- termine com uma frase que eu possa colar na parede
+
+Responda em português do Brasil, direto, sem enrolação.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>crivo</b> pra treinar o Protocolo de 5 Camadas em qualquer código que você já tenha por aí. Use a <b>forja</b> pra reescrever seus prompts velhos no padrão profissional e sentir a diferença no resultado.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Em qual das 5 camadas você é mais fraco hoje: Entender, Ler, Blindar, Testar ou Versionar? Seja honesto. É nela que você vai crescer mais neste curso. A IA amplifica suas forças. Amplifica suas fraquezas também.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2</span><h3>O mindset, IA como júnior brilhante, não oráculo</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você ajusta a relação mental com a IA e para de tomar susto quando ela erra.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>O erro mental mais caro do vibecoding é tratar a IA como oráculo. Modelos de linguagem geram a resposta mais provável, não a verdade. Eles alucinam. Erram versões. Esquecem o que você disse três mensagens atrás. Confiar cego é receita de desastre.</p>
+      <p>Troque a metáfora. A IA é uma júnior brilhante. Rápida, incansável, sabe muita coisa. Também precisa de contexto claro, entrega melhor quando o pedido é bem especificado, e exige revisão antes de ir pra produção. Quando você adota esse mindset, você para de brigar com a IA e passa a delegar bem.</p>
+      <p>É aqui que entra o P.R.O.M.P.T.E.R.: Papel, Resultado, Objetivo, Material, Parâmetros, Testes, Especificações, Refino. Não precisa usar as oito letras toda vez. Mas quanto mais importante a tarefa, mais letras você preenche. Pedido vago gera resposta vaga. Pedido estruturado gera entrega profissional.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Pedido de oráculo: "faz um sistema de login pra mim". A IA inventa a stack, o banco e as regras. Você recebe 200 linhas que não encaixam no seu projeto. Pedido de delegação: "você é dev Next.js sênior, quero um formulário de login com e-mail e senha pra meu app que usa Firebase Auth, App Router e Tailwind, com mensagem amigável pra e-mail inválido, responda só com o componente comentado em PT-BR". Encaixa de primeira.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro de software sênior.
+
+Objetivo: revisar comigo o pedido que vou fazer para a IA antes
+de enviá-lo, pra ela entregar de primeira.
+
+Material — este é o meu rascunho de prompt:
+"[cole aqui seu rascunho]"
+
+Tarefa: analise meu pedido usando P.R.O.M.P.T.E.R. e me diga:
+- o que já está claro
+- o que está faltando ou ambíguo
+- como reescrever pra IA entregar de primeira
+
+Parâmetros: seja direto, PT-BR, e devolva no final a versão
+reescrita do meu prompt, pronta pra usar.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra montar seu prompt-modelo pessoal com Papel e Parâmetros já preenchidos do jeito que você trabalha. Use a <b>lapidador</b> pra refinar a resposta da IA quando ela chega quase boa, mas ainda não é o que você quer.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Da última vez que a IA te deu resposta errada, você percebeu na hora ou só depois? Se foi só depois, faltou contexto no pedido ou faltou revisão na leitura?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3</span><h3>As ferramentas (VS Code, Copilot, Claude Code)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você monta o ambiente e entende quando usar autocompletar e quando usar agente.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Vibecoding com engenharia exige ambiente de verdade. O trio de base: VS Code como editor, Copilot como autocompletar dentro do arquivo, Claude Code como agente que enxerga o projeto inteiro e executa tarefas maiores. Todos com versão gratuita pra começar.</p>
+      <p>Autocompletar e agente são coisas diferentes. O Copilot preenche a próxima linha enquanto você digita. Você continua dirigindo. O Claude Code roda no terminal, planeja, cria vários arquivos e executa. Você descreve a missão. Regra prática: edição pequena dentro de um arquivo é Copilot. Tarefa que mexe em vários arquivos é agente.</p>
+      <p>Regra de ouro: nenhuma ferramenta te isenta de ler. Quanto mais poderoso o agente, mais importante sua revisão. Ele muda mais coisas de uma vez.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Autocompletar no lugar certo: você digita <code>function formatarData(</code> e o Copilot completa o corpo. Você lê, aceita, ganhou 30 segundos. Agente no lugar certo: você abre o Claude Code no terminal e pede "crie a página /sobre com título, parágrafo de apresentação e um botão que leva pra home". Ele cria o arquivo, escreve, mostra o diff. Você revisa. Foi uma tarefa de vários passos descrita em uma frase.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é meu mentor de ambiente de desenvolvimento.
+
+Contexto: estou no [Windows/Mac], acabei de instalar o VS Code
+e quero confirmar que meu ambiente está pronto pra Next.js.
+
+Tarefa: me dê um checklist passo a passo para:
+1. confirmar que o VS Code abriu certo
+2. abrir o terminal integrado
+3. verificar se Node.js está instalado (e qual comando usar)
+4. instalar uma extensão de IA pra iniciante
+5. testar tudo com um comando simples
+
+Parâmetros: explique cada comando antes de eu rodar, PT-BR,
+assumindo que sou iniciante e não quero quebrar nada.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>canteiro</b> pra deixar o ambiente e o projeto novo já com os defaults de segurança e organização certos. Use a <b>bussola</b> quando bater a dúvida "qual ferramenta ou stack eu uso pra isso?" antes de instalar mais coisa que não precisa.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual é o seu fluxo ideal: pra qual tipo de tarefa você vai usar autocompletar, e pra qual vai usar o agente? Ter isso claro evita a armadilha de jogar tudo no agente e parar de entender o que está sendo construído.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4</span><h3>Sua primeira tela no ar ("Olá, mundo")</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você sente na prática o ciclo editar, salvar, ver na tela.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Toda teoria ganha sentido quando você vê algo seu no navegador. O Next.js é a base do curso. Robusto, bem documentado, gratuito pra hospedar. O comando <code>npx create-next-app@latest</code> monta a estrutura inteira. O <code>npm run dev</code> liga o servidor local em <code>localhost:3000</code>. Salvou, o navegador recarrega sozinho. Isso se chama hot reload.</p>
+      <p>Localhost não é internet. É seu computador visto pelo navegador. Ninguém enxerga ainda. Isso é bom. Você experimenta à vontade, sem plateia. O ciclo que você vai repetir milhares de vezes na vida é curto: editar, salvar, ver mudar. Loop curto de feedback é o que torna vibecoding tão produtivo.</p>
+      <p>Mesmo um "Olá, mundo" merece a camada Ler. Abra o <code>page.tsx</code> e entenda o que cada parte faz, mesmo por cima. O hábito de nunca rodar código que você não olhou começa aqui.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você troca o texto padrão por <code>&lt;h1&gt;Olá, mundo, feito por [seu nome]&lt;/h1&gt;</code>, salva, e em menos de um segundo o navegador mostra a mudança. Depois, de propósito, apaga o <code>&lt;/h1&gt;</code>. A tela mostra erro. Você lê a mensagem, vê que faltou fechar a tag, corrige. Fez seu primeiro ciclo de erro e correção. É a base de toda depuração.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro Next.js sênior me ensinando do zero.
+
+Acabei de criar um projeto com create-next-app (App Router,
+TypeScript e Tailwind) e o servidor está em localhost:3000.
+
+Tarefa: me explique o arquivo app/page.tsx que veio por padrão,
+parte por parte, como se eu nunca tivesse visto React. Depois,
+me mostre como trocar o conteúdo por uma tela com:
+- um título grande "Olá, mundo, [meu nome]"
+- um parágrafo curto de apresentação
+- estilização básica com Tailwind, centralizado
+
+Parâmetros: Next.js 14 App Router, Tailwind, comente em PT-BR,
+mantenha simples.
+Testes: deve aparecer centralizado e mudar na hora ao salvar.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>alicerce</b> pra gerar as instruções iniciais do projeto e ensinar a IA a trabalhar no seu padrão desde o primeiro comando. Use a <b>atelier</b> pra deixar essa primeira tela já com identidade visual, não com o visual genérico de template.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual parte do <code>page.tsx</code> você ainda não entendeu? Essa é sua lista de perguntas pra próxima conversa com a IA. Vibecoder que não pergunta o que não entendeu vira turista de novo.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5</span><h3>Git e GitHub sem medo</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você para de ter medo de perder trabalho e ganha uma máquina do tempo do seu código.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Git é controle de versão. GitHub é onde o Git mora online. Juntos, eles são sua máquina do tempo. Toda mudança fica registrada. Você pode voltar. Pode ramificar. Pode compartilhar. Sem Git, você programa com medo. Com Git, você experimenta.</p>
+      <p>O ciclo mínimo cabe em três comandos: <code>git add</code> pra escolher o que vai, <code>git commit</code> pra registrar com uma mensagem, <code>git push</code> pra mandar pro GitHub. Isso já resolve 80 por cento da sua vida. Repositório privado por padrão. Nunca comite <code>.env</code> nem chave de API.</p>
+      <p>Commitar cedo e com frequência é hábito de profissional. Não espere a feature estar perfeita. Cada passo lógico vira um commit. Mensagem clara no imperativo: "adiciona página de contato", "corrige validação do formulário". Você agradece na semana seguinte.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você mexe em três arquivos, quebra tudo e não sabe o que fez. Sem Git, você entra em pânico. Com Git, você roda <code>git diff</code>, vê exatamente o que mudou, e <code>git checkout .</code> volta pro último estado salvo. Trinta segundos. Nenhum drama.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é meu mentor de Git.
+
+Contexto: estou começando com Git e GitHub. Meu projeto é
+[descreva o projeto], está na pasta [caminho].
+
+Tarefa: me ensine o fluxo mínimo do dia a dia:
+- iniciar o repositório local
+- criar o repositório privado no GitHub
+- ligar os dois (remote origin)
+- add, commit, push
+- o que colocar no .gitignore pra não vazar segredo
+
+Parâmetros: PT-BR, comandos com explicação antes de cada um,
+sem entrar em rebase interativo agora. Passo a passo pra
+iniciante que não quer quebrar nada.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>faro</b> pra escanear o repositório antes do primeiro push e ter certeza de que não vazou nenhum segredo. Use a <b>canteiro</b> pra iniciar projetos novos já com <code>.gitignore</code>, <code>.env.example</code> e repositório privado configurados de fábrica.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quantas vezes na sua vida você já perdeu código por não ter Git? Se a resposta for zero, provavelmente é porque você ainda não construiu nada grande. Isso está pra mudar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2</span><h2>Do Plano ao Primeiro Sistema</h2></div>
+  <p class="mod-resumo">Planejar, montar a base, publicar, conectar banco, primeiro CRUD.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6</span><h3>Plano antes do código (MVP, arquitetura)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você para de sair codando sem plano e economiza semanas de retrabalho.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>A pergunta que separa amador de profissional não é "com que stack eu construo?". É "o que exatamente eu vou entregar na versão 1?". MVP não é versão bonitinha do produto final. É o mínimo que resolve o problema pra um usuário real. Se você não corta escopo, você não lança.</p>
+      <p>Antes de escrever código, escreva três coisas em um documento: qual dor você resolve, pra quem, e o mínimo pra provar que resolve. Depois esboce a arquitetura em uma folha. Onde ficam os dados, onde ficam as telas, o que conversa com o quê. Isso vira o mapa que você vai dar pra IA.</p>
+      <p>Um bom plano encolhe o escopo e clareia as escolhas. Sem plano, você pede à IA "faça um app de agendamento" e ela chuta tudo. Com plano, você pede "faça o cadastro de horário pra profissional autônomo, com Firebase, sem pagamento nesta versão". A entrega muda de nível.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Alguém quer construir "um app tipo Uber pra manicures". Sem plano, isso vira seis meses de trabalho. Com plano, o MVP vira: uma landing que capta o pedido da cliente e manda por WhatsApp pra manicure cadastrada. Uma tela, uma integração, dois cadastros. Em duas semanas está no ar. Aí sim você aprende o que os usuários realmente querem.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um product engineer sênior me ajudando a cortar escopo.
+
+Contexto: quero construir [descreva a ideia em 3 linhas].
+Meu público é [quem]. A dor que eu resolvo é [qual dor].
+
+Tarefa:
+1. proponha o MVP mais enxuto possível que ainda resolve
+   a dor pra um usuário real
+2. liste o que fica de fora nesta versão e por quê
+3. desenhe em texto a arquitetura mínima (páginas, banco,
+   integrações)
+4. me diga o que eu preciso decidir antes de escrever a
+   primeira linha de código
+
+Parâmetros: PT-BR, sem hype, resposta em bullets curtos,
+priorize simplicidade. Se eu estiver querendo demais, me diga.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>planta</b> pra transformar a ideia em plano de construção em fases, com MVP primeiro. Use a <b>bussola</b> pra escolher a stack certa pro tipo de produto antes de se comprometer com uma tecnologia difícil de trocar depois.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual foi a última coisa que você começou a construir e não terminou? Aposto que o problema não foi técnico. Foi escopo grande demais. O que você tiraria hoje pra caber em duas semanas?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7</span><h3>Montando a base (Next.js + Tailwind)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você monta a base do projeto com Next.js e Tailwind sem gastar dias configurando.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Next.js resolve roteamento, build, otimizações e SSR de fábrica. Tailwind resolve CSS sem você escrever CSS. Juntos, é o padrão de mercado pra quem quer velocidade sem abrir mão de qualidade. O <code>create-next-app</code> já pergunta se quer Tailwind. Diga sim.</p>
+      <p>A estrutura essencial: <code>app/</code> guarda as páginas, cada pasta é uma rota. <code>components/</code> guarda pedaços reutilizáveis. <code>lib/</code> guarda funções de apoio. <code>public/</code> guarda imagens estáticas. Isso já dá pra construir muita coisa. Não invente pasta que não precisa ainda.</p>
+      <p>Regra de ouro: cada componente faz uma coisa. Se o arquivo passou de 200 linhas, provavelmente virou dois componentes. A IA gera código com facilidade, mas quem organiza é você. Pastas bem nomeadas hoje são horas economizadas amanhã.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Uma landing simples vive em <code>app/page.tsx</code>. O botão de CTA vira <code>components/CtaButton.tsx</code>. A função que envia o e-mail pro seu servidor vira <code>lib/enviar-lead.ts</code>. Três arquivos, três responsabilidades. Amanhã, quando precisar mudar o botão em três páginas, você muda em um lugar só.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro Next.js sênior.
+
+Contexto: acabei de rodar create-next-app com App Router,
+TypeScript e Tailwind. Vou construir [descreva o produto em
+uma linha].
+
+Tarefa:
+- proponha a estrutura de pastas mínima que faz sentido
+  pra esse produto
+- crie o layout base (app/layout.tsx) com header e footer
+  simples e tipografia legível
+- crie a home (app/page.tsx) com hero, uma seção e CTA
+- use Tailwind, componentes pequenos, tudo comentado
+
+Parâmetros: código limpo, sem lib externa desnecessária,
+PT-BR nos comentários, mobile-first.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>canteiro</b> pra iniciar o projeto já com defaults de segurança, gitignore e headers certos. Use a <b>canone</b> pra decidir estilos, paleta e tipografia antes de sair espalhando classes de Tailwind sem critério.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você organiza o projeto pra o Rodrigo do futuro ou pra o Rodrigo do agora? Um dos dois vai reclamar. Escolha qual.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8</span><h3>Publicar de graça (deploy na Vercel)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você tira o site do localhost e coloca no ar de verdade, em poucos minutos.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Vercel é a hospedagem feita pelos criadores do Next.js. Plano gratuito serve pra maioria dos projetos que você vai construir neste curso. O fluxo é curto: você conecta a Vercel ao seu GitHub, escolhe o repositório, clica em Deploy. Em três minutos, seu site está no ar num endereço público.</p>
+      <p>A partir daí, cada <code>git push</code> pra main vira um deploy automático. Isso muda como você trabalha. Você mostra um link em vez de mandar print. Você recebe feedback real, não achismo. E o hábito de manter a main sempre publicável vira parte do seu processo.</p>
+      <p>Variáveis de ambiente (chaves, segredos) ficam configuradas na Vercel, não no código. Isso é regra, não sugestão. Chave hardcoded é vazamento programado. A camada Blindar começa aqui.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você termina a landing na sexta. Faz <code>git push</code>. A Vercel constrói e publica em <code>seu-projeto.vercel.app</code>. Você manda o link no grupo do WhatsApp. Sábado de manhã, seu tio abre no celular e aponta que o botão sumiu no iPhone dele. Você conserta, commita, empurra. Domingo já está corrigido. Sem deploy, esse ciclo levaria semanas.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é meu mentor de deploy.
+
+Contexto: meu projeto Next.js está no GitHub no repositório
+[url]. Quero publicar na Vercel gratuitamente.
+
+Tarefa:
+- me guie passo a passo pra conectar a Vercel ao GitHub
+- explique o que é build, deploy e preview
+- me mostre onde configurar variáveis de ambiente
+- me diga o que NUNCA colocar no código versus o que vai
+  na Vercel
+- me passe um checklist antes do primeiro deploy
+
+Parâmetros: PT-BR, iniciante, sem pular etapa. Se algo puder
+quebrar em produção, me avise antes.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>faro</b> antes de qualquer push pra garantir que nenhum segredo vazou no repositório. Use a <b>bastiao</b> pra revisar a segurança geral do projeto antes de subir a primeira versão pra internet.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual das suas ideias antigas você deixou parada por medo de "não estar boa"? Publica hoje. Feito é melhor que perfeito guardado na gaveta.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9</span><h3>Conectando um banco (Firebase)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você conecta seu Next.js ao Firestore e para de trabalhar só com dados em memória.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Firebase é a caixa de ferramentas do Google pra apps: banco em tempo real (Firestore), autenticação, armazenamento de arquivos, funções serverless. Tem camada gratuita generosa. Pra começar, você só precisa do Firestore.</p>
+      <p>Firestore é NoSQL. Você guarda documentos dentro de coleções. Uma coleção <code>usuarios</code> tem vários documentos, cada um com id único e campos livres. Não pense em tabelas e relações; pense em documentos e coleções aninhadas. É mais flexível e, pra maioria dos apps deste curso, mais rápido.</p>
+      <p>Regra crítica: as regras de segurança do Firestore são fechadas por padrão neste curso. Nada de <code>allow read, write: if true</code>. Isso não é banco, é convite público pra estranho. Toda leitura e escrita passa por autenticação e validação. Vamos aprofundar na Aula 12.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você cria a coleção <code>leads</code>. Cada documento tem <code>nome</code>, <code>email</code>, <code>criadoEm</code>. Sua landing envia o formulário, o Next.js valida, o Firestore grava. No dashboard, você lê os últimos 20 leads em tempo real. Nenhum servidor rodando. Nenhum banco pra administrar. Você foca no produto.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro Next.js + Firebase sênior.
+
+Contexto: meu projeto Next.js (App Router, TS) precisa gravar
+[descreva os dados] no Firestore. Já criei o projeto no
+console do Firebase.
+
+Tarefa:
+- me mostre como instalar o SDK e configurar o app com as
+  chaves como variáveis de ambiente
+- crie um arquivo lib/firebase.ts que inicializa o cliente
+- me mostre uma função que grava um documento na coleção
+  [nome] com validação de campos obrigatórios
+- me lembre das regras de segurança que preciso deixar antes
+  de subir pra produção
+
+Parâmetros: nada de allow if true. Comentado em PT-BR,
+código pronto pra copiar e adaptar.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>esquema</b> pra modelar as coleções e os documentos antes de sair criando campo por aí. Use a <b>cofre</b> pra revisar as regras do Firestore e do Storage antes de considerar o app "pronto".</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se um estranho tentasse ler seu banco agora, ele conseguiria? Se você não sabe responder, a resposta é sim. Isso muda ainda esta semana.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10</span><h3>Seu primeiro CRUD completo</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você constrói o primeiro fluxo de verdade: criar, ler, atualizar, deletar.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>CRUD é o coração de quase todo app que existe. Criar (Create), Ler (Read), Atualizar (Update), Deletar (Delete). Se você domina esse fluxo com Next.js e Firestore, você já constrói dashboards, catálogos, agendas, listas de tarefas e uns 70 por cento dos SaaS por aí.</p>
+      <p>A estrutura mental: uma página lista os itens, outra cria um novo, uma edita, e um botão deleta com confirmação. Cada operação é uma função pequena no <code>lib/</code>. Cada tela é um componente. Você reusa o mesmo padrão em toda entidade nova do projeto.</p>
+      <p>Validação sempre nos dois lados: no formulário, pra experiência boa; no servidor ou nas regras do banco, pra segurança. Nunca confie só na validação do frontend. O usuário mal-intencionado ignora frontend.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você constrói um mini-CRM: uma lista de contatos. A página <code>/contatos</code> mostra todos. <code>/contatos/novo</code> tem o formulário. <code>/contatos/[id]/editar</code> edita um. Um botão deleta com confirmação. Cada função de banco vive em <code>lib/contatos.ts</code>. Se amanhã você quiser trocar Firestore por Postgres, muda um arquivo.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro Next.js + Firebase sênior.
+
+Contexto: quero construir um CRUD completo de [entidade]
+com campos [liste os campos]. Já tenho Firebase configurado
+em lib/firebase.ts.
+
+Tarefa: crie:
+- lib/[entidade].ts com funções criar, listar, obter,
+  atualizar e deletar
+- app/[entidade]/page.tsx que lista todos com um botão
+  "novo" no topo
+- app/[entidade]/novo/page.tsx com o formulário de criação
+  e validação
+- app/[entidade]/[id]/editar/page.tsx pra edição
+- botão de deletar com modal de confirmação
+
+Parâmetros: Next.js 14 App Router, TS, Tailwind, PT-BR nos
+comentários e nas mensagens. Valide no cliente E no servidor.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>esquema</b> pra desenhar o modelo dos dados antes de escrever qualquer função. Use a <b>crivo</b> pra revisar o CRUD gerado pelas 5 camadas antes de aceitar como pronto.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Depois deste CRUD, quais três produtos que você tem na cabeça já dá pra começar? Aposto que a maioria é variação do mesmo padrão. Vibecoding é reconhecer padrão e acelerar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>Segurança Desde o Início</h2></div>
+  <p class="mod-resumo">Segredos, regras de banco, auth, LGPD, o Protocolo de 5 Camadas.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11</span><h3>Nunca vaze um segredo</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende como segredos vazam e cria o hábito de nunca deixar chave no código.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Segredo é qualquer coisa que dá acesso: chave de API, senha, token, string de conexão de banco. Se vazar, quem pegou pode gastar seu crédito, ler seus dados ou apagar tudo. E vazamentos acontecem do jeito bobo: chave commitada, screenshot com o Bearer aparecendo, print no Twitter mostrando um <code>.env</code>.</p>
+      <p>A regra de fábrica: segredo vive em <code>.env.local</code>, que está no <code>.gitignore</code>. No repositório fica um <code>.env.example</code> com os nomes das variáveis, sem valor. Em produção, os valores vão pra Vercel, pro Firebase, pra onde for hospedar. Nunca pro código.</p>
+      <p>Se você já vazou, não deu pra desvazar. A chave vazada é considerada comprometida pra sempre. Você rotaciona (gera nova), invalida a antiga, e assume o susto. Faz isso na mesma hora. Não deixa pra amanhã.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Um dev sobe o projeto pro GitHub com a chave do OpenAI num arquivo <code>config.ts</code>. Em duas horas, bots que varrem o GitHub encontraram, usaram a chave e ele acordou com quatrocentos dólares de cobrança. História real, todo dia, com alguém.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um auditor de segurança pra vibecoders.
+
+Contexto: meu projeto está em [caminho ou url] e usa Next.js
++ Firebase. Vou subir pra produção esta semana.
+
+Tarefa:
+- me diga tudo que deve ir em .gitignore
+- verifique se o padrão de variáveis de ambiente está certo
+  (NEXT_PUBLIC_ vs privado)
+- me passe um checklist pra rodar antes de cada push
+- me mostre como rotacionar uma chave que já vazou
+
+Parâmetros: PT-BR, direto, sem paranoia mas sem alívio falso.
+Se eu estiver fazendo algo perigoso, aponte.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>faro</b> pra escanear o repositório atrás de segredos vazados e receber o passo a passo da remediação. Use a <b>resgate</b> se um segredo já foi pra fora: contenção, rotação, comunicação.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se hoje seu <code>.env.local</code> aparecesse no Twitter, o que você perderia? Se a resposta for "nada", você não tem produto ainda. Se for "muito", você precisa dessa aula hoje, não semana que vem.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12</span><h3>Regras de banco (Firestore seguro)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você fecha o Firestore de verdade e não confia mais no "vou ajustar depois".</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Firestore vem com regras. Elas rodam no servidor do Google e decidem quem pode ler ou escrever o quê. Se você deixar <code>allow read, write: if true</code>, seu banco é público. Qualquer um lê e escreve. Isso não é hipótese, é o comportamento das regras.</p>
+      <p>Padrão bom: nada é público. Cada coleção define exatamente quem pode ler (dono, admin) e quem pode escrever, com validação dos campos. <code>request.auth.uid</code> te diz quem é o usuário. <code>resource.data</code> te diz o que está lá. <code>request.resource.data</code> te diz o que ele está tentando escrever.</p>
+      <p>Teste as regras. O simulador do console do Firebase permite simular leitura e escrita com um usuário fingido. Isso mostra falha antes de virar problema real. Regra que você não testou é regra que você não sabe se funciona.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Coleção <code>notas</code>: cada nota tem um campo <code>uidDono</code>. A regra permite ler só se <code>request.auth.uid == resource.data.uidDono</code>. E permite criar só se o <code>uidDono</code> do documento novo bater com o usuário logado. Ninguém lê nota de ninguém. Ninguém cria nota fingindo ser outro.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um especialista em regras de segurança do Firestore.
+
+Contexto: minhas coleções são [liste] com os campos [descreva].
+Meu app tem [descreva quem são os usuários e o que cada um
+pode fazer].
+
+Tarefa:
+- escreva as regras de segurança em modo fechado por padrão
+- valide os campos obrigatórios em cada create e update
+- me explique cada bloco em PT-BR
+- me passe 5 casos que devo testar no simulador antes de subir
+
+Parâmetros: nada de allow if true. Comentado. Se algo puder
+ser explorado, sinalize com um aviso claro.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>cofre</b> pra auditar as regras do Firestore e do Storage e receber o conserto pronto. Use a <b>salvaguarda</b> pra revisar se os dados que você guarda estão em conformidade com a LGPD.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Suas regras hoje passam no simulador? Se você nunca abriu o simulador, você tem a resposta.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13</span><h3>Autenticação (login seguro, sessões)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você implementa login sem inventar roda e sem deixar buraco.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Nunca escreva seu próprio sistema de autenticação. Use algo pronto e maduro: Firebase Auth, Clerk, Auth.js. Eles resolvem hash de senha, verificação de e-mail, recuperação, sessão, expiração. Fazer isso na mão é atalho pra vazamento.</p>
+      <p>Cadastro exige e-mail verificado. Senha forte, com hash. Recuperação de senha por link com expiração curta. Sessão com tempo de vida definido. Logout limpa tudo. E, quando for coisa séria (dinheiro, dado sensível), MFA. Nada disso é luxo. É baseline.</p>
+      <p>Depois do login, o usuário tem uma identidade. Toda leitura e escrita no banco passa a checar quem é ele. As regras do Firestore da aula anterior encaixam aqui. Auth e regras trabalham juntas. Se uma delas falha, o app está aberto.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você usa Firebase Auth com e-mail e senha. Um formulário chama <code>createUserWithEmailAndPassword</code>. Depois, <code>sendEmailVerification</code>. Enquanto o e-mail não é verificado, o usuário não consegue acessar as rotas privadas. Uma cerca simples, um roteiro velho, e você acabou de descartar 90 por cento das tentativas maliciosas.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro Next.js + Firebase Auth sênior.
+
+Contexto: quero login com e-mail e senha no meu app. App
+Router, TS, Tailwind. Já tenho Firebase configurado.
+
+Tarefa:
+- crie as telas /login, /cadastro e /esqueci-senha
+- integre com Firebase Auth (createUserWithEmailAndPassword,
+  signIn, sendPasswordResetEmail, sendEmailVerification)
+- proteja as rotas privadas com um wrapper que redireciona
+  se não logado
+- me diga o que fazer sobre sessão, expiração e logout
+- mensagens de erro amigáveis em PT-BR
+
+Parâmetros: nada de senha em texto puro, nada de rota
+privada sem checagem. Comentado.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>escudo</b> pra endurecer login, cadastro, MFA e recuperação. Use a <b>bastiao</b> pra revisar a segurança do fluxo inteiro antes de considerar entregue.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se você fosse um invasor tentando entrar na conta de outro usuário do seu app, por onde tentaria? Se você não sabe responder, você ainda não pensou como quem quebra. Vibecoder maduro pensa dos dois lados.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14</span><h3>LGPD pra quem constrói</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende o mínimo de LGPD pra não ser processado nem multado.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>LGPD é a lei brasileira que rege dados pessoais. Se seu app coleta nome, e-mail, telefone, CPF, ou qualquer coisa que identifique uma pessoa, a LGPD se aplica. Ignorar não é opção. Multa vai de aviso a 2 por cento do faturamento. E o dano à reputação é pior que a multa.</p>
+      <p>O básico que todo produto novo precisa: base legal clara (por que você coleta esse dado), consentimento quando precisar, política de privacidade acessível, canal pra usuário pedir acesso ou exclusão dos dados, retenção definida (dado não fica pra sempre), e cuidado com terceiros (quem mais recebe esse dado?).</p>
+      <p>Regra prática: só peça o que você realmente vai usar. Formulário de newsletter pedindo CPF é convite pra problema. Menos dado significa menos risco, menos responsabilidade, menos vazamento em potencial.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Uma landing captura e-mail pra newsletter. Você adiciona um checkbox "concordo com a política de privacidade", com link. A política diz o que você coleta (e-mail), pra que (mandar newsletter), por quanto tempo (até o usuário descadastrar), e como pedir exclusão (link no rodapé de cada e-mail). Isso é o mínimo. É simples. E te protege.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um consultor de LGPD pra devs.
+
+Contexto: meu app coleta [liste os dados pessoais] pra
+[explique pra que usa]. Público brasileiro.
+
+Tarefa:
+- me diga qual a base legal apropriada pra cada dado
+- gere um rascunho de política de privacidade em PT-BR
+  no tom claro, não juridiquês
+- me passe um checklist de conformidade mínima antes de
+  lançar
+- indique onde eu preciso de consentimento explícito
+- me alerte sobre qualquer dado sensível envolvido
+
+Parâmetros: prático, direto, sem enrolação de advogado.
+Se algo precisar de advogado de verdade, avise.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>salvaguarda</b> pra adequar o produto à LGPD, mapear os dados coletados e gerar política de privacidade e fluxo de consentimento. Use a <b>pacto</b> pra rascunhar termos de uso e contratos de tratamento com terceiros como ponto de partida.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>De todos os campos que você coleta hoje, quantos você realmente usa? Corta os que sobram. Menos dado, menos peso.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15</span><h3>O Protocolo de 5 Camadas</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você grava o protocolo que vai atravessar o curso inteiro e a sua vida profissional.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Protocolo de 5 Camadas é o filtro pelo qual todo código gerado por IA precisa passar antes de ir pra qualquer lugar. Entender: você sabe o que quer. Ler: você lê o que a IA fez. Blindar: você pensa no que pode dar errado. Testar: você roda e confere. Versionar: você commita antes que alguma coisa mude.</p>
+      <p>É simples de decorar. É difícil de praticar. Porque toda vez que a IA entrega algo que parece funcionar, o cérebro empurra "sobe logo". O protocolo existe justamente pra segurar esse impulso. Cada camada leva minutos. A ausência delas custa horas ou dias.</p>
+      <p>Faça do protocolo um ritual. Deixe as cinco palavras coladas na parede, no post-it, no comentário do topo do arquivo. Você não vai lembrar sozinho no calor do momento. Ninguém lembra. Por isso é ritual, não intenção.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>A IA gera uma função de importação de CSV. Camada Entender: eu quero importar leads sem duplicar. Camada Ler: percorro linha por linha, entendo cada passo. Camada Blindar: e se o CSV vier com vírgula errada? E com aspas dentro? Camada Testar: crio três CSVs, um bom, um quebrado e um enorme, rodo os três. Camada Versionar: commit com mensagem clara. Cinco minutos. Zero drama depois.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é meu revisor pelo Protocolo de 5 Camadas.
+
+Contexto: acabei de gerar este código com IA:
+"[cole o código aqui]"
+
+Tarefa: revise pelas 5 camadas e me devolva:
+1. Entender — o que esse código se propõe a fazer, em uma
+   frase?
+2. Ler — algum trecho que não faz sentido ou que parece
+   inventado?
+3. Blindar — que entradas podem quebrar isso? Que dados
+   maliciosos poderiam explorar?
+4. Testar — quais 5 casos eu deveria testar antes de aceitar?
+5. Versionar — qual seria uma boa mensagem de commit se eu
+   subir isso?
+
+Parâmetros: PT-BR, honesto. Se estiver ruim, diga que está.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>crivo</b> pra aplicar o Protocolo de 5 Camadas em qualquer diff antes de aceitar. Use a <b>bastiao</b> pra um raio-X de segurança mais amplo quando o código toca dado sensível ou auth.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual das cinco camadas você já pula hoje? A que você mais pula é a que mais vai te machucar. Comece por ela.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>Frontend e Design</h2></div>
+  <p class="mod-resumo">UI/UX, design system, responsividade, formulários, identidade visual.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16</span><h3>Pensando em UI/UX</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você para de decorar interface e começa a projetar decisão do usuário.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>UI é o que o usuário vê. UX é o que ele sente ao usar. Um botão bonito num lugar errado é UI boa e UX ruim. A tela é um caminho: o usuário chega, entende, decide, age. Sua função é apagar o atrito desse caminho, não decorar as paredes dele.</p>
+      <p>Hierarquia é a alma da UI. O que é mais importante tem que parecer mais importante. Título maior que subtítulo. CTA com cor viva. O resto respira. Se tudo grita, nada fala. Contraste, espaço em branco e tamanho fazem mais que qualquer cor da moda.</p>
+      <p>Regra prática pra começar: uma tela, uma ação principal. Se você não sabe qual é o CTA principal da página, o usuário também não vai saber. Menos escolha, mais decisão.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Landing de captura. Título gigante com a promessa. Subtítulo com a especificidade. Um campo de e-mail. Um botão. Nada mais acima da dobra. Isso converte. Página cheia de menu, banner rotativo, três CTAs concorrentes, isso confunde. Menos é mais quando a meta é decisão.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um designer sênior de produto.
+
+Contexto: minha tela atual é [descreva ou cole imagem]. O
+objetivo dela é [ação principal do usuário].
+
+Tarefa:
+- me diga qual é a ação principal que a tela pede
+- aponte três elementos que competem com essa ação e
+  deveriam sair, sumir ou diminuir
+- proponha uma hierarquia clara pra tipografia e cor
+- me dê um layout em texto (o que fica onde, tamanho relativo)
+
+Parâmetros: PT-BR, foco em decisão do usuário, sem
+sugestões genéricas. Se a tela tiver problema óbvio, aponte
+primeiro.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>canone</b> pra fixar o padrão de estilo, paleta, tipografia e regras de UX antes de sair mexendo em componente. Use a <b>atelier</b> pra gerar telas de alta fidelidade na identidade certa, fugindo do visual de template.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual é a ação principal da sua página inicial? Se você levou mais de dois segundos pra responder, o usuário também vai levar. E ele não vai esperar.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17</span><h3>Componentes e design system</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você para de copiar botão em cada página e monta um sistema mínimo.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Design system não é coisa de empresa grande. É hábito de quem quer construir rápido sem descontrolar. Começa pequeno: você fixa cores, tipografia, espaçamentos e cria três ou quatro componentes básicos (botão, input, card, container). Todo o resto reusa esses tijolos.</p>
+      <p>Tailwind ajuda porque as classes viram vocabulário compartilhado. Mas você precisa de convenção. Se cada página inventa cor e tamanho, isso não é design system, é caos com utility-first. Extraia padrões em componentes assim que aparecer a segunda ocorrência.</p>
+      <p>Bibliotecas prontas como shadcn/ui ou Radix aceleram muito. Você pega componentes acessíveis e ajusta ao seu estilo. Isso é fair game. O que não é fair game é sair colando componente sem entender o que faz.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você cria <code>components/Button.tsx</code> com variantes primária, secundária e ghost. Tamanhos sm, md, lg. Estado disabled. Toda página usa essa base. Amanhã, o cliente quer trocar o âmbar por vermelho. Você muda uma linha. Não muda em vinte lugares.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um designer de sistemas de UI.
+
+Contexto: meu projeto é Next.js com Tailwind, tema
+[descreva paleta e tipografia]. Ainda não tenho design
+system.
+
+Tarefa:
+- proponha os tokens base (cores, tipografia, espaçamento,
+  bordas, sombras)
+- crie os 4 componentes iniciais: Button, Input, Card e
+  Container, com variantes e estados
+- me diga como organizar em pastas
+- me passe uma regra de quando criar componente novo vs
+  quando manter inline
+
+Parâmetros: código pronto, acessível, comentado em PT-BR.
+Use Tailwind, sem lib pesada de estilo.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>canone</b> pra definir os tokens antes de escrever o primeiro componente. Use a <b>atelier</b> pra polir as variantes e garantir consistência entre telas.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quantos botões diferentes existem no seu projeto hoje? Se você precisou contar, você tem um mini-caos pra resolver.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18</span><h3>Responsivo e acessível</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você não entrega mais site que quebra no celular nem barra usuário com deficiência.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Mobile-first não é slogan. É o jeito certo. Mais da metade do seu tráfego é celular. Se você projeta pro desktop primeiro, o mobile fica sobrando. Se você projeta pro mobile primeiro, o desktop respira. Comece pequeno, expanda depois.</p>
+      <p>Tailwind tem breakpoints nativos: <code>sm</code>, <code>md</code>, <code>lg</code>. A regra base vale pro celular. As classes com prefixo aplicam a partir de cada breakpoint. Isso deixa o CSS previsível. Teste em janela estreita durante o desenvolvimento, não só no fim.</p>
+      <p>Acessibilidade não é adorno. É obrigação. Contraste suficiente, texto que dá pra aumentar, foco visível no teclado, alt em imagem, label em input, HTML semântico. Você não precisa de ferramenta cara. Precisa de hábito. E de rodar o Lighthouse de vez em quando.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você abre o site num celular emprestado. O botão principal está cortado. O menu não abre. O texto está no cinza claríssimo. Isso não é detalhe. É o motivo pelo qual um usuário fecha em cinco segundos. Testar no dispositivo real é dor barata comparado ao custo de perder visitante.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro de frontend focado em responsividade
+e acessibilidade.
+
+Contexto: cole aqui minha página atual: [código].
+
+Tarefa:
+- refatore mobile-first, com breakpoints do Tailwind
+- garanta contraste AA em todos os textos
+- adicione foco visível, labels acessíveis e ARIA quando
+  necessário
+- aponte três problemas comuns que meu código ainda tem
+- me passe um checklist rápido pra rodar antes de subir
+  cada página
+
+Parâmetros: PT-BR nos comentários, código pronto pra colar.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>atelier</b> pra reforçar acessibilidade e responsividade nos componentes desde o início. Use a <b>turbo</b> depois pra medir Core Web Vitals no mobile e caçar gargalos reais.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quando foi a última vez que você abriu seu site no celular do seu pai? Se nunca, você está entregando pra você mesmo, não pro usuário.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19</span><h3>Formulários e captura de leads</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você constrói formulários que convertem e não vazam dado.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Formulário curto ganha do formulário completo. Cada campo a mais é uma chance a mais de o usuário desistir. Pra newsletter, um campo (e-mail) já basta. Pra cadastro, dois ou três. Pedir CPF na captura de lead é atirar no próprio pé.</p>
+      <p>Validação em dois lugares: no cliente, pra experiência boa (feedback imediato); no servidor ou nas regras do banco, pra segurança. Nunca confie só no cliente. O usuário mal-intencionado ignora o navegador.</p>
+      <p>Depois do submit, sempre tenha um "obrigado" claro. Redirect pra página de obrigado ou mensagem grande. Sem feedback, o usuário fica na dúvida se funcionou. Dúvida é atrito. Atrito é perda.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Landing do e-book. Um campo de e-mail. Um botão "quero receber". Ao enviar: o Firestore grava, a API dispara o e-mail com o link do e-book, e a página muda pra "obrigado, confere sua caixa". Três segundos. Sem fricção. Isso converte.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro de frontend focado em conversão.
+
+Contexto: quero um formulário de captura de e-mail no meu
+Next.js. Vai salvar no Firestore na coleção "leads" e
+disparar um e-mail com [ferramenta].
+
+Tarefa:
+- crie o componente com um campo, validação em PT-BR,
+  estado de loading, mensagem de erro amigável e página
+  de obrigado
+- ligue a função ao Firestore com validação server-side
+- me lembre do consentimento LGPD com checkbox e link
+  pra política
+
+Parâmetros: acessível, responsivo, TS, Tailwind, comentado
+em PT-BR. Nada de campo desnecessário.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>vitrine</b> pra construir a landing de conversão inteira em volta do formulário. Use a <b>ima</b> pra escolher a isca certa e conectá-la ao funil de nutrição por e-mail.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quantos campos tem seu formulário atual? Se são mais de três, aposto que você pode cortar pelo menos um sem perder valor real. Corta.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20</span><h3>Polimento e identidade visual</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você tira o cheiro de template do site e coloca cara de marca.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>A maioria dos sites feitos com IA sai com o mesmo cheiro: gradiente roxo, ícone genérico, tipografia padrão. Isso é o "visual de protótipo". Não é ruim, é só invisível. Pra virar marca, você precisa de três decisões: paleta consistente, tipografia com personalidade, e detalhes coerentes (ícones, sombras, cantos).</p>
+      <p>Escolha uma tipografia com voz. Serifada pra editorial, sans com peso variado pra tech, mono pra código. Não misture cinco fontes. Duas resolvem tudo. E cuide do peso: um h1 900 muda a cara da página mais que qualquer cor.</p>
+      <p>Polimento é a diferença entre "está pronto" e "está bom". Espaçamentos consistentes, alinhamento perfeito, hover sutil, transição rápida. Ninguém aponta esses detalhes um por um. Mas quando todos estão certos, o usuário sente. Quando estão errados, ele fecha sem saber por quê.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Duas landings vendendo o mesmo curso. A primeira tem o degradê genérico, botão redondo azul, tipografia padrão. A segunda tem fundo escuro premium com um toque de âmbar, título serifado com peso 900, botão com hover suave. Preço igual. Conversão diferente. Diferença é cara de marca versus cara de template.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um diretor de arte digital.
+
+Contexto: minha marca é [descreva em uma frase] e o público
+é [quem]. Minha stack é Next.js + Tailwind.
+
+Tarefa:
+- proponha uma paleta com 4 cores (fundo, texto, acento
+  principal, acento secundário) com códigos hex
+- escolha um par tipográfico (título + corpo) do Google Fonts
+- descreva o tom visual em uma frase
+- gere as classes Tailwind base pra aplicar isso globalmente
+- me passe um antes e depois em texto
+
+Parâmetros: PT-BR, sem trend batido, e coerente com o
+público. Se algo não combinar, diga por quê.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>canone</b> pra definir o cânone visual da sua marca antes do polimento. Use a <b>atelier</b> pra aplicar esse cânone nas telas com identidade forte, escapando do visual genérico.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se você tirasse o logotipo do seu site e colocasse ao lado de três concorrentes, dava pra reconhecer qual é o seu? Se não, você tem um site. Não tem uma marca.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>Backend, Dados e Integrações</h2></div>
+  <p class="mod-resumo">Schema, APIs, integrações, webhooks, performance e custo.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21</span><h3>Modelando os dados (schema, relações Firestore)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você desenha o banco antes de escrever código e evita refatoração dolorosa depois.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Modelagem no Firestore não é modelagem relacional. Você pensa em documentos e coleções, não em tabelas e joins. Uma coleção guarda documentos. Um documento pode ter subcoleções. Você denormaliza um pouco pra economizar leitura, e vive bem com isso.</p>
+      <p>Pergunta guia: como esse dado vai ser lido? Se você sempre vai listar todos os pedidos de um usuário, faz sentido pedidos serem uma subcoleção de <code>usuarios/{id}/pedidos</code>. Se você quer listar todos os pedidos do sistema, pedidos vira coleção raiz com <code>uidUsuario</code> como campo. Design segue leitura.</p>
+      <p>Índices e paginação existem. Firestore cobra por leitura. Consulta ampla sem <code>limit</code> vira conta salgada. Sempre pagine. Sempre limite. Sempre pense duas vezes antes de listar mil documentos.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>App de agenda: cliente e evento. Se cada evento pertence a um cliente e você sempre acessa pela ficha dele, subcoleção. Se você tem um calendário global mostrando eventos de todo mundo, coleção raiz. Uma escolha muda o desempenho e o custo. Vale desenhar antes.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é arquiteto de dados especialista em Firestore.
+
+Contexto: meu produto é [descreva]. As entidades são
+[liste] e os principais usos são [liste as consultas
+que meu app faz o tempo todo].
+
+Tarefa:
+- proponha a modelagem em coleções e subcoleções
+- justifique cada escolha em função das consultas
+- indique quais campos precisam de índice
+- me alerte sobre queries caras e como paginar
+- desenhe um diagrama textual da estrutura
+
+Parâmetros: PT-BR, direto. Se algo puder virar problema de
+custo em escala, sinalize.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>esquema</b> pra modelar o banco antes da primeira linha de código. Use a <b>termometro</b> pra estimar o custo por faixa de uso e ver onde a conta pode explodir.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se você duplicar o número de usuários, seu banco quebra? Se você não sabe, você não modelou. Chutou.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22</span><h3>APIs e rotas (route handlers)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende quando fazer server-side e cria endpoints seguros no Next.js.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Nem tudo pode rodar no navegador. Chave secreta, integração com API paga, validação séria: tudo isso vive no servidor. No App Router, você cria <code>app/api/rota/route.ts</code> e ganha um endpoint. Aceita GET, POST, PUT, DELETE. Roda no lado do servidor. O cliente chama por <code>fetch</code>.</p>
+      <p>Regra crítica: todo endpoint valida entrada. Nunca confie no que o cliente manda. Verifique tipos, tamanhos, presença de campos obrigatórios. Retorne erro claro e código HTTP correto (400 pra pedido inválido, 401 pra não autenticado, 403 pra sem permissão, 500 pra erro do servidor).</p>
+      <p>Se o endpoint mexe em dado do usuário, exija auth. Verifique o token do Firebase Auth no servidor antes de fazer qualquer coisa. Endpoint sem auth em rota sensível é vazamento com rota conhecida.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você tem uma landing que dispara e-mail via Resend. Não pode chamar do cliente, senão a chave vaza. Cria <code>app/api/enviar-lead/route.ts</code>, valida o e-mail, chama o Resend do servidor, grava o lead no Firestore, devolve sucesso. O cliente só faz <code>fetch("/api/enviar-lead")</code>. Chave protegida, fluxo limpo.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um engenheiro Next.js sênior.
+
+Contexto: preciso de um endpoint em app/api/[rota]/route.ts
+que faz [descreva a operação]. Roda no servidor.
+
+Tarefa:
+- crie o route handler POST
+- valide o body com uma biblioteca simples (ou manual)
+- exija auth se necessário, verificando o token do Firebase
+- retorne status HTTP corretos com mensagens em PT-BR
+- lide com erro sem vazar detalhes internos
+
+Parâmetros: TS, comentado, sem lib pesada. Se precisar de
+segredo, use process.env.[NOME]. Nunca no cliente.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>ponte</b> pra integrar APIs externas com credenciais no servidor, tratamento de erro e idempotência. Use a <b>crivo</b> pra revisar o endpoint pelas 5 camadas antes de expor pro mundo.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se alguém chamasse seus endpoints direto no Postman, quais dados ele conseguiria acessar sem ser você? Se a resposta for "muitos", vale sentar e revisar hoje.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23</span><h3>Integrações (pagamento, e-mail, WhatsApp)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você conecta serviços externos com segurança e sem gastar dias.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Integração é onde produto ganha superpoder. Stripe ou Pagar.me pra receber. Resend ou Mailgun pra e-mail. Twilio ou WhatsApp Cloud API pra mensagem. Cada uma vem com documentação decente. Você não precisa reinventar. Precisa ler.</p>
+      <p>Padrão de fábrica pra qualquer integração: credenciais no servidor, chamada feita por endpoint do seu Next.js, tratamento de erro que não vaza detalhe, idempotência quando faz sentido (o mesmo pedido não pode virar duas cobranças). Isso vale pra todas.</p>
+      <p>Quanto mais integração, mais superfície de ataque e mais dependência. Cada serviço externo é um ponto de falha. Comece com o mínimo. Adicione com propósito. E monitore, porque quando o Stripe cai, seu checkout cai junto.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você conecta Stripe pra cobrar assinatura mensal do seu SaaS. O checkout roda hospedado pelo Stripe (mais seguro). Depois do pagamento, um webhook chega no seu endpoint, você libera o acesso do usuário no Firestore, dispara e-mail de boas-vindas. Três serviços trabalhando juntos. Cada um faz o que faz de melhor.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro de integrações.
+
+Contexto: preciso integrar [serviço externo] no meu Next.js
+pra [função]. Tenho conta e chave gerada.
+
+Tarefa:
+- me mostre onde guardar a chave (variáveis de ambiente)
+- crie o route handler que chama o serviço
+- me passe o tratamento de erro e o retry quando faz sentido
+- me lembre de idempotência se for operação financeira
+- me alerte pros custos comuns e limites de plano grátis
+
+Parâmetros: PT-BR, código pronto, comentado. Se algo puder
+gerar cobrança inesperada, avise.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>ponte</b> pra conduzir a integração com segurança e boas práticas de webhook. Use a <b>termometro</b> pra prever custo mensal e evitar surpresa na fatura.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se cada integração do seu app estivesse caindo agora, qual delas você notaria primeiro? Aquela é a mais crítica. Monitore ela como se fosse a última que você tem.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24</span><h3>Webhooks e automações</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende webhook e para de fazer polling desnecessário.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Webhook é o inverso de API. Em vez de você perguntar de tempos em tempos "aconteceu algo?", o serviço externo te avisa quando acontece. Stripe te avisa quando o pagamento passa. WhatsApp te avisa quando chega mensagem. É empurrado, não puxado. Mais eficiente e mais rápido.</p>
+      <p>Todo webhook chega num endpoint do seu app, geralmente <code>POST</code>. Você precisa validar que o pedido veio mesmo do serviço, não de um impostor. Isso é feito com uma assinatura que o serviço envia num header. Você recalcula e compara. Sem essa checagem, qualquer um dispara webhook fake.</p>
+      <p>Webhook precisa responder rápido. Se você demorar, o serviço externo tenta de novo, o que pode duplicar processamento. Boa prática: aceita o webhook, coloca numa fila ou marca como recebido, e processa depois. Idempotência é obrigatória: o mesmo evento pode chegar duas vezes.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Stripe manda webhook <code>checkout.session.completed</code>. Você valida a assinatura, encontra o usuário pelo id do checkout, libera o plano no Firestore, dispara o e-mail de boas-vindas. Se o mesmo webhook chegar de novo, você detecta pelo id e não libera duas vezes. Fluxo blindado.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro de integrações.
+
+Contexto: quero receber webhooks de [serviço] no meu Next.js
+em app/api/webhooks/[serviço]/route.ts.
+
+Tarefa:
+- monte o route handler POST
+- valide a assinatura do serviço com o segredo em env
+- garanta idempotência guardando o id do evento
+- responda 200 rápido e faça o trabalho pesado depois
+- trate erro sem vazar detalhe
+
+Parâmetros: TS, comentado em PT-BR. Se algo puder duplicar
+cobrança ou liberação, alerte.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>ponte</b> pra estruturar o webhook com assinatura, idempotência e resposta rápida. Use a <b>sentinela</b> pra observar erros e retries que aparecerem em produção.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Seu webhook processa o evento duas vezes se chegar duplicado? Se sim, você tem cobrança dobrada esperando pra acontecer. Concerte antes de crescer.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25</span><h3>Performance e custo</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende os gargalos comuns e o que cobra caro em produção.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Duas coisas explodem em produção: latência e conta. Latência frustra usuário. Conta frustra você. E os dois vêm quase sempre dos mesmos suspeitos: query cara sem índice, imagem pesada sem otimização, chamada de IA sem cache, request de terceiro sem timeout.</p>
+      <p>Regras baratas que resolvem muito. Firestore: paginação, limite, índices. Next.js: cache de página quando os dados mudam pouco, <code>next/image</code> pra imagem. Chamada de LLM: cache de resposta pra pergunta igual. Terceiro: timeout, retry com backoff, e um plano B se cair.</p>
+      <p>Medir antes de otimizar. Lighthouse pra web vitals. Firebase console pra leituras e escritas. Painel do provedor de IA pra tokens. Otimização por chute é caro e ineficaz. Otimização com número é cirurgia.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Sua landing carrega em cinco segundos. Você abre o Lighthouse. A imagem hero tem 4 MB. Você troca por <code>next/image</code> com <code>priority</code> e formato AVIF. O tempo cai pra 1,2 segundo. Uma mudança, um ganho enorme. Isso é ROI de otimização com número.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro de performance.
+
+Contexto: meu app Next.js está com [descreva o sintoma:
+página lenta, conta alta, timeout]. Deploy na Vercel,
+banco Firestore.
+
+Tarefa:
+- me passe um checklist de diagnóstico pra rodar em ordem
+- aponte os 5 gargalos mais comuns nesta stack
+- pra cada gargalo, sugira a correção mais barata primeiro
+- me lembre onde medir antes e depois
+
+Parâmetros: PT-BR, prático. Nada de otimização precoce se
+o problema for outro.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>turbo</b> pra caçar gargalos de Core Web Vitals, bundle e queries lentas. Use a <b>termometro</b> pra estimar custo com o volume atual e o volume projetado.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual é o gasto mensal do seu app hoje? Se você não sabe, você não está pilotando. Está passageiro.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>Qualidade</h2></div>
+  <p class="mod-resumo">Revisar, depurar, testar, refatorar, observar.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26</span><h3>Revisar o que a IA escreve (Protocolo de 5 Camadas na prática)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você adota o hábito de revisar diff antes de aceitar.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>O maior erro do vibecoder novato é aceitar diff sem ler. A IA gera 200 linhas, o teste passa, e ele commita. Um mês depois, ninguém entende o que foi feito. Esse débito é caro. Ele começa com uma revisão pulada.</p>
+      <p>O ritual é simples. Antes de aceitar, você lê o diff inteiro. Aplica as 5 camadas em ordem: Entender, Ler, Blindar, Testar, Versionar. Se algo não faz sentido, você pergunta. Se algo cheira mal, você recusa. A IA reescreve sem drama. Você mantém o controle.</p>
+      <p>Peça pra IA revisar a própria resposta. Modelos são bons em achar defeito em código que eles mesmos escreveram, quando você pede explicitamente. É a técnica do "olha de novo, o que pode dar errado aqui?". Baixo custo, alto retorno.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>A IA gera uma função de importação. Você lê e pergunta: "e se o CSV vier vazio? E se tiver acentos? E se tiver 100 mil linhas?". Ela ajusta os três casos. Sem revisão, esses cenários virariam bug em produção. Com revisão, viram testes que você acabou de descobrir.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um code reviewer sênior.
+
+Contexto: aqui vai o diff que uma IA gerou pra mim:
+"[cole o diff]"
+
+Tarefa: revise pelas 5 camadas:
+- Entender: qual a intenção real?
+- Ler: alguma linha que parece inventada ou inconsistente?
+- Blindar: quais casos de borda quebram isso?
+- Testar: quais 5 cenários de teste eu deveria rodar?
+- Versionar: sugestão de mensagem de commit no imperativo
+
+Parâmetros: PT-BR, honesto. Se estiver ruim, diga com
+clareza e mostre como reescreveria.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>crivo</b> pra ritualizar o Protocolo de 5 Camadas em cada revisão. Use a <b>lapidador</b> pra pedir refinamento quando a resposta chega quase boa.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quando foi a última vez que você recusou um diff da IA? Se nunca, você está commitando no automático. E automático custa caro depois.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27</span><h3>Achar e corrigir bugs (F12)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você abre o DevTools sem medo e depura com método.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Bug não se resolve chutando. Resolve com método. Método começa reproduzindo o problema. Se você não consegue reproduzir, você não sabe se consertou. Reprodução é a primeira etapa, não a última.</p>
+      <p>DevTools é sua lupa. Console mostra erro. Network mostra request que falhou. Application mostra cookie, storage, cache. Elements mostra HTML e CSS renderizado. Abrir F12 vira reflexo do bom vibecoder. Ler o erro antes de perguntar pra IA é ainda melhor: 80 por cento das mensagens já contam onde o bug mora.</p>
+      <p>Depois de reproduzir, você forma uma hipótese, testa a menor mudança possível e verifica. Se acertou, você entende por quê. Se errou, refina a hipótese. Bug não é misticismo. É lógica com pista quebrada.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>O formulário não envia. Você abre F12, aba Network, clica em enviar. Aparece um 400 vermelho. Clica, vê a resposta: "campo email inválido". Você percebe que o regex do frontend aceita, mas o backend não. Muda o regex do backend, testa. Funciona. Cinco minutos, sem entrar em pânico.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é um mentor de depuração.
+
+Contexto: meu bug é [descreva o que acontece]. Eu esperava
+[descreva o comportamento correto]. Já reproduzi assim
+[passos]. No console apareceu [mensagem]. No Network vi
+[status/body].
+
+Tarefa:
+- me proponha 3 hipóteses ordenadas da mais provável pra
+  menos provável
+- pra cada hipótese, o teste mais barato pra confirmar ou
+  descartar
+- se tiver alguma pista óbvia na mensagem, me aponte
+- não me dê a resposta pronta ainda; me guie na diagnose
+
+Parâmetros: PT-BR, socrático. Só me dê o conserto quando
+eu confirmar a hipótese.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>lupa</b> pra rodar o método completo: reproduz, lê console e network, isola causa, forma hipótese, aplica menor conserto e verifica. Use a <b>sentinela</b> pra ver o mesmo bug em produção com mais contexto.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você abre o F12 antes de perguntar pra IA? Se abre depois, você está terceirizando a primeira leitura. E é ali que 80 por cento das respostas moram.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28</span><h3>Escrever testes (borda primeiro)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você escreve testes que valem a pena, começando pelos casos que quebram.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Teste não é ritual de pureza. É rede de proteção. O que você testa é o que você não quer que quebre em silêncio. O que você não testa é o que você está disposto a descobrir na produção. Escolha bem onde investir.</p>
+      <p>Regra prática: comece pelos casos de borda. Entrada vazia, entrada muito grande, valor negativo, texto onde deveria ter número, caractere estranho. Esses são os testes que mais pegam bug real. O caminho feliz costuma funcionar sozinho.</p>
+      <p>Ferramentas: Vitest ou Jest pra unit, Playwright pra ponta-a-ponta. Você não precisa cobrir 100 por cento. Precisa cobrir o que se quebrar te acorda de madrugada. Comece com cinco testes bons, não com cinquenta ruins.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Função que calcula desconto: você testa 0, 50, 100, negativo e um número enorme. Nos cinco casos, o comportamento tem que estar claro. Sem os testes, um input negativo poderia dar desconto negativo (aumentar preço) e ninguém veria. Com os testes, você descobre isso em segundos.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro focado em testes.
+
+Contexto: esta é a função que quero testar:
+"[cole a função]"
+
+Tarefa:
+- liste 8 casos de teste, começando pelos casos de borda
+  (vazio, negativo, muito grande, caractere inválido, null,
+  duplicado, etc.)
+- gere os testes em [Vitest/Jest] com nomes claros em PT-BR
+- me diga um caso que provavelmente vou esquecer se não
+  usar essa lista
+
+Parâmetros: PT-BR nas descrições, sem dependência
+desnecessária. Se a função tiver um bug óbvio, aponte.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>prova</b> pra escrever testes começando pelos casos de borda antes de dar por pronto. Use a <b>crivo</b> pra revisar a suite pelas 5 camadas.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual função crítica do seu projeto não tem nenhum teste? Aposto que você sabe qual é. Teste ela hoje. Não amanhã.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29</span><h3>Refatorar com segurança</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você melhora o código sem quebrar o que funciona.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Refatorar é mudar a forma sem mudar o comportamento. Se o comportamento muda, isso é feature nova, não refatoração. Confundir os dois é receita pra desastre. A refatoração acontece com testes verdes, em pequenos passos.</p>
+      <p>Sinais claros pra refatorar: função gigante que faz três coisas, código duplicado em três lugares, nome que não conta o que faz, arquivo com mil linhas. O ganho não é estético. É custo de mudança. Código bem organizado hoje é hora economizada amanhã.</p>
+      <p>Regra de segurança: teste antes, refatora, teste depois. Se não tem teste, escreve o teste do comportamento atual primeiro. Sem rede de segurança, refatoração vira ruleta.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Sua função de <code>calcularPreco</code> está com 150 linhas e três responsabilidades. Você extrai <code>aplicarDesconto</code>, <code>somarImposto</code>, <code>formatarMoeda</code>. Cada uma testável. Cada uma reusável. O comportamento externo continua idêntico. O código internamente virou legível. Refatoração bem feita não muda nada pro usuário e muda tudo pra quem mantém.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro sênior focado em refatoração segura.
+
+Contexto: este é o código que quero refatorar:
+"[cole o código]"
+
+Tarefa:
+- me diga se há testes suficientes pra refatorar com
+  segurança. Se não, sugira quais criar antes.
+- proponha a refatoração em passos pequenos, cada um sem
+  mudar comportamento
+- justifique cada passo (por que fica melhor?)
+- me alerte se algum passo parecer mudança de comportamento
+  disfarçada
+
+Parâmetros: PT-BR, honesto. Se a refatoração não valer a
+pena, diga.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>lixa</b> pra refatorar com segurança, sem mudar comportamento. Use a <b>prova</b> pra garantir cobertura antes de mexer.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual arquivo do seu projeto você reza pra não ter que abrir? Esse é o candidato número um. Refatorar não é vaidade. É futuro em paz.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30</span><h3>Observabilidade</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você para de descobrir que o app caiu pelo cliente.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Sem observabilidade, você é o último a saber que o app caiu. O cliente descobre primeiro. E te avisa mal humorado. Isso não precisa ser assim. Ferramentas grátis resolvem 80 por cento do problema: Sentry pra erro, Vercel Analytics pra vitals, log estruturado no servidor.</p>
+      <p>Três coisas você quer ver o tempo todo: erros por unidade de tempo, latência das operações críticas, uso de recurso (banco, IA, e-mail). Alertas configurados pros picos. Notificação por e-mail ou Slack. Se sobe fora do padrão, você já sabe.</p>
+      <p>Log não é <code>console.log</code>. É registro estruturado, com contexto: quem, quando, o que. Em produção, você não vê o console. Você vê o log agregado. Log bem feito é a diferença entre "não sei o que aconteceu" e "aconteceu isso, com esse usuário, nessa hora".</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você integra Sentry no Next.js. Um bug de produção que só acontece pra um usuário em um navegador raro dispara alerta no seu e-mail. Você abre o Sentry, vê o stack trace, o navegador, o dado que entrou. Consertou. Ninguém precisou reclamar. Isso é bom software.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro de observabilidade.
+
+Contexto: meu app Next.js está na Vercel e usa Firebase.
+Não tem monitoramento.
+
+Tarefa:
+- me proponha uma configuração mínima de observabilidade
+  com Sentry (ou similar) e log estruturado
+- me diga o que instrumentar primeiro (rotas críticas,
+  webhook, integração paga)
+- me passe alertas que valem a pena configurar já
+- me lembre do que NÃO logar (dado sensível, senha)
+
+Parâmetros: PT-BR, prático, planos grátis quando possível.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>sentinela</b> pra montar observabilidade com logs, captura de erro e alertas. Use a <b>bastiao</b> pra garantir que os logs não vazem dado sensível.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se seu app caiu agora, quantos minutos você levaria pra descobrir? Se a resposta é "quando alguém reclamar", você não tem observabilidade. Tem sorte.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Lançar e Crescer</h2></div>
+  <p class="mod-resumo">Deploy, SEO, landing, tráfego pago, monetização.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31</span><h3>Checklist de deploy</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você sobe pra produção com processo, não com fé.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Deploy sem checklist é aposta. Muitos incidentes que parecem "azar" são só ausência de ritual. O ritual não elimina erro, mas elimina o óbvio. E o óbvio é a maior parte.</p>
+      <p>O checklist mínimo antes de subir: segredos no lugar certo (Vercel, não código), regras de banco fechadas, teste crítico rodando, política de privacidade acessível, e-mail transacional funcionando, monitoramento ligado, backup pensado. Tudo cabe numa página.</p>
+      <p>Deploy incremental é mais seguro que big bang. Primeiro pra um domínio de staging. Depois pra produção com um subconjunto de usuários. Depois pra todos. Cada etapa dá chance de reverter sem pânico. Rollback fácil é sinal de deploy maduro.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você tem um checklist de 12 itens em Markdown. Antes de cada deploy grande, roda ele em voz alta. Uma vez, ele te lembrou que a variável do Resend não estava setada em produção. Você não descobriria pelo build. Descobriria pelo primeiro cliente sem receber e-mail. O checklist evitou drama.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro de release.
+
+Contexto: meu app Next.js na Vercel com Firestore vai pra
+produção pela primeira vez.
+
+Tarefa:
+- gere um checklist personalizado com 12 a 15 itens,
+  ordenados
+- inclua segredos, regras, testes, LGPD, monitoramento,
+  backup e rollback
+- me dê uma dica de deploy incremental pra reduzir risco
+- me lembre do plano B se algo quebrar após o deploy
+
+Parâmetros: PT-BR, prático, específico pra minha stack.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bastiao</b> pra revisar segurança geral antes de subir. Use a <b>resgate</b> pra desenhar plano de resposta a incidente e backup, pra ter aonde ir se algo der errado.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você tem checklist de deploy escrito hoje? Se está na cabeça, não conta. Cabeça esquece. Papel não.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32</span><h3>SEO e ser achado</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende o mínimo de SEO que traz tráfego real.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>SEO não é magia. É três coisas bem feitas: conteúdo que responde perguntas reais, técnica boa (velocidade, semântica, mobile), e sinais de autoridade (outros sites te referenciando). Ferramenta te ajuda, mas conteúdo é o rei.</p>
+      <p>Do lado técnico com Next.js: rota clara, título e meta description por página, dados estruturados quando fizer sentido, imagem otimizada, texto acessível. Não faltar o básico já te coloca na frente da maioria.</p>
+      <p>Conteúdo bom responde perguntas que as pessoas fazem. Escreva post que resolve dor específica, com título que fala com o buscador (a intenção real da pessoa). Um artigo que resolve vale mais que dez que só existem.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Uma landing sem meta description perde 30 por cento do CTR no Google. Você adiciona 3 linhas por página, com título específico e descrição que promete o resultado. Semanas depois, o CTR sobe. Trabalho de meia hora, ganho contínuo.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é especialista em SEO técnico e de conteúdo.
+
+Contexto: meu site é sobre [tema], público [quem]. Estou
+com Next.js na Vercel.
+
+Tarefa:
+- me passe um checklist técnico de SEO pra Next.js (meta,
+  Open Graph, sitemap, robots, semântica)
+- me sugira 10 títulos de post que respondem perguntas
+  reais do meu público
+- me lembre de dados estruturados que fariam sentido pro
+  meu nicho
+
+Parâmetros: PT-BR, prático, foco em intenção de busca.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>pena</b> pra escrever posts de autoridade com SEO na sua voz. Use a <b>garimpo</b> pra pesquisar a fundo antes de escrever, pra o conteúdo sair com fonte, não achismo.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual pergunta os seus clientes fazem toda semana? Aquela é a próxima pauta. SEO fica muito mais fácil quando o assunto é urgência de alguém.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33</span><h3>Landing page de conversão</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você constrói landing que converte, não que impressiona.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Landing de conversão tem uma missão: fazer o visitante clicar. Ela não é portfólio. Não é institucional. É funil. Cada elemento serve à ação principal, ou sai da página. Se você está em dúvida se algo entra ou não, provavelmente é porque não deveria entrar.</p>
+      <p>Estrutura que funciona: hero acima da dobra com promessa clara e CTA, prova de autoridade (números, logos, depoimentos), como funciona em três passos, oferta detalhada, FAQ com objeções reais, e CTA final. Nada de menu superior distraindo. Foco brutal.</p>
+      <p>Copy vence design. Título bom com layout médio ganha de título medíocre com layout lindo. Escreve pra o problema do visitante, não pra o seu produto. "Você perde tempo com X" bate "temos a melhor solução de X".</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Landing do e-book de vibecoding. Hero: "vibecoding com engenharia, para você construir com IA sem ficar refém dela". Botão: "quero o e-book grátis". Três seções curtas. Um FAQ com quatro perguntas. Um formulário no fim. Duas versões de teste, uma converte 40 por cento mais. Isso não é sorte. É landing pensada.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é copywriter de landing de conversão.
+
+Contexto: minha oferta é [descreva]. Meu público é [ICP].
+A dor principal é [dor].
+
+Tarefa:
+- escreva 5 opções de título pra hero
+- proponha o subtítulo que amplia a promessa
+- me dê CTA no imperativo, em PT-BR
+- estruture a landing em seções (hero, prova, como funciona,
+  oferta, FAQ, CTA final) com o texto de cada
+- inclua 5 perguntas de FAQ que respondem objeção real
+
+Parâmetros: sem hype, sem promessa vazia, com voz clara.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>vitrine</b> pra montar landing de conversão completa. Use a <b>espelho</b> pra afinar a copy pro ICP, pra falar da dor exata dele.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se você tirasse tudo menos hero e formulário da sua landing, ela ainda venderia? Se sim, o resto está bonus. Se não, o resto está compensando a fraqueza do essencial.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34</span><h3>Tráfego pago (primeiro anúncio no Meta)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você faz seu primeiro anúncio sem queimar dinheiro.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Anúncio pago funciona quando três coisas estão certas: oferta clara, público certo e criativo bom. Se qualquer uma falha, o dinheiro queima. Comece com orçamento pequeno de teste, tipo 20 a 50 reais por dia, e não expanda até ter número que confirme.</p>
+      <p>Meta Ads (Instagram e Facebook) é o padrão pra maioria dos produtos B2C e alguns B2B. Você define público por interesse, idade, geografia. Sobe três criativos diferentes. Deixa rodar 3 a 5 dias. Vê qual performa melhor. Corta os ruins. Escala o vencedor.</p>
+      <p>Meça o que importa: custo por lead (CPL) e custo por aquisição (CAC). Se um lead custa R$3 e converte 10 por cento em cliente que paga R$100, você está ganhando. Se custa R$50 e converte 1 por cento em cliente que paga R$100, você está perdendo. Número não mente.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Você anuncia um e-book grátis por R$30 por dia. Em cinco dias, gastou R$150, gerou 60 leads. CPL de R$2,50. Metade abre o e-mail, 10 por cento compra o curso de R$500. São 3 vendas, R$1500. Investimento pago mais de dez vezes. É esse o cálculo.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é gestor de tráfego focado em Meta Ads.
+
+Contexto: minha oferta é [descreva]. Público ideal é [ICP].
+Orçamento de teste: [valor por dia] durante [dias].
+
+Tarefa:
+- proponha estrutura de campanha (objetivo, conjunto,
+  criativos)
+- sugira 3 públicos pra testar
+- me dê copy pra 3 criativos diferentes (foco em dor,
+  benefício e prova social)
+- me passe métricas a monitorar e quando cortar ou escalar
+
+Parâmetros: PT-BR, sem hype, sem promessa proibida. Se algo
+puder violar política do Meta, avise.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>outdoor</b> pra estruturar campanha, copy e orçamento. Use a <b>painel</b> pra ler os números depois e decidir continuar, cortar ou escalar.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você já sabe quanto vale um lead pro seu negócio? Se não, qualquer CPL parece caro ou barato aleatoriamente. Descobre esse número antes de gastar mais um real.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35</span><h3>Monetização e métricas</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você escolhe o modelo de cobrança certo e acompanha os números que importam.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Não existe monetização universal. Existe a que combina com o seu produto e o seu público. Pagamento único é bom pra produto entregue de uma vez. Assinatura é bom pra valor recorrente. Freemium é bom pra virar hábito. Cada modelo tem armadilha própria.</p>
+      <p>Preço é sinal. Baixo demais assusta. Alto demais afasta. Comece por comparação: o que produtos parecidos cobram? E o que o seu resolve de dinheiro ou tempo pro cliente? Preço bom fica confortável pros dois lados.</p>
+      <p>Métricas essenciais: receita mensal recorrente (MRR pra assinatura), CAC, LTV, taxa de churn, margem. Ver esses cinco números todo mês já te coloca à frente da maioria. Painel simples, disciplina de olhar. Não precisa de sistema caro.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>SaaS a R$39 por mês. 100 clientes, MRR de R$3.900. CAC médio: R$80. Cliente fica em média 8 meses. LTV: R$312. Como LTV é bem maior que CAC, você pode investir em crescer. Se fosse o contrário, você estaria vendendo prejuízo. Número resolve a discussão.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é consultor de monetização de micro-SaaS.
+
+Contexto: meu produto é [descreva]. Meu público paga por
+[o que valoriza]. Concorrentes cobram [faixa].
+
+Tarefa:
+- proponha 2 ou 3 modelos de monetização adequados e
+  justifique
+- sugira faixas de preço com prós e contras
+- me diga as 5 métricas que preciso acompanhar toda semana
+- me alerte pras armadilhas comuns em cada modelo
+
+Parâmetros: PT-BR, sem hype, foco em sustentabilidade e
+não só em receita.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>decolagem</b> pra escolher modelo, preço e estratégia de go-to-market. Use a <b>painel</b> pra ler as métricas semanais e decidir com dado.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual das cinco métricas essenciais você não sabe do seu produto hoje? Aquela é a sua próxima meta de saber.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Avançado</h2></div>
+  <p class="mod-resumo">Agentes, Skills, migrações, escala, projeto final.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36</span><h3>Agentes e automação</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende quando construir agente e quando é overkill.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Agente é um LLM que decide o que fazer com ferramentas. Você dá acesso a APIs, banco, arquivos, e ele planeja e executa. Isso abre muita coisa: revisor automático, atendimento por WhatsApp, análise de planilha, orquestração de tarefas. Também abre risco novo.</p>
+      <p>Agente exige limites. Nunca dê poder de gastar dinheiro sem confirmação. Nunca dê acesso irrestrito ao banco de produção. Nunca deixe sem log. Agente sem cerca é loop caro esperando pra acontecer. Comece pequeno, com escopo apertado.</p>
+      <p>Regra prática: se um script simples resolve, use script. Se você precisa de decisão flexível baseada em contexto, considere agente. Boa parte das automações não precisa de agente. Precisa de regra clara e cron.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Agente lê e-mails de suporte, categoriza, e sugere resposta pra você aprovar. Você ganha 80 por cento do tempo. Continua no controle da resposta final. Agente com humano no loop resolve muito, sem entregar as chaves do reino.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro de agentes com IA.
+
+Contexto: quero automatizar [descreva a tarefa]. Volume:
+[por dia/semana]. Risco de erro: [alto/médio/baixo].
+
+Tarefa:
+- me diga se um agente resolve ou se script simples basta
+- se agente, proponha as ferramentas que ele precisa
+- me dê os limites de segurança (o que ele NÃO pode fazer
+  sem confirmação humana)
+- me passe como logar e monitorar as decisões dele
+
+Parâmetros: PT-BR, prático, com viés de simplicidade.
+Se der pra evitar agente, evite.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> pra orquestrar tarefas complexas em passos, com verificação entre etapas. Use a <b>bastiao</b> pra revisar segurança do agente antes de soltar em produção.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual tarefa repetitiva do seu dia poderia ser um agente com humano no loop? Comece por essa. Autonomia total vem depois. Confiança se constrói.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37</span><h3>Criar suas próprias Skills (Claude Code)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você para de repetir prompt e transforma seu método em Skill.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Skill é um pacote de instruções que ensina o Claude Code a fazer uma tarefa do seu jeito. Se você faz o mesmo tipo de pedido toda semana, isso deveria virar Skill. Você define o gatilho ("quando o usuário pedir X"), o método (passo a passo do jeito que você faz), e o formato de saída.</p>
+      <p>Skill boa é específica. "Escreva bem" é ruim. "Escreva post de blog na voz do Rodrigo, com frases curtas, sem hype, com exemplo concreto, e punchline no fim" é boa. Quanto mais afiada a descrição de gatilho, melhor a IA sabe quando ativar.</p>
+      <p>Você já viu o Engenho neste e-book inteiro. É um conjunto de Skills próprias. Elas encapsulam método. Você pode criar as suas do mesmo jeito. Isso vira sua alavanca pessoal: sua expertise embarcada, disponível 24 horas.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Toda semana você revisa código pelas 5 camadas. Você cria a Skill "crivo" com o prompt exato do protocolo, os pontos de atenção do seu domínio, e o formato de resposta que você prefere. Da próxima vez, você só chama a Skill. Método aplicado, sem retrabalho.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é especialista em criar Claude Skills.
+
+Contexto: quero transformar em Skill esta tarefa que faço
+toda semana:
+"[descreva a tarefa em detalhes]"
+
+Tarefa:
+- me proponha o nome da Skill
+- escreva o gatilho (quando ela deve ser ativada) de forma
+  precisa
+- estruture o passo a passo do método
+- me diga o formato da saída pra ela ser útil sempre
+
+Parâmetros: PT-BR, sem inflar. Se a tarefa for pequena
+demais pra virar Skill, diga.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra estruturar o prompt central da sua Skill nova. Use a <b>maestro</b> pra orquestrar Skills entre si quando o fluxo passa de uma pra outra.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual método seu você repete pelo menos uma vez por semana? Aquele é sua próxima Skill. Método sem embalagem é conhecimento que você refaz do zero. Método em Skill é alavanca.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38</span><h3>Migrações e manutenção</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você conduz atualização de versão ou troca de tecnologia sem quebrar em produção.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Migração pode ser de framework (Next 14 pra 15), de dependência (subida de major), ou de dados (mudança de schema). Todas seguem o mesmo princípio: ler o changelog, isolar em branch, migrar em passos pequenos, testar, e ter plano de rollback.</p>
+      <p>Migração de dado precisa de cuidado extra. Você não roda direto em produção. Rasca em staging com dump real. Se der certo, agenda janela, faz backup, roda, monitora. Se der errado, restaura. Coisa que parece dramática é só disciplina.</p>
+      <p>Manutenção contínua evita migração dramática. Subir versão de patch toda semana é fácil. Subir três majors atrasadas é doloroso. Dependência é jardim: se você não cuida, ela vira mato. Reserva uma hora semanal e você nunca precisa de refatoração de fim de semana.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Seu app está em Next 13. Você quer subir pra 15. Cria branch, roda o codemod oficial, lê o changelog. Aparecem 3 breaking changes na sua stack. Você conserta cada um em commit separado, rodando o smoke test entre eles. Merge com deploy em staging. Testa. Deploy em produção com janela curta. Sem drama.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é engenheiro focado em migrações seguras.
+
+Contexto: quero migrar de [versão/tecnologia atual] pra
+[nova versão/tecnologia]. Meu projeto tem [porte].
+
+Tarefa:
+- me passe um checklist de leitura de changelog e breaking
+  changes
+- proponha o passo a passo em branch isolada com commits
+  pequenos
+- me diga como testar antes de mesclar
+- me lembre do plano de rollback se algo quebrar em produção
+
+Parâmetros: PT-BR, cauteloso. Se a migração puder esperar,
+diga por quê.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>mudanca</b> pra conduzir migrações com segurança, em passos pequenos. Use a <b>quarentena</b> pra auditar dependências antes de atualizar.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quando foi seu último <code>npm outdated</code>? Se foi há mais de um mês, você tem dívida silenciosa esperando.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39</span><h3>Escala (quando e como)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende quando escalar de verdade e quando é medo disfarçado de estratégia.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>A maioria dos produtos morre por falta de usuário, não por falta de escala. Preocupar-se com "vou aguentar milhões" antes de ter cem é medo com nome bonito. Otimização precoce é o pior tipo de tempo mal gasto.</p>
+      <p>Sinais reais pra escalar: latência subindo com o crescimento, custo por usuário virando insustentável, gargalo específico e mensurado. Cada sinal aponta uma resposta diferente. Cache, índice, CDN, worker, sharding, tudo isso é ferramenta, não religião.</p>
+      <p>Escala com dado é cirurgia. Escala sem dado é chute caro. Antes de mover uma peça grande, meça. Um Firestore bem modelado aguenta muito. Uma landing na Vercel absorve pico. Muita gente escala coisa que não precisava, e deixa de escalar a que precisava.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>SaaS chega a 10 mil usuários. A conta do Firestore triplica. Você mede, descobre uma query cara sem paginar. Adiciona limite e índice. Custo cai 60 por cento. Você não precisou trocar de banco. Precisou ler o que estava rodando. Escalar é 90 por cento medir e 10 por cento mudar.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é arquiteto de escala.
+
+Contexto: meu app na stack [descreva] começou a dar sinal
+de [sintoma: latência, custo, erro]. Volume atual:
+[usuários/requests/dados].
+
+Tarefa:
+- me diga se esses sinais são de escalar mesmo ou de
+  otimizar o que já tenho
+- proponha 3 correções ordenadas por custo x benefício
+- me alerte pras armadilhas de reescrever sem necessidade
+- me passe as métricas que devo bater antes de tomar
+  decisão maior
+
+Parâmetros: PT-BR, sem hype de escala. Se a resposta for
+"você não precisa disso ainda", diga.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>turbo</b> pra caçar gargalos reais antes de pensar em arquitetura nova. Use a <b>termometro</b> pra projetar custo em várias faixas de uso e decidir com número.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você está escalando o que precisa, ou o que te dá desculpa pra não vender? Um dos dois te leva pra frente. O outro te consola.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40</span><h3>Projeto final, seu produto no ar</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você fecha o curso com um produto seu no ar, não com um certificado na parede.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Curso que não vira produto vira coleção de anotações bonitas. A meta final é simples: colocar no ar algo seu, útil pra alguém, construído com o método que você aprendeu. Não precisa ser grande. Precisa ser real. Precisa ter usuário além de você.</p>
+      <p>O escopo do projeto final é enxuto: um problema específico, uma solução mínima, um usuário verdadeiro. Passa pelas 5 camadas. Roda seguro. Tem monitoramento. Tem landing. Coleta lead ou cliente. Tudo o que o curso ensinou, aplicado num único movimento.</p>
+      <p>Depois de publicar, o trabalho começa de verdade. Você mede, ouve usuário, ajusta. Vibecoding é loop, não linha reta. Você não sai do curso pronto. Sai capaz de aprender com o que sobe. E é isso que separa quem constrói de quem só assiste.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Aluno chega no fim do curso com um mini-SaaS que agenda serviços pra manicures. Uma landing, um cadastro, uma agenda, um WhatsApp integrado. Três clientes pagando R$29 por mês. R$87 de receita. Ridículo? Não. É o primeiro produto no ar, com dinheiro de verdade entrando. Isso muda a sua identidade profissional pra sempre.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Você é meu mentor de projeto final.
+
+Contexto: quero terminar o curso com [descreva a ideia] no
+ar, cobrando ou coletando lead de verdade.
+
+Tarefa:
+- me ajude a cortar escopo pro MVP mais enxuto que já
+  entrega valor
+- proponha o plano em 4 semanas, uma etapa por semana
+- me diga o que fica de fora do projeto final e por quê
+- me passe um checklist final antes de eu chamar de pronto
+  (5 camadas, LGPD, monitoramento, checklist de deploy)
+
+Parâmetros: PT-BR, honesto. Se meu escopo estiver grande
+demais pra 4 semanas, corte de verdade.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>planta</b> pra montar o plano do projeto final em fases. Use a <b>maestro</b> pra encadear as etapas com verificação entre elas. Use a <b>crivo</b> pra revisar tudo pelas 5 camadas antes do dia do deploy.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quando o curso acabar, você vai ter um produto no ar ou uma pasta de anotações? Uma resposta te muda de nível. A outra te mantém aluno pra sempre. Escolhe hoje.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+</body>
+</html>

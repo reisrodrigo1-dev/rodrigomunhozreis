@@ -7,6 +7,7 @@ type Curso = {
   publico: string;
   file: string;
   apostilas?: boolean;
+  ebook?: boolean;
 };
 
 const cursos: Curso[] = [
@@ -17,6 +18,7 @@ const cursos: Curso[] = [
     publico: "Iniciante → Avançado",
     file: "curso-ia-adultos",
     apostilas: true,
+    ebook: true,
   },
   {
     grupo: "Adultos",
@@ -25,6 +27,7 @@ const cursos: Curso[] = [
     publico: "Iniciante → Avançado",
     file: "curso-vibecoding-adultos",
     apostilas: true,
+    ebook: true,
   },
   {
     grupo: "Crianças",
@@ -33,6 +36,7 @@ const cursos: Curso[] = [
     publico: "9 a 13 anos",
     file: "curso-ia-criancas",
     apostilas: true,
+    ebook: true,
   },
   {
     grupo: "Crianças",
@@ -41,6 +45,7 @@ const cursos: Curso[] = [
     publico: "10 a 14 anos",
     file: "curso-vibecoding-criancas",
     apostilas: true,
+    ebook: true,
   },
 ];
 
@@ -51,8 +56,8 @@ export default function AdminCursos() {
     <div>
       <h1 className="font-serif text-3xl font-semibold">Cursos</h1>
       <p className="mt-1 max-w-2xl text-sm text-muted">
-        Ementas completas dos cursos presenciais (80h · 40 aulas de 2h cada). Cada aula traz objetivo, o que ensinar,
-        exemplos, prompts prontos, links e as Skills do Engenho relacionadas.
+        Ementas completas dos cursos presenciais (80h · 40 aulas de 2h cada) + apostila do aluno, apostila do professor
+        e e-book acompanhante editorial. Cada aula traz objetivo, o que ensinar, exemplos, prompts prontos, links e as Skills do Engenho relacionadas.
       </p>
 
       {grupos.map((g) => (
@@ -100,6 +105,18 @@ export default function AdminCursos() {
                       </div>
                     ) : (
                       <span className="text-[11px] text-muted">Apostilas em preparação…</span>
+                    )}
+                    {c.ebook ? (
+                      <a
+                        href={`/cursos/${c.file}-ebook.html`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-primary !px-4 !py-2 text-sm"
+                      >
+                        E-book acompanhante ↗
+                      </a>
+                    ) : (
+                      <span className="text-[11px] text-muted">E-book em preparação…</span>
                     )}
                   </div>
                 </div>

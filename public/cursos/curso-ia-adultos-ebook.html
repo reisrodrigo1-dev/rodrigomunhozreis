@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa do Curso · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">E-book acompanhante · Curso presencial</div>
+<h1>IA do Zero ao Avançado</h1>
+<p class="sub">Guia consumível pra quem quer levar o curso pra casa. Menos "manual", mais livro de leitura.</p>
+<div class="meta"><span>80 horas</span><span>40 aulas &middot; 2h cada</span><span>Adultos</span><span>Método P.R.O.M.P.T.E.R.</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Introdução</span><h2>Como usar este livro</h2></div>
+  <p class="mod-resumo">Pra quem é, como acompanhar o curso presencial, o que esperar. Uma leitura que sobrevive fora da sala de aula.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Ler antes</span><h3>Três formas de usar este livro</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai saber pra quem este livro serve, como ele conversa com o curso presencial e como tirar proveito dele mesmo sem ter feito o curso.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Este livro é o companheiro do curso "IA do Zero ao Avançado". A apostila oficial que você recebe em sala é o manual: densa, com exercícios, feita pra ser trabalhada com o professor ao lado. Este e-book é outra coisa. É o livro que você leva no ônibus, lê antes de dormir, releitura no fim de semana.</p>
+      <p>Ele resume o essencial de cada uma das 40 aulas em prosa curta. Sem lista gigante, sem exercício demorado. Um exemplo pra fixar, um prompt pra copiar, uma pergunta pra você pensar. Nada além disso.</p>
+      <p>Serve pra três tipos de leitor: quem faz o curso e quer revisar, quem não faz o curso e quer entender IA por conta própria, e quem precisa apresentar IA pra outra pessoa e busca uma linguagem sem hype.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>O que você vai levar</h4>
+      <ul>
+        <li>Uma visão sem hype do que IA é, e do que não é.</li>
+        <li>O método P.R.O.M.P.T.E.R. pra pedir o que você quer e receber.</li>
+        <li>Um mapa das principais IAs do mercado e quando usar cada uma.</li>
+        <li>Aplicações práticas no trabalho, na pesquisa, no dia a dia.</li>
+        <li>Noção real de riscos: privacidade, LGPD, alucinação, viés.</li>
+        <li>Um plano pra montar seu próprio sistema de IA pessoal.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Como ler</h4>
+      <p>Pode ler linear, capa a rabo. Pode saltar pra um módulo específico. Pode usar como consulta: bateu dúvida no meio de uma tarefa, abre a aula que fala daquilo. Cada aula é curta de propósito. Você lê em cinco minutos e testa em outros cinco.</p>
+      <p>Uma sugestão: leia com uma IA aberta ao lado. Terminou a aula, abre o ChatGPT, o Claude ou o Gemini e roda o prompt pronto. É assim que o livro vira prática.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>O que te trouxe até aqui: curiosidade, medo de ficar pra trás, ou uma tarefa concreta pra resolver? Anota. No fim do livro você volta nessa resposta.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1</span><h2>Fundamentos da IA</h2></div>
+  <p class="mod-resumo">O objetivo aqui é um só. Você entender a IA sem medo e ter as primeiras conversas de verdade. No fim do módulo a ferramenta deixa de ser caixa-preta.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1</span><h3>O que é IA (e o que não é) — desmistificando</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai conseguir explicar, com suas palavras, o que é uma IA generativa e separar o que ela faz do que é mito.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>"Inteligência Artificial" é um nome grande pra uma ideia simples. Quando você fala com o ChatGPT, o Claude ou o Gemini, está usando IA generativa. Um programa que aprendeu com uma quantidade absurda de texto escrito por pessoas e ficou muito bom em prever a próxima palavra de uma frase.</p>
+      <p>Só isso. E ao mesmo tempo muito mais do que parece. Pense numa pessoa que leu quase tudo que já se escreveu na internet. Ela não decorou, aprendeu padrões: como as ideias se conectam, como se escreve um e-mail educado, como se explica algo. Quando você pede, ela monta a resposta palavra por palavra, escolhendo a continuação mais provável.</p>
+      <p>Agora o que ela não é. Não é um ser consciente. Não é um buscador que consulta páginas. Não é infalível. E não vai te substituir sozinha. Quem usa IA bem substitui quem não usa. A ferramenta é uma assistente que escreve muito bem e sabe um pouco de tudo, mas precisa de direção e de revisão.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Pergunte "quem ganhou o jogo do meu time ontem?". Pode vir um placar inventado, porque a IA não estava assistindo. Agora peça "escreva um e-mail educado avisando o cliente que o pedido vai atrasar dois dias". Aí ela brilha. Mesma ferramenta, resultados de mundos diferentes. A diferença é pra que você usa.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Explique pra mim, como se eu fosse um adulto curioso e sem conhecimento tecnico, o que e uma "IA generativa". Use uma analogia do dia a dia, evite jargao e termine com uma frase sobre uma coisa que esse tipo de IA faz muito bem e uma que ela faz mal.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra montar seus primeiros pedidos com clareza desde a estreia. Use a <b>lapidador</b> quando a resposta vier quase boa e você quiser afinar o tom.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Antes desta aula, o que você imaginava que a IA fosse? Em que tarefa do seu dia ela poderia te ajudar amanhã mesmo?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2</span><h3>Como a IA "pensa" — modelos de linguagem na prática</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você entende, sem matemática, como a IA monta uma resposta e por que ela às vezes inventa.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>A IA não consulta uma resposta pronta na gaveta. Ela lê seu texto e vai construindo a resposta uma palavra de cada vez, sempre se perguntando: dado tudo que veio até aqui, qual é a continuação mais provável? Faz isso centenas de vezes num piscar de olhos.</p>
+      <p>Três consequências disso mudam como você deve pedir. O começo da conversa guia o resto, então um bom empurrão inicial vale ouro. Ela busca o que é provável, não o que é verdadeiro. Na maioria das vezes coincide, mas quando ela não sabe, ela completa com algo que parece certo. Aí nasce a alucinação. E ela não tem memória entre conversas: dentro da mesma janela lembra tudo, na próxima começa do zero.</p>
+      <p>Guarde a palavra contexto. É tudo que está visível pra IA naquele momento: seu pedido, o que já foi dito, qualquer texto colado. Contexto pobre gera resposta genérica. Contexto rico gera resposta sob medida.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>"Qual é a capital da França?" Responde Paris na hora, porque é de longe a continuação mais provável e, por sorte, verdadeira. Agora "qual foi o livro mais vendido na livraria da esquina da minha casa em 2019?". Ela não tem como saber, mas vai chutar com naturalidade um título que soa plausível. Mesmo mecanismo, dois resultados. Saber disso te deixa esperto pra conferir.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou te dar uma tarefa e quero entender seu raciocinio. Antes de responder, liste em 3 itens o que voce esta assumindo sobre o meu pedido. Depois responda. A tarefa e: sugira um nome para uma cafeteria pequena de bairro, voltada para quem trabalha de casa. Se faltar alguma informacao importante para voce acertar, me pergunte em vez de chutar.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bagagem</b> pra montar o contexto certo antes de pedir algo importante. Use a <b>garimpo</b> quando precisar de fatos verificáveis e não puder aceitar chute.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quando a IA inventa uma resposta, de quem é a responsabilidade de pegar o erro? O que muda no seu jeito de usar agora que você sabe que ela busca o provável, não o verdadeiro?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3</span><h3>O ecossistema de IAs em 2026 — quem é quem</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai conhecer as principais IAs, entender a diferença entre grátis e pago, e saber escolher sem se perder.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Hoje existem várias IAs disputando sua atenção. A boa notícia: você não precisa conhecer todas. As três assistentes de conversa mais conhecidas são ChatGPT (OpenAI), Gemini (Google) e Claude (Anthropic). Cada uma com um jeito, todas rodando pelo mesmo princípio da aula anterior.</p>
+      <p>Sobre grátis e pago: as versões gratuitas resolvem muita coisa e são ótimas pra aprender. As pagas trazem modelos mais inteligentes, respostas rápidas em horário de pico e recursos extras como analisar arquivo, gerar imagem, navegar na internet. Comece no grátis. Só assine quando a ferramenta virar parte do seu dia e o limite atrapalhar.</p>
+      <p>Uma dica que evita frustração. Não procure a melhor IA. Procure a melhor IA pra tarefa de agora. Pra escrever com capricho, uma. Pra tarefa dentro do Gmail, outra. Pra dúvida rápida, qualquer uma serve.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>João precisa de três coisas hoje: revisar um contrato longo, escrever um post pro Instagram e organizar uma planilha do Google Drive. Em vez de forçar uma só, ele faz o contrato numa IA que lida bem com texto longo, o post noutra que ele acha criativa, e a planilha no Gemini por já estar no Google. Ferramenta certa pra cada prego.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Sou iniciante em IA e quero escolher uma ferramenta para comecar. Meu uso principal vai ser: [DESCREVA]. Nao quero gastar dinheiro agora. Me explique, em linguagem simples, qual versao gratuita voce recomenda para esse uso e por que. Liste 2 vantagens e 1 limitacao. Nao me empurre nada pago.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bussola</b> quando bater a dúvida de qual ferramenta usar pra qual tarefa. Ela pesa trade-offs em vez de te dar a resposta pronta.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual ferramenta você escolheu como casa pro curso e por quê? Que receio você ainda tem de criar conta ou usar uma versão gratuita?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4</span><h3>Sua primeira conversa produtiva com a IA</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai perceber que conversar com IA é diálogo, não botão mágico. Primeira resposta é rascunho.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>A primeira resposta quase nunca é a final. Conversar com IA é como pedir algo a um assistente novo: você pede, olha o que veio, ajusta. Mais curto, mais formal, troca esse exemplo. Esse vai-e-volta é onde está o ouro.</p>
+      <p>Três movimentos simples transformam conversa fraca em produtiva. Diga o que você quer no fim: em vez de "fale sobre alimentação saudável", peça "monte uma lista de 5 lanches saudáveis e baratos para levar ao trabalho". Reaja à resposta: veio longo, resume em 3 frases; veio formal demais, deixa mais leve. Peça o formato: tópico, tabela, passo a passo.</p>
+      <p>Não tenha medo de gastar mensagem corrigindo. Cada ajuste ensina o que você queria. A pior conversa é a que você não teve por receio de errar no pedido.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Maria pede "me ajude com a festa da minha filha". Vem uma resposta enorme e genérica. Em vez de desistir, ela continua: "ela faz 7 anos, tema unicórnio, orçamento apertado, 15 crianças, me dê lista de compras e 3 brincadeiras baratas". Aí sim vem algo útil. Maria não trocou de ferramenta. Ela refinou.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Quero sua ajuda para resolver uma tarefa do meu dia a dia. A tarefa e: [DESCREVA]. Me entregue o resultado em formato de lista, de forma pratica e direta. Depois que voce responder, eu vou pedir ajustes, entao deixe a resposta facil de eu mandar mudar.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>lapidador</b> pra sistematizar o refino: diagnóstico do que ficou ruim, ajuste específico, novo teste. Sem chute.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual foi a diferença entre a primeira resposta e a resposta depois de você refinar? O que você descobriu que precisa dizer logo de cara?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5</span><h3>Os 3 erros que fazem a IA te decepcionar</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai reconhecer os três erros mais comuns de quem começa e já sair com o hábito de evitá-los.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Quando alguém diz que a IA é uma porcaria e só deu resposta genérica, quase sempre o problema não foi a IA. Foi o pedido. Três erros clássicos.</p>
+      <p>Erro 1, pedir vago demais. "Me ajude com meu negócio" não diz nada. Qual negócio, ajudar com o quê? Sem direção, a IA devolve algo útil pra ninguém. Erro 2, confiar sem conferir. A IA fala com confiança mesmo errada. Quem copia e cola sem ler se queima com dado inventado, lei que não existe, conta errada. A regra: a IA faz o rascunho, você assina embaixo. Erro 3, desistir na primeira resposta. Vimos na aula 4, primeira resposta é rascunho. Quem torce o nariz e fecha a aba perde a parte boa.</p>
+      <p>Os três erros têm o mesmo antídoto. Tratar a IA como colaboradora que precisa de direção clara e de revisão. Não como máquina de respostas prontas. E é justamente pra resolver o "pedir mal" que existe o P.R.O.M.P.T.E.R., que começa na próxima aula.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Pedro pede "escreva um texto sobre meu produto" e recebe blá-blá-blá (Erro 1). Quase desiste (Erro 3). Em vez disso, refaz: "post curto pro Instagram sobre meu sabonete artesanal de lavanda, mulheres 30 a 50 anos, tom acolhedor". Vem algo bom. Ele lê e vê que a IA citou "óleo essencial puro", que o produto dele não tem. Corrige antes de publicar (Erro 2 evitado). Três erros, três antídotos, na prática.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu revisor critico. Vou colar abaixo um pedido que eu faria a uma IA. Me diga: 1) o que esta vago ou faltando; 2) que informacoes eu deveria acrescentar para ter uma resposta sob medida; 3) reescreva o pedido de forma clara e especifica. Meu pedido: [COLE AQUI]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>crivo</b> pra revisar o que a IA te entregou antes de usar pra valer. É o hábito que separa quem se queima de quem entrega bom trabalho.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Dos três erros, qual é o que você mais comete? Qual hábito simples você pode adotar amanhã pra evitá-lo?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2</span><h2>O Método de Pedir (P.R.O.M.P.T.E.R.)</h2></div>
+  <p class="mod-resumo">O coração do curso. Um roteiro de oito peças que faz a IA entregar resposta sob medida em vez de genérica. Você não precisa usar tudo sempre. Quando a resposta não vier boa, é aqui que você descobre o que faltou.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6</span><h3>Por que prompt é tudo — pedido vago x pedido sob medida</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai enxergar que melhorar o pedido vale mais que trocar de ferramenta.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Prompt é só o nome técnico pro que você escreve à IA. Toda vez que você digita, você está prompando. E aqui está a verdade que muda tudo: a qualidade da resposta depende muito mais do prompt do que da IA. A mesma ferramenta, com pedido melhor, entrega resultado de outro planeta.</p>
+      <p>Por quê? Volte à aula 2. A IA completa seu texto do jeito mais provável. Texto raso, continuação rasa. Texto rico em direção, continuação específica. Você não está só perguntando. Está preparando o terreno pra resposta que quer.</p>
+      <p>A diferença entre vago e sob medida costuma estar em coisas simples que a gente esquece de dizer: pra quem é, pra quê serve, em que tom e formato, o que evitar. Parece trabalhoso, leva segundos, economiza minutos. É pra você não esquecer nenhuma peça que existe o P.R.O.M.P.T.E.R.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Vago: "escreva uma mensagem de cobrança". Vem genérico, meio agressivo. Sob medida: "mensagem curta de WhatsApp cobrando com educação e firmeza um cliente antigo, fatura 5 dias atrasada, tom amigável sem constranger, oferecendo ajuda pra pagar, máximo 4 linhas". Vem algo que você copia, ajusta uma palavra e envia. Mesma IA.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Quero comparar dois jeitos de pedir. Primeiro, responda a este pedido vago: "fale sobre produtividade". Agora responda a este pedido sob medida: "me de 3 dicas de produtividade para uma mae que trabalha de casa e tem pouco tempo, em tom pratico, cada dica em 1 frase". No fim, me explique em 2 linhas por que a segunda ficou mais util.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra construir prompts pelo método P.R.O.M.P.T.E.R. do zero. Ela guia peça por peça.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual pedido você faz repetido no seu trabalho e nunca sai como você quer? O que faltou dizer nele?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7</span><h3>P.R.O.M.P.T.E.R. parte 1 — Papel, Realidade, Objetivo</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai dominar as três primeiras letras do método. Elas ancoram o pedido antes de qualquer detalhe.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Papel é o chapéu que a IA vai usar. "Você é revisor de textos experiente" muda tudo em relação a nada dito. Não precisa ser título pomposo. Precisa ser específico pra tarefa. Um bom papel faz a IA calibrar tom, profundidade e vocabulário sem você pedir.</p>
+      <p>Realidade é o contexto do seu caso. Quem é você, quem é o público, onde isso vai parar, qual restrição existe. Sem realidade, a IA inventa um usuário genérico e responde pra ele. Com realidade, ela responde pra você.</p>
+      <p>Objetivo é o resultado concreto que você quer. Não "me ajude com email", e sim "gerar 3 assuntos de email que tenham chance de ser abertos por gerente de RH ocupado". Objetivo claro é o antídoto do texto genérico.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Ana vai pedir uma legenda de Instagram. Sem P-R-O: "escreva legenda pra post de sapato". Com P-R-O: "Você é copywriter de moda feminina (Papel). Vendo sapatilha confortável pra mulher que anda o dia todo no escritório, preço R$189 (Realidade). Quero legenda que faça ela clicar no link do bio, tom leve, 4 linhas (Objetivo)". A segunda entrega. A primeira te faz gastar seis mensagens.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Papel: voce e [PAPEL ESPECIFICO]. Realidade: o contexto e [QUEM VOCE E, PARA QUEM, RESTRICOES]. Objetivo: quero como resultado [RESULTADO CONCRETO E MENSURAVEL]. Com base nisso, entregue [O QUE VOCE QUER].</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra completar as três peças com rigor. Use a <b>bagagem</b> quando o "Realidade" for grande demais e você precisar organizar o que colar de contexto.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Dos seus últimos pedidos à IA, quantos tinham Papel? Quantos tinham Realidade? Quantos tinham Objetivo mensurável?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8</span><h3>P.R.O.M.P.T.E.R. parte 2 — Marcha, Proteção, Texto de saída</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai fechar o meio do método. As três peças que controlam como a IA trabalha e como te entrega o trabalho.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Marcha é o ritmo do trabalho. "Faça em uma passada" ou "primeiro me pergunte o que falta, depois me apresente um plano, só depois execute". Marcha lenta serve pra tarefa complexa. Marcha rápida pra tarefa direta. Escolher errado é fonte de retrabalho.</p>
+      <p>Proteção é o que a IA não pode fazer. "Não invente fonte", "não use jargão", "não me dê conselho médico". Proteção é o freio de mão. Ela evita que a resposta te queime, ou saia num tom que você não quer.</p>
+      <p>Texto de saída é o formato de entrega. Tabela, lista, JSON, e-mail pronto, tópico com título e resumo. Diga exatamente como você quer receber. A IA obedece formato com uma disciplina que ela não tem com conteúdo.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Carlos pede análise de concorrentes. Marcha: "antes de responder, me pergunte 3 coisas que faltam". Proteção: "não invente nome de empresa; se não souber, escreva 'não confirmado'". Texto de saída: "tabela com 4 colunas: concorrente, ponto forte, ponto fraco, oportunidade pra mim". Sem essas três peças, viria um textão inútil.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Marcha: [COMO TRABALHAR PASSO A PASSO OU DIRETO]. Protecao: [O QUE VOCE NAO PODE FAZER]. Texto de saida: entregue no formato [FORMATO EXATO, EX: TABELA COM COLUNAS X, Y, Z].</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> quando a Marcha exigir quebra em passos e coordenação. Use a <b>bastiao</b> pra pensar em Proteção quando o tema envolve dado sensível.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você já pediu formato específico à IA e ficou surpreso com o que veio? Ou ainda aceita o formato que ela escolhe sozinha?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9</span><h3>P.R.O.M.P.T.E.R. parte 3 — Exemplos e Refino</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você fecha o método com as duas peças finais. As que fazem diferença gigante e quase ninguém usa.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Exemplo é o atalho mais poderoso do método. Em vez de descrever em três parágrafos como você quer o texto, cola um exemplo do que dá certo pra você. A IA copia estilo, estrutura, tom. Um exemplo economiza mil palavras de instrução. Isso vale pra copy, pra e-mail, pra análise, pra código.</p>
+      <p>Refino é assumir que a primeira resposta é rascunho e que a segunda vira o final. Você não recomeça, continua. "Ficou longo, corta pela metade". "Muda esse exemplo por um do varejo". "O tom ficou frio, aquece". Refino é conversa. Quem não refina, aceita o medíocre.</p>
+      <p>Com Exemplos e Refino você já tem o método completo. As oito peças não precisam vir todas todo dia. Falhou a resposta? Roda a checagem: qual letra faltou? É essa a leitura que o P.R.O.M.P.T.E.R. te dá.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Renata precisa escrever descrição de produto pra loja online. Em vez de descrever tom, ela cola duas descrições que gosta de uma marca concorrente e escreve "quero no mesmo espírito, mas pro meu produto Y". Vem quase pronto. Depois refina: "encurta a primeira frase", "coloca a garantia no fim". Três mensagens, entrega.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Exemplos: aqui vao 2 exemplos do estilo que eu quero. Exemplo 1: [COLE]. Exemplo 2: [COLE]. Agora produza [O QUE VOCE QUER] no mesmo espirito. Refino: depois que voce entregar, vou pedir 2 ou 3 ajustes especificos.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>lapidador</b> pra dar refino com método: diagnóstico do que ficou ruim, ajuste específico. Use a <b>forja</b> pra montar o pedido com Exemplos bem escolhidos.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual referência você tem de trabalho bem feito na sua área? Você já colou ela como Exemplo pra uma IA?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10</span><h3>Montando sua biblioteca de prompts</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai sair com o hábito de guardar prompt bom em vez de reinventar toda vez.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Toda vez que um prompt te salva, você tem duas opções. Fechar a aba e esquecer, ou salvar. Quem salva multiplica. A ideia da biblioteca é simples: um bloco de notas, um Google Docs, um Notion, qualquer coisa que você acessa fácil. Cria pasta por tema (Trabalho, Escrita, Pesquisa, Pessoal). Cola o prompt que funcionou, com um título curto e uma nota do que ele resolve.</p>
+      <p>Trate cada prompt como um mini-produto. Ele deve funcionar sem você lembrar de nada. Escreve com placeholders entre colchetes pra você trocar rápido. "[EMPRESA]", "[PUBLICO]", "[TOM]". Assim, na próxima vez, você abre, cola, troca o que precisa, envia.</p>
+      <p>Meu take: no fim de um mês de uso, quem tem biblioteca chega em resultado que quem não tem só alcança em seis. Não é sobre inteligência. É sobre não jogar fora o que funcionou.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Bruno criou seis prompts em um mês. "E-mail difícil", "Resumir reunião", "Traduzir com naturalidade", "Análise de currículo", "Post pro LinkedIn", "Dúvida técnica". Hoje ele resolve a maioria das tarefas em segundos, colando o prompt, trocando o placeholder, enviando. A concorrência começa toda tarefa do zero.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu bibliotecario de prompts. Vou colar abaixo 3 prompts que eu uso muito. Para cada um, faca: 1) da um titulo curto; 2) escreve em uma frase que problema ele resolve; 3) troca variaveis fixas por placeholders entre colchetes. Prompt 1: [COLE]. Prompt 2: [COLE]. Prompt 3: [COLE].</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra padronizar prompt com placeholders e critério. Use a <b>bagagem</b> pra pensar o que precisa entrar em cada template.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Que prompt te salvou nesta última semana? Ele está salvo em algum lugar ou já foi embora?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>Conhecendo as principais IAs</h2></div>
+  <p class="mod-resumo">Um passeio prático pelas ferramentas. Sem ranking, sem torcida. Só o que cada uma faz bem e quando escolher.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11</span><h3>ChatGPT (OpenAI) — forças e quando usar</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai saber onde o ChatGPT brilha e onde é só mais um.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>O ChatGPT é o mais famoso e é generalista de verdade. Escreve bem, resume bem, ajuda a pensar, entende foto, faz imagem, roda código simples. É o canivete suíço da praça. Se você fosse escolher só uma, ele seria a aposta menos arriscada.</p>
+      <p>Forças: interface fácil, ecossistema com GPTs personalizados, boa integração com voz e imagem, presença em quase todo lugar. Base gratuita razoável, versão paga (Plus) libera modelos melhores, mais rapidez e recursos como gerar imagem e analisar arquivo.</p>
+      <p>Onde ele fica só médio: texto muito longo às vezes se perde, e o tom padrão pode soar corporativo demais sem você pedir pra afrouxar. Nada que Papel e Exemplo do P.R.O.M.P.T.E.R. não resolvam.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Fernanda usa o ChatGPT gratuito pra três coisas por dia: responder e-mail difícil, resumir artigo longo que colou, e tirar dúvida rápida ("como faço tabela dinâmica no Excel?"). Nunca precisou pagar. No dia que precisar analisar PDF grande, ela cogita a versão Plus. Antes disso não.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e o ChatGPT. Vou fazer 3 tarefas seguidas com voce hoje. Antes de cada uma, me confirme em 1 linha que voce entendeu. Tarefa 1: [DESCREVA]. Ao terminar, aguarde eu mandar a proxima.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bussola</b> quando bater a dúvida se o ChatGPT é a escolha certa pra sua tarefa ou se vale trocar. Sem torcida.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se você já usa ChatGPT, em que tarefa ele te decepcionou? Foi ele ou foi o pedido?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12</span><h3>Claude (Anthropic) — forças e quando usar</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai entender por que o Claude é o queridinho de quem escreve muito e por que ele lida bem com texto longo.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Claude é da Anthropic, empresa fundada por gente que veio da OpenAI. Ele tem fama merecida de escrever com capricho: tom mais humano, menos corporativo, prosa que flui. Lida muito bem com documento longo (contrato, PDF de 100 páginas, código extenso). E costuma ser mais cuidadoso: pergunta em vez de chutar, admite quando não sabe.</p>
+      <p>Forças: qualidade de escrita, janela de contexto grande (cabe muita coisa colada), boa em raciocínio passo a passo. Ideal pra advogado, escritor, analista, pesquisador, programador. Tem versão gratuita razoável e paga (Claude Pro) com modelos mais fortes.</p>
+      <p>Onde perde: gera imagem só com integrações, não tem o alcance viral do ChatGPT, e o público leigo às vezes não conhece. Meu take: quem escreve texto pra viver deveria ao menos testar.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Ricardo é advogado. Cola um contrato de 40 páginas no Claude e pede "aponte cláusulas ambíguas, riscos pro meu cliente, sugestões de redação". O Claude entrega uma tabela organizada em minutos, com trecho citado e comentário. No ChatGPT gratuito, o mesmo pedido costuma esbarrar em limite de contexto.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e o Claude, revisor cuidadoso. Vou colar um documento longo. Sua tarefa: 1) resumir em 5 linhas; 2) apontar as 3 partes mais delicadas; 3) sugerir 3 perguntas que eu deveria fazer ao autor. Se algo estiver ambiguo, pergunte antes de chutar. Documento: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>sintese</b> pra combinar bem com o Claude quando o objetivo é resumir sem inventar. Use a <b>crivo</b> pra revisão rigorosa de saída dele.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual documento longo você tem em cima da mesa hoje que ganharia sendo lido com ajuda do Claude?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13</span><h3>Gemini (Google) — forças e quando usar</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai entender por que quem vive no Google se beneficia demais do Gemini.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Gemini é a IA do Google e vem integrada onde muita gente já mora: Gmail, Docs, Sheets, Drive, Meet. Isso muda o jogo em tarefas do cotidiano digital. Ele acessa seus documentos com autorização, resume threads longas de e-mail, transforma dados de planilha em análise, e ajuda a preparar apresentação a partir de material seu.</p>
+      <p>Forças: integração nativa com o ecossistema Google, acesso a informação atualizada via busca do Google, forte em tarefa multimodal (texto, imagem, áudio, vídeo). Versão gratuita já entrega muito. A paga (Gemini Advanced) desbloqueia modelos maiores e mais integração.</p>
+      <p>Onde perde: quem não usa Google no dia a dia sente pouco a mágica. E o tom de escrita costuma soar mais "corporativo padrão" que ChatGPT ou Claude. De novo, Papel bom no prompt corrige.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Patrícia coordena uma equipe. Toda sexta pede pro Gemini "resume os e-mails do projeto X desta semana, aponte pendências e me diga o que preciso decidir na segunda". Ele lê a caixa dela e devolve. Antes ela levava uma hora nisso. Agora leva cinco minutos e uma revisão.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e o Gemini com acesso ao meu Google Workspace. Analise a planilha [NOME OU LINK] e me traga: 1) 3 padroes que voce notou nos dados; 2) 1 grafico que ajuda a explicar o mais importante; 3) 2 perguntas que eu deveria investigar mais. Se algum dado nao fizer sentido, sinalize antes de concluir.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bagagem</b> pra decidir o que dar de contexto ao Gemini quando você quer que ele leia seus documentos. Nem tudo precisa ir junto.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual tarefa recorrente sua vive dentro do Google e ainda é feita à mão?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14</span><h3>Outras IAs e especialistas (Perplexity, Copilot e cia.)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai conhecer as ferramentas fora do trio principal e quando elas fazem diferença.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Fora do trio ChatGPT, Claude e Gemini existe um mundo de IAs especialistas. Perplexity é a IA de pesquisa: ela busca na internet, cita fonte e monta resposta com link. Ótimo pra quem precisa achar informação atual com referência clicável. Copilot é a IA da Microsoft: integrada ao Windows, ao Office e ao Edge, e forte pra quem vive no ecossistema Microsoft.</p>
+      <p>Tem outras. Midjourney e Ideogram pra imagem. ElevenLabs pra voz. NotebookLM pra estudar material seu com podcast automático. Cursor e Windsurf pra quem programa. Cada uma resolve um pedaço bem.</p>
+      <p>O jogo não é conhecer todas. É saber que existem, pra quando bater a necessidade você não usar martelo pra parafuso. Quando o generalista não dá conta, tem sempre um especialista.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Marcos precisa de dado atualizado com fonte pra citar num relatório. ChatGPT ou Claude podem inventar. Ele vai direto no Perplexity, faz a pergunta, copia a resposta e os links. Cinco minutos. Se tivesse insistido com o generalista, gastaria uma hora conferindo tudo.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e o Perplexity. Preciso de dado atualizado sobre [TEMA] com fontes confiaveis. Traga: 1) resumo em 5 linhas; 2) 3 numeros ou fatos com link direto pra fonte; 3) 1 fonte contraria ou que qualifica o consenso.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>garimpo</b> pra pesquisa profunda com fontes verificáveis. É a skill que decide o que vale citar e o que é ruído.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quando foi a última vez que você citou um número numa apresentação sem checar a fonte? O que Perplexity ou skill de pesquisa teria mudado?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15</span><h3>Qual IA pra qual tarefa — o mapa de decisão</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai sair com um mapa mental de qual IA acionar em qual tarefa. Sem paralisia.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Um mapa simples resolve 90% dos casos. Tarefa geral do dia a dia, dúvida, e-mail, resumo curto: ChatGPT. Texto longo, escrita cuidadosa, análise de documento, contrato, código complexo: Claude. Tarefa dentro do Google, planilha, e-mail interno, doc compartilhado: Gemini. Pesquisa com fonte atualizada: Perplexity. Imagem: Midjourney, Ideogram ou o próprio ChatGPT.</p>
+      <p>Não é regra fixa. Se você paga uma só, tudo bem: puxa o método pra dentro dela. O P.R.O.M.P.T.E.R. te dá 80% do resultado em qualquer ferramenta. Trocar de IA por trocar é distração. Trocar porque a atual não entrega é decisão.</p>
+      <p>Meu take: quem quer resultado escolhe UMA como casa e aprende a fundo, e mantém uma segunda como backup pra tarefa específica. Perseguir novidade em cada release é ansiedade travestida de estratégia.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Luiza tem Claude como casa. Todo dia usa pra escrever, resumir e analisar. Quando precisa de dado atualizado, abre Perplexity. Quando precisa de imagem, abre Ideogram. Três ferramentas, uso claro. Ela não tenta ser expert em dez. Fica boa em uma.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou descrever 5 tarefas que faco toda semana. Para cada uma, sugira: 1) qual IA usar (ChatGPT, Claude, Gemini, Perplexity ou outra); 2) por que; 3) que peca do P.R.O.M.P.T.E.R. e mais importante nesse caso. Tarefas: [LISTE AS 5]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bussola</b> pra decidir stack e ferramenta com trade-off claro. Sem hype.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você tem uma IA-casa hoje? Se pudesse ter só uma, qual seria e por quê?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>IA no Trabalho</h2></div>
+  <p class="mod-resumo">Aplicações que retornam tempo e qualidade no seu expediente. Escrever, decidir, reunião, planejar, aplicar na sua área.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16</span><h3>Escrever melhor e mais rápido com IA</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai usar a IA pra escrever em menos tempo sem perder sua voz.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>IA escreve rápido. O risco é a escrita ficar sem personalidade, com aquele tom "corporativo genérico". A saída é usar a IA como copiloto de escrita, não como ghostwriter. Você dá a espinha (o que quer dizer, pra quem, com que tom). Ela costura. Você revisa, corta, ajusta.</p>
+      <p>Dois usos mudam tudo. Primeiro, rascunho: você tem uma ideia solta, pede um rascunho, e reescreve por cima. Segundo, revisão: você escreveu na correria, pede revisão específica ("mais claro", "mais curto", "mais gentil", "mais firme"). Ela lapida sem descaracterizar.</p>
+      <p>Um truque poderoso: cole três textos seus e peça "aprenda meu estilo e escreva no meu tom". A IA copia com surpreendente precisão. Assim você acelera sem soar robô.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Sérgio precisa mandar oito e-mails de retorno de reunião. Em vez de escrever cada um, cola a ata e pede "escreva o e-mail pra cada participante lembrando dos pontos que ele ficou responsável, tom colaborativo, curto". Recebe oito rascunhos. Ajusta duas palavras em cada e envia. Duas horas viram vinte minutos.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu copiloto de escrita. Vou colar 3 textos que eu escrevi para voce aprender meu tom. Depois vou pedir um rascunho novo, no mesmo estilo. Texto 1: [COLE]. Texto 2: [COLE]. Texto 3: [COLE]. Agora escreva [O QUE VOCE QUER] no meu tom.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra pedir rascunho com Papel e Exemplo. Use a <b>lapidador</b> pra revisar sem descaracterizar.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual texto você escreve toda semana e sempre fica na mesma qualidade média? O que muda se você virar essa tarefa em template com IA?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17</span><h3>Analisar e decidir com IA</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai usar a IA como consultora silenciosa pra decisões difíceis.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>IA não decide por você. Mas ajuda a pensar. O truque é enxergar ela como um consultor paciente que topa te escutar às três da manhã. Você descreve a situação com detalhe, os prós e contras que já viu, e pede um framework pra decidir. Ou pede que ela critique sua escolha atual antes de você confirmar.</p>
+      <p>Dois padrões que funcionam. Primeiro, "advogado do diabo": você conta sua decisão e pede que a IA aponte tudo que pode dar errado. Segundo, "matriz de decisão": você lista opções e critérios, e pede uma tabela comparativa com nota justificada. Nenhum substitui seu julgamento. Ambos limpam a névoa.</p>
+      <p>Cuidado. A IA tende a te concordar. Se ela só elogia sua ideia, o pedido está fraco. Pede rigor: "não me elogie, ache o furo". O valor está em ver o que você não estava vendo.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Camila vai decidir entre aceitar uma vaga em outra cidade e ficar na atual. Descreve as duas opções, o que ela valoriza, o que teme. Pede matriz com 5 critérios e nota justificada. E depois pede advogado do diabo pra opção preferida dela. Sai com clareza que não tinha antes. Decide sozinha.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu consultor rigoroso. Vou apresentar 2 opcoes de decisao e o que valorizo. Sua tarefa: 1) montar tabela comparando as opcoes em 5 criterios com nota justificada; 2) apontar 3 riscos que eu posso nao estar vendo; 3) recomendar sem enrolar, mesmo que a resposta me contrarie. Situacao: [DESCREVA]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> pra quebrar decisão grande em passos avaliáveis. Use a <b>crivo</b> pra revisar a análise antes de agir.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual decisão você está adiando por falta de clareza? Um advogado do diabo bem feito muda alguma coisa?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18</span><h3>Reuniões, e-mails e documentos</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai virar reunião, e-mail e documento num fluxo com muito menos fricção.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Reunião: pede pra IA um roteiro em 3 blocos (contexto, objetivo, próximos passos), com tempo estimado. Ata: cola a transcrição e pede resumo com decisões, pendentes com responsável e prazo. E-mail: descreve o que você quer que a pessoa faça e o que ela precisa saber, pede rascunho no tom certo. Documento: cola material bruto (notas, e-mails, planilha) e pede estruturação em relatório com sumário e capa.</p>
+      <p>Três hábitos que economizam horas por semana. Antes da reunião, prompt de agenda. No fim da reunião, prompt de ata. Antes de mandar e-mail difícil, prompt de tom.</p>
+      <p>Cuidado com transcrição de reunião: você tá lidando com voz de gente. Sensível. Não cole em IA pública se a conversa envolve dado confidencial. Pra isso a Aula 36 detalha LGPD.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Rafael faz seis reuniões por semana. Antes: gastava 20 minutos escrevendo ata cada uma. Agora: grava (com aviso), cola a transcrição na IA, pede o formato-padrão. Ata sai em dois minutos. Ele revisa em cinco. Poupa quase duas horas por semana. Multiplicando por meses, é gente contratada.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou colar a transcricao de uma reuniao. Voce vai me devolver: 1) resumo em 5 linhas do que foi discutido; 2) lista de decisoes tomadas; 3) tabela de acoes com responsavel, o que fazer e prazo; 4) 2 pontos que ficaram em aberto e precisam de reuniao futura. Transcricao: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>sintese</b> pra resumir sem inventar. Use a <b>salvaguarda</b> pra pensar em LGPD antes de colar transcrição sensível.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quantas horas por semana você gasta em reunião, e-mail e ata? Onde a IA cortaria mais tempo sem cortar qualidade?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19</span><h3>Planejamento e produtividade pessoal</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai usar a IA como planejadora silenciosa que te ajuda a decidir o que fazer, e o que largar.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>IA é ótima em ler bagunça e devolver estrutura. Você descreve sua semana (compromissos, tarefas, energia disponível), pede um plano realista. Ou lista tudo que tá na sua cabeça e pede priorização com critério. Ou descreve um projeto grande e pede quebra em marcos com prazo.</p>
+      <p>Um truque forte: pede pra IA "corta 30% do meu plano". Ela ajuda você a admitir que não vai dar conta de tudo. Escolher o que largar é metade da produtividade. Outro truque: no fim do dia, cola o que fez e pede análise honesta ("onde eu me distraí, o que ficou pra amanhã, o que eu não deveria ter aceitado").</p>
+      <p>Cuidado com o vício de planejar. Meia hora de plano bom já vale. Duas horas de plano perfeito são procrastinação disfarçada.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Aline lista 18 tarefas no domingo à noite. Pede pra IA priorizar em 3 grupos: fazer segunda, fazer na semana, delegar ou cortar. A IA devolve com nota de esforço e impacto. Aline enxerga que 6 tarefas nem deveriam estar ali. Cortar valeu mais que fazer.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu planejador. Vou colar minha lista de tarefas da semana. Sua tarefa: 1) agrupar em Hoje, Esta semana, Depois e Cortar; 2) para cada grupo, justificar em 1 linha; 3) sugerir 2 tarefas que eu poderia delegar; 4) me dizer o que estou tentando fazer demais. Lista: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> pra quebrar projeto grande em passos coordenados. Use a <b>lapidador</b> pra rever seu plano quando ele parece razoável mas te trava.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>O que da sua lista de hoje você faria diferente se soubesse que só ia entregar metade?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20</span><h3>IA pra sua área (vendas, marketing, jurídico, RH)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai ver como IA se aplica na sua área específica, com exemplo por perfil.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Vendas: qualifica lead, personaliza mensagem em escala, resume ligação e sugere próximo passo, prepara resposta pra objeção. Marketing: gera variação de anúncio, briefing de campanha, calendário de conteúdo, análise de concorrente. Jurídico: resume contrato longo, aponta cláusula ambígua, minuta modelo, revisa consistência. RH: ajuda em job description, tela de currículo, primeira triagem, feedback estruturado, comunicação interna.</p>
+      <p>O padrão é o mesmo em toda área. Tarefa repetitiva de linguagem é o alvo perfeito. Tarefa de julgamento fino você mantém no humano, mas usa IA como copiloto. Tarefa de dado sensível exige regra: nem tudo cola na IA pública.</p>
+      <p>Meu take: em cada área tem 3 a 5 tarefas que somam metade do tempo. Automatiza aquelas primeiro. O resto vem depois.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Denise é gerente comercial. Todo lead que chega ela colava em uma planilha e ia pesquisar. Agora tem prompt salvo que pega o nome da empresa, faz perguntas certas, sugere abertura personalizada e três objeções prováveis com resposta. Cada lead que levava 30 minutos leva 5. Fecha o dia com o dobro de contatos.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e especialista em [SUA AREA]. Vou descrever 3 tarefas que faco toda semana. Para cada uma, entregue: 1) prompt pronto que resolve; 2) que peca do P.R.O.M.P.T.E.R. e critica pro sucesso; 3) 1 armadilha de dado sensivel que preciso evitar. Tarefas: [LISTE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra criar seus prompts especializados. Use a <b>salvaguarda</b> pra revisar se algum deles pede dado que não deveria sair do seu ambiente.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quais três tarefas da sua área tomam metade do seu tempo? Duas delas dá pra virar prompt hoje?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>IA Multimodal</h2></div>
+  <p class="mod-resumo">IA não é só texto. Ela vê, cria imagem, ouve, fala, lê PDF e planilha, entende vídeo. Quando você abre esses canais, o uso muda de patamar.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21</span><h3>IA que vê — analisar imagens e prints</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai usar imagem como entrada, não só texto.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Colar uma imagem no ChatGPT, no Claude ou no Gemini virou banal. E resolve muito. Você tira print de erro do computador, cola, pede explicação. Fotografa uma planilha, cola, pede análise. Tira foto de plano nutricional, cola, pede substituição. IA que vê é atalho.</p>
+      <p>Três usos que valem ouro. Print de tela: "por que este erro?", "o que este gráfico está me dizendo?", "qual botão eu aperto agora?". Foto de documento: "resume", "traduz", "aponta cláusula estranha". Foto do mundo real: "que planta é essa?", "esta receita faz sentido?", "esse produto tem alerta de alergênico?".</p>
+      <p>Cuidado padrão: se a imagem tem dado sensível (CPF, senha, prontuário), pensa duas vezes antes de colar em IA pública. Trata como se estivesse mandando pra um estranho.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Otávio recebeu uma foto de conta de luz com valor absurdo. Cola no ChatGPT: "explique cada linha e diga onde eu deveria questionar". Sai com três pontos pra reclamar. Ligou pra concessionária armado. Economizou R$180.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou anexar uma imagem. Sua tarefa: 1) descrever objetivamente o que voce ve; 2) responder a minha pergunta especifica sobre a imagem; 3) apontar 1 coisa que eu talvez nao tenha notado. Minha pergunta: [ESCREVA]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>salvaguarda</b> pra pensar em dado pessoal antes de colar imagem. Use a <b>crivo</b> pra revisar o que a IA leu na imagem antes de agir.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Que print ou foto você tem no celular agora que ganharia sendo analisado com uma boa pergunta?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22</span><h3>IA que cria imagens</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai criar imagem útil e original sem ser designer.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Gerar imagem por texto virou realidade. Ferramentas como Ideogram, Midjourney e o próprio ChatGPT criam ilustração, foto realista, ícone, arte de post, capa de e-book. Você descreve, ajusta, refina. Não vira designer profissional. Vira alguém que resolve o visual do dia a dia sem esperar terceiro.</p>
+      <p>Três dicas que separam imagem boa de imagem estranha. Primeiro, descreve estilo (foto realista? ilustração vetorial? aquarela? 3D?). Segundo, descreve enquadramento e composição (close, plano aberto, fundo neutro). Terceiro, descreve o que evitar (sem texto, sem pessoa, sem marca). Quanto mais específico, mais previsível.</p>
+      <p>Cuidado com direito autoral e uso comercial. Regra dos serviços muda. Se é pra publicar em campanha, checa a licença. Se é gerando parecido com marca ou pessoa real, cuida com imagem e semelhança.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Julia precisa de ilustração pro post do blog dela sobre sono. Descreve: "ilustração vetorial minimalista, tons de azul e roxo, pessoa dormindo em cama, sem rosto visível, sem texto, estilo editorial revista, fundo com estrelas discretas". Sai em três variações. Escolhe uma, refina cor, publica.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Gere uma imagem para [ONDE VAI SER USADA]. Assunto: [O QUE MOSTRAR]. Estilo: [FOTO REALISTA / ILUSTRACAO / AQUARELA / 3D]. Composicao: [CLOSE / PLANO ABERTO / ENQUADRAMENTO]. Paleta: [CORES]. Nao inclua: [TEXTO, LOGO, PESSOA REAL, ETC].</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra descrever imagem com precisão. Use a <b>lapidador</b> pra ajustar quando vier quase bom.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quantas vezes você deixou de publicar algo por falta de imagem? Quantas dessas você resolveria em cinco minutos hoje?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23</span><h3>IA que ouve e fala — voz e áudio</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai transformar áudio em texto útil e falar com IA como se fala com um assistente.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>IA lê áudio e áudio agora vira insumo. Você grava uma ideia solta caminhando, joga na IA, pede pra virar rascunho estruturado. Grava reunião, transcreve, resume, extrai ação. Fala com o ChatGPT no celular como se falasse com alguém. Isso muda o consumo: você usa IA em contexto que antes não usava.</p>
+      <p>Do outro lado, IA fala. Serviços como ElevenLabs geram voz humana convincente. Pra podcast, pra vídeo, pra material didático. Também tem risco: golpe de voz clonada. Se você produz áudio, tá em época. Se você recebe áudio, tá em época de duvidar.</p>
+      <p>Uso pessoal simples: ditado. Muita gente escreve devagar mas fala bem. Ditar pra IA e pedir "arrume gramática, mantenha meu tom" liberta.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Márcio caminha 40 minutos por dia. Antes ouvia podcast. Agora, dois dias por semana, ele grava as ideias soltas dele sobre o negócio no gravador. Joga o áudio na IA. Volta pra casa com plano rascunhado. Tempo que era passivo virou produtivo, sem robar do descanso.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou colar a transcricao de um audio meu falando solto sobre uma ideia. Sua tarefa: 1) identificar a ideia central em 1 frase; 2) organizar em introducao, 3 pontos principais e conclusao; 3) sugerir 2 pontos que eu deveria desenvolver mais; 4) apontar 1 contradicao se houver. Transcricao: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>sintese</b> pra resumir áudio longo sem inventar. Use a <b>salvaguarda</b> pra pensar em consentimento quando o áudio tem outra pessoa.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Você tem hora do dia em que fala mas não escreve? Como aproveitar essa janela virando áudio em texto útil?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24</span><h3>IA com documentos (PDF, planilhas)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai usar IA pra digerir arquivo grande em vez de ler linha por linha.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>PDF longo, contrato, relatório, artigo científico. Cola na IA e ela resume, aponta parte crítica, responde pergunta específica. Planilha idem: descreve os dados, pergunta o que quer saber, ela puxa e analisa. Isso libera horas por semana pra quem lida com informação.</p>
+      <p>Três formatos de pedido funcionam bem. Um: "resume em 10 linhas". Dois: "responda a esta pergunta específica citando o trecho que embasa". Três: "aponte 5 pontos que eu deveria questionar". O terceiro é onde IA mais surpreende, porque ela lê com olhar novo.</p>
+      <p>Cuidado óbvio: documento com dado pessoal ou confidencial não vai em IA pública sem checar política. Pra isso existem versões corporativas (ChatGPT Enterprise, Claude for Work, Gemini Workspace), com garantias contratuais.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Vanessa faz parte de conselho e recebe pauta com 60 páginas por reunião. Antes: lia às pressas na véspera. Agora: cola, pede resumo por tópico e três perguntas críticas pra levantar em cada tema. Chega preparada com metade do tempo. Nas reuniões ela puxa debate. Antes era espectadora.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou colar um documento. Sua tarefa: 1) resumo em 10 linhas; 2) 3 secoes que merecem atencao especial e por que; 3) 5 perguntas que eu deveria fazer ao autor; 4) 1 coisa que voce nao entendeu ou que parece contraditoria. Documento: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>sintese</b> pra resumo fiel. Use a <b>crivo</b> pra revisar o que a IA extraiu contra o documento original antes de citar em público.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Que documento pesado te aguarda esta semana? Como ele seria diferente com uma boa leitura assistida?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25</span><h3>IA e vídeo</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai lidar com vídeo como insumo e como saída, sem virar editor.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Vídeo virou multimodal também. Você joga o link ou a transcrição do YouTube na IA e pede resumo, timestamps das partes importantes, notas de estudo. Isso muda como você consome conteúdo longo. Duas horas de aula viram trinta minutos de notas revisáveis.</p>
+      <p>Do outro lado, IA cria vídeo. Serviços geram avatar falando seu texto, animação sobre roteiro, corte automático de vídeo longo em shorts. Uso realista: material didático, apresentação interna, prévia de conteúdo. Não substitui produção com câmera, mas tira gargalo em projeto simples.</p>
+      <p>Meu take: pra maioria, o valor está em consumir vídeo com IA. Poucos precisam gerar. Comece pelo que economiza tempo, não pelo que impressiona no LinkedIn.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Cauã queria estudar um curso gratuito no YouTube com 24 horas de aula. Impossível assistir tudo. Joga a transcrição de cada aula na IA, pede resumo estruturado com quiz e conceitos-chave. Termina o curso em duas semanas, com material próprio pra revisar.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou colar a transcricao de um video/aula. Sua tarefa: 1) resumo em 5 linhas do que foi ensinado; 2) 5 conceitos-chave com definicao curta; 3) 3 exemplos praticos citados; 4) 5 perguntas de quiz para eu testar meu entendimento. Transcricao: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>sintese</b> pra resumo denso e útil. Use a <b>maestro</b> se for maratona de várias aulas e precisar de plano de estudo.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Que curso ou vídeo você começou e nunca terminou? Como seria terminar com IA como parceira de leitura?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>Dados, Pesquisa e Conhecimento</h2></div>
+  <p class="mod-resumo">Aqui a IA vira sua bibliotecária, sua analista de dados, sua tutora particular. Um módulo pra quem quer aprender e saber mais rápido, com rigor.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26</span><h3>Pesquisar a fundo com IA (e checar fontes)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai pesquisar com IA sem cair em fonte inventada.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Pesquisa com IA tem dois caminhos. IA generalista (ChatGPT, Claude, Gemini) é boa pra visão geral, síntese, contexto. Mas pode inventar fonte. IA de pesquisa (Perplexity, modo pesquisa profunda do ChatGPT ou Gemini) busca de verdade, cita link, traz dado atual. Pra qualquer coisa que vá pra público ou pra decisão, use IA de pesquisa e ainda assim confira.</p>
+      <p>Três regras de ouro. Pergunte com escopo claro (país, período, tipo de fonte). Peça sempre citação clicável, não descrição de fonte. Rejeite parágrafo sem link. E cheque duas fontes antes de citar como verdade. Um clique economiza um constrangimento futuro.</p>
+      <p>Meu take: quem cita IA como fonte de dado tá pedindo pra levar rasteira. Cite a fonte que a IA achou, checada por você.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Larissa vai fazer uma palestra sobre gerações no trabalho. Pede dado sobre Geração Z no Brasil em 2025 pra Perplexity. Vem com três fontes: IBGE, Deloitte, um jornal. Ela abre os três, checa que o número bate, e leva pro slide com fonte citada. Palestra credível. Sem risco.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e minha assistente de pesquisa. Preciso de dado atualizado sobre [TEMA] no [PAIS/REGIAO] em [ANO]. Traga: 1) 3 numeros ou fatos com link direto para fonte confiavel; 2) 1 fonte que qualifica ou contradiz o consenso; 3) 1 linha dizendo o que ainda esta em disputa. Nao invente. Se nao encontrar, diga.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>garimpo</b> pra pesquisa profunda com verificação. Use a <b>crivo</b> pra rechecar antes de citar em documento oficial ou palestra.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual foi a última vez que você citou um número sem checar? O que teria mudado com um minuto de rigor?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27</span><h3>Analisar dados e planilhas</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai fazer análise de dado sem virar analista.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Cola planilha na IA ou anexa CSV. Descreve o que ela contém. Pergunta o que quer saber. Ela faz. Gráfico, resumo estatístico, comparação entre grupos, tendência ao longo do tempo. Cabe muito no nível "gerente que precisa entender", mesmo sem saber Excel avançado.</p>
+      <p>Três perguntas que quase sempre valem. "Quais padrões você notou nesses dados?" abre o olho. "Qual dado parece errado ou inconsistente?" pega problema. "Que pergunta eu deveria estar fazendo com esses dados?" é a mais poderosa. Muitas vezes você não sabia o que perguntar.</p>
+      <p>Cuidado: IA erra em conta. Confira totais e médias com uma amostra à mão. E dado pessoal ou financeiro sensível, pensa antes de colar em IA pública. Versão corporativa ou ambiente controlado é o caminho.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Igor tem planilha com 1.200 vendas do trimestre. Cola no Gemini (dentro do Google, no controle dele). Pede "3 padrões que se destacam" e "onde estou perdendo margem". Descobre que um vendedor específico dá desconto acima da média em produto de baixa margem. Conversa com ele na sexta.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou colar/anexar uma planilha com [DESCREVA OS DADOS]. Sua tarefa: 1) resumo em 5 linhas do que os dados mostram; 2) 3 padroes que voce notou; 3) 2 anomalias ou dados que parecem errados; 4) 3 perguntas que eu deveria investigar; 5) confira totais e me sinalize se algo nao bater.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bagagem</b> pra decidir o que colar da planilha. Use a <b>crivo</b> pra revisar os cálculos que a IA fez.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual planilha da sua rotina esconde uma pergunta importante que você nunca fez? A IA pode te ajudar a formular.</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28</span><h3>Resumir e sintetizar conteúdo longo</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai virar textão em resumo confiável em minutos.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Resumir é uma das coisas que IA faz de melhor. Mas resumo bom e resumo raso são coisas diferentes. Resumo raso é frase solta. Resumo bom mantém a espinha argumentativa e cita trecho crítico. Peça sempre estrutura: tese, três apoios, ressalva.</p>
+      <p>Três formatos que servem em quase tudo. Bullet de uma linha por seção pra scan rápido. Parágrafo denso de dez linhas pra leitura sequencial. Mapa mental hierárquico pra estudo. Escolha por finalidade, não por gosto. E sempre peça citação de trecho quando o resumo precisar ser defensável.</p>
+      <p>Verificação rápida sem ler tudo: pega três trechos do resumo e busca no original com Ctrl+F. Se bate, resumo confiável. Se não bate, ou é paráfrase (ok) ou é invenção (perigo). Aprenda a diferença.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Beto recebe estudo de 80 páginas. Cola no Claude. Pede resumo estruturado com tese, três apoios, uma ressalva do autor, e três trechos citados como prova. Devolve em dois minutos. Ele checa os três trechos no original, tudo bate. Vai pra reunião com posição formada.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou colar um texto longo. Resuma no seguinte formato: 1) tese central em 1 frase; 2) 3 apoios com 1 trecho citado por apoio; 3) 1 ressalva que o autor faz; 4) 2 perguntas que o texto deixa em aberto. Nao invente citacao. Se nao encontrar apoio, diga. Texto: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>sintese</b> pra resumo fiel e útil. Use a <b>crivo</b> quando o resumo vai virar decisão ou apresentação.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Que material longo você deixa acumulando? Como muda seu consumo se resumo denso levar 5 minutos?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29</span><h3>IA como tutor — aprender qualquer coisa</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai usar a IA como professor particular paciente e ajustável.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>IA como tutor é subaproveitada. A maioria pergunta uma coisa e para. O jogo é fazer curso privado. Você descreve seu ponto de partida, seu objetivo, seu tempo disponível. Ela monta trilha. Você aprende, testa, pergunta, refina. É como ter um professor que nunca perde a paciência e ajusta o nível na hora.</p>
+      <p>Três moldes que funcionam. "Explica como se eu tivesse 12 anos" pra base. "Explica como se eu fosse universitário da área" pra profundidade. "Explica com analogia da minha profissão" pra fixar. E o hábito que mais rende: pedir teste. "Me faça 5 perguntas de compreensão sobre o que você acabou de explicar". Aprender virando aluno com prova.</p>
+      <p>Meu take: quem aprende com IA dobra a velocidade em relação a quem só assiste vídeo. Não porque IA sabe mais. Porque força você a interagir.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Cíntia quer entender estatística básica pra ler relatório do trabalho. Não vai voltar pra faculdade. Pede pro Claude uma trilha de 10 sessões de 20 minutos, com teoria, exemplo do dia a dia dela (RH) e três exercícios por sessão. Em duas semanas lê relatório sem se sentir excluída.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu tutor particular de [ASSUNTO]. Meu ponto de partida e [O QUE JA SEI]. Meu objetivo e [O QUE QUERO SABER FAZER]. Tenho [X MINUTOS POR DIA]. Monte uma trilha de [N SESSOES] com: teoria em linguagem simples, exemplo do meu dia a dia (sou [PROFISSAO]), 3 exercicios por sessao com resposta ao final.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> pra coordenar trilha longa com marcos. Use a <b>lapidador</b> quando a explicação vier meio confusa.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Que tema você adiou por medo, tempo ou vergonha de perguntar? Com tutor de IA, qual dessas barreiras cai?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30</span><h3>Construindo uma base de conhecimento pessoal</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai começar a montar seu segundo cérebro alimentado por IA.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Base de conhecimento pessoal é o lugar onde você acumula o que aprende, o que produz, o que quer consultar depois. Notion, Obsidian, Google Docs, qualquer coisa serve. O que muda com IA é a possibilidade de conversar com essa base. Ferramentas como NotebookLM, Claude Projects e ChatGPT com memória permitem carregar seu material e depois perguntar como se fosse professor íntimo.</p>
+      <p>Padrão que funciona. Pasta por tema (Trabalho, Estudo, Projetos, Pessoal). Regra simples de captura: se te ajudou, salva. Revisão semanal de 15 minutos: reorganiza, apaga o que não vale, resume o que ficou denso. E hábito de consulta: bateu dúvida, pergunta à sua base antes do Google.</p>
+      <p>Isso não é sobre virar produtivo obsessivo. É sobre parar de recomeçar do zero. Todo mês. Toda pergunta.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Guilherme vem juntando notas de leitura, atas de reunião, e insights soltos há um ano. Carrega tudo no NotebookLM. Pergunta "o que aprendi sobre negociação nos últimos 12 meses?". Sai uma síntese com trecho citado. Descobre padrão que não tinha visto. Parece milagre. É só material salvo, bem consultado.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e o curador da minha base de conhecimento pessoal. Vou colar as notas soltas que juntei nesta semana. Sua tarefa: 1) agrupar por tema; 2) sugerir titulo curto para cada grupo; 3) apontar 2 conexoes entre notas que eu talvez nao tenha visto; 4) marcar o que parece descartavel. Notas: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bagagem</b> pra pensar o que entra na base e o que fica de fora. Use a <b>sintese</b> pra transformar notas soltas em documento consultável.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Onde estão suas melhores anotações hoje? Se você precisasse consultar amanhã, acharia?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Automação e Agentes</h2></div>
+  <p class="mod-resumo">IA que não só responde: IA que faz. Aqui a gente sai do chat e entra em fluxo, agente e assistente pessoal.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 31</span><h3>O que são agentes de IA</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai entender o que separa chat de agente, e por que isso importa.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Chat de IA responde. Agente de IA age. A diferença é ter ferramentas e permissão pra usá-las: navegar na internet, mandar e-mail, criar arquivo, agendar reunião, consultar sistema. Você define o objetivo, o agente decide os passos e executa. Você aprova ou intervém no caminho.</p>
+      <p>Isso muda o que dá pra automatizar. Antes era macro repetitiva. Agora é tarefa com julgamento: "pesquise três candidatos com esse perfil, monte uma tabela comparativa e me mande por e-mail". O agente distribui a tarefa em passos, roda cada um, entrega.</p>
+      <p>Cuidado grande. Agente com acesso a e-mail, calendário e sistemas seus é um novo empregado. Você não daria essas chaves pra qualquer um. Comece com escopo pequeno, revisão obrigatória, e cresça devagar. Aula 38 volta nesse assunto.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Isabel pediu pra um agente do ChatGPT: "pesquise 5 fornecedores de brinde corporativo em Curitiba, com preço médio, prazo e avaliação. Traga tabela e me diga qual eu deveria contatar primeiro". O agente navegou, montou, entregou. Isabel gastou 3 minutos. A concorrência dela gastaria uma tarde.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e um agente com acesso a busca. Meu objetivo: [OBJETIVO CONCRETO]. Antes de agir, me apresente o plano em 3 a 5 passos e aguarde minha aprovacao. Depois execute e me traga: 1) resultado final; 2) fontes usadas; 3) o que voce nao conseguiu fazer.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> pra desenhar tarefa complexa em passos verificáveis. Use a <b>bastiao</b> pra pensar em permissões antes de dar acesso.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual tarefa sua envolve pesquisa + decisão simples e poderia ser um bom primeiro alvo pra um agente?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 32</span><h3>Conectando IAs ao seu fluxo (ferramentas no-code)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai conectar IA aos seus sistemas sem escrever código.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Ferramentas no-code (Zapier, Make, n8n) permitem ligar peças. "Chegou e-mail com anexo, salva no Drive, resume com IA, manda no Slack". "Nova linha na planilha, IA classifica e responde". Você monta o fluxo arrastando bloco. A IA entra como um dos blocos.</p>
+      <p>Três padrões que valem em qualquer empresa. Triagem: IA lê entrada (e-mail, formulário, ticket) e classifica. Enriquecimento: IA pega dado bruto e transforma em resumo, análise ou rascunho. Notificação inteligente: IA decide se algo merece te avisar agora, ou se pode esperar o resumo da semana.</p>
+      <p>Comece pequeno. Um fluxo por vez. Testa uma semana. Ajusta. Amplia. Fluxo que quebra silenciosamente é o pior tipo de bug. Use a Aula 38 e as skills de segurança pra pensar limites antes de rodar em produção.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Rodrigo (outro Rodrigo) gerencia loja online. Toda avaliação nova vai pro Zapier, IA classifica em positiva, negativa ou dúvida. Positiva vai no relatório mensal. Negativa dispara alerta no WhatsApp com sugestão de resposta. Dúvida cai no Slack do atendimento. Tempo de resposta caiu de dias pra horas.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu arquiteto de automacao. Descreva 3 fluxos que eu poderia montar em Zapier ou Make usando IA como uma das etapas, dado meu contexto: [DESCREVA SEU TRABALHO E FERRAMENTAS]. Para cada fluxo diga: gatilho, passos, papel da IA, risco de falha silenciosa.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>ponte</b> pra pensar integração com API e webhook com rigor. Use a <b>bastiao</b> pra revisar permissões antes de ligar em ferramenta corporativa.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual tarefa se repete no seu inbox, planilha ou notificação e pediria um fluxo automatizado?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 33</span><h3>Orquestrando tarefas grandes (quebrar e coordenar)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai aprender a fatiar tarefa grande em pedaços que a IA resolve em cadeia.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Tarefa grande dada de vez pra IA vira resposta genérica. Tarefa grande fatiada em passos claros vira entrega útil. O padrão: você descreve o objetivo final, pede pra IA fazer o plano em 5 a 8 passos, aprova (ou ajusta), e vai rodando um passo por vez, com revisão entre eles.</p>
+      <p>Isso funciona em qualquer tipo de trabalho complexo. Escrever um artigo virou: definir tese, montar esqueleto, escrever cada seção, revisar, cortar, fechar. Preparar apresentação virou: definir mensagem central, montar roteiro, gerar slide a slide, ensaiar. A IA faz melhor por partes, e você pega problema mais cedo.</p>
+      <p>Meu take: quem quer tirar valor sério de IA precisa parar de esperar mágica em um turno só. Aprender a coordenar é o pulo do gato.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Márcia vai lançar um curso. Em vez de pedir "planeje meu lançamento", ela pede plano em passos. Passo 1, oferta. Passo 2, jornada de e-mail. Passo 3, página de captura. Passo 4, cronograma. Em cada passo revisa e ajusta antes do próximo. Ao fim de dois dias tem material aprovável, coerente e defensável.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu maestro. Objetivo final: [DESCREVA]. Antes de comecar, me entregue: 1) plano em 5 a 8 passos com entrega concreta por passo; 2) que decisao eu preciso tomar em cada passo; 3) que risco tem no caminho. Nao execute nada ainda. Aguarde eu aprovar o plano.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> pra desenhar e conduzir o passo a passo. Use a <b>crivo</b> entre passos pra revisar antes de seguir.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Qual projeto seu tá parado esperando um dia com muito tempo? Ele começa se você quebrar em passos de 20 minutos?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 34</span><h3>Skills e capacidades — IA que faz, não só responde</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai entender skills como pacotes de capacidade da IA, e por que isso profissionaliza o uso.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Skill de IA é um pacote pronto que ensina a IA a fazer bem uma coisa específica. Como se você chamasse um especialista em vez do generalista. Escrever prompt profissional, revisar código com rigor, montar apresentação, pesquisar com fonte, planejar segurança de projeto. Cada skill traz método e vocabulário. Você invoca, ela roda.</p>
+      <p>Existe hoje suíte de skills prontas pra vibecoding e uso profissional. A do Rodrigo (Engenho) tem 25 skills próprias que refletem o método dele. Cada uma faz uma coisa bem. Forja pra construir prompt. Lapidador pra refinar resposta. Crivo pra revisar código ou texto. Salvaguarda pra pensar LGPD. Bastiao pra segurança. Você não precisa saber a hora exata de invocar. Você descreve a tarefa e a IA carrega a skill certa.</p>
+      <p>Meu take: skill é a próxima etapa depois de dominar prompt. Quem usa skill entrega no mesmo padrão sempre. Quem não usa, oscila.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Diego começa dia usando a skill Maestro pra planejar. À tarde, quando escreve pro blog, a Pena assume. Antes de subir código, chama Crivo. Antes de publicar, chama Bastiao. Cada tarefa tem especialista invocado. Diego não escreve prompt gigante toda vez. Ele descreve o que quer, o método vem embutido.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou descrever a tarefa. Voce identifica qual habilidade especializada e a mais indicada e ativa o modo correspondente. Depois executa com o metodo desta habilidade. Se duas parecerem indicadas, me pergunte antes. Tarefa: [DESCREVA]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra criar suas próprias skills quando notar que a mesma instrução se repete em três prompts. Use a <b>maestro</b> pra decidir qual skill puxar em qual momento.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Quais três prompts você repete todo mês? Vale virar cada um em skill?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 35</span><h3>Montando um assistente pessoal de IA</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai desenhar seu assistente pessoal de IA. Um que conhece você, seu contexto e seus critérios.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Assistente pessoal de IA não é ferramenta nova. É configuração. Você define quem ele é (papel, tom, referências), o que ele sabe sobre você (contexto pessoal, projetos, gostos, restrições), como ele deve trabalhar (marcha, formato, o que evitar). Depois salva. Toda tarefa começa com essa configuração no ombro.</p>
+      <p>Nas plataformas atuais isso já é padrão. ChatGPT tem Instruções Personalizadas e memória. Claude tem Projects. Gemini tem Gems. Você configura uma vez. Depois usa por meses. E vai refinando conforme percebe o que funciona.</p>
+      <p>Três blocos que valem investir tempo. Sobre mim (nome, profissão, contexto, valores). Como me responder (tom, formato preferido, o que evitar). Meu método (P.R.O.M.P.T.E.R., checklist de revisão, referências que uso). Com isso configurado, cada nova conversa começa 30% adiantada.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Estela configurou o ChatGPT dela assim. "Sou psicóloga clínica, atuo com adolescentes. Escrevo texto pro Instagram e blog. Tom: acolhedor, sem hype, com referência científica quando cabível. Formato preferido: bullet com título curto. O que evitar: promessa terapêutica, jargão pesado, emoji". Cada nova conversa já sai calibrada. Ela ganha tempo real, todos os dias.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Vou te ajudar a montar meu assistente pessoal. Faca as perguntas necessarias para preencher 3 blocos: 1) Sobre mim (identidade, profissao, contexto); 2) Como me responder (tom, formato, o que evitar); 3) Meu metodo (referencias, checklist, valores). No fim, entregue um texto de configuracao pronto para colar em Instrucoes Personalizadas.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>forja</b> pra escrever a configuração com Papel bem afiado. Use a <b>bagagem</b> pra decidir o que precisa entrar no contexto persistente.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Se você tivesse que descrever seu jeito de trabalhar em 5 linhas pra um assistente novo, o que escreveria?</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Avançado, Ética e Futuro</h2></div>
+  <p class="mod-resumo">Fecha o curso com o que separa uso amador de uso adulto. Privacidade, viés, segurança, futuro e o seu projeto final.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 36</span><h3>Privacidade, LGPD e dados na IA</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai saber o que pode e o que não pode colar em IA, com base em LGPD e bom senso.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Tudo que você cola em IA pública pode ser usado pra treinar modelo, pode ser logado, e pode ser visto por gente da empresa provedora sob certas condições. A regra prática: se você não colaria no Google público, não cola em IA pública. Dado pessoal de cliente, informação confidencial da empresa, senha, prontuário: nunca.</p>
+      <p>LGPD te obriga a tratar dado pessoal com base legal, finalidade clara, retenção limitada. Se o dado é de outra pessoa e você joga em IA sem base, você violou. Isso vale pra profissional de RH, de saúde, de jurídico, de vendas, de qualquer área que lida com terceiro.</p>
+      <p>O caminho seguro. Versão corporativa (Enterprise, Workspace, for Work) com contrato que exclui uso pra treino e garante retenção controlada. Ou anonimização: tira nome, CPF, dado identificável antes de colar. Ou processamento local, onde possível.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Priscila é RH e usa ChatGPT pra revisar avaliação de desempenho. Antes: colava tudo, com nome. Depois de estudar: troca nomes por [FUNCIONARIO A], apaga CPF, remove dado sensível. Se precisar do dado real, usa a versão corporativa da empresa com contrato. Zero risco desnecessário. Zero perda de produtividade.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu auditor de dados. Vou colar um texto que penso em usar em IA. Sua tarefa: 1) listar todo dado pessoal identificavel que voce vê; 2) sugerir como anonimizar mantendo a utilidade; 3) apontar o que ainda seria arriscado mesmo anonimizado. Texto: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>salvaguarda</b> pra adequar processos à LGPD com método. Use a <b>bastiao</b> pra pensar risco geral de segurança antes de subir dado pra fora.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Que dado você já colou em IA pública sem pensar duas vezes? Se um cliente descobrisse, você defenderia com tranquilidade?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 37</span><h3>Alucinação, viés e limites — usar com critério</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai entender por que a IA erra, quando ela erra mais, e como se proteger.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Alucinação é quando a IA inventa com confiança. Não é bug. É consequência do jeito como ela funciona: completar texto do modo mais plausível. Sem base, ela plausibiliza mesmo assim. Nome de livro, precedente jurídico, estudo científico. Convincente. Falso.</p>
+      <p>Viés é outra dor. O modelo foi treinado em texto humano. Herda o que ali estava: estereótipo de gênero, de raça, de profissão. Isso aparece em recomendação, em geração de imagem, em análise de currículo. Se você não checa, você amplifica.</p>
+      <p>Duas defesas simples. Pra alucinação: exigir citação clicável, checar dado com fonte primária, desconfiar de resposta muito confiante em assunto de nicho. Pra viés: pedir versão alternativa, testar com nomes e perfis diferentes, revisar decisão que a IA sugere antes de aplicar. IA erra menos com adulto no volante.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Advogada Renata pediu jurisprudência pra IA sobre um tema específico. Recebeu três decisões citadas com número de processo, tribunal e data. Só que uma não existia. Se tivesse ido pro tribunal, teria virado meme. Aprendeu: cita, mas ela mesma checa cada uma no site oficial. Uso maduro.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu revisor critico. Vou colar uma resposta que a IA me deu sobre [TEMA]. Sua tarefa: 1) listar afirmacoes que precisam ser conferidas; 2) apontar 2 pontos onde pode haver vies ou generalizacao; 3) sugerir onde eu deveria buscar fonte primaria antes de usar. Resposta: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>crivo</b> pra revisar com rigor antes de usar em publico. Use a <b>garimpo</b> pra confirmar fato citado com fonte real.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Onde a alucinação te custaria caro no seu trabalho? Que hábito de checagem faltaria adotar amanhã?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 38</span><h3>Segurança ao usar IA (o que nunca colar)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai sair com uma lista curta e prática do que nunca colar.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Regra de ouro. IA é canal público até prova em contrário. Nunca cole senha, chave de API, token, número de cartão, CPF de terceiro, dado de saúde nominal, segredo comercial não anonimizado, código-fonte proprietário sem autorização.</p>
+      <p>Cuidados operacionais. Não deixe conta de IA logada em computador compartilhado. Ative autenticação em dois fatores. Revise históricos e apague conversa sensível. Em ambiente corporativo, use a versão com contrato de empresa; não misture com a conta pessoal.</p>
+      <p>Cuidado extra com plugins e agentes que pedem acesso a e-mail, arquivo ou calendário. Cada permissão dada é chave a mais. Comece com escopo mínimo. Amplia depois de entender o comportamento. Confie no menos possível.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Roberto colava trecho de código do trabalho no ChatGPT gratuito pra pedir sugestão. Sem autorização. A empresa auditou uso de IA, achou. Suspensão de 15 dias. Aprendeu na marra. Hoje tem versão corporativa da empresa. Escopo definido. Nunca mais teve dor de cabeça.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu revisor de seguranca. Vou colar um trecho que pretendo enviar a uma IA publica. Aponte: 1) qualquer dado sensivel (senha, token, dado pessoal, segredo); 2) o que anonimizar; 3) uma alternativa mais segura para o objetivo, se possivel. Trecho: [COLE]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>bastiao</b> pra priorizar risco crítico antes de subir algo. Use a <b>salvaguarda</b> pra pensar LGPD junto com segurança.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Que hábito perigoso você tem hoje ao colar em IA? Se um auditor visse seu histórico, o que ele apontaria?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 39</span><h3>O futuro do trabalho com IA</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai sair com uma leitura sóbria do que muda no trabalho, e do que fazer a respeito.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>IA não vai substituir todo mundo. Vai substituir quem faz tarefa que IA faz melhor e mais barato, e não muda de posição. Isso inclui muita coisa repetitiva de linguagem. E abre coisa nova pra quem sabe usar: mais entrega, mais escopo, mais autonomia. Quem vira copiloto ganha. Quem finge que nada mudou perde.</p>
+      <p>Três apostas úteis. Uma: dobra o que só humano faz bem (julgamento, relação, contexto, gosto, responsabilidade). Duas: aprende a orquestrar IA pra multiplicar o que só você faz bem. Três: reserva tempo pra estudar a cada trimestre, porque a ferramenta muda rápido.</p>
+      <p>Meu take: a IA amplifica quem já é bom. Quem é ruim, ela amplifica também, e fica pior. A escolha é sua. A decisão é sua.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Célia é secretária executiva há 15 anos. Achou que ia ser substituída. Em vez de fingir que nada mudou, aprendeu IA a fundo em seis meses. Hoje ela roda a agenda de dois diretores com folga, escreve draft de relatório do conselho e resume documento antes do CEO abrir. Ganhou aumento. Virou peça-chave.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu consultor de carreira. Meu cargo e [CARGO]. Minhas tarefas principais sao [LISTE 5]. Sua tarefa: 1) marcar quais tarefas a IA ja faz melhor sem mim; 2) marcar quais eu deveria dobrar; 3) sugerir 2 novas responsabilidades que eu poderia assumir usando IA. Sem hype. Sem panico.</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>decolagem</b> pra pensar negócio próprio ou nova frente de trabalho com IA. Use a <b>maestro</b> pra planejar sua transição em passos.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Daqui a 3 anos, você acha que seu cargo existe do mesmo jeito? O que você faria diferente esta semana pra tomar posição?</p>
+    </div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 40</span><h3>Projeto final — seu sistema de IA pessoal (apresentação)</h3></div>
+    <p class="objetivo"><b>Ao ler esta aula:</b> você vai desenhar seu sistema de IA pessoal e apresentar. Fecho do curso e começo da sua rotina nova.</p>
+
+    <div class="bloco">
+      <h4>O essencial</h4>
+      <p>Sistema de IA pessoal é a soma do que você aprendeu no curso, organizado pra você usar todo dia. Quatro peças. Uma IA-casa configurada (Aula 35). Uma biblioteca de prompts (Aula 10). Uma base de conhecimento consultável (Aula 30). Um punhado de skills e fluxos automatizados (Módulo 7).</p>
+      <p>Não precisa ser gigante. Precisa existir. Duas configurações. Cinco prompts. Uma base com o que importa. Dois fluxos. Isso já muda seu mês. E vai crescendo. Cada tarefa nova que você resolveu com IA vira um item guardado.</p>
+      <p>O projeto final do curso é apresentar isso. Pra você, pra colega, pra chefe. Cinco minutos. O que você configurou, três prompts que usa, uma tarefa que ficou 5x mais rápida, um limite que você respeita. Simples. Prático. Defensável.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Exemplo</h4>
+      <p>Vinicius apresenta o sistema dele. IA-casa: Claude Pro com configuração pessoal de escrita. Prompts salvos: e-mail difícil, resumo de reunião, análise de contrato, briefing de campanha, resposta a objeção de venda. Base no NotebookLM com material dos últimos dois anos. Fluxo Zapier: nova ata do Meet vira resumo automático no Slack do time. Cinco minutos. Todo mundo entendeu. Todo mundo quis o dele.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="ptag">Prompt pronto</span>
+      <pre>Voce e meu curador. Vou descrever o que aprendi neste curso e o que ja usei nas ultimas semanas. Sua tarefa: 1) desenhar meu Sistema de IA Pessoal em 4 pecas (IA-casa, prompts, base, fluxos); 2) sugerir o que priorizar nas proximas 2 semanas; 3) montar um roteiro de apresentacao de 5 minutos. Meu material: [DESCREVA]</pre>
+    </div>
+
+    <div class="skills">
+      <h4>Skills do Engenho</h4>
+      <p>Use a <b>maestro</b> pra coordenar as quatro peças do seu sistema. Use a <b>palco</b> pra estruturar a apresentação de 5 minutos com espinha narrativa.</p>
+    </div>
+
+    <div class="pratica">
+      <h4>Reflita</h4>
+      <p>Do que você aprendeu neste livro, o que já tá no seu dia a dia? E o que você vai instalar essa semana? A decisão é sua.</p>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
