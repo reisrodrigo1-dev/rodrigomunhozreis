@@ -7,6 +7,106 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "seu-app-funciona-mas-o-dev-fugiu-do-repo-2026",
+    slug: "seu-app-funciona-mas-o-dev-fugiu-do-repo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-06-28",
+    coverUrl:
+      "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=1200&q=80",
+    title: "Seu app funciona. O dev fugiu do seu repositório. E agora?",
+    excerpt:
+      "6 meses de Cursor + Lovable + Bolt. App no ar, cliente pagando, receita entrando. Aí o dev abre o repo — e desiste. O que fazer sem reescrever tudo.",
+    content: `O cenário se repete no Reddit toda semana. É sempre a mesma história — só muda o nome do desenvolvedor:
+
+> "O app funciona. Os usuários estão felizes. A receita está entrando. Aí eu tentei trazer um dev pra me ajudar. Ele abriu o repositório, ficou 2 minutos em silêncio, e disse: *'o que é isso'*."
+
+Se você tá se reconhecendo aqui, respira. Você não é o primeiro. E, mais importante, **você não precisa reescrever tudo**.
+
+## A anatomia do buraco
+Seis meses de Cursor, Lovable, Bolt. Cada feature funcionou quando você mandou. Cada bug foi corrigido. O app rodou.
+
+Mas ninguém pensou na **estrutura**. E a IA nunca vai pensar por você — ela só continua adicionando:
+- Arquivo novo aqui.
+- Função duplicada ali.
+- 3 formas diferentes de fazer a mesma coisa.
+- Tratamento de erro em 5 padrões.
+- Autenticação espalhada em 4 lugares.
+
+Aí você tenta refatorar sozinho. Toca uma coisa, quebra outra totalmente não relacionada. Desiste em 2 horas.
+
+> A geração foi rápida. A limpeza é um pesadelo.
+
+## A tentação que te leva ao segundo buraco
+A IA vai te sugerir "reescrever do zero". Ela adora — é o que ela faz de olhos fechados. Você vai:
+- Gastar 3 semanas migrando.
+- Assustar cliente pagante com "versão nova".
+- Descobrir cantos escondidos que o app antigo lidava e o novo não.
+- Em 6 meses, cair no mesmo buraco.
+
+Porque **o problema não é o código. É o método.** Reescrever com o mesmo processo produz o mesmo resultado.
+
+## O que fazer no lugar (6 passos)
+Isso aqui não é teoria. É o que aplico e o que já dei de conselho pra dezenas de gente na mesma situação.
+
+### 1. Pare de adicionar por uma semana
+Nada de feature nova. Só bug crítico. Toda linha nova hoje **piora** a bagunça. Você precisa parar de cavar antes de começar a subir.
+
+### 2. Peça pra IA fazer o mapa (não a limpeza)
+Antes de mexer, você precisa **entender**. Cole isso no Cursor/Claude no modo *"ask"* (não *"edit"*):
+
+> "Liste os módulos principais deste repositório. Quais são as responsabilidades de cada um? Onde há funções duplicadas ou padrões inconsistentes (ex.: 3 jeitos diferentes de tratar erro)?"
+
+Você vai ganhar uma planta baixa. Sem ela, refatorar é escuridão.
+
+### 3. Escolha UMA parte pra arrumar. Não tudo
+A parte que **mais dói**. A que quebra mais quando você toca. A que dá medo. Não abrace o repositório inteiro — é aí que você desiste.
+
+### 4. ANTES de refatorar, escreva testes
+Não teste bonito, teste feio mesmo. Só o suficiente pra você saber **quando quebrou**.
+
+É essa a coisa que o emaranhado te tira: você não sabe se quebrou. Com teste, sabe. Testes viram sua rede de segurança pra tudo que vier depois.
+
+### 5. Aí sim, refatore com IA — com escopo curto
+Prompt eficaz:
+
+> "Aqui está o arquivo X e os testes correspondentes. Reescreva mantendo o comportamento exato. Unifique as 3 formas de lidar com Y em uma só. **Não invente feature nova.** Não mexa em nada fora deste arquivo."
+
+A palavra-chave é *"não invente"*. A IA ADORA inventar enquanto refatora. Você tem que dizer explicitamente que não pode.
+
+### 6. Só passa pra próxima fatia depois que a atual está limpa E os testes passam
+Se você abraçar tudo de novo, desiste em 2 horas de novo. Uma fatia por vez. É lento no começo. Depois acelera. É a única forma que funciona.
+
+Esse ciclo é o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) aplicado à refatoração: Entender, Ler, Blindar, Testar, Versionar.
+
+## O que você NÃO fez (e por que caiu no buraco)
+Não foi culpa do Cursor. Nem do Lovable. Nem do Bolt. Todas essas ferramentas são aceleradores excelentes. Acelerador precisa de **motorista que sabe pra onde vai**.
+
+Faltou:
+- **Arquiteto no processo.** Alguém decidindo "isso vai aqui, isso não pode existir duas vezes, esse padrão a gente segue no repositório inteiro".
+- **Revisão do que a IA cospe** ([o Protocolo de 5 Camadas existe pra isso](/blog/protocolo-de-5-camadas)).
+- **Freio.** Uma feature de cada vez. Testada. Integrada. Só aí a próxima.
+
+Se, daqui pra frente, você voltar a ser o motorista — spec antes, revisão depois, teste na fatia crítica — a IA volta a te acelerar em vez de te enterrar. É o que eu chamo de [vibecoding com engenharia](/blog/vibecoding-com-engenharia): a velocidade da IA com o rigor de engenheiro. Sem o rigor, você só volta ao mesmo buraco em 6 meses.
+
+## Lembra da parte boa
+Você tem app **no ar**. Cliente **pagante**. Receita **entrando**. Isso é o que **a maioria nunca alcança**. A maioria fica em demo pra sempre.
+
+Não joga fora por medo do backend feio. Backend feio se conserta em fatias. Cliente feliz + receita entrando é ativo — dos raros.
+
+> Backend bagunçado é problema técnico. Não ter cliente é problema existencial. Você tem o segundo resolvido. Foca no primeiro com método.
+
+## Conclusão
+Não reescreva. **Delimite, mapeie, teste, refatore em fatias.** E não deixe a IA adicionar feature nova enquanto você está limpando — essa é a armadilha mais comum.
+
+Em 4-6 semanas você tem um repositório que dev novo abre sem fazer aquela cara. Sem downtime. Sem migração. Sem cliente perdido.
+
+Quer o método completo de construir e revisar com IA — sem cair nesse buraco de novo? Está tudo no e-book gratuito [**IA Sem Medo**](/materiais), com 130+ prompts prontos.
+
+A decisão é sua.`,
+  },
+  {
     id: "foxconn-agentes-ia-chao-de-fabrica-2026",
     slug: "foxconn-agentes-ia-chao-de-fabrica-2026",
     contentVersion: 1,
