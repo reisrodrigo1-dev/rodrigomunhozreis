@@ -60,6 +60,28 @@ export default function AdminCursos() {
         e e-book acompanhante editorial. Cada aula traz objetivo, o que ensinar, exemplos, prompts prontos, links e as Skills do Engenho relacionadas.
       </p>
 
+      <div className="mt-6 rounded-2xl border border-amber-deep/30 bg-amber-soft/40 p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-amber-deep">Base pedagógica</p>
+            <p className="mt-1 text-sm font-medium text-ink">
+              Alinhamento MEC + BNCC Computação
+            </p>
+            <p className="mt-0.5 text-xs text-muted">
+              Documento oficial que sustenta os cursos (aplicável aos 4). Mostre pra escola, instituição ou família.
+            </p>
+          </div>
+          <a
+            href="/cursos/curso-alinhamento-mec-bncc.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary !px-4 !py-2 text-sm"
+          >
+            Abrir documento ↗
+          </a>
+        </div>
+      </div>
+
       {grupos.map((g) => (
         <div key={g} className="mt-8">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-amber-deep">Para {g.toLowerCase()}</h2>
