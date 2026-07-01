@@ -82,7 +82,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Para um adulto que decide rápido, isso não é burocracia — é o que separa quem "brincou de fazer um app" de quem entrega software que aguenta usuário real. O protocolo é leve: na maioria das tarefas, as 5 camadas levam minutos. O ganho é dormir tranquilo sabendo que nada subiu sem revisão. Esse é o fio condutor de todas as 10 aulas.</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> pegar um trecho de código gerado por IA que "funciona" mas tem uma senha escrita direto no arquivo e uma query sem validação; rodar no projetor e mostrar que a tela abre normal — depois revelar os dois problemas que só aparecem com a camada "Ler" e "Blindar". <b>Demo 2:</b> refazer o mesmo pedido aplicando o protocolo na frente da turma — pedir explicação do código, apontar o risco, pedir a correção e versionar — mostrando que levou menos de cinco minutos a mais e o resultado é seguro.</p>
+      <p><b>Demo 1:</b> pegar um trecho de código gerado por IA que "funciona" mas tem uma senha escrita direto no arquivo e uma query sem validação; rodar compartilhando a tela e mostrar que a tela abre normal — depois revelar os dois problemas que só aparecem com a camada "Ler" e "Blindar". <b>Demo 2:</b> refazer o mesmo pedido aplicando o protocolo na frente da turma — pedir explicação do código, apontar o risco, pedir a correção e versionar — mostrando que levou menos de cinco minutos a mais e o resultado é seguro.</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Você é um(a) engenheiro(a) sênior. Vou te dar um trecho de código gerado por IA.
 Antes de qualquer coisa, NÃO altere nada. Apenas:
@@ -133,7 +133,7 @@ Tarefa: &lt;descreva a tarefa&gt;</pre></div>
       <p>Esse enquadramento muda como você escreve prompts e como você lê respostas. Em vez de buscar a resposta perfeita, você busca uma colaboração iterativa: pedaços pequenos, feedback rápido, correção de rumo. É exatamente assim que um time sênior trabalha com gente júnior — e é o que mantém a velocidade do vibecoding sem perder o controle de engenheiro.</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> pedir à IA uma função usando uma biblioteca que não existe e mostrar, no projetor, ela inventar a API com confiança total — depois pedir "essa biblioteca existe mesmo? me prove" e ver a resposta mudar. <b>Demo 2:</b> a mesma tarefa feita de duas formas: primeiro um pedido vago ("faça uma tela de login bonita") e o resultado genérico; depois um pedido com contexto e critérios de pronto, mostrando como a delegação clara melhora drasticamente a saída.</p>
+      <p><b>Demo 1:</b> pedir à IA uma função usando uma biblioteca que não existe e mostrar, compartilhando a tela, ela inventar a API com confiança total — depois pedir "essa biblioteca existe mesmo? me prove" e ver a resposta mudar. <b>Demo 2:</b> a mesma tarefa feita de duas formas: primeiro um pedido vago ("faça uma tela de login bonita") e o resultado genérico; depois um pedido com contexto e critérios de pronto, mostrando como a delegação clara melhora drasticamente a saída.</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Aja como um(a) desenvolvedor(a) júnior cuidadoso(a) que trabalha no MEU projeto.
 Regras: (1) se não tiver certeza, diga "não tenho certeza" em vez de inventar;
@@ -183,7 +183,7 @@ e espere meu OK em cada passo.</pre></div>
       <p>O VS Code é a bancada onde tudo se encontra: é onde você lê o que a IA fez (camada "Ler"), roda o projeto (camada "Testar") e versiona (camada "Versionar"). Dominar a tela e o terminal integrado não é detalhe técnico — é o que te dá a soberania de revisar, em vez de aceitar às cegas. Um vibecoder com engenharia conhece sua bancada.</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> com o projetor, digitar uma função e deixar o Copilot completar linha a linha, mostrando a sugestão fantasma e o Tab para aceitar. <b>Demo 2:</b> abrir o terminal integrado, chamar o Claude Code e pedir uma tarefa que toca dois arquivos ("adicione um rodapé com o ano atual em todas as páginas"); mostrar o agente lendo o projeto, propondo o diff e aplicando — destacando que dá para revisar antes de aceitar.</p>
+      <p><b>Demo 1:</b> compartilhando a tela, digitar uma função e deixar o Copilot completar linha a linha, mostrando a sugestão fantasma e o Tab para aceitar. <b>Demo 2:</b> abrir o terminal integrado, chamar o Claude Code e pedir uma tarefa que toca dois arquivos ("adicione um rodapé com o ano atual em todas as páginas"); mostrar o agente lendo o projeto, propondo o diff e aplicando — destacando que dá para revisar antes de aceitar.</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Estou no Claude Code, dentro da pasta do meu projeto.
 Antes de mudar qualquer coisa, me dê um panorama:
@@ -232,7 +232,7 @@ e não toque em nada fora do necessário. Ao final, me diga como testar no naveg
       <p>Next.js foi escolhido porque entrega muito com pouco: rotas por arquivo, hot reload, e um caminho direto para o deploy gratuito na Vercel. Entender desde já a separação entre "local" e "no ar" evita a confusão clássica do iniciante de achar que, porque funciona na máquina dele, já está publicado. Aqui plantamos a base mental para todas as aulas seguintes.</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> criar o projeto ao vivo, rodar o servidor e abrir localhost no projetor — mostrar a página padrão do Next.js carregando. <b>Demo 2:</b> abrir a página inicial no editor, trocar o texto por "Olá, [nome da turma]", salvar e mostrar o navegador atualizando sozinho; em seguida, provocar um erro de propósito (apagar um caractere) para mostrar a tela de erro e como o Claude Code ajuda a corrigir colando a mensagem.</p>
+      <p><b>Demo 1:</b> criar o projeto ao vivo, rodar o servidor e abrir localhost compartilhando a tela — mostrar a página padrão do Next.js carregando. <b>Demo 2:</b> abrir a página inicial no editor, trocar o texto por "Olá, [nome da turma]", salvar e mostrar o navegador atualizando sozinho; em seguida, provocar um erro de propósito (apagar um caractere) para mostrar a tela de erro e como o Claude Code ajuda a corrigir colando a mensagem.</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero criar meu primeiro projeto Next.js do zero, sou iniciante.
 Me guie passo a passo no terminal: o comando para criar o projeto com as opções
@@ -280,7 +280,7 @@ no navegador para ver a mudança. Apareceu este erro, me explique e corrija:
       <p>Por isso "Versionar" é a quinta camada do protocolo e fecha o ciclo: depois de entender, ler, blindar e testar, você grava o ponto seguro. O GitHub leva isso para a nuvem — backup automático, portfólio público da sua evolução e a porta de entrada do deploy na Vercel, que puxa o código direto do repositório. Versionar não é tarefa de "programador avançado": é higiene básica que dá tranquilidade desde a primeira aula.</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> no projetor, fazer uma mudança ruim de propósito (apagar metade da página), mostrar o desespero simulado e então usar o histórico do Git para voltar o arquivo ao estado anterior — a "máquina do tempo" funcionando. <b>Demo 2:</b> conectar o projeto do "Olá, mundo" ao GitHub: criar o repositório privado, fazer o primeiro commit com mensagem clara e o push, e abrir o GitHub no navegador mostrando o código já salvo na nuvem com seu histórico.</p>
+      <p><b>Demo 1:</b> compartilhando a tela, fazer uma mudança ruim de propósito (apagar metade da página), mostrar o desespero simulado e então usar o histórico do Git para voltar o arquivo ao estado anterior — a "máquina do tempo" funcionando. <b>Demo 2:</b> conectar o projeto do "Olá, mundo" ao GitHub: criar o repositório privado, fazer o primeiro commit com mensagem clara e o push, e abrir o GitHub no navegador mostrando o código já salvo na nuvem com seu histórico.</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Sou iniciante em Git e estou com medo de quebrar algo.
 Me guie passo a passo, explicando cada comando em uma frase antes de eu rodar:
@@ -334,7 +334,7 @@ Eu baguncei um arquivo e quero voltar à versão do último commit — como faç
       <p>Pensar em MVP e fases é engenharia aplicada à criatividade. Você escolhe a menor fatia que entrega valor, leva ela até o ar, aprende com o uso real e só então decide a próxima fatia. Isso evita o erro clássico do iniciante empolgado: passar três meses construindo um sistema gigante que nunca foi publicado. Aqui, na primeira aula de plano, plantamos o hábito que vai guiar todos os projetos do curso e da vida do aluno.</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> pegar uma ideia ambiciosa da turma ("um app de gestão completo") e, ao vivo, cortá-la até um MVP de uma tela e uma entidade de dados — mostrando o "antes" gigante e o "depois" enxuto. <b>Demo 2:</b> desenhar no quadro/projetor a arquitetura desse MVP (tela → lógica → banco), listar a entidade e seus campos, e transformar isso num briefing de plano que será o contexto para o Claude Code nas próximas aulas.</p>
+      <p><b>Demo 1:</b> pegar uma ideia ambiciosa da turma ("um app de gestão completo") e, ao vivo, cortá-la até um MVP de uma tela e uma entidade de dados — mostrando o "antes" gigante e o "depois" enxuto. <b>Demo 2:</b> desenhar no quadro/tela compartilhada a arquitetura desse MVP (tela → lógica → banco), listar a entidade e seus campos, e transformar isso num briefing de plano que será o contexto para o Claude Code nas próximas aulas.</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Tenho uma ideia de produto e preciso de um plano enxuto antes de codar.
 Ideia: &lt;descreva em 2-3 frases&gt;
@@ -432,7 +432,7 @@ Antes de aplicar, me explique em português quais classes você vai mudar e por 
       <p>É também onde a separação entre local e produção fica concreta. Um build pode quebrar no servidor mesmo funcionando na sua máquina — versões, variáveis de ambiente, arquivos esquecidos. Aprender a ler o log de build e a configurar segredos como variáveis de ambiente (em vez de deixá-los no código) é engenharia pura: a camada "Blindar" aplicada à publicação. Quem domina o deploy ganha coragem para iterar rápido sem medo de "estragar o que está no ar".</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> conectar a Vercel ao repositório do GitHub e disparar o primeiro deploy ao vivo, abrindo no projetor a URL pública com o projeto da turma no ar. <b>Demo 2:</b> fazer uma pequena mudança no código, dar commit e push, e mostrar a Vercel construindo e publicando a nova versão automaticamente — e, de propósito, provocar um erro de build para mostrar o log e como o Claude Code ajuda a interpretar e corrigir.</p>
+      <p><b>Demo 1:</b> conectar a Vercel ao repositório do GitHub e disparar o primeiro deploy ao vivo, abrindo compartilhando a tela a URL pública com o projeto da turma no ar. <b>Demo 2:</b> fazer uma pequena mudança no código, dar commit e push, e mostrar a Vercel construindo e publicando a nova versão automaticamente — e, de propósito, provocar um erro de build para mostrar o log e como o Claude Code ajuda a interpretar e corrigir.</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero publicar meu projeto Next.js na Vercel de graça, é a primeira vez.
 Me guie passo a passo: conectar a Vercel ao meu repositório do GitHub, configurar
@@ -480,7 +480,7 @@ chaves com segurança, sem deixá-las no código.</pre></div>
       <p>Mas conectar banco é também onde mora o maior perigo de segurança do vibecoding. A IA, por padrão, costuma sugerir regras abertas para "funcionar logo" — e um banco aberto é um vazamento esperando para acontecer: qualquer pessoa lê, altera e apaga seus dados. Por isso a camada "Blindar" entra com força aqui. Tratar as regras de segurança como parte obrigatória da tarefa, e não como um detalhe para depois, é o que diferencia um sistema profissional de uma bomba-relógio.</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> criar o projeto no Firebase, habilitar o Firestore, conectar ao Next.js com as chaves em variáveis de ambiente e gravar o primeiro documento ao vivo — mostrando o dado aparecer no console do Firebase. <b>Demo 2:</b> mostrar o perigo: com regras abertas, simular no projetor como qualquer um poderia ler os dados; depois corrigir as regras para exigir condições, demonstrando a diferença entre "aberto" e "blindado".</p>
+      <p><b>Demo 1:</b> criar o projeto no Firebase, habilitar o Firestore, conectar ao Next.js com as chaves em variáveis de ambiente e gravar o primeiro documento ao vivo — mostrando o dado aparecer no console do Firebase. <b>Demo 2:</b> mostrar o perigo: com regras abertas, simular compartilhando a tela como qualquer um poderia ler os dados; depois corrigir as regras para exigir condições, demonstrando a diferença entre "aberto" e "blindado".</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>Quero conectar o Firestore (Firebase) ao meu projeto Next.js, sou iniciante.
 Me guie passo a passo: instalar a biblioteca, criar o arquivo de configuração e
@@ -529,7 +529,7 @@ Regras atuais: &lt;cole as regras&gt;</pre></div>
       <p>É também a hora de aplicar o Protocolo de 5 Camadas como ritual de entrega, não como teoria. Cada operação precisa ser entendida, lida, blindada (as regras do banco e a validação do formulário), testada (criar, editar e apagar de verdade, inclusive os casos de erro) e versionada antes de ir ao ar. Fazer isso uma vez, do início ao fim, com acompanhamento, é o que dá ao aluno a confiança de repetir sozinho em qualquer projeto futuro. É o fechamento do arco "do zero ao primeiro sistema".</p>
     </div>
     <div class="bloco"><h4>Exemplo / demonstração ao vivo</h4>
-      <p><b>Demo 1:</b> construir ao vivo o ciclo completo sobre a entidade da turma — criar um item pelo formulário com validação, vê-lo aparecer na lista, editá-lo e apagá-lo com confirmação, tudo persistindo no Firestore. <b>Demo 2:</b> passar a entrega pelo Protocolo de 5 Camadas no projetor — pedir ao Claude Code para revisar segurança e validação, testar os casos de erro (campo vazio, item inexistente), commitar e publicar na Vercel, abrindo a URL final no ar.</p>
+      <p><b>Demo 1:</b> construir ao vivo o ciclo completo sobre a entidade da turma — criar um item pelo formulário com validação, vê-lo aparecer na lista, editá-lo e apagá-lo com confirmação, tudo persistindo no Firestore. <b>Demo 2:</b> passar a entrega pelo Protocolo de 5 Camadas compartilhando a tela — pedir ao Claude Code para revisar segurança e validação, testar os casos de erro (campo vazio, item inexistente), commitar e publicar na Vercel, abrindo a URL final no ar.</p>
     </div>
     <div class="prompt"><span class="ptag">Prompt pronto</span><pre>No meu projeto Next.js + Firestore, implemente o CRUD completo da entidade &lt;nome&gt;
 (campos: &lt;liste&gt;). Quero: formulário para criar com validação, lista para ler,
