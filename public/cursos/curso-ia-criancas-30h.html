@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ementa do Curso · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Ementa · Curso EAD (online) · Crianças (11 a 13 anos)</div>
+<h1>IA do Zero ao Avançado — Crianças 11-13</h1>
+<p class="sub">Um curso EAD de 30 horas para pré-adolescentes entenderem, usarem e pensarem sobre inteligência artificial. Com método, com ética, com adulto por perto.</p>
+<div class="meta"><span>30 horas</span><span>30 aulas &middot; 1h cada</span><span>15 semanas</span><span>11 a 13 anos</span><span>Misto: vídeo + ao vivo semanal</span><span>Alinhado ao MEC + BNCC Computação</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Como funciona</span><h2>Formato EAD misto (vídeo gravado + encontro ao vivo semanal)</h2></div>
+  <p class="mod-resumo">Cada aula tem 1 hora de vídeo dividida em dois blocos: 25 minutos de explicação e 25 minutos de prática guiada. Por semana são 2 aulas gravadas mais 1 encontro ao vivo com o professor.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Entenda</span><h3>Estrutura de uma aula</h3></div>
+    <p class="objetivo"><b>Cada aula tem:</b></p>
+    <div class="bloco">
+      <h4>Vídeo 1 · 25 minutos · Explicação</h4>
+      <p>Professor apresenta o conceito. A criança assiste sozinha ou com um adulto ao lado, com pausa livre. Prompts prontos aparecem na tela pra depois.</p>
+    </div>
+    <div class="bloco">
+      <h4>Vídeo 2 · 25 minutos · Prática</h4>
+      <p>Passo a passo pra criança fazer no computador. Sempre com um adulto por perto durante o uso da IA. As contas usadas são do responsável ou da instituição, nunca da criança.</p>
+    </div>
+    <div class="bloco">
+      <h4>Exercício · 10 minutos</h4>
+      <p>Pergunta pra pensar, atividade curta no caderno ou no ambiente virtual. Não usa IA. É pra criança processar.</p>
+    </div>
+    <div class="skills">
+      <h4>Encontro ao vivo semanal (1h)</h4>
+      <p>Por webconferência, o professor abre a semana, integra as duas aulas gravadas, tira dúvida da turma e conduz roda de conversa sobre o que aprenderam. É onde a mediação humana acontece com força total, como o MEC pede.</p>
+    </div>
+    <div class="pratica">
+      <h4>Ritmo semanal</h4>
+      <p>2 aulas gravadas (1h cada) + 1 encontro ao vivo (1h) = ~3 horas semanais. Total de 15 semanas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1 · Semana 1-2</span><h2>Conhecendo a IA (a amiga esperta)</h2></div>
+  <p class="mod-resumo">Tira o mistério da IA. O que é, como aprende, como conversar com ela, os erros que ela comete e as regras de segurança que valem sempre.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1 · 1h</span><h3>O que é IA e como ela aprende</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> saber explicar com as próprias palavras o que é uma IA e como ela ficou tão esperta lendo tanto texto.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>A ideia de "IA como ajudante super esperto que leu muita coisa". Analogia com você aprendendo a falar português: você não decorou o dicionário, aprendeu ouvindo. A IA fez parecido. O que ela NÃO é: não é uma pessoa, não é mágica, não sabe tudo.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Abrir uma IA (com adulto). Fazer 3 perguntas simples e observar como ela responde. Testar uma pergunta que ela erra ou não sabe pra ver que ela não é perfeita.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar (com um adulto)</span><pre>Me explica com uma comparação legal como você funciona, pra uma pessoa de 12 anos entender.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Você acha que a IA "sabe" as coisas do jeito que uma pessoa sabe? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2 · 1h</span><h3>Conversando com a IA pela primeira vez</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> abrir uma conversa com a IA, entender que ela responde no idioma que você fala e no tom que você escolhe.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Como funciona a tela do ChatGPT/Gemini/Claude. O que é um chat. Como começar uma nova conversa. Por que a IA responde em português quando você escreve em português.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Sua primeira conversa produtiva: 5 perguntas na sequência, cada uma aproveitando a resposta anterior. Fazer a IA se corrigir quando errar.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar (com um adulto)</span><pre>Você é meu ajudante de estudos. Me explica de forma bem simples o que é um vulcão, com um exemplo.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que aconteceu quando você mudou o jeito de pedir? A resposta mudou?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3 · 1h</span><h3>A IA pode errar (e como perceber)</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> saber que a IA inventa coisa com cara de séria, e ter um método simples pra checar o que ela disse.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>O que é "alucinação" na IA. Por que ela inventa: ela adivinha a próxima palavra provável, não busca a verdade. Exemplos famosos de IA inventando livro, artigo, pessoa.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Peça algo que você já sabe (sua cidade natal, seu ídolo) e veja o que ela erra. Depois peça uma "fonte" e confira se a fonte existe.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar (com um adulto)</span><pre>Me conta 3 curiosidades sobre [algo que você conhece bem]. Depois me diz onde você leu isso.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se a IA errou algo que você conhece, o que ela pode estar errando sobre coisas que você não conhece?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4 · 1h</span><h3>Regras de ouro: usar IA com segurança</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> conhecer as 5 regras que você segue toda vez que usar IA. Sem exceção.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>As 5 regras: (1) sempre com adulto sabendo, (2) nunca digitar dado pessoal (nome completo, endereço, escola, foto), (3) sempre checar antes de acreditar, (4) IA erra, você pensa, (5) IA é ferramenta, você decide.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Escrever as 5 regras num papel e colar perto do computador. Simular uma situação: "a IA te pediu seu telefone", "a IA te disse pra fazer algo estranho". O que você faz?</p></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Todas as suas contas de IA são do adulto responsável ou da instituição. Você usa, mas a conta não é sua. Isso é regra do MEC e da LGPD (a lei que protege dados de crianças).</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual das 5 regras é a mais difícil de lembrar? Por quê?</p></div>
+  </div>
+
+  <div class="skills">
+    <h4>Encontro ao vivo · Semana 2</h4>
+    <p>Roda de conversa: o que descobriram sobre a IA, o que ainda desconfiam, quem já viu ela errar. Professor demonstra ao vivo o "detetive da alucinação" e revisa as 5 regras.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2 · Semana 3-4</span><h2>Aprendendo a pedir (o jeito certo)</h2></div>
+  <p class="mod-resumo">Aprende que "pedir bem" pra IA é uma habilidade. Trata a IA como estagiário: quanto mais claro o pedido, melhor o resultado.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5 · 1h</span><h3>Pedido bom x pedido ruim</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> perceber como um pedido curto e vago gera resposta ruim, e como um pedido claro gera resposta útil.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Comparação lado a lado: "me ajuda com história" x "escreve uma história curta sobre um cachorro que descobre que sabe voar, tom engraçado, 3 parágrafos". Por que o segundo dá 10x melhor resultado.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Pegue 3 pedidos vagos que você faria e transforme em 3 pedidos claros. Compare as respostas.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Escreve uma história de 3 parágrafos sobre um esquilo que abre uma padaria na floresta. Tom bem-humorado, com um problema no meio.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se você pedisse "faz meu trabalho de história" pra um humano, que perguntas ele faria pra entender o que você quer? Faça essas perguntas VOCÊ MESMO antes de escrever pro IA.</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6 · 1h</span><h3>Dê um papel e conte os detalhes</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> saber usar 2 truques do método P.R.O.M.P.T.E.R.: colocar a IA num papel e dar contexto suficiente.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>A ideia de "papel": "seja um contador de histórias infantis", "seja um professor de matemática paciente". A IA muda o jeito de responder. E a ideia de "detalhes": quanto mais explica, melhor a resposta.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Peça a mesma coisa com 3 papéis diferentes e veja como muda. Depois refaça acrescentando 2 detalhes de cada vez até a resposta ficar ideal.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Seja um professor de ciências divertido. Me explica por que o céu é azul, com uma comparação que uma criança de 10 anos entenderia.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual papel funcionou melhor pra você? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7 · 1h</span><h3>Peça do seu jeito (formato da resposta)</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> conseguir pedir a resposta no formato que você quer (lista, tabela, curta, longa, engraçada, formal).</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Como pedir formato: "em lista numerada", "em uma tabela", "em 3 linhas", "em forma de conversa", "com emojis". A resposta muda drasticamente e você tem controle.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Peça a mesma informação em 4 formatos diferentes. Escolha o que ficou melhor pra você.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me dá 5 curiosidades sobre a Amazônia. Em forma de lista numerada, com 1 emoji por curiosidade, cada uma em 1 linha.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Que formato te ajudou mais a lembrar do conteúdo? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8 · 1h</span><h3>Não gostou? Peça de novo (refino)</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> saber corrigir a IA quando a resposta não ficou boa, sem precisar começar do zero.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>A IA aceita correções. "Ficou muito formal, refaz mais leve". "Errou a parte X, corrige". "Adiciona um exemplo aí". Isso se chama refino. É como conversar com estagiário.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Peça uma coisa que provavelmente vai sair mais ou menos. Corrija 3 vezes até ficar bom.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Refaz mais curto, com tom engraçado e mudando o final.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que mudou entre a primeira resposta e a última? Vale a pena o refino ou é mais rápido pedir de novo do zero?</p></div>
+  </div>
+
+  <div class="skills">
+    <h4>Encontro ao vivo · Semana 4</h4>
+    <p>Desafio ao vivo: turma inventa um "personagem misterioso" e o professor pede pra IA descrever. Todo mundo grita como refinar. No final, os alunos treinam o método com um tema à escolha, em breakout rooms.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3 · Semana 5-6</span><h2>IA pra aprender e estudar (sem colar)</h2></div>
+  <p class="mod-resumo">Como usar a IA pra estudar melhor, tirar dúvida do jeito certo e treinar matérias. Sem terceirizar o pensamento (é o "descarregamento cognitivo" que o MEC alerta).</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9 · 1h</span><h3>A IA como professora particular</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> usar a IA pra aprender qualquer coisa que você curte, no seu ritmo, com paciência infinita.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>A IA nunca cansa de repetir. Nunca julga sua pergunta. É a professora particular perfeita quando você pede bem: "explica de novo, com outra comparação", "faz um exercício pra eu praticar", "verifica minha resposta".</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Escolha uma coisa que você quer aprender melhor (frações, verbos, elemento químico, o que for) e conduza uma "aula" com a IA por 15 minutos.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Você é meu professor particular de [matéria]. Me explica [assunto] com uma comparação divertida. Depois me faz 3 perguntas pra eu treinar. Não me dá a resposta antes.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que a IA fez de diferente do professor real? O que só o professor real faz?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10 · 1h</span><h3>Tirar dúvida do jeito certo (sem colar) + resumir texto</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> saber a diferença entre "pedir pra IA fazer" e "pedir pra IA ajudar você a entender". Vale ouro.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Errado: "faz meu trabalho de história sobre a Guerra do Paraguai". Certo: "me explica o que foi a Guerra do Paraguai, depois me faz perguntas pra eu treinar antes de escrever meu trabalho com minhas palavras". Isso é MEC no princípio de "não descarregar o pensamento".</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Pegue um texto real de um livro (foto ou texto colado). Peça pra IA RESUMIR e depois VOCÊ escreve seu resumo com suas palavras baseado no que entendeu.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me explica o texto abaixo como se eu tivesse 12 anos. Depois me faz 5 perguntas pra eu ver se entendi antes de resumir com as minhas palavras.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Por que "resumir com suas palavras" é diferente de "copiar o resumo da IA"?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 1h</span><h3>Praticar matemática e leitura</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> criar exercícios com a IA e treinar até fixar. Ela te desafia, você pensa.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>A IA gera quantos exercícios você quiser. Peça 5 de fração, ela te dá. Você resolve, ela corrige. Peça 3 desafios de interpretação de texto, ela cria. É um simulador de professor.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Peça 5 problemas de matemática do assunto que você está estudando na escola. Resolva. Depois cole suas respostas e peça correção.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me passa 3 problemas de matemática sobre porcentagem, nível 6º ano. Espera eu resolver antes de me dar a resposta. Depois corrige com explicação.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Você acha que praticar assim ajuda mais do que fazer uma lista pronta do livro? Por quê?</p></div>
+  </div>
+
+  <div class="skills">
+    <h4>Encontro ao vivo · Semana 6</h4>
+    <p>Turma leva uma dúvida real de uma matéria da escola. Professor demonstra ao vivo como usar a IA pra ENTENDER (sem terceirizar), aula por aula. Alunos treinam em breakout rooms com dúvidas trocadas.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4 · Semana 7-8</span><h2>IA pra criar (histórias, imagens, jogos)</h2></div>
+  <p class="mod-resumo">A parte que mais empolga: criar. Histórias, personagens, imagens, quadrinhos, jogos. Sem esquecer a discussão sobre autoria: o que é criação da criança, o que é da IA.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 1h</span><h3>Inventar histórias e personagens</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> criar uma história completa com personagens ricos, usando a IA como parceira criativa.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Como partir de uma ideia sua e usar a IA pra desenvolver: você define o tema, ela sugere variações. Você escolhe o rumo, ela detalha. Você é o autor, ela é o assistente.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Crie um personagem principal (você decide os traços) e peça pra IA criar 2 personagens secundários. Depois desenvolvam juntos uma história em 5 partes.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Meu personagem principal é [descreve]. Cria 2 personagens secundários que combinem com ele numa história de aventura, e me dá 3 ideias diferentes de conflito.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Quem inventou a história: você ou a IA? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 1h</span><h3>A IA que desenha (imagens)</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> pedir imagens pra IA e refinar até chegar no que você imaginou.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Como funciona a IA que gera imagem: você descreve, ela gera. Quanto mais detalhes (estilo, cor, ângulo, ambiente), mais próximo do que você quer. Mesmo método de prompt, mas visual.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Peça uma imagem do seu personagem da aula anterior. Refine 3 vezes até ficar como você imaginou.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Gera uma imagem: [personagem], estilo desenho animado, cores vibrantes, ambiente de floresta, ângulo de perfil.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se você postar essa imagem em algum lugar, você diria "eu desenhei" ou "eu pedi pra IA desenhar"? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 1h</span><h3>Fazer quadrinhos e revistas</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> montar uma sequência de quadrinhos com história + imagens, usando IA em cada etapa.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Um quadrinho é história (roteiro) + imagem (visual) + texto (balão). A IA ajuda em todos. Você decide o rumo. Estrutura de quadrinho em 4-6 quadros.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Crie um mini-quadrinho de 4 quadros: roteiro no papel, imagens geradas pela IA, texto do balão você escreve. Junte tudo em um documento simples.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me sugere 3 ideias de mini-quadrinho de 4 quadros com o personagem [X], tema [Y]. Depois me dá as descrições de imagem que eu preciso pedir pra IA de imagem.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual parte do quadrinho foi mais SUA? Onde a IA ajudou mais?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 1h</span><h3>Inventar jogos e brincadeiras</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> criar um jogo de mesa ou brincadeira nova com regras claras, usando a IA como parceira de brainstorm.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Todo jogo tem: objetivo, regras, componentes, condição de vitória. A IA ajuda a montar tudo isso, mas só se VOCÊ tiver a ideia do "coração" do jogo.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Invente um jogo com um adulto ou amigo. Use a IA pra refinar as regras, sugerir variações e ajustar dificuldade.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Meu jogo é assim: [descreve a ideia]. Ajuda a definir regras claras pra 2-4 jogadores, com condição de vitória, e sugere 1 variação divertida.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Testa seu jogo com alguém. O que precisou ajustar depois de jogar?</p></div>
+  </div>
+
+  <div class="skills">
+    <h4>Encontro ao vivo · Semana 8</h4>
+    <p>Cada aluno mostra 1 criação da semana (história, imagem, quadrinho ou jogo). Turma discute: o que foi da criança, o que foi da IA. Conversa importante sobre autoria e criação.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5 · Semana 9-10</span><h2>IA que vê, ouve e fala (multimodal)</h2></div>
+  <p class="mod-resumo">Vai além do texto: IA que enxerga imagens, gera desenhos, conversa por voz. Termina com um mini-projeto real.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 1h</span><h3>A IA que enxerga (imagens e fotos)</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> mostrar uma imagem pra IA e ela vai descrever, explicar, resolver questão que está escrita nela.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>A IA moderna também vê. Você tira foto de um exercício de matemática, ela lê e explica. Foto de uma planta, ela identifica. Desenho seu, ela critica.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Tire foto de 3 coisas diferentes (exercício, objeto, desenho) e mostre pra IA. Peça pra ela descrever e ajudar em cada uma.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar (com uma foto)</span><pre>Analisa essa imagem. Me diz o que você vê e me ajuda a entender.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se a IA vê tudo que você mostra, o que você não vai mostrar pra ela? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 1h</span><h3>A IA que faz desenhos pra você</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> aprofundar no que você começou na aula 13: pedir imagem cada vez mais próxima do que imagina.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Estilos: cartoon, realista, aquarela, pixel art. Ângulos: perto, longe, cima. Composição: personagem sozinho, cena com fundo, retrato. Iluminação: dia, noite, dramática. Como misturar tudo isso.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Escolha um tema (ex.: minha cidade num mundo mágico) e gere 3 variações com estilos diferentes. Compare o efeito.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Gera uma imagem: [tema], estilo aquarela, ângulo de cima, iluminação de fim de tarde, cores quentes.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual estilo combinou mais com a ideia que você tinha na cabeça? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 1h</span><h3>A IA que conversa por voz</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> conversar em voz alta com uma IA e ela responde falando. Prática de línguas, dúvida rápida, brainstorm.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>A IA que ouve e responde falando. Bom pra prática de inglês (ela corrige pronúncia), pra explicar algo enquanto você está fazendo outra coisa, ou pra pensar em voz alta.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Ative o modo de voz (com adulto). Converse por 5 minutos sobre um tema livre. Depois pratique inglês por 5 minutos.</p></div>
+    <div class="prompt"><span class="ptag">Prompt de voz pra testar</span><pre>Vamos praticar inglês. Você fala em inglês devagar, eu respondo, e você corrige minha pronúncia com carinho.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Foi mais fácil conversar por voz ou por texto? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 1h</span><h3>Mini-projeto: cartão ou pôster com IA</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> criar um cartão ou pôster COMPLETO combinando tudo que aprendeu (texto, imagem, criatividade).</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Um projeto do começo ao fim: escolher tema, montar mensagem (texto), gerar imagem, juntar num documento. Cartão de aniversário, pôster de campanha, capa de trabalho.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Faça um cartão ou pôster real. Salve como imagem/PDF. Compartilhe com a família ou turma.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me ajuda a fazer um pôster sobre [tema]. Primeiro sugere 3 mensagens curtas. Depois descreve a imagem que combina.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que ficou mais bonito no seu projeto: o texto, a imagem, ou a combinação?</p></div>
+  </div>
+
+  <div class="skills">
+    <h4>Encontro ao vivo · Semana 10</h4>
+    <p>Todos apresentam seu mini-projeto do cartão/pôster. Professor discute o que funcionou melhor e por quê. Curadoria coletiva das 3 melhores criações da turma.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6 · Semana 11-12</span><h2>IA exploradora (pesquisa com pensamento crítico)</h2></div>
+  <p class="mod-resumo">Pesquisar com IA sem cair em invenção. O eixo Cultura Digital da BNCC entra com força: atitude crítica e ética diante da informação.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 1h</span><h3>Pesquisar checando se é verdade</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> usar a IA pra pesquisar E ter um método pra confirmar se a resposta é confiável.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>A IA responde qualquer pergunta, mas nem sempre com verdade. Como pesquisar: (1) pedir a informação, (2) pedir a fonte, (3) abrir a fonte pra conferir, (4) buscar 2 fontes diferentes que confirmem.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Escolha uma pergunta pra pesquisar (curiosidade sobre um país, tema histórico, ciência). Aplique os 4 passos. Descubra se algo estava errado.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me responde [pergunta]. Depois me dá 2 fontes de onde essa informação sai. Não invente fonte, se não tiver certeza me avisa.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Alguma vez a IA "inventou" fonte? Como você percebeu?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 1h</span><h3>Descobrir curiosidades e montar trabalho de escola</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> aplicar o método de pesquisa num trabalho REAL da escola. Sem colar da IA, sem virar cópia.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Fluxo do trabalho ético com IA: (1) IA te ajuda a entender o tema, (2) VOCÊ toma nota do que aprendeu, (3) VOCÊ escreve com suas palavras, (4) IA revisa se ficou claro. Nunca copie o que a IA escreveu.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Escolha um tema real de escola. Faça o fluxo completo em 20 min: entender, anotar, escrever, revisar. Compare o que escreveu com o que a IA escreveria.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Vou escrever um trabalho sobre [tema]. Me explica o assunto, me faz perguntas pra eu ter certeza que entendi, e SÓ DEPOIS me ajuda a organizar minha estrutura. Não escreve o trabalho por mim.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Por que escrever "com suas palavras" ajuda mais na sua aprendizagem que copiar?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 1h</span><h3>Parceira de projeto de ciências</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> planejar um projeto de ciências com a IA como parceira: hipótese, experimento, análise, conclusão.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Método científico simples: pergunta, hipótese, experimento, observação, conclusão. Como a IA ajuda em cada etapa sem substituir sua investigação.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Planeje um mini-experimento em casa (com adulto). Use a IA pra montar a hipótese e pensar como analisar. Faça o experimento na próxima semana.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Quero fazer um mini-experimento sobre [tema] em casa, com material simples. Me ajuda a criar hipótese, listar material seguro, montar procedimento e definir como vou observar.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Depois do experimento, o que você observou bateu com a hipótese? Se não, o que aprendeu?</p></div>
+  </div>
+
+  <div class="skills">
+    <h4>Encontro ao vivo · Semana 12</h4>
+    <p>Alunos apresentam suas hipóteses de mini-experimento. Turma discute e refina em conjunto. Debate: pesquisar com IA é diferente de pesquisar no Google? Como?</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7 · Semana 13-14</span><h2>Criando coisas legais (projetos reais)</h2></div>
+  <p class="mod-resumo">Você já sabe pedir bem. Agora aplica em projetos reais: assistente pessoal, tarefas, projetos em grupo, apresentações.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 1h</span><h3>Assistente pessoal e ajuda em tarefas chatas</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> montar um "assistente" que te ajuda em tarefas repetitivas do dia a dia.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Como salvar prompts que você usa sempre. Como configurar um "chat" com contexto fixo (ex.: "seja meu ajudante de organização, sempre me lembre de X, Y, Z"). Automatizar o que é chato.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Monte 3 prompts salvos: um pra estudar, um pra organizar sua semana, um pra escrever algo (mensagem, redação, e-mail).</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Você é meu assistente de organização. Me ajuda a listar as tarefas da semana em ordem de urgência. Me pergunta o que ainda falta antes de decidir.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual das tarefas do seu dia mais precisa de assistente? Você poderia criar um agora?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 1h</span><h3>A IA num projeto em grupo</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> usar IA em projeto em grupo de forma que TODO MUNDO contribua, sem virar "quem manda pra IA fazer tudo".</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Regras de projeto em grupo com IA: dividir papéis, cada um usa a IA pra sua parte, todos revisam o resultado juntos. IA como acelerador, não como substituto de colaboração.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Combine com 1-2 colegas (ou família) um mini-projeto. Divida papéis. Cada um contribui com uma parte. Junte no fim.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra grupo</span><pre>Nosso projeto é [tema]. Somos [N] pessoas. Sugere como dividir tarefas de forma justa, com uma tarefa clara pra cada um.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Como você garante que cada um do grupo contribuiu, e não só uma pessoa mandou a IA fazer tudo?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 1h</span><h3>Apresentações e cartazes</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> usar IA pra montar apresentação (slides ou pôster) com estrutura profissional.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Boa apresentação tem: capa, objetivo, 3-5 pontos-chave, exemplos, fechamento. IA te ajuda a estruturar o esqueleto e escrever o texto de cada slide. VOCÊ decide o conteúdo.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Monte um esqueleto de 5 slides sobre um tema livre. Use IA pra sugerir texto de cada slide. Edite com suas palavras.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Vou fazer uma apresentação de 5 slides sobre [tema] pra minha turma. Me sugere estrutura (título de cada slide) e um texto curto pra cada, sem enrolar.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se você fosse apresentar isso amanhã, o que ainda faltaria pra ficar seu de verdade?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 1h</span><h3>Mini-feira: mostrar o que criou</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> preparar 3 criações suas de vídeo/imagem/texto pra mostrar num "portfólio pessoal".</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Portfólio é onde você mostra o que sabe fazer. Cartão, quadrinho, apresentação, história, imagem. Como organizar isso num documento único, com legenda: "eu criei", "IA me ajudou em X".</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Junte suas 3 melhores criações do curso. Escreva uma legenda pra cada explicando o que você fez e como a IA ajudou.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me ajuda a escrever uma legenda pra cada uma dessas 3 criações [descreve]. Uma frase curta explicando o que eu fiz e como usei a IA.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual das 3 criações mais representa você? Por quê?</p></div>
+  </div>
+
+  <div class="skills">
+    <h4>Encontro ao vivo · Semana 14</h4>
+    <p>Cada aluno apresenta 1 criação em 2 minutos. Turma dá feedback positivo. Professor conduz reflexão: o que aprendemos até aqui?</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8 · Semana 15</span><h2>Usar IA do jeito certo (responsabilidade e projeto final)</h2></div>
+  <p class="mod-resumo">Fecha o curso com os temas mais importantes: privacidade, pensamento crítico, ética, futuro. E o projeto final.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 1h</span><h3>Privacidade: o que NUNCA contar pra IA</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> ter clareza absoluta sobre o que é e o que NÃO é dado pessoal, e o que fazer com cada tipo.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Dado pessoal: nome completo, endereço, escola, telefone, foto, senha, número de documento. Nunca vai pra IA. Nem seu, nem de amigo, nem da família. Isso é lei (LGPD + ECA Digital).</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Ache 10 informações no seu quarto que NÃO podem ir pra IA. Escreva a lista. Discuta com um adulto por quê.</p></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Quando você quer testar algo pessoal na IA, use dado FICTÍCIO. Ex.: em vez do seu endereço real, invente "Rua das Flores, 100". Em vez do seu nome, use "João" ou "Ana".</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Alguém já pediu pra você digitar algo pessoal na IA? Como você reagiu ou reagiria?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 1h</span><h3>Pensamento crítico + ética</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> saber duvidar da IA sem virar paranoico, e usar sem virar dependente. Ética é ferramenta, você decide.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Duas armadilhas: (1) acreditar em tudo que a IA diz, (2) achar que a IA vai substituir você. O caminho do meio: usar com critério, questionar, verificar, decidir. A IA é ferramenta. Você é o piloto.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Faça uma pergunta polêmica ou de opinião pra IA. Observe como ela responde. Perceba: ela dá muitas opiniões, mas a decisão é sua. Sempre.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me apresenta 2 lados diferentes sobre [assunto de opinião]. Depois me pergunta qual eu concordo mais e por quê. Não me diz sua opinião.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Você mudaria de ideia se a IA te desse outra resposta? Se sim, o que isso quer dizer sobre depender da IA?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 1h</span><h3>O futuro: IA e as profissões</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> pensar sobre como a IA vai afetar o mundo do trabalho quando você for adulto. Sem medo, com preparo.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Profissões que vão mudar, profissões novas que vão aparecer, habilidades que sempre vão importar (pensar, criar, decidir, cuidar). A IA muda tudo, mas o que você aprende hoje sobre pensar por conta te prepara pro futuro qualquer que seja ele.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Pesquise com a IA 3 profissões que te interessam. Pergunte: como a IA vai afetar essa profissão nos próximos 10 anos? O que precisa aprender?</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra testar</span><pre>Me fala sobre a profissão [X]. O que essa profissão faz hoje, o que a IA já mudou, e o que vai continuar sendo tarefa humana nos próximos 10 anos.</pre></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Que habilidade humana você acha que a IA nunca vai substituir? Por quê?</p></div>
+  </div>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 1h</span><h3>Projeto final: meu projeto com IA (apresentação)</h3></div>
+    <p class="objetivo"><b>Ao terminar esta aula você vai:</b> ter um projeto próprio, planejado, executado e apresentado. Prova do que aprendeu.</p>
+    <div class="bloco"><h4>Vídeo 1 · Explicação (25 min)</h4><p>Estrutura do projeto final: (1) escolha um problema/tema que te interessa, (2) use IA pra pesquisar/criar/organizar, (3) monte a entrega (apresentação, cartaz, texto, história, jogo), (4) prepare 2 minutos de fala sobre o que fez.</p></div>
+    <div class="bloco"><h4>Vídeo 2 · Prática (25 min)</h4><p>Execução do projeto final. Combine com o adulto responsável. Prazo: uma semana.</p></div>
+    <div class="skills"><h4>Critério de avaliação</h4><p>Qualidade do que você fez (30%), clareza da apresentação (30%), uso ético e crítico da IA (25%), reflexão sobre o que aprendeu (15%). Total 100%.</p></div>
+    <div class="pratica"><h4>Apresente no encontro ao vivo final</h4><p>2 minutos por aluno. Turma dá feedback. Certificado ao fim.</p></div>
+  </div>
+
+  <div class="skills">
+    <h4>Encontro ao vivo · Semana 15 (final)</h4>
+    <p>Todo mundo apresenta o projeto final. 2 minutos por aluno. Feedback da turma. Fechamento do curso, entrega do certificado, roda de conversa sobre "o que levo daqui".</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Base pedagógica</span><h2>Alinhamento oficial MEC + BNCC Computação</h2></div>
+  <p class="mod-resumo">Este curso é alinhado ao Documento Orientador do MEC (abril/2026) sobre IA na Educação Básica e à Norma da Computação na Educação Básica (Resolução CNE/CEB nº 1/2022). Detalhes no documento consolidado.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Referência</span><h3>Documento consolidado</h3></div>
+    <p class="objetivo"><b>Para escola, instituição ou família consultar:</b> o documento completo mostra como cada eixo da BNCC (Pensamento Computacional, Mundo Digital, Cultura Digital) e cada princípio do MEC (centralidade humana, salvaguardas de aprendizagem, proteção de dados, equidade) estão presentes no curso.</p>
+    <div class="bloco">
+      <h4>Como acessar</h4>
+      <p>Botão "Alinhamento MEC + BNCC Computação" no topo da página /admin/cursos. O documento é revisto quando houver atualização normativa.</p>
+    </div>
+    <div class="skills">
+      <h4>Compromissos assumidos</h4>
+      <p>O curso é EAD (online) com professor mediador em aulas ao vivo síncronas e tutoria assíncrona. Nenhuma criança fica sozinha com a IA. Contas usadas são do adulto ou instituição. Nenhum dado pessoal real da criança é digitado. Ferramentas grátis dão conta. Adaptação para criança com deficiência é oferecida sem custo adicional.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>

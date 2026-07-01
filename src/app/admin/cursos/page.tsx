@@ -60,6 +60,28 @@ export default function AdminCursos() {
         e e-book acompanhante editorial. Cada aula traz objetivo, o que ensinar, exemplos, prompts prontos, links e as Skills do Engenho relacionadas.
       </p>
 
+      <div className="mt-6 rounded-2xl border border-green-700/30 bg-green-50 p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-green-700">EAD 30h · Piloto</p>
+            <p className="mt-1 text-sm font-medium text-ink">
+              IA do Zero ao Avançado — Crianças 11-13 (30h · misto)
+            </p>
+            <p className="mt-0.5 text-xs text-muted">
+              Ementa nova: 30 aulas de 1h (25min vídeo + 25min prática + 10min exercício) em 15 semanas, com encontro ao vivo semanal. Se aprovar, disparo agentes pra apostilas e e-book.
+            </p>
+          </div>
+          <a
+            href="/cursos/curso-ia-criancas-30h.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary !px-4 !py-2 text-sm"
+          >
+            Ver ementa ↗
+          </a>
+        </div>
+      </div>
+
       <div className="mt-6 rounded-2xl border border-amber-deep/30 bg-amber-soft/40 p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
