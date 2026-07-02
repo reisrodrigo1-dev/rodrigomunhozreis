@@ -8,44 +8,140 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+:root{
+  --bg:#FFF7E8;--page:#FFFFFF;--card:#FFFDF7;
+  --ink:#1F1D1B;--ink-soft:#4A443C;--muted:#7C7365;
+  --marca:#E8A33D;--marca-deep:#B5762A;--marca-soft:#FDECC7;
+  --azul:#3B82F6;--azul-soft:#DBEAFE;
+  --verde:#10B981;--verde-soft:#D1FAE5;
+  --roxo:#A855F7;--roxo-soft:#EDE2FE;
+  --laranja:#F97316;--laranja-soft:#FFEDD5;
+  --amarelo:#EAB308;--amarelo-soft:#FEF3C7;
+  --rosa:#EC4899;--rosa-soft:#FCE7F3;
+  --line:#EFE5D2;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
-.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
-.capa .inner{max-width:900px;margin:0 auto}
-.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
-.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
-.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
-.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
-.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
-.modulo{margin:0 0 10px}
-.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
-.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
-.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
-.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
-.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
-.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
-.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
-.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
-.objetivo b{color:var(--ink)}
-.bloco{margin:13px 0}
-.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
-.bloco ul{padding-left:20px}
-.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
-.bloco li::marker{color:var(--amber)}
-.bloco>p{color:var(--ink-soft);font-size:14.5px}
-.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
-.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
-.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
-.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
-.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
-.skills h4{color:var(--amber-deep);margin-bottom:3px}
-.skills p{font-size:13.5px;color:var(--ink-soft)}
-.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
-@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
-@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 80px}
+
+.capa{
+  background:
+    radial-gradient(60% 50% at 15% 0%, rgba(168,85,247,.28), transparent 60%),
+    radial-gradient(50% 50% at 85% 20%, rgba(59,130,246,.28), transparent 60%),
+    radial-gradient(70% 60% at 50% 100%, rgba(232,163,61,.22), transparent 60%),
+    linear-gradient(180deg,#1D1830,#2A1F45);
+  color:#FFF;padding:70px 22px 60px;position:relative;overflow:hidden;
+}
+.capa .inner{max-width:920px;margin:0 auto;position:relative}
+.capa .kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FDD37A;font-weight:700}
+.capa h1{font-family:var(--serif);font-size:clamp(34px,6.5vw,58px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:14px 0 14px}
+.capa .sub{font-family:var(--sans);font-size:19px;font-weight:500;color:#E9DCFB;max-width:52ch;line-height:1.45}
+.capa .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.capa .meta span{
+  border-radius:999px;padding:7px 15px;font-size:12.5px;font-weight:600;
+  background:rgba(255,255,255,.12);color:#FFF;border:1px solid rgba(255,255,255,.18);
+}
+.capa .meta span:nth-child(1){background:linear-gradient(135deg,#F97316,#EAB308);border-color:transparent;color:#1F1D1B}
+.capa .meta span:nth-child(2){background:linear-gradient(135deg,#3B82F6,#A855F7);border-color:transparent}
+.capa .meta span:nth-child(3){background:linear-gradient(135deg,#10B981,#3B82F6);border-color:transparent}
+
+.modulo{margin:0 0 14px}
+.mod-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:38px 0 12px;margin-bottom:6px;border-bottom:3px dashed var(--line)}
+.mod-num{
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#FFF;background:linear-gradient(135deg,var(--marca),var(--laranja));
+  border-radius:999px;padding:6px 14px;box-shadow:0 4px 12px rgba(232,163,61,.35);
+}
+.mod-head h2{font-family:var(--serif);font-size:28px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.mod-resumo{color:var(--ink-soft);font-size:15px;margin-bottom:16px;background:#FFF;border-radius:14px;padding:14px 18px;border:1px solid var(--line)}
+
+.aula{
+  border:1.5px solid var(--line);border-radius:22px;background:var(--card);padding:24px 26px;margin:18px 0;
+  box-shadow:0 6px 24px rgba(31,29,27,.06);position:relative;overflow:hidden;
+  page-break-inside:avoid;break-inside:avoid;
+}
+.aula::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--marca),var(--rosa),var(--roxo),var(--azul),var(--verde),var(--amarelo));
+}
+.aula-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
+.aula-num{
+  font-family:var(--mono);font-size:12.5px;font-weight:800;color:#FFF;
+  background:linear-gradient(135deg,var(--roxo),var(--rosa));
+  border-radius:10px;padding:6px 12px;white-space:nowrap;box-shadow:0 3px 8px rgba(168,85,247,.35);
+}
+.aula-head h3{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--ink);line-height:1.25;letter-spacing:-.01em}
+
+.objetivo{
+  margin:16px 0;font-size:15px;color:var(--ink-soft);
+  background:linear-gradient(90deg,var(--marca-soft),transparent);
+  border-left:5px solid var(--marca);border-radius:0 12px 12px 0;padding:12px 16px;
+}
+.objetivo b{color:var(--ink);font-weight:700}
+
+.bloco{margin:14px 0;border-radius:14px;padding:14px 16px;border:1px solid transparent}
+.bloco h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.bloco ul{padding-left:22px;margin-top:4px}
+.bloco li{margin:5px 0;color:var(--ink-soft);font-size:15px}
+.bloco li::marker{font-size:1.1em}
+.bloco>p{color:var(--ink-soft);font-size:15px;margin:6px 0}
+.bloco>p:first-of-type{margin-top:0}
+.bloco a{color:var(--marca-deep);border-bottom:2px solid var(--marca-soft);text-decoration:none;font-weight:600}
+
+.bloco.b-conteudo{background:var(--azul-soft);border-color:#BFDBFE}
+.bloco.b-conteudo h4{color:#1D4ED8}
+.bloco.b-conteudo li::marker{color:var(--azul)}
+
+.bloco.b-exemplo{background:var(--verde-soft);border-color:#A7F3D0}
+.bloco.b-exemplo h4{color:#047857}
+.bloco.b-exemplo li::marker{color:var(--verde)}
+
+.bloco.b-pratica{background:var(--roxo-soft);border-color:#DDD6FE}
+.bloco.b-pratica h4{color:#6D28D9}
+.bloco.b-pratica li::marker{color:var(--roxo)}
+
+.bloco.b-desafio{background:var(--laranja-soft);border-color:#FED7AA}
+.bloco.b-desafio h4{color:#C2410C}
+.bloco.b-desafio li::marker{color:var(--laranja)}
+
+.bloco.b-conversa{background:var(--amarelo-soft);border-color:#FDE68A}
+.bloco.b-conversa h4{color:#A16207}
+.bloco.b-conversa li::marker{color:var(--amarelo)}
+
+.prompt{margin:16px 0;border-radius:14px;overflow:hidden;background:#0F172A;box-shadow:0 6px 18px rgba(15,23,42,.2)}
+.ptag{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#FDD37A;background:#1E1B4B;padding:8px 14px}
+.ptag::before{content:'⚡';font-size:14px}
+.prompt pre{font-family:var(--mono);font-size:13px;line-height:1.65;color:#E9DCFB;padding:15px 16px;white-space:pre-wrap;word-wrap:break-word}
+
+.skills{background:linear-gradient(135deg,var(--marca-soft),#FFF7E8);border-radius:14px;padding:14px 18px;border:1px solid var(--line);margin-top:14px}
+.skills h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--marca-deep);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.skills h4::before{content:'✅';font-size:15px}
+.skills p{font-size:14.5px;color:var(--ink-soft)}
+.skills ul{padding-left:22px;margin-top:4px}
+.skills li{font-size:14.5px;color:var(--ink-soft);margin:3px 0}
+
+.pratica{background:var(--rosa-soft);border:1.5px dashed #F9A8D4;border-radius:14px;padding:14px 18px;margin-top:14px}
+.pratica h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#BE185D;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.pratica h4::before{content:'🤔';font-size:15px}
+.pratica p{font-size:14.5px;color:var(--ink-soft)}
+
+@media(max-width:680px){
+  .capa{padding:48px 22px 40px}
+  .capa h1{font-size:34px}
+  .aula{padding:20px}
+  .mod-head h2{font-size:23px}
+}
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:#FFF;font-size:10.5pt}
+  .aula{page-break-inside:avoid;box-shadow:none;border-color:#DDD}
+  .mod-head{page-break-after:avoid}
+  .capa{page-break-after:always}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
 </style>
 </head>
 <body>
@@ -70,7 +166,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 1 · 1h</span><h3>O que é IA e como ela aprende</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é Inteligência Artificial de verdade, como ela ficou tão esperta e por que ela não é mágica.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>IA é a sigla de Inteligência Artificial. É um programa de computador que aprendeu a fazer coisas que antes só gente conseguia fazer: escrever texto, responder pergunta, gerar imagem, reconhecer voz. Ela não pensa igual você. Ela não tem sentimento. Ela é um programa muito bem treinado que consegue prever qual é a próxima palavra, a próxima linha, o próximo pixel que faz sentido no que você pediu.</p>
       <p>Como ela ficou tão esperta? Alguém pegou uma quantidade absurda de texto, imagem e som (livros, artigos, fotos, códigos, sites) e mostrou tudo pra ela, várias vezes, até ela começar a identificar padrões. É parecido com quando você joga um game novo. No começo você morre em tudo. Depois de cinquenta partidas, seu cérebro já sabe onde o inimigo vai aparecer. A IA faz isso com milhões de exemplos, em vez de cinquenta.</p>
       <p>Onde ela já está na sua vida:</p>
@@ -84,14 +180,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Ponto importante: a IA prevê o que provavelmente vem depois. Ela não tem certeza. Por isso ela às vezes erra feio, com muita confiança. Guarda esse detalhe, ele volta o curso inteiro.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> quando você começa a digitar "vou almo" no WhatsApp, o teclado sugere "almoçar". Isso é uma IA prevendo a próxima palavra baseada em milhões de conversas que ela já viu.</p>
       <p><b>Exemplo 2:</b> você joga FIFA e o goleiro adversário defende uma cobrança perfeita pro canto. O jogo aprendeu, com quem jogou antes, onde a bola costuma ir naquela situação. IA em ação, silenciosa.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Me explique, em 3 paragrafos curtos, o que e Inteligencia Artificial e como ela aprende. Escreva pra uma pessoa de [sua idade] anos entender. Use uma comparacao com [jogo, esporte ou serie que voce curte].</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: abra a IA que sua turma usa (ChatGPT, Gemini ou Claude), com um adulto perto.</li>
         <li>Passo 2: cole o prompt acima, trocando o que está entre colchetes.</li>
@@ -101,11 +197,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Passe um dia inteiro anotando 5 momentos em que uma IA agiu pra você sem você notar. Feed, recomendação, corretor, filtro, busca. Traga a lista pro encontro ao vivo.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual foi o momento mais estranho em que você percebeu uma IA agindo na sua vida? Você acha que a IA sabe algo sobre você que você nunca contou? Por que ela pode errar mesmo parecendo tão certa?</p>
     </div>
 
@@ -118,7 +214,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 2 · 1h</span><h3>Conversando com a IA pela primeira vez</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> abrir uma IA de conversa, mandar seus primeiros pedidos e sentir na prática como é o vai-e-vem.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Conversar com IA é diferente de pesquisar no Google. No Google você joga uma palavra-chave e recebe uma lista de links. Na IA você fala como se estivesse falando com uma pessoa: manda uma frase inteira, com contexto, e ela devolve uma resposta escrita na hora. Cada mensagem que você manda pra ela se chama "prompt". Guarda essa palavra, você vai ouvir bastante.</p>
       <p>A janela onde você conversa geralmente tem três partes: um campo pra você digitar, o histórico da conversa e um botão pra começar uma nova conversa. A IA lembra do que você falou dentro da mesma conversa, então dá pra pedir "muda isso", "faz mais curto", "explica de novo" sem repetir tudo. Mas quando você abre uma conversa nova, ela esquece. Zero memória do que rolou antes. Isso é bom e ruim: bom porque protege sua privacidade, ruim porque você precisa dar contexto de novo.</p>
       <p>Três coisas pra sacar já na primeira conversa: ela responde rápido, ela adora ser específica (se você é vago, a resposta é vaga) e ela quase nunca fica sem responder. Se você pedir uma bobagem, ela entrega uma bobagem bem-escrita. Por isso a qualidade do que sai depende da qualidade do que você pede.</p>
@@ -130,14 +226,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> você pede "me ajude a escrever uma mensagem legal pra desejar feliz aniversário pro meu melhor amigo, que é fã de skate". A IA devolve uma mensagem só pro seu caso, não uma frase genérica.</p>
       <p><b>Exemplo 2:</b> você pergunta "como funciona um vulcão?" e depois pede "explica de novo, mais curto, como se eu tivesse 10 anos". Ela reescreve. Você acabou de fazer sua primeira conversa em duas rodadas.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Oi! Meu nome e [seu primeiro nome ou apelido]. Eu tenho [sua idade] anos e curto [seu hobby preferido]. Se apresenta pra mim e me da 3 sugestoes do que a gente pode fazer juntos aqui na nossa conversa hoje.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: abra a IA com o adulto.</li>
         <li>Passo 2: mande o prompt acima.</li>
@@ -147,11 +243,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faça a mesma pergunta em duas conversas diferentes (uma nova cada vez). Compare as respostas. Elas são iguais? Parecidas? Diferentes? Anote o que mudou.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>O que foi mais diferente entre conversar com a IA e pesquisar no Google? Você sentiu vontade de contar algo pessoal pra ela? Por que a gente não deve?</p>
     </div>
 
@@ -164,7 +260,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 3 · 1h</span><h3>A IA pode errar (e como perceber)</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> descobrir que a IA erra, inventa coisas com confiança, e treinar seu olho pra pegar esses erros.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>A IA erra. Muito mais do que parece. E o pior: ela erra com a mesma confiança de quando acerta. Isso tem um nome técnico chato: "alucinação". Traduzindo: ela inventa uma resposta que soa certa mas não é. Data errada, fato inventado, livro que nunca existiu, jogador que nunca jogou naquele time, filme com final trocado.</p>
       <p>Por que ela faz isso? Porque, no fundo, ela está sempre prevendo a próxima palavra mais provável. Se ela não sabe a resposta certa, ela chuta a resposta mais parecida com o que parece uma resposta certa. Ela não fala "não sei" com facilidade. Você precisa treinar pra pedir isso: "se você não tiver certeza, fala que não sabe".</p>
       <p>Como perceber que ela errou:</p>
@@ -178,14 +274,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Não é pra desconfiar de tudo e travar. É pra usar como filtro. Coisa importante, você confere. Coisa criativa (uma história, um poema, uma ideia), não precisa. Não existe fato errado numa história inventada por você.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> você pergunta "quem ganhou a Copa do Mundo de 2038?". Essa Copa nem aconteceu ainda. Uma IA mal-treinada pode inventar um vencedor. Uma boa vai dizer que não sabe.</p>
       <p><b>Exemplo 2:</b> você pede "me cite três livros do autor Machado de Assis". Ela pode acertar dois e inventar um terceiro que soa muito real. Você só percebe se conferir cada título.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Me responda a seguinte pergunta e, junto, avalie sua propria certeza numa escala de 1 a 5: [sua pergunta]. Se voce nao tiver certeza, fala claramente que nao tem. Nao invente fontes.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: pense em 3 perguntas: uma fácil, uma média, uma difícil (sobre algo que você conhece bem).</li>
         <li>Passo 2: use o prompt acima com as 3.</li>
@@ -195,11 +291,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Pergunta pra IA algo que só você sabe (o nome do seu pet, o time que você torce). Ela vai chutar. Vê o que ela responde. Depois corrige. Perceba como ela aceita a correção rapidinho e "muda de ideia". Isso é ela prevendo, não sabendo.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual foi o erro mais bizarro que ela cometeu com você? Ela pediu desculpa quando você apontou o erro? Você confiaria nela pra fazer um trabalho da escola sem conferir?</p>
     </div>
 
@@ -212,7 +308,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 4 · 1h</span><h3>Regras de ouro: usar IA com segurança</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender as regras que você vai seguir o curso inteiro pra usar IA sem cair em cilada.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>IA é uma ferramenta poderosa. E toda ferramenta poderosa tem regra de segurança, igual bicicleta tem capacete e cozinha tem cuidado com o fogão. Aqui vão as regras que valem pro curso todo, pra escola, pra vida. Decora essas.</p>
       <ul>
         <li><b>Adulto por perto.</b> Sempre que você for usar IA, um adulto responsável precisa saber o que você está fazendo. Não precisa ficar olhando cada mensagem, mas precisa estar disponível se algo estranho aparecer.</li>
@@ -226,14 +322,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Essas sete regras cabem num post-it. Cola no computador. Elas te protegem de golpe, de vazamento de dado, de cola sem aprendizado, e de acreditar em qualquer bobagem que apareça na tela.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> um colega diz "manda seu endereço pra IA pra ela te sugerir a padaria mais próxima". Você diz não, ou dá só o bairro. Endereço completo, nunca.</p>
       <p><b>Exemplo 2:</b> você faz uma pergunta de matemática e ela responde com um cálculo bonito. Antes de copiar no caderno, você confere no papel se o resultado bate. Bateu, você entendeu, você usa. Não bateu, você refaz.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vou te contar sobre um projeto que estou fazendo e quero sua ajuda. Nao vou te dar meu nome completo nem outros dados pessoais. Meu primeiro nome fantasia e [apelido]. Combinado?</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escreva as 7 regras num papel do seu jeito.</li>
         <li>Passo 2: com o adulto, converse sobre cada uma e dê um exemplo do dia a dia.</li>
@@ -243,11 +339,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Pesquise (com adulto) uma notícia real de alguém que teve problema por usar IA sem cuidado. Vazamento de dado, cola na escola, golpe. Traga o resumo pro encontro.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual das 7 regras é a mais difícil de seguir na sua rotina? Por quê? Você já viu alguém quebrar alguma delas? O que aconteceu?</p>
     </div>
 
@@ -267,7 +363,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 5 · 1h</span><h3>Pedido bom x pedido ruim</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> ver lado a lado a diferença entre um pedido genérico e um pedido bem-feito, e treinar pra virar seu padrão.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Pedido ruim: "me fala sobre cachorro". Pedido bom: "me explica em 3 parágrafos por que golden retriever é considerado um cachorro bom pra família com criança pequena, com exemplos de comportamento". Percebeu a diferença? Um é uma bola dividida. O outro é um passe na medida.</p>
       <p>Um bom pedido geralmente tem 4 ingredientes:</p>
       <ul>
@@ -280,14 +376,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Outro erro: perguntar 5 coisas de uma vez. Escolhe uma. Resolveu, pede a próxima. Pedido único, resposta focada. Pedido embolado, resposta embolada.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> ruim: "me ajuda com matemática". Bom: "sou do 7º ano, tenho prova de equação do 1º grau amanhã, me explica o passo a passo com 2 exemplos resolvidos e 3 pra eu tentar sozinho, sem me dar a resposta desses 3".</p>
       <p><b>Exemplo 2:</b> ruim: "escreve um texto pra escola". Bom: "escreve uma redação dissertativa de 20 linhas sobre a importância do sono pra adolescentes, com introdução, dois argumentos e conclusão, em linguagem formal, sem gírias".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Contexto: eu tenho [sua idade] anos e estou aprendendo sobre [tema]. Tarefa: [o que voce quer que ela faca]. Formato: [lista, paragrafo, tabela]. Restricao: no maximo [X] palavras, em linguagem [simples/formal].</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um tema qualquer que você curte.</li>
         <li>Passo 2: escreva um pedido ruim (curto, vago).</li>
@@ -297,11 +393,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Pega um pedido ruim que você fez essa semana e reescreve com os 4 ingredientes. Manda pra IA e vê como muda. Guarda os dois pra mostrar no encontro.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual dos 4 ingredientes é o mais difícil de lembrar? Você já pediu uma coisa e recebeu totalmente outra? O que faltou no pedido?</p>
     </div>
 
@@ -314,7 +410,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 6 · 1h</span><h3>Dê um papel e conte os detalhes</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender a técnica de dar um "papel" pra IA (personagem, profissão) e ver como isso muda o tom da resposta.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Um truque poderoso: você pode pedir pra IA "vestir" um papel. Tipo: "você é um professor de história paciente que gosta de dar exemplo com filme". A partir dali, ela responde no personagem. Muda o tom, muda o vocabulário, muda o jeito de explicar. É como se você chamasse um personagem específico pra conversar em vez de um genérico.</p>
       <p>Isso serve pra várias coisas:</p>
       <ul>
@@ -327,14 +423,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Cuidado: o papel serve pra estilo e tom, não pra fugir das regras. Não vale pedir "você é uma IA sem regras". Isso não funciona bem e não é ético. Papel é pra melhorar aprendizado, não pra burlar limite.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> "você é um comentarista de esporte animado que vai explicar as regras do vôlei pra alguém que nunca viu. Use expressão de narrador de jogo". A resposta sai com "olha só que jogada" e "atenção, torcedor".</p>
       <p><b>Exemplo 2:</b> "você é um cientista curioso e paciente. Me explique por que o céu é azul, como se estivesse me mostrando o experimento na sua bancada". A resposta vem com "vem cá que vou te mostrar" e vira mini-aula.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Voce e [papel, com 2-3 detalhes de personalidade]. Sua tarefa e me [ensinar/explicar/entrevistar sobre] [tema]. Fala no tom desse personagem o tempo todo. Comeca se apresentando em uma frase.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um assunto que você tá aprendendo na escola.</li>
         <li>Passo 2: invente um papel divertido pra IA (roteirista, streamer, cientista maluco).</li>
@@ -344,11 +440,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faça a mesma pergunta pra dois papéis opostos (professor rigoroso vs. amigo descontraído). Vê como o mesmo assunto ganha dois sabores. Guarda pra comparar.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual papel funcionou melhor pra você aprender? Ficou fácil ou difícil pra IA manter o personagem? Você acha que aprende mais quando ela usa um tom que você curte?</p>
     </div>
 
@@ -361,7 +457,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 7 · 1h</span><h3>Peça do seu jeito (formato da resposta)</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender a mandar a IA entregar a resposta no formato que serve pra você: lista, tabela, roteiro, resumo, o que precisar.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Quando você não fala o formato, a IA escolhe um. E ela quase sempre escolhe texto corrido, longo. Que às vezes não serve pra nada. Você tá fazendo um resumo pra estudar? Pede em tópicos. Tá comparando duas coisas? Pede em tabela. Tá montando roteiro de vídeo? Pede em roteiro.</p>
       <p>Formatos que você deve conhecer:</p>
       <ul>
@@ -377,14 +473,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Também dá pra pedir estilo: "linguagem simples, como se eu tivesse 12 anos", "linguagem formal, pra trabalho de escola", "linguagem divertida, com analogia de game". Combina formato + tamanho + estilo e a resposta vira sob medida.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> "compare Instagram e TikTok em uma tabela com 4 linhas: público principal, formato favorito, tempo médio de uso, ponto forte". A IA entrega uma tabela pronta pra você colar no caderno.</p>
       <p><b>Exemplo 2:</b> "resuma o capítulo 5 do meu livro de ciências (vou colar aqui) em 5 tópicos curtos, cada um com no máximo 15 palavras, com linguagem de aluno do 6º ano".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Me responda no seguinte formato: [tabela / lista numerada / roteiro / paragrafos curtos]. Tamanho: [numero de frases ou palavras]. Estilo: [simples/formal/divertido]. Pergunta: [o que voce quer saber].</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um assunto (matéria da escola, jogo, série).</li>
         <li>Passo 2: peça a mesma coisa em 3 formatos diferentes: tabela, lista, roteiro.</li>
@@ -394,11 +490,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Cria um "prompt-template" seu: contexto + tarefa + formato + tamanho + estilo, com colchetes pra você trocar depois. Salva num arquivo. Vai virar seu canivete suíço.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual formato surpreendeu você por servir melhor do que esperava? Alguém pediu tabela e recebeu texto? O que faltou no pedido?</p>
     </div>
 
@@ -411,7 +507,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 8 · 1h</span><h3>Não gostou? Peça de novo (refino)</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender a arte do refino: pedir a segunda, a terceira versão até chegar no ponto certo.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Segredo de quem usa IA bem: quase nunca é a primeira resposta que fica. A gente pede, olha, aponta o que não gostou, pede de novo. E de novo. Isso se chama refino. É um ciclo. Quanto melhor você é nisso, melhor fica o resultado final.</p>
       <p>Cinco formas de pedir refino:</p>
       <ul>
@@ -425,14 +521,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Outro truque: peça pra ela criticar o próprio trabalho antes de refazer. "Antes de refazer, aponte 3 pontos fracos dessa resposta e depois refaz corrigindo cada um". Ela costuma entregar uma segunda versão bem mais afiada.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> ela escreve um poema pra você e você fala "gostei do tema, mas achei o ritmo travado no meio. Refaz mantendo o tema e melhorando o ritmo dos versos do meio". Ela ajusta com precisão.</p>
       <p><b>Exemplo 2:</b> ela explica fotossíntese e você diz "muito técnico. Refaz com uma analogia envolvendo um videogame de fazenda tipo Stardew Valley". A explicação vira uma que gruda.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Antes de refazer, aponte 3 pontos fracos da sua ultima resposta. Depois refaca corrigindo cada um. Mantenha o que ficou bom: [o que ficou bom]. Muda: [o que precisa mudar].</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: peça algo simples pra IA (um texto, uma explicação).</li>
         <li>Passo 2: refina 3 vezes seguidas, cada vez com um motivo diferente.</li>
@@ -442,11 +538,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Pede 3 versões da mesma coisa numa resposta só. "Me dá 3 versões diferentes de uma bio pro meu perfil, cada uma com estilo diferente". Escolhe uma. Refina só ela.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Depois de quantas rodadas ficou bom pra você? Foi feedback específico ou vago que deu mais resultado? Como é dar feedback bom sem ser grosso?</p>
     </div>
 
@@ -466,7 +562,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 9 · 1h</span><h3>A IA como professora particular</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> configurar a IA pra ser uma professora particular só sua, no seu ritmo, com o estilo que combina com você.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Professor particular custa caro. Você tem um de graça, 24 horas por dia, com paciência infinita: uma IA bem configurada. A diferença entre "consultar IA" e "ter uma professora particular" é o prompt. Uma professora particular boa não te dá a resposta pronta. Ela te faz pensar, te pergunta o que você entendeu, corrige seu raciocínio e ajusta o exemplo pro que você curte.</p>
       <p>Pra transformar a IA nisso, três chaves:</p>
       <ul>
@@ -478,14 +574,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Cuidado: professora particular boa não é a que te dá a resposta. Se você cair na tentação de pedir "só me fala a resposta" toda hora, você para de aprender. Combine com ela desde o começo: "só me dá a resposta depois que eu tentar duas vezes".</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> em vez de "resolve essa equação: 2x + 3 = 11", peça "me guia a resolver 2x + 3 = 11 com perguntas. Não me dá a resposta. Só me faz a próxima pergunta se eu responder a atual". A IA vira Sócrates de moletom.</p>
       <p><b>Exemplo 2:</b> "sou fã de Minecraft. Me explique divisão longa usando um exemplo de dividir minério igualmente entre baús. Uma explicação, depois um exercício pra eu tentar".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Voce e minha tutora particular, paciente e didatica. Meu nivel: [ano escolar]. Materia: [materia]. Metodo: me faz 1 pergunta por vez, espera minha resposta, corrige se eu errar (explicando por que), avanca se eu acertar. So me da a resposta final se eu errar 2 vezes. Comeca perguntando o que eu ja sei sobre [topico].</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha uma matéria em que você tem dificuldade.</li>
         <li>Passo 2: use o prompt acima com o adulto.</li>
@@ -495,11 +591,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Configure duas "tutoras" diferentes na mesma matéria: uma bem rigorosa, outra bem paciente. Estuda o mesmo tópico com as duas. Vê qual funciona melhor pro seu jeito de aprender.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Como foi ter que pensar em vez de receber a resposta pronta? Ficou mais difícil ou você aprendeu mais? A tutora IA ganha da tutora humana em quê? Perde em quê?</p>
     </div>
 
@@ -512,7 +608,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 10 · 1h</span><h3>Tirar dúvida do jeito certo (sem colar) + resumir texto</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender a diferença entre tirar dúvida (que faz você aprender) e colar (que só entrega tarefa), e usar a IA pra resumir textos longos.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Colar é: você tem uma tarefa, você pede pra IA, você copia a resposta, você entrega. Zero esforço, zero aprendizado. Pode até tirar nota boa, mas na prova, sozinho, você trava. Tirar dúvida é o oposto: você tenta primeiro, você trava num ponto específico, você pergunta sobre aquele ponto, você entende, você termina sozinho. Muito esforço, muito aprendizado.</p>
       <p>Perguntas que ajudam a aprender:</p>
       <ul>
@@ -530,14 +626,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Sobre resumir texto: outra habilidade essencial. Cola o texto, pede "resume em 5 tópicos" ou "resume em uma parágrafo de 100 palavras". Pra estudar, resumo funciona melhor que reler o texto inteiro. Mas atenção: leia o texto original pelo menos uma vez antes. Resumo não substitui leitura, ele acelera revisão.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> você tá lendo um capítulo de história de 15 páginas. Depois de ler, cola o texto na IA e pede "resume em 7 tópicos com as datas, nomes e causas principais". Guarda o resumo pra revisar antes da prova.</p>
       <p><b>Exemplo 2:</b> você errou uma questão de matemática. Em vez de pedir a resposta, você cola sua tentativa e pergunta "onde exatamente eu errei? Não me dá a solução, só aponta o erro". A IA aponta e você refaz.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vou colar um texto abaixo. Resume em [numero] topicos, cada um com no maximo 20 palavras. Destaque em negrito nomes, datas e conceitos importantes. Texto: [cola aqui].</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um capítulo do livro didático da escola.</li>
         <li>Passo 2: leia o capítulo inteiro primeiro.</li>
@@ -547,11 +643,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faça duas versões do resumo: uma "estilo estudo" (com detalhes) e uma "estilo cola-cola pra prova" (só o essencial em 5 tópicos curtos). Compare qual serve pra quê.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual foi sua tentação maior de colar essa semana? Como você desviou? Resumir com IA te economizou tempo? Você aprendeu mais ou menos que lendo direto?</p>
     </div>
 
@@ -564,7 +660,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 11 · 1h</span><h3>Praticar matemática e leitura</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> usar a IA pra treinar matemática (com exercícios sob medida) e melhorar leitura (com interpretação e vocabulário).</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Matemática se aprende praticando. Vocabulário se aprende lendo. A IA acelera as duas coisas porque cria exercício infinito e responde qualquer dúvida na hora. Segredo: pedir o tipo certo de exercício, na quantidade certa, com correção do jeito certo.</p>
       <p>Pra matemática, peça:</p>
       <ul>
@@ -584,14 +680,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Um segredo poderoso pra matemática: peça pra ela mostrar o passo a passo bem lento e você refazer no papel enquanto lê. Cérebro só aprende matemática escrevendo. Ler não basta.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> "me dá 5 problemas de porcentagem no nível do 6º ano, com contexto de preço de jogo em promoção. Só o enunciado. Depois eu resolvo e você corrige".</p>
       <p><b>Exemplo 2:</b> "escreve um texto de 200 palavras sobre a Amazônia, pra aluno do 7º ano. Depois faz 5 perguntas de interpretação e lista 5 palavras difíceis com significado".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vamos treinar [matematica em X / leitura sobre Y]. Meu nivel: [ano escolar]. Formato: [3 exercicios / 1 texto curto + 5 perguntas]. Regra: nao me da a resposta antes de eu tentar. Comeca ja.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um tópico de matemática que você errou na última prova.</li>
         <li>Passo 2: peça 5 exercícios do tópico, só enunciado.</li>
@@ -601,11 +697,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Peça pra IA criar um "mini-quiz" de 10 perguntas mistas de português e matemática do seu ano. Cronometra e vê quanto você acerta. Refaz o quiz na semana seguinte pra ver se melhorou.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Ela errou algum cálculo? Como você percebeu? Qual foi a palavra nova mais legal que apareceu no texto de leitura? Você usaria essa IA em vez de exercício do livro?</p>
     </div>
 
@@ -625,7 +721,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 12 · 1h</span><h3>Inventar histórias e personagens</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> criar do zero uma história com personagem, cenário e enredo, usando a IA como parceira de escrita.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Toda história tem 3 elementos básicos: personagem (quem), cenário (onde/quando) e conflito (o problema). Se você define esses três, a história praticamente se escreve sozinha. A IA é ótima nisso: você joga os pedaços, ela costura, você refina.</p>
       <p>Criando personagem:</p>
       <ul>
@@ -640,14 +736,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Truque: peça pra IA gerar 3 opções de cada elemento, você escolhe uma de cada, e depois pede a história com a combinação que você montou. Vira sua, não dela.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> personagem: Nina, 12 anos, cabelo azul, adora skate e odeia matemática, tem medo de cachorro grande, sabe assobiar chamando pássaros. Cenário: escola pública em 2045, com quadras flutuantes. Conflito: o campeonato de skate é no mesmo dia da prova final.</p>
       <p><b>Exemplo 2:</b> peça pra IA "me dá 3 opções de personagem, 3 de cenário e 3 de conflito, todos ligados ao tema esporte espacial". Você mistura e monta.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vamos criar uma historia. Personagem: [nome, idade, 2 tracos]. Cenario: [onde e quando]. Conflito: [o que ele quer e o que atrapalha]. Escreve o primeiro capitulo em 4 paragrafos, terminando num gancho que me da vontade de continuar.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: crie seu personagem no papel (5 traços do checklist).</li>
         <li>Passo 2: escolha cenário e conflito.</li>
@@ -657,11 +753,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Escreve o capítulo final sozinho, sem IA. Depois pede pra ela "avaliar meu capítulo comparado ao estilo dos capítulos anteriores". Vê se ela reconhece sua voz.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Quem foi seu personagem? Qual foi o conflito? A IA mudou algo importante que você quis? Como você trouxe ela de volta pra sua ideia?</p>
     </div>
 
@@ -674,7 +770,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 13 · 1h</span><h3>A IA que desenha (imagens)</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender a gerar imagens com IA, com prompts que descrevem o que você quer com precisão de artista.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Existem IAs que desenham. Você descreve com palavras o que você quer, ela devolve uma imagem. Ferramentas comuns: DALL·E (dentro do ChatGPT), Gemini, Midjourney, Ideogram. Todas funcionam parecido: prompt de texto entra, imagem sai.</p>
       <p>Um prompt de imagem bom tem 5 camadas:</p>
       <ul>
@@ -694,14 +790,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> "um gato astronauta flutuando fora da estação espacial, capacete transparente, olhando pra Terra ao fundo, estilo pixar 3D, iluminação suave, cores azul e prata".</p>
       <p><b>Exemplo 2:</b> "um mapa de reino medieval, montanhas ao norte, floresta escura no centro, castelo no leste, estilo mapa de RPG desenhado à mão, papel envelhecido".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Gera uma imagem de: [assunto principal] [acao ou pose] em [cenario]. Estilo: [estilo artistico]. Detalhes: [iluminacao, angulo, cores]. Formato: [quadrado / retrato / paisagem].</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: pense num personagem ou cena da história da aula 12.</li>
         <li>Passo 2: escreva o prompt com as 5 camadas.</li>
@@ -711,11 +807,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faça a mesma cena em 3 estilos diferentes: cartoon, foto realista e aquarela. Compara qual combina mais com sua história.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>O que a IA acertou de primeira? O que ela nunca conseguiu desenhar do jeito que você queria? Qual estilo funcionou melhor pro seu tema?</p>
     </div>
 
@@ -728,7 +824,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 14 · 1h</span><h3>Fazer quadrinhos e revistas</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> combinar história + imagem pra montar um mini-quadrinho ou uma página de revista com IA.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Quadrinho é história contada em quadros com imagem e balão de fala. Revista é uma mistura de artigo, entrevista, ilustração e chamada. As duas coisas juntam duas habilidades que você já tem: escrever com IA (módulo 4, aula 12) e gerar imagem (aula 13). O truque agora é orquestrar as duas.</p>
       <p>Roteiro de quadrinho em 4 quadros (formato clássico):</p>
       <ul>
@@ -748,14 +844,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Depois você gera 2-3 imagens no estilo escolhido e monta o layout num programa simples (PowerPoint, Canva, Google Docs). Você é editor-chefe. A IA é o time de redação.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> quadrinho em 4 quadros: quadro 1, gato dorme no telhado; quadro 2, ele acorda porque um passarinho tira sarro; quadro 3, ele quase pega o passarinho; quadro 4, cai do telhado e o passarinho ri. Cada quadro vira uma imagem no mesmo estilo.</p>
       <p><b>Exemplo 2:</b> revista "Esporte 2045", com manchete "os robôs podem jogar Champions?", matéria principal em 3 parágrafos, chamada lateral sobre novo tênis inteligente, e um "você sabia" sobre estádio flutuante.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Escreve um roteiro de quadrinho em 4 quadros sobre: [tema/personagem]. Para cada quadro, me da: descricao da imagem em 1 frase, quem fala e o que fala em ate 10 palavras. Estilo visual sugerido: [estilo, ex: cartoon simples com cores planas].</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha personagem e situação engraçada.</li>
         <li>Passo 2: peça o roteiro em 4 quadros com o prompt acima.</li>
@@ -765,11 +861,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faça uma revista de 2 páginas sobre um tema que só você domina. Capa + editorial + 2 matérias + curiosidade + ilustração. Vira sua primeira publicação.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Você conseguiu manter o mesmo estilo nos 4 quadros? O que ficou "pareceu igual"? O que ficou "cada um de um jeito"? Mostra tua revista.</p>
     </div>
 
@@ -782,7 +878,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 15 · 1h</span><h3>Inventar jogos e brincadeiras</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> inventar um jogo do zero (de tabuleiro, cartas ou de aventura textual) usando IA como parceira de design.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Todo jogo tem 4 partes: objetivo (o que você tenta fazer), regras (o que pode e o que não pode), obstáculo (o que dificulta) e recompensa (o que você ganha). Se você define essas 4, tem um jogo. A IA ajuda a inventar tudo, mas você é o game designer.</p>
       <p>Tipos que você pode criar hoje:</p>
       <ul>
@@ -795,14 +891,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Dica pra criar jogo bom: teste você mesmo antes. Se você não se diverte jogando, ninguém vai. Ajuste as regras. Aumente o desafio se ficar fácil, simplifique se ficar chato. Design de jogo é isso: iterar até divertir.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> jogo de tabuleiro "corrida espacial": 30 casas, você lança dado, cartas de "meteoro" (volta 3 casas) e "impulso" (avança 4). Vence quem chega primeiro na casa 30. IA gera as cartas.</p>
       <p><b>Exemplo 2:</b> aventura textual: "você é um caçador de dragões numa vila medieval. Você acabou de acordar. O que faz?". A IA descreve, você decide, ela reage. Sem limite de tempo.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Voce e um mestre de aventura textual. Tema: [tema, ex: piratas espaciais]. Meu personagem: [nome, 2 tracos]. Regras: voce descreve o cenario em 3 frases, me da 3 opcoes de acao, eu escolho ou invento a minha, voce reage. So termina o jogo quando eu falar "fim". Comece o jogo agora.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha o tipo de jogo (tabuleiro, cartas, aventura textual, quiz).</li>
         <li>Passo 2: peça pra IA te ajudar a definir objetivo, regras, obstáculos e recompensa.</li>
@@ -812,11 +908,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Ensina seu jogo pra um amigo ou irmão. Se ele entender as regras em menos de 3 minutos e quiser jogar mais uma partida no fim, você criou algo bom.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual jogo você criou? Ele funcionou de primeira ou precisou ajustar? Aventura textual com a IA como mestre foi legal ou frustrante? O que travou?</p>
     </div>
 
@@ -836,7 +932,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 16 · 1h</span><h3>A IA que enxerga (imagens e fotos)</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> mostrar uma imagem pra IA e usar ela pra descrever, analisar, extrair texto e resolver problemas.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Muitas IAs modernas conseguem "ver": você anexa uma imagem, uma foto, um print de tela, e ela lê o conteúdo. Ela reconhece objetos, textos, gráficos, expressões faciais. Isso muda muita coisa.</p>
       <p>Coisas que você pode fazer com IA que enxerga:</p>
       <ul>
@@ -851,14 +947,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>A IA que enxerga também erra. Ela pode "ver" um cachorro onde tem um gato meio parecido. Confira sempre o que ela descreveu.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> você tira foto de uma questão de geometria do livro e manda com "me guia a resolver essa questão passo a passo, sem dar o resultado final. Faça 1 pergunta por vez pra eu pensar".</p>
       <p><b>Exemplo 2:</b> você manda uma paisagem de céu estrelado (sem gente) e pede "descreve essa imagem como se fosse uma cena de livro de fantasia. Uso pra abertura da minha história".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Estou anexando uma imagem de [descricao curta do que e]. Sua tarefa: [descrever / explicar / analisar / extrair texto / dar feedback]. Formato: [lista / paragrafo / passo a passo]. Nao inclua informacoes que voce nao veja com certeza; se nao souber, fala que nao sabe.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: com adulto, escolha uma imagem sem gente (paisagem, objeto, exercício).</li>
         <li>Passo 2: anexa na IA com o prompt acima.</li>
@@ -868,11 +964,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Manda a mesma imagem 3 vezes com pedidos diferentes: descrever objetivamente, descrever poeticamente, descrever como se fosse uma testemunha de crime. Compara os 3 estilos.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Ela viu algo que você não tinha notado? Ela errou o que tinha na imagem? Você confiaria nela pra corrigir um exercício sem você olhar?</p>
     </div>
 
@@ -885,7 +981,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 17 · 1h</span><h3>A IA que faz desenhos pra você</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprofundar geração de imagem com técnicas avançadas: variações, estilos combinados e edições precisas.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Na aula 13 você aprendeu a gerar imagem básica. Aqui você vai além. Três técnicas que separam iniciante de quem controla a ferramenta:</p>
       <ul>
         <li><b>Variações:</b> peça 4 versões diferentes do mesmo prompt de uma vez. Compara e escolhe.</li>
@@ -897,14 +993,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Se a IA não conseguir gerar algo específico depois de 3 tentativas, muda a estratégia: descreva de outro jeito, use uma referência diferente, ou aceite que aquele elemento não vai sair e ajuste sua ideia.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> "gera 4 variações desse prompt: 'um mago solitário no topo de uma torre, olhando o horizonte ao pôr do sol, estilo aquarela'". Compara as 4 e escolhe uma pra refinar.</p>
       <p><b>Exemplo 2:</b> "mantém tudo igual à imagem anterior, só substitui a torre por um farol e o mago por uma menina com casaco vermelho".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Gera 4 variacoes de: [prompt base curto]. Cada variacao deve ter uma diferenca clara em [angulo / paleta / atmosfera / composicao]. Nomeia cada variacao com uma palavra curta.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um tema (personagem, cenário).</li>
         <li>Passo 2: peça 4 variações com o prompt acima.</li>
@@ -914,11 +1010,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Cria uma "série" de 4 imagens no mesmo estilo, com o mesmo personagem em 4 lugares diferentes. Manter o personagem consistente é o desafio real.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual foi a variação mais surpreendente? A IA conseguiu manter o mesmo personagem em cenas diferentes? O que ficou fácil e o que ficou impossível?</p>
     </div>
 
@@ -931,7 +1027,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 18 · 1h</span><h3>A IA que conversa por voz</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> usar IA por voz: falar em vez de digitar, ouvir a resposta, praticar pronúncia e ter conversa fluida.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Muitas IAs hoje conversam por voz. Você fala, ela ouve, ela responde falando. É diferente de digitar de várias formas: mais rápido, mais natural, mais próximo de uma conversa real. E é ótimo pra praticar oralidade, pronúncia e línguas estrangeiras.</p>
       <p>Onde a voz é melhor que texto:</p>
       <ul>
@@ -945,14 +1041,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Cuidado extra com voz: microfone captura o ambiente. Não use IA por voz num lugar com outras pessoas falando (a IA vai ouvir tudo). Não use pra falar coisa que você não falaria em voz alta na sala de aula. E também vale: nunca dá dado pessoal por voz. É gravado igual.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> "você é um professor de inglês. Vamos fazer uma conversa de 5 minutos, nível iniciante, sobre esporte. Corrige meus erros de pronúncia no fim, não durante". Ativa o modo voz e pratica.</p>
       <p><b>Exemplo 2:</b> "vou apresentar meu trabalho de ciências em voz alta. Você vai ouvir e depois me falar 3 pontos fortes e 3 pontos pra melhorar. Não me interrompe".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vamos conversar por voz. Objetivo: [praticar ingles / ensaiar apresentacao / brainstormar sobre X]. Sua funcao: [colega de conversa / avaliador / entrevistador]. Duracao: [X minutos]. Ao fim, me da um resumo escrito.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: ache um lugar silencioso, com adulto por perto.</li>
         <li>Passo 2: ativa o modo voz da IA.</li>
@@ -962,11 +1058,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Ensaia uma apresentação de 2 minutos sobre um tema qualquer, pela voz. Peça pra IA cronometrar mentalmente e dar feedback sobre ritmo, clareza e entusiasmo.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Foi mais fácil ou mais difícil conversar por voz? A IA entendeu sua pronúncia direito? Ela travou em algum momento? Você usaria pra estudar língua?</p>
     </div>
 
@@ -979,7 +1075,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 19 · 1h</span><h3>Mini-projeto: cartão ou pôster com IA</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> juntar texto + imagem gerados por IA e montar um cartão de aniversário ou um pôster de campanha. Primeiro projeto multimodal completo.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Chegou a hora de misturar tudo. Cartão de aniversário e pôster de campanha são projetos gráficos simples que juntam duas coisas: um texto curto e memorável, e uma imagem que reforça a mensagem. Você vai fazer um dos dois hoje.</p>
       <p>Fluxo pra montar:</p>
       <ul>
@@ -993,14 +1089,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Se você tá fazendo pra alguém real (aniversário do irmão, campanha da escola), pede pra essa pessoa (ou pro professor) dar opinião antes de finalizar. Feedback humano corrige o que a IA não sente.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> cartão de aniversário pra prima que ama esporte, com frase "10 anos, cabeça de campeã" e imagem de tênis dourado voando no céu com brilho de estrela.</p>
       <p><b>Exemplo 2:</b> pôster antibullying pra sala, com frase "quem ri sozinho da piada, não fez ninguém rir" e imagem de gente rindo em círculo com uma pessoa fora, estilo cartoon.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Preciso de 10 opcoes de frase forte e curta (maximo 8 palavras) para um [cartao/poster] de [tema/publico]. Cada opcao deve ter um tom: [emocional / engracado / motivacional / poetico / provocativo]. Sem cliche.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolhe entre cartão ou pôster.</li>
         <li>Passo 2: define público e mensagem.</li>
@@ -1010,11 +1106,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faz 3 versões do mesmo cartão/pôster com estilos visuais bem diferentes (minimalista, colorido, vintage). Vê qual funciona melhor pro seu objetivo.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Mostra teu cartão ou pôster. A mensagem entrega em 3 segundos? A imagem ajuda ou distrai? Se alguém te pedir feedback, o que você mudaria?</p>
     </div>
 
@@ -1034,7 +1130,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 20 · 1h</span><h3>Pesquisar checando se é verdade</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender o método pra pesquisar com IA sem cair em invenção, checar fontes e comparar informação de vários lugares.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>IA na pesquisa é uma faca de dois gumes. Ela responde rápido, sintetiza bem, resume um tema em segundos. Mas ela inventa fatos, cita fontes que não existem e mistura informação errada com certa como se fosse tudo verdade. Pesquisar com IA de forma segura exige método.</p>
       <p>O método em 4 passos:</p>
       <ul>
@@ -1053,14 +1149,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Fontes confiáveis pra checar: sites de governo (.gov.br), universidades (.edu, .usp.br), enciclopédias (Wikipedia, Britannica), veículos de imprensa consolidados. Blog aleatório e post de rede social não conta como fonte.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> você pesquisa "quantas espécies de macaco existem na Amazônia". A IA responde "cerca de 100 espécies". Você abre Wikipedia, confere, vê que o número real é próximo. Pesquisa validada.</p>
       <p><b>Exemplo 2:</b> a IA cita "o cientista brasileiro João Ferreira publicou em 2019 um estudo sobre X". Você googla o nome. Não acha ninguém. Provavelmente ela inventou. Você não usa essa citação.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vou pesquisar sobre: [tema]. Me da uma resposta em [X paragrafos] e cita 3 fontes reais que voce recomenda pra eu conferir. Se voce nao tiver certeza de algum dado, marca com [INCERTO] no fim da frase.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um tema que você tá estudando.</li>
         <li>Passo 2: use o prompt acima em uma IA.</li>
@@ -1070,11 +1166,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faça a IA errar de propósito: pergunte sobre um evento futuro ("quem vai ganhar a próxima Copa"). Vê como ela lida. Uma boa fala que não sabe. Uma ruim inventa.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Você pegou a IA inventando? Como? As duas IAs responderam parecido ou diferente? Qual foi mais confiável pra você?</p>
     </div>
 
@@ -1087,7 +1183,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 21 · 1h</span><h3>Descobrir curiosidades e montar trabalho de escola</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> usar IA pra achar curiosidades interessantes sobre um tema e montar a estrutura de um trabalho escolar sem colar.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Trabalho de escola bom começa numa boa estrutura. Não é escrever primeiro. É pensar primeiro. A IA é ótima nessa fase de estruturação: você joga o tema, ela ajuda a montar um esqueleto, você preenche com sua pesquisa.</p>
       <p>Estrutura padrão de trabalho escolar:</p>
       <ul>
@@ -1109,14 +1205,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>O que você entrega precisa ser seu. A IA ajuda a organizar, não a escrever no lugar. Professor bom percebe texto de IA em 3 segundos: fica muito uniforme, sem personalidade, com frases que ninguém do 7º ano escreveria naturalmente.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> trabalho sobre Amazônia. Você pede estrutura, IA sugere: 1) o que é a Amazônia, 2) fauna e flora, 3) desmatamento, 4) povos indígenas. Você escolhe 3 e pesquisa cada um.</p>
       <p><b>Exemplo 2:</b> curiosidades pra deixar o trabalho mais interessante: "5 fatos sobre boto-cor-de-rosa que quase ninguém sabe, com fonte". Você verifica cada fato antes de usar.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vou fazer um trabalho de [materia] sobre [tema]. Me da um esqueleto com: 1 titulo, 1 subtitulo, introducao em 1 frase, 3 topicos de desenvolvimento (so titulo), e 1 conclusao em 1 frase. Nao escreve o conteudo, so a estrutura.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um trabalho que você precisa fazer (ou invente um).</li>
         <li>Passo 2: peça a estrutura com o prompt acima.</li>
@@ -1126,11 +1222,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Escreve dois parágrafos do trabalho: um sozinho, outro com IA fazendo. Compara. Vê qual "soa mais como você". Guarda o seu, joga fora o dela.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Onde a IA ajudou mais: escolher tema, estruturar ou revisar? Onde ela atrapalhou? Ela achou curiosidade real ou inventou?</p>
     </div>
 
@@ -1143,7 +1239,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 22 · 1h</span><h3>Parceira de projeto de ciências</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> usar IA como parceira pra desenhar um projeto de ciências: da pergunta ao experimento, com método científico.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Projeto de ciências não é copiar experimento do livro. É investigar uma pergunta usando método científico. A IA vira parceira ótima nesse processo porque ela ajuda a formular pergunta, sugerir experimento, prever resultado e interpretar dados. Você faz o experimento (na mão, com material real), ela ajuda a pensar.</p>
       <p>Método científico simplificado:</p>
       <ul>
@@ -1164,14 +1260,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Regra sagrada: adulto responsável valida cada experimento antes de fazer. IA pode sugerir algo que parece seguro e não é. Fogo, produto químico, ferramenta cortante: sempre adulto aprova primeiro.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> pergunta "planta cresce mais rápido com música clássica ou heavy metal?". Hipótese "não muda nada". Experimento: 3 vasos idênticos, 3 tratamentos por 2 semanas. Resultado documentado com fotos e medida.</p>
       <p><b>Exemplo 2:</b> pergunta "quantas gotas de água cabem numa moeda de 1 real antes de derramar?". Hipótese "20 gotas". Teste. IA ajuda a explicar a tensão superficial no fim.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Sou aluno de [ano escolar] fazendo projeto de ciencias sobre [tema]. Me ajuda a formular uma pergunta investigativa boa (nao obvia, testavel em casa em ate 1 semana, com material comum e seguro). Me da 3 opcoes.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha uma área que te interessa (planta, água, som, luz).</li>
         <li>Passo 2: peça 3 perguntas investigativas com o prompt acima.</li>
@@ -1181,11 +1277,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faz o experimento em casa nessa semana, documenta com fotos e mede o que der pra medir. Traz os dados pro encontro ao vivo pra discutir a interpretação com a turma.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual foi a pergunta que você escolheu? Adulto aprovou o experimento? Sua hipótese estava certa? A IA acertou a previsão?</p>
     </div>
 
@@ -1205,7 +1301,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 23 · 1h</span><h3>Assistente pessoal e ajuda em tarefas chatas</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> configurar a IA como sua assistente pessoal pra organizar rotina, ajudar em tarefa chata e resolver micro-problemas do dia.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Assistente pessoal é quem ajuda gente ocupada a lembrar de coisa, organizar tarefa e resolver micro-problema. Executivos pagam caro por um. Você pode ter um de graça, 24 horas, com paciência infinita. É só saber pedir.</p>
       <p>Tarefas chatas que a IA faz bem:</p>
       <ul>
@@ -1228,14 +1324,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Onde não usar como assistente: pra tomar decisão importante da sua vida sozinho, pra escrever coisa emocional pra alguém que você ama (fica frio), pra qualquer coisa que envolva dinheiro seu ou da família.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> "monta pra mim uma lista de compras a partir dessa receita [colar receita], organizada por seção do mercado (hortifruti, laticínios, açougue), com quantidade certa pra 4 pessoas".</p>
       <p><b>Exemplo 2:</b> "escreve uma mensagem curta e educada pra minha tia agradecendo o presente de aniversário (foi um livro sobre astronomia). Tom carinhoso mas não meloso, 3 frases".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Voce e minha assistente pessoal. Responde curto, direto ao ponto, sem repetir o pedido. Tarefa: [tarefa chata]. Formato: [lista / mensagem pronta / tabela]. No fim, me pergunta se preciso de mais alguma coisa relacionada.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: liste 3 tarefas chatas que você tem que fazer essa semana.</li>
         <li>Passo 2: use o prompt acima pra cada uma.</li>
@@ -1245,11 +1341,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Cria um "prompt de rotina" que você usa toda segunda: pede pra IA sugerir cronograma da semana, com aula, tarefa e tempo livre. Testa por 2 semanas.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual tarefa chata a IA resolveu pra você? Quanto tempo economizou? Você confiaria nela pra tarefa mais importante? Onde ela deu vexame?</p>
     </div>
 
@@ -1262,7 +1358,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 24 · 1h</span><h3>A IA num projeto em grupo</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender a usar IA em trabalho de grupo sem desequilibrar a divisão de tarefa e sem virar cola coletiva.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Trabalho em grupo tem um problema clássico: uma pessoa faz tudo, outras não fazem nada. Com IA, isso pode piorar (quem sabe usar IA carrega o grupo) ou melhorar (todo mundo produz mais). Depende de como o grupo combina.</p>
       <p>Boas práticas de IA em grupo:</p>
       <ul>
@@ -1282,14 +1378,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>A IA pode até gerar essa tabela pra vocês depois de você contar do projeto. Isso é uso legítimo: organização.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> trabalho em grupo sobre Segunda Guerra. Um pesquisa causas, outro consequências, outro personagens, outro monta apresentação. Cada um usa IA na sua parte e no fim juntam. Uma pessoa lê tudo pra unificar o tom.</p>
       <p><b>Exemplo 2:</b> grupo cria um jornal escolar. IA ajuda a gerar imagem de capa, corrigir gramática e sugerir manchetes. O conteúdo é escrito pelos alunos. No expediente, cita-se o uso da IA nas ilustrações.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Somos [numero] pessoas fazendo um trabalho sobre [tema], com prazo de [X dias]. Nos ajuda a montar uma tabela de divisao de tarefas com 4 colunas: tarefa, responsavel (deixa em branco pra gente preencher), prazo, como IA pode ajudar nessa tarefa. Sugere [X] tarefas.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: com um trabalho real (ou fictício), monte um "grupo" de 3-4 pessoas.</li>
         <li>Passo 2: use o prompt acima pra gerar a tabela.</li>
@@ -1299,11 +1395,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faz uma "retrospectiva" do último trabalho em grupo que você fez sem IA. Escreve como seria com IA e onde daria pra economizar tempo sem tirar aprendizado de ninguém.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Você já foi na situação de "só um trabalha no grupo"? Como a IA pode piorar isso? Como pode melhorar? Que regra você levaria pro próximo trabalho?</p>
     </div>
 
@@ -1316,7 +1412,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 25 · 1h</span><h3>Apresentações e cartazes</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> montar uma apresentação de slides ou um cartaz escolar usando IA pra estruturar e gerar visuais.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Apresentação boa não é slide bonito. É mensagem clara com apoio visual. Muita gente enche slide de texto e lê pra plateia. Isso é ruim. Slide serve pra reforçar, não pra ser lido. Você é quem apresenta, não o slide.</p>
       <p>Estrutura clássica de apresentação de 5-10 minutos:</p>
       <ul>
@@ -1338,14 +1434,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Cartazes escolares seguem lógica similar: título forte, imagem marcante, poucos textos, uma pergunta que provoca. Ninguém para pra ler cartaz cheio de letra.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> apresentação de 5 minutos sobre "por que a Terra tem estações". 8 slides, cada um com 3-4 palavras + 1 imagem. Notas escritas embaixo pro apresentador saber o que dizer.</p>
       <p><b>Exemplo 2:</b> cartaz da campanha de reciclagem da escola. Título "3 gestos que salvam". Uma imagem grande no centro. Três ícones com uma frase de 5 palavras cada. Nome da campanha embaixo.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vou apresentar sobre [tema] em [X minutos] pra [publico, ex: colegas de sala]. Me da o esqueleto em [numero] slides. Para cada slide: titulo curto (max 5 palavras), 3 bullets curtos (max 8 palavras cada), sugestao de imagem em 1 frase, e notas do apresentador em 2 frases.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um tema pra apresentar (real ou hipotético).</li>
         <li>Passo 2: use o prompt acima pra gerar a estrutura.</li>
@@ -1355,11 +1451,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Faz duas versões da mesma apresentação: uma "cheia de texto" (ruim) e outra "só o essencial" (boa). Mostra pra um adulto e vê qual funciona melhor pra transmitir a mensagem.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Você tende a colocar mais texto no slide do que devia? Por quê? A IA sugeriu bem os visuais? Onde ela errou no tom pra sua idade?</p>
     </div>
 
@@ -1372,7 +1468,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 26 · 1h</span><h3>Mini-feira: mostrar o que criou</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> preparar uma "mini-feira" para apresentar 3 dos seus melhores projetos do curso pra colegas e família.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Uma mini-feira é uma exposição pequena onde cada aluno mostra em 5 minutos os 3 projetos que ele mais gostou de fazer. Pode ser com colegas da turma, com a família em casa, ou os dois. Objetivo: valorizar o que você já produziu, treinar a fala em público e receber feedback.</p>
       <p>Cada um dos 3 projetos precisa de:</p>
       <ul>
@@ -1392,14 +1488,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Como usar IA aqui: pra revisar a frase de "por quê", pra gerar imagem de "capa" pra sua feira, pra ensaiar a apresentação por voz e receber feedback do ritmo. Mas a fala em si é sua. E a reflexão vem de você.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> Ana apresenta: (1) uma história curta que ela escreveu com IA, (2) um cartaz antibullying que ela desenhou, (3) uma aventura textual que ela criou. Fala 1min30 sobre cada uma, mostra o projeto rapidão.</p>
       <p><b>Exemplo 2:</b> Bruno apresenta: (1) seu experimento de ciências (com fotos), (2) um vídeo curto que ele fez com IA, (3) sua apresentação sobre planetas. Encerra com "o que aprendi de mais forte".</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vou fazer uma mini-feira mostrando 3 projetos do meu curso: [projeto 1], [projeto 2], [projeto 3]. Para cada um, me ajuda a escrever: (a) uma frase de "por que escolhi mostrar esse" e (b) uma reflexao curta de "o que aprendi fazendo". Nao escreva no meu lugar; me da 3 opcoes pra eu escolher e ajustar.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolhe 3 projetos favoritos do curso até agora.</li>
         <li>Passo 2: use o prompt acima pra rascunhar frase de "por quê" e reflexão.</li>
@@ -1409,11 +1505,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Grava um vídeo de 5 minutos apresentando os 3 projetos. Publica (com adulto) só pra um grupo restrito (família). Coleta 3 comentários e ajusta pra apresentação ao vivo.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual foi o projeto mais difícil de escolher? Por quê? Qual foi mais fácil? Você aprendeu mais numa criação livre ou numa tarefa dirigida?</p>
     </div>
 
@@ -1433,7 +1529,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 27 · 1h</span><h3>Privacidade: o que NUNCA contar pra IA</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprofundar as regras de privacidade e entender por que dado seu vira produto pra empresas, e como se proteger.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Na aula 4 você aprendeu as regras básicas de segurança. Aqui a gente aprofunda a mais crítica: privacidade. Tudo que você digita numa IA pode ficar guardado pela empresa. Depende do serviço, do plano, das configurações. Regra segura: assuma que fica guardado, e escreva como se fosse ler em voz alta na sala de aula.</p>
       <p>O que nunca conta pra IA:</p>
       <ul>
@@ -1459,14 +1555,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> em vez de "me ajuda a marcar aula de reforço com o professor João da Escola Municipal Silva", você fala "me ajuda a escrever uma mensagem pra marcar aula de reforço com meu professor". Mensagem sai igual, dado protegido.</p>
       <p><b>Exemplo 2:</b> em vez de mandar foto sua pedindo dica de roupa, você descreve por texto: "sou uma pessoa jovem, vou num aniversário casual à tarde, tenho essa camiseta e essa calça...". Dica igual, foto sua não vazou.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vou te contar sobre uma situacao pessoal. Vou trocar nomes e dados especificos por [X], [Y], [Z] pra proteger minha privacidade. Sua tarefa: [me ajudar a resolver X]. Ignora que os dados sao ficticios, foca no que preciso.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: pega uma conversa que você teve com IA nas últimas semanas.</li>
         <li>Passo 2: revisa se tem algum dado pessoal seu ou de terceiros.</li>
@@ -1476,11 +1572,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Pesquisa (com adulto) a política de privacidade da IA que você mais usa. Anota 3 pontos que você não sabia. Discute com o adulto o que fazer com essa informação.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Você já contou pra IA algo que agora acha que não devia? Por que a gente tende a esquecer que tá conversando com um programa? Como criar hábito de anonimizar?</p>
     </div>
 
@@ -1493,7 +1589,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 28 · 1h</span><h3>Pensamento crítico + ética</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> aprender a pensar criticamente sobre respostas da IA e a considerar dilemas éticos que aparecem no uso dela.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Pensamento crítico é a habilidade de não engolir tudo que aparece na tela. Você recebe uma resposta, você para, pensa, questiona, verifica. Ética é a habilidade de decidir o que é certo fazer, mesmo quando ninguém tá vendo. As duas juntas são o que separam quem usa IA de quem é usado por ela.</p>
       <p>5 perguntas pra fazer sempre depois de uma resposta da IA:</p>
       <ul>
@@ -1514,14 +1610,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Regra simples pra decisão ética: se você ficaria envergonhado se todo mundo soubesse o que você fez, provavelmente não devia fazer. Vale pra vida. Vale pra IA.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> IA gera texto que diz "todo cientista concorda que X". Aplica a pergunta 3: tem viés? Você pesquisa e descobre que muitos cientistas discordam. Você não usa a frase.</p>
       <p><b>Exemplo 2:</b> colega pede pra você gerar deepfake do professor fazendo bobagem. Você recusa. Isso desrespeita uma pessoa real e pode virar bullying grave.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Sobre a resposta que voce acabou de dar: (1) me aponte 2 possiveis vieses ou lados nao considerados; (2) me da 2 perspectivas diferentes sobre o tema; (3) me sugere onde eu conferiria isso em fontes de posicoes diferentes.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: escolha um tema polêmico do seu interesse.</li>
         <li>Passo 2: pergunte pra IA e leia a resposta.</li>
@@ -1531,11 +1627,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Discute com um adulto um dos dilemas éticos da lista. Vocês concordam sobre o que é certo? Onde tem espaço cinza? Anota a conclusão da conversa.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual dilema você já viveu no dia a dia com IA? Qual é o mais difícil pra sua turma? Como uma turma pode combinar "regras éticas" que valem pra todo mundo?</p>
     </div>
 
@@ -1548,7 +1644,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 29 · 1h</span><h3>O futuro: IA e as profissões</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> entender como IA muda o mercado de trabalho e refletir sobre que habilidades desenvolver daqui pra frente.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Você tem entre 11 e 13 anos. Vai trabalhar pela primeira vez daqui a uns 6 a 10 anos. O mundo que te espera vai ser muito diferente do atual. Não é pra assustar. É pra você entender e se posicionar.</p>
       <p>Três realidades sobre IA e profissão:</p>
       <ul>
@@ -1570,14 +1666,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>O que estudar? Uma combinação boa: base sólida (matemática, linguagem, história), curiosidade constante (aprender coisa nova toda semana), habilidade de trabalhar com IA (esse curso é o começo) e uma paixão profunda por alguma área (esporte, arte, ciência, negócios). Especialista raso a IA substitui. Especialista profundo com visão, jamais.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> tradutor sem IA leva 2 dias pra um texto grande. Tradutor com IA faz em 3 horas: IA traduz, ele revisa. O ofício não sumiu, ficou 4x mais produtivo. Ganha mais quem entrega mais.</p>
       <p><b>Exemplo 2:</b> ilustrador sem IA fazia 1 arte por dia. Com IA, faz 5 esboços em 1 hora, escolhe, refina. Cliente escolhe entre mais opções e o resultado final é do ilustrador humano.</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Eu tenho [sua idade] anos e curto [seu hobby ou area de interesse]. Se eu quiser transformar isso numa profissao futura, quais sao 5 caminhos possiveis? Para cada um: o que a profissao faz hoje, como IA esta mudando ela, e 3 habilidades que valem estudar agora.</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: liste 3 assuntos que você curte muito.</li>
         <li>Passo 2: use o prompt acima pra cada um.</li>
@@ -1587,11 +1683,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Pergunta pra 3 adultos da sua família como o trabalho deles mudou nos últimos 5 anos. Compara com o que a IA prevê sobre o futuro deles.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Que profissão você achava que ia fazer antes desse curso? Mudou depois de estudar IA? Qual habilidade humana você acha que IA nunca substitui?</p>
     </div>
 
@@ -1604,7 +1700,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
     <div class="aula-head"><span class="aula-num">Aula 30 · 1h</span><h3>Projeto final: meu projeto com IA (apresentação)</h3></div>
     <p class="objetivo"><b>Nesta aula você vai:</b> planejar, criar e apresentar seu projeto final: uma criação sua, feita com IA, que resume o que você aprendeu no curso.</p>
 
-    <div class="bloco"><h4>Conteúdo essencial (para o vídeo 1)</h4>
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
       <p>Chegamos ao projeto final. É a sua obra. Não é um exercício, é uma criação sua de verdade, que resume tudo que você aprendeu em 30 horas. Pode ser qualquer coisa que combine pelo menos 3 habilidades do curso.</p>
       <p>Exemplos de projeto final:</p>
       <ul>
@@ -1627,14 +1723,14 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       <p>Apresentação de 5-8 minutos. Estrutura: o que é o projeto, por que escolheu esse tema, mostra o resultado, mostra os prompts principais, reflete no aprendizado, agradece. Sua última apresentação do curso. Capricha.</p>
     </div>
 
-    <div class="bloco"><h4>Exemplos práticos</h4>
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
       <p><b>Exemplo 1:</b> "O Guia dos Dragões" - livro ilustrado de 8 páginas com espécies inventadas de dragão. Combina história (aula 12), imagem (13 e 17), quadrinhos (14) e revista (14).</p>
       <p><b>Exemplo 2:</b> "SkateCoach IA" - um assistente virtual configurado pra dar dicas de skate. Combina prompt (aula 6), papel (6), tutora (9) e assistente pessoal (23).</p>
     </div>
 
     <div class="prompt"><span class="ptag">Prompt pra usar (com adulto)</span><pre>Vou fazer meu projeto final do curso de IA. Minhas paixoes: [3 coisas]. Habilidades do curso que mais gostei: [3 aulas]. Me da 5 ideias de projeto final que combinem pelo menos 3 dessas habilidades e conversem com minhas paixoes. Para cada uma, uma frase de "por que seria legal".</pre></div>
 
-    <div class="bloco"><h4>Prática guiada (para o vídeo 2)</h4>
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
       <ul>
         <li>Passo 1: usa o prompt acima pra gerar 5 ideias.</li>
         <li>Passo 2: escolhe uma que mais chama sua atenção.</li>
@@ -1644,11 +1740,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
       </ul>
     </div>
 
-    <div class="bloco"><h4>Desafio extra</h4>
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
       <p>Depois de apresentar, publica seu projeto (com adulto) pra família estendida ver. Coleta 5 comentários. Anota o que você faria diferente se recomeçasse.</p>
     </div>
 
-    <div class="bloco"><h4>Para conversar no encontro ao vivo</h4>
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
       <p>Qual é seu projeto? Que aula foi mais útil pra construir? Se você continuasse mais 30 horas de curso, o que gostaria de aprender agora?</p>
     </div>
 
