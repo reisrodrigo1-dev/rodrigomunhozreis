@@ -7,6 +7,112 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "criancas-aprender-vibecoding-metodo-2026",
+    slug: "criancas-aprender-vibecoding-metodo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-02",
+    coverUrl:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+    title: "Criança sabe vibecoding. Falta ensinar com método",
+    excerpt:
+      "Criança de 11 anos já cria mundo no Roblox e mod no Minecraft. Com IA, então, voa. O problema não é acesso. É método. Como ensinar vibecoding pra criança sem virar copy-cola de IA.",
+    content: `## O que criança já faz sozinha (e ninguém fala)
+
+Criança de 11 anos hoje:
+
+- Cria mundo no Roblox com script em Lua.
+- Faz mod no Minecraft.
+- Instala tema no Discord.
+- Aprende comando de terminal em tutorial do YouTube pra hackear o jogo.
+
+Ela já vibecoda. Só não sabe que chamam disso.
+
+O problema não é acesso. Nem falta de curiosidade. É que ela faz sem método. Copia código do primeiro tutorial. Roda. Se der certo, deixa. Se não, apaga. Sem entender.
+
+## O que muda quando a IA entra
+
+Agora com Claude, ChatGPT e Gemini de graça, ela pede "faz um jogo em JavaScript" e recebe 200 linhas de código funcionando. Cola. Roda. Funciona. Feliz.
+
+Aí ela quer mudar uma cor. Pede pra IA. Pede de novo. E de novo. Duas horas depois, desistiu do projeto.
+
+Por quê? Ela nunca entendeu o que estava fazendo.
+
+Vibecoding sem método vira copy-cola. E ninguém aprende copiando.
+
+## Meu take
+
+Passei 3 meses estruturando um curso de 30 horas de vibecoding pra criança e adolescente de 12 a 14 anos. Alinhado com o Documento Orientador do MEC (abril de 2026) e a BNCC de Computação.
+
+Não vim vender curso aqui. Vim passar o método. Se quiser conhecer, tem link no fim.
+
+## Cinco regras que valem pra qualquer criança aprender vibecoding
+
+### 1. Adulto por perto
+Toda vez que for pôr no ar. Toda vez que for usar chave de API. Toda vez que for testar num serviço externo. Não é babaquice. É segurança.
+
+### 2. LER antes de rodar
+Nunca colar código da IA sem entender. Peça pra ela explicar cada linha. Se ela explicar mal, ela também escreveu mal.
+
+### 3. Nunca segredo no código
+Senha, chave de API, token. Nunca dentro de arquivo que vai pro GitHub. Isso é regra de ouro do vibecoding adulto e vale mais ainda pra criança, porque ela ainda não tem calo pra medir o estrago.
+
+### 4. Testar antes de mostrar
+Site que quebra na frente da família é lição inesquecível. Pior: site que quebra na frente do usuário é confiança perdida.
+
+### 5. Guardar versões
+Git básico. Um comando por semana. Depois de 5 semanas ela sabe voltar uma versão quando bagunçou tudo. Habilidade que salva projeto inteiro.
+
+## O Protocolo de 5 Camadas em linguagem de criança
+
+O [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) é meu método pra vibecoding adulto. Pra criança, vira isso:
+
+1. **Entender.** O que a gente quer fazer? Fala em português antes de pedir pra IA.
+2. **Ler.** Ler o que a IA escreveu. Se não entender, pergunta pra ela.
+3. **Blindar.** Segredo no lugar certo. Adulto conferindo.
+4. **Testar.** Clicar no botão. Digitar errado. Ver o que quebra.
+5. **Versionar.** Salvar essa versão com nome. Se quebrar amanhã, volta.
+
+É o mesmo método do adulto. Só que na linguagem certa e no tempo certo.
+
+## O que criança tem que o adulto perde
+
+Coragem de tentar. Zero medo de errar. Curiosidade de verdade. Não tem carreira pra proteger nem currículo pra defender.
+
+Se ela aprender com método desde cedo, aos 18 anos tá construindo produto de verdade. Não precisa fazer bootcamp de 4 meses. Não precisa começar do zero na faculdade.
+
+E aqui mora o ponto que ninguém está vendo: criança que aprende vibecoding com método hoje é fundadora de startup em 2032.
+
+## Por que EAD e não presencial
+
+Escola tradicional vai levar 3 anos pra colocar isso em grade. A criança precisa aprender agora.
+
+EAD misto (vídeo gravado + encontro ao vivo semanal com professor) resolve. Ela assiste no ritmo dela. Semana que vem tira dúvida ao vivo. E o adulto participa do processo, não substitui.
+
+Cada aula tem 25 minutos de vídeo explicando o conceito, 25 minutos de prática guiada e 10 minutos de exercício sem IA (só pra pensar). Um encontro ao vivo por semana. 15 semanas. Termina com projeto no ar. De verdade.
+
+## Vale o ponto
+
+"Isso não vai virar geração que só sabe pedir pra IA?"
+
+Vale o ponto. Vai, se a gente ensinar do jeito errado. Se ensinar do jeito certo, vira geração que sabe pedir bem, LER o que veio, testar e decidir o que fica.
+
+A regra é a mesma da escola tradicional: calculadora não te tornou pior em matemática se você entendeu a conta antes. Calculadora sem entender vira dependência. Com entendimento, vira alavanca.
+
+Vibecoding é a mesma coisa. Depende de quem ensina.
+
+## Conclusão
+
+Criança tem acesso. Tem curiosidade. Tem IA disponível. Só falta método.
+
+Se a gente ensinar direito, criança vibecoda melhor que muita startup. Sem hype. Com fundamento. Com adulto por perto.
+
+Se quiser conhecer o curso EAD 30h de Vibecoding pra crianças e adolescentes 12-14 anos, alinhado ao MEC e à BNCC, [abre a ementa aqui](/cursos/curso-vibecoding-criancas-30h.html). O documento oficial de [alinhamento pedagógico](/cursos/curso-alinhamento-mec-bncc.html) tá aberto também.
+
+A decisão é sua.`,
+  },
+  {
     id: "seu-app-funciona-mas-o-dev-fugiu-do-repo-2026",
     slug: "seu-app-funciona-mas-o-dev-fugiu-do-repo-2026",
     contentVersion: 1,
