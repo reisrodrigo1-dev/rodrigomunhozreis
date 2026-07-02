@@ -107,6 +107,53 @@ export default function AdminCursos() {
         </div>
       </div>
 
+      <div className="mt-4 rounded-2xl border border-purple-700/30 bg-purple-50 p-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-purple-700">EAD 30h · Piloto</p>
+          <p className="mt-1 text-sm font-medium text-ink">
+            Vibecoding do Zero ao Avançado — Crianças/Adolescentes 12-14 (30h · misto)
+          </p>
+          <p className="mt-0.5 text-xs text-muted">
+            30 aulas de 1h em 15 semanas com encontro ao vivo semanal. Criar sites e programas com IA como copiloto, do &quot;Olá, mundo!&quot; ao projeto no ar.
+            Apostilas e e-book sendo gerados agora.
+          </p>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <a
+            href="/cursos/curso-vibecoding-criancas-30h.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary !px-3 !py-1.5 text-xs"
+          >
+            Ementa ↗
+          </a>
+          <a
+            href="/cursos/curso-vibecoding-criancas-30h-aluno.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost !px-3 !py-1.5 text-xs"
+          >
+            Apostila do aluno ↗
+          </a>
+          <a
+            href="/cursos/curso-vibecoding-criancas-30h-professor.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost !px-3 !py-1.5 text-xs"
+          >
+            Apostila do professor ↗
+          </a>
+          <a
+            href="/cursos/curso-vibecoding-criancas-30h-ebook.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary !px-3 !py-1.5 text-xs"
+          >
+            E-book ↗
+          </a>
+        </div>
+      </div>
+
       <div className="mt-6 rounded-2xl border border-amber-deep/30 bg-amber-soft/40 p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
