@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-book Acompanhante · IA do Zero ao Avançado. Crianças 11-13 · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px}
+.skills h4{color:var(--amber-deep);margin-bottom:3px}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">E-book acompanhante · Curso EAD (online) · Crianças (11 a 13 anos)</div>
+<h1>IA do Zero ao Avançado. Crianças 11-13</h1>
+<p class="sub">Um livro pra você levar pra qualquer lugar. Uma versão consumível do curso, pra ler na cama, no ônibus, no fim de semana. Menos "aula", mais "livro".</p>
+<div class="meta"><span>30 aulas</span><span>Guia editorial</span><span>11 a 13 anos</span><span>E-book Acompanhante</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Antes de começar</span><h2>Como usar este livro</h2></div>
+  <p class="mod-resumo">Este livro é seu parceiro fora da aula. Não substitui os vídeos, não é apostila. É pra você reler quando quiser reforçar algo ou só curtir o tema.</p>
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Oi!</span><h3>Três verdades pra levar</h3></div>
+    <p class="objetivo"><b>Nesse livro você vai:</b> reforçar o que aprendeu nas aulas, com prompts pra praticar em casa.</p>
+    <div class="bloco"><h4>Três verdades</h4><ul>
+      <li>A IA é ferramenta, você é quem pensa e decide.</li>
+      <li>Sempre com adulto por perto quando for usar a IA em casa.</li>
+      <li>Se algo não fizer sentido, refaça, pergunte, questione. Nunca aceite de olhos fechados.</li>
+    </ul></div>
+    <div class="bloco"><h4>Como ler esse livro</h4><p>Você pode ler na ordem, do começo ao fim, como um livro qualquer. Pode também abrir na aula que você acabou de assistir e reler a parte editorial pra fixar. Pode até só folhear atrás dos prompts pra guardar. Não tem regra. É seu.</p></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Sempre que aparecer um prompt no livro, teste com um adulto por perto. E use a conta do seu responsável, nunca uma sua.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1 · Semana 1-2</span><h2>Conhecendo a IA (a amiga esperta)</h2></div>
+  <p class="mod-resumo">Aqui você tira o mistério da IA. O que ela é, como aprendeu, como conversar com ela, os erros que ela comete e as regras que valem sempre.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1</span><h3>O que é IA e como ela aprende</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> o que é uma IA, por dentro, e como ela ficou tão esperta lendo texto o tempo todo.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Pensa numa pessoa que passou a vida inteira lendo. Livro, notícia, site, receita de bolo, código de jogo, tudo. Milhões de páginas. Essa pessoa não guardou tudo na cabeça, mas aprendeu a reconhecer padrões: como as palavras se juntam, como as ideias se conectam, como uma história começa e termina. A IA é assim. Ela não decorou a internet. Ela treinou olhando padrão.</p><p>Por isso quando você faz uma pergunta, ela não abre uma gaveta e busca a resposta certinha. Ela adivinha, palavra por palavra, o que provavelmente vem em seguida. Como um jogador de FIFA que, depois de mil partidas, sente pra onde a bola vai antes dela ir. É intuição estatística, não conhecimento. Isso explica tudo: por que ela é boa, e por que ela erra.</p><p>Não é mágica. Não é um cérebro. Não é uma pessoa presa dentro do computador. É software que reconhece padrão. Entender isso já te coloca à frente de metade dos adultos.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>É como o autocompletar do WhatsApp, só que muito mais forte. Você começa "estou indo pra" e ele sugere "casa". A IA faz igual, só que com parágrafos inteiros e assuntos complexos. Mesmo mecanismo, escala gigante.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me explica com uma comparação legal como você funciona, pra uma pessoa de 12 anos entender.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se a IA adivinha a próxima palavra, ela também pode adivinhar errado. Isso não é bug, é como ela funciona. Guarda essa.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>A IA "sabe" as coisas do jeito que você sabe? Ou ela só reconhece padrão? Qual a diferença?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2</span><h3>Conversando com a IA pela primeira vez</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como abrir uma conversa com a IA e conduzir ela do jeito que você quer.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Conversar com IA é meio parecido com mandar mensagem no Discord pra alguém que você nunca viu na vida. A pessoa não te conhece, não sabe do que você tá falando, não sabe qual é a vibe. Ela responde no idioma que você escreve, no tom que você usa, e vai chutando o resto. Se você escreve solto e curto, ela responde solto e curto. Se você chega tipando formal, ela devolve formal.</p><p>O legal é que a conversa não morre no primeiro pedido. Ela lembra do que vocês estão falando (naquela conversa). Você pode pedir uma coisa, ver a resposta, pedir pra mudar, pedir pra continuar. É diálogo, não pergunta única. Isso muda tudo. A galera que só faz uma pergunta e vai embora tá usando 10% do que a ferramenta faz.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Se você pergunta "o que é um vulcão", ela dá uma resposta genérica. Se você pergunta "explica vulcão pra uma pessoa de 12 anos, com uma comparação de videogame", ela dá algo bem diferente. Mesma pergunta, roupagem outra.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Você é meu ajudante de estudos. Me explica de forma bem simples o que é um vulcão, com um exemplo que faça sentido pra alguém que joga Minecraft.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Cada conversa nova é do zero. Se você abre um chat novo, ela esqueceu o que vocês falaram antes. Continua no mesmo se quiser continuidade.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que muda na resposta quando você muda o jeito de perguntar? Testa e vê.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3</span><h3>A IA pode errar (e como perceber)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> que a IA inventa coisa com cara de séria, e como não cair nessa.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Tem uma palavra chique pra quando a IA inventa: alucinação. Nome bonito pra um problema chato. Ela solta uma informação falsa com a mesma segurança que solta uma verdadeira. Cita livro que não existe. Inventa data. Fala que tal jogador marcou gol numa final que nem aconteceu. E fala com aquela voz confiante que te faz acreditar.</p><p>Por que isso acontece? Porque, como você já sabe, ela adivinha a próxima palavra. Se ela não tem certeza, ela chuta bonito. Não existe um botão de "não sei" dentro dela. Ela sempre responde. Sempre. E aí você tem que ser o filtro. Regra simples: se importa (trabalho de escola, decisão real, algo que você vai contar pra alguém), confere em outro lugar. Se é só brincadeira, tanto faz.</p><p>Isso não é motivo pra desconfiar de tudo. É motivo pra usar com um pé atrás saudável, tipo você faz com corrente de WhatsApp que a tia manda. Nem tudo é mentira, nem tudo é verdade. Você decide.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Peça pra IA falar sobre um assunto que você domina de verdade. Seu jogo favorito, seu ídolo, sua cidade. Você vai flagrar erro. Ela erra sempre. Guarda isso: se erra no que você conhece, tá errando no que você não conhece também.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me conta 3 curiosidades sobre [coisa que você conhece bem]. Depois me diz de onde saiu cada informação. Se não tiver certeza, avisa.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Peça sempre a fonte. E confere a fonte. Muitas vezes o link que ela dá nem existe.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se ela errou algo que você conhece, o que ela pode estar errando sobre coisas que você não conhece?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4</span><h3>Regras de ouro: usar IA com segurança</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> as 5 regras que valem toda vez, sem exceção.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Toda ferramenta forte tem regra. Bicicleta pede capacete. Piscina pede boia até você nadar. IA pede cinco regras. Anota. Cola no espelho. Salva no celular. Guarda de qualquer jeito, mas guarda.</p><p>Um: sempre com adulto sabendo. Não é frescura, é proteção. Dois: nunca digita dado pessoal. Nome completo, endereço, escola, foto sua, telefone. Nada disso vai. Nem seu, nem de amigo. Três: sempre checa antes de acreditar. Você já sabe por quê. Quatro: IA erra, você pensa. Ela não substitui seu cérebro, ela ajuda. Cinco: IA é ferramenta, você decide. Sempre você. Ela não manda em nada.</p><p>Se você seguir essas cinco, tá tranquilo. Se você quebrar qualquer uma, o risco chega. E não é que a IA vá te atacar. O risco é vazamento, é confiar demais, é entregar sua cabeça pra máquina. Coisas que a gente não quer.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Se a IA te pedir seu telefone, sua senha ou seu endereço, feche a aba. Fim. Não existe motivo válido pra ela precisar disso.</p></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Sua conta de IA não é sua. É do adulto ou da instituição. Isso é regra do MEC e da LGPD, a lei que protege dados de criança.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual das cinco regras vai ser mais difícil de lembrar no calor do momento?</p></div>
+  </article>
+
+  <div class="skills">
+    <h4>O que esse módulo te entregou</h4>
+    <p>Você agora sabe o que é IA de verdade, sabe conversar com ela, sabe que ela erra e tem as cinco regras na cabeça. É a base. Todo o resto do curso mora em cima disso.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2 · Semana 3-4</span><h2>Aprendendo a pedir (o jeito certo)</h2></div>
+  <p class="mod-resumo">Aqui você aprende que "pedir bem" é uma habilidade. Trate a IA como estagiário: quanto mais claro o pedido, melhor o resultado.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5</span><h3>Pedido bom x pedido ruim</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> por que pedido vago dá resposta ruim, e como um pedido claro muda tudo.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Se você chega no seu amigo e fala "me ajuda", ele responde "com o quê?". A IA não faz isso. Ela chuta uma resposta genérica e te entrega. Aí você lê e pensa "isso não me serviu de nada". A culpa não foi dela. Foi do pedido.</p><p>Comparação simples. "Me ajuda com história" versus "escreve uma história curta sobre um cachorro que descobre que sabe voar, tom engraçado, três parágrafos". O primeiro é vago, dá resposta morna. O segundo é claro, dá resposta boa. Você não precisou de nenhum truque secreto. Só falou o que queria. Isso é 80% da habilidade.</p><p>Pensa assim. Antes de escrever pra IA, pergunta pra você mesmo: se um humano fosse fazer isso pra mim, o que ele precisaria saber? Coloca isso no pedido. Pronto. Você virou o tipo de gente que a IA obedece bem.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Antes de pedir, dá pra escrever num papel: o que eu quero, pra quê, em que tom, em que tamanho. Se os quatro estão claros na sua cabeça, o pedido sai bom.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Escreve uma história de 3 paragrafos sobre um esquilo que abre uma padaria na floresta. Tom bem-humorado, com um problema no meio e uma solução criativa no fim.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Pedido curto nem sempre é ruim. Mas pedido vago sempre é. Curto e claro é ótimo.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se você pedisse "faz meu trabalho de história" pra uma pessoa, que perguntas ela faria? Faz essas perguntas você antes de escrever pra IA.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6</span><h3>Dê um papel e conte os detalhes</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> dois truques que mudam tudo: dar um papel pra IA e encher de detalhe.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Truque um: dá um papel. "Seja um professor de matemática paciente". "Seja um contador de histórias de terror". "Seja um comentarista de futebol animado". A IA muda o tom, muda o vocabulário, muda o jeito de responder. É como pedir pro seu amigo imitar um personagem. Ele entra no clima. A IA também.</p><p>Truque dois: enche de detalhe. Contexto é ouro. Diz pra quem é, com que idade, com que objetivo, em que situação. "Explica gravidade" é um pedido. "Explica gravidade pra minha irmã de 7 anos, que ama Frozen, em uma linguagem bem simples" é outro. A segunda versão chega mais perto do que você imaginou na cabeça.</p><p>Junta os dois e você pega quase tudo que precisa. "Seja um professor de história divertido. Explica a Revolução Francesa pra alguém de 12 anos, com comparações de escola, em três parágrafos curtos." Boom. A resposta chega quase pronta.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Pense num papel que combine com o que você quer. Se você quer aprender, "professor paciente". Se você quer se divertir, "roteirista de comédia". Se você quer resumo direto, "editor sem enrolação". O papel guia todo o resto.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Seja um professor de ciências divertido. Me explica por que o céu é azul, com uma comparação que uma criança de 10 anos entenderia. Sem enrolar.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Papel + detalhe é a receita. Se a resposta ficou meia-boca, na maioria das vezes é porque faltou um dos dois.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual papel funciona melhor pra você? Testa três diferentes na mesma pergunta e compara.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7</span><h3>Peça do seu jeito (formato da resposta)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como escolher o formato da resposta. Você é quem manda.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Muita gente aceita a resposta que veio e pronto. Grande erro. Você pode pedir o formato. Em lista. Em tabela. Em três linhas. Em forma de diálogo. Com emoji. Sem emoji. Com bullet ou em texto corrido. Cada formato serve pra uma coisa.</p><p>Lista é bom pra memorizar. Tabela é bom pra comparar. Texto corrido é bom pra ler tipo livro. Diálogo é bom pra imaginar cena. Emoji é bom pra deixar leve. Você escolhe o formato pensando no que vai fazer com a resposta depois. Isso é controle total sobre a ferramenta.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Mesma pergunta em quatro formatos vira quatro respostas diferentes. Testa "me fala 5 curiosidades sobre a Amazônia" em lista, em tabela, em parágrafo e em quiz. Você vai ver que uma delas gruda mais.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me dá 5 curiosidades sobre a Amazônia. Em forma de lista numerada, com 1 emoji por curiosidade, cada uma em uma linha só.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se você não pedir formato, ela chuta o que acha melhor. Chutar é chutar. Melhor mandar.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Que formato te ajuda mais a lembrar do conteúdo depois?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8</span><h3>Não gostou? Peça de novo (refino)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como corrigir a IA sem começar do zero. Isso se chama refino.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Primeira resposta quase nunca é a melhor. Não porque a IA é ruim, é porque ela chuta o que acha que você quer. Aí você lê e vê o que faltou. "Ficou muito formal". "Errou a parte X". "Tá longo demais". "Falta um exemplo". Você fala isso pra ela e ela ajusta. Isso é refino, e é o segredo de quem tira o melhor da ferramenta.</p><p>Refino é conversa. Você não precisa reescrever tudo. "Refaz mais curto." "Muda o final." "Adiciona um exemplo com esporte." Ela pega o que já tinha e ajusta. Como quem afina violão. Vai chegando no som que você queria, uma corda de cada vez.</p><p>Tem hora que é mais rápido pedir do zero. Se a resposta veio muito fora, sim, recomeça. Mas na maioria das vezes vale refinar. É como editar um vídeo no TikTok. Você não filma tudo de novo, você corta e ajusta.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Uma resposta boa quase sempre vem no segundo ou terceiro refino. Se você para no primeiro, você tá deixando qualidade na mesa.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Refaz mais curto, com tom engraçado, mudando o final. Mantém o começo.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Refino não é implicância, é ofício. Bons resultados vêm de segunda, terceira, quarta tentativa.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que mudou entre a primeira resposta e a última que você aceitou?</p></div>
+  </article>
+
+  <div class="skills">
+    <h4>O que esse módulo te entregou</h4>
+    <p>Você agora pede bem. Sabe dar papel, encher de detalhe, escolher formato e refinar. Isso já te coloca acima de 90% dos adultos que usam IA. Não exagero.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3 · Semana 5-6</span><h2>IA pra aprender e estudar (sem colar)</h2></div>
+  <p class="mod-resumo">Como usar IA pra estudar melhor, tirar dúvida e treinar matéria. Sem terceirizar o pensamento (a parte mais importante do curso).</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9</span><h3>A IA como professora particular</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como usar a IA pra aprender qualquer coisa, no seu ritmo, com paciência infinita.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Sabe aquele momento em que a professora explica e você não pega? Aí você não pergunta de novo porque tem vergonha, ou porque a aula já passou, ou porque a turma tá zoando. A IA resolve isso. Ela não julga sua pergunta. Você pode pedir a mesma explicação 15 vezes, cada uma de um jeito, até cair a ficha. Ela não cansa. Não fica brava. Não te olha torto.</p><p>O segredo é pedir ativo, não passivo. Não é "me explica isso e pronto". É "me explica, depois me faz três perguntas, aí eu respondo, aí você corrige". Você vira aluno de aula particular. E a IA vira a melhor professora particular do mundo pra revisão. Ela cobre qualquer matéria.</p><p>Não substitui a escola. Não substitui um professor humano bom. Mas complementa. Muito. Pra tirar dúvida na hora do dever, pra revisar antes de prova, pra treinar exercício. Nisso ela é imbatível.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Você não precisa entender de primeira. Peça outra comparação. Peça mais simples. Peça com desenho. Peça com música. A IA reformula quantas vezes você quiser. Use isso.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Você é meu professor particular de matemática. Me explica frações com uma comparação divertida. Depois me faz 3 perguntas pra eu treinar. Não me dá a resposta antes de eu tentar.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Peça pra ela não dar a resposta antes de você tentar. Isso faz toda diferença. Sem esse pedido, ela entrega tudo mastigado.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que a IA faz de diferente do professor real? O que só o professor real faz?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10</span><h3>Tirar dúvida do jeito certo (sem colar) + resumir texto</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> a diferença entre "pedir pra IA fazer" e "pedir pra IA ajudar você a entender". Ouro puro.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Aqui mora a decisão mais importante do curso. Você pode pedir pra IA fazer seu trabalho. Ela faz. Rapidinho. Bem escrito. Você entrega e ninguém desconfia. Só que aí você não aprendeu nada. Passou um verão, você esqueceu. Passou um ano, você não sabe pensar sozinho. E aí a vida cobra.</p><p>Ou você pode pedir pra IA te ajudar a entender. Ela explica. Você anota. Você escreve com suas palavras. Ela revisa. Você fica com o conhecimento na cabeça. Demora dez minutos a mais. Vale ouro. Isso não é chatice de professor, é fato: seu cérebro aprende fazendo, não vendo pronto.</p><p>Resumir texto é caso clássico. Você pode pedir "resume esse texto" e copiar. Ou pode pedir "me explica esse texto como se eu tivesse 12 anos, depois eu resumo com minhas palavras e você confere". A segunda opção te transforma em alguém que entende. A primeira te transforma em alguém que copia. Escolha sua.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Se você escreveu o texto e a IA revisou, é seu. Se a IA escreveu e você copiou, não é seu. Simples assim. Seu cérebro sabe a diferença mesmo se a professora não pegar.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me explica o texto abaixo como se eu tivesse 12 anos. Depois me faz 5 perguntas pra eu ver se entendi antes de eu resumir com minhas próprias palavras.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>"Colar da IA" pode até passar batido na escola, mas não passa no vestibular, no trabalho, na vida. Aprender é investimento, colar é dívida.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Por que escrever "com suas palavras" ensina mais do que copiar?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11</span><h3>Praticar matemática e leitura</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como criar exercícios com IA e treinar até dominar. Ela te desafia, você pensa.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Livro didático tem exercício limitado. Você faz o 1 ao 10, cansou, se acabou. Com IA você pede quantos quiser. Peça mais 5 de fração. Ela dá. Peça 3 desafios de interpretação de texto do nível X. Ela cria. Errou o exercício? Ela explica onde foi. Não entendeu a explicação? Ela reformula.</p><p>É simulador de professor infinito. E o mais legal: você pode pedir do jeito que te motiva. "Faz um problema de porcentagem usando tema de futebol". "Faz um exercício de interpretação com trecho de história de terror". A matéria fica menos chata quando o exemplo tem a ver com você.</p><p>Regra da casa continua: peça pra ela não dar resposta antes de você tentar. Se ela entrega tudo pronto, o treino perde a graça e o efeito.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Um treino de 15 minutos com IA rendendo bem vale mais que uma hora de lição chata que você faz no piloto automático. Qualidade acima de quantidade.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me passa 3 problemas de matemática sobre porcentagem, nível 6º ano, usando exemplos com jogos. Espera eu resolver antes de me dar a resposta. Depois corrige com explicação.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Peça pra ela variar o nível. "Começa fácil, depois vai apertando". Vai calibrando a dificuldade com você.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Treinar com IA ajuda mais que só fazer a lista do livro? Por quê?</p></div>
+  </article>
+
+  <div class="skills">
+    <h4>O que esse módulo te entregou</h4>
+    <p>Você agora sabe estudar com IA sem virar colador. Aprende de verdade, treina de verdade, entende de verdade. Escola vira mais leve, você fica mais forte.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4 · Semana 7-8</span><h2>IA pra criar (histórias, imagens, jogos)</h2></div>
+  <p class="mod-resumo">Aqui empolga. Criar história, personagem, imagem, quadrinho, jogo. E uma pergunta séria: o que é criação sua, o que é da IA?</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12</span><h3>Inventar histórias e personagens</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como criar uma história completa usando IA como parceira criativa.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Todo criador de série no Netflix tem um time. Um escreve piada, outro escreve cena de ação, outro pensa no personagem. Ninguém escreve sozinho. IA vira seu time. Você é o showrunner, o cara que decide o rumo. Ela sugere, você escolhe. Ela detalha, você aprova. Ela reescreve, você corta.</p><p>Método simples: você define o coração. Quem é o personagem principal? Qual o tom? Qual o mundo? Só depois disso a IA entra. Se você não define nada, ela chuta genérico e a história vira uma novela ruim. Se você define bem, ela vira turbina do seu cérebro.</p><p>Personagem interessante tem contradição. Herói corajoso mas com medo de altura. Vilão mau mas que ama o cachorro. IA sabe fazer isso se você pedir. Sem esse pedido, ela cospe personagem plano. Chato.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Personagem sem defeito é personagem sem alma. Peça sempre um defeito, uma contradição, um medo. História decola.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Meu personagem principal é [descreve]. Cria 2 personagens secundários com defeitos claros que combinem numa história de aventura. Me dá 3 ideias diferentes de conflito.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se a IA sugere algo bacana mas não é bem sua ideia, muda. Você é o autor. A ideia final é sua ou não vale.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Quem inventou a história: você ou a IA? Onde exatamente entra sua criação?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13</span><h3>A IA que desenha (imagens)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como pedir imagem pra IA e refinar até chegar no que você imaginou.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>IA de imagem é doida. Você escreve palavra, ela devolve figura. Escreve mais palavra, ela ajusta. Você pode gerar em segundo o que ilustrador humano leva horas. Mas atenção: gerar não é ilustrar. É outra habilidade, mais parecida com dirigir do que com pintar.</p><p>Dirigir bem exige vocabulário. Estilo (cartoon, aquarela, pixel art, foto realista). Ângulo (perto, longe, de cima, de baixo). Iluminação (dia, noite, luz de fim de tarde). Cor (paleta fria, quente, vibrante). Ambiente (floresta, cidade, quarto). Cada palavra dessa muda o resultado.</p><p>Se você pede "um dragão", vem um dragão qualquer. Se você pede "dragão vermelho pequeno, estilo Pixar, ângulo de cima, iluminação de manhã, ambiente de montanha nevada, olhos grandes e curiosos", vem uma imagem quase pronta. A diferença tá no vocabulário.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Imagem legal quase nunca sai de primeira. Sai depois de três, quatro ajustes. Refino vale pra imagem também.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Gera uma imagem: dragão pequeno curioso, estilo desenho animado, cores vibrantes, ambiente de floresta mágica, ângulo de perfil, iluminação de fim de tarde.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se você postar a imagem em qualquer lugar, fala que foi gerada por IA. É honestidade básica. Passar imagem de IA como sua é enrolar quem tá te vendo.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Você diria "eu desenhei" ou "eu pedi pra IA desenhar"? Qual descrição é honesta?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14</span><h3>Fazer quadrinhos e revistas</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como montar quadrinho usando IA em cada etapa.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Quadrinho é história + imagem + balão. Três coisas. IA ajuda nas três. Você faz o roteiro geral, ela dá ideia de cena. Você define o visual, ela gera imagem. Você escreve balão, ela sugere frase engraçada. Junta tudo, quadrinho pronto.</p><p>Segredo do quadrinho é o ritmo. Quadro 1 apresenta, quadro 2 desenvolve, quadro 3 tem virada, quadro 4 fecha. Isso vale pra tira de 4 quadros e pra história longa. IA sabe essa estrutura, mas só usa se você pedir. "Quero uma tira de 4 quadros com apresentação, desenvolvimento, virada e fechamento." Ela entrega.</p><p>E o mais divertido: você não precisa saber desenhar pra fazer quadrinho. Nunca precisou de talento pra ideia, e agora não precisa mais de talento pra traço. Sobra o mais importante, que é ter algo pra contar.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Piada boa vira quadrinho bom. Roteiro sem graça vira quadrinho sem graça, mesmo com imagem linda. O texto puxa. Cuida do texto.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me sugere 3 ideias de mini-quadrinho de 4 quadros com o personagem [X], tema [Y]. Cada quadro precisa ter apresentação, desenvolvimento, virada e fechamento. Depois me passa a descrição de imagem que eu peço pra IA de imagem gerar cada quadro.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Personagem tem que ficar igual em todos os quadros. IA de imagem esquece. Segredo é descrever o personagem do mesmo jeito toda vez, palavra por palavra.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual parte do quadrinho foi mais SUA? Onde a IA foi só executora?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15</span><h3>Inventar jogos e brincadeiras</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como criar um jogo com regras claras, usando IA como parceira de brainstorm.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Todo jogo tem quatro coisas. Objetivo (o que precisa acontecer pra ganhar). Regras (o que pode e o que não pode). Componentes (cartas, dados, tabuleiro, o que for). Condição de vitória (quando o jogo acaba). Se falta uma, o jogo desmorona no meio da partida.</p><p>Você tem a ideia central. Tipo "um jogo em que a gente é dono de um restaurante e precisa servir os clientes rápido". Ok, isso é o coração. Agora IA te ajuda a virar jogo de verdade. Ela sugere regras, condições, variações. Você aceita ou rejeita. Ela é ajudante, não é você.</p><p>Depois vem a prova de fogo: testar. Jogo só existe quando alguém joga. Chama um amigo, um irmão, um adulto. Joga. Ajusta. Testa de novo. Jogo bom nasce jogado, não escrito.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Regras testadas na cabeça sempre parecem boas. Regras testadas jogando mostram furos. Sempre teste. Sempre.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Meu jogo é assim: [descreve a ideia central]. Ajuda a definir regras claras pra 2 a 4 jogadores, com condição de vitória bem definida, e sugere 1 variação divertida pra quando a galera cansar da regra normal.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Depois de testar, volta na IA e conta o que não funcionou. Ela ajusta as regras com base no teste real. Iteração é tudo.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que precisou ajustar no seu jogo depois do primeiro teste? Por quê?</p></div>
+  </article>
+
+  <div class="skills">
+    <h4>O que esse módulo te entregou</h4>
+    <p>Você virou criador. História, imagem, quadrinho, jogo. Ferramenta ajuda, mas a alma é sua. Isso é o que separa quem cria de quem só pede.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5 · Semana 9-10</span><h2>IA que vê, ouve e fala (multimodal)</h2></div>
+  <p class="mod-resumo">Vai além do texto. IA que enxerga imagem, gera desenho, conversa por voz. E fecha com um projeto de verdade.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16</span><h3>A IA que enxerga (imagens e fotos)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> que a IA vê imagem. Você mostra, ela descreve, explica, resolve exercício da foto.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Isso muda o jogo. Você tira foto de um exercício de matemática que travou, cola na IA, ela lê e explica passo a passo. Foto de uma planta no quintal, ela identifica. Foto de um bilhete escrito à mão, ela decifra. Ela também vê seu desenho e comenta o que dá pra melhorar. É como colocar óculos numa ferramenta que antes só ouvia.</p><p>Cuidado é o mesmo de sempre. Foto sua ninguém mostra. Foto de amigo, de família, ninguém mostra. Foto de coisa pessoal (documento, cartão, senha em papel) ninguém mostra. Regra clara: se aparece rosto humano ou dado sensível, não vai. Ponto.</p><p>Se você tirar foto de um lugar, esconde a placa da rua, esconde o número da casa. Contexto vazado é problema. Não é paranoia, é hábito bom.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Foto de exercício da lousa é ouro pra estudo. Mas confere sempre a resolução que ela deu. Ela lê a foto e resolve, e a leitura dela pode errar um número, uma vírgula. Você é o filtro final.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Analisa essa imagem. Me diz o que você vê e me ajuda a entender. Se for exercício, resolve passo a passo mostrando o raciocínio.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Nada de foto de pessoa. Nada de foto de documento. Nada de foto de casa por fora. Se bateu dúvida, não posta.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se ela vê tudo que você mostra, o que você definitivamente não vai mostrar? Faça uma lista mental.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17</span><h3>A IA que faz desenhos pra você</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> aprofundamento na aula 13. Estilo, ângulo, composição, iluminação, cor. Vira diretor de arte.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Você já sabe pedir imagem simples. Agora vem o refinamento. Cada palavra técnica que você adiciona muda o clima. Aquarela é uma coisa, pixel art é outra. Retrato é uma coisa, cena de ação é outra. Iluminação natural é uma coisa, luz dramática é outra. Isso é vocabulário de artista, e agora você tem acesso.</p><p>Um truque bacana: pensa em referência. "Estilo Studio Ghibli". "Estilo cartoon do Cartoon Network dos anos 2000". "Estilo pixel art de jogo de Super Nintendo". A IA conhece essas referências e usa como bússola. Fica mais próximo do que você imaginou.</p><p>Outro truque: gera três variações da mesma ideia com estilos diferentes. Uma aquarela, uma cartoon, uma realista. Compara. Vê qual bate com o clima que você queria. É estúdio de arte no computador, e você é o diretor.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Não sabe qual estilo escolher? Gera em três estilos diferentes. O olho decide. Não fica tentando escolher no vazio.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Gera uma imagem: minha cidade num mundo mágico, estilo aquarela, ângulo de cima, iluminação de fim de tarde, cores quentes, com detalhes de vegetação exagerados.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se você quer usar a imagem em algum lugar público (perfil, trabalho, apresentação), fala que foi gerada por IA. Sempre. É código de conduta básico agora.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual estilo combinou mais com a imagem que você tinha na cabeça? Por quê?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18</span><h3>A IA que conversa por voz</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como conversar em voz alta com a IA. Ela ouve, entende e responde falando.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Digitar é uma coisa. Falar é outra. IA por voz muda o jogo em três coisas. Uma: prática de inglês. Você fala, ela ouve, ela corrige pronúncia, ela responde. É professor particular de idioma no bolso. Duas: pensar em voz alta. Você fala solto o que tá na cabeça, ela ajuda a organizar. Bom pra quando tá bagunçado. Três: fazer outra coisa enquanto conversa. Você lava louça e conversa. Você caminha e conversa. Mãos livres, cérebro livre.</p><p>Detalhe importante: conversa por voz parece mais íntima. Você fala e ela responde na hora, com voz humana quase. Isso engana. Não é uma amiga. É software. Você não conta segredo, não desabafa problema pessoal, não trata como terapia. Ela não guarda segredo, ela guarda dado.</p><p>Prática de inglês nela é subestimada. Pede pra ela falar devagar, corrigir com carinho, dar exemplo. Em duas semanas de 10 minutos por dia você sente diferença na pronúncia. É de graça, é agora.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Conversa por voz não é confissionário. Se você não falaria com um estranho no ônibus, não fala com IA por voz também.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vamos praticar inglês. Você fala em inglês devagar, eu respondo, e você corrige minha pronúncia com carinho e paciência. Fica no tema comida.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Voz é conveniente, mas texto é mais controlado. Pra assunto sério, prefira texto. Voz é pra prática e agilidade.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Foi mais fácil conversar por voz ou por texto? Em que situação cada um funciona melhor?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19</span><h3>Mini-projeto: cartão ou pôster com IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como juntar tudo que aprendeu num projeto completo, do começo ao fim.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Chegou a hora de juntar o time. Você já sabe pedir texto, gerar imagem, refinar, escolher formato. Agora você usa tudo pra fazer uma coisa de verdade. Cartão de aniversário pra alguém que você gosta. Pôster de campanha sobre um tema que te importa. Capa de trabalho de escola. Escolhe uma.</p><p>Processo: pensa no objetivo (pra quem, pra quê). Escreve a mensagem (curta, direta, com sentimento). Gera a imagem que combina (estilo, cor, cena). Junta os dois num documento simples (Word, Canva, PowerPoint, o que tiver). Salva. Manda. Ou imprime. Ou posta.</p><p>Não precisa ficar perfeito. Precisa ficar seu. Tem alma sua, texto seu, escolha sua. Isso é o que separa um projeto gerado no piloto automático de um projeto que carrega você dentro.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Cartão de aniversário feito por você pra sua mãe vale mais que qualquer cartão comprado. Mesmo se a imagem foi da IA, o gesto é seu. E ela sabe.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me ajuda a fazer um pôster sobre [tema]. Primeiro sugere 3 mensagens curtas com sentimento. Depois descreve a imagem que combina com cada uma. Escolhe a melhor combinação e me diz por quê.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se for imprimir, gera imagem grande (alta resolução). Se for só pra tela, tamanho normal serve. Confere isso antes de mandar.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>O que ficou mais bonito no seu projeto: o texto, a imagem, ou a combinação? Por quê?</p></div>
+  </article>
+
+  <div class="skills">
+    <h4>O que esse módulo te entregou</h4>
+    <p>Você virou multimodal. Trabalha com texto, imagem e voz. Junta tudo em projeto de verdade. Fica esperto: você já tá fazendo coisa que adulto do trabalho paga pra alguém fazer.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6 · Semana 11-12</span><h2>IA exploradora (pesquisa com pensamento crítico)</h2></div>
+  <p class="mod-resumo">Pesquisar com IA sem cair em invenção. Aqui entra o principal: atitude crítica diante da informação.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20</span><h3>Pesquisar checando se é verdade</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como pesquisar com IA e ter um método pra confirmar se é confiável.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>IA responde qualquer pergunta. Isso é maravilhoso e é perigoso. Maravilhoso porque você não fica travado. Perigoso porque nem toda resposta é verdade. E como você já sabe, ela responde com cara de certeza mesmo quando chuta.</p><p>Método simples de quatro passos. Um: peça a informação. Dois: peça a fonte. Três: abra a fonte pra conferir. Quatro: busque uma segunda fonte, de outro lugar, que confirme. Se as duas fontes batem, você tá seguro. Se só uma fala aquilo, desconfie. Se a fonte não existe, ela alucinou.</p><p>Isso parece trabalhoso. É. Mas é o que separa quem sabe pesquisar de quem repassa besteira. E vou te contar um segredo: quem faz isso desde os 12 anos vira adulto que a galera confia. Porque não fala bobagem. Vale investir a paciência agora.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Se a IA te disse que fulano nasceu em 1975 e a Wikipedia fala 1976, confia na Wikipedia. Mesmo assim, dá uma checada num terceiro lugar. Duas fontes concordantes valem mais que uma só, mesmo se a fonte única for a IA.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me responde [pergunta]. Depois me dá 2 fontes de onde essa informação sai. Não inventa fonte. Se você não tem certeza, avisa que não tem certeza.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Fonte que não abre é fonte inventada. Se o link dá 404, a IA sonhou. Confere sempre.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Alguma vez a IA inventou fonte pra você? Como você percebeu?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21</span><h3>Descobrir curiosidades e montar trabalho de escola</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como usar IA em trabalho real da escola. Sem colar, sem virar cópia.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Trabalho de escola é onde 90% da galera cai na tentação de colar da IA. Faz sentido, a pressão é grande, o prazo aperta, a IA entrega em segundo. Mas colar mata o aprendizado. E, cada vez mais, mata a nota também: as escolas estão treinando pra pegar. E olho: você mesmo sabe quando colou. Isso incomoda.</p><p>Fluxo ético: um, IA te ajuda a entender o tema. Dois, você toma nota do que aprendeu, no seu caderno, com suas palavras. Três, você escreve o trabalho olhando as suas notas, não a resposta da IA. Quatro, você pede pra IA revisar seu texto, dando dicas de melhoria. Você aplica as dicas. Fim.</p><p>Nota final: quando você escreve com suas palavras, a professora percebe. Fica sua a marca. Voz sua, ritmo seu, imperfeição sua. Isso vale mais que texto perfeito de IA. Todo mundo já leu texto de IA. É reconhecível. Sua voz não é.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Texto sem imperfeição, sem hesitação, sem vírgula fora do lugar, sem opinião pessoal parece de IA. Texto seu tem alma humana. Deixa a alma. Ela é o seu diferencial.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou escrever um trabalho sobre [tema]. Me explica o assunto, me faz perguntas pra eu ter certeza que entendi, e SÓ DEPOIS me ajuda a organizar minha estrutura. Não escreve o trabalho por mim.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Depois que você escrever, cole seu texto na IA e peça: "revisa o que eu escrevi, aponta o que dá pra melhorar, mas não reescreve por mim". Você aplica. É seu, com melhoria.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Por que escrever "com suas palavras" ajuda seu cérebro mais que copiar?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22</span><h3>Parceira de projeto de ciências</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como planejar um projeto de ciências com IA como parceira: hipótese, experimento, análise, conclusão.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Cientista trabalha com método. Cinco passos: pergunta, hipótese, experimento, observação, conclusão. Isso vale pra Nobel de Física e vale pra você medir se a planta cresce mais com música. Método é o mesmo. IA ajuda em cada passo, mas não substitui a observação. Isso ela não faz. Você é os olhos.</p><p>Hipótese é o palpite educado. "Eu acho que se eu regar mais, a planta cresce mais rápido". Simples. Aí você testa. Duas plantinhas, uma regada mais, outra regada normal. Duas semanas. Observa. Anota. Conclui. IA ajuda a montar hipótese, listar material, sugerir como observar, organizar conclusão. Ela é ótima nisso.</p><p>Detalhe crucial: ciência de verdade adora quando a hipótese dá errado. Se você previu uma coisa e aconteceu outra, você aprendeu. Isso é ganho, não é fracasso. Cientista pequeno é o que fica bravo quando o experimento não confirma. Cientista grande é o que muda de ideia com evidência.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Experimento que "deu errado" é o que ensina mais. Se sua previsão bateu, você confirmou. Se não bateu, você descobriu algo novo. Os dois casos são vitória.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Quero fazer um mini-experimento sobre [tema] em casa, com material simples e seguro. Me ajuda a criar hipótese, listar material seguro, montar procedimento passo a passo e definir como vou observar e anotar os resultados.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Experimento em casa: sempre com adulto. Nada de fogo, nada de produto de limpeza, nada de coisa afiada sem supervisão. Ciência boa é ciência segura.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se sua hipótese não bater com o resultado, o que isso te ensina?</p></div>
+  </article>
+
+  <div class="skills">
+    <h4>O que esse módulo te entregou</h4>
+    <p>Você virou pesquisador com método. Não engole informação, não copia, não repete besteira. Isso é o que vai te separar da maioria pela vida inteira.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7 · Semana 13-14</span><h2>Criando coisas legais (projetos reais)</h2></div>
+  <p class="mod-resumo">Você já sabe pedir bem. Agora aplica em projeto de verdade: assistente pessoal, tarefa, projeto em grupo, apresentação.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23</span><h3>Assistente pessoal e ajuda em tarefas chatas</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como montar um "assistente" que te ajuda em coisa repetitiva do dia a dia.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Toda vida tem parte chata. Organizar mochila. Lembrar prazo. Escrever mensagem que você tem preguiça de pensar. Fazer resumo do que rolou na semana. Tarefas repetitivas que não te desafiam mas comem tempo. IA é boa nisso. Delegue a chatice, guarde o cérebro pra coisa boa.</p><p>Truque: salva prompts que você usa sempre. Cria um "chat" fixo pra estudos, outro pra organização, outro pra escrita. Cada chat com um contexto. "Você é meu assistente de organização. Sempre me pergunta o que ficou pra trás antes de sugerir plano de amanhã." Aí você abre e já tá pronto. Não precisa reexplicar toda vez.</p><p>Detalhe: você não vira robô que só usa IA pra tudo. Você usa nas tarefas certas. Pra decidir o que estudar, seu cérebro. Pra organizar o cronograma, IA. Pra escrever a redação, seu cérebro. Pra revisar a ortografia, IA. Divide o trabalho de forma esperta.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Prompt que você usa toda semana, salva. Prompt que você usa toda hora, deixa aberto. Poupa tempo, poupa cabeça, sobra energia pro que importa.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Você é meu assistente de organização escolar. Toda vez que eu abrir esse chat, me pergunta o que ficou pra trás essa semana. Depois me ajuda a listar tarefas por urgência.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Não delegue pra IA o que te faz crescer. Delegue o que te frustra sem te ensinar nada.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual tarefa chata do seu dia poderia virar assistente amanhã?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24</span><h3>A IA num projeto em grupo</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como usar IA em grupo de forma que todo mundo contribua. Sem virar "aquele que mandou a IA fazer".</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Trabalho em grupo tem uma tradição chata: um faz tudo, o resto assina. Com IA isso pode virar epidemia se você não tomar cuidado. Um manda a IA fazer, cola no documento, todos assinam. Ninguém aprendeu, ninguém contribuiu, todos entregam.</p><p>Regra pra grupo com IA: primeiro divide papel de verdade. Um cuida da introdução, outro do desenvolvimento, outro da conclusão. Cada um usa IA pra sua parte. Cada um traz sua parte pro grupo. Grupo revisa junto, discute junto, fecha junto. IA acelera cada pedaço, colaboração continua sendo humana.</p><p>Sinal de alerta: se no dia da entrega você não sabe o conteúdo, você foi passageiro do trabalho. Isso é ruim. Trabalho bom é aquele em que qualquer um do grupo consegue defender qualquer parte. Isso só acontece se todo mundo participou de verdade.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Regra simples: se você não consegue explicar a sua parte de cabeça, você não fez a sua parte. Voltar e fazer.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Nosso projeto de grupo é sobre [tema]. Somos [N] pessoas. Sugere como dividir tarefas de forma justa, com uma tarefa clara pra cada um. Cada pessoa tem que ter algo que ela precise pensar por conta.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se o grupo combinar de usar IA, todo mundo tem que saber. Não vale um mandar a IA fazer sem falar. Isso é jogo sujo.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Como garantir que cada um do grupo contribuiu de verdade, não só uma pessoa mandou a IA?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25</span><h3>Apresentações e cartazes</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como usar IA pra montar apresentação com estrutura profissional.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Apresentação boa tem cara de fácil. Não é. Tem estrutura invisível. Capa. Objetivo. Três a cinco pontos principais. Exemplo pra cada ponto. Fechamento com uma frase que gruda. Você precisa dessa estrutura ou vira aula chata.</p><p>IA sabe montar essa estrutura em segundo. Você fala o tema, ela devolve esqueleto de cinco slides. Você olha, ajusta, edita. Fala do seu jeito. Coloca sua vibe. Ela dá o osso, você põe a carne. Trabalho fica em 20 minutos em vez de duas horas.</p><p>Regra de ouro da apresentação: menos texto no slide, mais texto na sua boca. Slide não é apostila. Slide é apoio visual. Quem lê o slide inteiro em voz alta perde a plateia em 15 segundos. Você fala, o slide ilustra. IA te ajuda a resumir o texto pra caber pouco, deixando o resto pra você contar.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Se o slide tem mais de cinco linhas de texto, tira metade. Se tem menos de três, adiciona um exemplo. Meio termo é o certo.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou fazer uma apresentação de 5 slides sobre [tema] pra minha turma. Me sugere estrutura (título de cada slide) e um texto bem curto pra cada, no máximo 3 linhas. Sem enrolar.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Ensaia em voz alta antes. Se você trava, o slide tá pesado. Aliviar o slide, treinar a fala. Isso conserta 90% dos problemas.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se você apresentasse amanhã, o que ainda falta pra ficar seu?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26</span><h3>Mini-feira: mostrar o que criou</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como preparar suas três melhores criações num "portfólio pessoal".</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Portfólio é onde você mostra o que sabe fazer. Adulto tem portfólio pra conseguir trabalho. Estudante tem portfólio pra entrar em universidade boa. Criança de 12 tem portfólio porque quer? Porque começa cedo o hábito de guardar o que fez. Escolhe três coisas suas do curso e monta.</p><p>Regra do portfólio: honestidade. Ao lado de cada peça, você escreve o que você fez e onde a IA ajudou. Uma frase. "Roteiro meu, imagem gerada por IA". "Ideia minha, texto reescrito com ajuda da IA". "100% meu". Isso constrói credibilidade. Ninguém confia em quem esconde ajuda.</p><p>E olha só. Se você já monta portfólio aos 12 anos, aos 18 você tem cinco anos de histórico. Isso é impressionante. Universidade olha isso. Bolsa olha isso. Estágio olha isso. Investimento pequeno agora, retorno gigante depois.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Portfólio bom tem menos peças e melhores. Três criações com qualidade valem mais que dez feitas nas coxas. Curadoria é habilidade.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me ajuda a escrever uma legenda pra cada uma dessas 3 criações que eu descrevo. Uma frase curta explicando o que eu fiz de verdade e onde a IA ajudou. Sem enrolar, sem hype.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Salva teu portfólio num lugar seguro. Google Drive do adulto responsável, pendrive, o que for. Perder criação boa dói.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Qual das três criações mais representa você? Por quê?</p></div>
+  </article>
+
+  <div class="skills">
+    <h4>O que esse módulo te entregou</h4>
+    <p>Você virou executor. Faz projeto, entrega apresentação, trabalha em grupo, monta portfólio. Já dá pra chamar de profissional em treinamento. Sério.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8 · Semana 15</span><h2>Usar IA do jeito certo (responsabilidade e projeto final)</h2></div>
+  <p class="mod-resumo">Fecha o curso com o tema mais importante: privacidade, pensamento crítico, ética, futuro. E o projeto final.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27</span><h3>Privacidade: o que NUNCA contar pra IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> clareza absoluta sobre o que é dado pessoal e o que você faz com cada tipo.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Lista curta pra decorar. Dado pessoal é: nome completo, endereço, nome da escola, telefone, foto sua ou de gente próxima, senha, número de documento, CPF, RG, cartão, dados bancários da família. Isso nunca vai pra IA. Não é assunto de conversa nem em brincadeira. Isso é lei (LGPD, a que protege dados de brasileiro, e ECA Digital, a que protege criança).</p><p>Por quê? Porque IA guarda o que você digita. Empresa que fez a IA pode olhar. Vazamento acontece. Golpista existe. Não é paranoia, é higiene digital. Você não escreve senha do banco em papel no lixão da rua. Não escreve dado pessoal em IA também.</p><p>Truque de ouro: quando você quer testar algo pessoal na IA, usa dado inventado. Em vez do seu endereço, "Rua das Flores, 100". Em vez do seu nome completo, só primeiro nome ou nome fictício. Em vez da sua escola, "Escola X". IA responde igual, você fica seguro. Custo zero.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Se aparecer dúvida se pode contar ou não, resposta padrão é: não conte. Vale pra qualquer situação. Se depois um adulto autorizar, ok. Antes, não.</p></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se um amigo pedir pra você digitar o dado pessoal dele na IA "só pra brincar", você fala não. Amigo bom entende. Se ele não entende, ele tá errado, não você.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Alguém já pediu pra você digitar dado pessoal na IA? Como você reagiu ou reagiria agora?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28</span><h3>Pensamento crítico + ética</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como duvidar da IA sem virar paranoico. Como usar sem virar dependente.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Duas armadilhas cercam a galera que começa a usar IA. Uma é acreditar em tudo. "A IA disse, então é verdade." Não é. Você já sabe disso. A outra armadilha é a inversa: achar que a IA vai substituir você. "Pra que estudar se a IA sabe?" Esse pensamento é veneno. IA sabe padrão, você sabe pensar. Coisa diferente. Você continua tendo que treinar seu cérebro.</p><p>Caminho do meio: usar com critério. Você é o piloto, ela é o co-piloto. Ela sugere rota, você aceita ou nega. Ela dá informação, você confere. Ela cria opção, você escolhe. Nunca troca de lugar. Se um dia você se pega falando "não sei, deixa a IA decidir", pisa no freio. Isso é entregar sua cabeça.</p><p>Ética entra aqui também. Não usa IA pra prejudicar ninguém. Não gera imagem de outra pessoa sem ela saber. Não escreve mensagem pra enganar. Não posta como sua uma criação que foi da IA. Não zoa ninguém com fake gerada. A régua é a mesma da vida real: se não faria na cara do outro, não faz com IA no meio.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>IA é ferramenta. Ferramenta serve pra construir ou pra destruir. Escolha vem da mão de quem segura. Sua mão. Suas escolhas.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me apresenta 2 lados diferentes sobre [assunto polêmico da idade]. Depois me pergunta qual eu concordo mais e por quê. Não me diz qual é a sua opinião.</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Se a IA te desse outra opinião, você mudaria de ideia? Se sim, é sinal de que você tá dependendo demais. Sua opinião vem de você.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Que decisão sua você jamais deixaria a IA decidir por você? Por quê?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29</span><h3>O futuro: IA e as profissões</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como a IA vai mudar o mundo do trabalho quando você for adulto. Sem medo, com preparo.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Você tem 11, 12, 13 anos. Vai trabalhar em dez anos. O mundo do trabalho de 2035 vai parecer com o de agora? Não. Muitas profissões vão mudar de cara. Algumas vão morrer. Outras vão nascer. Isso já aconteceu antes: sua bisavó não sabia o que era programador de aplicativo. Vai acontecer com você também.</p><p>Coisa boa: habilidades humanas continuam valendo. Saber pensar. Saber criar. Saber decidir. Saber cuidar. Saber conviver. Saber liderar. Saber falar em público. Saber vender uma ideia. Nada disso IA substitui. Se você desenvolver isso agora, você tá blindado. Qualquer profissão do futuro precisa de humano bom nessas coisas.</p><p>Coisa que muda: rotina, execução, tarefa repetitiva. Isso IA faz melhor. Então esquece a ideia de "vou ser adulto que faz coisa mecânica no computador". Isso IA come. Sua carreira vai ser em cima do que só você faz. Pensamento único, empatia real, criatividade sua. É pra lá que você mira.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Melhor profissão do futuro não é a que "IA não pega". É a que junta você e IA como time e vira algo que ninguém sozinho conseguiria. Aposta nisso.</p></div>
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me fala sobre a profissão [X]. O que essa profissão faz hoje, o que a IA já mudou nela, e o que vai continuar sendo tarefa humana nos próximos 10 anos. Onde tá a oportunidade pra quem tá começando agora?</pre></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Não escolhe carreira "porque é o futuro". Escolhe porque acende algo em você. Depois usa IA pra virar dos melhores nela.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Que habilidade humana você acha que a IA nunca vai substituir? Por quê?</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30</span><h3>Projeto final: meu projeto com IA (apresentação)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como planejar, executar e apresentar um projeto próprio. A prova real do que aprendeu.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Chegou a hora. Você viu 29 aulas. Testou prompt, criou imagem, escreveu história, montou apresentação, pesquisou com método. Agora junta tudo num projeto seu. Escolhe um problema ou tema que te acende de verdade. Não escolhe pelo que "vai render nota". Escolhe pelo que você faria de bom grado num sábado à tarde.</p><p>Passo a passo. Um: escolhe o tema. Dois: usa IA pra pesquisar, criar, organizar. Três: monta a entrega (apresentação, cartaz, história, jogo, e-book, o que for). Quatro: prepara dois minutos de fala sobre o que fez e o que aprendeu. Cinco: apresenta. Seis: escuta feedback. Sete: guarda o projeto no portfólio.</p><p>Não precisa ser gigante. Precisa ser inteiro. Do começo ao fim. Todo o processo. Isso mostra maturidade. Você não é mais quem chegou na aula 1. Você virou alguém que trabalha com IA sem virar refém. Isso é mais raro do que parece. Guarda essa consciência.</p></div>
+    <div class="bloco"><h4>Um exemplo pra guardar</h4><p>Projeto final não é fim do curso, é começo de uma prática. A partir daqui você já sabe como se vira. Continua fazendo. Sempre.</p></div>
+    <div class="skills"><h4>Fica esperto</h4><p>Guarda o projeto final com carinho. Ele é a foto do que você sabia fazer aos 12 anos. Vai ser divertido reler aos 20.</p></div>
+    <div class="pratica"><h4>Pergunte pra pensar</h4><p>Se você tivesse que resumir o curso em uma frase pra um amigo, o que você diria?</p></div>
+  </article>
+
+  <div class="skills">
+    <h4>O que esse módulo te entregou</h4>
+    <p>Você aprendeu a usar IA com responsabilidade. Sabe o que não conta, sabe duvidar sem enlouquecer, pensa no futuro sem medo, entrega projeto de verdade. Fim do curso, começo da vida com IA no seu time.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Chegou aqui</span><h2>O que levar daqui pra frente</h2></div>
+  <p class="mod-resumo">Você terminou o curso e esse livro. Não é fim. É base.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Adiante</span><h3>Um convite pra continuar</h3></div>
+    <p class="objetivo"><b>Guarda esse recado:</b> IA não vai parar de evoluir. Você também não pode parar de treinar.</p>
+    <div class="bloco"><h4>Recado editorial</h4><p>Você chegou até aqui. Isso já te coloca à frente de muito adulto que ainda tem medo de conversar com IA. Você sabe o que é, sabe pedir, sabe duvidar, sabe usar sem perder sua cabeça. Isso é base. Base sólida. Agora vem a parte legal: você continua praticando pela vida.</p><p>A IA de hoje já é diferente da de seis meses atrás. Vai ser diferente de novo em seis meses. Não decora tudo. Decora o princípio. Papel + detalhe + refino + checagem + ética. Isso não muda. Ferramenta muda. Método fica.</p><p>Duas dicas pra frente. Uma: se você curtiu criar coisa com IA, dá uma olhada no curso "Vibecoding pra Crianças". É o próximo nível. Ali você aprende a construir programa, site, app com ajuda da IA. É outra coisa. É legal demais. Duas: qualquer coisa que você for aprender na vida, tenta fazer com IA do lado, do jeito certo. Idioma, esporte, música, mão na massa. Ela acelera tudo se você usar bem.</p></div>
+    <div class="bloco"><h4>Um recado do Rodrigo</h4><p>Você é da geração que cresceu com IA. Não é privilégio, é responsabilidade. A galera que aprende cedo a usar bem essa ferramenta vai construir coisas que hoje ninguém imagina. Você pode ser dessa galera. Depende do que você faz a partir de agora.</p></div>
+    <div class="skills"><h4>Última regra</h4><p>Sua cabeça vale mais que qualquer IA. IA sem você é software chutando palavra. Você sem IA é humano que pensa. Você com IA, do jeito certo, é imparável. Guarda essa e boa jornada.</p></div>
+    <div class="pratica"><h4>Um último exercício</h4><p>Fecha esse livro e conta pra um adulto perto de você, em uma frase, a coisa mais importante que você aprendeu no curso. Se conseguiu falar em uma frase, você aprendeu de verdade.</p></div>
+  </article>
+</section>
+
+</div>
+</body>
+</html>

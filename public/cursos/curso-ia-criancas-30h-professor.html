@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila do Professor · IA do Zero ao Avançado · Crianças 11-13 · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px;margin:13px 0}
+.skills h4{color:var(--amber-deep);margin-bottom:3px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px;margin:13px 0}
+.pratica h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:5px}
+.pratica p{color:var(--ink-soft);font-size:14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Apostila do Professor · Curso EAD (online) · Crianças (11 a 13 anos)</div>
+<h1>IA do Zero ao Avançado. Crianças 11-13</h1>
+<p class="sub">Guia de condução do curso EAD 30h. Roteiro dos 2 vídeos por aula, pauta do encontro ao vivo semanal, gabaritos, dicas de mediação.</p>
+<div class="meta"><span>30 horas</span><span>30 aulas · 1h cada</span><span>15 semanas</span><span>Apostila do Professor</span><span>Mediação MEC + BNCC</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1 · Semana 1-2</span><h2>Conhecendo a IA (a amiga esperta)</h2></div>
+  <p class="mod-resumo">Educador: este é o módulo de entrada. A meta não é ensinar IA a fundo, é abrir a caixa-preta e plantar três hábitos que vão durar o curso todo. Curiosidade (querer entender), pensamento crítico (desconfiar antes de acreditar) e segurança (o que jamais entra na IA). A criança de 11 a 13 anos já tem opinião formada sobre "robô que fala", geralmente vinda de TikTok e YouTube. Seu papel é substituir mito por modelo mental correto: a IA é um programa que prevê a próxima palavra provável, não um oráculo. Reforce em toda aula que o acesso à IA é feito com conta do responsável ou da instituição, nunca da criança. No formato EAD, você grava dois vídeos por aula, mas a mediação humana forte acontece no encontro ao vivo da semana. Nunca terceirize a mediação para o vídeo.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1 · 1h</span><h3>O que é IA e como ela aprende</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança consegue explicar com as próprias palavras o que é uma IA e como ela ficou tão esperta lendo muita coisa.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA de conversa (adulto configura antes)</li>
+      <li>Slide de abertura com o título da aula e o objetivo escrito grande</li>
+      <li>Caderno físico ou digital para a criança anotar 3 pontos</li>
+      <li>Responsável adulto ciente da atividade em casa</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> gancho direto. "Você já reparou que o TikTok parece adivinhar qual vídeo você quer ver? Isso é IA trabalhando. Hoje a gente vai descobrir como ela ficou tão esperta." Mostre o rosto na câmera, tom leve.</li>
+      <li><b>3-15 min · Conceito principal:</b> IA é um programa que aprendeu lendo muitíssima coisa da internet. Analogia 1: é como você aprendeu português, não decorou dicionário, ouviu muito. Analogia 2: no Minecraft, quando você joga muito, começa a prever o que o Creeper vai fazer. A IA faz o mesmo com palavras, prevê a próxima palavra provável. Analogia 3: TikTok "aprende" o que você curte olhando o que você assiste. Deixe claro o que ela NÃO é: não é uma pessoa, não tem sentimento, não sabe tudo, não busca a verdade, adivinha a palavra mais provável.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada, abra a IA de conversa. Exemplo bem feito: peça o prompt de referência abaixo e mostre a resposta. Exemplo com erro proposital: pergunte algo bem específico e obscuro (nome de uma escola pequena da sua cidade) e mostre a IA inventando com cara de séria. Comente ao vivo: "viu como ela responde com confiança mesmo quando não sabe?".</li>
+      <li><b>22-25 min · Amarração:</b> resumo em 3 pontos, IA aprende com muitos exemplos, IA prevê a próxima palavra, IA erra com cara de certa. Gancho pro vídeo 2, "agora você vai abrir a IA com um adulto e fazer suas 3 primeiras perguntas".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Chame o adulto responsável agora. A conta da IA é dele ou da escola, nunca a sua. Câmera do computador ligada. Bora praticar juntos."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, adulto abre a IA e você digita. Passo 2, faça a primeira pergunta usando o prompt de referência. Pause: "agora pause o vídeo e leia a resposta com o adulto do lado". Passo 3, faça uma segunda pergunta aproveitando o que ela respondeu, algo tipo "explica de outro jeito". Passo 4, faça uma pergunta que você já sabe a resposta (o nome do seu bicho de estimação, o time que você torce) e veja se ela chuta. Passo 5, escreva no caderno 1 frase, "a IA me pareceu esperta em X" e "a IA errou em Y".</li>
+      <li><b>20-25 min · Fechamento:</b> conferência do resultado. "Se você anotou 2 frases no caderno, missão cumprida. Poste no ambiente virtual uma print (sem seu nome, sem dado pessoal) da resposta que mais te surpreendeu."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me explica com uma compara&ccedil;&atilde;o legal como voc&ecirc; funciona, pra uma pessoa de 12 anos entender. Em 4 frases curtas.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Conceito "prever a próxima palavra": use a analogia de completar frase. Você fala "parabéns pra..." e a pessoa completa "você". A IA faz isso o tempo todo, palavra por palavra.</li>
+      <li>Erro comum de compreensão: criança acha que a IA "sabe" como uma pessoa sabe. Corrija sempre: ela reconhece padrões, não entende como a gente entende.</li>
+      <li>Ligação MEC/BNCC: princípio da centralidade humana. A criança pensa, a IA ajuda. Eixo Cultura Digital da BNCC: entender a lógica das ferramentas que usamos.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> escreva no caderno 3 frases, uma explicando o que é IA com suas palavras, uma sobre algo que a IA acertou e uma sobre algo que ela errou ou chutou. <b>Gabarito:</b> não existe resposta única. Critério de sucesso, a criança usa palavras próprias (não copia da IA), cita um exemplo concreto e reconhece uma limitação. Se a criança escreve "IA sabe tudo", volte na próxima aula para desconstruir. Se escreve "IA é um robô com sentimento", também sinalize.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança confunde IA com Google. Diferença simples: Google busca páginas prontas, IA gera texto novo cada vez. Erro típico 2, criança tem medo (viu vídeo de robô assassino). Acolha, mostre que a IA é software, não corpo. Adaptação para criança com dislexia: ofereça o vídeo com legenda, e permita que a resposta do exercício seja gravada em áudio em vez de escrita. Adaptação para criança com déficit de atenção: peça só 1 frase em vez de 3, com marca de tempo (5 min para escrever).</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2 · 1h</span><h3>Conversando com a IA pela primeira vez</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança consegue abrir uma conversa nova com a IA, entender a tela do chat e conduzir uma sequência de 5 perguntas encadeadas.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA (ChatGPT, Gemini ou Claude, configurada pelo adulto)</li>
+      <li>Slide com print da tela do chat sinalizando os 4 lugares principais (nova conversa, campo de digitar, botão enviar, histórico)</li>
+      <li>Folha com o modelo de "sequência de 5 perguntas encadeadas"</li>
+      <li>Responsável adulto ao lado no momento da prática</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Se você já mandou mensagem no WhatsApp, você já sabe metade de conversar com a IA. A outra metade é saber que ela lembra do que você falou antes." Mostre no celular uma conversa comum de WhatsApp, depois mostre a tela do chat da IA.</li>
+      <li><b>3-15 min · Conceito principal:</b> anatomia do chat. Botão "nova conversa" (zera a memória). Campo de texto (você digita aqui). Histórico de conversas (fica salvo). A IA responde no idioma que você escreve, no tom que você escolhe. Ideia central: a IA lembra tudo dentro de uma mesma conversa. Se você abrir outra, ela esquece. Analogia com Roblox: cada partida é uma nova conversa. Se você sai e entra, começa do zero. Explique também que a resposta muda dependendo de como você pede, é como pedir no iFood, quanto mais claro, melhor a entrega.</li>
+      <li><b>15-22 min · Demonstração:</b> na tela, abra uma conversa nova. Exemplo bem feito: pergunte sobre vulcão usando o prompt de referência, receba a resposta, depois pergunte "faz mais curto e com um exemplo do Havaí". Mostre que ela aproveitou o contexto. Exemplo com erro proposital: abra uma conversa NOVA e pergunte "faz mais curto e com um exemplo do Havaí" sem contexto. Ela vai perguntar do que é. Mostre que sem contexto ela não adivinha.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos: nova conversa zera memória, dentro da mesma conversa ela lembra, o jeito de pedir muda a resposta. Gancho pro vídeo 2, "agora você vai conduzir sua própria conversa de 5 perguntas encadeadas".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Peça pro adulto abrir a IA. Câmera ligada. Você vai escolher UM tema que você gosta (jogo, esporte, animal, música) e conduzir uma sequência de 5 perguntas."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva no papel o tema (ex.: Minecraft). Passo 2, pergunta 1, "me explica como o Minecraft foi criado". Pause: "leia a resposta com o adulto e escolha UMA palavra que te chamou atenção". Passo 3, pergunta 2 usando essa palavra, "me explica melhor essa parte de X". Passo 4, pergunta 3, peça um exemplo concreto. Passo 5, pergunta 4, peça pra ela se corrigir se você achar que algo está estranho ("tem certeza que foi em 2009? me confirma"). Passo 6, pergunta 5, peça um resumo do que ela te contou até aqui. Pause em cada passo.</li>
+      <li><b>20-25 min · Fechamento:</b> "Você conduziu uma conversa de verdade. Isso é o começo de saber usar IA. Poste no ambiente virtual em 3 linhas o que descobriu de novo sobre o seu tema."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; meu ajudante de estudos. Me explica de forma simples o que &eacute; um vulc&atilde;o, com um exemplo real. Depois, me faz 1 pergunta pra ver se eu entendi.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Diferença conversa nova x mesma conversa: crítico. Analogia com abrir aba nova no navegador, cada uma esquece a outra.</li>
+      <li>Erro comum: criança abre 5 conversas separadas para 5 perguntas e fica frustrada porque a IA "esqueceu". Ensine a manter uma conversa só.</li>
+      <li>Ligação MEC/BNCC: eixo Mundo Digital, entender a interface e o modelo de interação. Princípio MEC de proteção de dados, nada de nome completo na conversa.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> conduza uma conversa de 5 perguntas encadeadas sobre um tema de interesse, e escreva 3 linhas no ambiente virtual com o que aprendeu de novo. <b>Gabarito:</b> critério de sucesso, as perguntas 2, 3, 4 e 5 fazem referência ao que veio antes (uso das palavras "isso", "essa parte", "o que você falou"). Se todas as 5 perguntas são independentes, a criança não entendeu o modelo. Correção com mão leve: no encontro ao vivo, mostre uma conversa boa e uma ruim lado a lado.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança faz perguntas gigantes de 3 parágrafos. Ensine, uma pergunta por vez, curta. Erro típico 2, criança copia a resposta da IA no exercício. Volte no princípio MEC de não descarregar o pensamento, o exercício é o que ELA entendeu. Adaptação para criança tímida em falar na câmera do encontro ao vivo: aceite resposta por chat. Adaptação para criança sem adulto disponível em casa: registre o horário do encontro ao vivo como janela obrigatória de mediação humana.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3 · 1h</span><h3>A IA pode errar (e como perceber)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança consegue explicar o que é alucinação de IA e aplicar um método de 3 passos para checar se uma resposta é confiável.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Lista pronta de 5 perguntas "pegadinha" (fatos específicos e obscuros sobre a cidade da criança, escola, esporte local)</li>
+      <li>Caderno para anotar acertos e erros</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Alguém já te contou uma mentira com cara de verdade? A IA faz isso o tempo todo, sem saber que está mentindo. Isso tem nome: alucinação." Mostre um exemplo real (um livro que a IA inventou com autor famoso).</li>
+      <li><b>3-15 min · Conceito principal:</b> a IA prevê a próxima palavra provável. Quando ela não sabe, ela CHUTA com confiança porque foi treinada para responder, não para dizer "não sei". Analogia com aluno que está sendo chamado no quadro sem saber a matéria e vai inventando. Analogia Roblox: é como um jogador que blefa que sabe uma rota secreta pra parecer legal. Casos famosos: advogados que citaram processos falsos gerados por IA, IA inventando artigos científicos, IA errando datas de eventos que a criança conhece. Método dos 3 passos para checar: 1, pedir a fonte, 2, abrir a fonte, 3, buscar uma segunda fonte independente.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Exemplo bem feito: pergunte algo geral (capital do Brasil), acerte, comente "isso ela sabe porque apareceu milhões de vezes no treinamento". Exemplo com erro proposital: pergunte "quem foi o primeiro diretor da escola X" (nome de uma escola pequena real). Mostre a IA inventando um nome com data e tudo. Pergunte a fonte, mostre a fonte inventada. Comente ao vivo: "isso é alucinação, e o perigo é que parece verdade".</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, IA alucina quando não sabe, ela responde com cara de séria, a gente checa com o método dos 3 passos. Gancho pro vídeo 2, "agora você vai pegar a IA no flagra".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado, IA aberta. Você vai fazer 3 perguntas sobre coisas que VOCÊ conhece bem, para testar se ela acerta."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha 3 assuntos que você domina (seu bairro, seu esporte favorito, seu jogo). Passo 2, pergunta 1, faça uma pergunta específica ("me conta 3 coisas curiosas sobre o bairro X"). Pause: "leia com o adulto e marque no caderno o que está certo e o que está errado". Passo 3, pergunta 2, peça a fonte da informação. Pause: "abra o link. Ele existe? Fala do que ela disse?". Passo 4, pergunta 3, confronte um erro que você achou, "você disse Y, mas isso está errado, refaz". Veja se ela reconhece.</li>
+      <li><b>20-25 min · Fechamento:</b> "Se você achou pelo menos 1 erro, missão cumprida. Poste no ambiente virtual o erro que você pegou. Isso se chama pensamento crítico, é o que o MEC pede."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me conta 3 curiosidades sobre [algo que voc&ecirc; conhece bem, ex.: bairro, escola, esporte local]. Depois me diz de onde veio essa informa&ccedil;&atilde;o. Se voc&ecirc; n&atilde;o tiver certeza, me avisa.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Alucinação: nome técnico. Reforce que não é maldade da IA, é o modo como ela foi treinada.</li>
+      <li>Erro comum: criança acha que "checar" é perguntar de novo pra IA. Não. Checar é abrir fonte externa (site, livro, adulto de referência).</li>
+      <li>Ligação MEC/BNCC: princípio da centralidade humana e das salvaguardas de aprendizagem. Eixo Cultura Digital, atitude crítica.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> ache pelo menos 1 alucinação da IA sobre algo que você conhece e poste no ambiente virtual explicando o erro. <b>Gabarito:</b> critério de sucesso, a criança consegue apontar especificamente o que está errado e por que ela sabe que está errado. Não aceite "achei estranho" sem justificativa. Se a IA acertou tudo (raro), peça pra criança pedir uma fonte e verificar se a fonte existe.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança fica frustrada e acha que "a IA é ruim". Reenquadre, "ela é uma ferramenta que precisa de quem confere, e essa pessoa é você". Erro típico 2, criança cola no exercício uma resposta genérica ("a IA errou muita coisa"). Peça exemplo específico. Adaptação para criança com ansiedade: reforce que não é um teste de "pegar" a IA, é um exercício de conferir. Adaptação para criança sem repertório específico: sugira temas do universo dela (jogo favorito, animal de estimação).</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4 · 1h</span><h3>Regras de ouro: usar IA com segurança</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança conhece e sabe aplicar as 5 regras de segurança, e reconhece situações onde cada uma vale.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Cartão imprimível ou digital com as 5 regras (para colar perto do computador)</li>
+      <li>Lista de 6 situações-cenário (para o exercício)</li>
+      <li>Responsável adulto ao lado</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Antes de usar IA pra qualquer coisa, existem 5 regras. Sem elas, você se coloca em risco. Com elas, você usa tranquilo o resto da vida." Mostre o cartão das 5 regras na câmera.</li>
+      <li><b>3-15 min · Conceito principal:</b> as 5 regras. Regra 1, sempre com um adulto sabendo. Regra 2, nunca digitar dado pessoal (nome completo, endereço, escola, telefone, foto sua, senha, número de documento). Regra 3, sempre checar antes de acreditar. Regra 4, IA erra, você pensa. Regra 5, IA é ferramenta, você decide. Explique regra por regra com exemplo. Regra 2 merece mais tempo: dê 6 exemplos concretos do que é dado pessoal e 3 do que NÃO é (nome do bicho de estimação, cor favorita, esporte que você gosta). Cite LGPD e ECA Digital sem entrar em jargão: "existe lei que protege crianças na internet".</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada, mostre 3 cenários. Cenário 1, IA pede "me diga seu nome pra personalizar", mostre você respondendo "prefiro não dizer" e a IA continuando normal. Cenário 2, IA sugere algo estranho ("vá conhecer essa pessoa"), mostre você fechando a conversa e chamando um adulto. Cenário 3, criança pediu ajuda no trabalho, a IA respondeu, e você faz o passo de checar a resposta antes de aceitar.</li>
+      <li><b>22-25 min · Amarração:</b> repita as 5 regras em voz alta. "Se você lembrar dessas 5, você usa IA a vida toda com segurança." Gancho pro vídeo 2, "agora você vai treinar essas regras em situações reais".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Pega o cartão das 5 regras e cola perto do computador. Peça pro adulto ficar por perto. Agora a gente vai treinar situações."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, imprima ou anote as 6 situações-cenário. Cenário A, a IA te pediu o número da escola. Cenário B, um amigo te mandou uma foto pra você "colocar na IA". Cenário C, a IA sugeriu que você marcasse encontro com alguém. Cenário D, a IA disse que o professor está errado no exercício. Cenário E, a IA se recusou a responder algo. Cenário F, alguém pediu sua senha da conta de IA. Passo 2, para cada cenário, escreva no caderno qual das 5 regras se aplica e o que você faria. Pause. Passo 3, discuta com o adulto ao lado 2 dos cenários. Passo 4, cole o cartão das 5 regras na parede perto do computador.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual foto do cartão colado (sem mostrar seu rosto ou seu quarto). Isso vale nota."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Vou te fazer uma pergunta e quero que voc&ecirc; me ajude sem me pedir nenhum dado pessoal meu. Meu tema &eacute; [tema seguro, ex.: como jogar melhor no meu jogo].</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Dado pessoal x dado neutro: fundamental. Faça uma lista visual com 6+3 exemplos.</li>
+      <li>Erro comum: criança acha que "dado pessoal" é só nome completo. Amplie: escola, bairro, foto, senha, contatos.</li>
+      <li>Ligação MEC/BNCC: princípio da proteção de dados de crianças e adolescentes (MEC), LGPD, ECA Digital. Eixo Cultura Digital: cidadania.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> para cada uma das 6 situações-cenário, escreva a regra que se aplica e o que você faria. Poste foto do cartão das 5 regras colado. <b>Gabarito:</b> A → regra 2 (não dá informação da escola). B → regra 1 e 2 (chama adulto, não posta foto sem autorização). C → regra 1 (chama adulto imediatamente). D → regra 3 e 4 (checa, decide você). E → regra 5 (respeita, pergunta ao adulto). F → regra 1 (nunca compartilha, avisa adulto). Aceite variações desde que a lógica esteja certa.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança minimiza ("mas é só o nome da escola"). Não negocie a regra 2. Erro típico 2, criança fica com medo excessivo de usar IA. Reenquadre: as regras servem pra você usar TRANQUILO, não pra você ter medo. Adaptação para criança que não tem impressora: aceite o cartão desenhado à mão. Adaptação para criança com dificuldade de leitura: leia as 6 situações em voz alta no vídeo.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 2 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> integrar as 4 aulas gravadas do módulo com mediação humana forte (princípio MEC), consolidar as 5 regras e discutir alucinação com casos reais da turma.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras ligadas, cada criança fala em 1 frase "o que descobri sobre IA essa semana". Warm-up rápido.</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise as 4 aulas em 2 min cada. Abra chat para dúvidas. Foque nos 3 pontos que mais confundem: prever próxima palavra, memória dentro da conversa, e o que é dado pessoal.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> "Detetive da alucinação". Peça um voluntário. Ele sugere um tema específico da vida dele (nome do time do bairro, personagem obscuro de um jogo). Você faz a pergunta pra IA ao vivo. Turma tenta identificar o que está inventado. Repita com 2 voluntários.</li>
+      <li><b>35-50 min · Breakout rooms:</b> divida em duplas ou trios (3 crianças por sala). Cada grupo tem 15 min para: identificar uma situação de risco (cenário) e escrever qual regra se aplica. Adulto por casa é convidado a passar por perto, sem interferir.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada grupo compartilha o cenário. Feche com a frase da semana: "IA é ferramenta, eu sou o piloto". Oriente a semana seguinte: pedido bom x pedido ruim.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms (Zoom, Meet, Teams)</li>
+      <li>Slide com as 5 regras visível na abertura</li>
+      <li>Conta institucional de IA visível pro professor demonstrar</li>
+      <li>Lista pré-preparada de temas obscuros para provocar alucinação ao vivo</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Faixa etária 11-13 costuma resistir a ligar câmera. Combine na primeira aula que câmera aberta é regra do curso, mas fundo pode ser desfocado. Se uma criança fica calada, chame pelo nome com pergunta fechada ("você concorda ou discorda?"). Nas breakouts, entre em cada sala por 2 min para verificar. Convide o responsável a ficar próximo (não dentro), a ideia é presença, não interferência. Se a internet cai, tenha um plano B assíncrono (post no fórum) para não perder a semana.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2 · Semana 3-4</span><h2>Aprendendo a pedir (o jeito certo)</h2></div>
+  <p class="mod-resumo">Educador: aqui a criança descobre que "pedir bem" é uma habilidade que se treina. Trate a IA como estagiário muito rápido: quanto mais claro o pedido, melhor o resultado. Este módulo introduz de forma leve o método P.R.O.M.P.T.E.R., sem nomear o método (que só aparece formalmente no curso avançado). O que interessa aqui é o hábito: papel, contexto, formato, refino. Reforce que "pedir bem" é uma competência de vida, não só de IA. Escrever pedido claro melhora até e-mail e trabalho de escola. Alinhamento MEC: princípio da centralidade humana, a criança pensa o pedido antes de digitar.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5 · 1h</span><h3>Pedido bom x pedido ruim</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança compara dois pedidos (vago e claro) e reescreve 3 pedidos vagos em pedidos claros.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Folha "3 pedidos vagos" pré-preparada para a criança reescrever</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> gancho com iFood. "Se você pedir 'quero comida', o entregador não sabe o que trazer. Se você pedir 'quero pizza grande de calabresa sem cebola', chega o que você quer. Com IA é igual." Mostre 2 prints lado a lado, um pedido vago e um pedido claro, com a resposta muito diferente.</li>
+      <li><b>3-15 min · Conceito principal:</b> pedido vago dá resposta genérica. Pedido claro dá resposta útil. Anatomia de um pedido claro: O QUE você quer (produto), COMO (formato, tamanho, tom), PRA QUEM (público), PRA QUÊ (objetivo). Exemplo antes e depois: "me ajuda com história" x "escreve uma história curta sobre um cachorro que descobre que sabe voar, tom engraçado, 3 parágrafos, pra criança de 10 anos". Analogia com professor de escola: se o exercício é "escreva sobre a Amazônia", o resultado é vago; se é "escreva 1 parágrafo sobre 3 animais da Amazônia com risco de extinção", o resultado é focado. Regra prática: se um humano precisaria te perguntar mais coisa antes de fazer, seu pedido está vago.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Exemplo bem feito: use o prompt de referência do esquilo. Mostre a resposta. Exemplo com erro proposital: peça "escreve uma história". Compare os 2 resultados lado a lado. Aponte 3 diferenças concretas.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, pedido vago = resposta ruim, pedido claro tem O QUE + COMO + PRA QUEM + PRA QUÊ, se precisa perguntar, tá vago. Gancho pro vídeo 2, "agora você vai reescrever 3 pedidos vagos".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Peça pro adulto abrir a IA. Pega a folha dos 3 pedidos vagos. Vamos transformar cada um."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, leia o pedido vago 1 ("me ajuda com história"). Pause: pense em O QUE, COMO, PRA QUEM, PRA QUÊ. Passo 2, reescreva o pedido no papel. Passo 3, envie o vago original pra IA, veja o que sai. Passo 4, envie o claro reescrito, compare os 2. Repita com os pedidos 2 e 3. Passo 5, anote no caderno "o que meu pedido claro tinha que faltava no vago".</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual UM par de pedidos (o vago e o claro) e as respostas. Isso é ouro pro seu portfólio."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Escreve uma hist&oacute;ria de 3 par&aacute;grafos sobre um esquilo que abre uma padaria na floresta. Tom bem-humorado, com um problema no meio da hist&oacute;ria. P&uacute;blico: crian&ccedil;a de 11 anos.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Regra dos 4 elementos: O QUE, COMO, PRA QUEM, PRA QUÊ. Escreva no quadro do vídeo.</li>
+      <li>Erro comum: criança acha que "quanto mais palavras, melhor". Não. Palavra útil, não palavra a mais. Um pedido claro pode ter 2 frases.</li>
+      <li>Ligação MEC/BNCC: princípio da centralidade humana. A criança pensa o pedido. Eixo Pensamento Computacional: decomposição do problema em partes.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> reescreva os 3 pedidos vagos em pedidos claros, envie ambos e poste 1 par comparativo. <b>Gabarito:</b> o pedido claro deve conter pelo menos 3 dos 4 elementos (O QUE + COMO + PRA QUEM + PRA QUÊ). A resposta melhorada deve ser visivelmente mais útil (mais específica, no tom pedido, no tamanho pedido). Se a criança apenas alonga o pedido sem estruturar, aponte o que faltou.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança acha que precisa "impressionar" a IA com pedidos gigantes. Menos é mais quando é claro. Erro típico 2, criança copia o exemplo do vídeo sem adaptar. Peça pedidos do universo dela. Adaptação para criança com dificuldade de escrita: aceite pedido oral gravado. Adaptação para criança com repertório limitado: ofereça 3 opções de tema prontas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6 · 1h</span><h3>Dê um papel e conte os detalhes</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança sabe usar 2 truques: colocar a IA num papel (persona) e dar detalhes de contexto suficientes.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Cartões com 6 "papéis" para escolher (professor de ciências divertido, contador de histórias, treinador rígido, amigo paciente, jornalista, cientista)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Se você pede uma coisa pro seu treinador de futebol, ele responde de um jeito. Pra sua avó, ela responde de outro. A IA muda o jeito de responder dependendo do papel que você der pra ela." Mostre um pequeno teste visual, mesma pergunta com 2 papéis diferentes.</li>
+      <li><b>3-15 min · Conceito principal:</b> truque 1, PAPEL. Comece o pedido com "você é [papel]". A IA muda o vocabulário, o tom e o tipo de exemplo. Papéis úteis para estudo: professor de matemática paciente, cientista curiosa, escritor de livro infantil, treinador rígido, guia turístico. Truque 2, DETALHES DE CONTEXTO. Quanto mais a IA sabe do seu contexto, melhor a resposta. Contexto útil: idade sua, o que você já sabe, o que você quer alcançar, tempo disponível. Analogia com aula particular: um professor que te conhece dá melhor aula que um professor que te vê pela primeira vez.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Faça a mesma pergunta ("por que o céu é azul") com 3 papéis: professor divertido, cientista formal, poeta. Mostre as 3 respostas radicalmente diferentes. Depois adicione contexto ("eu tenho 12 anos e adoro Minecraft") e mostre como a resposta usa exemplos de Minecraft.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, dê um papel, dê contexto, escolha o papel certo pro que você quer. Gancho pro vídeo 2, "agora você vai fazer a mesma pergunta com 3 papéis".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado, IA aberta. Escolha 3 dos 6 cartões de papel."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha UMA pergunta sobre um tema que você tem curiosidade. Passo 2, faça a pergunta com o papel 1. Pause. Passo 3, faça a mesma pergunta com o papel 2. Passo 4, com o papel 3. Passo 5, escolha o que mais te agradou e explique por escrito por quê. Passo 6, refaça o preferido acrescentando 2 detalhes de contexto sobre você.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual as 3 respostas comparadas e diga qual foi sua favorita e por quê."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um professor de ci&ecirc;ncias divertido. Me explica por que o c&eacute;u &eacute; azul, com uma compara&ccedil;&atilde;o que uma pessoa de 11 anos que joga Minecraft entenderia.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Papel muda tom e vocabulário. Contexto muda os exemplos usados.</li>
+      <li>Erro comum: criança escolhe papel muito genérico ("seja legal"). Ensine papéis específicos com verbo ("seja um professor que usa exemplos de jogo").</li>
+      <li>Ligação MEC/BNCC: eixo Pensamento Computacional, abstração e modelagem do problema. Princípio da centralidade humana: a criança decide como quer aprender.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> pergunte a mesma coisa com 3 papéis diferentes e escolha o que funcionou melhor, justificando. <b>Gabarito:</b> critério de sucesso, os 3 papéis são visivelmente distintos, e a justificativa da escolha usa palavras como "achei mais claro porque", "usou exemplo do que eu gosto", "tom mais engraçado". Se a criança não percebeu diferença, revise a construção do papel no encontro ao vivo.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança usa o mesmo papel pra tudo. Ensine que o papel é ferramenta, muda conforme o objetivo. Erro típico 2, criança acha que precisa escrever biografia da IA no pedido. Papel é 1 frase, não parágrafo. Adaptação para criança tímida: comece com papel de "amigo paciente". Adaptação para criança avançada: peça pra ela inventar um papel novo, diferente dos 6.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7 · 1h</span><h3>Peça do seu jeito (formato da resposta)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança sabe pedir a resposta no formato desejado (lista, tabela, tamanho, tom) e escolher o formato mais útil.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Lista de "formatos possíveis" impressa (lista numerada, tabela, parágrafo curto, quadrinho, cartão, diálogo, mapa mental)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Você prefere estudar com resumo em tópicos, texto corrido, ou um mapa? A IA entrega qualquer formato, mas só se você pedir." Mostre 3 respostas da mesma informação em 3 formatos.</li>
+      <li><b>3-15 min · Conceito principal:</b> formato = como a resposta vem organizada. Formatos úteis: lista numerada, lista com marcadores, tabela, parágrafo curto, quadrinho de texto (roteiro), diálogo entre 2 personagens, mapa mental em texto, cartão de estudo (pergunta + resposta), tabela comparativa. Comprimento também é formato: "em 3 linhas", "em 200 palavras", "em 1 tweet". Tom também: "engraçado", "formal", "com emoji". Combinar tudo: "em lista numerada, 5 itens, tom leve, 1 emoji por item, 1 linha por item".</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pergunte 5 curiosidades da Amazônia em 4 formatos diferentes. Mostre lado a lado como o mesmo conteúdo muda de utilidade dependendo do formato. Aponte quando cada formato é melhor (tabela pra comparar, lista pra memorizar, diálogo pra apresentação teatral).</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, formato é jeito de organizar, escolha o formato pro seu objetivo, combine formato + comprimento + tom. Gancho pro vídeo 2, "agora você vai testar 4 formatos".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado, IA aberta. Escolha UM tema de estudo real (algo que você tem prova, trabalho, ou curiosidade)."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva o tema no papel. Passo 2, peça a informação em lista numerada. Pause. Passo 3, peça em tabela. Passo 4, peça em cartão de estudo (pergunta + resposta). Passo 5, peça em diálogo. Passo 6, escolha o formato que mais te ajuda e escreva por quê no caderno.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual o formato vencedor e diga por que ele funcionou pra você."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me d&aacute; 5 curiosidades sobre a Amaz&ocirc;nia. Em forma de lista numerada, 1 emoji por curiosidade, cada uma em 1 linha, tom bem-humorado.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Formato certo pro objetivo certo: tabela pra comparar, lista pra listar, diálogo pra teatro, cartão pra decorar.</li>
+      <li>Erro comum: criança pede sempre lista pra tudo. Estimule variedade.</li>
+      <li>Ligação MEC/BNCC: eixo Pensamento Computacional, representação de informação. Eixo Cultura Digital: escolher a ferramenta certa pro problema certo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> peça a mesma informação em 4 formatos e justifique o preferido. <b>Gabarito:</b> os 4 formatos são efetivamente distintos, e a justificativa conecta o formato ao objetivo real ("prefiro tabela porque preciso comparar 3 países"). Não aceite "porque ficou bonito", peça por que UTILIZA melhor.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança pede formato mas não especifica comprimento, resposta vem gigante. Ensine a pedir "em X linhas" ou "em Y palavras". Erro típico 2, criança usa formato inadequado (tabela pra história). Ligue formato a objetivo. Adaptação para criança visual: incentive mapa mental. Adaptação para criança que gosta de escrever: incentive diálogo, quadrinho.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8 · 1h</span><h3>Não gostou? Peça de novo (refino)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança sabe corrigir a IA sem começar do zero e aplica refino em 3 rodadas até chegar num resultado útil.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Lista de "verbos de refino" (deixe mais curto, mais engraçado, mais formal, adicione exemplo, tire jargão, mude o final)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Se um amigo faz um desenho meio torto, você não pede pra ele começar do zero. Você diz 'só faz esse braço maior'. Com a IA é igual, isso se chama refino."</li>
+      <li><b>3-15 min · Conceito principal:</b> refino é a arte de corrigir sem recomeçar. Dentro da mesma conversa, você diz o que ajustar. Verbos úteis: encurte, alongue, deixe mais engraçado, mais formal, adicione exemplo, tire jargão, mude o final, foque em X, remova Y, use analogia com Z. Regra prática: cada refino ataca 1 coisa. Se pedir 5 mudanças ao mesmo tempo, a IA se perde. Analogia com estagiário: ele entrega, você aponta 1 correção, ele reentrega, você aponta outra.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Peça uma história do esquilo padeiro. Refino 1, "ficou muito comprido, encurta pra metade". Refino 2, "deixa mais engraçado no meio". Refino 3, "muda o final pra ter uma reviravolta". Mostre a evolução das 3 versões.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, refino é dentro da mesma conversa, 1 mudança por vez, use verbos de ação. Gancho pro vídeo 2, "agora você vai refinar até ficar bom".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado, IA aberta. Vamos pedir algo propositalmente mais ou menos e refinar 3 vezes."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, peça algo curto e genérico ("me dá 3 ideias de post pro Instagram sobre meu bicho de estimação"). Passo 2, avalie a resposta, o que está mais ou menos? Passo 3, refino 1, use um verbo da lista. Passo 4, refino 2, outro verbo. Passo 5, refino 3, ajuste final. Passo 6, compare a versão 1 e a versão 4.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste as 4 versões numeradas no ambiente virtual. Isso mostra que você sabe conduzir a IA, não só receber o que ela manda."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para o refino</span><pre>Refaz mais curto, com tom mais engra&ccedil;ado, e muda o final pra ter uma reviravolta.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Refino = mesma conversa, mudança específica. Não abrir nova conversa.</li>
+      <li>Erro comum: criança abandona o refino e começa do zero, perdendo o contexto. Ensine a persistir.</li>
+      <li>Ligação MEC/BNCC: princípio da centralidade humana, a criança avalia e decide. Eixo Pensamento Computacional: iteração e melhoria.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> refine 3 vezes o mesmo pedido e poste as 4 versões numeradas. <b>Gabarito:</b> cada refino aplica 1 mudança específica. As 4 versões mostram evolução visível. Se a versão 4 é pior que a 1, discuta no encontro ao vivo o que aconteceu. Aceite "eu preferi a versão 2" desde que justificado.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança pede 5 mudanças de uma vez e a IA piora. Uma por vez. Erro típico 2, criança acha que refino é derrota ("a IA não acertou de primeira"). Reenquadre: refino é o normal, ninguém acerta de primeira. Adaptação para criança perfeccionista: limite a 3 refinos, senão vira loop. Adaptação para criança que abandona rápido: sente ao lado dela no encontro ao vivo e faça o refino junto.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 4 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> integrar as 4 aulas do módulo com desafio ao vivo de refino. Consolidar os 4 hábitos: pedido claro, papel, formato, refino.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras abertas, cada criança fala em 1 frase "meu par preferido de pedido vago x pedido claro dessa semana".</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise os 4 hábitos com 1 exemplo cada. Chat para dúvidas. Foque no que mais confunde: qual papel usar quando, quando refinar x quando começar de novo.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> "Personagem misterioso". Turma inventa junto um personagem (dá nome, mundo, poder, problema). Você pede pra IA descrever. Turma grita ao vivo o próximo refino. Você aplica. Faça 4 rodadas de refino, mostrando como o personagem evolui.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas ou trios. Cada grupo escolhe um tema (jogo, esporte, filme) e monta em 15 min um pedido usando os 4 hábitos: papel, contexto, formato, refino. Adulto de casa passa perto para acompanhar.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada grupo compartilha o resultado. Feche com a frase: "pedir bem é uma habilidade, não talento". Oriente semana seguinte: IA pra estudar sem colar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Slide com os 4 hábitos (pedido claro, papel, formato, refino)</li>
+      <li>Conta institucional de IA visível</li>
+      <li>Quadro digital colaborativo (Miro, Jamboard) para o personagem misterioso</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>O momento do "personagem misterioso" é o mais engajante do encontro. Distribua a fala, chame cada criança pelo nome pra dar 1 sugestão. Não corrija a sugestão em público, aceite todas e deixe o refino ajustar. Nas breakouts, entre em cada sala e devolva no plenário 1 exemplo de cada grupo. Se uma criança está com câmera off e sem contribuir, entre no privado por chat, "tá tudo bem? posso te ajudar a começar?". Mediação humana é isso, atenção nominal.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3 · Semana 5-6</span><h2>IA pra aprender e estudar (sem colar)</h2></div>
+  <p class="mod-resumo">Educador: este é o módulo mais importante em relação ao MEC. Aqui está o combate frontal ao "descarregamento cognitivo" (a criança terceirizar o pensamento pra IA). A tese central: IA é professor particular incansável, não é gerador de trabalho pronto. Você vai ensinar a diferença entre "IA faz por você" e "IA ajuda você a entender". Reforce em toda aula que o texto que a criança entrega na escola é escrito por ELA, mesmo depois de a IA ter ajudado a estudar. O verbo é "aprender com", não "receber de". Este módulo dialoga direto com o princípio MEC das salvaguardas de aprendizagem.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9 · 1h</span><h3>A IA como professora particular</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança conduz uma "aula particular" de 15 minutos com a IA sobre um tema à escolha, usando 3 comandos de estudo (explicar, exemplificar, testar).</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Um assunto real que a criança tem dificuldade na escola (fração, verbo, elemento químico, história)</li>
+      <li>Caderno para anotar o que aprendeu com as próprias palavras</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Imagina ter um professor que nunca cansa, nunca fica bravo se você perguntar 10 vezes, tá disponível 24h e sabe qualquer matéria. Esse professor existe, e você vai aprender a usar ele hoje."</li>
+      <li><b>3-15 min · Conceito principal:</b> a IA como professora particular. 3 comandos essenciais: 1) "me explica X como se eu tivesse 12 anos", 2) "me dá 3 exemplos concretos", 3) "me faz 3 perguntas pra eu treinar, mas não me dá a resposta antes". A regra ouro: nunca deixe a IA fazer o exercício pra você. Deixe ela te desafiar. Analogia: professora que passa lição, você resolve, ela corrige. Nunca professora que resolve por você. Explique a diferença entre "entender" e "receber pronto". Entender fixa; receber pronto some da cabeça em 1 dia.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Escolha um tema de estudo (ex.: como resolver equação simples). Use o prompt de referência. Mostre a IA explicando. Peça exemplo. Peça 3 perguntas de treino. Resolva 1 na frente da turma. Peça correção. Comente ao vivo: "viu como eu resolvi? Ela não resolveu por mim, ela me testou".</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, IA explica, exemplifica, testa; você resolve, você pensa; nunca deixe ela fazer o exercício pra você. Gancho pro vídeo 2, "agora sua vez, tema à escolha".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Escolha um assunto real da escola que você tem dificuldade. Vamos fazer uma aula de 15 minutos."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva o assunto no papel. Passo 2, use o prompt de referência com seu tema. Pause: "leia a explicação, sublinhe as palavras que você não entendeu". Passo 3, peça pra IA explicar as palavras sublinhadas. Passo 4, peça 3 exemplos concretos. Passo 5, peça 3 perguntas de treino (proibida a resposta imediata). Passo 6, resolva as 3 no caderno. Passo 7, peça correção com explicação, não só nota. Passo 8, escreva no caderno 2 linhas: "o que eu não sabia e agora entendi".</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual as 2 linhas do que você aprendeu com SUAS palavras. Não copie da IA. Isso é o coração do curso."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; meu professor particular de [mat&eacute;ria]. Me explica [assunto] como se eu tivesse 12 anos, com uma compara&ccedil;&atilde;o divertida. Depois me d&aacute; 3 exemplos concretos. Por &uacute;ltimo, me faz 3 perguntas pra eu treinar. N&atilde;o me d&aacute; as respostas antes que eu tente.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>3 comandos de estudo: explicar, exemplificar, testar. Escreva no vídeo grande.</li>
+      <li>Erro comum: criança pede "resolve pra mim". Reenquadre: você é o aluno, ela é a professora, quem resolve é o aluno.</li>
+      <li>Ligação MEC/BNCC: princípio das salvaguardas de aprendizagem (não descarregar o pensamento). Eixo Cultura Digital: aprender a aprender com apoio digital.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> conduza uma aula de 15 min com a IA sobre um assunto de escola e poste 2 linhas com o que aprendeu, com suas palavras. <b>Gabarito:</b> as 2 linhas mostram compreensão, não copiam texto da IA. Se soa "muito articulado", provavelmente copiou. Peça no encontro ao vivo pra criança explicar em voz alta.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança pede a resposta antes de tentar. Interfira: peça pra criança tentar antes. Erro típico 2, criança copia a resposta da IA no exercício. Volte a explicar o princípio MEC. Adaptação para criança com dificuldade específica (dislexia, discalculia): oriente adulto a acompanhar mais de perto. Adaptação para criança avançada: peça pra ela usar a IA pra aprender um tema NÃO ensinado ainda na escola.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10 · 1h</span><h3>Tirar dúvida do jeito certo (sem colar) + resumir texto</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança distingue "pedir pra IA fazer" de "pedir pra IA ajudar a entender" e produz um resumo com as próprias palavras a partir de um texto.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Um texto real (foto de página de livro, ou texto colado) de mais ou menos 300 palavras</li>
+      <li>Caderno para produzir o resumo próprio</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Existem 2 jeitos de usar IA pro trabalho de história: o jeito que a professora pega você, e o jeito que você aprende de verdade. Hoje a gente aprende o segundo."</li>
+      <li><b>3-15 min · Conceito principal:</b> jeito errado, "faz meu trabalho sobre a Guerra do Paraguai". Jeito certo, "me explica a Guerra do Paraguai, me faz perguntas pra ver se entendi, e SÓ DEPOIS eu escrevo com minhas palavras". Fluxo em 4 passos: 1) IA explica, 2) você anota o que entendeu no caderno, 3) IA te testa com perguntas, 4) você escreve o trabalho com suas palavras. Sobre resumir: nunca cole o resumo da IA como seu. Peça pra IA explicar o texto, entenda, e depois VOCÊ escreve o resumo do que entendeu. Diferença crucial: professora sente na hora o texto que você não escreveu.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pegue o texto de 300 palavras. Peça pra IA explicar como se você tivesse 12 anos. Peça 5 perguntas de compreensão. Responda 2 delas na frente. Feche a IA. Abra o caderno e escreva um resumo com as próprias palavras. Mostre que o resumo escrito por você é diferente do resumo que a IA daria, e É ISSO que vale.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, IA explica, você entende, você escreve. Nunca cole o texto da IA. Gancho pro vídeo 2, "agora sua vez com um texto real seu".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Escolha um texto real, de uns 3 parágrafos, do seu livro da escola ou da internet."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, cole ou fotografe o texto. Passo 2, use o prompt de referência. Passo 3, leia a explicação e responda as 5 perguntas mentalmente ou por escrito. Passo 4, FECHE A IA. Passo 5, no caderno, escreva um resumo de 3-5 linhas com as próprias palavras. Passo 6, reabra a IA e peça pra ela avaliar seu resumo. Compare seu resumo com o que ela produziria.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual seu resumo escrito à mão (ou digitado por você) e escreva na descrição: 'esse resumo é meu, a IA me ajudou a entender'."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me explica o texto abaixo como se eu tivesse 12 anos. Depois me faz 5 perguntas pra eu ver se entendi. N&atilde;o resume por mim, eu vou resumir depois com as minhas palavras.\n\n[cole aqui o texto]</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Diferença "faz por mim" x "me ajuda a entender": o coração do módulo.</li>
+      <li>Erro comum: criança faz o fluxo certo e no final copia a IA "pra ficar mais bonito". Volte à diferença.</li>
+      <li>Ligação MEC/BNCC: princípio das salvaguardas de aprendizagem, MEC combate o descarregamento cognitivo. Eixo Cultura Digital: ética no uso de ferramenta.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> resuma um texto real com suas palavras depois de conduzir o fluxo com a IA. <b>Gabarito:</b> o resumo tem vocabulário e estrutura próprios da criança, com pequenos erros naturais. Se está "muito bom", investigue. Critério: consegue reformular em voz alta 1 ponto do resumo? Se sim, é dela.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança cola o resumo da IA. Peça pra explicar oralmente. Erro típico 2, criança acha que "com suas palavras" significa mudar 2 palavras da IA. Explique: se você fecha a IA e escreve, sai natural. Adaptação para criança com dificuldade de escrita: aceite resumo em áudio. Adaptação para criança que copia por costume: comece pedindo resumo à mão sem digital.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 1h</span><h3>Praticar matemática e leitura</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança cria e resolve 3 exercícios com correção assistida pela IA, sem receber a resposta antes de tentar.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Caderno de matemática ou português</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Sua professora manda 5 exercícios de casa e você faz. Agora imagina 100 exercícios sob medida pro que você precisa treinar. Isso a IA entrega."</li>
+      <li><b>3-15 min · Conceito principal:</b> a IA gera exercícios sob demanda. Você pede o assunto, o nível, a quantidade. Ela cria. Você resolve. Ela corrige com explicação. É um simulador infinito. Regra: sempre peça "espera eu resolver antes de me dar a resposta". Assunto útil pra treinar: matemática (fração, porcentagem, equação), português (interpretação de texto, verbo), inglês (tradução, completar frase). Analogia: o boss do jogo vai ficando difícil. Você começa fácil e sobe. Peça "nível 6º ano" ou "nível fácil, médio, difícil".</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Peça 3 problemas de porcentagem, nível 6º ano. Resolva 1 no papel. Mostre você resolvendo. Envie sua resposta pra correção. Se acertar, peça mais 3, nível difícil. Se errar, peça explicação passo a passo.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, IA gera exercícios, você resolve, IA corrige com explicação. Gancho pro vídeo 2, "agora seu assunto".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Escolha um assunto que você tem prova em breve, ou está com dificuldade."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva o assunto e o nível. Passo 2, use o prompt de referência. Passo 3, RESOLVA os 3 no caderno. Não peça a resposta antes. Passo 4, envie suas respostas. Peça correção com explicação. Passo 5, se errou, peça mais 3 desafios do mesmo tipo pra fixar. Se acertou, peça mais 3 mais difíceis pra evoluir.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual foto do seu caderno com as 3 questões resolvidas. Isso é estudar de verdade."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me passa 3 problemas de [assunto], n&iacute;vel [ano escolar]. Espera eu resolver antes de me dar a resposta. Depois corrige explicando cada passo, mesmo se eu acertar.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>"Espera eu resolver antes" é regra fixa. Sem isso, vira colar.</li>
+      <li>Erro comum: criança envia o exercício e a resposta junto, e depois só olha o certo. Faça resolver ANTES.</li>
+      <li>Ligação MEC/BNCC: salvaguardas de aprendizagem. Eixo Pensamento Computacional: iteração, revisão.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> resolva 3 exercícios sob medida pra você, com correção da IA. Poste foto. <b>Gabarito:</b> a criança mostra tentativa (mesmo errada). Rasuras são bem-vindas. Se está tudo perfeitíssimo, investigue. Sucesso é mostrar processo, não perfeição.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança pede a resposta antes. Interfira. Erro típico 2, criança escolhe assunto que já domina (zona de conforto). Peça pra escolher algo que dá trabalho. Adaptação para criança com discalculia: peça exercícios em contexto (problema com história, não conta pura). Adaptação para criança avançada: peça 5 exercícios com nível progressivo.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 6 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> integrar as 3 aulas do módulo focando na diferença entre estudar COM a IA e receber PRONTO da IA. Trazer dúvidas reais de matérias da escola.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras abertas, cada criança diz em 1 frase "a matéria em que a IA mais me ajudou essa semana".</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise os 3 comandos de estudo (explicar, exemplificar, testar). Chat aberto para dúvidas. Foque no que mais confunde: como saber quando é "colar" e quando é "estudar".</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> peça uma dúvida real de matéria de escola. Um voluntário. Você conduz o fluxo IA-explica → aluno-tenta → IA-corrige na frente da turma. Faça com 2 assuntos diferentes.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas trocam dúvidas de matéria. Cada dupla ajuda a outra a usar a IA pra ENTENDER. 15 minutos. Adulto de casa observa.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada dupla compartilha o que aprendeu ajudando o colega. Feche com a frase: "IA é professora, você é aluno. Não inverta." Oriente semana seguinte: criar com IA.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Slide com os 3 comandos de estudo</li>
+      <li>Conta institucional de IA visível</li>
+      <li>Lista pré-preparada de matérias comuns pra puxar exemplo se ninguém trouxer</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Esta pauta é forte em mediação: você está combatendo hábito de colar. Faça isso com carinho, sem julgamento moral. Muitas crianças descobriram o "IA fazendo tarefa" antes do curso e acham normal. Reenquadre com o custo: quem cola perde a chance de aprender, e a professora sente na hora. Se aparecer resistência, use a analogia do treino esportivo: quem contrata alguém pra treinar por você não fica em forma. Feche cada breakout pedindo pra cada dupla dizer 1 aprendizado do parceiro, isso cimenta.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4 · Semana 7-8</span><h2>IA pra criar (histórias, imagens, jogos)</h2></div>
+  <p class="mod-resumo">Educador: este é o módulo que mais empolga a turma. Cuidado para o encantamento não engolir a mediação. O ponto central aqui é o debate sobre autoria: o que é criação da criança e o que é da IA. Nem tudo o que a IA produz vira "seu". Ensine desde o começo que a criança precisa saber contar o que foi ideia dela, e onde a IA entrou. Este é o preparo pra Aula 28 (ética) e pro projeto final. Alinhamento MEC: princípio da centralidade humana forte, a criança é autora, a IA é assistente. Eixo Cultura Digital: reflexão sobre produção cultural com ferramentas digitais.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 1h</span><h3>Inventar histórias e personagens</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança cria um personagem principal por conta própria e usa a IA como parceira para desenvolver 2 personagens secundários e uma estrutura de história em 5 partes.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Folha para desenhar ou descrever o personagem principal</li>
+      <li>Modelo em 5 partes (situação inicial, conflito, complicação, virada, desfecho)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Todo YouTuber, roteirista de filme, autor de jogo começa com um personagem na cabeça. Hoje você vai criar o seu, e a IA vai ser sua parceira de brainstorm."</li>
+      <li><b>3-15 min · Conceito principal:</b> quem inventa é você. A IA ajuda a desenvolver. Ordem correta: 1) você cria o personagem principal com traços seus (aparência, personalidade, poder, medo, sonho), 2) IA sugere 2 secundários que combinam, 3) você escolhe qual dos secundários usa, 4) IA propõe 3 conflitos possíveis, 5) você escolhe. Estrutura de história em 5 partes: situação inicial, conflito, complicação, virada, desfecho. Analogia com séries do Netflix, todos os episódios seguem essa estrutura. Analogia com Roblox, todo mapa tem começo, desafio, boss.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Invente um personagem na hora (pra mostrar como parte de você). Ex.: "Nina, 12 anos, gosta de skate, medo de altura, sonho de ser bióloga". Peça 2 personagens secundários pra IA. Escolha 1. Peça 3 conflitos. Escolha 1. Mostre a estrutura em 5 partes preenchida.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, personagem principal é seu, IA sugere secundários, estrutura em 5 partes. Gancho pro vídeo 2, "seu personagem".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Pega a folha. Vamos criar seu personagem primeiro NO PAPEL, sem IA."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, no papel, escreva 5 traços do personagem principal (nome, idade, aparência, personalidade, medo, sonho). Passo 2, agora abra a IA e use o prompt de referência. Passo 3, escolha 1 dos 2 secundários. Passo 4, peça 3 conflitos. Escolha 1. Passo 5, preencha a estrutura em 5 partes com IA sugerindo mas VOCÊ decidindo. Passo 6, escreva a história em 1 parágrafo por parte.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual a história completa E a folha do personagem no papel. Marque na história com estrela: 'aqui foi minha ideia', 'aqui a IA ajudou'."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Meu personagem principal &eacute; [descreve os 5 tra&ccedil;os]. Cria 2 personagens secund&aacute;rios que combinem com ele numa hist&oacute;ria de aventura, cada um com 1 tra&ccedil;o forte. Depois me d&aacute; 3 ideias diferentes de conflito.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Ordem correta: você primeiro, IA depois. Sem isso vira criação genérica.</li>
+      <li>Erro comum: criança pede "cria um personagem pra mim". Não. Ela cria, IA desenvolve.</li>
+      <li>Ligação MEC/BNCC: princípio da centralidade humana. Eixo Cultura Digital: autoria e produção cultural com ferramentas digitais.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> crie história com estrutura em 5 partes, marcando o que foi ideia sua e o que foi da IA. <b>Gabarito:</b> personagem principal tem traços originais, não genéricos. Estrutura em 5 partes está preenchida. Marcação de autoria mostra reflexão. Sucesso: a criança consegue explicar em 2 frases "o que eu inventei", em oposição a "o que a IA sugeriu".</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança pede tudo pra IA e não cria nada. Interfira, exija personagem principal no papel antes de IA. Erro típico 2, criança fica presa na primeira sugestão da IA. Ensine a pedir 3 opções e escolher. Adaptação para criança tímida de criar: ofereça começar com "personagem baseado em você". Adaptação para criança que só usa personagens de jogos famosos: peça um trapo diferente, algo novo.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 1h</span><h3>A IA que desenha (imagens)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança gera uma imagem do seu personagem, refinando 3 vezes até ficar próxima do que imaginou, e reflete sobre autoria da imagem.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA de imagem (DALL-E dentro do ChatGPT, Gemini com imagem, ou Copilot Designer)</li>
+      <li>O personagem criado na Aula 12</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Você já imaginou uma cena na cabeça e queria mostrar? Agora dá. A IA de imagem transforma texto em desenho."</li>
+      <li><b>3-15 min · Conceito principal:</b> IA de imagem funciona com o mesmo princípio de prompt. Você descreve, ela gera. Elementos úteis: sujeito (quem está na imagem), aparência (roupa, cor), estilo (cartoon, aquarela, pixel art, realista), ambiente (floresta, escola, espaço), ângulo (perto, longe, de cima), iluminação (dia, noite, dramática). Regra: quanto mais específico, mais próximo do que você imaginou. Analogia com pedido de tatuagem: se você fala "quero um dragão", cada tatuador desenha um diferente. Se você fala "dragão pequeno, estilo chinês, azul, na altura do pulso", vem próximo do que você quer. Sobre autoria: a imagem foi feita pela IA a partir da sua descrição. Você é o diretor, não o desenhista.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Gere o personagem Nina. Prompt inicial simples. Refino 1 mudando estilo. Refino 2 mudando ambiente. Refino 3 mudando ângulo. Mostre 4 versões lado a lado.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, descreva bem, refine 3 vezes, você é o diretor. Gancho pro vídeo 2, "seu personagem virando imagem".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. IA de imagem aberta. Pega a folha do seu personagem."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva no papel o prompt inicial da imagem (sujeito, aparência, estilo, ambiente). Passo 2, envie. Passo 3, avalie: o que está próximo do que você imaginou, o que não. Passo 4, refino 1 focando em UMA coisa. Passo 5, refino 2 em outra. Passo 6, refino 3 em outra. Passo 7, salve a versão final. Passo 8, no caderno escreva 1 frase: "esta imagem foi criada pela IA a partir da minha descrição".</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste a versão final no ambiente virtual COM a legenda: 'eu descrevi, a IA desenhou'. Isso é honestidade de autoria."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Gera uma imagem: [personagem com apar&ecirc;ncia], estilo desenho animado, cores vibrantes, ambiente de floresta, &acirc;ngulo de perfil, ilumina&ccedil;&atilde;o de dia.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Elementos do prompt de imagem: sujeito, aparência, estilo, ambiente, ângulo, iluminação.</li>
+      <li>Erro comum: prompt genérico ("um dragão") gera imagem ruim. Detalhe.</li>
+      <li>Ligação MEC/BNCC: princípio da centralidade humana, autoria. Eixo Cultura Digital: reflexão ética sobre criação com IA.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> gere imagem do personagem, refine 3 vezes, poste versão final com legenda de autoria. <b>Gabarito:</b> imagem final é distintamente próxima da descrição. A legenda reconhece autoria da IA. Se a criança escreve "eu desenhei", corrija no encontro ao vivo.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança se apega à primeira imagem mesmo torta. Encoraje refino. Erro típico 2, criança se frustra porque a IA não faz igual à cabeça dela. Explique que isso é normal, refino é o caminho. Adaptação para criança que gosta de desenhar: peça pra desenhar antes e depois pedir pra IA replicar. Adaptação para criança que rejeita todas as versões: limite a 5 tentativas, escolha a menos pior.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 1h</span><h3>Fazer quadrinhos e revistas</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança monta um mini-quadrinho de 4 quadros com roteiro, imagem e texto dos balões, usando IA em cada etapa e escrevendo o texto sozinha.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA (texto + imagem)</li>
+      <li>Folha ou documento com grade de 4 quadros</li>
+      <li>Personagem da Aula 12/13</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Turma da Mônica, Chico Bento, Bob Esponja começaram como quadrinhos. Hoje você faz o seu."</li>
+      <li><b>3-15 min · Conceito principal:</b> quadrinho tem 3 camadas: 1) roteiro (o que acontece em cada quadro), 2) imagem (o desenho), 3) texto (balão e narração). Estrutura em 4 quadros: apresentação, ação, virada, desfecho. Regra: você escreve o texto dos balões. Sem exceção. Isso é o que dá voz ao personagem. IA gera imagem, você narra. Analogia com desenho animado, quem desenha é uma pessoa, quem escreve o roteiro é outra. Você é o roteirista.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Roteiro dos 4 quadros no papel. Descreva cada quadro pra IA gerar. Peça 4 imagens. Escreva o texto dos balões à mão. Junte tudo num documento simples (Google Docs, Canva, Word).</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, roteiro seu, imagem da IA, balões seus. Gancho pro vídeo 2, "seu quadrinho".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Pega a grade de 4 quadros. Personagem em mãos."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, no papel escreva 1 frase por quadro (o que acontece). Passo 2, use o prompt de referência para pedir 4 descrições de imagem. Passo 3, gere as 4 imagens. Passo 4, escreva o texto dos balões À MÃO no papel primeiro. Passo 5, digite no documento junto com as imagens.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste seu quadrinho completo no ambiente virtual. Escreva na legenda: 'roteiro e balões meus, imagens geradas por IA'."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me d&aacute; as descri&ccedil;&otilde;es de imagem que preciso pedir pra IA de imagem, um por quadro do meu mini-quadrinho de 4 quadros com o personagem [X], tema [Y]. Mesma apar&ecirc;ncia do personagem em todos os quadros.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>3 camadas: roteiro, imagem, texto. Você faz 2 delas.</li>
+      <li>Erro comum: criança pede pra IA escrever os balões. Não. Voz do personagem é da criança.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital: produção cultural. Eixo Pensamento Computacional: decomposição de projeto em partes.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> mini-quadrinho de 4 quadros completo com legenda de autoria. <b>Gabarito:</b> texto dos balões escrito pela criança (soa natural, tem gírias/pausas próprias). Estrutura em 4 quadros com progressão. Se os balões parecem "escrita de IA", peça pra reescrever à mão.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, imagens dos 4 quadros não parecem o mesmo personagem. Ensine a manter a mesma descrição base. Erro típico 2, criança pula o roteiro no papel e vai direto pra IA. Volta pro papel. Adaptação para criança que só quer desenhar: aceite quadros desenhados à mão. Adaptação para criança avançada: peça 6 quadros com narração + balões.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 1h</span><h3>Inventar jogos e brincadeiras</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança inventa um jogo de mesa (ou brincadeira) com regras claras, usando a IA para refinar mecânica e ajustar dificuldade.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Folha em branco para desenhar o jogo</li>
+      <li>Se possível, alguém em casa pra jogar (irmão, primo, adulto)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Todo jogo de tabuleiro, videogame ou brincadeira de rua começou como uma ideia. UNO, Banco Imobiliário, Minecraft, tudo. Hoje você vai criar o seu."</li>
+      <li><b>3-15 min · Conceito principal:</b> anatomia de um jogo: objetivo, regras, componentes, condição de vitória, dificuldade. Você define o "coração" do jogo (a ideia central: o que os jogadores fazem). IA ajuda a refinar mecânica, propor variações, ajustar dificuldade. Analogia com receita de bolo, você tem o sabor em mente, a IA sugere temperatura, tempo, ordem. Regra: teste o jogo antes de fechar. Um jogo só existe depois de jogado.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Invente um jogo simples ("caça ao tesouro em casa, 2-4 jogadores, precisa achar 5 objetos com pistas dadas por IA"). Peça pra IA refinar regras. Peça 1 variação. Simule 1 rodada mental.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, você tem a ideia, IA refina, sempre teste. Gancho pro vídeo 2, "seu jogo".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Vamos criar seu jogo com quem estiver em casa hoje."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva no papel a ideia central em 1 frase. Passo 2, use o prompt de referência com sua ideia. Passo 3, receba regras, componentes, condição de vitória. Passo 4, peça 1 variação divertida. Passo 5, monte os materiais em casa (papel, dados, o que tiver). Passo 6, jogue 1 rodada com alguém. Passo 7, anote no caderno o que precisou ajustar.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual as regras do seu jogo E uma foto de você (sem rosto se preferir) jogando com alguém. Missão épica."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Meu jogo tem essa ideia central: [descreve em 1 frase]. Ajuda a definir regras claras pra 2-4 jogadores, com objetivo, componentes, condi&ccedil;&atilde;o de vit&oacute;ria e sugere 1 varia&ccedil;&atilde;o divertida pra deixar mais dif&iacute;cil.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Anatomia do jogo: objetivo, regras, componentes, condição de vitória.</li>
+      <li>Erro comum: criança pede "cria um jogo pra mim". Não. Ideia central é sua.</li>
+      <li>Ligação MEC/BNCC: eixo Pensamento Computacional, criação de sistema com regras (algoritmo). Eixo Cultura Digital: produção original.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> jogo com regras claras + foto jogando. <b>Gabarito:</b> regras têm objetivo, componentes, condição de vitória claros. Alguém jogou. Ajuste após teste mostrado. Sucesso: outra pessoa entendeu as regras e jogou até o fim.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, jogo muito complicado, ninguém entende. Simplifique. Erro típico 2, criança não testa e entrega só regra no papel. Exija teste. Adaptação para criança sem parceiro em casa: aceite teste sozinha simulando 2 jogadores. Adaptação para criança avançada: peça 2 variações e teste ambas.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 8 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> integrar as 4 aulas do módulo com foco central na discussão sobre autoria. Cada aluno mostra 1 criação, turma reflete sobre o que foi da criança e o que foi da IA.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras abertas, cada criança fala em 1 frase "o que criei essa semana que mais me orgulhou".</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise os 4 tipos de criação (história, imagem, quadrinho, jogo). Chat aberto para dúvidas. Foque no princípio de autoria: você é o autor, IA é ferramenta.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> "Rodada de mostrar". Cada aluno mostra 1 criação em até 90 segundos. Para cada, faça 1 pergunta chave: "o que dessa criação é ideia sua?". Não é julgamento, é reflexão.</li>
+      <li><b>35-50 min · Breakout rooms:</b> trios discutem "o que é criação da criança e o que é da IA". 15 min. Devolvam 1 frase por grupo pro plenário.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada grupo compartilha a frase. Feche com a frase: "você é o autor, a IA é o assistente. Sempre." Oriente semana seguinte: multimodal.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Slide sobre autoria (quem escreveu o quê)</li>
+      <li>Ambiente virtual com as criações da turma antes do encontro</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Este é o encontro mais emocional do curso. Crianças ficam orgulhosas do que criaram e frágeis a críticas. Nunca compare criações entre si. Cada uma tem valor. Se aparecer criação que parece "toda de IA", pergunte com carinho "onde foi você aqui?", não "isso é da IA". A ideia é fazer refletir, não julgar. Convide os responsáveis a passarem para ver a apresentação da criança, é momento de valorização.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5 · Semana 9-10</span><h2>IA que vê, ouve e fala (multimodal)</h2></div>
+  <p class="mod-resumo">Educador: multimodal é o nome técnico para IA que entende texto, imagem e áudio de uma vez só. Este módulo abre horizonte: a IA não é só um chat de texto. O risco de segurança aumenta aqui, especialmente com uso de câmera e microfone. Reforce em toda aula: nunca mostrar rosto, nunca mostrar o interior de casa em imagem, nunca gravar áudio com dado pessoal. Este módulo termina com o primeiro projeto integrado (cartão/pôster), preparo para o projeto final. Alinhamento MEC: princípio da proteção de dados forte (câmera e microfone envolvidos), equidade (nem toda família tem acesso a IA multimodal, ofereça alternativas).</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 1h</span><h3>A IA que enxerga (imagens e fotos)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança envia 3 tipos diferentes de imagem para a IA analisar (exercício, objeto, desenho) e reflete sobre o que NÃO enviar.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA multimodal (ChatGPT, Gemini, Claude)</li>
+      <li>3 imagens preparadas: 1 exercício escolar impresso, 1 objeto genérico (fruta, planta), 1 desenho feito pela criança</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Você já tirou foto de exercício e mandou pro grupo do zap pra pedir ajuda? A IA hoje enxerga foto. E ajuda ali na hora."</li>
+      <li><b>3-15 min · Conceito principal:</b> IA multimodal enxerga imagens. Usos legais: foto de exercício de matemática (ela lê e explica), foto de planta (ela identifica), foto de desenho seu (ela dá feedback). Regra 1: nunca mostre rosto seu ou de outros. Regra 2: nunca mostre o interior da sua casa em detalhes (fundo neutro). Regra 3: nunca mostre documento (RG, cartão, boletim com nome). Regra 4: nunca mostre foto de outra criança sem autorização. Analogia com Google Lens que muitos já usam. A diferença: IA de conversa vê a foto e continua conversando sobre ela.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Envie foto de exercício de matemática. Peça análise. Envie foto de planta. Peça identificação. Envie desenho. Peça feedback. Comente ao vivo o que NÃO faria (foto de rosto, foto do quarto, foto de documento).</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, IA enxerga, ela ajuda em coisas concretas, cuidado com o que mostra. Gancho pro vídeo 2, "3 imagens suas".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Prepare 3 imagens seguras: exercício, objeto, desenho. Nada com rosto, nada com endereço."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, tire ou selecione a foto do exercício. Antes de enviar, cheque: tem seu nome no papel? Cobra. Passo 2, envie e peça análise. Passo 3, imagem do objeto (uma fruta, uma planta). Peça identificação. Passo 4, desenho seu. Peça feedback construtivo. Passo 5, no caderno escreva 3 coisas que você NÃO enviaria e por quê.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual a lista das 3 coisas que você NÃO enviaria. Isso é mais importante que os testes."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Analisa essa imagem. Me diz o que voc&ecirc; v&ecirc; e me ajuda com [problema espec&iacute;fico: resolver, identificar, dar feedback].</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>4 regras do "não mostre": rosto, casa, documento, outra criança.</li>
+      <li>Erro comum: criança envia foto de exercício com nome no cabeçalho. Cobra ou apague.</li>
+      <li>Ligação MEC/BNCC: princípio da proteção de dados. Eixo Cultura Digital: cidadania digital, o que compartilhar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> lista das 3 coisas que você não enviaria + justificativa. <b>Gabarito:</b> pelo menos 2 das 4 categorias (rosto, casa, documento, outra criança) aparecem. Justificativas conectam com segurança/privacidade, não só "é chato".</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança envia sem cobrir nome. Interfira. Erro típico 2, criança não sabe o que é "documento". Explique: RG, cartão SUS, boletim, comprovante. Adaptação para criança sem impressora: use exercício digital. Adaptação para criança sem câmera boa: use imagens de banco (Unsplash com adulto).</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 1h</span><h3>A IA que faz desenhos pra você</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança gera 3 variações de uma cena combinando estilo, ângulo, composição e iluminação, e escolhe a que mais combina com sua intenção.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA de imagem</li>
+      <li>Lista de estilos, ângulos, iluminações (cheatsheet impressa)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Na Aula 13 você desenhou seu personagem. Hoje vamos aprofundar. Toda cena de filme, toda capa de álbum tem escolhas de estilo, ângulo e luz. Você é o diretor."</li>
+      <li><b>3-15 min · Conceito principal:</b> vocabulário visual. Estilos: cartoon, aquarela, pixel art, realista, oil painting, anime, sketch. Ângulos: primeiro plano (close), plano geral (longe), vista de cima (top-down), contra-plongée (de baixo). Composição: personagem centro, regra dos terços, silhueta. Iluminação: dia claro, fim de tarde (dourada), noite, dramática (contraste alto), neon. Combinar 2-3 escolhas dá controle sobre a imagem. Analogia com Instagram: filtros mudam a foto sem mudar o que foi fotografado.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Escolha uma cena ("minha cidade num mundo mágico"). Versão 1, aquarela, dia claro, plano geral. Versão 2, pixel art, noite, close. Versão 3, realista, contra-plongée, iluminação dramática. Mostre 3 imagens e a diferença de sensação.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, estilo + ângulo + iluminação, escolha o combo pro que você quer sentir. Gancho pro vídeo 2, "sua cena".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. IA de imagem aberta. Cheatsheet perto."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva sua cena em 1 frase. Passo 2, versão 1, combine 3 escolhas. Passo 3, versão 2, mude 2 escolhas. Passo 4, versão 3, mude tudo. Passo 5, escolha a favorita e escreva 1 frase explicando por que ela combina mais com a intenção.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual as 3 versões e a favorita marcada. Legenda: 'diretor: eu. Desenho: IA'."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Gera uma imagem: [cena], estilo aquarela, &acirc;ngulo de cima, ilumina&ccedil;&atilde;o de fim de tarde, cores quentes.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Vocabulário visual: estilo, ângulo, composição, iluminação. Palavras que dão controle.</li>
+      <li>Erro comum: criança pede "faz bonito". Vago. Ensine a nomear o estilo.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, produção estética. Princípio da centralidade humana, você decide a estética.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> 3 versões + escolha justificada. <b>Gabarito:</b> as 3 versões usam combos distintos de vocabulário visual. Justificativa liga estética a sensação ("essa passa calma", "essa passa aventura"). Sucesso: a criança nomeia elementos técnicos, não só "gostei mais".</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança usa mesmo estilo pras 3 (não muda). Cobre variedade. Erro típico 2, criança acha que "estilo realista" é o melhor sempre. Mostre que depende do objetivo. Adaptação para criança com dificuldade visual: descreva verbalmente cada estilo com exemplo conhecido. Adaptação para criança avançada: peça 5 variações com foco em iluminação.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 1h</span><h3>A IA que conversa por voz</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança conversa por voz com a IA em 2 modos: livre (tema à escolha) e prática de idioma (inglês ou outro), respeitando regras de dado pessoal em áudio.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Fone de ouvido (recomendado)</li>
+      <li>Conta institucional de IA com modo de voz (ChatGPT voz, Gemini Live)</li>
+      <li>Local calmo para gravar, sem outras pessoas visíveis atrás</li>
+      <li>Responsável adulto por perto (ideal ouvir também)</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Você já mandou áudio de zap? Conversar com IA por voz é parecido, só que ela responde falando. E corrige seu inglês."</li>
+      <li><b>3-15 min · Conceito principal:</b> IA de voz ouve e responde falando. Usos: prática de inglês (ela corrige pronúncia com carinho), pensar em voz alta, brainstorm caminhando pela casa. Regras adicionais: 1) fone de ouvido pra ninguém ao redor ficar gravado sem saber, 2) nunca fale seu nome completo, endereço, escola em voz alta, 3) nunca fale de outra pessoa por nome, 4) se a conversa fica estranha, encerre e chame adulto. Áudio é dado sensível: som de casa, voz de irmão passando, tudo grava. Analogia com transmissão ao vivo, você não sabe quem escuta.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada com áudio. Modo 1, prática de inglês com o prompt de referência. Mostre a IA corrigindo. Modo 2, tema livre curto (sua matéria favorita). Mostre a fluidez. Não use dado pessoal no exemplo.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, voz é prático, cuidado com o que grava, fone de ouvido é regra. Gancho pro vídeo 2, "sua conversa por voz".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Fone de ouvido no. Adulto por perto ouvindo pra dar apoio. Local calmo."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, ative modo de voz. Passo 2, conversa livre de 5 minutos sobre um tema seguro (jogo, esporte, curiosidade). Nada pessoal. Passo 3, encerre. Passo 4, ative de novo com o prompt de inglês. Passo 5, converse 5 minutos em inglês. Passo 6, no caderno escreva 1 frase que aprendeu (em português).</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual uma reflexão de 3 linhas: 'foi mais fácil por voz ou texto? Por quê?'. Não poste o áudio."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Vamos praticar ingl&ecirc;s. Voc&ecirc; fala em ingl&ecirc;s devagar, eu respondo, e voc&ecirc; corrige minha pron&uacute;ncia com carinho. Tema: [algo simples, ex.: meu bicho de estima&ccedil;&atilde;o].</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Fone de ouvido não é conforto, é regra de privacidade.</li>
+      <li>Erro comum: criança fala nome, escola, endereço por voz sem pensar. Prepare a regra antes de ligar o microfone.</li>
+      <li>Ligação MEC/BNCC: princípio da proteção de dados (áudio é dado). Eixo Cultura Digital: consciência sobre o meio.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> reflexão em 3 linhas sobre voz x texto. <b>Gabarito:</b> resposta pessoal, sem certo ou errado. Sucesso: a criança nomeia uma vantagem e uma desvantagem específica de cada modo.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança fala dado pessoal empolgada. Interfira. Erro típico 2, criança tem vergonha de falar em voz alta. Comece com prompt curto. Adaptação para criança com dificuldade de fala: aceite modo escrito e explique que voz é opcional. Adaptação para criança sem fone: peça pra reservar sala isolada em casa, ou use com adulto por perto.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 1h</span><h3>Mini-projeto: cartão ou pôster com IA</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança monta um cartão ou pôster completo combinando texto, imagem e criatividade, com legenda de autoria.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA texto + imagem</li>
+      <li>Ferramenta simples de montagem (Canva grátis, Google Docs, Word, PowerPoint)</li>
+      <li>Tema à escolha da criança (aniversário de alguém, campanha, dia da família, causa social)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Todo pôster do cinema, capa de disco e cartaz de campanha começou com uma ideia simples. Você vai fazer o seu hoje, com IA em cada etapa."</li>
+      <li><b>3-15 min · Conceito principal:</b> um projeto do começo ao fim. Fluxo: 1) escolher tema (ideia sua), 2) montar mensagem (IA sugere, você escolhe), 3) gerar imagem (você descreve, IA faz), 4) juntar num documento (você monta). Anatomia de bom pôster: mensagem curta, imagem forte, uma cor dominante. Cartão de aniversário: mensagem pessoal (só sua), imagem generalista. Pôster de campanha: mensagem impactante, imagem simbólica. Capa de trabalho: título, subtítulo, imagem de apoio.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Escolha tema (ex.: dia da família). Peça 3 mensagens curtas pra IA. Escolha 1. Peça descrição de imagem que combina. Gere imagem. Abra Canva, monte em 5 minutos. Mostre resultado.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, tema seu, mensagem escolhida por você, imagem da IA. Gancho pro vídeo 2, "seu cartão/pôster".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Tema em mente. Ferramenta de montagem aberta."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva o tema no papel. Passo 2, use o prompt de referência para pedir 3 mensagens. Escolha 1. Passo 3, peça descrição de imagem. Gere. Passo 4, monte no Canva ou similar. Passo 5, salve como imagem ou PDF. Passo 6, adicione legenda com autoria.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual. Compartilhe com quem o cartão é destinado (se for pessoal) ou coloque em lugar visível se for pôster."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me ajuda a fazer um p&ocirc;ster sobre [tema]. Primeiro sugere 3 mensagens curtas (m&aacute;ximo 8 palavras cada). Depois descreve a imagem que combina com a mensagem que eu escolher.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Anatomia de pôster: mensagem curta, imagem forte, cor dominante.</li>
+      <li>Erro comum: mensagem gigante que ninguém lê. Máximo 8 palavras.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, produção com múltiplas mídias. Princípio da centralidade humana, você é diretor.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> cartão/pôster salvo com autoria explícita. <b>Gabarito:</b> mensagem curta, imagem coerente com mensagem, legenda diz o que foi da criança e o que foi da IA. Sucesso: outra pessoa entende o que o pôster quer dizer sem explicação.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança tenta encaixar 3 imagens no mesmo pôster. Simplifique. Erro típico 2, criança pula a etapa de montagem e entrega só a imagem. Exija cartão/pôster montado. Adaptação para criança sem experiência com Canva: use Google Docs simples. Adaptação para criança avançada: peça 3 versões com paletas de cor diferentes.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 10 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> apresentação dos mini-projetos (cartão/pôster) da turma. Discussão sobre multimodal e escolhas estéticas. Curadoria coletiva das 3 criações mais impactantes.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras abertas, cada criança diz o tema do seu cartão/pôster em 1 palavra.</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revisão rápida dos 4 usos (enxergar, desenhar, voz, projeto). Foco no fluxo do mini-projeto.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> cada aluno mostra o pôster em 60 segundos. Você faz 1 pergunta de retorno para cada: "por que essa cor?" ou "por que essa mensagem?". Estimule vocabulário técnico.</li>
+      <li><b>35-50 min · Breakout rooms:</b> trios votam nos 3 pôsteres mais impactantes da turma (com justificativa). 15 minutos.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> revele os 3 mais votados. Comente escolhas técnicas. Feche com a frase: "multimodal é poder. Poder pede responsabilidade". Oriente semana seguinte: pesquisa com pensamento crítico.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Galeria virtual com todos os pôsteres antes do encontro</li>
+      <li>Sistema de votação simples (chat, formulário Google)</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Cuidado com competição excessiva. A votação é para reconhecer, não hierarquizar. Comente pontos fortes de TODOS os pôsteres, mesmo os não votados. Se aparecer conteúdo problemático (mensagem ambígua), converse no privado depois, não em público. Convide responsáveis para a rodada de apresentação, momento de valorização.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6 · Semana 11-12</span><h2>IA exploradora (pesquisa com pensamento crítico)</h2></div>
+  <p class="mod-resumo">Educador: este módulo dialoga com o eixo Cultura Digital da BNCC de forma direta. Pesquisar com IA sem cair em invenção é competência do século. A criança de 11-13 já pesquisa no Google e no TikTok, agora aprende a pesquisar com IA de forma crítica. Reforce o método dos 3 passos (informação, fonte, segunda fonte). E o princípio ético: escrever com as próprias palavras mesmo quando a IA ajudou a entender. Este módulo fecha o ciclo iniciado no Módulo 3 (estudar sem colar) e prepara o Módulo 7 (projetos reais).</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 1h</span><h3>Pesquisar checando se é verdade</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança pesquisa 1 tema aplicando o método dos 3 passos (informação, fonte, segunda fonte) e identifica pelo menos 1 caso onde precisou verificar.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Navegador para abrir fontes</li>
+      <li>Caderno para anotar resultados de verificação</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Se todo mundo acredita no primeiro post que vê no TikTok, ninguém aprende nada de verdade. Hoje você aprende a pesquisar como jornalista."</li>
+      <li><b>3-15 min · Conceito principal:</b> método dos 3 passos. Passo 1, pedir a informação. Passo 2, pedir a fonte de onde veio. Passo 3, abrir a fonte e conferir. Adicional: buscar 2 fontes independentes que confirmem. Não vale a IA "confirmar ela mesma". Fontes boas: sites de instituições (universidades, governo, jornais grandes), enciclopédias reconhecidas, livros. Fontes ruins: blogs sem autor, sites com tipo "verdade oculta", link estranho. Analogia com juiz de futebol, ele não decide sozinho, tem o VAR (segunda checagem). Você é o VAR da informação. Casos famosos: IA inventa livros, artigos, personagens históricos, com autor e data inventados.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pergunta sobre um tema (ex.: quando foi criada a bandeira do Brasil). Peça informação. Peça fonte. Abra a fonte. Confira. Peça segunda fonte. Compare.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, informação, fonte, segunda fonte independente. Gancho pro vídeo 2, "sua pesquisa".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. IA aberta. Navegador em outra aba."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha uma pergunta que te interessa. Passo 2, use o prompt de referência. Passo 3, receba a informação e as fontes. Passo 4, abra a primeira fonte. Existe? Fala do que ela disse? Passo 5, abra a segunda. Confere ou contradiz? Passo 6, no caderno anote 3 linhas: informação, se as fontes checaram, o que descobriu.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual o resultado da checagem. Se pegou a IA inventando fonte, é motivo de comemoração."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me responde: [pergunta]. Depois me d&aacute; 2 fontes independentes de onde essa informa&ccedil;&atilde;o sai, com link ou nome do site/livro. N&atilde;o inventa fonte. Se voc&ecirc; n&atilde;o tiver certeza, me avisa.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>3 passos: informação, fonte, segunda fonte. Repetir mantra.</li>
+      <li>Erro comum: criança pede fonte e acredita sem abrir. Sempre abrir.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, atitude crítica e ética diante da informação. Princípio das salvaguardas de aprendizagem.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> pesquisar 1 tema com método dos 3 passos, postar resultado da checagem. <b>Gabarito:</b> a criança abriu as fontes (não só recebeu). Anotou se conferiu ou não. Se conferiu, informação vale. Se não conferiu, marcou como duvidosa. Sucesso: pensamento crítico aplicado.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança aceita "wikipedia.org" como fonte sem abrir. Abra e mostre que Wikipedia tem referências no final. Erro típico 2, criança fica frustrada porque "não tem como confirmar". Aceite: "não confirmei" é resposta honesta. Adaptação para criança com dificuldade em ler fontes: peça pra IA resumir a fonte também, mas exija abrir. Adaptação para criança avançada: peça 3 fontes.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 1h</span><h3>Descobrir curiosidades e montar trabalho de escola</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança aplica o fluxo ético completo (entender, anotar, escrever, revisar) em um trabalho real de escola.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Um tema real de trabalho da escola (que esteja fazendo ou vá fazer)</li>
+      <li>Caderno para anotações e para escrever o texto</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Você tem trabalho de escola pra entregar. Duas escolhas: colar da IA e correr o risco, ou usar IA como parceira e entregar melhor. Hoje aprendemos o segundo."</li>
+      <li><b>3-15 min · Conceito principal:</b> fluxo ético em 4 passos. 1) IA te ajuda a ENTENDER o tema (explicação, resumo, pergunta). 2) VOCÊ toma nota do que aprendeu no caderno com suas palavras. 3) VOCÊ escreve o trabalho com suas palavras a partir das notas. 4) IA revisa se ficou claro e coerente (ela sugere, você aceita ou não). Passo crítico: entre o 2 e o 3, feche a IA. Escreva sem consulta. Depois abra pra revisão. Assim seu texto sai natural. Analogia com estudar pra prova: você lê, anota, fecha o livro, escreve com o que lembrou. É o mesmo.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Tema exemplo (fotossíntese, guerra fria, o que for). Fluxo em tempo real, com marcação de tempo pra cada etapa. Mostre o antes e depois: um texto feito com o fluxo vs. texto colado da IA (comparação didática).</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, entender + anotar + escrever + revisar. Feche a IA entre anotar e escrever. Gancho pro vídeo 2, "seu trabalho real".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Escolha um trabalho REAL da escola. Se não tem em aberto, escolha um tema que você tem curiosidade."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva o tema. Passo 2, use o prompt de referência. Passo 3, leia a explicação e as perguntas. Anote 5 pontos-chave no caderno. Passo 4, FECHE a IA. Passo 5, escreva o trabalho no caderno com suas palavras a partir das notas. 5-10 linhas. Passo 6, reabra a IA e peça revisão de clareza. Passo 7, ajuste o que fizer sentido, ignore o que não.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual seu texto final E uma nota de 1 linha: 'esse texto é meu, IA me ajudou a entender e revisar'."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Vou escrever um trabalho sobre [tema]. Me explica o assunto como se eu tivesse 12 anos. Depois me faz 5 perguntas pra eu ver se entendi. S&Oacute; DEPOIS me ajuda a organizar minha estrutura em t&oacute;picos. N&atilde;o escreve o trabalho por mim.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Fluxo 4 passos: entender, anotar, escrever (com IA fechada), revisar.</li>
+      <li>Erro comum: pular o "feche a IA". Sem isso, o texto vira paráfrase da IA.</li>
+      <li>Ligação MEC/BNCC: princípio das salvaguardas de aprendizagem, sem descarregamento cognitivo. Eixo Cultura Digital: ética na produção com IA.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> texto autoral sobre tema real, com o fluxo aplicado. <b>Gabarito:</b> texto tem voz da criança (gírias, ritmo, pequenos erros naturais). Não é polido demais. Cita o tema sem virar cópia de Wikipedia. Sucesso: a criança consegue explicar o texto em voz alta sem consultar o papel.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança pula "feche a IA". Interfira. Erro típico 2, criança escreve texto no caderno e depois "melhora" na IA copiando 80% da versão da IA. Aceite ajustes de gramática, rejeite reescrita completa. Adaptação para criança com dificuldade de escrita: aceite estrutura em tópicos em vez de texto corrido. Adaptação para criança avançada: peça bibliografia com fontes checadas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 1h</span><h3>Parceira de projeto de ciências</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança planeja um mini-experimento científico com hipótese, procedimento e forma de observação, com IA como parceira em cada etapa.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Materiais simples de casa (água, sal, papel, planta, etc.)</li>
+      <li>Caderno de ciências ou folha em branco</li>
+      <li>Responsável adulto por perto (crítico para segurança do experimento)</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Todo cientista começa com uma pergunta. Hoje você vai virar cientista por 1 hora, com IA como parceira de laboratório."</li>
+      <li><b>3-15 min · Conceito principal:</b> método científico simples adaptado. Etapas: 1) pergunta (o que quero saber), 2) hipótese (o que acho que vai acontecer), 3) material (o que preciso, tem que ser SEGURO), 4) procedimento (passo a passo), 5) observação (o que aconteceu), 6) conclusão (o que aprendi). Analogia com jogo: você tem hipótese sobre o que rola se você atacar de tal jeito, testa, vê o resultado. Ciência é isso. Regras de segurança: nada de fogo, nada de químico que a criança não conhece, adulto obrigatoriamente presente durante o experimento.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pergunta exemplo ("por que o gelo derrete mais rápido em água quente?"). Peça hipótese. Peça material. Peça procedimento. Peça forma de observação. Mostre a IA sendo parceira, sem fazer o experimento por você.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, pergunta + hipótese + procedimento seguro. Gancho pro vídeo 2, "seu experimento".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. IA aberta. Caderno de ciências."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva uma pergunta que você tem curiosidade sobre o mundo (ex.: por que a planta cresce em direção à luz?). Passo 2, use o prompt de referência. Passo 3, receba hipótese sugerida, material seguro, procedimento. Passo 4, mostre pro adulto: podem fazer em casa nessa semana? Passo 5, ajuste o que for necessário. Passo 6, marque um horário pra fazer com adulto durante a semana. Passo 7, escreva o plano final no caderno.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual seu plano de experimento. Depois do experimento, poste resultado e conclusão."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Quero fazer um mini-experimento sobre [tema] em casa, com material simples e SEGURO pra crian&ccedil;a de 12 anos com adulto por perto. Me ajuda a criar hip&oacute;tese, listar material, montar procedimento em 5 passos e definir como vou observar e anotar o resultado.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Método científico: pergunta, hipótese, material, procedimento, observação, conclusão.</li>
+      <li>Erro comum: criança quer fazer experimento perigoso (fogo, químico). Corrija na hora da IA. Se a IA sugerir algo inseguro, refuse.</li>
+      <li>Ligação MEC/BNCC: eixo Pensamento Computacional, decomposição e algoritmo. Princípio da centralidade humana, IA como parceira, não substituta.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> plano completo de experimento seguro. <b>Gabarito:</b> as 6 etapas estão presentes. Material realmente disponível em casa. Procedimento seguro (sem fogo, sem químico perigoso). Sucesso: o experimento é factível e a hipótese é falseável (tem como dar certo ou errado).</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança propõe experimento perigoso empolgada. Adulto veta, você reforça no encontro. Erro típico 2, criança pula hipótese e vai direto pro experimento. Volta pra hipótese. Adaptação para criança sem material acessível: use experimentos com água, papel, luz do sol. Adaptação para criança avançada: peça 2 experimentos com variáveis controladas.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 12 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> integrar as 3 aulas do módulo focando no pensamento crítico. Alunos apresentam hipóteses de experimento, turma discute e refina. Debate: pesquisar com IA vs pesquisar no Google.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras abertas, cada criança fala em 1 frase "uma coisa que descobri pesquisando essa semana".</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise método dos 3 passos, fluxo ético em 4 passos, método científico. Chat aberto para dúvidas. Foco na diferença entre "achar informação" e "confirmar informação".</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> "Debate IA vs Google". Escolha um tema de pesquisa. Faça na frente da turma pesquisa no Google e pesquisa na IA. Compare vantagens e limitações. Turma opina no chat.</li>
+      <li><b>35-50 min · Breakout rooms:</b> trios apresentam suas hipóteses de experimento. Cada grupo dá 1 sugestão de melhoria pro plano do colega. 15 min.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada grupo compartilha 1 sugestão dada e 1 recebida. Feche com a frase: "pesquisar é confirmar, não só receber". Oriente semana seguinte: projetos reais.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Slide com método dos 3 passos e método científico</li>
+      <li>Conta institucional de IA e navegador com Google visíveis</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>O debate IA vs Google engaja. Cuidado para não vender uma como "melhor". Mostre que são complementares: Google é bom pra buscar páginas específicas, IA é boa pra explicar e resumir. Ambas exigem checagem. Na apresentação de hipóteses, valorize a criatividade da pergunta. "Por que meu cachorro late para o carteiro?" vale tanto quanto pergunta de ciências formal. Convide responsáveis a acompanhar o experimento durante a semana, e reforce a segurança.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7 · Semana 13-14</span><h2>Criando coisas legais (projetos reais)</h2></div>
+  <p class="mod-resumo">Educador: aqui a criança aplica tudo o que aprendeu em projetos concretos do dia a dia. Assistente pessoal, projeto em grupo, apresentação, mini-feira de portfólio. É o preparo direto pro projeto final do Módulo 8. Ponto de atenção: projeto em grupo online é desafiador com essa faixa etária. Trabalhe protocolos claros de comunicação e divisão de tarefas. Reforce ao longo do módulo o princípio da centralidade humana em contexto de colaboração: IA acelera, mas o time humano decide.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 1h</span><h3>Assistente pessoal e ajuda em tarefas chatas</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança monta 3 prompts salvos que resolvem tarefas repetitivas do dia a dia (estudar, organizar semana, escrever).</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Documento simples para salvar os 3 prompts (Google Docs, bloco de notas)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Existe uma coisa chata que você faz toda semana. Escolher roupa, organizar a mochila, planejar estudo. IA pode virar sua assistente pessoal pra isso."</li>
+      <li><b>3-15 min · Conceito principal:</b> a ideia de "prompt salvo". Você escreve um prompt bem estruturado, salva num documento, e reutiliza sempre. Vira uma ferramenta pronta. Exemplos de assistentes úteis: 1) assistente de estudos ("me pergunta sobre X até eu decorar"), 2) assistente de organização ("me ajude a listar tarefas em ordem de urgência"), 3) assistente de escrita ("revisa esse texto sem mudar meu jeito de falar"). Anatomia de prompt salvo: papel + tarefa + regras + formato. Analogia com atalho no celular: você configura uma vez e usa sempre.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Monte um assistente de organização passo a passo, refine 2 vezes. Salve no documento com nome claro. Mostre como reutilizar copiando e colando.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, prompt bem feito, salvo, reutilizado. Gancho pro vídeo 2, "seus 3 assistentes".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. IA aberta. Documento pra salvar aberto."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, pense em 3 tarefas repetitivas suas. Escolha 3. Passo 2, monte o assistente 1 (ex.: estudar). Teste com um assunto real. Refine. Salve no documento. Passo 3, assistente 2 (organização). Passo 4, assistente 3 (escrita). Passo 5, no documento organize com título e uso ("copiar e colar quando quiser X").</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual seu documento com os 3 assistentes. Use pelo menos 1 essa semana."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; meu assistente de organiza&ccedil;&atilde;o. Toda vez que eu colar minha lista de tarefas, voc&ecirc; me ajuda a organizar em ordem de urg&ecirc;ncia, me pergunta o que ainda est&aacute; faltando, e me d&aacute; um plano da semana em t&oacute;picos.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Anatomia de prompt salvo: papel + tarefa + regras + formato.</li>
+      <li>Erro comum: criança monta prompt genérico ("me ajuda com tudo"). Específico funciona.</li>
+      <li>Ligação MEC/BNCC: eixo Pensamento Computacional, automação de tarefas repetitivas. Princípio da centralidade humana, você configura, IA executa.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> documento com 3 prompts salvos, cada um com propósito claro. <b>Gabarito:</b> os 3 prompts atacam tarefas distintas. Estão bem estruturados. Sucesso: outra pessoa poderia usar o prompt e obter resultado útil.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança monta 3 assistentes muito parecidos. Peça variedade. Erro típico 2, criança salva mas nunca reutiliza. Marque tarefa na próxima aula: quantas vezes usou. Adaptação para criança com muita rotina escolar rígida: foco em assistente de estudos. Adaptação para criança com pouca rotina: foco em assistente criativo (ideias, escrita).</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 1h</span><h3>A IA num projeto em grupo</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança combina com colegas ou família um mini-projeto colaborativo com divisão de papéis, e usa IA como aceleradora sem substituir a colaboração.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>1-2 parceiros (colegas do curso, irmãos, primos, família)</li>
+      <li>Documento colaborativo (Google Docs compartilhado)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Trabalho em grupo é chato porque sempre tem quem faz tudo e quem faz nada. Com IA, isso muda. Ou piora, se não fizer certo."</li>
+      <li><b>3-15 min · Conceito principal:</b> regras de projeto em grupo com IA. 1) Dividir papéis claros (quem faz o quê). 2) Cada pessoa usa IA na SUA parte. 3) Todos revisam juntos o resultado. 4) Ninguém "manda a IA fazer tudo" e cola. Papéis úteis: pesquisador, escritor, revisor, designer, apresentador. Cada um usa IA de forma diferente. Analogia com jogo em equipe: cada um tem função, se todos jogam o mesmo, o time perde. Ponto crítico: no fim, junte todos numa videochamada e leiam juntos o resultado. Ninguém pode entregar sem ver a parte do outro.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Simule um projeto ("apresentação sobre reciclagem"). Divida papéis: pesquisador (dados), escritor (texto), designer (visual). Peça pra IA sugerir divisão pra um grupo real com N pessoas. Mostre como cada papel usa IA.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, dividir papéis, cada um usa IA na sua parte, revisar juntos. Gancho pro vídeo 2, "seu projeto real".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Combine com 1-2 pessoas (colegas, irmãos) um mini-projeto de 30 minutos."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha tema simples. Passo 2, use o prompt de referência com número real de pessoas. Passo 3, divida papéis. Passo 4, cada um usa IA na sua parte por 10 min. Passo 5, junte tudo num documento. Passo 6, leiam juntos e ajustem.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual o resultado do projeto E uma nota: 'nós ___ fizemos, cada um numa parte, IA acelerou'."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Nosso projeto &eacute; sobre [tema]. Somos [N] pessoas. Sugere como dividir tarefas de forma justa, com uma tarefa clara pra cada um e sem sobreposi&ccedil;&atilde;o.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Papéis claros, cada um com IA na sua parte, revisão coletiva.</li>
+      <li>Erro comum: uma pessoa faz tudo mandando IA gerar. Reenquadre: isso não é trabalho em grupo.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, colaboração digital. Princípio da centralidade humana, humanos coordenam.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> mini-projeto em grupo com divisão de papéis explícita. <b>Gabarito:</b> pelo menos 2 pessoas contribuíram (visível na divisão). Cada parte tem cara diferente (vocabulário, escolhas). Sucesso: todos os participantes conseguem explicar a parte do outro.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, uma criança faz tudo. Cobre divisão. Erro típico 2, atrito entre parceiros. Ensine a resolver com regra clara: "sua parte, minha parte, revisão junta". Adaptação para criança sem parceiro disponível: aceite dupla com adulto da casa (irmão, primo, responsável). Adaptação para criança que tem dificuldade social: comece com dupla apenas, não trio.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 1h</span><h3>Apresentações e cartazes</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança monta uma apresentação de 5 slides sobre um tema livre com estrutura profissional (capa, objetivo, 3 pontos, fechamento).</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Ferramenta de apresentação (PowerPoint, Google Slides, Canva)</li>
+      <li>Tema à escolha</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Um dia você vai apresentar seu trabalho pra turma, pra família, pra um chefe. Uma boa apresentação vira com estrutura, não com sorte."</li>
+      <li><b>3-15 min · Conceito principal:</b> anatomia de apresentação boa de 5 slides. Slide 1, capa (título + seu nome). Slide 2, objetivo (o que vou falar em 1 frase). Slides 3, 4, 5, os 3 pontos-chave (1 por slide). Opcional slide 6, fechamento (o que quero que você lembre). Regra: cada slide tem no máximo 30 palavras. Se tem mais, é fala, não slide. Analogia com TikTok: primeiros 3 segundos determinam se alguém fica ou sai. Slide 1 é isso. IA ajuda a estruturar esqueleto e escrever texto de cada slide. VOCÊ decide conteúdo.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Escolha tema. Peça pra IA sugerir estrutura de 5 slides. Escolha um esqueleto. Peça texto curto pra cada slide. Abra o Canva ou Google Slides, monte em 5 minutos.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, estrutura de 5 slides, texto curto, VOCÊ decide. Gancho pro vídeo 2, "sua apresentação".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Tema escolhido. Ferramenta de slides aberta."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva tema e público (pra quem vai apresentar). Passo 2, use o prompt de referência. Passo 3, receba a estrutura e ajuste. Passo 4, monte os 5 slides. Passo 5, releia em voz alta cada slide, cronometrando. Deve dar 5 minutos no total. Passo 6, salve.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual sua apresentação. Se puder, grave 1 min do slide 1 apresentando pra alguém em casa."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Vou fazer uma apresenta&ccedil;&atilde;o de 5 slides sobre [tema] pra [p&uacute;blico]. Me sugere estrutura (t&iacute;tulo de cada slide) e um texto curto de m&aacute;ximo 30 palavras pra cada, sem enrolar. Sugere tamb&eacute;m 1 pergunta pra abrir e 1 pra fechar.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Anatomia: capa, objetivo, 3 pontos, fechamento. Máximo 30 palavras por slide.</li>
+      <li>Erro comum: slide-texto (parede de texto). Slide é apoio, fala é conteúdo.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, comunicação. Princípio da centralidade humana, você é o apresentador.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> apresentação de 5 slides salva. <b>Gabarito:</b> capa clara, objetivo definido, 3 pontos distintos, cada slide com pouco texto. Sucesso: alguém que não conhece o tema entende os 3 pontos-chave só de olhar.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, texto excessivo. Corte pela metade. Erro típico 2, slide bonito mas sem estrutura. Volta pra estrutura antes do visual. Adaptação para criança tímida de apresentar: aceite versão sem gravação. Adaptação para criança avançada: peça 7 slides com transições e citação de fonte.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 1h</span><h3>Mini-feira: mostrar o que criou</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança organiza 3 melhores criações do curso num portfólio pessoal com legenda de autoria em cada.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Documento único (Google Docs, PDF, Canva) para reunir as 3 criações</li>
+      <li>Acesso às criações anteriores do curso (cartão, quadrinho, apresentação, imagem, história)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Portfólio é onde você mostra ao mundo o que sabe fazer. Fotógrafo tem portfólio, arquiteto tem, até no LinkedIn. Você vai ter o seu."</li>
+      <li><b>3-15 min · Conceito principal:</b> portfólio é curadoria + apresentação + honestidade. Curadoria: você escolhe as 3 melhores. Apresentação: cada uma vem com título, imagem e legenda. Honestidade: legenda diz o que você fez e onde a IA ajudou. Estrutura de cada item do portfólio: 1) título, 2) descrição em 2 linhas, 3) processo (como fez), 4) o que aprendeu, 5) autoria (você + IA). Analogia com jogador de futebol mostrando os 3 melhores gols: não é o que jogou, é o que representa. Reforce que portfólio não é foto sua nem seu nome completo, é o TRABALHO.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Junte 3 criações fictícias num documento simples com a estrutura de cada item. Mostre a diferença entre "colar" e "curar".</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, curar, apresentar, ser honesto na autoria. Gancho pro vídeo 2, "seu portfólio".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Documento aberto. Acesso às suas criações do curso."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, revise 5-6 criações e escolha as 3 melhores. Passo 2, no documento crie a seção para cada uma. Passo 3, para cada: título, descrição, processo, aprendizado, autoria. Use o prompt para ajuda com legenda. Passo 4, revise no fim, tudo próprio, sem nome completo, sem escola.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual seu portfólio. Isso vale como pré-projeto final."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me ajuda a escrever uma legenda pra cada uma dessas 3 cria&ccedil;&otilde;es [descreve]. Uma frase curta explicando o que eu fiz, o que aprendi e como usei a IA em cada.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Estrutura de item: título, descrição, processo, aprendizado, autoria.</li>
+      <li>Erro comum: criança cola tudo sem escolher. Curadoria é escolha.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, cidadania e presença digital. Princípio da proteção de dados: portfólio sem dado pessoal.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> portfólio com 3 criações + legendas de autoria. <b>Gabarito:</b> curadoria mostra melhor da criança. Legendas explicam processo. Autoria honesta. Sucesso: portfólio consegue "vender" a criança como criadora consciente.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança inclui dado pessoal ("meu nome é X, escola Y"). Cobra remoção. Erro típico 2, legenda genérica ("gostei de fazer"). Peça específico. Adaptação para criança sem muitas criações: use as 2 melhores + reflexão. Adaptação para criança orgulhosa demais: peça auto-crítica de 1 ponto por criação.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 14 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> apresentação em 2 min por aluno de 1 criação do portfólio, feedback positivo e específico da turma, reflexão sobre trajetória.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras abertas, cada criança fala em 1 palavra "como foi essa semana de projetos".</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revisão rápida dos 4 tipos de projeto (assistente, grupo, apresentação, portfólio). Foco em curadoria.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> apresentação em 2 min por aluno (adapte conforme tamanho da turma; se necessário, divida em 2 encontros). Cada aluno mostra 1 criação. Turma dá 1 feedback positivo pelo chat.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas conversam: "o que eu levo do curso até aqui". 15 min.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada dupla compartilha 1 aprendizado. Feche com a frase: "portfólio não é tudo o que fez, é o que representa. Você é o que representa". Oriente semana final: fechamento e projeto final.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Galeria virtual dos portfólios da turma pré-encontro</li>
+      <li>Cronômetro visível pra respeitar 2 min por aluno</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Feedback positivo específico é regra de ouro. "Legal" não vale. "Achei muito legal como você usou tal cor para tal sentimento" vale. Ensine a turma a fazer feedback assim. Se um aluno ficar muito ansioso no momento de apresentar, ofereça câmera fechada com voz apenas. Convide responsáveis a assistir esse encontro, é momento de valorização. Prepare próximo encontro (semana 15) como fechamento cerimonial.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8 · Semana 15</span><h2>Usar IA do jeito certo (responsabilidade e projeto final)</h2></div>
+  <p class="mod-resumo">Educador: módulo de fechamento. Aqui a criança consolida os temas mais estruturantes do curso: privacidade absoluta, pensamento crítico, ética e visão de futuro. Termina com o projeto final, prova concreta do que aprendeu. Este módulo dialoga com todos os princípios MEC: centralidade humana, salvaguardas de aprendizagem, proteção de dados e equidade. Reforce que o objetivo do curso não foi criar dependência da IA, foi criar autonomia com IA. A criança sai sabendo pilotar, não ser pilotada.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 1h</span><h3>Privacidade: o que NUNCA contar pra IA</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança lista 10 informações pessoais que não podem ir pra IA, entende a diferença dado real vs dado fictício e sabe substituir na prática.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Folha para listar as 10 informações pessoais</li>
+      <li>Responsável adulto por perto (importante conversa de reforço)</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Existe informação que se você entregar pra IA, entrega pro mundo. Hoje a gente faz o mapa do que NUNCA entra na IA."</li>
+      <li><b>3-15 min · Conceito principal:</b> categorias de dado pessoal. Identificação: nome completo, RG, CPF, data de nascimento completa. Localização: endereço, escola, bairro específico, foto que mostra fachada. Contato: telefone, e-mail pessoal, redes sociais reais. Financeiro: senhas, cartão, número de banco. Sensível: foto do rosto seu ou de outros, saúde específica, orientação, religião. Também não vai: dado pessoal de amigo, familiar, colega. Nem seu, nem dos outros. Isso é lei: LGPD e ECA Digital protegem crianças. Truque prático: use dado FICTÍCIO no lugar. Precisa dizer nome? "João". Precisa endereço? "Rua das Flores, 100". Precisa idade? Diga "por volta de 12" em vez da exata.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Cenário 1, IA "pra personalizar, me diz seu nome". Mostre resposta "prefiro não dizer, pode continuar sem". Cenário 2, exercício da escola com nome no cabeçalho. Mostre cortando o nome antes de enviar. Cenário 3, IA pergunta idade exata. Mostre resposta com faixa.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, dado pessoal nunca vai, use fictício, LGPD protege crianças. Gancho pro vídeo 2, "sua lista de 10".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado obrigatoriamente. Papel e caneta."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, olhe pro seu quarto, sua mochila, seus contatos no celular. Passo 2, liste 10 informações pessoais suas ou de pessoas próximas que NUNCA vão pra IA. Passo 3, para cada, escreva ao lado a versão fictícia que você usaria. Passo 4, discuta com o adulto 3 das 10 mais importantes. Passo 5, pergunte à IA algo sobre você usando dado fictício. Compare com como faria com dado real.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual sua lista das 10 (SEM os dados reais, só a categoria). Ex.: '1. meu endereço', '2. escola', '3. foto do meu rosto'."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Vou te fazer perguntas usando dados fict&iacute;cios de prop&oacute;sito. Meu nome fict&iacute;cio &eacute; Jo&atilde;o, minha cidade fict&iacute;cia &eacute; Cidade dos Sonhos. N&atilde;o me pe&ccedil;a dados reais, mesmo se eu perguntar sobre mim.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>5 categorias de dado pessoal: identificação, localização, contato, financeiro, sensível.</li>
+      <li>Erro comum: criança acha que "só nome" é dado pessoal. Amplie sempre.</li>
+      <li>Ligação MEC/BNCC: princípio da proteção de dados, LGPD, ECA Digital. Eixo Cultura Digital: cidadania.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> lista de 10 categorias + versões fictícias. <b>Gabarito:</b> pelo menos 3 das 5 categorias aparecem. Substitutos fictícios são plausíveis. Sucesso: a criança discutiu com o adulto e verbalizou 3 delas em voz alta.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança minimiza ("mas ninguém vai ver"). Reenquadre: IA pode salvar, pode vazar, pode ser usada por outros. Erro típico 2, criança se assusta demais e não quer usar IA. Reenquadre: com dados fictícios, tudo bem. Adaptação para criança que já compartilhou dado no passado: acolha sem julgar, ensine o próximo passo (apagar histórico). Adaptação para criança que insiste em compartilhar: envolva o responsável, avise a instituição.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 1h</span><h3>Pensamento crítico + ética</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança reconhece as 2 armadilhas do uso de IA (acreditar em tudo, depender demais) e formula 2 perguntas de opinião para praticar autonomia.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Lista pré-preparada de 5 temas de opinião apropriados (ex.: dever de casa é útil, celular no colégio deveria ser proibido)</li>
+      <li>Caderno para anotar reflexões</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Existem duas armadilhas com IA. Acreditar em tudo que ela diz. E deixar ela decidir por você. Ambas te fazem menor."</li>
+      <li><b>3-15 min · Conceito principal:</b> armadilha 1, acreditar em tudo (o combate é pensamento crítico, aula 3 revisão). Armadilha 2, dependência (achar que a IA sabe tudo e substitui você). O caminho do meio, usar como ferramenta. Sobre opinião: a IA aprendeu opinião de muita gente da internet. Ela pode reproduzir viés (favorecer um lado sem você notar). Ela pode ser neutra demais e não decidir. Regra: opinião de valor é sua. Peça pra IA apresentar 2 lados, decida você. Analogia com amigo que sempre concorda com você, não ajuda a crescer. IA que "sempre concorda" é armadilha. Peça pra ela discordar.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Escolha tema de opinião. Use o prompt de referência. Mostre a IA apresentando 2 lados. Não peça opinião dela. Comente ao vivo: "agora eu decido, ela apresentou o cenário".</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, 2 armadilhas, caminho do meio, opinião de valor é sua. Gancho pro vídeo 2, "seu debate interno".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. IA aberta. Escolha 2 dos 5 temas de opinião."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, tema 1. Use o prompt de referência. Passo 2, leia os 2 lados. Escreva no caderno "eu concordo mais com X porque Y". Passo 3, agora peça a opinião DELA (só pra testar). Ela vai fugir ou dar resposta genérica. Comente com o adulto: "viu, ela não tem opinião de verdade". Passo 4, repita com tema 2.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual sua opinião sobre 1 dos 2 temas, com 2 razões. Não postar o que a IA disse. Só sua opinião."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me apresenta 2 lados diferentes sobre [assunto de opini&atilde;o]. Depois me pergunta qual eu concordo mais e por qu&ecirc;. N&atilde;o me diz sua opini&atilde;o.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>2 armadilhas: acreditar demais, depender demais.</li>
+      <li>Erro comum: criança pede a opinião da IA e adota. Reenquadre: opinião de valor é sua.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, atitude crítica e ética. Princípio das salvaguardas de aprendizagem.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> opinião pessoal sobre tema com 2 razões próprias. <b>Gabarito:</b> a criança toma posição (não fica em cima do muro). Razões são pessoais, não copiadas. Sucesso: consegue defender a posição em conversa.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança quer que a IA decida. Insista: você decide. Erro típico 2, criança escolhe sempre "os dois lados são iguais". Empurre para tomar posição. Adaptação para criança tímida em opinar: aceite opinião escrita anonimamente. Adaptação para criança impulsiva: peça 30 segundos de pausa entre ler os 2 lados e decidir.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 1h</span><h3>O futuro: IA e as profissões</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança pesquisa 3 profissões de interesse, entende como a IA vai afetar cada uma e identifica 3 habilidades humanas que continuam essenciais.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Lista de "3 profissões de interesse" no caderno</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Quando você tiver 25 anos, o mundo do trabalho vai ter mudado bastante. IA está no meio disso. Sem medo, com preparo."</li>
+      <li><b>3-15 min · Conceito principal:</b> 3 categorias de mudança. 1) Profissões que vão mudar (motorista, tradutor, atendente, designer). 2) Profissões novas que vão surgir (curador de IA, engenheiro de prompt, revisor ético). 3) Habilidades humanas que sempre importam (pensar crítico, criar, cuidar, decidir, negociar). Regra do preparo: quem sabe pensar por conta, criar e decidir se prepara pra qualquer futuro. IA pode fazer muito, não pode ser humano. Analogia com calculadora, ela apareceu, matemático não sumiu, virou outra coisa (mais análise, menos conta). O mesmo vai valer pra várias profissões.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Escolha profissão exemplo (professor, médico, chef). Use o prompt de referência. Mostre resposta. Comente as 3 categorias.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, mudar, surgir, resistir (habilidades humanas). Gancho pro vídeo 2, "suas 3 profissões".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Pensa em 3 profissões que te interessam ou que te dão curiosidade."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva as 3 profissões. Passo 2, uma por vez, use o prompt. Passo 3, para cada, anote: o que essa profissão faz hoje, o que a IA já mudou, o que vai continuar humano. Passo 4, faça uma lista das 3 habilidades humanas que você acha que MAIS importam nas 3 profissões. Passo 5, escolha 1 habilidade que você quer desenvolver.</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual sua habilidade escolhida e 1 forma de começar a praticar."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Me fala sobre a profiss&atilde;o [X]. O que essa profiss&atilde;o faz hoje, o que a IA j&aacute; mudou nela nos &uacute;ltimos 5 anos, e o que provavelmente vai continuar sendo tarefa humana nos pr&oacute;ximos 10 anos.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>3 categorias: mudar, surgir, resistir.</li>
+      <li>Erro comum: criança fica assustada ("IA vai tomar tudo"). Reenquadre com habilidades humanas.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, cidadania e mundo do trabalho. Princípio da centralidade humana.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> habilidade humana escolhida + forma de praticar. <b>Gabarito:</b> habilidade concreta (não "ser inteligente"). Forma de prática factível (ex.: "vou praticar decisão fazendo eu mesmo minha lista de tarefas essa semana"). Sucesso: a criança sai com plano pequeno.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, criança seleciona profissão "youtuber" e pesquisa vazia. Aceite, mas peça pra pesquisar mais uma. Erro típico 2, criança fica com medo do futuro. Volte na analogia da calculadora, o mundo se ajusta. Adaptação para criança com dificuldade de imaginar futuro: peça profissão de alguém da família. Adaptação para criança avançada: peça 5 profissões e ranking de "mais impactadas pela IA".</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 1h</span><h3>Projeto final: meu projeto com IA (apresentação)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, a criança tem projeto próprio planejado, executado e pronto para apresentar em 2 minutos no encontro final. Prova consolidada do que aprendeu.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Ferramentas que a criança quiser usar (slides, imagem, texto, jogo)</li>
+      <li>Prazo de 1 semana para executar</li>
+      <li>Responsável adulto ciente do projeto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> "Isso é o fim do curso. Fim que é começo. Você vai escolher um problema ou tema que te interessa, resolver ou explorar com IA, montar entrega, apresentar em 2 minutos. Isso é o resumo de tudo."</li>
+      <li><b>3-15 min · Conceito principal:</b> estrutura do projeto final em 4 passos. 1) Escolha problema/tema que te interessa (real, não genérico). 2) Use IA pra pesquisar, criar ou organizar (aplique o que aprendeu). 3) Monte a entrega em formato à escolha (apresentação, cartaz, texto, história, quadrinho, jogo, tutorial). 4) Prepare 2 minutos de fala. Critérios de avaliação: qualidade da entrega (30%), clareza da apresentação (30%), uso ético e crítico da IA (25%), reflexão sobre o que aprendeu (15%). Reflexão significa: você consegue dizer o que a IA fez, o que você fez, e o que você levou desse curso. Regra: nada de dado pessoal na entrega. Autoria explícita.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Exemplo de projeto final imaginário completo. Estrutura de 2 min de fala: problema (30 seg), solução (60 seg), reflexão (30 seg).</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, tema real, entrega concreta, 2 min de fala. Gancho pro vídeo 2, "seu projeto começa agora".</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> "Adulto ao lado. Prazo de 1 semana. Vamos começar juntos, agora."</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha tema real (ex.: "quero criar um jogo pra ensinar meu irmão a somar"). Passo 2, escreva no papel 3 linhas: problema/tema, entrega, prazo. Passo 3, use o prompt de referência para começar. Passo 4, esboço da entrega no papel. Passo 5, esboço dos 2 min de fala em bullets. Passo 6, cronograma da semana (quando faz o quê).</li>
+      <li><b>20-25 min · Fechamento:</b> "Poste no ambiente virtual seu plano. Executa durante a semana. Traz pronto pro encontro final. Nos vemos lá."</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Meu projeto final &eacute; sobre [tema/problema]. Quero entregar em formato de [formato]. Me ajuda a planejar em 5 etapas, com estimativa de tempo pra cada, e me sugere 3 formas de deixar o resultado melhor. N&atilde;o executa por mim, s&oacute; planeja comigo.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Estrutura em 4 passos: tema, uso da IA, entrega, apresentação.</li>
+      <li>Critérios de avaliação: qualidade, clareza, ética, reflexão.</li>
+      <li>Ligação MEC/BNCC: consolida os 3 eixos (Pensamento Computacional, Mundo Digital, Cultura Digital) e os 4 princípios MEC (centralidade humana, salvaguardas de aprendizagem, proteção de dados, equidade).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> plano de projeto final com tema, entrega e cronograma. <b>Gabarito:</b> tema real (não genérico). Entrega concreta e realista pra 1 semana. Cronograma factível. Sucesso: no encontro final, a criança apresenta o projeto completo.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, tema grande demais ("resolver a fome"). Reduza pra algo factível. Erro típico 2, criança adia execução. Marque check-in no meio da semana. Adaptação para criança em dificuldade: aceite entrega menor com reflexão maior. Adaptação para criança que quer entregar demais: limite escopo pra qualidade, não quantidade.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 15 · Pauta final (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> apresentação do projeto final por cada aluno em 2 min, feedback da turma, entrega de certificado, roda de conversa "o que levo daqui".</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras abertas, cada criança diz em 1 palavra "como me sinto no último encontro".</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revisão emocional dos 8 módulos em 1 min cada, os grandes marcos. Foco na trajetória, não em conteúdo.</li>
+      <li><b>15-40 min · Apresentações do projeto final:</b> 2 min por aluno (ajuste conforme tamanho da turma; para turmas grandes, divida em 2 sessões). Turma manda 1 feedback positivo pelo chat pra cada. Cronômetro rigoroso.</li>
+      <li><b>40-50 min · Entrega de certificado + reconhecimento:</b> chame cada aluno pelo nome. Diga 1 coisa específica que você notou no percurso dele. Certificado no ambiente virtual e envio pro responsável.</li>
+      <li><b>50-60 min · Roda de conversa final:</b> "o que levo daqui" em 1 frase por aluno. Feche com a frase do curso: "IA é ferramenta, você é o piloto. Bom voo". Convite pra continuidade (curso avançado, comunidade, próximas trilhas).</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms (não necessariamente usados)</li>
+      <li>Certificados gerados antes do encontro</li>
+      <li>Cronômetro visível</li>
+      <li>Convite formal aos responsáveis para assistir</li>
+      <li>Material de continuidade se aplicável</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Este é o encontro mais importante emocionalmente. Prepare o convite aos responsáveis com antecedência, momento de valorização é para eles verem. Se a turma é grande e não cabe todo mundo em 25 min, faça 2 sessões (metade da turma cada). Cada apresentação merece reconhecimento nominal seu. Prepare 1 elogio específico pra cada aluno com base na trajetória. Não repita elogio. Feche mesmo que o cronograma estoure em 5 minutos: emoção manda. Registre o encontro final (com autorização) para portfólio do curso, sempre respeitando o rosto e voz das crianças (poderia ser só áudio do professor apresentando os projetos).</p></div>
+  </article>
+</section>
+</div>
+</body>
+</html>

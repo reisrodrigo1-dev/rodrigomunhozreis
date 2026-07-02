@@ -61,23 +61,48 @@ export default function AdminCursos() {
       </p>
 
       <div className="mt-6 rounded-2xl border border-green-700/30 bg-green-50 p-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-green-700">EAD 30h · Piloto</p>
-            <p className="mt-1 text-sm font-medium text-ink">
-              IA do Zero ao Avançado — Crianças 11-13 (30h · misto)
-            </p>
-            <p className="mt-0.5 text-xs text-muted">
-              Ementa nova: 30 aulas de 1h (25min vídeo + 25min prática + 10min exercício) em 15 semanas, com encontro ao vivo semanal. Se aprovar, disparo agentes pra apostilas e e-book.
-            </p>
-          </div>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-green-700">EAD 30h · Piloto</p>
+          <p className="mt-1 text-sm font-medium text-ink">
+            IA do Zero ao Avançado — Crianças 11-13 (30h · misto)
+          </p>
+          <p className="mt-0.5 text-xs text-muted">
+            30 aulas de 1h (2 vídeos de 25 min + exercício) em 15 semanas, com encontro ao vivo semanal.
+            Pacote completo: ementa, apostila do aluno, apostila do professor e e-book acompanhante.
+          </p>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
           <a
             href="/cursos/curso-ia-criancas-30h.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary !px-4 !py-2 text-sm"
+            className="btn btn-primary !px-3 !py-1.5 text-xs"
           >
-            Ver ementa ↗
+            Ementa ↗
+          </a>
+          <a
+            href="/cursos/curso-ia-criancas-30h-aluno.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost !px-3 !py-1.5 text-xs"
+          >
+            Apostila do aluno ↗
+          </a>
+          <a
+            href="/cursos/curso-ia-criancas-30h-professor.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost !px-3 !py-1.5 text-xs"
+          >
+            Apostila do professor ↗
+          </a>
+          <a
+            href="/cursos/curso-ia-criancas-30h-ebook.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary !px-3 !py-1.5 text-xs"
+          >
+            E-book ↗
           </a>
         </div>
       </div>
