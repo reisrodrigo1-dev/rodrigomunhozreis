@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila do Aluno · Vibecoding do Zero ao Avançado · Crianças 12-14 · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF7E8;--page:#FFFFFF;--card:#FFFDF7;
+  --ink:#1F1D1B;--ink-soft:#4A443C;--muted:#7C7365;
+  --marca:#E8A33D;--marca-deep:#B5762A;--marca-soft:#FDECC7;
+  --azul:#3B82F6;--azul-soft:#DBEAFE;
+  --verde:#10B981;--verde-soft:#D1FAE5;
+  --roxo:#A855F7;--roxo-soft:#EDE2FE;
+  --laranja:#F97316;--laranja-soft:#FFEDD5;
+  --amarelo:#EAB308;--amarelo-soft:#FEF3C7;
+  --rosa:#EC4899;--rosa-soft:#FCE7F3;
+  --line:#EFE5D2;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 80px}
+
+.capa{
+  background:
+    radial-gradient(60% 50% at 15% 0%, rgba(168,85,247,.28), transparent 60%),
+    radial-gradient(50% 50% at 85% 20%, rgba(59,130,246,.28), transparent 60%),
+    radial-gradient(70% 60% at 50% 100%, rgba(232,163,61,.22), transparent 60%),
+    linear-gradient(180deg,#1D1830,#2A1F45);
+  color:#FFF;padding:70px 22px 60px;position:relative;overflow:hidden;
+}
+.capa .inner{max-width:920px;margin:0 auto;position:relative}
+.capa .kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FDD37A;font-weight:700}
+.capa h1{font-family:var(--serif);font-size:clamp(34px,6.5vw,58px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:14px 0 14px}
+.capa .sub{font-family:var(--sans);font-size:19px;font-weight:500;color:#E9DCFB;max-width:52ch;line-height:1.45}
+.capa .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.capa .meta span{
+  border-radius:999px;padding:7px 15px;font-size:12.5px;font-weight:600;
+  background:rgba(255,255,255,.12);color:#FFF;border:1px solid rgba(255,255,255,.18);
+}
+.capa .meta span:nth-child(1){background:linear-gradient(135deg,#F97316,#EAB308);border-color:transparent;color:#1F1D1B}
+.capa .meta span:nth-child(2){background:linear-gradient(135deg,#3B82F6,#A855F7);border-color:transparent}
+.capa .meta span:nth-child(3){background:linear-gradient(135deg,#10B981,#3B82F6);border-color:transparent}
+
+.modulo{margin:0 0 14px}
+.mod-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:38px 0 12px;margin-bottom:6px;border-bottom:3px dashed var(--line)}
+.mod-num{
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#FFF;background:linear-gradient(135deg,var(--marca),var(--laranja));
+  border-radius:999px;padding:6px 14px;box-shadow:0 4px 12px rgba(232,163,61,.35);
+}
+.mod-head h2{font-family:var(--serif);font-size:28px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.mod-resumo{color:var(--ink-soft);font-size:15px;margin-bottom:16px;background:#FFF;border-radius:14px;padding:14px 18px;border:1px solid var(--line)}
+
+.aula{
+  border:1.5px solid var(--line);border-radius:22px;background:var(--card);padding:24px 26px;margin:18px 0;
+  box-shadow:0 6px 24px rgba(31,29,27,.06);position:relative;overflow:hidden;
+  page-break-inside:avoid;break-inside:avoid;
+}
+.aula::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--marca),var(--rosa),var(--roxo),var(--azul),var(--verde),var(--amarelo));
+}
+.aula-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
+.aula-num{
+  font-family:var(--mono);font-size:12.5px;font-weight:800;color:#FFF;
+  background:linear-gradient(135deg,var(--roxo),var(--rosa));
+  border-radius:10px;padding:6px 12px;white-space:nowrap;box-shadow:0 3px 8px rgba(168,85,247,.35);
+}
+.aula-head h3{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--ink);line-height:1.25;letter-spacing:-.01em}
+
+.objetivo{
+  margin:16px 0;font-size:15px;color:var(--ink-soft);
+  background:linear-gradient(90deg,var(--marca-soft),transparent);
+  border-left:5px solid var(--marca);border-radius:0 12px 12px 0;padding:12px 16px;
+}
+.objetivo b{color:var(--ink);font-weight:700}
+
+.bloco{margin:14px 0;border-radius:14px;padding:14px 16px;border:1px solid transparent}
+.bloco h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.bloco ul{padding-left:22px;margin-top:4px}
+.bloco li{margin:5px 0;color:var(--ink-soft);font-size:15px}
+.bloco li::marker{font-size:1.1em}
+.bloco>p{color:var(--ink-soft);font-size:15px;margin:6px 0}
+.bloco>p:first-of-type{margin-top:0}
+.bloco a{color:var(--marca-deep);border-bottom:2px solid var(--marca-soft);text-decoration:none;font-weight:600}
+
+.bloco.b-conteudo{background:var(--azul-soft);border-color:#BFDBFE}
+.bloco.b-conteudo h4{color:#1D4ED8}
+.bloco.b-conteudo li::marker{color:var(--azul)}
+
+.bloco.b-exemplo{background:var(--verde-soft);border-color:#A7F3D0}
+.bloco.b-exemplo h4{color:#047857}
+.bloco.b-exemplo li::marker{color:var(--verde)}
+
+.bloco.b-pratica{background:var(--roxo-soft);border-color:#DDD6FE}
+.bloco.b-pratica h4{color:#6D28D9}
+.bloco.b-pratica li::marker{color:var(--roxo)}
+
+.bloco.b-desafio{background:var(--laranja-soft);border-color:#FED7AA}
+.bloco.b-desafio h4{color:#C2410C}
+.bloco.b-desafio li::marker{color:var(--laranja)}
+
+.bloco.b-conversa{background:var(--amarelo-soft);border-color:#FDE68A}
+.bloco.b-conversa h4{color:#A16207}
+.bloco.b-conversa li::marker{color:var(--amarelo)}
+
+.prompt{margin:16px 0;border-radius:14px;overflow:hidden;background:#0F172A;box-shadow:0 6px 18px rgba(15,23,42,.2)}
+.ptag{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#FDD37A;background:#1E1B4B;padding:8px 14px}
+.ptag::before{content:'⚡';font-size:14px}
+.prompt pre{font-family:var(--mono);font-size:13px;line-height:1.65;color:#E9DCFB;padding:15px 16px;white-space:pre-wrap;word-wrap:break-word}
+
+.skills{background:linear-gradient(135deg,var(--marca-soft),#FFF7E8);border-radius:14px;padding:14px 18px;border:1px solid var(--line);margin-top:14px}
+.skills h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--marca-deep);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.skills h4::before{content:'✅';font-size:15px}
+.skills p{font-size:14.5px;color:var(--ink-soft)}
+.skills ul{padding-left:22px;margin-top:4px}
+.skills li{font-size:14.5px;color:var(--ink-soft);margin:3px 0}
+
+.pratica{background:var(--rosa-soft);border:1.5px dashed #F9A8D4;border-radius:14px;padding:14px 18px;margin-top:14px}
+.pratica h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#BE185D;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.pratica h4::before{content:'🤔';font-size:15px}
+.pratica p{font-size:14.5px;color:var(--ink-soft)}
+
+@media(max-width:680px){
+  .capa{padding:48px 22px 40px}
+  .capa h1{font-size:34px}
+  .aula{padding:20px}
+  .mod-head h2{font-size:23px}
+}
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:#FFF;font-size:10.5pt}
+  .aula{page-break-inside:avoid;box-shadow:none;border-color:#DDD}
+  .mod-head{page-break-after:avoid}
+  .capa{page-break-after:always}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Apostila do Aluno · Curso EAD (online) · Crianças/Adolescentes (12 a 14 anos)</div>
+<h1>Vibecoding do Zero ao Avançado · 12-14</h1>
+<p class="sub">Sua apostila digital pra criar sites e programas de verdade com a ajuda da IA. Você é o chefe da máquina. Leve pra casa, use na aula ao vivo, imprima se quiser. Material seu.</p>
+<div class="meta"><span>30 horas</span><span>30 aulas · 1h cada</span><span>12 a 14 anos</span><span>Apostila do Aluno</span><span>Alinhado MEC + BNCC</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Como usar</span><h2>Antes de começar</h2></div>
+  <p class="mod-resumo">Isso aqui é seu material de estudo pra criar sites e programas de verdade. Cada aula tem: o que você vai aprender, um conteúdo pra ler, exemplos, prompts prontos pra pedir pra IA, uma prática guiada, um desafio extra, perguntas pro encontro ao vivo e um resumo. Leia antes da aula, use durante, revise depois. Regras de ouro que valem o curso inteiro: (1) adulto por perto sempre que for pôr um projeto no ar, colar chave de API ou usar dado real; (2) nunca cole segredo (senha, chave, token) direto no código; (3) sempre LEIA o que a IA escreveu antes de rodar, mesmo que pareça certo; (4) teste antes de mostrar pro mundo. Você é o chefe da máquina. A IA é sua ajudante, não a dona do projeto.</p>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1</span><h2>O que é criar com IA</h2></div>
+  <p class="mod-resumo">Nas quatro primeiras aulas você entende o que é vibecoding, por que você é o chefe e a IA é a ajudante, conhece as três ferramentas básicas (editor, navegador, IA) e faz sua primeira tela aparecer. No fim, aprende a guardar seu trabalho com Git pra não perder nada. É o alicerce. Sem essa base, todo o resto vira remendo.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1 · 1h</span><h3>O que é vibecoding: criar com ajuda da IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é vibecoding, por que é diferente de "só copiar código da IA", e por que ele mudou o jogo de quem cria software hoje.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Vibecoding é criar programas conversando com a IA. Você não decora comando, não escreve mil linhas na mão, não precisa saber tudo antes de começar. Você descreve o que quer, a IA escreve o código, você lê, testa, ajusta e publica. É parecido com dar comando pra um mod no Minecraft: você diz "quero uma casa de pedra com telhado de madeira" e o mod monta. Só que aqui o "mod" é uma IA que entende português, e a "casa" é um site, um app, um jogo.</p>
+      <p>Cuidado com o mito: vibecoding não é "aperta um botão e sai pronto". Se fosse, qualquer um faria. A diferença entre quem faz merda e quem faz coisa boa é o método. Você precisa: pensar antes de pedir, entender o que a IA devolveu, testar pra ver se funciona de verdade e guardar as versões que rodaram. Sem isso, você fica igual quem instala mod aleatório e o Minecraft crasha toda vez.</p>
+      <p>Por que isso é um super poder pra sua geração:</p>
+      <ul>
+        <li>Você não precisa esperar 4 anos de faculdade pra criar seu primeiro site.</li>
+        <li>Você pode transformar uma ideia em algo que funciona no mesmo dia.</li>
+        <li>Você aprende programação de verdade lendo o que a IA escreve.</li>
+        <li>Você trabalha em coisas que amigos e família usam, não só em exercícios da escola.</li>
+      </ul>
+      <p>Ponto importante que volta o curso inteiro: a IA é uma ferramenta. Boa, poderosa, mas ferramenta. Quem manda é você. Igual quem controla o avatar no Fortnite é você, não o console.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você diz pra IA "quero uma página com meu nome, uma foto e três coisas que eu gosto de fazer". Em 20 segundos ela devolve um arquivo HTML pronto. Você abre no navegador. Aparece na tela. Isso é vibecoding no menor tamanho possível.</p>
+      <p><b>Exemplo 2:</b> em vez de decorar comandos do Roblox Studio, você abre a IA e pede "me explica como criar um script em Lua que faz o personagem pular mais alto". Ela mostra o código, explica cada linha e diz onde colar. Você aprende usando, não estudando manual seco.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: tenho [sua idade] anos e estou comecando a aprender vibecoding.
+Tarefa: me explique em 3 paragrafos curtos o que e vibecoding e por que ele e diferente de programar do jeito antigo.
+Formato: linguagem simples, sem termos tecnicos dificeis, com uma analogia usando [Minecraft, Roblox ou Fortnite].</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: com o adulto do lado, abra a IA que sua turma usa (Claude, ChatGPT ou Gemini).</li>
+        <li>Passo 2: cole o prompt acima, trocando o que está entre colchetes.</li>
+        <li>Passo 3: leia a resposta em voz alta. Se travou em alguma palavra, peça pra ela explicar essa palavra.</li>
+        <li>Passo 4: peça: "agora me mostra em 5 linhas de código HTML como fica uma página bem simples com meu nome".</li>
+        <li>Passo 5: copie o código, cole num arquivo qualquer com nome <code>index.html</code>, e abra no navegador. Você acabou de fazer vibecoding.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Anote 3 coisas que você sempre quis criar mas achou que não daria: um site, um jogo simples, uma ferramenta pra ajudar em algo. Traga a lista pro encontro ao vivo. No final do curso você vai olhar essa lista de novo e ver quais viraram realidade.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual foi a parte mais estranha de mandar a IA escrever código pra você? Você acha que fazer sem a IA seria mais legal ou mais chato? Por que a gente ainda precisa entender o que ela escreve?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve com suas palavras o que é vibecoding, como se fosse explicar pro seu melhor amigo em uma mensagem de áudio de 30 segundos.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Vibecoding é criar programa conversando com a IA. Você é o chefe, ela é a ajudante. Não é botão mágico: precisa pensar, ler, testar e guardar. É o super poder que sua geração tem pra transformar ideia em coisa real no mesmo dia.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2 · 1h</span><h3>A IA é sua ajudante, você é o chefe</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a dar comando bom pra IA, ler o que ela devolve antes de aceitar, e nunca rodar código que você não entendeu.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Pensa numa raid do Fortnite. Você é o líder do squad. A IA é o parceiro forte que tá com você. Se você não fala pra onde ir, ele fica parado. Se você fala "vai" sem dizer pra onde, ele corre pro lado errado. Se você fala "invade a base inimiga pelo sul, com bomba, e me cobre no norte", ele executa direitinho. Comando bom entrega resultado bom. Comando ruim entrega bagunça.</p>
+      <p>Tem um método pra dar comando bom pra IA. O Rodrigo chama de P.R.O.M.P.T.E.R. Não precisa decorar as letras agora. O que importa é o espírito: pedido bom tem contexto (quem você é), tarefa (o que você quer), formato (como você quer a resposta) e restrição (o que não pode). Sem esses ingredientes, a IA chuta e você recebe qualquer coisa.</p>
+      <p>Regra que salva sua pele o curso inteiro: nunca rode código que você não leu. NUNCA. Nem se veio da IA. Nem se parece bonitinho. Nem se seu amigo disse que funciona. Antes de rodar, você lê e entende cada pedaço. Se não entendeu, pede pra IA explicar. Se ainda não entendeu, pede pra ela reescrever mais simples. Isso é o que separa quem faz um site que funciona de quem instala vírus sem querer.</p>
+      <ul>
+        <li>Você manda. A IA obedece.</li>
+        <li>Pedido específico gera resposta útil. Pedido vago gera lixo bonito.</li>
+        <li>Sempre leia antes de aceitar. Sempre.</li>
+        <li>Se ela escreveu algo que você não entende, pede explicação linha por linha.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> pedido ruim: "faz um site legal". Pedido bom: "faz uma página HTML simples com meu nome no topo, uma lista de 3 hobbies e um botão que muda a cor de fundo quando eu clico. Sem CSS externo, tudo num arquivo só, comentado em português".</p>
+      <p><b>Exemplo 2:</b> a IA te entrega um código com <code>eval(input)</code>. Você não sabe o que é <code>eval</code>. Antes de rodar, pergunta: "o que faz esse eval e por que você usou? tem alternativa mais segura?". Descobre que <code>eval</code> executa qualquer coisa que a pessoa digitar (perigoso!) e troca por algo mais seguro. Você acabou de evitar um bug real.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e uma programadora paciente que ensina quem esta comecando.
+Contexto: tenho [sua idade] anos, primeira aula de codigo.
+Tarefa: [descreva em uma frase o que voce quer que ela crie].
+Formato: codigo completo em um arquivo so, com comentarios em portugues explicando cada bloco.
+Restricao: nada de bibliotecas externas, so o basico. Depois do codigo, me explique em 3 frases o que ele faz.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: escolha algo pequeno pra pedir. Ex.: uma página com seu nome e um botão.</li>
+        <li>Passo 2: escreva o pedido ruim primeiro ("faz um site com botão") e mande.</li>
+        <li>Passo 3: agora escreva o pedido bom usando o prompt acima e mande em nova conversa.</li>
+        <li>Passo 4: compare as duas respostas. Qual foi mais útil? Por quê?</li>
+        <li>Passo 5: pegue o código bom, leia linha por linha, e peça: "explica cada linha que eu marquei com dúvida".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Pega um pedido antigo que você fez pra IA e não gostou da resposta. Reescreve usando contexto, tarefa, formato e restrição. Manda de novo. Anota quanto melhorou. Se não tem pedido antigo, inventa um: "quer um app pra lembrar de tomar água".</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual dos quatro ingredientes (contexto, tarefa, formato, restrição) é o mais difícil de lembrar? Já rolou de você aceitar algo da IA sem entender? Como foi?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve numa folha os 4 ingredientes do pedido bom (contexto, tarefa, formato, restrição). Cola perto do computador. Consulta antes de cada pedido grande até virar automático.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Você é o chefe. Pedido bom tem contexto, tarefa, formato e restrição. Pedido vago dá lixo bonito. NUNCA rode código que você não leu. Se não entendeu, pede explicação. Se ainda não entendeu, pede mais simples.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3 · 1h</span><h3>Conhecendo as ferramentas e a primeira tela (Olá, mundo!)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> conhecer as três ferramentas que você vai usar o curso inteiro (editor de código, navegador e IA) e fazer sua primeira página aparecer na tela.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Pra fazer vibecoding você precisa de três coisas na tela: um editor de código (onde você escreve e cola o código), um navegador (onde você vê o resultado, tipo Chrome ou Edge) e uma IA (onde você pede o código). Só isso. Pra começar não precisa instalar nada complicado. O editor pode ser o VS Code (gratuito, mais comum) ou algo online tipo o CodeSandbox. O navegador você já tem. A IA sua escola escolhe.</p>
+      <p>Como as três conversam entre si: você pede pra IA "faz uma página que diz Olá Mundo". Ela devolve um pedaço de código. Você cola esse código no editor, salva num arquivo com extensão <code>.html</code>. Você abre esse arquivo no navegador. Aparece "Olá Mundo" na tela. Simples assim. É como se a IA fosse o roteirista, o editor fosse o papel onde você guarda o roteiro, e o navegador fosse o cinema onde a cena roda.</p>
+      <p>A tradição do primeiro programa: em toda linguagem de programação do mundo, o primeiro código que a pessoa escreve mostra "Olá, mundo!" na tela. É um jeito de dizer "consegui, tô vivo aqui". Você vai fazer o seu hoje. Guarda esse momento. Foi seu primeiro código no navegador.</p>
+      <ul>
+        <li><b>Editor:</b> onde o código mora enquanto você trabalha.</li>
+        <li><b>Navegador:</b> onde você vê o resultado.</li>
+        <li><b>IA:</b> onde você conversa e pede ajuda.</li>
+        <li>Sempre salve antes de abrir no navegador (Ctrl + S).</li>
+        <li>Se a página não abre, quase sempre é problema no arquivo, não no navegador.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> uma página HTML mínima parece com isso: <code>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;</code>. Um comando só. Salva como <code>index.html</code>, dá dois cliques, abre no navegador. Aparece o texto grande. É seu primeiro programa.</p>
+      <p><b>Exemplo 2:</b> se você quer trocar a cor, pergunta pra IA "como pinto esse título de vermelho?". Ela devolve <code>&lt;h1 style="color:red"&gt;Olá, mundo!&lt;/h1&gt;</code>. Você troca no arquivo, salva, atualiza o navegador. Ficou vermelho. Essa é a mágica do ciclo: pedir, colar, atualizar, ver.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e minha professora de vibecoding.
+Tarefa: me da o codigo HTML minimo pra mostrar "Ola, mundo! Meu nome e [seu nome]" na tela do navegador, com um titulo grande e uma frase embaixo.
+Depois do codigo, me explica em 3 passos o que fazer: onde salvar, com qual nome de arquivo e como abrir.
+Formato: codigo em bloco, depois passos numerados.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: com o adulto, instale o VS Code ou abra o CodeSandbox.</li>
+        <li>Passo 2: crie um arquivo novo chamado <code>index.html</code>.</li>
+        <li>Passo 3: mande o prompt acima pra IA, cole o código que ela devolveu.</li>
+        <li>Passo 4: salve (Ctrl + S) e clique duas vezes no arquivo pra abrir no navegador.</li>
+        <li>Passo 5: mudou algo no texto? Salve, atualize a página (F5). Cada mudança precisa desses dois passos.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Adicione uma segunda linha com uma frase engraçada. Depois adicione uma cor no título. Depois um botão que não faz nada ainda (só aparece). Salve cada mudança. Tire print de cada versão. No final do curso, olha essa primeira versão e compara com o que você fez.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual foi a sensação de ver seu nome aparecer no navegador pela primeira vez? Onde travou? A IA explicou tudo bem ou faltou alguma coisa?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Desenha (pode ser feio) as três ferramentas do vibecoding num papel, com setas mostrando como elas conversam entre si. Editor, navegador, IA.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Três ferramentas: editor (VS Code), navegador (Chrome) e IA. Você pede, cola, salva, abre. "Olá, mundo!" é o primeiro programa da tradição. Salve antes de abrir. Se não funcionou, quase sempre é o arquivo, não o navegador.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4 · 1h</span><h3>Guardar seu trabalho (Git de forma simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a salvar versões do seu projeto de um jeito que você nunca perde nada, e consegue voltar quando algo quebra.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Você já perdeu progresso num jogo porque esqueceu de salvar? Já ficou com raiva porque o Minecraft não tinha checkpoint antes do creeper explodir? Git é o "salvar" dos criadores de software. Ele guarda cada versão do seu projeto e deixa você voltar pra qualquer uma. Estragou tudo? Volta pra ontem. Testou uma ideia maluca e não deu? Volta pro que funcionava. Sem drama.</p>
+      <p>Cada "salvamento" no Git se chama <b>commit</b>. Você faz um commit e escreve uma mensagem tipo "adicionei o botão de cor" ou "arrumei o título quebrado". Aí, semanas depois, você olha a lista de commits e sabe exatamente o que rolou em cada versão. É como o histórico de mods do Minecraft: cada linha conta o que mudou.</p>
+      <p>Um lugar pra guardar tudo isso na internet chama <b>GitHub</b>. É um site (grátis pra projeto de aluno) onde suas versões ficam salvas fora do seu computador. Se seu PC pega vírus, você não perde nada. Se você quer mostrar seu código pra um amigo, manda o link do GitHub. Adulto ajuda a criar sua conta na primeira vez.</p>
+      <ul>
+        <li><b>commit</b>: um salvamento com um nome bom.</li>
+        <li><b>push</b>: mandar seus commits pro GitHub.</li>
+        <li><b>pull</b>: baixar do GitHub o que tem lá.</li>
+        <li>Faça commit várias vezes por aula. Muitos commits pequenos > 1 commit gigante.</li>
+        <li>Nunca commite senha, chave, token. Isso volta a doer nas próximas aulas.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você tá terminando a página do Módulo 2. Antes de mexer no design, você faz um commit: "versão que funciona, antes de mudar as cores". Aí você mexe. Se quebrar tudo, um comando volta pra versão que funcionava. Herói do seu próprio backup.</p>
+      <p><b>Exemplo 2:</b> você e um colega tão trabalhando num projeto juntos. Cada um mexe no seu computador. Vocês usam o GitHub como ponto de encontro. Um faz push. O outro faz pull. Os dois ficam com a versão mais nova. Igual multiplayer, mas de código.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: nunca usei Git nem GitHub. Tenho [sua idade] anos e um adulto do meu lado.
+Tarefa: me guie do zero pra:
+  1) instalar o Git no meu computador ([Windows ou Mac]);
+  2) criar minha primeira pasta de projeto;
+  3) fazer meu primeiro commit;
+  4) mandar pro GitHub.
+Formato: passo a passo numerado, um passo por vez. So passa pro proximo quando eu confirmar.
+Restricao: sem termos tecnicos dificeis. Se precisar usar um, explica antes.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: com o adulto, instale o Git e crie sua conta no GitHub (nome de usuário sem dado pessoal real).</li>
+        <li>Passo 2: crie uma pasta pro seu projeto e mova sua página <code>index.html</code> da aula anterior pra dentro.</li>
+        <li>Passo 3: siga o passo a passo da IA pra fazer o primeiro commit com a mensagem "primeira versão do meu site".</li>
+        <li>Passo 4: mande pro GitHub (push). Abra o site do GitHub e confira que seu arquivo tá lá.</li>
+        <li>Passo 5: mude uma coisa qualquer no arquivo. Faça outro commit com nome novo. Push de novo. Você acabou de ter DUAS versões guardadas.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Faça um commit "propositalmente ruim" (quebre algo no seu arquivo, salve, comite). Depois peça pra IA te ensinar a voltar pro commit anterior. Aprender a voltar é tão importante quanto aprender a avançar.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual jogo você já jogou onde perdeu progresso por falta de save? Como o Git resolveria? Você acha que vai lembrar de comitar toda vez? Como criar o hábito?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote 3 mensagens de commit que você acha que vai usar bastante (ex.: "arrumei bug", "adicionei tela nova", "mudei visual"). Boas mensagens contam a história do projeto.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Git é o "salvar" dos criadores. Cada commit é um checkpoint. GitHub guarda tudo na internet, grátis pra aluno. Faça muitos commits pequenos. Nunca commite senha ou chave. Aprender a voltar é tão importante quanto aprender a avançar.</p></div>
+  </article>
+
+  <div class="skills"><h4>Encontro ao vivo · Semanas 1 e 2</h4><p>Pauta: (1) o que mais surpreendeu na primeira semana de vibecoding; (2) demonstração ao vivo do ciclo pedir-colar-salvar-abrir; (3) revisão em dupla dos primeiros commits e mensagens de commit; (4) tira-dúvida sobre editor, navegador e GitHub.</p></div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2</span><h2>Criando seu primeiro site</h2></div>
+  <p class="mod-resumo">Quatro aulas pra sair do zero e ter um mini-site no ar. Você planeja, monta com cores e botões, publica com o adulto e comemora o primeiro projeto público. No fim do módulo, você manda um link pro seu grupo do WhatsApp e a família abre no celular. Isso é diferente de tudo que já fez.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5 · 1h</span><h3>Planejar antes de fazer (o que vou criar?)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que planejar é o passo mais importante do vibecoding. Sem plano, a IA vira uma máquina de gerar bagunça bonita.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Você entraria num Fortnite sem escolher classe, sem olhar o mapa, sem plano com o squad? Não. Ia morrer no primeiro tiro. Fazer site sem plano é a mesma coisa. Você pede pra IA "faz um site legal", ela cospe uma coisa qualquer, você vai mudando, mudando, mudando, e no fim tá com um Frankenstein que ninguém entende (nem você). Planejar 15 minutos economiza 3 horas depois.</p>
+      <p>Um plano bom pra um site pequeno tem três perguntas:</p>
+      <ul>
+        <li><b>Pra quem é?</b> Sua mãe? Colegas da escola? Um cliente da sua família? A resposta muda tudo (o tom, as cores, o tamanho da letra).</li>
+        <li><b>O que a pessoa precisa ver?</b> Foto? Preço? Contato? Uma lista de projetos? Escreve num papel só as coisas que TÊM que aparecer.</li>
+        <li><b>O que a pessoa vai fazer?</b> Só ler? Clicar num botão pra ver mais? Preencher um formulário pra você receber? Isso define o que precisa funcionar.</li>
+      </ul>
+      <p>Rascunha num papel antes de ir pra IA. Não precisa ser bonito. Só quadradinhos: aqui vai o título, aqui a foto, aqui os botões, aqui o rodapé. Chama isso de <b>wireframe</b>. Palavra bonita pra "desenho tosco antes do desenho bonito". Depois disso, sim, você vai pra IA e pede algo específico.</p>
+      <p>Diferença gigante: "quero um site legal" (pedido tosco) vs "quero uma página pra vender doce caseiro da minha avó, com foto dos doces, preço e um botão de WhatsApp" (pedido que faz a IA acertar). Um é vago. O outro tem alvo.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> plano de 3 linhas: (1) pra quem: colegas do 8º ano; (2) o que precisa ver: minha bio, meus 3 hobbies favoritos, minha foto (avatar ou desenho); (3) o que a pessoa vai fazer: clicar num botão que abre meu perfil no Discord. Pronto. É plano.</p>
+      <p><b>Exemplo 2:</b> um colega vem com "quero um site do time do meu bairro". Você pergunta: pra quem (torcedor? novo interessado?), o que precisa ver (jogos, jogadores, uniforme?), o que faz (comprar camisa? só ler?). Em 5 minutos, o "site do time" virou "página pra novo torcedor conhecer o time, com foto do uniforme e link do Instagram".</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e uma product designer que ajuda gente que esta comecando.
+Contexto: quero criar um site pequeno sobre [tema]. Ainda nao sei bem o que vai ter.
+Tarefa: me faca 5 perguntas pra descobrir pra quem e, o que precisa aparecer e o que a pessoa vai fazer. Uma pergunta por vez, espera minha resposta.
+No fim, escreve um plano em 3 linhas com pra quem, o que aparece, o que faz.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: escolha uma ideia de site pequeno. Pode ser sobre você, um hobby, um projeto da escola.</li>
+        <li>Passo 2: rascunhe num papel os quadradinhos (wireframe): título, imagem, botão, texto.</li>
+        <li>Passo 3: use o prompt acima. Responda as 5 perguntas da IA com honestidade.</li>
+        <li>Passo 4: guarde o plano de 3 linhas num arquivo <code>plano.md</code> no seu projeto.</li>
+        <li>Passo 5: faça commit desse plano ("adicionei o plano do site"). Plano é parte do projeto.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Faça dois planos diferentes pro mesmo tema. Um super simples (só uma tela). Um com mais coisas (várias telas, botões). Depois escolha só um pra construir. Aprender a cortar é habilidade de criador.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Foi mais fácil ou mais difícil planejar antes de codar? Alguém pulou o plano e foi direto pra IA? O que aconteceu? Qual a diferença entre "quero um site" e "quero um site pra Y fazer X"?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote as 3 perguntas do plano numa folha (pra quem, o que aparece, o que faz). Use antes de qualquer projeto novo. Sempre.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Planejar 15 minutos economiza 3 horas. Três perguntas: pra quem, o que aparece, o que a pessoa faz. Rascunhe no papel (wireframe) antes de ir pra IA. Pedido específico gera site útil. Pedido vago gera Frankenstein.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6 · 1h</span><h3>Montando a página (cores, textos, botões)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> construir a estrutura da primeira página de verdade, com HTML e CSS no básico, pedindo pra IA de forma específica e ajustando pro seu jeito.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Todo site do mundo é feito de duas coisas principais: HTML e CSS. HTML é a estrutura (o esqueleto): o que é título, o que é botão, o que é imagem. CSS é o visual (a pele e a roupa): cor, tamanho, espaço, fonte. Pensa num personagem de RPG: HTML é a classe (guerreiro, mago), CSS é o skin (cor da armadura, brilho da espada). Sem HTML, não existe personagem. Sem CSS, o personagem tá pelado.</p>
+      <p>Você não precisa decorar HTML e CSS. A IA escreve pra você. Mas você precisa RECONHECER as partes principais quando bater o olho:</p>
+      <ul>
+        <li><code>&lt;h1&gt;</code> é o título principal (só um por página).</li>
+        <li><code>&lt;p&gt;</code> é um parágrafo de texto.</li>
+        <li><code>&lt;button&gt;</code> é um botão.</li>
+        <li><code>&lt;img&gt;</code> é uma imagem.</li>
+        <li><code>&lt;a&gt;</code> é um link (que leva pra outro lugar).</li>
+        <li><code>style="color:blue"</code> é CSS colado no elemento pintando de azul.</li>
+      </ul>
+      <p>Quando você pede pra IA construir a página, dá contexto do plano (feito na aula anterior) e diz o que quer ver: "faz uma página HTML com título grande dizendo 'X', abaixo um parágrafo de 3 linhas sobre Y, um botão que leva pro meu Discord, cor de fundo azul-escuro, texto branco". Quanto mais específico, menos ida-e-vinda. A IA acerta na primeira ou segunda tentativa.</p>
+      <p>Depois que ela devolve, você troca as coisas no arquivo. Nome, foto, texto, cor. Não precisa pedir pra ela mudar cada coisinha. Você mesmo troca no editor. Isso te faz aprender de verdade.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> pra trocar a cor do fundo, procura no CSS a linha <code>background:</code> e troca o valor. Ex.: <code>background:#1a1a2e</code> vira <code>background:#e8a33d</code>. Salva, atualiza o navegador, tá amarelo agora. Você acabou de mexer em CSS de verdade.</p>
+      <p><b>Exemplo 2:</b> quer trocar a fonte pra parecer mais "gamer"? Pergunta pra IA: "qual fonte gratuita do Google Fonts parece de jogo indie? Como coloco na página?". Ela devolve 3 opções e o código pra colar. Você testa. Fica top.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: aqui esta meu plano de site: [cole seu plano de 3 linhas].
+Tarefa: monte a pagina HTML completa em um so arquivo, com CSS junto (dentro de style no head).
+Requisitos:
+  - titulo grande com meu nome (voce vai me perguntar);
+  - paragrafo curto com o que faco;
+  - botao que leva pro link [seu Instagram, Discord, escola, etc];
+  - estilo moderno, tema [escuro/claro], cores [suas cores].
+Depois do codigo, explique em 3 frases o que fez e o que eu troco pra mudar as cores.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: use o prompt acima com seu plano da aula anterior.</li>
+        <li>Passo 2: cole o código no <code>index.html</code>. Salve. Abra no navegador.</li>
+        <li>Passo 3: troque o nome, o texto e o link pelos seus.</li>
+        <li>Passo 4: mude uma cor no CSS por conta própria (não peça pra IA).</li>
+        <li>Passo 5: commit "primeira versão da minha página com meu conteúdo".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Adicione uma segunda seção na página: uma lista dos seus 3 hobbies com um pequeno parágrafo em cada. Peça pra IA só o pedaço novo, não o site inteiro. Aprender a pedir só o pedaço poupa tempo.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual parte do CSS foi mais divertida de mexer? Qual foi mais chata? Alguém trocou uma cor sem saber e a página quebrou? O que aprendeu com isso?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote as 5 tags HTML principais (<code>h1</code>, <code>p</code>, <code>button</code>, <code>img</code>, <code>a</code>) e o que cada uma faz. Vai usar o curso inteiro.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>HTML é esqueleto, CSS é pele. Você não decora, você reconhece. Pedido específico com o plano na mão dá página boa na primeira tentativa. Depois, troque coisas simples no editor sem pedir pra IA. É assim que aprende.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7 · 1h</span><h3>Colocar no ar de graça (com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> publicar sua página em um endereço público na internet, com ajuda do adulto responsável, sem gastar nada.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>"Pôr no ar" é dar um endereço público pro seu site. Igual quando um streamer bota o link do canal e todo mundo acessa. Hoje tem serviço grátis que faz isso em 5 minutos. Os mais fáceis: Netlify e Vercel. Você conecta com seu GitHub, escolhe o projeto, e em segundos aparece um link tipo <code>meu-site.netlify.app</code>. Você manda pra família. Ela abre no celular. Funciona.</p>
+      <p>Por que adulto precisa estar junto:</p>
+      <ul>
+        <li>Pra criar as contas no Netlify/Vercel (não é conta de rede social, mas ainda assim precisa validação).</li>
+        <li>Pra conferir que o que vai pro ar não tem dado pessoal seu (endereço, telefone, escola).</li>
+        <li>Pra confirmar que não tem senha nem chave dentro do código (isso é REGRA DE OURO).</li>
+        <li>Pra ajudar se der algum erro estranho na hora de publicar.</li>
+      </ul>
+      <p>Uma vez publicado, seu site fica no ar até você tirar. Se você fizer um commit novo no GitHub, o Netlify/Vercel atualiza automaticamente em segundos. Isso é chamado de <b>deploy automático</b>. Você mexe no código, faz commit, push, e em 30 segundos o mundo já vê a nova versão.</p>
+      <p>Sensação de ter algo seu, com seu link, funcionando no celular de qualquer pessoa: incrível. Guarda esse momento também. É seu primeiro produto no ar.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você faz push no GitHub. O Netlify percebe. Em 30 segundos, seu site <code>meu-nome.netlify.app</code> tá com a versão nova. Você atualiza o navegador. Aparece. Você mandou pro seu grupo. Sua avó viu. É produção de verdade.</p>
+      <p><b>Exemplo 2:</b> um colega mandou o link do site dele por engano com um número de telefone escrito lá. Todo mundo viu. Ele apagou o telefone, comitou, e o Netlify atualizou. Mas os prints já rolaram. Lição: revisa ANTES de publicar. Uma vez no ar, viraliza rápido.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: tenho um site em HTML e CSS no meu GitHub, na pasta [nome do repositorio].
+Tarefa: me guie passo a passo pra publicar de graca no [Netlify ou Vercel], usando o adulto do meu lado.
+Antes de comecar, me faca uma checklist rapida do que revisar no meu codigo pra ter certeza que nao tem: dado pessoal, senha, chave de API.
+Formato: primeiro a checklist. Depois os passos numerados de publicacao.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: com o adulto, crie a conta no Netlify usando o login do GitHub.</li>
+        <li>Passo 2: revise seu <code>index.html</code> junto com o adulto: nada de telefone, endereço, senha, foto sem autorização.</li>
+        <li>Passo 3: no Netlify, clique em "New site from Git", escolha seu repositório.</li>
+        <li>Passo 4: aguarde o deploy (barra verde). Copie o link que ele deu.</li>
+        <li>Passo 5: abra o link no seu celular. Se abriu, você tá no ar. Faça commit no README: "site publicado em [link]".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Compartilhe seu link com 3 pessoas de casa. Pergunte pra cada uma: (1) o que entendeu; (2) o que ficou confuso; (3) o que faria diferente. Anote as respostas. Isso se chama <b>teste com usuário</b> e vale ouro.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Como foi ver seu site no ar pela primeira vez? Alguém teve erro no deploy? O que o adulto perguntou antes de deixar publicar?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve as 3 coisas que você SEMPRE precisa revisar antes de publicar: dado pessoal, senha, chave. Se algum aparecer, para tudo e chama o adulto.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Netlify e Vercel publicam grátis em minutos, conectando com GitHub. Adulto precisa estar junto na primeira vez. Revise: sem dado pessoal, sem senha, sem chave. Cada push atualiza o site sozinho. Uma vez no ar, se viraliza fácil.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8 · 1h</span><h3>Seu primeiro mini-site pronto</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> fechar o módulo com o primeiro projeto no ar, revisado, caprichado e apresentado pros colegas do curso.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Última passada de capricho. É o que separa amador de criador. Quase todo mundo entrega no "tá funcionando, tá bom". Quem vai longe faz uma passada extra: revisa cada texto, cada botão, cada cor. Ajusta os detalhes. Testa no celular. Pede pra IA um "code review" do próprio código. Ai sim, mostra.</p>
+      <p>Roteiro da última passada:</p>
+      <ul>
+        <li><b>Textos:</b> tem erro de português? Tem frase confusa? Tem coisa faltando?</li>
+        <li><b>Botões:</b> todos funcionam? Todos levam pra algum lugar?</li>
+        <li><b>Imagens:</b> tão carregando? Não tão gigantes (site lento)?</li>
+        <li><b>Celular:</b> abra no seu telefone. Tá bagunçado? Corta na tela?</li>
+        <li><b>Segurança:</b> nada de dado pessoal, senha ou chave no código.</li>
+      </ul>
+      <p>Depois disso, você apresenta pros colegas. Formato curto: 2 minutos. Diz o problema que resolveu, mostra o site rodando, pega feedback rápido. Feedback dos colegas é ouro porque eles são público real e não vão passar pano. Se ficou confuso, eles falam.</p>
+      <p>Uma coisa importante: primeiro projeto quase nunca fica perfeito. E tudo bem. O objetivo aqui é você aprender o ciclo inteiro (planejar, montar, publicar, mostrar) e não fazer o site mais lindo do universo. Perfeição vem com os próximos projetos.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você abre seu site no celular e vê que o botão do WhatsApp tá cortado na lateral. Peça pra IA: "meu botão tá cortado no celular, aqui tá o código: [cola]. Como conserto?". Ela devolve o CSS certo. Você troca, faz commit, atualiza. Foi 3 minutos.</p>
+      <p><b>Exemplo 2:</b> apresentação de 2 minutos: "meu site é a página de doces da minha avó. Tem foto, preço, botão de WhatsApp. Fiz porque ela vende pro bairro e não tinha nada online. Meu principal aprendizado foi que planejar antes economiza tempo. Podem ver aqui: [link]". Curto, honesto, direto.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e uma revisora de codigo experiente e paciente.
+Contexto: aqui esta meu site pronto: [cole o HTML e CSS].
+Tarefa: faca uma revisao final em 3 partes:
+  1) o que esta bom (elogios sinceros);
+  2) o que pode melhorar (5 pontos maximo, praticos);
+  3) o que revisar sobre seguranca antes de publicar (dado pessoal, senha, chave).
+Nao reescreva o codigo. So aponte.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: use o prompt acima. Anote as 5 melhorias que ela apontou.</li>
+        <li>Passo 2: arrume só as 3 mais importantes (não é pra virar noite ajustando).</li>
+        <li>Passo 3: abra o site no celular. Se algo tiver estranho, ajuste.</li>
+        <li>Passo 4: prepare uma fala de 2 minutos: problema, solução, aprendizado, link.</li>
+        <li>Passo 5: commit "versão apresentável do mini-site" e push.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Grave um vídeo de 30 segundos mostrando seu site rodando no celular, explicando pra alguém que nunca viu. Isso vira portfólio. Guarda esse arquivo.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual foi o feedback mais útil que a IA deu? Alguém achou um problema de segurança na revisão? Como foi apresentar o site em 2 minutos?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve o que você faria diferente se fosse começar do zero de novo. Isso é o aprendizado real do projeto.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Última passada de capricho separa amador de criador. Roteiro: textos, botões, imagens, celular, segurança. Peça code review pra IA. Apresente em 2 minutos: problema, solução, aprendizado. Primeiro projeto não precisa ser perfeito. Precisa fechar o ciclo.</p></div>
+  </article>
+
+  <div class="skills"><h4>Encontro ao vivo · Semanas 3 e 4</h4><p>Pauta: (1) apresentação relâmpago dos mini-sites da turma (2 min cada); (2) tour ao vivo dos planos e wireframes; (3) feedback em dupla sobre o que ficou bom e o que dá pra melhorar; (4) roda de conversa sobre publicar coisa de verdade na internet.</p></div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3</span><h2>Fazendo com segurança</h2></div>
+  <p class="mod-resumo">Três aulas duras e importantes. Aqui você aprende o que NUNCA pode aparecer no código (senha, chave), o que é login e como cuidar de dado de outras pessoas com respeito, e a checagem de segurança final antes de mostrar pro mundo. Sem essas três, seu site vira porta aberta pra encrenca.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9 · 1h</span><h3>Senhas e segredos: o que a gente esconde</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é segredo em software (senha, chave de API, token) e por que ele NUNCA pode aparecer no código do seu site.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Segredo em software é qualquer coisa que dá poder pra quem tem. Senha da conta. Chave de API (aquele código gigante que serve pra usar um serviço tipo Google Maps ou OpenAI). Token de acesso. Se alguém pega, entra na sua conta, gasta seu crédito, faz besteira no seu nome. Igual senha do WiFi: uma vez que vaza, todo mundo tá dentro.</p>
+      <p>O problema é que a IA, se você pedir mal, pode colocar o segredo direto no código: <code>const chave = "sk-abc123..."</code>. Se você fizer commit disso no GitHub, o mundo inteiro vê. E tem robô que fica procurando chave no GitHub 24 horas por dia. Já rolou caso de dev perder milhares de reais em minutos porque colou chave no código sem querer.</p>
+      <p>Onde segredo mora, então:</p>
+      <ul>
+        <li><b>No servidor, nunca no navegador.</b> Se o segredo tá no HTML/CSS/JavaScript que roda no celular do visitante, ele vê.</li>
+        <li><b>Em variável de ambiente</b> (chamada <code>.env</code>). É um arquivo separado que fica FORA do Git.</li>
+        <li>Nas configurações do serviço (Netlify, Vercel têm um lugar seguro pra colar chave).</li>
+        <li>Nunca dentro do arquivo que vai pro GitHub.</li>
+      </ul>
+      <p>Regra pratica: se você vê algo tipo <code>API_KEY = "sk-..."</code>, <code>SENHA = "abc"</code>, ou <code>TOKEN = "..."</code> no código, para tudo. Chame o adulto. Isso é vazamento em potencial. Sempre. Sem exceção.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> a IA te devolveu um código que chama a API do OpenAI e a chave tá lá no meio, escrita: <code>Authorization: "Bearer sk-abc123"</code>. ERRADO. Você fala: "isso tá inseguro. Como colocar essa chave numa variável de ambiente e não no código?".</p>
+      <p><b>Exemplo 2:</b> um streamer famoso mostrou a tela do editor por acidente numa live. A chave dele apareceu por 3 segundos. Em uma hora, alguém já tinha usado a chave pra gerar milhões de tokens e ele foi cobrado por isso. Segredo mostrado = segredo perdido.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: estou aprendendo vibecoding e nao quero cometer erro de seguranca.
+Tarefa: me explique em linguagem simples:
+  1) o que e segredo em software (senha, chave de API, token) com exemplos;
+  2) por que segredo nunca pode aparecer no codigo que vai pro GitHub;
+  3) onde segredo mora (variavel de ambiente, painel do Netlify/Vercel);
+  4) 3 sinais de alerta que me avisam que tem segredo exposto no meu codigo.
+Formato: paragrafos curtos e uma lista final.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: abra seu repositório no GitHub e passe o olho em cada arquivo procurando algo tipo "key", "senha", "token".</li>
+        <li>Passo 2: crie um arquivo <code>.gitignore</code> com uma linha <code>.env</code> dentro (a IA te ensina como).</li>
+        <li>Passo 3: crie um arquivo <code>.env.example</code> vazio com placeholders (ex.: <code>API_KEY=sua_chave_aqui</code>). Esse pode ir pro Git.</li>
+        <li>Passo 4: peça pra IA revisar seu projeto: "tem algum segredo exposto no meu código atual?".</li>
+        <li>Passo 5: se tiver, arrume. Commit "protegendo segredos". Comemora, porque você acabou de blindar seu projeto.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Pesquise (com adulto) uma notícia real de "vazamento de chave de API" ou "senha no GitHub". Traga o resumo pro encontro. Ver o estrago real assusta mais que qualquer aula.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual foi a coisa mais assustadora que a IA disse sobre segredo? Alguém já colou senha em algum lugar que não devia (WhatsApp, print)? Como se sente sabendo que robôs procuram chave no GitHub?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve a regra em letra grande e cola perto do computador: "SEGREDO nunca vai pro código. Sempre pro .env, sempre no painel do serviço".</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Segredo é senha, chave, token. Nunca no código. Nunca no GitHub. Mora em variável de ambiente ou no painel do Netlify/Vercel. Robôs procuram chave 24h no GitHub. Se ver "key", "senha", "token" no seu código, para tudo e chama o adulto.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10 · 1h</span><h3>Quem pode entrar (login) e cuidar dos dados</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é login, quando um projeto precisa disso, e como tratar dado de outras pessoas com o respeito que a lei (LGPD) exige.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Login serve pra você saber quem tá do outro lado. É a diferença entre "qualquer um vê" e "só pessoas cadastradas". Instagram tem login. YouTube tem login. Fortnite tem login. Se seu projeto guarda algo pessoal (mensagem, foto, lista de amigos), você precisa de login. Se é só uma página pública igual site institucional, não precisa.</p>
+      <p>Quando entra login, entra também <b>dado pessoal de outra pessoa</b>. Nome, e-mail, foto, mensagem. Isso é sagrado. Existe uma lei no Brasil chamada LGPD (Lei Geral de Proteção de Dados). Em linguagem clara: você não pode fazer qualquer coisa com dado das pessoas. Regras principais:</p>
+      <ul>
+        <li>Só peça o que você realmente precisa (não pede CPF se seu site é de piada).</li>
+        <li>Explique pra pessoa pra que você vai usar (uma frase basta).</li>
+        <li>Guarde só o tempo necessário (não guarde pra sempre).</li>
+        <li>Nunca compartilhe com terceiros sem avisar.</li>
+        <li>Se a pessoa pedir "apaga meus dados", você apaga.</li>
+      </ul>
+      <p>Na prática, no curso, você NÃO vai fazer login de verdade nas primeiras vezes. Vai usar serviços prontos (Firebase Auth, Clerk) que já cuidam do login com segurança. Você só configura. Adulto ajuda a criar as contas. E o mais importante: enquanto tá aprendendo, use SEMPRE dado inventado. Nome falso, e-mail teste. Nunca use nome real de colegas em projeto seu.</p>
+      <p>Pergunta que resolve muita coisa antes de guardar qualquer dado: "eu ia gostar se um site guardasse isso sobre mim?". Se a resposta é não, não guarda.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você tá fazendo um site que salva "recado dos amigos". Pergunta certa antes de codar: preciso do e-mail? Não. Só do apelido e da mensagem. Peça o mínimo. LGPD sorri.</p>
+      <p><b>Exemplo 2:</b> um formulário pergunta "nome completo, escola, sala, telefone dos pais". Pra quê? Pra mandar um newsletter de dicas. NÃO PRECISA. Pede só e-mail (com autorização do adulto). Menos dado, menos risco.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: quero fazer um formulario simples no meu site.
+Tarefa: antes de escrever qualquer codigo, me faca as perguntas certas pra decidir:
+  1) meu projeto precisa mesmo pedir dado pessoal? Quais?
+  2) pra que exatamente vou usar cada dado?
+  3) por quanto tempo vou guardar?
+  4) como vou avisar a pessoa sobre isso?
+Depois das minhas respostas, me diga se meu projeto respeita a LGPD do jeito basico. Se nao, o que ajustar.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: pense em uma funcionalidade que envolveria dado pessoal (formulário, cadastro, comentário).</li>
+        <li>Passo 2: rode o prompt acima e responda com honestidade.</li>
+        <li>Passo 3: corta os campos que não são essenciais.</li>
+        <li>Passo 4: escreva uma frase simples embaixo do formulário: "vamos usar seu [dado] só pra [motivo]. Não passamos pra ninguém".</li>
+        <li>Passo 5: peça pra IA gerar o formulário HTML só com os campos mínimos.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Abra um site que você usa muito (jogo, rede social) e leia (ou peça pra IA resumir) a política de privacidade. Anote 3 coisas que você não sabia que eles fazem com seu dado. Isso te faz ver o mundo dos dados por dentro.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual dado você não daria de jeito nenhum pra um site novo? Alguém já se cadastrou em algo e depois se arrependeu? Como você se sente sabendo que existe uma lei protegendo isso?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreva a pergunta: "eu ia gostar se um site guardasse ISSO sobre mim?". Use antes de pedir qualquer dado num projeto seu. Sempre.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Login serve pra saber quem tá do outro lado. Dado pessoal é sagrado, LGPD é a lei. Peça o mínimo, explique pra que, guarde só o necessário. Use serviços prontos (Firebase, Clerk) com ajuda do adulto. Enquanto aprende, sempre dado inventado.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 1h</span><h3>Conferir antes de mostrar pro mundo</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a checagem de segurança básica antes de publicar qualquer coisa, usando uma lista fixa que você vai carregar o curso inteiro.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Checagem de segurança antes de publicar é igual "olhar pros dois lados antes de atravessar a rua". Você não faz porque é chato. Você faz porque uma vez não fazer sai caro. O Rodrigo tem uma skill chamada Bastião que faz revisão de segurança em código. A gente vai usar uma versão simplificada dela agora.</p>
+      <p>A lista de checagem (memoriza essa):</p>
+      <ul>
+        <li><b>1. Segredo:</b> tem senha, chave ou token no código? Se tem, sai daí AGORA.</li>
+        <li><b>2. Dado pessoal:</b> tem seu telefone, endereço, escola, CPF em algum lugar visível?</li>
+        <li><b>3. Formulário:</b> se aceita texto do usuário, tá tratando ou aceita qualquer coisa (incluindo script malicioso)?</li>
+        <li><b>4. Link externo:</b> tá indo pra sites confiáveis ou pra sites que você não sabe?</li>
+        <li><b>5. Imagem:</b> é sua, ou de banco de imagem grátis, ou você tem direito de usar?</li>
+        <li><b>6. HTTPS:</b> o site tá com cadeado (URL com <code>https://</code>)? Serviços gratuitos já entregam isso.</li>
+        <li><b>7. Erro visível:</b> se algo quebrar, aparece mensagem de erro cheia de detalhe pro visitante? Isso ajuda hacker. Esconde erro do usuário.</li>
+      </ul>
+      <p>Você pode (e deve) pedir pra IA rodar essa lista no seu projeto: "revisa meu código com essa checklist e me diga em quais pontos ele falha". Ela faz e aponta. Você conserta. Depois publica. Ordem certa.</p>
+      <p>Quando chamar o adulto pra revisar junto: sempre que for a primeira publicação, sempre que colocar formulário, sempre que colar chave nova, sempre que integrar algo novo. Adulto não precisa ser especialista. Só precisa estar do lado pra você não fazer algo sozinho.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você tem um formulário de "comentário". Alguém digita <code>&lt;script&gt;alert('hackeado')&lt;/script&gt;</code>. Se você mostra isso na tela sem tratar, o script roda pra todo mundo que abrir a página. Isso se chama XSS. Prevenção: sempre "escapar" o texto do usuário. A IA faz isso pra você se você pedir.</p>
+      <p><b>Exemplo 2:</b> você quebra o site sem querer. Aparece um "Erro 500: SQL failed on line 87 of database dev.db". Visitante vê. Hacker esfrega as mãos. Solução: mensagem amigável ("Ops, algo deu errado. Tente de novo") e detalhe só nos logs do servidor.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e uma revisora de seguranca pratica e paciente.
+Contexto: aqui esta meu codigo antes de publicar: [cole o codigo].
+Tarefa: passe o olho com esta checklist, um item por vez:
+  1) segredo (senha, chave, token) no codigo?
+  2) dado pessoal exposto?
+  3) formulario aceita qualquer texto sem tratar?
+  4) links externos suspeitos?
+  5) mensagem de erro exagerada pro usuario?
+Em cada item, diga: PASSOU ou FALHOU. Se falhou, aponte a linha e o conserto rapido.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode o prompt acima no seu projeto atual.</li>
+        <li>Passo 2: leia junto com o adulto os itens que falharam.</li>
+        <li>Passo 3: conserte um por um. Um commit por conserto.</li>
+        <li>Passo 4: rode a checagem de novo. Todos passaram? Publica.</li>
+        <li>Passo 5: escreva no README um "checklist antes de publicar" com os 7 itens da aula.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Faça a mesma checagem em um site pequeno de um amigo (com autorização dele). Não pra criticar, pra ajudar. Traga o que encontrou. É o começo da mentalidade de segurança em equipe.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual item da checklist você não conhecia? Qual falhou no seu projeto? Como foi consertar? O que o adulto disse ao ver a checagem?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote os 7 itens da checklist numa folha e cola no computador. Rode em todo projeto novo antes de publicar. Vira automático em 3 projetos.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Sete itens: segredo, dado pessoal, formulário, link externo, imagem, HTTPS, mensagem de erro. Peça pra IA rodar a lista. Conserte antes de publicar. Chame adulto sempre que for primeira publicação ou algo novo. Isso é o mínimo. Nunca pule.</p></div>
+  </article>
+
+  <div class="skills"><h4>Encontro ao vivo · Semanas 5 e 6</h4><p>Pauta: (1) casos reais de vazamento de chave ou dado que a turma pesquisou; (2) revisão ao vivo de um projeto com a checklist; (3) roda de conversa sobre LGPD e dado pessoal; (4) tira-dúvida sobre segredo em <code>.env</code> e Netlify/Vercel.</p></div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4</span><h2>Deixando bonito</h2></div>
+  <p class="mod-resumo">Quatro aulas pra virar chefe também no visual. Cor, tipografia, celular, botão, formulário. O site fica bonito de verdade, não "jeitinho de trabalho de escola". No fim, você olha pra sua tela e pensa: "isso aqui parece profissional". Porque é.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 1h</span><h3>O que deixa um site legal (cores, letras, imagens)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender os princípios simples de design que fazem qualquer site parecer profissional, mesmo feito por quem tá começando.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Por que o site do Discord parece top e o site da sua escola (com respeito) parece amador? Não é orçamento. É design básico. Existem 3 regras que quase todo site bonito segue. Você aplica hoje e seu site já sobe um nível.</p>
+      <ul>
+        <li><b>Regra das 3 cores.</b> Uma cor de fundo, uma cor de destaque (botões, links), uma cor de texto. Só. Nada de 7 cores diferentes. Se tá em dúvida, escuro no fundo, âmbar (dourado) nos botões, branco no texto. Copia o padrão do Rodrigo, funciona.</li>
+        <li><b>Regra das 2 fontes.</b> Uma pra título (mais bonita, tipo Fraunces), uma pra texto (mais legível, tipo Inter). Nunca 3 fontes na mesma página. Vira circo.</li>
+        <li><b>Espaço em branco é seu amigo.</b> Site amador enche tudo. Site profissional respira. Coloca 40, 60, 80 pixels de espaço entre as seções. Fica elegante.</li>
+      </ul>
+      <p>Além disso, uma dica pra pedido pra IA: em vez de "faz bonito", diga "estilo moderno, dark mode, minimalista, tipografia editorial, referências: Linear, Vercel, Anthropic". Ela conhece essas referências. Sai um site outro nível. Se você diz "faz bonito", ela cospe o padrão genérico que todo iniciante gera. Fica igual dos outros.</p>
+      <p>Imagem: use foto sua (se autorizada), ou de banco grátis (Unsplash, Pexels), ou gerada por IA. Nunca copia foto do Google random. Direito autoral existe e pode dar problema pro adulto responsável. Bater essa tecla desde o começo é bom pra vida.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> paleta escura profissional: fundo <code>#0F172A</code>, destaque <code>#E8A33D</code>, texto <code>#F8FAFC</code>. Aplica só isso e seu site já parece que passou por design.</p>
+      <p><b>Exemplo 2:</b> em vez de "faz um hero bonito", peça: "faz uma seção hero fullscreen escura, com título grande em fonte serif elegante, subtitulo em sans-serif, um botão âmbar arredondado, espaço generoso entre os elementos, referência: hero da Linear.app". A resposta vem outro nível.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e uma designer sênior que sabe UI moderna.
+Contexto: quero deixar meu site com visual profissional (nao trabalho de escola).
+Tarefa: aplique nele:
+  - paleta escura de 3 cores (fundo escuro, destaque ambar, texto claro);
+  - 2 fontes do Google Fonts: uma serif pro titulo, uma sans pro texto;
+  - espaco generoso entre secoes (60-80px de padding);
+  - estilo referencia: Linear, Vercel, Anthropic.
+Devolva o HTML+CSS completo com esses ajustes aplicados.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: escolha suas 3 cores. Se não sabe, use as do exemplo.</li>
+        <li>Passo 2: rode o prompt acima com seu site atual.</li>
+        <li>Passo 3: cole a resposta, salve, abra no navegador.</li>
+        <li>Passo 4: se ficou ruim, refine: "muito escuro, deixa o texto maior" ou "tá muito espaçado no celular, ajusta".</li>
+        <li>Passo 5: commit "aplicando design profissional".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Abra 3 sites que você acha lindos. Anote as 3 cores de cada um. Anote as fontes (a IA identifica se você mandar screenshot ou perguntar). Descubra padrões. Vai começar a ver design com outros olhos.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual site você acha o mais bonito da internet? Por quê? Alguém trocou pra dark mode e ficou pior? Como decidir a cor de destaque?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote a paleta de 3 cores do seu projeto e as 2 fontes. Isso é seu <b>design system</b> (palavra chique pra "regras visuais"). Reusa em todo projeto.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Três regras: 3 cores, 2 fontes, espaço em branco. Pedido específico com referências (Linear, Vercel, Anthropic) muda tudo. Imagem: sua ou banco grátis, nunca Google random. Design básico separa profissional de amador.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 1h</span><h3>Funciona no celular também (responsivo)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que hoje quase todo mundo entra pelo celular e como fazer seu site funcionar bonito lá também.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Estatística que muita gente esquece: mais de 70% do acesso a site hoje vem do celular. Se seu site tá bonito no computador e horroroso no celular, você perdeu 7 de cada 10 visitantes. É como fazer skin lindo do Fortnite só pra quem joga no PC e não jogar no Xbox: metade da galera fica de fora.</p>
+      <p><b>Design responsivo</b> é o nome do site que se adapta ao tamanho da tela. No computador, tudo em 3 colunas. No celular, tudo em 1 coluna. O menu que era barra vira hambúrguer. O texto que era 20px vira 16px pra caber. E não tem letra minúscula que faz zoom.</p>
+      <p>Regras rápidas pra site responsivo:</p>
+      <ul>
+        <li>Comece pensando no celular primeiro (chamado <b>mobile-first</b>).</li>
+        <li>Texto no mínimo 16px pra ler sem apertar os olhos.</li>
+        <li>Botão no mínimo 44 pixels de altura pro dedo acertar.</li>
+        <li>Nada de menu horizontal cheio no mobile: usa hambúrguer.</li>
+        <li>Imagem grande vira imagem menor no celular (não carrega uma foto de 5MB pro 4G do coleguinha).</li>
+      </ul>
+      <p>A IA sabe fazer responsivo direitinho SE você pedir. Se você não pedir, ela às vezes esquece. Todo prompt de página deve terminar com "responsivo, mobile-first, testado em telas de 375px de largura".</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você abre seu site no celular e o menu tá cortando o lado direito. Peça: "meu menu tá saindo da tela no celular, aqui tá o CSS: [cola]. Ajuste pra funcionar em 375px de largura, com um menu hambúrguer se necessário".</p>
+      <p><b>Exemplo 2:</b> pra testar sem tirar o celular do bolso, abra o site no computador, aperte F12 (DevTools), clique no ícone de celular. O navegador simula qualquer tela: iPhone SE, iPhone Pro Max, tablet. Ferramenta de graça, salva projeto.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: aqui esta meu site: [cole o HTML e CSS].
+Tarefa: torne 100% responsivo com abordagem mobile-first:
+  - texto minimo 16px;
+  - botoes minimo 44px de altura;
+  - imagem que se adapta;
+  - menu que vira hamburguer em telas menores que 640px;
+  - espaco confortavel em telas de 375px.
+Devolva o codigo ajustado e me diga o que voce mudou.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: abra seu site no computador, aperte F12, ative o modo celular.</li>
+        <li>Passo 2: anote 3 coisas que tão ruins no celular (texto pequeno, botão perdido, imagem cortada).</li>
+        <li>Passo 3: rode o prompt acima.</li>
+        <li>Passo 4: teste de novo no F12. Ajuste o que ainda tiver ruim.</li>
+        <li>Passo 5: abra no seu celular de verdade. Compare. Commit "responsivo aplicado".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Faça o site funcionar bem em 3 tamanhos: iPhone SE (pequeno), iPhone 14 (médio) e iPad (grande). Documente no README quais quebras você usou.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Você abre mais site no celular ou no computador? Qual foi o pior site pra celular que você já viu? Alguém já desistiu de comprar algo porque o site tava ruim no telefone?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote os 3 números-chave: texto ≥ 16px, botão ≥ 44px, quebra em 640px. Cola no computador.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>70% dos acessos vêm do celular. Mobile-first: pensa no celular primeiro. Texto ≥ 16px, botão ≥ 44px, menu hambúrguer em telas menores. F12 no computador simula qualquer celular. Sempre teste em celular de verdade antes de publicar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 1h</span><h3>Botões e formulários que funcionam</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a fazer botão, campo de texto e formulário que qualquer pessoa consegue usar sem adivinhar nada.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Botão precisa parecer botão. Sério. Regra de ouro. Se você faz um "botão" que é só um texto sublinhado colorido, metade das pessoas não vê como botão. Elas passam batido. Botão bom tem: cor de fundo, borda arredondada, sombra sutil, mudança quando você passa o mouse (hover), texto claro do que ele faz.</p>
+      <p>Padrões que todo botão bom segue:</p>
+      <ul>
+        <li>Verbo claro no texto: "Entrar", "Enviar mensagem", "Ver mais", "Baixar".</li>
+        <li>Cor de destaque (a "cor 2" da regra das 3 cores).</li>
+        <li>Sombra ou borda que dá noção de "toca aqui".</li>
+        <li>Muda um pouquinho quando o mouse passa por cima.</li>
+        <li>Não muda de posição a cada segundo (isso é armadilha, não botão).</li>
+      </ul>
+      <p>Formulário bom tem regra parecida. Cada campo tem um <b>label</b> (nome do que é: "Nome", "E-mail"). O campo é grande o suficiente pra ver o que você tá digitando. Se algo der errado (tipo você deixar em branco), aparece uma mensagem GENTIL logo abaixo, não um alert cinza feio.</p>
+      <p>E aquela regra dourada: teste clicando de verdade. Preencha o formulário como se fosse um visitante. Aperte cada botão. Se algo travar, arrume ANTES de publicar. É óbvio? É. E ainda assim 90% dos iniciantes esquece.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> formulário de contato mínimo: label "Nome", campo. Label "Mensagem", área grande. Botão "Enviar mensagem" em destaque. Se a pessoa clicar sem preencher, mensagem clara: "por favor, coloque seu nome". Sem alerta feio.</p>
+      <p><b>Exemplo 2:</b> botão "OK" é ruim. "Continuar", "Confirmar pedido", "Ver detalhes" é bom. O texto explica o que vai acontecer. Menos surpresa, mais confiança.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: preciso de um formulario simples de contato no meu site com nome e mensagem, e um botao de enviar.
+Tarefa: crie o HTML+CSS com:
+  - labels claros em cima de cada campo;
+  - campos grandes o suficiente pro dedo no celular;
+  - botao com verbo claro, cor de destaque, hover suave;
+  - mensagem de erro amigavel se algum campo estiver vazio;
+  - responsivo.
+Nao integre com servidor ainda. So mostre o alerta local por enquanto.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: use o prompt acima, cole o resultado no site.</li>
+        <li>Passo 2: teste clicando de verdade. Preencha, apague, aperte enviar vazio.</li>
+        <li>Passo 3: anote 2 problemas de usabilidade que você encontrou.</li>
+        <li>Passo 4: peça pra IA corrigir cada um.</li>
+        <li>Passo 5: peça pra alguém de casa testar sem você explicar nada. Anote onde travou.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Estude 3 formulários que você usa (Instagram cadastro, Google formulário, checkout de loja). O que eles têm em comum? Onde eles são gentis? Traga observações.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual foi o formulário mais irritante que você já preencheu? Por quê? Como seria a versão gentil desse mesmo formulário?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve 5 verbos que você vai usar em botões daqui pra frente: "enviar", "continuar", "confirmar", "baixar", "ver". Bane o "OK".</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Botão precisa parecer botão. Verbo claro, cor de destaque, hover suave. Formulário tem label em cima, campos grandes, erro gentil. Teste clicando de verdade. Chame alguém de casa pra testar sem você explicar: aprendizado ouro.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 1h</span><h3>Capricho final: polindo os detalhes</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que capricho vale ouro. Uma passada final que separa quem faz "quase bom" de quem faz "muito bom".</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Capricho é a diferença entre o site que a galera esquece em 5 segundos e o site que ela manda pros amigos. É invisível quando bem-feito. É gritante quando falta. Um pixel torto ali. Uma cor que não bate. Uma sombra grosseira. Todos aqueles detalhes que quando somam, você olha e sente que "esse aqui foi feito por alguém que se importou".</p>
+      <p>A lista do capricho (chamada de <b>polish list</b>):</p>
+      <ul>
+        <li><b>Alinhamento:</b> tudo alinhado à esquerda, ao centro ou à direita. Nada solto no meio do nada.</li>
+        <li><b>Espaçamento consistente:</b> se você usa 20px entre seções, use 20px em TODAS. Não 22 aqui, 18 ali.</li>
+        <li><b>Bordas arredondadas iguais:</b> se botões têm 8px de radius, cards também têm.</li>
+        <li><b>Cores exatas:</b> não é "quase o mesmo dourado". É o MESMO código hex, sempre.</li>
+        <li><b>Sombras suaves:</b> sombra pesada é ruim. Sombra sutil dá profundidade elegante.</li>
+        <li><b>Tudo clicável tem cursor de mão:</b> passou o mouse, virou pointer.</li>
+        <li><b>Estado de foco visível:</b> quando você navega pelo teclado, aparece uma borda no elemento focado. Acessibilidade.</li>
+        <li><b>Nada quebrado:</b> nenhum link 404, nenhuma imagem faltando, nenhum botão morto.</li>
+      </ul>
+      <p>Um truque poderoso é pedir pra IA fazer <b>code review</b> do próprio código dela. "Olhe seu próprio código e aponte 5 pontos de capricho que ainda dá pra melhorar". Ela é implacável consigo mesma quando você pede. Sai polimento de graça.</p>
+      <p>Última coisa: capricho é acabamento, não é começar tudo de novo. Se você começar a refazer o site inteiro na hora do capricho, você tá procrastinando. Pega a lista, roda no que já tá, publica.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você olha seu site e vê que alguns botões têm sombra e outros não. Detalhe. Peça: "padronize todos os botões com a mesma sombra suave. Aqui tá o CSS: [cola]". 30 segundos, site vira outro.</p>
+      <p><b>Exemplo 2:</b> sua paleta usa <code>#E8A33D</code> como âmbar. Mas em um lugar você colocou <code>#EBA542</code> (parecido). No monitor grande, é a mesma cor. No celular, brilha diferente. Padroniza. Detalhe importa.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e uma designer sênior fazendo code review de visual.
+Contexto: aqui esta meu site pronto: [cole HTML e CSS].
+Tarefa: rode a polish list:
+  - alinhamento;
+  - espacamento consistente;
+  - bordas arredondadas iguais;
+  - cores exatas (nada de "quase iguais");
+  - sombras suaves e consistentes;
+  - cursor de mao em tudo clicavel;
+  - estado de foco visivel;
+  - links quebrados ou imagens faltando.
+Aponte cada falha com linha e conserto minimo. Nao reescreva o codigo inteiro.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode o prompt acima.</li>
+        <li>Passo 2: leia a lista. Consertar SÓ os 5 mais impactantes.</li>
+        <li>Passo 3: teste no celular. Teste no computador.</li>
+        <li>Passo 4: peça a alguém "olha esse site e me diz o que parece amador". Anote.</li>
+        <li>Passo 5: commit "polimento final". Publica.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Compare seu site do fim do Módulo 2 com o de agora. Screenshot dos dois. Coloca lado a lado. Vê a evolução. Guarda isso pro projeto final.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual detalhe fez mais diferença no seu site? Qual você teria deixado passar sem a lista? Como saber quando parar de polir?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote os 8 itens da polish list. Rode em todo projeto antes de publicar. Vira automático em 3 projetos, prometo.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Capricho é invisível quando presente, gritante quando falta. Polish list: alinhamento, espaçamento, bordas, cores exatas, sombras suaves, cursor, foco visível, nada quebrado. Peça code review de visual pra IA. Consertar os 5 mais impactantes basta. Capricho é acabamento, não recomeço.</p></div>
+  </article>
+
+  <div class="skills"><h4>Encontro ao vivo · Semanas 7 e 8</h4><p>Pauta: (1) antes-e-depois dos sites da turma com design aplicado; (2) demo ao vivo de teste no celular com F12; (3) code review em dupla usando a polish list; (4) debate sobre qual site foi o "mais nível" da turma e por quê.</p></div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5</span><h2>Fazendo o site fazer coisas</h2></div>
+  <p class="mod-resumo">Quatro aulas pra sair da página estática. Agora o site guarda dado, responde a clique, conecta com outros serviços da internet e avisa quando algo acontece. É programação de verdade, com a IA como copiloto. No fim do módulo, seu site deixa de ser cartaz digital e vira app pequeno.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 1h</span><h3>Guardar e mostrar informação (dados)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender o básico de guardar dado (nome, mensagem, item de lista) e mostrar no site sem perder quando a página fecha.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Até agora seu site é uma página estática: tudo que aparece já tá escrito no HTML. Se você quiser adicionar um novo item, mexe no código, faz push, deploy. Chato. Site de verdade guarda dado em um lugar (chamado <b>banco de dados</b>) e mostra na tela sempre que alguém entra. Igual seu inventário no Minecraft: os itens ficam guardados no save, não no código do jogo.</p>
+      <p>Formas de guardar dado, do mais simples ao mais avançado:</p>
+      <ul>
+        <li><b>LocalStorage:</b> guarda no próprio navegador da pessoa. Se ela apagar o histórico, some. Bom pra "salvar preferências" (dark mode ligado, cor favorita).</li>
+        <li><b>JSON local:</b> um arquivo no seu projeto com uma lista de itens. Só você mexe. Bom pra "lista de projetos meus", "receitas favoritas".</li>
+        <li><b>Firebase / Supabase:</b> banco de dados na nuvem, grátis pra projeto pequeno, guarda pra sempre, aparece pra todo mundo. Aqui já é level up: precisa de conta, precisa de chave, precisa de adulto.</li>
+      </ul>
+      <p>Pra esta aula, você vai usar as duas primeiras (LocalStorage e JSON). Firebase entra em projeto final, com adulto ativo. Guardar dado é o começo da programação de verdade: seu site deixa de ser cartaz e vira ferramenta.</p>
+      <p>Uma coisa importante: quando você guarda dado, você também precisa MOSTRAR ele bonito. Não adianta ter uma lista de 100 comentários e cuspir tudo. Você pagina, filtra, dá ordem (do mais novo pro mais velho). Isso é o "tratamento" que separa app amador de app útil.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> app "lista de coisas pra fazer". Cada item que você adiciona vai pro LocalStorage. Você fecha o site, abre de novo, os itens tão lá. Truque simples com <code>localStorage.setItem</code> e <code>localStorage.getItem</code>.</p>
+      <p><b>Exemplo 2:</b> lista de projetos que você fez. Um arquivo <code>projetos.json</code> com os dados. Um pouco de JavaScript pra ler o arquivo e mostrar cada projeto em um card na tela. Você adiciona um projeto novo mexendo no JSON, não no HTML. Fica organizado.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: quero adicionar guardar dado no meu site: [descreva].
+Tarefa: crie o codigo pra:
+  1) uma lista de itens que a pessoa adiciona pelo formulario;
+  2) salvar no LocalStorage (fica guardado mesmo depois de fechar);
+  3) mostrar na tela em ordem do mais novo pro mais velho;
+  4) permitir remover um item clicando num X ao lado.
+Requisito: codigo simples, comentado em portugues, uma coisa por vez.
+Antes do codigo, me explica em 3 frases como o LocalStorage funciona.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode o prompt. Cole o código no seu site.</li>
+        <li>Passo 2: teste adicionar 3 itens. Feche o navegador. Abra de novo. Tá tudo lá?</li>
+        <li>Passo 3: teste remover um item. Recarregue a página. Continua removido?</li>
+        <li>Passo 4: pense em uma dica de UX (ex.: "input em branco não deve adicionar item vazio") e peça pra IA implementar.</li>
+        <li>Passo 5: commit "guardando dados com LocalStorage".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Adicione uma segunda funcionalidade: "marcar item como concluído" (tipo checklist). Item concluído fica riscado, mas continua na lista. Peça pra IA.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual seria o app mais útil pra você fazer com LocalStorage? Alguém já perdeu dado quando limpou o histórico do navegador? Qual a diferença entre LocalStorage e Firebase?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote 3 apps que você usa que provavelmente usam LocalStorage (ex.: TikTok lembra o vídeo que você tava vendo, jogos guardam progresso local).</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Site estático mostra o que tá no código. Site com dado guarda e mostra. LocalStorage é o mais simples: fica no navegador da pessoa. Firebase é level up: nuvem, grátis, precisa de adulto. Guardar dado transforma cartaz em ferramenta. Sempre trate bem (ordem, filtro, remoção).</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 1h</span><h3>O site que responde (interatividade)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a fazer o site reagir quando a pessoa clica, digita ou passa o mouse, usando JavaScript no básico do básico.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>HTML é o esqueleto. CSS é a roupa. JavaScript é o cérebro que faz a pessoa se mexer. Sem JavaScript, o site fica parado, só pra ler. Com JavaScript, ele responde: você clica no botão, algo acontece. Você digita, aparece resposta. Você move o mouse, um card se anima. Igual seu personagem no Roblox: sem script, ele fica em pé. Com script, ele pula, corre, luta.</p>
+      <p>Três eventos básicos que resolvem 80% da interatividade em site iniciante:</p>
+      <ul>
+        <li><b>click:</b> quando o botão é clicado.</li>
+        <li><b>input:</b> quando a pessoa digita algo no campo.</li>
+        <li><b>submit:</b> quando um formulário é enviado.</li>
+      </ul>
+      <p>A IA escreve o JavaScript pra você. Você só precisa reconhecer três coisas: (1) o elemento que vai receber o evento, (2) o evento em si, (3) o que acontece quando dispara. Exemplo em português: "quando o botão de nome 'salvar' for clicado, pegue o texto do campo 'mensagem' e mostre em cima dele". A IA traduz pra código.</p>
+      <p>Uma sacada boa de UX: sempre dê <b>feedback</b> pra pessoa. Se ela clicou, mostra que aconteceu. Um "Salvo!" verde por 2 segundos. Um botão que fica cinza enquanto processa. Uma mensagem "Falha, tente de novo" se der problema. Sem feedback, a pessoa clica 5 vezes achando que travou. Ai vira drama.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> botão de "curtir" que muda de coração vazio pra coração cheio quando clicado, e mostra o total: "12 curtidas → 13 curtidas". Simples: um evento de click, aumenta uma variável, atualiza a tela.</p>
+      <p><b>Exemplo 2:</b> campo de busca que filtra a lista enquanto você digita. Um evento de <code>input</code> compara o texto com cada item da lista e esconde os que não batem. Parece mágica. É JavaScript básico.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: meu site tem [descreva o que ja existe].
+Tarefa: adicione uma interatividade simples:
+  - [descreva o que voce quer: "botao de curtir que soma", "filtro por texto", "toggle dark mode"].
+Requisitos:
+  - JavaScript puro, sem biblioteca externa;
+  - feedback visual quando a acao acontece;
+  - codigo comentado em portugues.
+Explique em 3 linhas como o codigo funciona antes de me entregar.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: escolha UMA interatividade pra adicionar (curtida, filtro, toggle).</li>
+        <li>Passo 2: rode o prompt. Cole o código. Teste.</li>
+        <li>Passo 3: quebre de propósito (clique 10 vezes rápido, digite emoji, deixe vazio). O que acontece?</li>
+        <li>Passo 4: peça pra IA melhorar os casos que quebraram.</li>
+        <li>Passo 5: commit "adicionando interatividade JS".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Combine LocalStorage (aula 16) com interatividade (esta aula): botão de curtir que MANTÉM o total quando a pessoa recarrega. Isso é app de verdade.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual interatividade da internet que você mais curte? Alguém já clicou em botão que não deu feedback nenhum e virou drama? Como você prefere: feedback discreto ou espalhafatoso?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote os 3 eventos básicos: click, input, submit. E a regra do feedback: toda ação precisa de reação visível.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>JavaScript é o cérebro que faz o site se mexer. Três eventos básicos: click, input, submit. A IA escreve, você lê e reconhece. Sempre dê feedback visual pra ação da pessoa. Sem feedback = click frustrado = usuário perdido.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 1h</span><h3>Conectar com outras coisas (APIs mágicas prontas)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a usar API pública gratuita pra puxar dado de fora (previsão do tempo, piada, curiosidade) e mostrar no seu site.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>API é uma "porta" que um serviço abre pro seu site pedir dado ou fazer coisa. Você conecta seu site na API do OpenWeather e ele mostra a previsão do tempo. Você conecta na API do YouTube e mostra os últimos vídeos de um canal. Você conecta na API da OpenAI e o site conversa com IA. Sem API, você teria que copiar tudo na mão. Com API, o dado atualiza sozinho.</p>
+      <p>Tipos de API que a gente usa nesta aula:</p>
+      <ul>
+        <li><b>APIs públicas gratuitas:</b> não precisa de chave, dá pra usar direto. Ex.: JokeAPI (piadas), Advice Slip (conselho aleatório), Cat API (foto de gato).</li>
+        <li><b>APIs com chave gratuita:</b> precisa criar conta, gerar chave, mas o limite grátis é grande. Ex.: OpenWeather, Unsplash. AQUI ENTRA A REGRA DE OURO: chave vai pro <code>.env</code>, NUNCA no código.</li>
+        <li><b>APIs pagas:</b> OpenAI, Stripe. Aqui o adulto entra pesado, porque cada chamada custa dinheiro real.</li>
+      </ul>
+      <p>Nesta aula você vai usar só as gratuitas. Simples, sem chave, sem risco. O padrão é sempre igual: você chama a URL da API (com <code>fetch</code> no JavaScript), ela devolve um pedaço de dado (formato JSON), você mostra na tela.</p>
+      <p>Cuidado que sempre volta: se algum dia você usar API com chave, a chave NUNCA vai no código do navegador. Ela vai pro <code>.env</code>, e uma função no servidor faz a chamada. Isso a gente aprofunda mais na frente. Adulto sempre por perto quando envolve chave.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> botão "me conta uma piada". Clicando, ele chama a JokeAPI, pega uma piada aleatória e mostra na tela. Zero configuração. Só JavaScript com <code>fetch</code>.</p>
+      <p><b>Exemplo 2:</b> um card que mostra uma foto de gato aleatória toda vez que a pessoa entra no site. API do Cat API devolve o link da foto. Você mostra em uma <code>&lt;img&gt;</code>. Simples, útil, divertido.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: quero usar uma API publica gratuita no meu site (sem precisar de chave).
+Tarefa: me sugira 3 APIs publicas divertidas e uteis pra quem esta comecando. Pra cada uma, me da:
+  - o que ela retorna;
+  - a URL de chamada;
+  - um exemplo de codigo JavaScript com fetch pra usar.
+Depois, escolha uma comigo e implemente uma secao nova no meu site que use essa API.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode o prompt. Escolha a API que mais te agrada.</li>
+        <li>Passo 2: adicione a seção no seu site. Botão que chama a API.</li>
+        <li>Passo 3: teste offline (desliga o WiFi). Aparece mensagem de erro amigável? Se não, pede pra IA adicionar.</li>
+        <li>Passo 4: teste com WiFi lento (F12 → Network → Slow 3G). Aparece um "carregando"? Se não, pede.</li>
+        <li>Passo 5: commit "integrando API pública".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Combine 2 APIs no mesmo site: uma piada + uma foto de gato. O botão puxa as duas ao mesmo tempo e monta um "cartão do dia" completo. Impressionador.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Que API seria útil pro seu próximo projeto? Alguém já viu uma integração de API que achou top? Como seria a vida sem APIs (tipo, como redes sociais funcionariam)?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote a regra: chave de API grátis pode entrar no <code>.env</code>. Chave paga entra no .env E no servidor (nunca no navegador). Chave nunca no código, ponto.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>API é porta pra pedir dado de fora. Públicas gratuitas: sem chave, use livre. Com chave gratuita: <code>.env</code>, adulto por perto. Pagas: adulto pesado. Padrão sempre igual: <code>fetch</code> a URL, recebe JSON, mostra na tela. Trate erro e loading pra experiência não ficar travada.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 1h</span><h3>Avisos automáticos e deixar rápido</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a mandar aviso quando algo importante rolar no site (mensagem, alerta bonito) e a deixar o site carregar mais rápido.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Aviso automático é aquela mensagem que aparece no canto da tela quando algo aconteceu: "Salvo com sucesso!", "Erro, tente de novo", "Cópia feita pra área de transferência". Se chama <b>toast</b> (torradinha, porque salta) ou <b>notificação</b>. Ela some sozinha em 3 segundos, discreta, informativa. Muito melhor que aquele alerta cinza feio do navegador.</p>
+      <p>Regras de aviso bom:</p>
+      <ul>
+        <li>Discreto (canto da tela, não popup no meio).</li>
+        <li>Colorido por tipo: verde (sucesso), amarelo (aviso), vermelho (erro).</li>
+        <li>Some sozinho em 3-5 segundos.</li>
+        <li>Nunca pra a pessoa (nada de "ok, tá, pode fechar agora").</li>
+      </ul>
+      <p>Velocidade é a outra parte da aula. Site rápido = pessoa fica. Site lento = pessoa sai antes de carregar. Estatística clássica: 3 segundos de espera = metade da galera desiste. E isso é grave. Adivinha o que deixa site lento? Imagem gigante. Muito JavaScript. Fonte pesada. Bibliotecas que você importou "só por precaução".</p>
+      <p>Coisas rápidas que dão salto de performance:</p>
+      <ul>
+        <li>Imagem em WebP ou AVIF (30% menor que JPG).</li>
+        <li>Redimensiona a imagem antes de subir (não use uma foto de 4000x3000 pixels num card de 300x200).</li>
+        <li>Carrega imagem só quando ela aparece na tela (<code>loading="lazy"</code>).</li>
+        <li>Uma fonte só, com peso só (evite importar 12 pesos diferentes).</li>
+      </ul>
+      <p>A IA otimiza tudo isso pra você. Só peça: "meu site tá lento, aponta 5 problemas de performance e conserta os 3 mais impactantes".</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> quando o formulário é enviado, aparece um toast verde no canto: "Mensagem enviada, obrigado!". Some em 3 segundos. Sem popup interrompendo.</p>
+      <p><b>Exemplo 2:</b> você trocou uma imagem de 3MB por uma de 300KB (WebP redimensionada). O site que carregava em 6 segundos agora carrega em 1,5. Mesma foto, olho não vê diferença, dispositivo agradece.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: meu site esta assim: [cole HTML e CSS].
+Tarefa: (parte 1) adicione um sistema de toast simples (sucesso/erro/aviso), sem biblioteca externa. Aparece no canto, some em 4 segundos.
+(parte 2) faca uma auditoria rapida de performance:
+  - imagens grandes demais;
+  - fontes pesadas;
+  - JavaScript nao usado;
+  - falta de lazy loading em imagens.
+Aponte os 5 maiores problemas. Conserte os 3 mais impactantes.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: implemente o toast. Teste disparando com um botão.</li>
+        <li>Passo 2: use o site <code>tinypng.com</code> pra encolher suas imagens.</li>
+        <li>Passo 3: rode a auditoria de performance da IA e aplique os 3 principais.</li>
+        <li>Passo 4: abra o F12 → Lighthouse (dentro do Chrome DevTools) e veja a nota antes/depois.</li>
+        <li>Passo 5: commit "toasts + performance melhorada".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Peça pra IA implementar um "skeleton loader" (aquele placeholder cinza pulsando enquanto o conteúdo carrega). Truque de app grande, dá sensação de rapidez.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual site pesado te fez desistir de esperar? Você prefere toast ou popup? Quantos segundos você aguenta esperar antes de sair?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote os 3 principais culpados por site lento: imagem grande, fonte pesada, JavaScript desnecessário. Rode uma auditoria em todo projeto antes de publicar.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Toast é aviso discreto no canto, colorido por tipo, some sozinho. Melhor que popup. Site rápido = pessoa fica. Otimize imagem (WebP, redimensionada, lazy), fontes (uma só), JavaScript (só o necessário). F12 → Lighthouse mede sua nota. IA faz auditoria e conserta.</p></div>
+  </article>
+
+  <div class="skills"><h4>Encontro ao vivo · Semanas 9 e 10</h4><p>Pauta: (1) demo dos apps interativos da turma (LocalStorage + JS); (2) integração ao vivo com API pública; (3) auditoria Lighthouse em um projeto voluntário; (4) roda de conversa: o que é "app" e o que é "site"?</p></div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6</span><h2>Fazendo direito (qualidade e método)</h2></div>
+  <p class="mod-resumo">Três aulas duras e importantes. Ler o código que a IA escreveu (habilidade número 1), testar de verdade e arrumar bagunça. Sem isso, não é vibecoding, é vibehope (torcer pra dar certo). Aqui entra o Protocolo de 5 Camadas do Rodrigo: Entender, Ler, Blindar, Testar, Versionar.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 1h</span><h3>Ler o que a IA escreveu e achar erros (revisão de código)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender que a maior habilidade de um criador com IA é LER código, não escrever. E treinar seu olho pra achar bug antes de rodar.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Todo mundo acha que a habilidade top de vibecoding é escrever prompt. Não é. É LER o código que a IA devolveu. Prompt bom, qualquer um aprende em uma semana. Ler código com olho crítico salva sua pele o projeto inteiro. É como jogar CS: mira todo mundo tem. Ler o mapa e prever movimento do inimigo é o que ganha campeonato.</p>
+      <p>O Rodrigo criou um método chamado <b>Protocolo de 5 Camadas</b>. É a receita pra não confiar cegamente na IA. As 5 camadas:</p>
+      <ul>
+        <li><b>1. Entender:</b> o que exatamente eu preciso? Antes de codar.</li>
+        <li><b>2. Ler:</b> o que a IA escreveu. LINHA POR LINHA. Sem pular.</li>
+        <li><b>3. Blindar:</b> tem segurança, LGPD, validação de entrada?</li>
+        <li><b>4. Testar:</b> rodou o caminho feliz e o ruim?</li>
+        <li><b>5. Versionar:</b> commit com mensagem clara.</li>
+      </ul>
+      <p>Hoje a gente foca na camada 2: LER. Erros comuns que a IA comete:</p>
+      <ul>
+        <li>Variável com nome errado ou trocado.</li>
+        <li>Lógica invertida (usa <code>&gt;</code> onde era <code>&lt;</code>).</li>
+        <li>Copia código velho que nem existe mais (função descontinuada).</li>
+        <li>Inventa uma biblioteca que não existe.</li>
+        <li>Não trata caso quando o campo tá vazio.</li>
+        <li>Erro sutil de segurança (colou chave em vez de <code>process.env</code>).</li>
+      </ul>
+      <p>Truque poderoso: peça pra IA explicar o código dela mesma linha por linha. Se ela tropeçar na explicação, tem bug ali. Explicação boa = código provavelmente bom. Explicação vaga = desconfia.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> a IA escreveu <code>if (idade &lt; 18) { permitido = true }</code>. Você lê. Perceba: menor de 18 tá permitido? Não faz sentido. Lógica invertida. Você corrige, ou pede pra ela explicar por que escreveu assim.</p>
+      <p><b>Exemplo 2:</b> ela importou uma biblioteca chamada <code>super-utils-2024</code>. Você desconfia. Pergunta: "essa biblioteca existe mesmo? Me passe o link do npm". Se ela hesita, é inventada. IA às vezes cria pacote no ar.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: acabei de gerar o codigo abaixo com voce. Antes de rodar, quero que voce mesma revise ele.
+Codigo: [cole aqui].
+Tarefa: aplique as 5 camadas do Protocolo do Rodrigo:
+  1) o que este codigo faz, em portugues simples;
+  2) leia linha por linha e aponte se tem bug logico, variavel errada, biblioteca inventada;
+  3) tem risco de seguranca (segredo, XSS, sem validacao)?
+  4) sugira 3 testes: 2 do caminho feliz, 1 do caminho ruim;
+  5) sugira mensagem de commit clara.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: pegue um código que a IA gerou recentemente (uma função, uma página, um script).</li>
+        <li>Passo 2: rode o prompt do Protocolo de 5 Camadas.</li>
+        <li>Passo 3: leia a resposta com atenção. Alguma coisa te surpreendeu?</li>
+        <li>Passo 4: aplique os consertos apontados. Commit com a mensagem sugerida.</li>
+        <li>Passo 5: guarde esse prompt pra usar SEMPRE. É seu escudo.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Pegue um projeto de um colega (com autorização) e rode o Protocolo nele. Sem julgamento, com carinho. Aprender a revisar código dos outros é o começo de trabalhar em equipe.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual foi o bug mais bizarro que a IA cometeu no seu código? Você já rodou código sem ler e deu ruim? Como o Protocolo muda seu jeito de trabalhar com IA?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote as 5 camadas: Entender, Ler, Blindar, Testar, Versionar. Cola no computador. Rode em toda mudança grande de código.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Habilidade top do vibecoder: LER, não escrever. Protocolo de 5 Camadas: Entender, Ler, Blindar, Testar, Versionar. IA erra: variável trocada, lógica invertida, biblioteca inventada. Peça pra ela explicar o próprio código. Explicação vaga = bug provável.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 1h</span><h3>Testar pra ver se funciona (de verdade)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a testar o programa como se fosse o usuário mais chato do mundo, e a escrever um teste simples em código que roda sozinho.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>"Funciona na minha máquina" é a frase mais famosa e mais perigosa de quem programa. Só porque você conseguiu fazer o botão funcionar clicando uma vez do jeito certo, não quer dizer que ele funciona pra tudo. Testar é forçar seu programa a falhar. Se ele resistir, você tem confiança. Se ele quebrar, melhor descobrir agora do que depois.</p>
+      <p>Dois tipos de teste que salvam sua pele:</p>
+      <ul>
+        <li><b>Caminho feliz:</b> a pessoa faz tudo direitinho, como você esperava. Preenche o formulário certo, clica no botão, tudo funciona.</li>
+        <li><b>Caminho ruim:</b> a pessoa faz o que NÃO era esperado. Deixa campo em branco. Cola emoji onde era pra ser número. Aperta o botão 10 vezes seguidas. Tenta digitar <code>&lt;script&gt;</code> no campo de nome. A pessoa vai fazer isso sem querer (ou querendo). Seu código tem que aguentar.</li>
+      </ul>
+      <p>Teste manual: você mesma faz isso, com as duas mãos, um caminho por vez. Anota o que quebrou. Corrige. Testa de novo. Trabalhoso, mas essencial.</p>
+      <p>Teste automatizado: um código pequeno que testa o outro código sozinho. Você escreve uma vez. Roda a qualquer hora, em 2 segundos. Toda vez que muda o código principal, você roda os testes e sabe na hora se quebrou algo. Isso se chama <b>teste unitário</b>. Pra começar, uma ferramenta simples: Vitest (JavaScript) ou similares.</p>
+      <p>Ideia importante: nem tudo precisa teste automatizado. Projeto pequeno, teste manual basta. Projeto que tem dinheiro envolvido, dado de gente ou muita gente usando: teste automatizado é obrigatório.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> checklist manual do seu formulário: (1) preencho tudo certo e envia, funciona? (2) deixo em branco e envia, dá mensagem clara? (3) coloco um emoji no nome, aceita ou trata? (4) aperto enviar 10 vezes, manda 10 vezes ou trava? (5) recarrego a página, perde o que digitei?</p>
+      <p><b>Exemplo 2:</b> teste automatizado bem simples: uma função <code>soma(a, b)</code> que devolve <code>a + b</code>. O teste faz: "espero que soma(2, 3) devolva 5". Se der 5, PASS. Se der 6 (bug), FAIL. Você vê na hora.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: aqui esta uma funcionalidade do meu site: [cole codigo].
+Tarefa:
+  1) me faca uma checklist manual de 10 testes: 5 caminho feliz, 5 caminho ruim;
+  2) me escreva 3 testes automatizados simples usando Vitest;
+  3) me explique como rodar os testes no meu computador.
+Formato: checklist primeiro, depois codigo dos testes, depois instrucoes.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode a checklist manual no seu site atual. Anote quantos passaram e quantos falharam.</li>
+        <li>Passo 2: conserte os que falharam.</li>
+        <li>Passo 3: com o adulto, instale o Vitest seguindo as instruções da IA.</li>
+        <li>Passo 4: rode <code>npm run test</code> e veja os 3 testes automatizados rodarem.</li>
+        <li>Passo 5: commit "adicionando primeiros testes".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Peça pra IA quebrar uma função de propósito (introduzir um bug), sem te dizer qual. Rode os testes. Eles pegam o bug? Se sim, seus testes são bons. Se não, você precisa de teste melhor.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual caminho ruim mais bizarro você testou? Alguém achou bug que a IA não tinha visto? Vale a pena o esforço de escrever teste automatizado ou o manual basta?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve a frase: "funciona na minha máquina não significa nada". Cola no computador. Toda vez que quiser publicar sem testar direito, olha essa frase.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Testar é forçar o código a falhar. Dois tipos: caminho feliz (usuário certinho) e caminho ruim (usuário errado ou mal-intencionado). Teste manual salva projeto pequeno. Teste automatizado é obrigatório em projeto com dado ou dinheiro. Vitest é ferramenta boa pra começar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 1h</span><h3>Arrumar a bagunça e saber quando quebrou</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a organizar código bagunçado sem mudar o comportamento (refatorar) e a receber aviso automático quando algo quebra no site em produção.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p><b>Refatorar</b> é uma palavra bonita pra "arrumar sem quebrar". Você olha um código bagunçado (500 linhas num arquivo só, nomes de variável esquisitos, lógica repetida 4 vezes) e mexe pra deixar limpo, MANTENDO o comportamento igual. Antes: funcionava mas era feio. Depois: funciona igualzinho e tá elegante. Ninguém percebe. Você agradece daqui a 3 meses.</p>
+      <p>Sinais que seu código pede refatoração:</p>
+      <ul>
+        <li>Arquivo passou de 300 linhas. Divida em 2 ou 3.</li>
+        <li>Você repetiu o mesmo bloco 3 vezes. Vira uma função só.</li>
+        <li>Nome de variável tipo <code>a</code>, <code>x</code>, <code>temp</code>. Renomeia pra algo que conta a história.</li>
+        <li>Você não entende mais o que aquele pedaço faz. Se você não entende, ninguém entende.</li>
+      </ul>
+      <p>Regra sagrada da refatoração: <b>tenha testes antes</b>. Testes garantem que você não quebrou nada. Sem testes, refatorar é apostar. Com testes, é ciência.</p>
+      <p>Segundo tema da aula: <b>observabilidade</b>. Palavra chique pra "saber se o site tá saudável e receber aviso quando quebrar". Ninguém quer descobrir que o site tá fora do ar quando a mãe manda mensagem: "filho, seu site tá dando erro". Você quer saber antes dela. Ferramentas gratuitas fazem isso: Sentry, LogRocket, Vercel Analytics. Elas mandam email/mensagem no seu Discord quando o site erra pra alguém.</p>
+      <p>Pra começar simples: adicione um <code>console.log</code> em pontos importantes. Depois, com o adulto, integre o Sentry (gratuito pra projeto pequeno). Você vai olhar o painel do Sentry e ver: "3 erros nas últimas 24h, todos no formulário de contato". Você conserta antes que a coisa vire caos.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você tem 4 blocos parecidos de código que só mudam o texto do botão. Refatora: uma função <code>criarBotao(texto)</code>. Chama 4 vezes com textos diferentes. 40 linhas viram 15. Comportamento igual.</p>
+      <p><b>Exemplo 2:</b> Sentry integrado. Você acorda, olha o email: "Erro novo no site: 'Cannot read property nome of undefined' na página de contato, 5 vezes na última hora". Você vai lá, entende, conserta em 10 minutos. Sem Sentry, ficaria dias no ar quebrado.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: aqui esta um arquivo do meu projeto que ficou bagunçado: [cole codigo].
+Tarefa (parte 1 - refatorar):
+  1) aponte 5 sinais de bagunça neste codigo;
+  2) refatore SEM MUDAR O COMPORTAMENTO: separe em funcoes, renomeie variaveis mal nomeadas, elimine repetição;
+  3) me diga o que mudou.
+Tarefa (parte 2 - observabilidade):
+  1) explique em 3 frases o que e Sentry;
+  2) me guie a integrar no meu projeto no Netlify/Vercel, com o adulto do meu lado.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode a parte 1 do prompt. Antes de aplicar, rode seus testes (aula 21). Anote quantos passaram.</li>
+        <li>Passo 2: aplique a refatoração. Rode os testes de novo. Continua passando? Sucesso.</li>
+        <li>Passo 3: commit "refatorando sem mudar comportamento".</li>
+        <li>Passo 4: com o adulto, crie conta no Sentry (gratuita) e siga o passo a passo pra integrar.</li>
+        <li>Passo 5: force um erro proposital no site. Veja aparecer no painel do Sentry. Commit "adicionando observabilidade".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Peça pra IA identificar o "código mais feio" do seu projeto inteiro. Refatore. Rode testes. Publique. Mensagem de commit inspirada: "menos dívida técnica".</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual foi a bagunça mais cabeluda que você tinha e ficou limpa depois? Alguém teve site fora do ar sem saber? Como seria a vida sem Sentry?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve a regra: "só refatoro se tenho teste". E o compromisso: "vou olhar o Sentry pelo menos uma vez por semana".</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Refatorar é arrumar sem mudar comportamento. Só refatore com testes. Observabilidade é saber quando quebrou. Sentry gratuito manda alerta pro seu email/Discord. Melhor descobrir antes da sua mãe descobrir.</p></div>
+  </article>
+
+  <div class="skills"><h4>Encontro ao vivo · Semanas 11 e 12</h4><p>Pauta: (1) casos reais de bugs pegos pelo Protocolo de 5 Camadas; (2) demo de teste automatizado ao vivo com Vitest; (3) refatoração em dupla; (4) tour pelo painel do Sentry integrado.</p></div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7</span><h2>Mostrar pro mundo (do jeito certo)</h2></div>
+  <p class="mod-resumo">Quatro aulas pra transformar projeto de gaveta em produto real. Publicar direito, ser achado no Google, ter uma landing que convida e fazer um mini-lançamento sem hype. No fim, seu projeto tem endereço, tem visitante, tem feedback e tem história.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 1h</span><h3>Colocar no ar do jeito certo (com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a publicar de verdade, com endereço bonito, HTTPS ativo e checagem de segurança final feita, tudo com um adulto do lado.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>A gente já publicou no Netlify na aula 7. Aqui a gente sobe o nível. "Do jeito certo" significa: domínio próprio (opcional mas bacana), HTTPS ligado (obrigatório), checagem de segurança final rodada, e o adulto sabendo exatamente o que tá indo pro ar.</p>
+      <p>Componentes de uma publicação profissional:</p>
+      <ul>
+        <li><b>Domínio próprio:</b> em vez de <code>meu-site.netlify.app</code>, você tem <code>meuprojeto.com.br</code>. Custa uns R$40/ano no Registro.br. Adulto compra e configura junto.</li>
+        <li><b>HTTPS:</b> o cadeado ao lado da URL. Netlify e Vercel já ligam sozinhos. Se seu site NÃO tem cadeado, algo tá errado, não publique.</li>
+        <li><b>Variáveis de ambiente configuradas:</b> se você tem chave de API, ela precisa estar no painel do Netlify/Vercel, não no código.</li>
+        <li><b>Domínio SEM dado pessoal:</b> <code>rodrigoreis15anos.com.br</code> é ruim (idade, nome completo, dados). <code>projetoraiz.com.br</code> é melhor.</li>
+        <li><b>Página de erro 404 personalizada:</b> se alguém digita link errado, aparece uma página amigável em vez do erro feio padrão.</li>
+      </ul>
+      <p>O ritual antes de qualquer publicação séria:</p>
+      <ul>
+        <li>Rodei o Protocolo de 5 Camadas (aula 20)?</li>
+        <li>Rodei os testes (aula 21) e passaram?</li>
+        <li>Rodei a checklist de segurança (aula 11)?</li>
+        <li>Adulto viu o que vai pro ar?</li>
+        <li>Sentry configurado (aula 22)?</li>
+      </ul>
+      <p>Se todos os check estão marcados, você tá pronto pra publicar. Sinta o orgulho. Não é qualquer aluno de 13 anos que publica com esse rigor.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você quer publicar <code>agendabraziltech.com.br</code>. Adulto compra no Registro.br, entra no Netlify, aponta o domínio, cadastra. Em 30 minutos tá no ar com HTTPS e tudo.</p>
+      <p><b>Exemplo 2:</b> um colega publicou sem checar. Alguém achou um bug no formulário que mandava mensagem sem validar. Em 2 dias, 500 spams enviados. Corrigir tomou tempo. Prevenir tomaria 5 minutos.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: quero publicar meu site com um dominio proprio (ou seguir no subdominio gratuito por enquanto).
+Tarefa:
+  1) me faca a checklist final antes de publicar (5 Camadas + testes + seguranca + adulto + Sentry);
+  2) se eu quiser dominio proprio, me guie a comprar no Registro.br e apontar pro Netlify/Vercel com o adulto do meu lado;
+  3) me ajude a criar uma pagina 404 personalizada bonita.
+Formato: checklist primeiro, passos numerados depois.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode a checklist final com o adulto ao lado.</li>
+        <li>Passo 2: se tudo passou, publique. Se algo falhou, conserte primeiro.</li>
+        <li>Passo 3: crie a página 404 personalizada.</li>
+        <li>Passo 4: (opcional) com o adulto, compre um domínio simples.</li>
+        <li>Passo 5: mande o link pra 3 pessoas de casa. Peça pra abrir no celular delas. Confirme que carrega, com cadeado.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Configure alertas automáticos: quando o site cair, você recebe email. Netlify e Vercel têm isso nas configurações. Ativa.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Como foi a sensação de publicar com todos os check marcados? Alguém teve um dos checks falhando? Vale a pena o domínio próprio pra projeto pessoal?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote a checklist final numa folha. Rode em toda publicação séria daqui pra frente. Isso é padrão profissional.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Publicar direito: domínio próprio (opcional), HTTPS (obrigatório), variáveis no painel, página 404 amigável. Ritual: 5 Camadas + testes + segurança + adulto + Sentry. Se um check falha, você não publica ainda. É padrão profissional.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 1h</span><h3>Fazer as pessoas acharem (SEO básico)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender o básico de SEO: como o Google encontra sites, o que ele valoriza, e como fazer o seu aparecer nas buscas.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>SEO é a sigla de "Search Engine Optimization". Traduzindo: fazer o Google entender seu site e mostrar pra quem procura pelo assunto dele. Sem SEO, seu site fica invisível. Ele tá no ar, mas ninguém acha. Igual você abrir uma loja no meio do deserto: existe, mas ninguém chega.</p>
+      <p>Ingredientes básicos que o Google adora:</p>
+      <ul>
+        <li><b>Título da página (<code>&lt;title&gt;</code>):</b> aparece na aba do navegador e na busca do Google. Precisa dizer do que é o site. Ex.: "Doces da Vó Zulmira: brigadeiro artesanal em SP".</li>
+        <li><b>Meta description:</b> o texto que aparece embaixo do título na busca. 150-160 caracteres. Convida a clicar.</li>
+        <li><b>Título principal (<code>&lt;h1&gt;</code>):</b> o título grande da página. Google lê e entende do que é.</li>
+        <li><b>Palavras-chave naturais:</b> se o site é sobre skate, a palavra skate precisa aparecer no texto (sem forçar).</li>
+        <li><b>URL amigável:</b> <code>/sobre</code> é bom. <code>/pagina?id=42&x=y</code> é ruim.</li>
+        <li><b>Site rápido:</b> Google penaliza site lento. Aula 19 já cuidou disso.</li>
+        <li><b>Site mobile-friendly:</b> Google penaliza site que não funciona no celular. Aula 13 já cuidou.</li>
+      </ul>
+      <p>Duas armadilhas comuns:</p>
+      <ul>
+        <li>Encher a página de palavra-chave pra "enganar" o Google. Ele detecta e ferra seu ranking. Escreve pra pessoas, não pra robô.</li>
+        <li>Copiar texto de outro site. Google penaliza duplicidade. Escreve seu próprio, mesmo que curto.</li>
+      </ul>
+      <p>Ferramentas que ajudam: Google Search Console (gratuito, você registra o site e vê quem tá achando ele), Lighthouse do Chrome (aula 19, avalia SEO junto com performance).</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> antes: <code>&lt;title&gt;Site&lt;/title&gt;</code>. Depois: <code>&lt;title&gt;João Skate: dicas de manobra e vídeo semanal&lt;/title&gt;</code>. O Google entende do que é. Quem busca por dicas de skate pode achar.</p>
+      <p><b>Exemplo 2:</b> meta description ruim: "Bem-vindo ao meu site". Boa: "Aprenda 3 truques de skate por semana, com vídeo lento e explicação de um praticante de 5 anos. Grátis, sem cadastro". Convida a clicar.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: meu site e sobre [tema] e o publico e [publico].
+Tarefa:
+  1) me sugira 3 titulos (para tag &lt;title&gt;) e 3 meta descriptions otimizados para SEO;
+  2) revise meu HTML e me diga se tem &lt;h1&gt; unico, alt em imagens, URLs amigaveis;
+  3) me de 5 palavras-chave naturais pra usar no texto sem forcar;
+  4) me guie a registrar meu site no Google Search Console.
+Formato: uma parte por vez, com exemplos.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode o prompt. Aplique o título e a meta description no seu site.</li>
+        <li>Passo 2: passe o olho: um <code>&lt;h1&gt;</code> único? Imagens com <code>alt</code>? URLs amigáveis?</li>
+        <li>Passo 3: rode o Lighthouse (F12 → Lighthouse) e veja a nota de SEO.</li>
+        <li>Passo 4: com o adulto, cadastre o site no Google Search Console.</li>
+        <li>Passo 5: commit "otimizando SEO básico".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Escreva um pequeno texto sobre o tema do seu site (300 palavras) na página, otimizado pras palavras-chave sugeridas. Sem encher de palavra igual robô. Naturalmente.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Como você acha um site quando pesquisa? Já foi na segunda página do Google? Como o Google decide quem é o número 1?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote os 4 ingredientes-chave: <code>&lt;title&gt;</code>, meta description, <code>&lt;h1&gt;</code> único, URL amigável. Rode em todo site novo.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>SEO faz o Google achar seu site. Título, meta description, <code>&lt;h1&gt;</code>, URL, palavras naturais. Sem SEO, site invisível. Não force palavra-chave e não copie de outro. Google Search Console é gratuito. Lighthouse mede sua nota.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 1h</span><h3>Uma página que convida (landing page)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a fazer landing page que explica seu projeto em poucos segundos e convida a pessoa a fazer algo (baixar, cadastrar, comprar, contatar).</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Landing page é a página que existe pra uma coisa só: convencer a pessoa a fazer UMA ação. Um botão. Uma decisão. Sem menu enorme, sem link pra 50 lugares. É diferente de home de site normal. Home mostra tudo. Landing foca em uma coisa. Igual comercial de 30 segundos: uma mensagem, um convite, sem enrolação.</p>
+      <p>Estrutura clássica de landing que converte:</p>
+      <ul>
+        <li><b>Hero (a dobra):</b> o que a pessoa vê SEM rolar. Título grande, subtítulo, botão. É o que decide se ela fica ou sai. 3 segundos.</li>
+        <li><b>Prova social:</b> por que confiar em você? Depoimento, número, logo de quem usa. Uma frase de terceiro vale mais que 10 suas.</li>
+        <li><b>Benefícios:</b> 3 razões pra pessoa fazer o que você tá pedindo. Uma frase cada. Ícone opcional.</li>
+        <li><b>Demonstração:</b> vídeo curto, gif, screenshot. Mostrar > contar.</li>
+        <li><b>FAQ:</b> 4-5 perguntas que a pessoa faria antes de decidir.</li>
+        <li><b>CTA final:</b> Chamada Pra Ação. O botão. UM só. "Comece agora", "Cadastre-se grátis", "Baixe o e-book".</li>
+      </ul>
+      <p>Regras de landing que convertem:</p>
+      <ul>
+        <li>UM objetivo por página. Se você quer que a pessoa faça 3 coisas, ela não vai fazer nenhuma.</li>
+        <li>O CTA aparece pelo menos 2 vezes (hero e final).</li>
+        <li>Texto direto, sem hype. "Aprenda a montar seu primeiro site em 30 dias" é melhor que "TRANSFORME SUA VIDA COM O CURSO REVOLUCIONÁRIO".</li>
+        <li>Sem menu de navegação. Menu tira foco.</li>
+        <li>Rápida no celular.</li>
+      </ul>
+      <p>Voz do Rodrigo aplicada: sem hype, sem promessa mirabolante, ancorada em realidade. Quem promete demais, cheira picareta. Quem entrega bem descrito, conquista confiança.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> landing de e-book grátis "Primeiro site em 30 dias". Hero: "Seu primeiro site no ar em 30 dias, com IA. Sem prometer virar milionário". Botão: "Baixar grátis". Benefícios: 30 aulas curtas, projeto real ao final, alinhado com MEC. Prova: "Já ajudou 200 alunos". CTA final: mesmo botão.</p>
+      <p><b>Exemplo 2:</b> landing pra convidar amigo pra testar seu app: hero "Meu app pra planejar trabalho da escola. Quer testar?". Um botão: "Testar agora". FAQ: "É grátis? É seguro? Vocês guardam meus dados?". CTA final: mesmo botão.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e um copywriter no estilo do Rodrigo Munhoz Reis (sem hype, ancorada em realidade, honesta).
+Contexto: quero uma landing pra [o que voce esta oferecendo] destinada a [publico].
+Tarefa: escreva a landing completa com:
+  1) hero: titulo, subtitulo, botao (CTA);
+  2) 3 beneficios com uma frase cada;
+  3) 1 prova social simples (pode ser inventada por enquanto);
+  4) FAQ com 4 perguntas honestas;
+  5) CTA final igual ao do hero.
+Regras: sem hype, sem promessa exagerada, texto direto, um objetivo so.
+Depois entregue o HTML+CSS completo, responsivo, no meu design system (paleta escura + ambar).</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: escolha UMA coisa pra sua landing (baixar, cadastrar, testar, contatar).</li>
+        <li>Passo 2: rode o prompt.</li>
+        <li>Passo 3: refine a headline. Pergunte à IA: "me dá 5 versões dessa headline, mais diretas".</li>
+        <li>Passo 4: teste no celular. O botão do hero é visível SEM rolar? Se não, ajuste.</li>
+        <li>Passo 5: publique. Mande pra 5 pessoas. Peça: "entendeu o que é sem eu explicar?".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Faça 2 versões da headline e teste com 5 pessoas cada. Qual convence mais? Isso se chama <b>teste A/B básico</b>. Ferramenta de marketing profissional.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual landing marcou você recentemente? Por quê? Qual você achou cara de picareta? Como é a fronteira entre "convidativo" e "hype"?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote as 6 seções: hero, prova, benefícios, demo, FAQ, CTA final. Use em toda landing. E a regra: UM objetivo por página.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Landing = página com UM objetivo. Estrutura: hero, prova, benefícios, demo, FAQ, CTA. Sem hype. Sem menu. CTA claro. Rápida no celular. Voz do Rodrigo: honesta, direta, sem promessa mirabolante. Pessoa que confia, converte.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 1h</span><h3>Mini-lançamento: contar pros amigos</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> planejar um mini-lançamento pra família, amigos ou colegas, com objetivo claro, sem hype, e coletar devolutiva pra melhorar.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Lançar é a hora em que você mostra pra galera. Sem plateia, projeto vira gaveta. Mesmo lançamento pequeno, pra 20 pessoas de casa e amigos, muda tudo. Você recebe uso real, feedback real, sensação real de "isso serviu pra alguém". Diferente de mostrar só pro professor.</p>
+      <p>Passos de um mini-lançamento honesto:</p>
+      <ul>
+        <li><b>Defina o público:</b> quem SÃO as primeiras 10 pessoas que você quer que veja? Nome delas na lista.</li>
+        <li><b>Defina o objetivo:</b> uso? feedback? cadastros? cliques no botão? Um só.</li>
+        <li><b>Prepare uma mensagem curta:</b> 3-4 linhas explicando o que é e por que você fez. Sem hype. Sem "revolucionário". Só honesto.</li>
+        <li><b>Escolha o canal:</b> WhatsApp da família? Grupo da turma? Story do Instagram? Discord? Combina com o público.</li>
+        <li><b>Prepare pra receber crítica:</b> respira. Feedback é presente. Anote tudo, mesmo o que doer.</li>
+        <li><b>Escreva um pequeno relato depois:</b> quantos abriram, quantos usaram, o que aprendeu. Vira portfólio.</li>
+      </ul>
+      <p>O jeito Rodrigo de anunciar: "fiz X pra resolver Y, é assim que funciona, tá aqui: [link]. Sugestões bem-vindas". Ponto. Sem "URGENTE". Sem "OFERTA IMPERDÍVEL". Sem "VOCÊ NÃO PODE PERDER". Público adolescente sacou faz tempo esse tom. Voz honesta ganha confiança de longo prazo.</p>
+      <p>Um mito pra desmontar: "quanto maior o lançamento, melhor". Mentira. Lançamento pequeno mas com pessoas que se importam vale mais que 1000 visitas de bot. Comece pequeno, aprenda, escale depois.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> mensagem honesta no grupo da família: "Fiz um mini-site com os doces da vó pra ela vender aqui no bairro. Ideia é a família compartilhar com vizinho: [link]. Vô, me diz se ficou fácil de ver a foto no seu celular?".</p>
+      <p><b>Exemplo 2:</b> relato pós-lançamento: "20 pessoas abriram. 12 disseram que ficou bom. 3 apontaram que o botão de WhatsApp não abria no celular delas. 1 pediu pra adicionar preço em cada doce. Ajustei os 4 pontos".</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e uma mentora de lancamento honesta (voz do Rodrigo: sem hype, direto ao ponto, ancorado em realidade).
+Contexto: vou fazer um mini-lancamento do meu projeto [descreva].
+Tarefa:
+  1) me ajude a definir o publico (5-15 pessoas) e o objetivo (1 so);
+  2) escreva 3 versoes de mensagem curta (3-4 linhas cada) pra WhatsApp/Discord, sem hype, honestas;
+  3) crie um formulario de feedback simples com 3 perguntas essenciais que eu vou mandar depois;
+  4) me sugira um formato de relato pos-lancamento (5 linhas) pra eu escrever no README.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: liste as 10 pessoas do seu mini-público.</li>
+        <li>Passo 2: rode o prompt. Escolha a mensagem que mais parece você.</li>
+        <li>Passo 3: com o adulto, envie a mensagem pras 10 pessoas.</li>
+        <li>Passo 4: espere 24-48h. Colete o feedback. Anote tudo.</li>
+        <li>Passo 5: escreva o relato pós-lançamento no README. Commit "primeiro lançamento e aprendizados".</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Grave um vídeo curto de 60 segundos apresentando seu projeto no estilo YouTube Shorts. Sem hype. Direto. Compartilhe junto com o link.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual foi o feedback que mais surpreendeu? Alguém não quis compartilhar por vergonha? Como é receber crítica de gente da família?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve o que sentiu quando alguém usou seu projeto pela primeira vez. Guarda essa sensação. Ela é combustível pros próximos.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Lançar pequeno é lançar de verdade. Público definido, objetivo único, mensagem honesta sem hype. Receber feedback como presente. Relato depois vira portfólio. Voz Rodrigo: "fiz X pra resolver Y, tá aqui, sugestões bem-vindas".</p></div>
+  </article>
+
+  <div class="skills"><h4>Encontro ao vivo · Semanas 13 e 14</h4><p>Pauta: (1) apresentação das landings da turma; (2) relatos de mini-lançamento (o que aprendeu); (3) roda de conversa sobre "hype vs honestidade"; (4) demo de Google Search Console.</p></div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8</span><h2>Criador avançado</h2></div>
+  <p class="mod-resumo">Quatro aulas pra dar um passo além. Agentes simples, skills próprias, evolução sem quebrar e projeto final ao vivo. Fim de curso com produto no ar, apresentado pra família, colegas e professor. Você começou lá atrás sem saber ligar um editor. Agora publica software com método.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 1h</span><h3>Ajudantes automáticos (agentes simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> entender o que é agente de IA e criar um ajudante super simples pro seu próprio projeto.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Agente é uma IA que faz uma tarefa por conta própria dentro de um limite que você definiu. Diferença pra IA de conversa: a IA de conversa espera você mandar prompt. O agente já sabe o que faz e executa. Ex.: "toda vez que chegar mensagem nova no formulário, resume em 1 linha e me manda no Discord". Sozinho. Sem você pedir.</p>
+      <p>Exemplos de agentes simples que você pode fazer:</p>
+      <ul>
+        <li>Agente que resume comentários novos do seu site.</li>
+        <li>Agente que responde pergunta frequente do seu FAQ.</li>
+        <li>Agente que traduz mensagens de contato pra inglês.</li>
+        <li>Agente que classifica se um feedback é "elogio", "sugestão" ou "reclamação".</li>
+      </ul>
+      <p>Componentes de um agente básico:</p>
+      <ul>
+        <li><b>Gatilho:</b> o que aciona (uma mensagem nova, um clique, um horário).</li>
+        <li><b>Instrução:</b> o que ele faz (uma tarefa pequena e clara).</li>
+        <li><b>Ação:</b> pra onde vai o resultado (Discord, e-mail, banco de dados).</li>
+        <li><b>Limite:</b> o que ele NÃO pode fazer (nunca deletar, nunca gastar mais que X, nunca responder sozinho pro usuário sem revisão).</li>
+      </ul>
+      <p>Regra número um: <b>humano decide, agente executa</b>. Especialmente quando envolve dinheiro, dado sensível, ou algo público. O agente rascunha, você aprova. Nunca inverta. Adulto por perto sempre que criar novo agente.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> agente "resumidor". Toda vez que chega mensagem no formulário, ele chama a IA (com chave no servidor) e pede um resumo em 1 linha. Manda no seu Discord. Você chega, olha e responde as importantes. Nunca precisa ler mensagem chata inteira.</p>
+      <p><b>Exemplo 2:</b> agente "classificador de feedback". Cada feedback novo é rotulado: elogio, sugestão, reclamação. Você abre o painel e vê "3 elogios, 2 sugestões, 0 reclamações essa semana". Insight de graça.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: quero criar meu primeiro agente simples pro projeto [descreva]. Chave de API vai no .env, com o adulto do meu lado.
+Tarefa:
+  1) me sugira 3 agentes uteis pro meu projeto, um por vez, com trade-off (custo, complexidade);
+  2) escolhemos um juntas. Depois:
+    - defina o gatilho, a instrucao, a acao e os limites;
+    - escreva o codigo do agente (funcao serverless na Vercel/Netlify);
+    - deixe o segredo da API SOMENTE no painel de variaveis, nunca no codigo.
+  3) me da um checklist de seguranca antes de ativar o agente.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode a parte 1. Escolha um agente simples com o adulto.</li>
+        <li>Passo 2: gere o código. Cole numa função serverless.</li>
+        <li>Passo 3: configure a chave da API no painel do Netlify/Vercel (NUNCA no código).</li>
+        <li>Passo 4: teste com dado fictício. Nunca com dado real na primeira vez.</li>
+        <li>Passo 5: commit "adicionando primeiro agente simples". Push. Deploy.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Adicione um sistema de "aprovação humana" antes do agente executar. Ele rascunha, manda no seu Discord com botões "aprovar" e "recusar". Só executa se você aprovar. É como agente sério funciona.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual agente você acha que economizaria seu tempo? Alguém já viu agente descontrolado (spam, resposta esquisita)? Por que humano decide e agente executa?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve a regra: "humano decide, agente executa". E o compromisso: "nenhum agente meu vai pro ar sem checklist e aprovação do adulto".</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Agente = IA que faz tarefa sozinha, dentro de limites. Componentes: gatilho, instrução, ação, limite. Chave sempre no <code>.env</code>. Humano decide, agente executa. Adulto por perto na primeira criação. Aprovação humana é padrão profissional.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 1h</span><h3>Criar suas próprias habilidades (skills simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a criar skill pequena, que é uma instrução clara pra IA fazer uma coisa do seu jeito, sempre igual.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Skill é uma instrução salva pra IA fazer uma tarefa específica, sempre igual, do seu jeito. Ex.: "responder mensagens do WhatsApp da minha vó com paciência, sem gíria, terminando com um coração". Você salva isso uma vez. Toda vez que precisa, chama a skill em vez de escrever tudo de novo. É como um mod que você fez e reusa em vários mundos do Minecraft.</p>
+      <p>O Rodrigo tem uma suíte de 25 skills próprias (a suíte Engenho). Cada uma faz uma coisa. "Planta" ajuda a planejar projeto. "Crivo" revisa código. "Bastião" cuida de segurança. Ele não escreve o mesmo prompt gigante toda vez. Ele chama a skill.</p>
+      <p>Estrutura básica de uma skill:</p>
+      <ul>
+        <li><b>Nome:</b> curto, memorável.</li>
+        <li><b>Quando usar:</b> uma frase que descreve o gatilho ("quando eu pedir pra escrever legenda de foto").</li>
+        <li><b>Instrução:</b> o que ela faz, passo a passo, no tom certo.</li>
+        <li><b>Exemplos:</b> 2 ou 3 casos de entrada e saída pra IA aprender o padrão.</li>
+        <li><b>Restrições:</b> o que NÃO fazer (sem hype, sem emoji, etc).</li>
+      </ul>
+      <p>Para começar, uma skill sua: "escreve legenda pro meu Instagram no meu tom (curto, sem hype, com uma pergunta no fim pra engajar)". Você salva isso num arquivo <code>skills/legenda-insta.md</code>. Toda vez que precisar, cola essa skill como prompt inicial e depois pede o tema. A IA já responde do seu jeito.</p>
+      <p>Bonus: skills viram sua marca. Quanto mais você tem, mais seu jeito de trabalhar é sistemático. Você deixa de reinventar a roda todo dia e vira criador com processo.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> skill "revisor-de-portugues": revisa qualquer texto meu apontando erros, mas mantendo minha voz. Instrução clara + 2 exemplos. Uso toda vez que escrevo redação.</p>
+      <p><b>Exemplo 2:</b> skill "brainstorm-projeto": me da 5 ideias de projeto simples baseado num tema, cada uma com público, tarefa e nível de dificuldade. Uso sempre que estou sem ideia.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: quero criar minha primeira skill pra reusar no meu projeto/estudo.
+Tarefa:
+  1) me faca 3 perguntas pra descobrir uma tarefa repetitiva que eu faco;
+  2) transforme minha resposta em uma skill com esta estrutura:
+     - nome curto e memoravel;
+     - quando usar (uma frase);
+     - instrucao passo a passo, no tom certo;
+     - 2 exemplos entrada/saida;
+     - restricoes claras (o que NAO fazer).
+  3) me da o arquivo final em markdown pra salvar como skills/[nome].md.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode o prompt. Escolha uma tarefa repetitiva sua (revisar texto, criar legenda, planejar estudo).</li>
+        <li>Passo 2: gere a skill. Salve como <code>skills/nome.md</code> no seu projeto.</li>
+        <li>Passo 3: use a skill 3 vezes em situações reais. Ajuste o que não deu certo.</li>
+        <li>Passo 4: peça pra IA melhorar a skill baseado nas 3 vezes que você usou.</li>
+        <li>Passo 5: commit "criando minha primeira skill". Comemora: você agora tem uma extensão do seu cérebro.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Crie 3 skills relacionadas: uma pra pensar (brainstorm), uma pra escrever (redação), uma pra revisar (correção). Você já tem um mini-ateliê pessoal.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Qual tarefa da sua rotina virou skill? Quanto tempo essa skill te economiza? Se você pudesse criar 1 skill mágica pra vida toda, qual seria?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote a estrutura de skill: nome, quando usar, instrução, exemplos, restrições. Use pra criar skills daqui pra frente.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Skill = instrução salva pra IA fazer tarefa do seu jeito, sempre igual. Estrutura: nome, quando usar, instrução, exemplos, restrições. Reusa em vez de reescrever. Vira sua marca. Rodrigo tem 25 skills próprias. Você começa com 1 hoje.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 1h</span><h3>Mudar e melhorar sem quebrar</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> aprender a evoluir o projeto sem quebrar o que já estava funcionando, usando testes, branches e deploy em partes.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>O projeto tá no ar, funcionando. Chegou uma ideia pra melhorar. Metade dos criadores mexe tudo direto e quebra tudo. Aula pra você não ser essa metade. Existe um jeito de mudar E preservar. Chama <b>evolução segura</b>. Três ferramentas ajudam: testes, branches e deploy em partes (chamado <b>feature flag</b>).</p>
+      <p>Ferramentas do criador que evolui sem quebrar:</p>
+      <ul>
+        <li><b>Testes automatizados (aula 21):</b> rodam antes de mudar e depois de mudar. Se antes passava e depois falha, você quebrou algo.</li>
+        <li><b>Branches no Git:</b> em vez de mexer direto no <code>main</code>, você cria uma "linha paralela" chamada <code>feature/nome</code>. Mexe lá. Quando tá pronto e testado, mescla no <code>main</code>.</li>
+        <li><b>Deploy em partes (feature flag):</b> a mudança vai pro ar, mas só ativa pra você primeiro. Testa em produção com segurança. Depois libera pra todo mundo.</li>
+        <li><b>Voltar rápido (rollback):</b> se algo der ruim, você reverte o último commit e o site volta pra versão anterior. Netlify e Vercel fazem isso em 2 cliques.</li>
+      </ul>
+      <p>Fluxo do criador que evolui sem quebrar:</p>
+      <ul>
+        <li>1. Crio branch <code>feature/nova-tela</code>.</li>
+        <li>2. Faço as mudanças.</li>
+        <li>3. Rodo os testes: todos passam?</li>
+        <li>4. Rodo o Protocolo de 5 Camadas.</li>
+        <li>5. Faço deploy preview (Vercel/Netlify cria uma URL provisória só pra essa branch).</li>
+        <li>6. Testo na URL preview.</li>
+        <li>7. Se tá bom, mesclo (merge) no <code>main</code>. Se não, ajusto.</li>
+        <li>8. Deploy oficial. Sentry monitora.</li>
+      </ul>
+      <p>Erro clássico de quem tá começando: mexer direto na produção. "Ah, é só uma mudancinha rápida". A mudancinha rápida derruba o site. Não faça. Use branch sempre.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> você quer adicionar dark mode. Cria <code>feature/dark-mode</code>. Mexe. Testes passam. Deploy preview mostra URL <code>meu-site-git-feature-dark-mode.netlify.app</code>. Testa lá. Ficou bom. Merge no <code>main</code>. Deploy oficial. Zero risco pra quem tá usando a versão antiga.</p>
+      <p><b>Exemplo 2:</b> deu ruim no deploy oficial. Alguém achou um bug em 10 minutos. Você abre o painel do Vercel, clica em "revert to previous". Em 30 segundos, o site tá com a versão anterior. Sem drama. Você corrige com calma na sua branch.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Contexto: quero adicionar [funcionalidade nova] ao meu projeto que ja esta no ar.
+Tarefa:
+  1) me guie a criar uma branch feature/[nome] no Git com o comando exato;
+  2) me ajude a fazer a mudança APENAS naquela branch;
+  3) me lembre de rodar os testes antes e depois;
+  4) me ensine a usar deploy preview do Netlify/Vercel pra testar antes de mesclar;
+  5) me da o passo a passo pra mesclar no main quando tudo passar.
+Formato: passos numerados, um por vez.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: crie uma branch pra uma melhoria pequena no seu projeto.</li>
+        <li>Passo 2: faça a mudança. Rode os testes.</li>
+        <li>Passo 3: dê push da branch. Abra a URL preview que o Netlify/Vercel gera.</li>
+        <li>Passo 4: teste na preview. Ajuste se precisar.</li>
+        <li>Passo 5: mesclar no <code>main</code>. Deploy oficial. Confira o Sentry por 15 minutos.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Simule um erro em produção. Quebre algo de propósito na branch. Faça o rollback rápido pelo painel. Cronometra. Meta: menos de 60 segundos.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>Você já mexeu na produção direto e se arrependeu? Como é a sensação de deploy preview antes do oficial? Vale o esforço da branch pra "mudancinha pequena"?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Anote o fluxo: branch, mudanças, testes, preview, merge, deploy, monitorar. Rode em toda mudança daqui pra frente.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Evoluir sem quebrar: testes, branches, deploy preview, rollback rápido. NUNCA mexa direto na produção. Branch sempre. Preview antes de mesclar. Rollback é sua rede de segurança, mas prevenção é ainda melhor.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 1h</span><h3>Projeto final: meu programa no ar (apresentação)</h3></div>
+    <p class="objetivo"><b>Nesta aula você vai:</b> apresentar seu projeto final ao vivo pros colegas, professor e família. Fechamento do curso, com produto no ar, revisado e caprichado.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Conteúdo essencial (para o vídeo 1)</h4>
+      <p>Chegou a hora. 30 aulas atrás você não sabia salvar um arquivo HTML. Agora você tem um projeto no ar, com testes, com segurança revisada, com Sentry monitorando, com landing convidando, com feedback de gente real. Isso é ser criador com método. Não é hype. É construção.</p>
+      <p>Estrutura da apresentação (5 minutos):</p>
+      <ul>
+        <li><b>Minuto 1: o problema.</b> Que dor você resolveu? Sem enrolação. Uma frase.</li>
+        <li><b>Minuto 2: a solução.</b> O que seu projeto faz? Mostra a tela principal.</li>
+        <li><b>Minutos 3 e 4: demo.</b> Ao vivo. Você faz o fluxo principal do começo ao fim. Se der bug, respira e mostra o rollback.</li>
+        <li><b>Minuto 5: o aprendizado.</b> O que você aprendeu? Não é o que a IA gerou. É o que você entendeu, refatorou, testou, publicou.</li>
+      </ul>
+      <p>Requisitos do projeto final:</p>
+      <ul>
+        <li>No ar, com URL pública e HTTPS.</li>
+        <li>Passou pela revisão de segurança (aula 11).</li>
+        <li>Tem pelo menos 3 testes automatizados.</li>
+        <li>Tem Sentry integrado.</li>
+        <li>Tem README com "problema, solução, tecnologias, aprendizados".</li>
+        <li>Landing page ou home explicando em 3 segundos.</li>
+        <li>Mobile-friendly.</li>
+      </ul>
+      <p>Última coisa: você não precisa fazer o "melhor projeto da turma". Precisa fazer O SEU projeto, com o rigor que você aprendeu. O aluno que fez algo pequeno mas bem-feito, honesto e no ar > o aluno que prometeu 10 telas mirabolantes e não terminou nenhuma. Voz do Rodrigo até no fim: honestidade > hype.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Exemplos práticos</h4>
+      <p><b>Exemplo 1:</b> "Meu projeto é um site pros doces da minha vó. Ela vendia pro bairro sem catálogo, gente perguntava foto pelo WhatsApp o dia todo. Agora tem foto, preço e botão de WhatsApp. Aprendi que planejar antes economiza tempo, que segurança não é firula, e que um site bem feito faz diferença real. Tá aqui: [link]".</p>
+      <p><b>Exemplo 2:</b> "Meu projeto é um planner de estudos pros meus colegas da 8ª série. Você marca as matérias, os horários, e ele avisa. Aprendi a usar LocalStorage, a integrar Sentry, e que teste automatizado salva vida. Tem 3 usuários testando. Link: [link]".</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra pedir pra IA (com adulto)</span><pre>Voce e uma mentora de apresentacao no estilo do Rodrigo (sem hype, direto, honesta).
+Contexto: vou apresentar meu projeto final em 5 minutos.
+Tarefa:
+  1) me ajude a escrever a estrutura da fala: problema (1 min), solucao (1 min), demo (2 min), aprendizados (1 min);
+  2) revise se meu projeto atende os requisitos: URL publica, HTTPS, revisao de seguranca, 3 testes, Sentry, README, landing, mobile;
+  3) me sugira 3 perguntas que a plateia pode fazer e como responder;
+  4) me da 3 conselhos pra nao travar na apresentacao.
+Formato: uma parte por vez.</pre></div>
+
+    <div class="bloco b-pratica"><h4>🎯 Prática guiada (para o vídeo 2)</h4>
+      <ul>
+        <li>Passo 1: rode o prompt. Escreva sua fala.</li>
+        <li>Passo 2: rode a checklist de requisitos. Complete o que faltar.</li>
+        <li>Passo 3: ensaie a apresentação 3 vezes, cronometrada. Ajuste o que ficou longo.</li>
+        <li>Passo 4: apresente na aula ao vivo com professor e colegas.</li>
+        <li>Passo 5: commit final: "projeto final v1.0, apresentado em [data]". Guarda o link no README.</li>
+      </ul>
+    </div>
+
+    <div class="bloco b-desafio"><h4>🚀 Desafio extra</h4>
+      <p>Grave sua apresentação em vídeo (com autorização do adulto). Guarda pro seu portfólio. Daqui a 2 anos você vai olhar e ver o quanto evoluiu.</p>
+    </div>
+
+    <div class="bloco b-conversa"><h4>💬 Para conversar no encontro ao vivo</h4>
+      <p>O que mudou em você desde a Aula 1? Qual foi a maior descoberta do curso? O que você vai fazer semana que vem, sozinho, agora que sabe?</p>
+    </div>
+
+    <div class="pratica"><h4>Anote / Reflita</h4><p>Escreve uma carta pra você mesmo do começo do curso. Conta o que você aprendeu, o que quase desistiu, o que ficou orgulhoso. Guarda essa carta.</p></div>
+
+    <div class="skills"><h4>Resumo da aula</h4><p>Apresentação em 5 minutos: problema, solução, demo, aprendizados. Requisitos: URL pública, HTTPS, segurança, testes, Sentry, README, landing, mobile. Honestidade > hype. Projeto pequeno bem-feito > projeto gigante inacabado. Fim de curso: você é um criador com método.</p></div>
+  </article>
+
+  <div class="skills"><h4>Encontro ao vivo · Semana 15</h4><p>Pauta: (1) apresentações finais da turma (5 min por aluno); (2) devolutiva do professor e colegas; (3) certificação e celebração; (4) próximos passos: o que estudar depois, como continuar criando sozinho, comunidade de ex-alunos.</p></div>
+</section>
+
+</div>
+</body>
+</html>

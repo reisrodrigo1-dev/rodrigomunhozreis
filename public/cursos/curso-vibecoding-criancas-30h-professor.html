@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila do Professor · Vibecoding do Zero ao Avançado · Crianças 12-14 · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE6;--page:#FBF8F2;--ink:#1B1813;--ink-soft:#3D372E;--muted:#7C7365;--amber:#B5762A;--amber-deep:#8F5C1E;--amber-soft:#F1E5CF;--line:#E4DBCB;--line-strong:#D6CAB4;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.capa{background:radial-gradient(120% 90% at 80% 0%, rgba(181,118,42,.16), transparent 55%),linear-gradient(180deg,#211B12,#2C2416);color:#F6EFE2;padding:60px 22px}
+.capa .inner{max-width:900px;margin:0 auto}
+.capa .kick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#E9B05C;font-weight:600}
+.capa h1{font-family:var(--serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:10px 0 10px}
+.capa .sub{font-family:var(--serif);font-size:19px;color:#D9C9AE;max-width:46ch;line-height:1.35}
+.capa .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+.capa .meta span{border:1px solid rgba(233,176,92,.4);border-radius:999px;padding:5px 13px;font-size:12.5px;color:#E9B05C}
+.modulo{margin:0 0 10px}
+.mod-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line-strong);padding:30px 0 8px;margin-bottom:4px}
+.mod-num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.08em}
+.mod-head h2{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--ink)}
+.mod-resumo{color:var(--muted);font-size:14px;margin-bottom:12px}
+.aula{border:1px solid var(--line-strong);border-radius:14px;background:var(--page);padding:22px 24px;margin:14px 0;box-shadow:0 4px 16px rgba(27,24,19,.04);page-break-inside:avoid;break-inside:avoid}
+.aula-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.aula-num{font-family:var(--mono);font-size:11.5px;font-weight:600;color:#fff;background:var(--amber);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.aula-head h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.objetivo{margin:13px 0;font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px}
+.objetivo b{color:var(--ink)}
+.bloco{margin:13px 0}
+.bloco h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:6px}
+.bloco ul{padding-left:20px}
+.bloco li{margin:3px 0;color:var(--ink-soft);font-size:14.5px}
+.bloco li::marker{color:var(--amber)}
+.bloco>p{color:var(--ink-soft);font-size:14.5px}
+.bloco a{color:var(--amber-deep);border-bottom:1px solid var(--amber-soft);text-decoration:none}
+.prompt{margin:13px 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:#fff}
+.ptag{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--amber-deep);padding:6px 12px}
+.prompt pre{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-soft);padding:13px 14px;white-space:pre-wrap;word-wrap:break-word}
+.skills{background:var(--amber-soft);border-radius:8px;padding:11px 14px;margin:13px 0}
+.skills h4{color:var(--amber-deep);margin-bottom:3px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.skills p{font-size:13.5px;color:var(--ink-soft)}
+.pratica{background:#fff;border:1px dashed var(--line-strong);border-radius:8px;padding:12px 14px;margin:13px 0}
+.pratica h4{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber-deep);margin-bottom:5px}
+.pratica p{color:var(--ink-soft);font-size:14px}
+@media(max-width:680px){.capa{padding:42px 22px}.aula{padding:18px}}
+@media print{@page{size:A4;margin:14mm}body{background:#fff;font-size:10.3pt}.aula{page-break-inside:avoid;box-shadow:none}.mod-head{page-break-after:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">Apostila do Professor · Curso EAD (online) · Crianças/Adolescentes (12 a 14 anos)</div>
+<h1>Vibecoding do Zero ao Avançado. Crianças 12-14</h1>
+<p class="sub">Guia de condução do curso EAD 30h. Roteiro dos 2 vídeos por aula, pauta do encontro ao vivo semanal, gabaritos, dicas de mediação, cuidados com deploy e segredos.</p>
+<div class="meta"><span>30 horas</span><span>30 aulas · 1h cada</span><span>15 semanas</span><span>Apostila do Professor</span><span>Mediação MEC + BNCC</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1 · Semana 1-2</span><h2>O que é criar com IA (a base)</h2></div>
+  <p class="mod-resumo">Educador: este é o módulo de fundação do curso inteiro. A meta não é sair codando, é plantar quatro hábitos que vão durar 30 aulas. Um: quem manda é o humano, a IA é ajudante. Dois: ler o que a IA escreveu antes de aceitar. Três: guardar o trabalho (Git) desde o dia zero. Quatro: entender que vibecoding sem método vira vibehope. A faixa de 12 a 14 anos já viu vídeo de criei um jogo em 3 minutos com IA. Seu papel é desmontar essa fantasia sem tirar o encanto. Mostre que dá pra criar rápido, mas só se souber ler, pedir e conferir. Reforce em toda aula que conta de IA e de serviços é do responsável ou da escola, nunca do adolescente. Deploy sempre passa por adulto. Aqui já entra, de forma leve, o Protocolo de 5 Camadas do Rodrigo (Entender, Ler, Blindar, Testar, Versionar), mesmo que o nome só apareça formalmente no Módulo 6.</p>
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1 · 1h</span><h3>O que é vibecoding: criar com ajuda da IA</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente consegue explicar com as próprias palavras que vibecoding é conversar com a IA para criar software sendo o chefe, e não um copiador de código.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Editor de código (ex.: VS Code) e IA (conta institucional configurada)</li>
+      <li>Navegador atualizado</li>
+      <li>Responsável adulto ciente da atividade em casa (especialmente pra deploy e uso de chaves)</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> gancho direto. Você já viu vídeo de gente dizendo que criou um app em 5 minutos com IA? Metade é verdade, metade é edição. Hoje eu vou te mostrar o que é vibecoding de verdade, e por que ele exige método. Rosto na câmera, tom leve.</li>
+      <li><b>3-15 min · Conceito principal:</b> vibecoding é conversar com a IA pra criar software. A IA gera o código, você decide o que quer, lê o que ela fez e aprova (ou refaz). Analogia 1: no GTA V online, você não faz o carro sozinho, você pilota. A IA é o carro. Analogia 2: no Minecraft criativo, você não pica cada bloco, você combina peças prontas. Analogia 3: pense num estagiário muito rápido que digita 100 vezes mais rápido que você, mas às vezes escreve besteira com cara de sério. Deixe claro o que vibecoding NÃO é: não é IA faz sozinho, não é aceito qualquer código, não é clico e roda no mundo. Introduza a frase-chave do curso: quem manda é você, a IA é a mão extra.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada, abra a IA. Exemplo bem feito: peça o prompt de referência abaixo e mostre a resposta gerando o código de uma página simples. Exemplo com erro proposital: peça faz um site legal pra mim. Mostre a resposta genérica e ruim. Comente ao vivo: viu como pedido vago dá código sem alma?</li>
+      <li><b>22-25 min · Amarração:</b> resumo em 3 pontos, vibecoding é conversar pra criar, quem decide é você, pedido claro faz toda diferença. Gancho pro vídeo 2, agora você vai abrir a IA com um adulto e conversar sobre o que quer criar no curso.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> chame o adulto responsável. Conta da IA é dele ou da escola, nunca sua. Editor pode ficar fechado por enquanto, só a IA aberta.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, use o prompt de referência pra pedir a explicação. Pause: leia a resposta com o adulto do lado. Passo 2, escreva no caderno 3 ideias de projeto que você gostaria de criar no curso (site, joguinho, ferramenta). Passo 3, escolha UMA e conte pra IA, peça pra ela devolver em 3 partes o que precisaria pra montar. Passo 4, leia a resposta em voz alta pro adulto. Passo 5, escreva no caderno quem é o chefe e quem é a mão extra pra fixar.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual, em 3 linhas, sua ideia de projeto do curso. Sem dado pessoal, sem foto sua.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; meu ajudante de programa&ccedil;&atilde;o. Me explique, em 4 frases curtas, o que &eacute; vibecoding pra uma pessoa de 13 anos que nunca programou. Deixe claro quem manda: eu ou voc&ecirc;.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Conceito de agência: você é o chefe. Repita. Analogia com piloto de F1 e engenheiro (a IA é o engenheiro que passa a info, o piloto decide).</li>
+      <li>Erro comum de compreensão: adolescente acha que vibecoding é IA faz o app. Corrija sempre: IA GERA, você DECIDE e APROVA.</li>
+      <li>Ligação MEC: princípio da centralidade humana. Sem descarregamento cognitivo.</li>
+      <li>Ligação com o Protocolo de 5 Camadas do Rodrigo: aqui aparece a primeira camada, ENTENDER. Antes de pedir código, entender o que se quer criar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> escreva no caderno 3 frases: uma explicando o que é vibecoding com suas palavras, uma dizendo por que você é o chefe, uma dizendo o que você faria se a IA sugerisse algo estranho. <b>Gabarito:</b> critério de sucesso, o adolescente usa palavras próprias e cita que humano decide e confere. Frases inaceitáveis: IA faz tudo, eu só copio. Nesse caso, revise no encontro ao vivo com a analogia do piloto.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente confunde vibecoding com IA autônoma. Reenquadre com F1 ou GTA. Erro típico 2, ele acha que precisa saber programar antes de começar. Diga a verdade: não precisa. Precisa saber pedir, ler e decidir. Adaptação para adolescente com dificuldade de escrita: aceite resposta em áudio. Adaptação para o que já sabe programar um pouco: peça pra ele comparar o pedido claro com o vago em código, e apontar 3 diferenças técnicas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2 · 1h</span><h3>A IA é sua ajudante, você é o chefe</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente sabe estruturar um pedido para a IA usando quatro elementos (papel, tarefa, formato, restrição) e ler a resposta com olhar crítico antes de aceitar.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Cartão com os 4 elementos do pedido bom (papel, tarefa, formato, restrição)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> se você pedisse pro seu treinador me ensina futebol, ele te olharia torto. Se pedisse me ensina a chutar de trivela em 15 minutos, teria treino. Com IA é igual. Mostre um print de pedido ruim e um bom lado a lado.</li>
+      <li><b>3-15 min · Conceito principal:</b> pedido bom tem 4 partes. PAPEL: quem a IA é agora (você é um professor de HTML). TAREFA: o que ela faz (crie uma página com um botão). FORMATO: como você quer (me devolva só o código, comentado em português). RESTRIÇÃO: o que evitar (sem usar biblioteca externa). Isso é a semente do P.R.O.M.P.T.E.R. do Rodrigo (o método completo aparece no curso avançado). Repita a regra: se um humano precisaria te perguntar mais coisa antes de fazer, seu pedido tá vago. Segundo ponto: LER antes de aceitar. Aponte que a IA às vezes escreve código lindo que faz a coisa errada. É como pedir bolo e receber pizza bonita. Se você não olhar, come pizza achando que é bolo.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Exemplo bem feito: use o prompt de referência para gerar um botão HTML. Mostre a resposta e leia cada linha em voz alta explicando. Exemplo com erro proposital: peça faz um botão (sem contexto). Mostre a IA devolvendo botão sem estilo, sem função. Comente ao vivo: viu como sem os 4 elementos a resposta é morta?</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, 4 elementos no pedido, sempre ler a resposta, quem aprova é você. Gancho pro vídeo 2, agora você vai fazer 2 pedidos e comparar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> adulto ao lado, IA aberta. Cartão dos 4 elementos na mão. Vamos treinar.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha UMA coisa simples que você quer aprender a criar (um cartão de aniversário em HTML, um botão colorido, uma lista). Passo 2, faça um pedido vago (só a tarefa). Pause: leia a resposta e marque no caderno o que faltou. Passo 3, refaça com os 4 elementos. Passo 4, compare as duas respostas com o adulto: qual é mais útil, por quê. Passo 5, escreva no caderno meu pedido vago faltava X e Y.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual o par comparativo: pedido vago e claro, com uma linha explicando o que mudou.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um professor de HTML paciente. Crie um bot&atilde;o azul com o texto Clique aqui e que fique verde ao passar o mouse. Me devolva apenas o c&oacute;digo HTML e CSS, comentado em portugu&ecirc;s, sem bibliotecas externas.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Os 4 elementos: papel, tarefa, formato, restrição. Escreva no quadro do vídeo.</li>
+      <li>Erro comum: adolescente escreve pedido enorme sem estrutura. Menos é mais quando é claro.</li>
+      <li>Ligação MEC/BNCC: princípio da centralidade humana. Eixo Pensamento Computacional: decomposição.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: aqui aparece a segunda camada, LER. Nunca aceitar código sem ler.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> faça um pedido vago e um pedido claro (com os 4 elementos) para a mesma tarefa. Poste o par comparativo. <b>Gabarito:</b> o pedido claro deve conter pelo menos 3 dos 4 elementos e a resposta claramente mais útil (código funcional, comentado, no formato pedido). Se o pedido claro for só o vago mais longo, aponte a falta de estrutura.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente confia cegamente no primeiro código que a IA cospe. Reforce sempre: LEIA. Erro típico 2, ele fica com preguiça de reescrever o pedido. Mostre que 30 segundos de pedido bom economizam 30 minutos de conserto. Adaptação para dificuldade de escrita: aceite ditado por voz. Adaptação para o mais avançado: peça 3 restrições em vez de 1.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3 · 1h</span><h3>Conhecendo as ferramentas e a primeira tela (Olá, mundo!)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente reconhece editor de código, navegador e IA como três ferramentas distintas que trabalham juntas, e faz aparecer uma página HTML com Olá, mundo! no navegador dele.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Editor de código instalado (VS Code recomendado, adulto instala antes)</li>
+      <li>Navegador atualizado (Chrome, Firefox ou Edge)</li>
+      <li>Conta institucional de IA</li>
+      <li>Responsável adulto próximo pra ajudar no primeiro contato com o editor</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> todo criador tem três ferramentas na mesa: o lugar onde escreve o código, o lugar onde ele roda e o lugar onde pede ajuda. Hoje você conhece as três e faz sua primeira página aparecer na internet. Mostre a tela dividida com os 3 aplicativos.</li>
+      <li><b>3-15 min · Conceito principal:</b> editor de código é o caderno digital do criador (analogia: como o Word, mas pra código). Navegador é onde o código VIRA página que a gente vê. IA é a colega que ajuda a escrever. As três conversam: você pede pra IA, ela devolve código, você cola no editor, o navegador mostra o resultado. Fluxo do criador: pedir, colar, testar, ajustar. Explique o que é HTML em uma frase: é a linguagem que descreve o que aparece na página (título, texto, botão). Analogia: HTML é o esqueleto, CSS é a roupa, JavaScript é o movimento. Hoje só o esqueleto.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada, mostre lado a lado o VS Code, o navegador e a IA. Peça pra IA o prompt de referência. Copie o código. Cole no editor num arquivo chamado index.html. Salve. Abra no navegador. Mostre o Olá, mundo! aparecendo. Faça uma pequena mudança (mude mundo pra família). Salve. Atualize o navegador. Mostre a mudança. Exemplo com erro proposital: esqueça de salvar antes de atualizar. Mostre pro adolescente que não atualizou porque não salvou.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, editor escreve, navegador mostra, IA ajuda. Salve sempre antes de atualizar. Gancho pro vídeo 2, agora você vai fazer a sua primeira página.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> adulto do lado, VS Code aberto, navegador aberto, IA aberta. Vamos criar juntos.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, crie uma pasta chamada meu-primeiro-site no computador. Passo 2, abra o VS Code e abra essa pasta. Passo 3, crie um arquivo chamado index.html. Passo 4, peça pra IA o prompt de referência. Passo 5, leia o código com o adulto ANTES de colar. Passo 6, cole. Passo 7, salve. Passo 8, clique com o botão direito no arquivo e abra no navegador (ou arraste). Pause: veja seu primeiro Olá, mundo. Passo 9, mude o texto pro seu nome ou tema favorito. Passo 10, salve, atualize, veja mudar.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual um print do seu Olá, mundo. Isso é oficialmente sua primeira criação com IA.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um professor de HTML pra iniciantes. Me d&ecirc; o c&oacute;digo de um arquivo index.html completo, com um t&iacute;tulo grande escrito Ol&aacute;, mundo! e um par&aacute;grafo abaixo dizendo que essa &eacute; minha primeira p&aacute;gina. C&oacute;digo comentado em portugu&ecirc;s, sem CSS externo, sem bibliotecas.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Os 3 aplicativos e o fluxo: editor, navegador, IA. Desenhe na tela.</li>
+      <li>Erro comum: adolescente esquece de salvar. Ensine o hábito Ctrl+S antes de atualizar.</li>
+      <li>Ligação MEC/BNCC: eixo Mundo Digital, entender as ferramentas. Eixo Cultura Digital: uso consciente.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: LER antes de colar. Já plante a semente.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> criar a primeira página, personalizar com seu nome ou tema e postar print. <b>Gabarito:</b> critério de sucesso, print mostra o arquivo aberto no navegador com o texto personalizado. Se o print mostra o código no editor mas não o resultado no navegador, o adolescente parou no meio do fluxo. Retorne no encontro ao vivo.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente não sabe onde salvar a pasta. Combine um local padrão (Documentos/vibecoding). Erro típico 2, ele abre o arquivo no editor achando que é o navegador. Ensine a diferença visual das duas telas. Adaptação para família sem instalar VS Code: use editor online (StackBlitz, CodeSandbox) com aprovação do adulto. Adaptação para o adolescente ansioso: comece com só 1 linha em vez do arquivo completo.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4 · 1h</span><h3>Guardar seu trabalho (Git de forma simples)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente entende para que serve Git, faz o primeiro commit do projeto criado na Aula 3 e sabe voltar para uma versão anterior se algo quebrar.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Git instalado (adulto instala antes)</li>
+      <li>Conta em GitHub criada pelo responsável (nunca em nome do adolescente sem autorização)</li>
+      <li>Projeto da Aula 3 pronto</li>
+      <li>Responsável adulto ao lado pra configurar credenciais e repositório privado</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> você já perdeu um trabalho de escola porque não salvou? Programador tem uma ferramenta pra isso NUNCA acontecer. Chama Git. Conte uma história curta: todo programador profissional guarda cada versão do código, com nome. É como salvar o Minecraft em vários slots.</li>
+      <li><b>3-15 min · Conceito principal:</b> Git é um sistema que guarda VERSÕES do seu código. Cada versão é um commit (pedaço salvo com nome). Se algo quebra, você volta pra uma versão que funcionava. Analogia com jogo salvo: cada commit é um save point. Você pode voltar pra qualquer save. GitHub é onde os saves ficam online, num lugar seguro. Regras de ouro do Rodrigo: repositório PRIVADO por padrão (ninguém vê sem autorização). Nunca comitar senha, chave, dado pessoal. Se comitou por acidente, chame o adulto imediatamente, é sério. Explique também que hoje a gente só vai fazer o básico: iniciar, adicionar, commitar. Comandos: git init, git add ponto, git commit -m mensagem. Tudo com adulto guiando.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Abra o terminal do VS Code. Na pasta do projeto da Aula 3, rode git init. Mostre o Git ativado. Rode git status. Adicione com git add ponto. Comite com git commit -m primeira versao do site. Mostre o histórico com git log. Exemplo com erro proposital: quebre o HTML de propósito (apague uma tag). Mostre o navegador quebrado. Volte pro commit anterior com o adulto. Página volta a funcionar. Comente ao vivo: isso salva a vida do criador.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, Git guarda versões, commit é save point, sempre repositório privado. Gancho pro vídeo 2, agora você faz seu primeiro commit com o adulto.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> adulto do lado, obrigatório nessa aula. Abra o VS Code na pasta do site da Aula 3. Vamos configurar o Git.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, adulto verifica se Git está instalado (git --version). Passo 2, adulto configura nome e email (dele ou institucional, nunca do adolescente). Passo 3, você abre o terminal do VS Code. Passo 4, digite git init. Passo 5, digite git status e leia o que apareceu. Passo 6, digite git add ponto. Passo 7, digite git commit -m meu primeiro commit. Passo 8, adulto ajuda a criar um repositório PRIVADO no GitHub. Passo 9, faça o push com ajuda do adulto. Passo 10, teste voltar pra versão anterior: mude alguma coisa no HTML, comite, depois use git checkout pra voltar. Adulto guia.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual print do git log mostrando pelo menos 2 commits seus. Isso vale ouro no currículo lá pra frente.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um professor de Git pra iniciantes. Me explica em 3 frases o que &eacute; um commit, com uma analogia de save point de jogo. Depois me d&aacute; os 3 comandos b&aacute;sicos: iniciar reposit&oacute;rio, adicionar arquivos e comitar com mensagem.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Commit é save point. Repita a analogia várias vezes.</li>
+      <li>Repositório PRIVADO por padrão. Não negocie.</li>
+      <li>Nunca comitar segredo. Aula 9 aprofunda, mas plante hoje.</li>
+      <li>Erro comum: adolescente comita sem mensagem ou com mensagem inútil (aaa). Ensine mensagem descritiva.</li>
+      <li>Ligação MEC/BNCC: eixo Pensamento Computacional (versionamento). Eixo Cultura Digital (organização do trabalho).</li>
+      <li>Ligação com o Protocolo de 5 Camadas: última camada, VERSIONAR. Já entra oficialmente.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> fazer pelo menos 2 commits com mensagens descritivas e postar print do git log. <b>Gabarito:</b> critério de sucesso, log mostra 2 ou mais commits com mensagens diferentes de aaa ou teste. Mensagens boas: adiciona pagina inicial, muda cor do titulo. Se as mensagens forem ruins, use no encontro ao vivo pra ensinar mensagem descritiva.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente acha Git complicado e desiste. Reenquadre: hoje só 3 comandos, o resto vem devagar. Erro típico 2, adulto não tem paciência de configurar. Faça um vídeo extra opcional só pro adulto configurar sozinho antes. Adaptação para família sem GitHub: use apenas Git local, sem push, funciona igual. Adaptação para o adolescente que já usou Git em algum tutorial: peça pra ele explicar pro colega no encontro ao vivo.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 1-2 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> integrar as 4 aulas gravadas do módulo com mediação humana forte (princípio MEC), consolidar quem manda (humano) e destravar quem ficou preso no editor ou no Git.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras ligadas, cada adolescente fala em 1 frase qual foi minha maior descoberta essa semana. Warm-up rápido, tom leve.</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise em 2 min cada aula. Foco nos 3 pontos que mais confundem: diferença entre vibecoding e IA autônoma, os 4 elementos do pedido, o fluxo editor/navegador/IA. Abra chat pra dúvidas rápidas.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> vibecoding do zero em 15 minutos. Você abre editor e IA na sua tela. Pega uma sugestão da turma (tema de site). Aplica os 4 elementos do pedido. Gera código, LÊ em voz alta com a turma, cola no editor, mostra no navegador. Comita no Git. A turma vê o fluxo inteiro rodando de verdade.</li>
+      <li><b>35-50 min · Breakout rooms:</b> divida em duplas ou trios. Cada grupo tem 15 min pra criar uma página HTML simples usando os 4 elementos do pedido, e fazer um commit. Adulto de casa fica próximo, sem interferir. Circule pelas salas por 2 min cada.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada grupo mostra o resultado em 1 minuto. Feche com a frase do módulo: quem manda é você, a IA é a mão extra. Oriente a semana seguinte: começa o site de verdade.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms (Zoom, Meet, Teams)</li>
+      <li>Slides de apoio com os 4 elementos do pedido e o fluxo das 3 ferramentas</li>
+      <li>VS Code, navegador e IA visíveis pra demonstração</li>
+      <li>Repositório de demonstração no GitHub pronto</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Faixa 12-14 resiste a câmera ligada. Combine na primeira aula: câmera aberta é regra, fundo pode ser desfocado. Se um fica calado, chame pelo nome com pergunta fechada. Nas breakouts, entre em cada sala rápido pra verificar. Convide o responsável a ficar próximo (não dentro), presença sem interferência. Se cair internet, tenha um plano B assíncrono (fórum) pra não perder a semana. Nunca demonstre com conta pessoal da IA nem repositório público, dá exemplo errado.</p></div>
+  </article>
+
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2 · Semana 3-4</span><h2>Criando seu primeiro site</h2></div>
+  <p class="mod-resumo">Educador: agora sai do abstrato e entra no produto. Em quatro aulas o adolescente sai do zero e tem um mini-site no ar. A meta pedagógica: mostrar que planejar antes economiza dor depois, que HTML e CSS são combináveis como peças de Lego, e que publicar é ato de responsabilidade (por isso passa por adulto). Reforce o Protocolo de 5 Camadas em cada aula: Entender (planejar), Ler (revisar cada snippet), Blindar (checagem básica antes do ar), Testar (abrir no navegador), Versionar (commit em cada passo). Não deixe ninguém publicar sem revisão do responsável, mesmo que a plataforma seja gratuita e o site seja simples. Estabeleça isso como cultura.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5 · 1h</span><h3>Planejar antes de fazer (o que vou criar?)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente sabe descrever seu projeto em 3 perguntas (quem usa, o que aparece, o que a pessoa faz) e rascunha no papel antes de pedir código à IA.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Papel e caneta (obrigatório, planejamento é analógico)</li>
+      <li>Conta institucional de IA</li>
+      <li>Responsável adulto ciente</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> quem começa código sem planejar acaba refazendo três vezes. Hoje eu te ensino um método simples que vale pra vida toda: pensa antes, código depois. Mostre um rascunho de site feito no papel.</li>
+      <li><b>3-15 min · Conceito principal:</b> as 3 perguntas do planejamento. Um: quem vai usar (colegas, família, jogadores). Dois: o que precisa aparecer na tela (título, foto, botão, formulário). Três: o que a pessoa vai fazer (clicar, ler, enviar). Analogia com jogo: você não constrói dungeon sem planta. Você não faz vídeo sem roteiro. Site é igual. Ensine a técnica do wireframe simples: retângulo pro título, quadrado pra imagem, linhas pro texto, círculo pro botão. Rascunho no papel, não no computador. Diferença entre quero um site legal e quero uma landing page pra vender bolo caseiro da minha vó, com botão de WhatsApp. Segundo dá pra fazer, primeiro não.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada, mas com câmera na mesa mostrando você rascunhando no papel. Faça um wireframe simples de uma página em 2 minutos. Depois vá pra IA e transforme o rascunho em pedido claro. Exemplo com erro proposital: peça um site legal sem planejar. Mostre o resultado genérico. Compare com o resultado planejado.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, 3 perguntas do planejamento, rascunho no papel, pedido claro à IA. Gancho pro vídeo 2, agora você planeja o seu.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> papel e caneta na mesa. Computador aberto na IA. Adulto por perto pra escutar sua ideia.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva no papel a resposta pras 3 perguntas. Passo 2, desenhe o wireframe: título em cima, seção do meio, botão embaixo. Passo 3, use o prompt de referência pra pedir feedback do planejamento. Passo 4, leia com o adulto. Passo 5, ajuste no papel o que ficou fraco.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual foto do seu rascunho (sem seu rosto, sem seu quarto). Semana que vem a gente codifica.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um mentor de projeto. Vou te descrever a ideia do meu site em 3 perguntas: quem usa, o que aparece, o que a pessoa faz. Ao final, me diga em 3 bullets o que est&aacute; claro, o que est&aacute; vago e uma sugest&atilde;o de melhoria.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Planejar no papel é mais rápido que planejar no código. Repita.</li>
+      <li>Erro comum: adolescente pula o planejamento e vai direto pra IA. Depois refaz três vezes.</li>
+      <li>Ligação MEC/BNCC: eixo Pensamento Computacional, decomposição e abstração.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: primeira camada, ENTENDER. Sem entender o problema, não tem código bom.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> rascunhar no papel e responder as 3 perguntas por escrito. Postar foto. <b>Gabarito:</b> critério de sucesso, o rascunho tem pelo menos 3 elementos identificáveis (título, seção, botão) e as respostas são específicas (bolo caseiro da vó, não site de comida). Se as respostas forem vagas, aponte no encontro ao vivo com exemplo.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente escolhe projeto grande demais (rede social, jogo tipo Roblox). Corte pra menos: uma página só. Erro típico 2, ele quer projeto sem sentido pra ninguém. Ajude a achar público real (turma da escola, família, colegas de jogo). Adaptação para dificuldade de escrita: aceite rascunho só desenhado. Adaptação para o avançado: peça 3 páginas com fluxo entre elas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6 · 1h</span><h3>Montando a página (cores, textos, botões)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente constrói a página planejada com HTML e CSS gerados pela IA, e sabe personalizar cores, textos e imagens.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Rascunho da Aula 5 na mesa</li>
+      <li>VS Code, navegador, IA</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> chegou a hora de transformar seu papel em pixel. Hoje seu site sai do rascunho e vai pro navegador. Mostre lado a lado o rascunho da Aula 5 e a versão codificada.</li>
+      <li><b>3-15 min · Conceito principal:</b> HTML é estrutura, CSS é aparência. Explique com 3 exemplos de tag: h1 (título grande), p (parágrafo), button (botão). CSS muda cor, tamanho e espaçamento. Analogia com Lego: HTML são as peças (base, telhado, janela), CSS é a pintura. Regra do curso: pedir pra IA uma página completa (HTML + CSS num único arquivo, sem framework). Ensine a personalizar depois: mudar cores no arquivo, mudar texto direto no HTML. Não decorar sintaxe, aprender a ler e alterar.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Use o prompt de referência com o rascunho. IA devolve HTML + CSS. Cole no VS Code. Abra no navegador. Aponte cada parte do rascunho aparecendo na tela. Exemplo com erro proposital: peça sem cores. Mostre resultado sem graça. Depois adicione paleta e mostre a diferença. Comite tudo no Git.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, HTML é estrutura, CSS é aparência, sempre 1 pedido bem feito é melhor que 10 mal feitos. Gancho pro vídeo 2, agora você constrói o seu.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> rascunho na mesa. VS Code aberto na pasta do seu projeto. Adulto por perto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, use o prompt de referência descrevendo o rascunho. Passo 2, leia o código antes de colar. Passo 3, cole no index.html. Passo 4, abra no navegador. Passo 5, personalize 3 coisas: cor de fundo, texto do título, texto do botão. Passo 6, salve e atualize a cada mudança. Passo 7, git add e commit com mensagem descritiva.</li>
+      <li><b>20-25 min · Fechamento:</b> poste print do seu site no ambiente virtual.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um professor de HTML e CSS. Crie um arquivo index.html completo (com CSS embutido no head) para uma p&aacute;gina com [descreva o rascunho: t&iacute;tulo X, se&ccedil;&atilde;o com texto Y, bot&atilde;o Z]. Paleta suave, letras leg&iacute;veis, sem bibliotecas externas. C&oacute;digo comentado em portugu&ecirc;s.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>HTML e CSS num arquivo só nessa fase, simplifica.</li>
+      <li>Erro comum: adolescente muda o código sem entender e quebra tudo. Ensine o hábito de comitar antes de mexer.</li>
+      <li>Ligação MEC/BNCC: eixo Pensamento Computacional, algoritmos e estrutura.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: LER cada linha antes de colar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> construir a página do rascunho, personalizar 3 elementos e comitar. <b>Gabarito:</b> critério de sucesso, o print mostra a página com os elementos do rascunho e com pelo menos 3 personalizações claras (cor, texto, tamanho). Commit no Git com mensagem legível.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente cola código de duas conversas diferentes e cria conflito. Ensine a manter UMA conversa por projeto. Erro típico 2, ele acha que precisa saber CSS pra personalizar. Ensine a apontar o pedaço e pedir mudança. Adaptação para dificuldade visual: aumente a fonte no VS Code (Ctrl+). Adaptação para o avançado: peça responsivo já.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7 · 1h</span><h3>Colocar no ar de graça (com um adulto)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente publica sua página em um endereço público (Netlify ou Vercel) com supervisão adulta e revisão de segurança básica antes do deploy.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto da Aula 6 comitado no GitHub (repositório privado)</li>
+      <li>Conta em Netlify ou Vercel criada pelo responsável</li>
+      <li>Responsável adulto ao lado, obrigatório nessa aula</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> hoje sua página sai do seu computador e vira endereço na internet. Que qualquer pessoa pode abrir. Isso é responsabilidade grande, por isso o adulto precisa estar do lado. Mostre um site no ar.</li>
+      <li><b>3-15 min · Conceito principal:</b> deploy é colocar o site num servidor pra qualquer navegador achar. Analogia: seu HTML no computador é como bolo que você comeu sozinho. No ar é como padaria: qualquer um pode entrar. Serviços gratuitos: Netlify e Vercel. Como funciona: você conecta o GitHub (privado), o serviço pega o código e serve. Ganha URL tipo meu-site.netlify.app. HTTPS já vem de graça (cadeado no navegador). Antes de publicar: checagem simples. Um, não tem senha ou chave no código. Dois, não tem dado pessoal (seu nome completo, endereço, foto). Três, adulto leu e aprovou. Nunca pule essa checagem, mesmo em projeto de brincadeira.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada com o adulto ao lado. Faça o fluxo: GitHub logado, Netlify logado, importe repositório privado, deploy. Mostre o site no ar em 2 minutos. Exemplo com erro proposital: mostre um site com nome completo aparecendo, e comente por que ISSO não pode ir ao ar.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, deploy precisa de adulto, checagem antes SEMPRE, endereço público é responsabilidade. Gancho pro vídeo 2, agora você publica o seu.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> adulto do lado, sem exceção. Login do Netlify feito por ele. GitHub do seu projeto aberto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, adulto faz login no Netlify. Passo 2, junto vocês fazem a checagem de segurança lendo o código: tem senha? tem chave? tem seu nome completo? tem foto? Passo 3, se algo aparecer, RETIRE antes de publicar. Passo 4, no Netlify, clique importar do GitHub, escolha seu repositório. Passo 5, deploy. Passo 6, quando estiver no ar, abra a URL. Passo 7, teste no celular do adulto.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual o link do seu site. Semana que vem no encontro ao vivo a gente comemora juntos.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um revisor de seguran&ccedil;a. Antes de eu publicar meu site na internet, vou te mostrar o c&oacute;digo do meu index.html. Voc&ecirc; me diz se tem: (1) algum dado pessoal, (2) alguma senha ou chave, (3) algum texto que eu n&atilde;o gostaria que estranhos vissem. Aponte especificamente se achar algo.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Deploy é ato adulto. Nunca sozinho. Aula 9 aprofunda segurança de segredos.</li>
+      <li>Erro comum: adolescente cola nome completo ou email no HTML. Ensine dados de contato genéricos.</li>
+      <li>Ligação MEC/BNCC: princípio da proteção de dados, LGPD, ECA Digital.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: BLINDAR (revisão de segurança antes do ar).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> publicar o site com checagem de segurança e postar o link. <b>Gabarito:</b> critério de sucesso, URL abre no navegador, HTTPS ativo (cadeado), nenhum dado pessoal do adolescente aparece no site. Adulto assinou a checagem (registro simples: eu aprovei o deploy).</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, família sem cartão pra Netlify (não precisa, é grátis, mas confunde). Explique claramente. Erro típico 2, adolescente muito ansioso pra publicar sem revisão. Não deixe. Deploy sem revisão é anti-padrão. Adaptação para família sem GitHub: Netlify aceita drag-and-drop de pasta, também funciona. Adaptação pro avançado: peça pra ele configurar domínio de subdomínio personalizado.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8 · 1h</span><h3>Seu primeiro mini-site pronto</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente faz uma passada final de revisão no site, documenta o que aprendeu nesse módulo e apresenta o projeto ao grupo pelo ambiente virtual.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Site no ar da Aula 7</li>
+      <li>Checklist de capricho (fornecido pelo professor)</li>
+      <li>Responsável adulto para revisão final</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> pronto NÃO é a mesma coisa que publicado. Pronto é depois da passada final de capricho. Hoje você aprende a passada.</li>
+      <li><b>3-15 min · Conceito principal:</b> checklist de capricho. Tudo alinhado (nada torto). Cores legíveis (contraste). Sem erro de português. Botão faz o que diz que faz. Testa no celular (pega o do adulto). Sem console error (F12, aba Console). Analogia com apresentação de escola: você não entrega folha amassada. Software é igual. Segundo ponto: documentar o que aprendeu. Escrever em 3 linhas ajuda a fixar. Vai virar seu portfólio no futuro.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Rode o checklist no site da demo. Aponte 2 coisas pra corrigir. Corrija ao vivo. Recomite. Republique. Mostre a diferença.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, checklist de capricho, testar no celular, documentar. Gancho pro vídeo 2, agora você fecha o seu.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> site aberto no navegador do computador. Celular do adulto na mão. Checklist impresso ou na tela.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, rode item por item do checklist. Passo 2, anote no papel o que precisa mudar. Passo 3, mude com ajuda da IA. Passo 4, salve, comite, republique. Passo 5, teste no celular. Passo 6, escreva 3 linhas: o que aprendi, o que quero melhorar, o que orgulho mais.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual o link atualizado + as 3 linhas. Semana que vem começamos segurança sério.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um revisor de UX pra iniciantes. Vou te colar meu index.html. Me diga em 5 bullets o que est&aacute; bom e o que precisa de capricho: alinhamento, contraste, textos, bot&otilde;es e mobile. Seja direto, sem enrolar.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Capricho separa amador de criador. Repita.</li>
+      <li>Erro comum: adolescente acha que capricho é frescura. Não é, é acabamento.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, produção com qualidade.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: TESTAR no celular e no console.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> aplicar o checklist, republicar, escrever 3 linhas de reflexão. <b>Gabarito:</b> critério de sucesso, pelo menos 3 mudanças aplicadas comparando o antes e depois. As 3 linhas usam palavras próprias e citam um aprendizado concreto.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente se acha o rei antes da revisão. Traga humildade com a analogia da folha amassada. Erro típico 2, ele quer republicar sem passar pelo adulto de novo. Regra do curso: republicou, adulto viu. Adaptação para quem não tem celular na família: use ferramenta de emulação de mobile no Chrome (F12, ícone de mobile). Adaptação pro avançado: peça pra ele adicionar meta tag de description.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 3-4 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> integrar as 4 aulas do módulo com mediação humana forte, comemorar o primeiro site no ar de cada adolescente e consolidar a cultura de revisão adulta antes do deploy.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras ligadas, cada um mostra rapidamente o link do próprio site na tela (sem abrir dado pessoal).</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise em 2 min cada aula, foco no fluxo planejar-codificar-publicar-caprichar. Abra chat pra dúvidas.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> pegue o site de UM voluntário. Rode o checklist de capricho ao vivo com a turma sugerindo melhorias. Faça 3 mudanças. Republique. Todos veem a evolução.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas trocam de site. Cada um faz revisão do site do colega usando o checklist. Devolve 3 pontos: 1 elogio, 1 sugestão, 1 pergunta.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada dupla compartilha o que aprendeu revisando. Feche com a frase do módulo: capricho é o que separa amador de criador. Oriente semana seguinte: começa segurança pra valer.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Slides com o checklist de capricho visível</li>
+      <li>Site de demonstração pronto para revisão ao vivo</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Comemoração matters. Faça questão de aplaudir cada site que subiu. Adolescente que publicou pela primeira vez precisa de reconhecimento. Se algum adolescente não conseguiu publicar (problema técnico), separe 10 min extras depois do encontro pra destravar. Nunca deixe ficar pra trás nessa fase, o módulo seguinte é segurança e precisa de site no ar.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3 · Semana 5-6</span><h2>Fazendo com segurança (a parte séria)</h2></div>
+  <p class="mod-resumo">Educador: este é o módulo mais importante do curso inteiro do ponto de vista de risco. Faixa 12-14 tem impulso pra postar, colar, testar, mostrar. Segurança precisa virar reflexo, não decoração. Em três aulas: segredos (o que nunca vai pra código), controle de acesso (login) e checagem antes do ar. Reforce sem meio-termo: colar chave de API no HTML pode custar caro pra família (cobrança de uso indevido), vazar dado de terceiro é caso de LGPD. Aqui aparece formalmente a camada BLINDAR do Protocolo de 5 Camadas do Rodrigo. Você é a última defesa. Não relaxe. Adulto obrigatório em toda aula deste módulo.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9 · 1h</span><h3>Senhas e segredos: o que a gente esconde</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente sabe o que é chave de API, entende por que segredo nunca vai no código do site, e cria seu primeiro arquivo .env com valor de exemplo.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>VS Code, projeto da Aula 8</li>
+      <li>Conta institucional de IA</li>
+      <li>Responsável adulto ao lado, OBRIGATÓRIO</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> imagina que você deixa a chave da sua casa colada no portão. Seria loucura, né? Colar chave de API dentro do código é a mesma coisa. Hoje eu te ensino a esconder direito. Mostre print de site famoso que vazou chave.</li>
+      <li><b>3-15 min · Conceito principal:</b> segredo é qualquer coisa que dá acesso ou custa dinheiro se cair na mão errada. Exemplos: senha, chave de API (código que a IA e outros serviços usam pra reconhecer você e cobrar), token de login. Segredo NUNCA vai no HTML, nunca vai no repositório público, nunca aparece no navegador. Onde vai: em variável de ambiente (arquivo .env, que fica fora do Git). Analogia: seu HTML é a vitrine da loja, todo mundo vê. Segredo é o cofre nos fundos. Regra do Rodrigo: se caiu no Git público, considera vazado, gera chave nova imediato. Explique .gitignore em 30 segundos: arquivo que diz pro Git não guardar certos arquivos, tipo .env.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Mostre um código com chave dentro (ex.: <code>API_KEY = 'sk-abc123'</code>). Explique por que ISSO é errado. Mostre o jeito certo: criar arquivo .env com <code>API_KEY=sk-abc123</code>, criar .gitignore com <code>.env</code> dentro. Rode <code>git status</code> pra mostrar que .env não aparece mais. Comente ao vivo: aqui você acabou de aprender uma das habilidades mais importantes de programador.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, segredo não vai no código, .env fica local, .gitignore protege. Gancho pro vídeo 2, agora você configura o seu.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> adulto do lado, sem exceção. VS Code aberto na pasta do projeto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, crie um arquivo chamado .env na raiz do projeto. Passo 2, coloque uma linha de exemplo: <code>MINHA_CHAVE_EXEMPLO=troque_por_valor_real</code>. Passo 3, crie um arquivo chamado .gitignore. Passo 4, escreva dentro: <code>.env</code>. Passo 5, rode <code>git status</code>. Confirme que .env NÃO aparece. Passo 6, comite só o .gitignore com mensagem descritiva. Passo 7, discuta com o adulto: que outros arquivos NÃO deveriam ir pro Git (node_modules, arquivos com senha, backups).</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual print do .gitignore (o arquivo, não o conteúdo do .env). Explique em 2 linhas por que a gente esconde.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um professor de seguran&ccedil;a em projetos web. Me explica em 4 frases: (1) o que &eacute; chave de API, (2) por que ela nunca pode ficar no c&oacute;digo p&uacute;blico, (3) o que &eacute; um arquivo .env, (4) o que &eacute; um .gitignore. Analogias simples pra uma pessoa de 13 anos.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Segredo é qualquer coisa que dá acesso ou custa dinheiro. Repita.</li>
+      <li>Erro comum: adolescente acha que se o repositório é privado, tudo bem. Não é. Padrão zero-trust: privado hoje pode virar público amanhã.</li>
+      <li>Ligação MEC/BNCC: proteção de dados, LGPD.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: BLINDAR. Aqui entra oficialmente.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> criar .env de exemplo e .gitignore. Postar print do .gitignore e explicar em 2 linhas por que se esconde. <b>Gabarito:</b> critério de sucesso, .gitignore contém .env e outros arquivos sensíveis (ex.: node_modules). Explicação usa palavras próprias e cita que chave pode dar acesso ou cobrança.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente cria .env com chave real e sobe pro Git antes de configurar .gitignore. Se rolar, adulto ajuda a remover do histórico e a gerar chave nova. Erro típico 2, ele confunde variável de ambiente com variável no código. Repita: .env fica no computador, código fica no Git. Adaptação para dificuldade técnica: use apenas variáveis de exemplo, ainda não conecta com serviço real. Adaptação pro avançado: peça pra ele explicar node_modules e por que também não vai pro Git.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10 · 1h</span><h3>Quem pode entrar (login) e cuidar dos dados</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente entende o conceito de autenticação, sabe quando um projeto precisa de login e conhece o essencial da LGPD aplicado ao que ele cria.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA</li>
+      <li>Lista de 5 cenários (o que pede login, o que não pede) preparada pelo professor</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> tem site que qualquer um entra e tem site que só entra quem tem chave. Hoje você aprende quando o seu projeto precisa de login e como cuidar do dado das pessoas com respeito.</li>
+      <li><b>3-15 min · Conceito principal:</b> autenticação é provar quem você é (login + senha). Autorização é o que você pode fazer depois. Analogia com casa de amigo: bater na porta e ele reconhecer é autenticação. Ele deixar você entrar na cozinha é autorização. Quando o seu projeto PRECISA de login: quando cada pessoa tem conteúdo separado (nota pessoal, lista privada, mensagem). Quando NÃO precisa: página institucional, portfólio, informação pública. Segundo ponto: LGPD em 3 frases. Dado de pessoa é sagrado. Só pede o que precisa. Precisa de consentimento (a pessoa concorda). Explique também: se seu projeto guarda dado de menor de idade, tem cuidado extra. Nesse curso, projetos com login real ficam pra fase futura, hoje é conceito.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada, mostre 3 sites. Um sem login (blog público). Um com login (Roblox). Um com login opcional (Duolingo). Comente qual dado cada um pede e por quê. Depois abra a IA e peça o prompt de referência. Discuta a resposta.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, login existe pra proteger dado por pessoa, LGPD é regra, dado de menor tem cuidado extra. Gancho pro vídeo 2, agora você classifica cenários.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> lista de cenários na mesa. Adulto por perto pra discutir.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, leia cenário A (portfólio pessoal). Escreva: precisa login? Que dado pediria? Passo 2, cenário B (app de lista de compras individual). Passo 3, cenário C (galeria de fotos da turma). Passo 4, cenário D (formulário de contato). Passo 5, cenário E (jogo online multiplayer). Passo 6, discuta 2 respostas com o adulto. Passo 7, escreva 3 linhas sobre o que aprendeu de LGPD.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual suas respostas dos 5 cenários e as 3 linhas de LGPD.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um professor de LGPD pra iniciantes. Me explica em 4 frases: (1) o que &eacute; dado pessoal, (2) por que dado de menor de idade tem prote&ccedil;&atilde;o extra, (3) o que &eacute; consentimento, (4) quando meu projeto precisa mesmo de login. Analogias pra pessoa de 13 anos.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Login é ferramenta, não moda. Só use se seu projeto precisar mesmo.</li>
+      <li>Erro comum: adolescente quer colocar login em tudo. Não. Só quando cada pessoa tem conteúdo próprio.</li>
+      <li>Ligação MEC/BNCC: proteção de dados, LGPD, ECA Digital, princípio da centralidade humana.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: BLINDAR (dado de terceiro precisa de blindagem).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> classificar os 5 cenários (precisa/não precisa de login, que dado pediria) e escrever 3 linhas sobre LGPD. <b>Gabarito:</b> A (portfólio) não precisa. B (lista pessoal) precisa se salvar. C (galeria da turma) precisa se cada um posta separado. D (contato) não precisa, só nome+email opcional. E (multiplayer) precisa. LGPD: usar palavras próprias, citar consentimento e menor de idade.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente confunde login com dado pessoal em qualquer form. Login é acesso, não formulário simples. Erro típico 2, ele quer construir login real na próxima aula. Segure: implementação real fica pra curso avançado, hoje é conceito. Adaptação pro que já teve contato: peça pra explicar OAuth ao invés de senha própria. Adaptação para dificuldade: reduza de 5 pra 3 cenários.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11 · 1h</span><h3>Conferir antes de mostrar pro mundo</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente sabe aplicar uma checklist de 8 pontos de segurança antes de qualquer republicação e sabe quando escalar para o adulto.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto no ar do adolescente</li>
+      <li>Checklist de 8 pontos impresso ou na tela</li>
+      <li>Responsável adulto ao lado</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> republicar um site é como enviar carta que não tem como cancelar. Antes de mandar, confere. Hoje você aprende a lista dos 8 pontos que o Rodrigo checa em todo projeto.</li>
+      <li><b>3-15 min · Conceito principal:</b> checklist da skill Bastião, adaptada pro básico. Um: não tem segredo no código? Dois: não tem dado pessoal seu (nome completo, endereço, foto)? Três: HTTPS ativo (cadeado)? Quatro: formulário só pede o mínimo? Cinco: teste a página incógnita (Ctrl+Shift+N no Chrome). Seis: teste no celular. Sete: adulto leu o código? Oito: commit descreve a mudança? Se qualquer ponto ficar em dúvida, PARE. Chame o adulto. Segundo ponto: escalar é habilidade. Programador bom sabe quando pedir ajuda. Não é fraqueza, é maturidade.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Aplique os 8 pontos no site da demo. Mostre um ponto falhando (ex.: dado pessoal escondido num comentário). Corrija. Recomite. Republique. Comente ao vivo: percebe como o checklist pega coisa que a gente esqueceu?</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, checklist de 8, escalar é maturidade, revisão adulta antes SEMPRE. Gancho pro vídeo 2, agora você aplica no seu.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> checklist na mão. Site aberto no navegador. Adulto ao lado.</li>
+      <li><b>3-20 min · Passo a passo:</b> rode os 8 pontos no seu projeto. Marque OK ou PENDENTE em cada. Para cada PENDENTE, corrija com ajuda da IA e adulto. Recomite. Republique se necessário. Escreva no caderno o ponto que mais te surpreendeu.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual a lista dos 8 pontos com OK ou PENDENTE em cada, e o ponto que mais te surpreendeu.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um revisor de seguran&ccedil;a de projetos escolares. Vou te colar o c&oacute;digo do meu index.html. Rode uma checklist de 8 pontos b&aacute;sicos: segredos, dado pessoal, HTTPS, formul&aacute;rio m&iacute;nimo, incognita, mobile, revis&atilde;o adulta, commit descritivo. Aponte falhas.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Checklist é hábito. Não é ler uma vez, é rodar sempre.</li>
+      <li>Erro comum: adolescente pula o checklist quando o projeto está pequeno. Não. Todo republish passa.</li>
+      <li>Ligação MEC/BNCC: cidadania digital, proteção de dados.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: BLINDAR completo, incluindo TESTAR.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> rodar o checklist no próprio site, marcar 8 status, corrigir pendências e postar. <b>Gabarito:</b> critério de sucesso, os 8 pontos marcados e as pendências corrigidas. Se algum ponto ficou PENDENTE sem correção, deve estar justificado (ex.: HTTPS depende do serviço) e comunicado ao adulto.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente marca tudo OK sem olhar de verdade. Combine com o adulto que ele fere check-in de 2 pontos amostrais. Erro típico 2, ele quer republicar sem corrigir. Regra dura: pendência crítica bloqueia deploy. Adaptação para dificuldade: comece com só 4 pontos, cresça ao longo do módulo. Adaptação pro avançado: peça pra ele adicionar 2 pontos próprios.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 5-6 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> consolidar a cultura de segurança do curso com mediação humana forte. Reforçar que segurança é habitual, não decoração, e formalizar o compromisso de sempre passar por revisão adulta antes do deploy.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> câmeras ligadas, cada adolescente diz em 1 frase o que mais o assustou nessa semana.</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise em 2 min cada aula. Foco em segredos (nunca no código), dado de terceiro (LGPD) e checklist de 8 pontos.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> Caçada ao vazamento. Prepare um projeto de exemplo com 3 problemas plantados (chave no código, nome pessoal, formulário pedindo demais). Turma tem 15 min pra identificar e sugerir correção. Você aplica ao vivo.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas trocam de projeto e aplicam o checklist de 8 pontos no site do colega. Devolvem OK ou PENDENTE por ponto, com justificativa.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada dupla compartilha achado. Feche com o compromisso do módulo: eu revejo antes de publicar. Toda vez. Oriente semana seguinte: design.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Projeto de exemplo com 3 problemas plantados</li>
+      <li>Checklist de 8 pontos impresso pra cada adolescente</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Segurança pode dar medo. Reenquadre: não é pra ter medo, é pra ter método. Se algum adolescente compartilhou algo sensível por engano nas aulas anteriores, chame reservadamente pra ajudar a remover. Nunca exponha o erro em turma. Este é o módulo em que responsável presente vale ouro, convide os adultos a participarem dos 20 minutos finais como convidados observadores.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4 · Semana 7-8</span><h2>Deixando bonito (design que funciona)</h2></div>
+  <p class="mod-resumo">Educador: agora o adolescente aprende a diferenciar bonito de genérico. Vibecoding sem cuidado com design produz páginas com cara de template pré-fabricado, aquele mesmo visual de dashboard roxo com card branco que a IA cospe por padrão. Sua missão em quatro aulas: princípios visuais simples (3 cores, 2 fontes, respiro), mobile-first, botão que parece botão, capricho final. Reforce que design tem regras que a IA precisa RECEBER pra aplicar. Sem paleta específica, ela chuta. Sem tipografia definida, ela devolve Roboto genérica. Aqui aparece a skill Atelier do Rodrigo como referência de identidade visual: escuro premium, âmbar, acessibilidade de fábrica. Não é obrigatório copiar, é referência de rigor.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12 · 1h</span><h3>O que deixa um site legal (cores, letras, imagens)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente aplica as regras das 3 cores, 2 fontes e respiro visual, e pede à IA design específico em vez de aceitar padrão.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto no ar do módulo anterior</li>
+      <li>Ferramenta de paleta (Coolors.co ou similar, com adulto)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> por que tanto site com IA parece igual? Porque a galera aceita o padrão. Hoje você aprende a mandar a IA fazer do SEU jeito. Mostre dois sites lado a lado, um genérico e um com identidade.</li>
+      <li><b>3-15 min · Conceito principal:</b> regra das 3 cores. Uma principal, uma secundária, uma de destaque. Não mais. Mostre exemplos de sites famosos com paleta clara. Regra das 2 fontes. Uma pra título (serifada, com personalidade), uma pra texto (sans-serif limpa). Google Fonts é grátis e tem tudo. Regra do respiro. Espaço em branco não é desperdício, é oxigênio. Se está apertado, adicione padding. Analogia: página apertada é como quarto entulhado, ninguém quer ficar. Segundo ponto: pedir pra IA design específico. Ruim: faz bonito. Bom: use paleta com cor de fundo bege claro (#F4EFE6), texto marrom escuro (#1B1813), destaque âmbar (#B5762A). Fontes Fraunces pra título e Inter pra texto. Padding generoso, min 24px.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pegue o site do módulo 2 (visual básico). Use o prompt de referência pedindo repaginação com paleta específica. Cole. Compare antes e depois. Comente ao vivo: percebe como especificar muda tudo?</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, 3 cores, 2 fontes, respiro. Gancho pro vídeo 2, agora você faz.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> abra Coolors.co com o adulto. Escolha sua paleta de 3 cores.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha paleta. Anote os 3 hex. Passo 2, escolha 2 fontes no Google Fonts. Anote os nomes. Passo 3, use o prompt de referência com sua paleta e fontes. Passo 4, leia o código antes de colar. Passo 5, cole no index.html. Passo 6, ajuste padding se ficar apertado. Passo 7, commit descritivo.</li>
+      <li><b>20-25 min · Fechamento:</b> poste no ambiente virtual antes e depois. Diga qual mudança mais gostou.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um designer de UI iniciante. Vou te colar meu index.html atual. Refa&ccedil;a o CSS aplicando: paleta [3 hex], fontes [Fraunces pra t&iacute;tulo, Inter pra texto, importar do Google Fonts], padding generoso (min 24px), tamanhos de fonte grandes e leg&iacute;veis. Sem bibliotecas externas. Me devolva s&oacute; o CSS.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Especificar paleta e fontes é o passo que separa genérico de próprio.</li>
+      <li>Erro comum: adolescente escolhe 7 cores. Corte pra 3.</li>
+      <li>Ligação MEC/BNCC: eixo Cultura Digital, produção com qualidade estética.</li>
+      <li>Ligação com skill Atelier do Rodrigo: fuja do visual genérico de protótipo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> aplicar 3 cores e 2 fontes específicas no site, postar antes e depois. <b>Gabarito:</b> critério de sucesso, paleta clara com 3 cores identificáveis, 2 fontes distintas em títulos e texto, padding visivelmente maior. Se ficou com 5 cores diferentes ou fonte única, revise.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente escolhe paleta muito contrastante (fluor). Ajude a ler acessibilidade (contraste WCAG). Erro típico 2, ele carrega 5 fontes do Google. Custa performance, corte pra 2. Adaptação para daltonismo: use ferramenta que mostra a paleta simulada. Adaptação pro avançado: peça pra ele adicionar dark mode.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13 · 1h</span><h3>Funciona no celular também (responsivo)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente entende design mobile-first, testa o próprio site no navegador emulado como celular e ajusta o CSS para que funcione bem em qualquer tela.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo 4</li>
+      <li>Celular (do adulto, se possível) pra testar de verdade</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> hoje mais de 60% do mundo entra na internet pelo celular. Se seu site quebra no celular, seu site quebra pra maioria. Hoje a gente resolve isso.</li>
+      <li><b>3-15 min · Conceito principal:</b> mobile-first é pensar primeiro pra tela pequena, depois pra tela grande. Analogia: se sua mochila cabe as coisas essenciais, ela cabe as bagatelas. Se pensar pra tela grande primeiro, sobra tudo na pequena. Explique media queries em 30 segundos: pedaço de CSS que muda regra em certos tamanhos. Ex.: no celular, título fica menor. F12 no Chrome tem modo mobile: ícone de celular, escolhe iPhone 12, vê como fica. Sempre testar em telefone REAL depois. Terceiro ponto: viewport meta tag no head, sem ela o celular acha que é desktop. IA às vezes esquece, então cheque.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Abra site atual, F12, mode mobile. Aponte o que quebra (texto grande demais, botão fora da tela). Peça pra IA ajustar. Cole. Repita. Depois abra no celular do adulto (via QR code do site no ar). Comente ao vivo.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, mobile-first, media queries, viewport meta tag. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> site aberto, F12 no modo mobile, celular do adulto ao lado.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, ative modo mobile (iPhone 12). Passo 2, anote 3 coisas que quebram (título gigante, botão apertado, imagem estourando). Passo 3, use o prompt de referência descrevendo o que quebra. Passo 4, cole ajuste no CSS. Passo 5, atualize e verifique. Passo 6, teste no celular de verdade via URL do site. Passo 7, commit descritivo.</li>
+      <li><b>20-25 min · Fechamento:</b> poste antes e depois no modo mobile.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um dev responsivo. Meu site est&aacute; quebrando no celular. Problemas: [descreva 3 coisas]. Adicione media queries pra tela at&eacute; 768px que resolvam: t&iacute;tulo menor, bot&otilde;es leg&iacute;veis, imagem 100% da largura. Verifique tamb&eacute;m se tem viewport meta tag no head.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Mobile-first não é opção, é padrão.</li>
+      <li>Erro comum: adolescente esquece viewport meta tag. Repete: sem ela, celular renderiza como desktop.</li>
+      <li>Ligação MEC/BNCC: acessibilidade, inclusão digital.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: TESTAR em pelo menos 2 telas.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> ajustar site pra mobile e postar antes e depois. <b>Gabarito:</b> critério de sucesso, o depois no modo mobile não corta nada, texto legível, botões clicáveis. Presença de viewport meta tag no head.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente testa só no modo emulado e nunca no celular real. Faça teste real obrigatório. Erro típico 2, ele resolve mobile mas quebra desktop. Ensine media query pra 768px em vez de mudar geral. Adaptação para família sem smartphone: modo emulado do Chrome resolve. Adaptação pro avançado: peça pra ele testar em tablet também.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14 · 1h</span><h3>Botões e formulários que funcionam</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente sabe criar botões que parecem botões, formulários que funcionam e testar cada elemento clicando de verdade.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo 4</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> se a pessoa precisa adivinhar que aquilo é botão, você já perdeu. Botão precisa parecer botão. Formulário precisa dar feedback. Hoje a gente resolve.</li>
+      <li><b>3-15 min · Conceito principal:</b> anatomia do botão bom. Fundo com cor. Texto legível. Cursor de mão quando passa em cima. Estado hover (muda de cor). Estado active (aperta). Estado focus (borda de acessibilidade). Tamanho mínimo mobile: 44px de altura pro dedo. Analogia com botão físico: você aperta e sente. Formulário bom: label acima do input (sem placeholder-only), input com padding, botão de enviar destacado, mensagem de sucesso ou erro depois do envio. Terceiro ponto: acessibilidade. Aria-label pra ícone, alt pra imagem. Usuário com leitor de tela também precisa entender.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pegue botão feio (só texto). Peça repaginação com os estados. Compare. Depois faça formulário com nome e mensagem. Teste enviar (mesmo que não faça nada por enquanto, feedback visual).</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, botão precisa parecer botão, formulário precisa de label, teste clicando. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> site aberto. Escolha um botão pra caprichar.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha o botão principal do seu site. Passo 2, use o prompt de referência. Passo 3, cole e teste os estados (hover, active, focus). Passo 4, adicione um formulário simples (nome + mensagem + botão enviar). Passo 5, adicione feedback visual (mensagem obrigado após enviar, mesmo que fake por ora). Passo 6, teste clicando de verdade. Passo 7, commit.</li>
+      <li><b>20-25 min · Fechamento:</b> poste um GIF ou vídeo curto mostrando o hover funcionando.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um dev UI. Refa&ccedil;a o CSS do meu bot&atilde;o [descreva] com os 4 estados (padr&atilde;o, hover, active, focus), tamanho m&iacute;nimo 44px de altura, cursor pointer. Depois adicione um formul&aacute;rio simples com input de nome, textarea de mensagem, bot&atilde;o enviar. Com feedback visual ap&oacute;s clicar. Sem backend, s&oacute; front.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Botão precisa parecer botão. Estados são essenciais.</li>
+      <li>Erro comum: adolescente usa placeholder no lugar de label. Piora acessibilidade.</li>
+      <li>Ligação MEC/BNCC: acessibilidade, inclusão.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: TESTAR clicando.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> caprichar botão com 4 estados e adicionar formulário funcional visualmente. Postar GIF. <b>Gabarito:</b> critério de sucesso, botão tem hover visível e cursor mão. Formulário tem label, input, botão e feedback pós-clique.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente não testa e o botão está sem cursor pointer. Regra: só posta depois de clicar. Erro típico 2, ele quer conectar o formulário a email real. Segure, isso é backend, fica pra módulo 5. Adaptação pra dificuldade motora: aumente pra 56px de altura. Adaptação pro avançado: peça validação de campo obrigatório em JS.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15 · 1h</span><h3>Capricho final: polindo os detalhes</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente aplica um code review por IA no próprio código, corrige apontamentos e faz a passada final antes do próximo módulo.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo 4 refinado</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> a diferença entre bom e excelente mora nos detalhes. Hoje você aprende a pedir pra IA revisar seu próprio código com olhar externo.</li>
+      <li><b>3-15 min · Conceito principal:</b> code review é revisar código com olhar de estranho. A IA pode fazer papel de segundo par de olhos. Pontos que o code review pega: código repetido, nome ruim de variável, CSS bagunçado, falta de comentário. Regra do capricho: melhoria pequena somada faz produto excelente. Explique também o hábito do commit final: quando fecha uma etapa, commit de fechamento (final do módulo 4: design consolidado).</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pegue seu index.html. Peça code review pela IA. Aplique 3 sugestões. Compare antes e depois. Comente ao vivo.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, code review, pequenos passos, commit de fechamento. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> projeto aberto. IA aberta em conversa nova.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, cole seu index.html na IA usando o prompt de referência. Passo 2, leia as sugestões. Passo 3, escolha 3 que fazem sentido. Passo 4, aplique cada uma. Passo 5, teste no navegador. Passo 6, commit final do módulo com mensagem descritiva.</li>
+      <li><b>20-25 min · Fechamento:</b> poste as 3 sugestões que aplicou e por que escolheu essas.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um revisor de c&oacute;digo (code review) pra iniciantes. Vou te colar meu index.html completo. Me devolva 5 sugest&otilde;es de melhoria em bullets curtos, focando em: (1) CSS repetido, (2) nomes de classe, (3) acessibilidade, (4) legibilidade, (5) organiza&ccedil;&atilde;o. Explique cada uma em 1 frase.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Code review por IA é ferramenta, não veredicto. Você decide o que aceitar.</li>
+      <li>Erro comum: adolescente aceita tudo cegamente. Ensine a filtrar.</li>
+      <li>Ligação MEC/BNCC: centralidade humana, decisão fica com humano.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: LER (novamente) e VERSIONAR (commit de fechamento).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> pedir code review, aplicar 3 sugestões justificando escolha, commitar. <b>Gabarito:</b> critério de sucesso, 3 sugestões aplicadas com justificativa própria (não copiada da IA). Commit de fechamento presente.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente aceita sugestão sem entender. Regra: aplicar só o que ele consegue explicar. Erro típico 2, ele fica horas polindo e não avança. Combine timebox de 25 min. Adaptação para dificuldade: aceite 2 sugestões em vez de 3. Adaptação pro avançado: peça pra ele rejeitar 1 sugestão ruim justificando por que.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 7-8 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> consolidar identidade visual, mobile-first e capricho com mediação humana. Comparar antes e depois de cada projeto para reforçar o poder do capricho iterativo.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> cada um mostra o antes e depois em 20 segundos.</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise em 2 min cada aula. Foco em paleta específica, mobile-first e code review por IA.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> Cirurgia de site. Pegue um site voluntário. Aplique 3 melhorias de design ao vivo com a turma sugerindo. Compare antes e depois.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas trocam sites e aplicam a checklist de capricho. Devolvem 3 sugestões cada.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada dupla compartilha aprendizado. Feche com a frase: capricho é o remédio contra genérico. Oriente semana seguinte: interatividade.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Slides com exemplos de antes e depois em design</li>
+      <li>Site de demonstração pronto</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Design gera opinião forte. Cuide para que a devolutiva entre duplas seja construtiva, não crítica pessoal. Ensine a fórmula gostei disso, sugiro isso, pergunto isso. Se algum adolescente ficou muito preso ao design padrão da IA (tudo roxo e card branco), use no encontro pra mostrar 3 exemplos de identidade forte. Convide-o a escolher uma pra inspirar.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5 · Semana 9-10</span><h2>Fazendo o site fazer coisas (interatividade)</h2></div>
+  <p class="mod-resumo">Educador: aqui o adolescente sai do site estático e entra em programação de verdade. Quatro aulas cobrem persistência simples (dados), JavaScript no básico (site responde), APIs públicas (site conecta) e feedback+performance. Cuidado importante: até agora dava pra passar sem entender código, agora não dá mais. Reforce sempre LER cada linha que a IA gera. JavaScript é onde bug começa a doer. Sobre APIs, atenção redobrada com chave: hoje a gente usa só APIs públicas GRATUITAS sem chave (JSON Placeholder, Advice Slip). Chave privada fica pra depois, com adulto e camada de servidor. Isso não é frescura, é o Rodrigo evitando cobrança indevida na conta do responsável.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16 · 1h</span><h3>Guardar e mostrar informação (dados)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente entende o que é armazenar dado localmente no navegador (localStorage), guarda uma lista simples e a mostra na página.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo 4</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> até agora seu site esquece tudo quando fecha. Hoje ele começa a lembrar. É como ganhar memória. Mostre um exemplo de lista de tarefas que persiste.</li>
+      <li><b>3-15 min · Conceito principal:</b> localStorage é uma caixinha dentro do navegador que guarda pares de chave e valor. Simples e local (só o dispositivo tem). Bom pra: notas pessoais, preferências, lista de tarefas. Ruim pra: dado importante (limpa se limpar cache), dado compartilhado (só o dispositivo). Não é banco de dados de verdade, é lembrete de navegador. Analogia: cofrinho embaixo da cama. Só você acessa. Segundo ponto: JSON simples. Um formato que o navegador entende, tipo objeto com chave e valor. Ex.: {tarefa: comprar pão, feito: false}. Terceiro ponto: nunca guardar segredo em localStorage (qualquer script da página lê).</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Faça mini-lista de tarefas: adicionar item, salvar em localStorage, listar todos. Use o prompt de referência. Cole. Teste. Feche e reabra. Mostre que a lista persiste.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, localStorage é caixinha local, JSON é o formato, sem segredo lá. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> projeto aberto, IA aberta.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, use o prompt de referência. Passo 2, LEIA todo o código antes de colar. Passo 3, cole em index.html. Passo 4, teste: adicione item, veja aparecer, feche navegador, reabra, veja persistir. Passo 5, adicione função de remover item. Passo 6, teste. Passo 7, commit descritivo.</li>
+      <li><b>20-25 min · Fechamento:</b> poste GIF mostrando adicionar e remover funcionando.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um dev JS iniciante. Adicione ao meu index.html: (1) um input de texto e um bot&atilde;o adicionar, (2) uma lista ul que mostra os itens salvos no localStorage, (3) cada item com bot&atilde;o remover. Sem bibliotecas externas. C&oacute;digo comentado em portugu&ecirc;s.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>localStorage é local. Não é backend, não é sincronizado.</li>
+      <li>Erro comum: adolescente acha que localStorage é banco de dados. Não é.</li>
+      <li>Ligação MEC/BNCC: pensamento computacional (estrutura de dados).</li>
+      <li>Ligação com o Protocolo de 5 Camadas: LER cada linha JS antes de colar.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> criar lista com localStorage, adicionar e remover funcionando, postar GIF. <b>Gabarito:</b> critério de sucesso, GIF mostra os dois fluxos e a persistência (recarregar mantém). Se recarregou e sumiu, tem bug no salvar.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente esquece de converter pra JSON (JSON.stringify/parse) e localStorage guarda [object Object]. Ensine a converter. Erro típico 2, ele confunde ID de elementos. Ensine identificadores únicos. Adaptação para dificuldade: comece sem remover, só adicionar. Adaptação pro avançado: peça pra ele adicionar botão marcar como feito.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17 · 1h</span><h3>O site que responde (interatividade)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente entende o que é evento em JS, cria um botão que faz algo ao ser clicado e dá feedback visual à pessoa que usa.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> botão que não faz nada é decoração. Botão que responde é ferramenta. Hoje o seu site começa a responder.</li>
+      <li><b>3-15 min · Conceito principal:</b> evento é algo que acontece na página (clique, digitação, envio). JS escuta o evento e responde. addEventListener é o comando: escute quando alguém clicar aqui, faça isso. Analogia com campainha: alguém aperta, você atende. Feedback ao usuário. Todo evento importante precisa de retorno visual: cor muda, mensagem aparece, item some. Sem feedback, o usuário fica na dúvida se clicou. Regra do curso: se você não vê que aconteceu, o usuário também não vê. Terceiro ponto: erros comuns em JS. Console.error, undefined, null. Aprender a ler o console (F12, aba Console).</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Faça um botão que muda o tema (claro/escuro). Use o prompt de referência. Cole. Teste. Aponte o feedback visual da transição.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, evento é ação, feedback é obrigatório, console é seu amigo. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> site aberto. Escolha uma interação que quer adicionar.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha uma interação (contador de cliques, botão que revela texto escondido, toggle de tema). Passo 2, use o prompt de referência. Passo 3, cole. Passo 4, teste, veja console. Passo 5, adicione feedback visual (animação, cor). Passo 6, commit.</li>
+      <li><b>20-25 min · Fechamento:</b> poste GIF da interação funcionando.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um dev JS. Adicione ao meu index.html um bot&atilde;o que [descreva: alterna tema, conta cliques, revela texto]. Use addEventListener, sem bibliotecas. D&ecirc; feedback visual claro (transi&ccedil;&atilde;o de cor). C&oacute;digo comentado.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Evento + feedback. Sempre juntos.</li>
+      <li>Erro comum: adolescente esquece de ler o console e não sabe por que não funciona.</li>
+      <li>Ligação MEC/BNCC: pensamento computacional (algoritmo, eventos).</li>
+      <li>Ligação com o Protocolo de 5 Camadas: TESTAR olhando console.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> criar uma interação nova com feedback visual, postar GIF. <b>Gabarito:</b> critério de sucesso, o clique dispara ação visível E sem erro no console.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente não abre o console e não sabe que tem erro. Ensine F12 sempre. Erro típico 2, ele copia código de outra IA sem entender e cola conflito. Ensine a manter uma conversa por feature. Adaptação para dificuldade: só um botão contador. Adaptação pro avançado: 3 interações concatenadas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18 · 1h</span><h3>Conectar com outras coisas (APIs mágicas prontas)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente entende o que é API, consome uma API pública gratuita sem chave e mostra o resultado dinamicamente no site.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo</li>
+      <li>Responsável adulto por perto, principalmente pra reforçar regra da chave</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> API é o jeito de dois programas conversarem. Hoje seu site vai puxar informação de outro serviço, tipo previsão de tempo ou frase inspiradora.</li>
+      <li><b>3-15 min · Conceito principal:</b> API é um endereço que devolve dado. Você faz uma requisição (fetch), recebe resposta (geralmente JSON), mostra na tela. Analogia com pedido no restaurante: você faz pedido, cozinha entrega, você serve na mesa. APIs públicas sem chave: JSON Placeholder, Advice Slip, PokeAPI. Ideal pra treinar. APIs com chave (OpenAI, tempo, geolocalização): NUNCA usar chave direto no HTML. Chave vai no servidor (backend), que ainda não temos. Regra pura: se pediu chave, chame o adulto e adie. Terceiro ponto: sempre tratar erro. API pode falhar. Try/catch simples. Mensagem amigável se der ruim.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Consuma Advice Slip (adviceslip.com/api). Use o prompt de referência. Cole. Teste. Mostre o console com o retorno JSON.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, API é conversa entre sistemas, hoje só APIs públicas sem chave, trate erros. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> site aberto, IA aberta, adulto por perto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha uma API pública SEM chave (Advice Slip, JSON Placeholder). Passo 2, use o prompt de referência. Passo 3, LEIA o código antes de colar. Passo 4, cole. Passo 5, teste, veja o console. Passo 6, adicione mensagem de erro amigável. Passo 7, commit.</li>
+      <li><b>20-25 min · Fechamento:</b> poste GIF mostrando o botão puxando dado da API.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um dev JS. Adicione ao meu index.html um bot&atilde;o &quot;Nova frase&quot; que, ao ser clicado, faz fetch na API https://api.adviceslip.com/advice e mostra a frase em um par&aacute;grafo. Trate erros com mensagem amig&aacute;vel. Use async/await simples. Sem chave, sem bibliotecas.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>API sem chave apenas. Regra dura do módulo.</li>
+      <li>Erro comum: adolescente vê tutorial com OpenAI e quer colocar chave no HTML. NÃO. Chame o adulto.</li>
+      <li>Ligação MEC/BNCC: cultura digital, integração de sistemas.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: BLINDAR (chave nunca no front) e TESTAR erros.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> consumir API pública sem chave, mostrar resultado, tratar erro. <b>Gabarito:</b> critério de sucesso, GIF mostra o botão puxando dado dinamicamente. Código NÃO contém chave de API. Presença de try/catch ou tratamento de erro.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente encontra API interessante com chave, tenta usar no HTML. Bloqueie imediato. Explique o risco. Erro típico 2, API cai e ele acha que o código está errado. Ensine a testar a API direto no navegador antes. Adaptação para dificuldade: use JSON Placeholder que é ultra estável. Adaptação pro avançado: peça pra ele fazer 2 chamadas concatenadas.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19 · 1h</span><h3>Avisos automáticos e deixar rápido</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente cria mensagem toast de feedback e conhece 3 técnicas básicas para o site carregar mais rápido.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> site rápido faz gente ficar. Site lento faz gente sair. E toda vez que algo acontece, avise a pessoa. Duas coisas mudam a experiência hoje.</li>
+      <li><b>3-15 min · Conceito principal:</b> toast é uma mensagem pequena que aparece e some (aviso do tipo item salvo). Melhora feedback sem incomodar. Segundo ponto: performance básica. Um, imagem otimizada (comprimida). Dois, CSS e JS enxutos. Três, sem biblioteca desnecessária. Analogia com mochila: quanto mais leve, mais rápido você corre. Terceiro ponto: teste com Lighthouse (F12, aba Lighthouse). Roda análise e dá nota de performance, acessibilidade, SEO. Meta: acima de 80 nessa fase.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Adicione toast num evento existente. Rode Lighthouse. Aponte 2 melhorias. Aplique.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, toast pra feedback, performance = leveza, Lighthouse é o termômetro. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> site aberto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, adicione toast num evento (item salvo, item removido). Use o prompt de referência. Passo 2, teste. Passo 3, abra Lighthouse. Passo 4, aplique 2 sugestões (imagem otimizada, remover CSS não usado). Passo 5, rode Lighthouse de novo. Passo 6, commit.</li>
+      <li><b>20-25 min · Fechamento:</b> poste antes e depois da nota do Lighthouse.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um dev JS. Adicione ao meu site uma fun&ccedil;&atilde;o showToast(mensagem) que mostra um toast por 3 segundos no canto inferior direito, com anima&ccedil;&atilde;o de fade. Sem bibliotecas. Chame essa fun&ccedil;&atilde;o depois de [descreva um evento existente].</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Toast é gentil. Alert é agressivo. Prefira toast.</li>
+      <li>Erro comum: adolescente instala biblioteca pesada só pra toast. Não precisa.</li>
+      <li>Ligação MEC/BNCC: cultura digital, produção de qualidade.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: TESTAR performance.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> adicionar toast e melhorar Lighthouse em pelo menos 5 pontos. <b>Gabarito:</b> critério de sucesso, toast funciona e nota do Lighthouse subiu comparando os dois prints.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente ignora Lighthouse porque parece técnico demais. Reenquadre como termômetro. Erro típico 2, ele foca só em performance e esquece acessibilidade. Lighthouse cobre as duas. Adaptação para dificuldade: só o toast, sem Lighthouse. Adaptação pro avançado: peça pra ele atingir 90+ em todas as métricas.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 9-10 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> consolidar interatividade e discutir os limites do que fazer no front-end sem backend, com mediação humana forte sobre chaves de API.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> cada um mostra a interatividade que criou em 20 segundos.</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise em 2 min cada aula. Foco em localStorage, eventos, APIs sem chave e performance.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> Construção rápida. Em 20 min, monte com a turma um projeto pequeno (buscador de Pokémon usando PokeAPI, ou frase do dia). Fluxo completo, LER, colar, testar, commitar.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas trocam projetos. Um pede feature nova, o outro implementa com IA. Devolve.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> discussão dirigida sobre por que chave nunca fica no front. Cada um explica na sua palavra. Feche com a frase do módulo: seu site agora conversa, mas cada palavra passa por você. Oriente semana seguinte: método.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Projeto de demonstração já com API pública funcionando</li>
+      <li>Lista de APIs públicas sem chave permitidas</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Este é o módulo que dá bug de verdade. Prepare-se pra debug ao vivo. Não conserte tudo, ensine a pescar: leia o console, entenda o erro, forme hipótese, aplique menor conserto, teste. Adolescente que aprende debug agora sofre menos depois. Se algum quer muito API paga, adie com respeito. Diga que módulo 8 pode tocar em agente com backend, mas hoje não é hora.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6 · Semana 11-12</span><h2>Fazendo direito (qualidade e método)</h2></div>
+  <p class="mod-resumo">Educador: aqui entra o núcleo duro do curso: o Protocolo de 5 Camadas do Rodrigo formalizado. Entender, Ler, Blindar, Testar, Versionar. Três aulas: ler código (a maior habilidade do criador é LER, não escrever), testar (com olhar de usuário chato), refatorar e monitorar. Sem esse módulo, vibecoding vira vibehope. Reforce em toda aula: ler código é habilidade, treinar é lento e gratificante, quem faz é quem se diferencia da massa que copia e cola. Neste módulo é hora de nomear o Protocolo, mostrar a régua de 5 camadas e transformar em ritual. Adolescente sai daqui com método aplicável fora do curso.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20 · 1h</span><h3>Ler o que a IA escreveu e achar erros (revisão de código)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente aplica um método de leitura de código em 4 passos e identifica pelo menos 2 problemas em um snippet gerado pela IA.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo</li>
+      <li>Snippet de exemplo com 3 problemas plantados (professor prepara)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> a IA hoje escreve código quase perfeito. Quase. A palavra que vale ouro é essa. Quem sabe LER pega o quase antes de rodar. Hoje você aprende.</li>
+      <li><b>3-15 min · Conceito principal:</b> apresente o Protocolo de 5 Camadas oficialmente. Entender, Ler, Blindar, Testar, Versionar. Hoje foco em LER. Método de leitura em 4 passos. Um: qual é o objetivo do bloco? (leia o topo, veja o que ele deveria fazer). Dois: os nomes fazem sentido? (variáveis, funções). Três: tem código morto? (algo que nunca roda). Quatro: onde pode dar erro? (input vazio, null, undefined). Analogia com correção de redação: você não corrige só ortografia, corrige argumento também. Segundo ponto: erros comuns da IA. Nome errado de variável, lógica invertida, loop infinito, uso de biblioteca que não instalou.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Mostre um snippet gerado por IA com os 3 problemas plantados. Aplique o método passo a passo em voz alta. Aponte cada problema.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, ler é habilidade, método de 4 passos, IA erra. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> snippet baixado. Papel do lado pra anotar.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, leia o snippet e escreva o que ele deveria fazer. Passo 2, procure nomes ruins. Anote. Passo 3, procure código morto. Anote. Passo 4, imagine input vazio, o que acontece? Anote. Passo 5, discuta com o adulto. Passo 6, aplique o método no seu próprio código de módulos anteriores.</li>
+      <li><b>20-25 min · Fechamento:</b> poste os 2 problemas que encontrou (no snippet + no seu código).</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um revisor de c&oacute;digo. Vou te colar um snippet JS. Aplique um checklist de 4 passos: (1) qual o objetivo, (2) nomes fazem sentido, (3) tem c&oacute;digo morto, (4) onde pode dar erro (input vazio, null, undefined). Aponte falhas espec&iacute;ficas.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Ler antes de rodar. Hábito.</li>
+      <li>Erro comum: adolescente pula leitura porque acha chato. Reenquadre como habilidade rara.</li>
+      <li>Ligação MEC/BNCC: pensamento computacional, análise crítica.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: LER, coração do protocolo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> aplicar o método de 4 passos e encontrar pelo menos 2 problemas. <b>Gabarito:</b> critério de sucesso, os problemas apontados são específicos (linha e razão), não genéricos. Ex.: linha 12, variável userName está usada mas foi declarada como user_Name em outro lugar. Melhor que achei algo estranho.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente pede pra IA revisar e acredita cego. IA revisando IA tem viés. Peça sempre revisão HUMANA como filtro final. Erro típico 2, ele foca só em sintaxe e ignora lógica. O método pega os dois. Adaptação para dificuldade: 2 passos em vez de 4. Adaptação pro avançado: peça pra ele criar um snippet com problema plantado pro colega achar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21 · 1h</span><h3>Testar pra ver se funciona (de verdade)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente testa uma feature seguindo o caminho feliz, o caminho triste e escreve um teste automatizado simples com IA.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> testar é agir como o usuário mais chato do mundo. Aquele que aperta tudo, digita nada, quer quebrar. Hoje você VIRA esse usuário.</li>
+      <li><b>3-15 min · Conceito principal:</b> caminho feliz é o uso normal. Caminho triste é quando dá errado (input vazio, texto onde deveria ser número, conexão caindo). Ensine a testar os dois. Analogia com professor rigoroso: ele pega pergunta que quem estudou nem imagina. Segundo ponto: teste automatizado. Um pedaço de código que verifica outro pedaço automaticamente. Vantagem: você roda 100 vezes de graça. Hoje faremos teste super simples com JS puro (ou pedir pra IA gerar). Terceiro ponto: cobertura. Não precisa testar tudo, teste o que dói se quebrar.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pegue uma função do seu projeto (adicionar item, calcular). Teste caminho feliz (item normal). Teste caminho triste (item vazio, item com aspas). Depois use o prompt de referência pra gerar teste automatizado simples.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, feliz e triste, automatizar poupa, teste o que dói. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> projeto aberto. Papel pra listar cenários.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha 1 feature do seu site. Passo 2, liste 3 caminhos felizes e 3 tristes. Passo 3, teste cada um manualmente. Anote resultado. Passo 4, use o prompt de referência pra gerar 1 teste automatizado simples. Passo 5, rode. Passo 6, commit.</li>
+      <li><b>20-25 min · Fechamento:</b> poste a lista dos 6 cenários com OK ou FALHA.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um dev que faz testes simples. Vou te colar uma fun&ccedil;&atilde;o JS. Escreva um script de teste em JS puro (sem framework) que verifica: (1) caminho feliz, (2) input vazio, (3) input com caractere especial. Se falhar, mostre no console. Sem bibliotecas.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Caminho triste é onde bug mora.</li>
+      <li>Erro comum: adolescente testa só caminho feliz. Reforce triste.</li>
+      <li>Ligação MEC/BNCC: pensamento computacional, verificação.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: TESTAR.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> testar 6 cenários (3 felizes, 3 tristes) e criar 1 teste automatizado. <b>Gabarito:</b> critério de sucesso, os cenários tristes revelam pelo menos 1 falha corrigível. Teste automatizado roda e passa.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente teste só o que sabe que funciona. Empurre pra testar o que pode dar ruim. Erro típico 2, ele acha que se passou nos 3 primeiros, tá pronto. Não. Adaptação para dificuldade: 2 cenários tristes em vez de 3. Adaptação pro avançado: peça pra ele usar biblioteca simples de teste (uvu, tape) com adulto.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22 · 1h</span><h3>Arrumar a bagunça e saber quando quebrou</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente refatora um pedaço de código sem mudar comportamento e configura observabilidade básica (log de console e mensagens de erro amigáveis).</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto do módulo</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> código bagunçado hoje vira dor de cabeça amanhã. Refatorar é arrumar sem mudar o funcionamento. Aula curta, hábito enorme.</li>
+      <li><b>3-15 min · Conceito principal:</b> refatoração é melhorar estrutura sem mudar comportamento. Extrair função repetida. Renomear variável ruim. Simplificar condicional. Analogia com quarto: arrumação não muda o quarto, muda a facilidade de achar coisa. Segundo ponto: observabilidade. Log é gravar o que aconteceu (console.log). Erro amigável é mensagem clara pro usuário. Terceiro ponto: quando quebrou em produção, você precisa saber. Sem log, é adivinhação.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Pegue código bagunçado (2 blocos parecidos). Extraia em função. Renomeie. Adicione logs em pontos-chave. Teste que o comportamento seguiu igual.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, refatorar mantém comportamento, log grava, erro amigável comunica. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> projeto aberto. Escolha 1 pedaço bagunçado.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha pedaço. Passo 2, use o prompt de referência. Passo 3, LEIA a sugestão. Passo 4, aplique. Passo 5, teste que comportamento não mudou. Passo 6, adicione 2 logs de console em eventos importantes. Passo 7, adicione mensagem de erro amigável em uma tentativa que pode falhar. Passo 8, commit descritivo.</li>
+      <li><b>20-25 min · Fechamento:</b> poste antes e depois do código refatorado.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um dev que refatora. Vou te colar um pedaço do meu JS. Sugira 2 melhorias de estrutura mantendo o comportamento igual: extrair fun&ccedil;&atilde;o repetida e renomear vari&aacute;vel ruim. Explique cada mudan&ccedil;a em 1 frase.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Refatoração não muda comportamento. Se mudou, é bug, não refatoração.</li>
+      <li>Erro comum: adolescente refatora e quebra tudo. Ensine a testar antes e depois.</li>
+      <li>Ligação MEC/BNCC: pensamento computacional, abstração.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: LER + TESTAR juntos.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> refatorar 1 pedaço, manter comportamento, adicionar 2 logs e 1 mensagem de erro amigável. <b>Gabarito:</b> critério de sucesso, comportamento preservado (mesmos testes passam), código mais claro, logs presentes.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente ambicioso refatora demais e perde comportamento. Passo pequeno. Erro típico 2, ele bota console.log em tudo e polui. 2-3 pontos-chave, não 10. Adaptação para dificuldade: só renomear, sem extrair função. Adaptação pro avançado: peça pra ele configurar Sentry versão gratuita com adulto.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 11-12 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> formalizar o Protocolo de 5 Camadas do Rodrigo (Entender, Ler, Blindar, Testar, Versionar) como ritual do curso, com mediação humana forte.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> cada um diz qual das 5 camadas achou mais difícil.</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise em 2 min cada aula. Foco em ler, testar e refatorar.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> Ritual do Protocolo. Pegue uma feature nova qualquer e faça ao vivo aplicando as 5 camadas em ordem. Turma acompanha.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas trocam projetos. Aplicam o Protocolo completo numa mudança do site do colega.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> cada dupla compartilha o momento em que uma das 5 camadas pegou um problema. Feche com o compromisso: eu aplico o Protocolo em toda mudança. Oriente semana seguinte: mostrar pro mundo.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Slide com as 5 camadas escritas grandes</li>
+      <li>Projeto de demonstração pronto</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Este é o encontro mais denso do curso. Prepare-se. Se algum adolescente resiste ao método (acha lento), mostre com números: uma feature bem testada em 40 min, feature sem método vira 3 horas de bug depois. O Protocolo é rápido no longo prazo. Convide o adulto de casa a participar dos 20 min finais, pra levar o hábito pra família toda.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7 · Semana 13-14</span><h2>Mostrar pro mundo (do jeito certo)</h2></div>
+  <p class="mod-resumo">Educador: aqui o projeto sai de portfólio pessoal e vira produto real. Quatro aulas: publicar direito (com HTTPS, checagem final), SEO básico (ser achado), landing page (convite claro), mini-lançamento. Reforce que publicar não é vaidade, é responsabilidade. Adulto continua obrigatório em toda republicação. Ensine também um valor central do Rodrigo: honestidade sem hype. Não prometer o que o projeto não entrega. Dizer o que é e o que não é. Adolescente que aprende isso agora sai anos à frente do médio adulto que faz marketing.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23 · 1h</span><h3>Colocar no ar do jeito certo (com um adulto)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente publica o projeto final com todas as camadas do Protocolo aplicadas e revisão explícita do adulto, com HTTPS e checagem de segurança.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto final em progresso</li>
+      <li>Netlify ou Vercel configurado</li>
+      <li>Responsável adulto ao lado, obrigatório pra assinatura final</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> a diferença entre um site publicado e um site publicado direito é a lista que a gente aplica antes. Hoje você faz a versão final.</li>
+      <li><b>3-15 min · Conceito principal:</b> revisão final é a soma de tudo. Aplique as 5 camadas do Protocolo. Entender (o projeto entrega o que promete?). Ler (revisou o código?). Blindar (checklist de 8 pontos rodou?). Testar (caminho feliz + triste + mobile?). Versionar (commit descritivo, tag de versão?). Segundo ponto: domínio próprio é opcional nessa fase. Netlify/Vercel dá subdomínio de graça, é suficiente. Domínio próprio custa, precisa cartão do adulto e configuração DNS. Fica pra depois. Terceiro ponto: assinatura do adulto. Cria uma ata simples (data, projeto, checklist aplicado, adulto ciente). Documenta responsabilidade.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Rode as 5 camadas no projeto da demo. Aplique tudo. Republique. Comente ao vivo cada passo.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, 5 camadas na revisão final, subdomínio Netlify basta, ata do adulto. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> projeto aberto, adulto ao lado.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, rode as 5 camadas do Protocolo. Marque cada. Passo 2, corrija pendências. Passo 3, teste caminho triste no mobile. Passo 4, adulto lê o resumo e assina a ata (2 linhas em papel). Passo 5, republique. Passo 6, teste URL no celular. Passo 7, commit de fechamento com tag v1.</li>
+      <li><b>20-25 min · Fechamento:</b> poste link do projeto no ar e print da ata.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um revisor final. Vou te colar meu index.html completo. Rode as 5 camadas: (1) o projeto entrega o objetivo, (2) c&oacute;digo est&aacute; leg&iacute;vel, (3) sem segredo/dado pessoal, (4) testes felizes e tristes cobertos, (5) commit descritivo. Aponte pend&ecirc;ncias.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Ata do adulto é sério, não é frescura. Documenta responsabilidade.</li>
+      <li>Erro comum: adolescente republica sem passar pelo adulto. Regra: não passa, não sobe.</li>
+      <li>Ligação MEC/BNCC: responsabilidade digital.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: aplicação completa.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> aplicar as 5 camadas, republicar, coletar assinatura. <b>Gabarito:</b> critério de sucesso, projeto no ar com HTTPS, ata assinada, commit de fechamento presente.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente subestima passo do adulto. Reforce sério. Erro típico 2, ele quer subir mesmo com pendência. Segure. Adaptação para família com pouco tempo: ata é 2 linhas, adulto vê 10 minutos. Adaptação pro avançado: peça pra ele configurar domínio próprio se o adulto topar.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24 · 1h</span><h3>Fazer as pessoas acharem (SEO básico)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente configura as meta tags essenciais (title, description, og), entende como o Google indexa e escreve título e descrição atrativos.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto final</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> ser criado é uma coisa, ser achado é outra. SEO é a arte de ser achado. Hoje o básico que resolve 80%.</li>
+      <li><b>3-15 min · Conceito principal:</b> Google lê seu site como robô. Ele olha 3 coisas primeiro: title (aparece na aba), description (aparece no resultado da busca), h1 (título principal). Meta tags Open Graph fazem seu link ficar bonito quando compartilhado no WhatsApp. Analogia com capa de livro: título e descrição vendem antes do conteúdo. Segundo ponto: escrever bem. Título com verbo forte, descrição em 1 frase útil. Sem enganar. Nunca prometa o que não tem. Google penaliza engano. Terceiro ponto: URL amigável, texto alt em imagem, estrutura de headings (h1, h2, h3).</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Peça pra IA gerar meta tags pro projeto. Cole. Teste no https://metatags.io. Ajuste. Compare antes e depois.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, title/description/og, honestidade, estrutura de headings. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> projeto aberto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, use o prompt de referência. Passo 2, cole meta tags no head. Passo 3, teste no metatags.io. Passo 4, ajuste texto pra ficar honesto e atrativo. Passo 5, revise headings (só 1 h1). Passo 6, adicione alt em cada imagem. Passo 7, republique. Passo 8, commit.</li>
+      <li><b>20-25 min · Fechamento:</b> poste print do metatags.io mostrando seu link bonito.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um especialista em SEO b&aacute;sico. Meu projeto &eacute; [descreva em 1 frase]. Gere: (1) title de at&eacute; 60 caracteres, (2) meta description at&eacute; 155 caracteres, (3) meta tags Open Graph (og:title, og:description, og:image), (4) verifique se minha estrutura de headings est&aacute; correta (s&oacute; um h1). Sem hype, honesto.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Honestidade acima de tudo. Sem clickbait.</li>
+      <li>Erro comum: adolescente usa mesmo texto do h1 no title. Diversifique.</li>
+      <li>Ligação MEC/BNCC: cidadania digital, comunicação honesta.</li>
+      <li>Ligação com skill Pena/Vitrine do Rodrigo: escrever sem hype.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> configurar meta tags e postar print do preview no metatags.io. <b>Gabarito:</b> critério de sucesso, preview aparece com imagem, título e descrição corretos. Texto honesto (não promete o que não tem).</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente inventa promessa forte pra atrair. Explique risco (Google penaliza, usuário decepciona). Erro típico 2, ele bota 5 h1. Só 1. Adaptação para dificuldade: comece com só title e description. Adaptação pro avançado: peça pra ele adicionar Schema.org.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25 · 1h</span><h3>Uma página que convida (landing page)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente cria ou refina uma landing page que explica o projeto em segundos, com hero, CTA claro e três blocos de apoio.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto final</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> a pessoa gasta 3 segundos decidindo se fica ou sai. Landing page é o convite. Hoje você aprende a fazer.</li>
+      <li><b>3-15 min · Conceito principal:</b> anatomia. Hero: título forte + subtítulo + botão CTA. A dobra é o que aparece antes de rolar, precisa entregar o essencial. Blocos de apoio: problema resolvido, como funciona, quem já usou (se houver). Um CTA claro. Não confundir a pessoa com 5 botões. Analogia com carro anunciado: foto boa, uma frase, um botão comprar. Terceiro ponto: variações de headline. Peça pra IA 5 opções, escolha a que promete verdade.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Refaça a landing usando o prompt de referência. Cole. Compare antes e depois. Aponte o hero.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, hero, 1 CTA, blocos de apoio. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> projeto aberto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva no papel o problema que o projeto resolve. Passo 2, use o prompt de referência com essa frase. Passo 3, cole HTML. Passo 4, personalize as 5 headlines pedidas. Passo 5, escolha a melhor. Passo 6, teste no mobile. Passo 7, republique. Passo 8, commit.</li>
+      <li><b>20-25 min · Fechamento:</b> poste screenshot da dobra e a headline escolhida.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um copywriter de landing page. Meu projeto &eacute; [descreva]. Crie o HTML de uma landing com: (1) hero com t&iacute;tulo, subt&iacute;tulo e um bot&atilde;o CTA, (2) 3 blocos de apoio (o problema, como funciona, pra quem &eacute;), (3) sugira 5 headlines pra eu escolher. Sem hype, tom honesto.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>1 CTA. Sem exceção nessa fase.</li>
+      <li>Erro comum: adolescente escreve tudo o que gostaria de dizer. Corte pra 3 blocos.</li>
+      <li>Ligação MEC/BNCC: comunicação, produção honesta.</li>
+      <li>Ligação com skill Vitrine do Rodrigo: fuga do genérico.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> criar landing com hero, 1 CTA e 3 blocos. Postar screenshot. <b>Gabarito:</b> critério de sucesso, dobra tem título forte + botão. Máximo 1 CTA visível na dobra.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente coloca 5 CTAs (assine, compre, cadastre, siga, compartilhe). Confunde. Um só. Erro típico 2, ele copia estrutura genérica. Personalize com o projeto dele. Adaptação para dificuldade: só o hero. Adaptação pro avançado: peça formulário funcional com validação.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26 · 1h</span><h3>Mini-lançamento: contar pros amigos</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente planeja um mini-lançamento para amigos, família ou colegas com objetivo mensurável, mensagem honesta e coleta de feedback.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto no ar</li>
+      <li>Formulário simples de feedback (Google Forms, com adulto)</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> projeto que ninguém usa é hobby. Hoje você aprende a mostrar pra pessoas reais com respeito e método.</li>
+      <li><b>3-15 min · Conceito principal:</b> escolha um público pequeno primeiro (família, turma da escola, colegas de jogo). Escreva a mensagem honesta: o que é, o que espera, o que pede. Sem forçar. Peça 3 tipos de feedback: o que funcionou, o que confundiu, o que sugere. Analogia com peça de teatro: você não estreia na Broadway. Ensaia em casa. Segundo ponto: métrica simples. Quantas pessoas abriram? Quantas fizeram a ação principal? Não precisa de analytics complexo, um contador simples resolve. Terceiro ponto: gestão de feedback. Nem toda sugestão vira mudança. Escolha 3 que fazem sentido, ignore o resto. Aprender a filtrar é parte.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Escreva a mensagem de lançamento. Configure Google Forms. Discuta o público.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, público pequeno primeiro, mensagem honesta, feedback filtrado. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> Google Forms aberto com o adulto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha público (5 a 10 pessoas). Passo 2, escreva mensagem em 3 linhas usando o prompt de referência. Passo 3, crie formulário de feedback com 3 perguntas. Passo 4, adulto envia mensagem (rede do adulto, não do adolescente). Passo 5, aguarde 2 dias, colete respostas. Passo 6, escolha 3 sugestões pra aplicar.</li>
+      <li><b>20-25 min · Fechamento:</b> poste a mensagem enviada e as 3 sugestões escolhidas.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um redator honesto. Escreve uma mensagem curta (3 linhas) pra convidar 5 amigos ou familiares a testarem meu projeto [descreva] e me darem 3 tipos de feedback: o que funcionou, o que confundiu, o que sugerem. Sem hype, tom leve.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Público pequeno primeiro. Cresce depois.</li>
+      <li>Erro comum: adolescente quer viralizar no TikTok. Segure. Aprenda a receber feedback antes.</li>
+      <li>Ligação MEC/BNCC: cidadania digital, ética.</li>
+      <li>Ligação com skill Decolagem do Rodrigo: método de go-to-market suave.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> planejar mini-lançamento, coletar feedback, escolher 3 sugestões. <b>Gabarito:</b> critério de sucesso, mensagem enviada honesta, formulário criado, 3 sugestões selecionadas com justificativa.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente quer enviar a mensagem por conta própria em rede pública. Regra: adulto envia. Rede é dele. Erro típico 2, ele aceita todo feedback e vira serva de opinião. Ensine a filtrar. Adaptação para timidez: envia só pra família. Adaptação pro avançado: peça pra ele fazer entrevista rápida ao vivo com 2 usuários.</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 13-14 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> preparar cada adolescente para o mini-lançamento com mediação humana e ensaio das mensagens, revisar honestidade da comunicação e filtrar feedbacks reais recebidos.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> cada um mostra o link do projeto final.</li>
+      <li><b>5-15 min · Integração das aulas gravadas:</b> revise em 2 min cada aula. Foco em deploy final, SEO honesto, landing e lançamento.</li>
+      <li><b>15-35 min · Demonstração ao vivo:</b> Simulação de lançamento. Um voluntário apresenta o projeto em 2 minutos como se fosse pro público. Turma dá feedback (funcionou, confundiu, sugere). Repita com 2.</li>
+      <li><b>35-50 min · Breakout rooms:</b> duplas trocam as mensagens de lançamento. Um lê a do outro e devolve: honesto ou tem hype? Se tem, sugere versão sem.</li>
+      <li><b>50-60 min · Roda de conversa + fechamento:</b> feche com a frase do módulo: honestidade vende, hype cansa. Oriente semana seguinte: nível avançado.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms</li>
+      <li>Slides com exemplos de comunicação honesta vs hype</li>
+      <li>Formulário de feedback modelo</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Adolescente 12-14 tem tendência a copiar linguagem de influenciador (todos os superlativos, o melhor, incrível, revolucionário). Reenquadre com cuidado. Não é bloqueio de criatividade, é ensinar a diferença entre entusiasmo e enganação. Convide o adulto pra ler as mensagens antes de qualquer envio.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8 · Semana 15</span><h2>Criador avançado (o próximo nível)</h2></div>
+  <p class="mod-resumo">Educador: módulo final. Quatro aulas condensadas na última semana. Agente simples, skill própria, evolução sem quebrar e apresentação final. A meta é abrir horizonte, não fechar tudo. O adolescente termina o curso sabendo que existe mais, e como continuar aprendendo. Reforce: agente e skill são só o começo. Curso avançado (segunda temporada) aprofunda com backend, banco real e IA integrada com adulto responsável. Não deixe expectativa fora do lugar. Apresentação final é festa, mas com rigor. Todo mundo apresenta com projeto no ar. Chame famílias.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27 · 1h</span><h3>Ajudantes automáticos (agentes simples)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente entende o que é agente de IA, cria um ajudante simples para o próprio projeto (sistema de instruções fixas) e sabe manter o humano no controle.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Conta institucional de IA (Claude, ChatGPT, Gemini)</li>
+      <li>Projeto final</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> agente é IA com missão fixa. Ele sabe qual seu papel e faz repetidamente. Hoje você cria um do seu jeito.</li>
+      <li><b>3-15 min · Conceito principal:</b> agente simples é IA com um prompt de sistema (instrução fixa). Ex.: você é um explicador de curiosidades de dinossauros pra criança de 8 anos. Toda conversa começa com essa instrução. Vantagem: o agente responde sempre no mesmo tom. Analogia com atendente treinado: ele sabe o papel, o que pode e o que não pode dizer. Segundo ponto: humano decide sempre. Agente executa dentro dos trilhos que humano definiu. Nunca solto. Terceiro ponto: onde criar. ChatGPT tem GPTs (grátis com conta). Claude tem Projects. Gemini tem Gems. Todos permitem prompt de sistema. Nada de deploy hoje, só configuração.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Crie um GPT/Project/Gem simples. Prompt de sistema fixo. Teste 3 conversas. Mostre consistência.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, agente = IA com papel fixo, humano decide o papel, teste antes de compartilhar. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> adulto ao lado, plataforma de IA aberta.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha o papel do seu agente. Passo 2, use o prompt de referência pra desenhar o system prompt. Passo 3, cole na plataforma. Passo 4, teste 3 conversas diferentes. Passo 5, ajuste onde a IA saiu do papel. Passo 6, mostre pro adulto pra revisar.</li>
+      <li><b>20-25 min · Fechamento:</b> poste o system prompt do seu agente e 1 exemplo de conversa.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um consultor de design de agentes. Vou te descrever o agente que quero criar. Me ajude a escrever o system prompt em at&eacute; 200 palavras contendo: (1) papel, (2) p&uacute;blico, (3) tom, (4) o que ele pode e n&atilde;o pode fazer, (5) exemplo de resposta.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Agente = papel + regras. Humano define ambos.</li>
+      <li>Erro comum: adolescente cria agente muito aberto. Reforce restrições.</li>
+      <li>Ligação MEC/BNCC: centralidade humana.</li>
+      <li>Ligação com skill Forja do Rodrigo (P.R.O.M.P.T.E.R.).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> criar agente com system prompt claro e testar 3 conversas. <b>Gabarito:</b> critério de sucesso, agente mantém papel nas 3. Se saiu do papel em uma, apontar por que e ajustar.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente quer agente que faz tarefa fora do escopo (ex.: agente terapeuta). Bloqueie. Agente não substitui profissional. Erro típico 2, ele compartilha o agente sem revisão. Segure. Adaptação para dificuldade: use template de agente pronto. Adaptação pro avançado: peça pra ele adicionar few-shot examples.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28 · 1h</span><h3>Criar suas próprias habilidades (skills simples)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente entende o que é skill, escreve sua primeira skill em Markdown e a testa em um projeto real.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Editor de texto (VS Code)</li>
+      <li>Conta institucional de IA</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> skill é como se você ensinasse a IA a fazer uma coisa do jeito que você faria. Uma vez escrita, ela usa sempre. Hoje você escreve a primeira.</li>
+      <li><b>3-15 min · Conceito principal:</b> skill é um arquivo Markdown com instrução clara. Nome, descrição, passo a passo. A IA lê e aplica. Estrutura simples. Nome da skill. Quando usar. Passos. Exemplo. Analogia com receita: você escreve uma vez, executa sempre. Segundo ponto: skill boa é focada. Uma skill faz uma coisa. Skill genérica não funciona. Terceiro ponto: skill é da comunidade. O Rodrigo tem 25 delas (Forja, Bastião, Atelier, Lupa, etc.). Você aprende hoje a fazer a sua primeira.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Escreva uma skill simples (ex.: revisor de textos escolares). Use o prompt de referência. Cole na IA como contexto. Teste.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, skill = instrução em Markdown, focada, testável. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> VS Code aberto, IA aberta.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escolha uma tarefa repetitiva que você faz (ex.: escrever legenda pra foto, gerar título de trabalho). Passo 2, use o prompt de referência. Passo 3, cole em arquivo .md. Passo 4, teste colando na IA e pedindo pra aplicar. Passo 5, ajuste se falhar. Passo 6, salve num repositório Git.</li>
+      <li><b>20-25 min · Fechamento:</b> poste sua skill em Markdown e 1 exemplo de uso.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um designer de skills pra IA. Vou te descrever uma tarefa repetitiva. Escreva uma skill em Markdown com esta estrutura: # Nome da skill, ## Quando usar, ## Passos, ## Exemplo. Foco &eacute;: uma skill, uma tarefa. Sem generaliza&ccedil;&otilde;es.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Skill boa é focada. Genérica não funciona.</li>
+      <li>Erro comum: adolescente escreve skill enorme cobrindo 10 casos. Reduza pra 1.</li>
+      <li>Ligação MEC/BNCC: pensamento computacional, abstração, automação.</li>
+      <li>Ligação com suíte Engenho do Rodrigo (25 skills próprias).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> criar 1 skill focada e testar em caso real. <b>Gabarito:</b> critério de sucesso, skill produz resultado consistente em 3 chamadas. Se varia muito, precisa mais foco.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente vaga demais no que a skill faz. Peça a frase quando usar em uma linha. Erro típico 2, ele quer criar 5 skills na aula. Uma boa vale 5 medianas. Adaptação para dificuldade: comece com skill de 3 passos. Adaptação pro avançado: peça pra ele publicar num repositório público (com adulto revisando).</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29 · 1h</span><h3>Mudar e melhorar sem quebrar</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente sabe evoluir o projeto usando branch, aplicar mudança em parte, testar em separado e voltar rápido se quebrar.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto final</li>
+      <li>Responsável adulto por perto</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> quebrar produção é vergonha profissional. Hoje você aprende a mudar sem risco. Branch é a chave.</li>
+      <li><b>3-15 min · Conceito principal:</b> branch é uma linha de desenvolvimento paralela. Você cria, mexe, testa. Quando fica bom, mescla no principal. Se quebra, joga fora sem prejuízo. Analogia com rascunho: você escreve num caderno separado, só passa a limpo quando termina. Comandos: git checkout -b nome-feature (cria e vai). git checkout main (volta). git merge nome-feature (mescla). Segundo ponto: rollback. Se quebrou em produção, volte pro commit anterior. git revert é o jeito seguro. Terceiro ponto: crescer aos poucos. Uma mudança por commit. Uma feature por branch.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Crie branch nova. Mude algo. Comite. Volte pra main. Mescle. Depois simule quebra e faça revert.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, branch = rascunho, rollback é normal, mudanças pequenas. Gancho pro vídeo 2.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> projeto aberto no VS Code, adulto ao lado.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, git checkout -b feature-nova. Passo 2, adicione uma feature pequena com IA. Passo 3, teste. Passo 4, commit. Passo 5, git checkout main. Passo 6, git merge feature-nova. Passo 7, republique. Passo 8, simule quebra (apague uma tag). Passo 9, git revert do último commit. Republique. Verifique que voltou.</li>
+      <li><b>20-25 min · Fechamento:</b> poste o histórico Git mostrando branch, merge e revert.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um professor de Git. Me explique em 4 frases: (1) o que &eacute; branch, (2) por que criar branch antes de mexer, (3) como mesclar de volta, (4) como reverter se quebrar. Depois me d&ecirc; os comandos exatos pra cada passo.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>Branch é hábito de programador profissional. Comece cedo.</li>
+      <li>Erro comum: adolescente mexe direto na main. Perigoso. Ensine branch por default.</li>
+      <li>Ligação MEC/BNCC: pensamento computacional, versionamento.</li>
+      <li>Ligação com o Protocolo de 5 Camadas: VERSIONAR avançado.</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> fluxo completo de branch, merge e revert. <b>Gabarito:</b> critério de sucesso, git log mostra branch, merge e revert em sequência clara.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente esquece de voltar pra main antes do merge. Ensine a rotina check-in de branch. Erro típico 2, ele usa git reset e perde histórico. Ensine que revert é preferível. Adaptação para dificuldade: só branch e merge, sem revert. Adaptação pro avançado: peça pra ele configurar pull request no GitHub.</p></div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30 · 1h</span><h3>Projeto final: meu programa no ar (apresentação)</h3></div>
+    <p class="objetivo"><b>Objetivo de aprendizagem:</b> ao fim da aula, o adolescente apresenta o projeto final ao vivo em 5 minutos (problema, solução, demo, aprendizados), com o site funcionando e revisão de segurança validada.</p>
+    <div class="bloco"><h4>Materiais necessários</h4><ul>
+      <li>Computador com câmera, microfone e boa conexão</li>
+      <li>Projeto final no ar com HTTPS e revisão do adulto</li>
+      <li>Slide de apresentação simples (5 slides)</li>
+      <li>Responsável adulto assistindo</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 1 · Roteiro (25 min · Explicação)</h4><ul>
+      <li><b>0-3 min · Abertura:</b> hoje você fecha o curso. Apresenta o projeto pros colegas, professor e família. Vale a pena caprichar.</li>
+      <li><b>3-15 min · Conceito principal:</b> estrutura da apresentação em 5 minutos. Um minuto: problema (por que existe). Um minuto: solução (o que faz). Dois minutos: demo ao vivo (mostrar funcionando). Um minuto: o que aprendi. Analogia com pitch de investidor: curto, claro, honesto. Segundo ponto: preparação. Ensaie 2 vezes cronometrando. Site precisa estar no ar. Backup: um vídeo de 30 segundos gravado caso a internet caia. Terceiro ponto: humildade. Fale o que ainda quer melhorar. Isso mostra maturidade.</li>
+      <li><b>15-22 min · Demonstração:</b> tela compartilhada. Mostre uma apresentação exemplo do professor com o projeto de demo.</li>
+      <li><b>22-25 min · Amarração:</b> 3 pontos, 5 min estruturados, ensaio antes, honestidade. Gancho pro vídeo 2, agora você prepara a sua.</li>
+    </ul></div>
+    <div class="bloco"><h4>Vídeo 2 · Roteiro (25 min · Prática guiada)</h4><ul>
+      <li><b>0-3 min · Setup:</b> slides abertos, projeto aberto no navegador, cronômetro pronto.</li>
+      <li><b>3-20 min · Passo a passo:</b> passo 1, escreva o problema em 1 frase. Passo 2, escreva a solução em 1 frase. Passo 3, prepare demo de 2 minutos com fluxo claro. Passo 4, liste 3 aprendizados. Passo 5, ensaie cronometrado. Passo 6, ajuste onde estourou tempo. Passo 7, grave vídeo de backup de 30 segundos com fallback da demo.</li>
+      <li><b>20-25 min · Fechamento:</b> poste os 5 slides e o link do projeto no ar.</li>
+    </ul></div>
+    <div class="prompt"><span class="ptag">Prompt de referência para a demonstração</span><pre>Voc&ecirc; &eacute; um coach de apresenta&ccedil;&atilde;o. Meu projeto &eacute; [descreva]. Me ajude a escrever um roteiro de 5 minutos com: (1) problema em 1 frase, (2) solu&ccedil;&atilde;o em 1 frase, (3) roteiro da demo em 2 minutos, (4) 3 aprendizados honestos. Tom simples, sem hype.</pre></div>
+    <div class="bloco"><h4>Pontos-chave para explicar com clareza</h4><ul>
+      <li>5 minutos é curto e é o suficiente se ensaiado.</li>
+      <li>Erro comum: adolescente lê slide inteiro. Ensine a olhar pra câmera.</li>
+      <li>Ligação MEC/BNCC: comunicação, apresentação de projeto.</li>
+      <li>Ligação com skill Palco do Rodrigo (apresentações honestas).</li>
+    </ul></div>
+    <div class="bloco"><h4>Exercício da aula + gabarito</h4><p><b>Enunciado:</b> preparar apresentação de 5 min com projeto no ar e slides. <b>Gabarito:</b> critério de sucesso, tempo respeitado, demo funciona, 3 aprendizados dizíveis.</p></div>
+    <div class="pratica"><h4>Erros comuns, mediação e adaptações</h4><p>Erro típico 1, adolescente enche de texto no slide. Regra: máximo 5 palavras por slide. Erro típico 2, ele apresenta sem ensaiar e estoura. Ensaio obrigatório. Adaptação para timidez: pré-grave o vídeo em vez de ao vivo. Adaptação pro avançado: peça uma segunda apresentação técnica pra família (10 min).</p></div>
+  </article>
+
+  <article class="aula" style="background:#F1E5CF">
+    <div class="aula-head"><span class="aula-num">Encontro ao vivo</span><h3>Semana 15 · Pauta (60 min)</h3></div>
+    <p class="objetivo"><b>Objetivo:</b> celebrar o fechamento do curso com apresentações finais dos adolescentes, mediação humana forte, presença de responsáveis e devolutiva individual do professor.</p>
+    <div class="bloco"><h4>Roteiro minutado (60 min)</h4><ul>
+      <li><b>0-5 min · Boas-vindas e presença:</b> abertura solene. Câmeras ligadas. Responsáveis convidados. Explique o formato.</li>
+      <li><b>5-45 min · Apresentações:</b> 5 min de apresentação por adolescente + 2 min de perguntas. Ajuste turmas grandes dividindo em 2 encontros. Aplauda cada projeto.</li>
+      <li><b>45-55 min · Devolutiva coletiva:</b> destaque 3 aprendizados que apareceram em várias apresentações. Reforce a cultura do Protocolo, do adulto, da honestidade.</li>
+      <li><b>55-60 min · Fechamento:</b> palavra de agradecimento aos responsáveis. Convite pro próximo nível (curso avançado). Certificado digital enviado depois. Fim.</li>
+    </ul></div>
+    <div class="bloco"><h4>Recursos necessários</h4><ul>
+      <li>Plataforma de webconferência com breakout rooms (se dividir turma)</li>
+      <li>Cronômetro visível pra todos</li>
+      <li>Slide com nome de cada adolescente e link do projeto</li>
+      <li>Certificado digital pronto para envio pós-encontro</li>
+    </ul></div>
+    <div class="pratica"><h4>Dicas de condução online</h4><p>Encontro final tem energia diferente. Prepare-se emocionalmente pra reconhecer cada adolescente. Se algum não conseguir apresentar ao vivo por timidez extrema, aceite vídeo gravado enviado antes. Grave o encontro (com autorização por escrito dos responsáveis) e envie a cada família. Deixe o palco pros adolescentes. Você é mestre de cerimônia, não protagonista.</p></div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Base pedagógica</span><h2>Alinhamento MEC + BNCC Computação</h2></div>
+  <p class="mod-resumo">Esta apostila do professor foi construída seguindo o Documento Orientador do MEC (abril de 2026) e a BNCC Computação (Resolução CNE/CEB nº 1/2022). Os quatro princípios (centralidade humana, salvaguardas de aprendizagem, proteção de dados e equidade) e os três eixos (Pensamento Computacional, Mundo Digital e Cultura Digital) permeiam as 30 aulas. O Protocolo de 5 Camadas do Rodrigo (Entender, Ler, Blindar, Testar, Versionar) é o método operacional que traduz esses princípios em prática segura de vibecoding.</p>
+
+  <div class="aula">
+    <div class="aula-head"><span class="aula-num">Documento</span><h3>Ver alinhamento completo</h3></div>
+    <p class="objetivo"><b>Aplica-se aos 4 cursos.</b> Documento oficial que sustenta a proposta pedagógica.</p>
+    <div class="bloco">
+      <p>Abra em <a href="/cursos/curso-alinhamento-mec-bncc.html">Alinhamento MEC + BNCC Computação</a> para ver os princípios, eixos, papel do professor (antes, durante e depois de cada aula) e os 8 compromissos escritos.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-book Acompanhante · Vibecoding do Zero ao Avançado · 12-14 · Rodrigo Munhoz Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF7E8;--page:#FFFFFF;--card:#FFFDF7;
+  --ink:#1F1D1B;--ink-soft:#4A443C;--muted:#7C7365;
+  --marca:#E8A33D;--marca-deep:#B5762A;--marca-soft:#FDECC7;
+  --azul:#3B82F6;--azul-soft:#DBEAFE;
+  --verde:#10B981;--verde-soft:#D1FAE5;
+  --roxo:#A855F7;--roxo-soft:#EDE2FE;
+  --laranja:#F97316;--laranja-soft:#FFEDD5;
+  --amarelo:#EAB308;--amarelo-soft:#FEF3C7;
+  --rosa:#EC4899;--rosa-soft:#FCE7F3;
+  --line:#EFE5D2;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 80px}
+
+.capa{
+  background:
+    radial-gradient(60% 50% at 15% 0%, rgba(168,85,247,.28), transparent 60%),
+    radial-gradient(50% 50% at 85% 20%, rgba(59,130,246,.28), transparent 60%),
+    radial-gradient(70% 60% at 50% 100%, rgba(232,163,61,.22), transparent 60%),
+    linear-gradient(180deg,#1D1830,#2A1F45);
+  color:#FFF;padding:70px 22px 60px;position:relative;overflow:hidden;
+}
+.capa .inner{max-width:920px;margin:0 auto;position:relative}
+.capa .kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FDD37A;font-weight:700}
+.capa h1{font-family:var(--serif);font-size:clamp(34px,6.5vw,58px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:14px 0 14px}
+.capa .sub{font-family:var(--sans);font-size:19px;font-weight:500;color:#E9DCFB;max-width:52ch;line-height:1.45}
+.capa .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.capa .meta span{
+  border-radius:999px;padding:7px 15px;font-size:12.5px;font-weight:600;
+  background:rgba(255,255,255,.12);color:#FFF;border:1px solid rgba(255,255,255,.18);
+}
+.capa .meta span:nth-child(1){background:linear-gradient(135deg,#F97316,#EAB308);border-color:transparent;color:#1F1D1B}
+.capa .meta span:nth-child(2){background:linear-gradient(135deg,#3B82F6,#A855F7);border-color:transparent}
+.capa .meta span:nth-child(3){background:linear-gradient(135deg,#10B981,#3B82F6);border-color:transparent}
+
+.modulo{margin:0 0 14px}
+.mod-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:38px 0 12px;margin-bottom:6px;border-bottom:3px dashed var(--line)}
+.mod-num{
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#FFF;background:linear-gradient(135deg,var(--marca),var(--laranja));
+  border-radius:999px;padding:6px 14px;box-shadow:0 4px 12px rgba(232,163,61,.35);
+}
+.mod-head h2{font-family:var(--serif);font-size:28px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.mod-resumo{color:var(--ink-soft);font-size:15px;margin-bottom:16px;background:#FFF;border-radius:14px;padding:14px 18px;border:1px solid var(--line)}
+
+.aula{
+  border:1.5px solid var(--line);border-radius:22px;background:var(--card);padding:24px 26px;margin:18px 0;
+  box-shadow:0 6px 24px rgba(31,29,27,.06);position:relative;overflow:hidden;
+  page-break-inside:avoid;break-inside:avoid;
+}
+.aula::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--marca),var(--rosa),var(--roxo),var(--azul),var(--verde),var(--amarelo));
+}
+.aula-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
+.aula-num{
+  font-family:var(--mono);font-size:12.5px;font-weight:800;color:#FFF;
+  background:linear-gradient(135deg,var(--roxo),var(--rosa));
+  border-radius:10px;padding:6px 12px;white-space:nowrap;box-shadow:0 3px 8px rgba(168,85,247,.35);
+}
+.aula-head h3{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--ink);line-height:1.25;letter-spacing:-.01em}
+
+.objetivo{
+  margin:16px 0;font-size:15px;color:var(--ink-soft);
+  background:linear-gradient(90deg,var(--marca-soft),transparent);
+  border-left:5px solid var(--marca);border-radius:0 12px 12px 0;padding:12px 16px;
+}
+.objetivo b{color:var(--ink);font-weight:700}
+
+.bloco{margin:14px 0;border-radius:14px;padding:14px 16px;border:1px solid transparent}
+.bloco h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.bloco ul{padding-left:22px;margin-top:4px}
+.bloco li{margin:5px 0;color:var(--ink-soft);font-size:15px}
+.bloco li::marker{font-size:1.1em}
+.bloco>p{color:var(--ink-soft);font-size:15px;margin:6px 0}
+.bloco>p:first-of-type{margin-top:0}
+.bloco a{color:var(--marca-deep);border-bottom:2px solid var(--marca-soft);text-decoration:none;font-weight:600}
+
+.bloco.b-conteudo{background:var(--azul-soft);border-color:#BFDBFE}
+.bloco.b-conteudo h4{color:#1D4ED8}
+.bloco.b-conteudo li::marker{color:var(--azul)}
+
+.bloco.b-exemplo{background:var(--verde-soft);border-color:#A7F3D0}
+.bloco.b-exemplo h4{color:#047857}
+.bloco.b-exemplo li::marker{color:var(--verde)}
+
+.bloco.b-pratica{background:var(--roxo-soft);border-color:#DDD6FE}
+.bloco.b-pratica h4{color:#6D28D9}
+.bloco.b-pratica li::marker{color:var(--roxo)}
+
+.bloco.b-desafio{background:var(--laranja-soft);border-color:#FED7AA}
+.bloco.b-desafio h4{color:#C2410C}
+.bloco.b-desafio li::marker{color:var(--laranja)}
+
+.bloco.b-conversa{background:var(--amarelo-soft);border-color:#FDE68A}
+.bloco.b-conversa h4{color:#A16207}
+.bloco.b-conversa li::marker{color:var(--amarelo)}
+
+.prompt{margin:16px 0;border-radius:14px;overflow:hidden;background:#0F172A;box-shadow:0 6px 18px rgba(15,23,42,.2)}
+.ptag{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#FDD37A;background:#1E1B4B;padding:8px 14px}
+.ptag::before{content:'⚡';font-size:14px}
+.prompt pre{font-family:var(--mono);font-size:13px;line-height:1.65;color:#E9DCFB;padding:15px 16px;white-space:pre-wrap;word-wrap:break-word}
+
+.skills{background:linear-gradient(135deg,var(--marca-soft),#FFF7E8);border-radius:14px;padding:14px 18px;border:1px solid var(--line);margin-top:14px}
+.skills h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--marca-deep);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.skills h4::before{content:'✅';font-size:15px}
+.skills p{font-size:14.5px;color:var(--ink-soft)}
+.skills ul{padding-left:22px;margin-top:4px}
+.skills li{font-size:14.5px;color:var(--ink-soft);margin:3px 0}
+
+.pratica{background:var(--rosa-soft);border:1.5px dashed #F9A8D4;border-radius:14px;padding:14px 18px;margin-top:14px}
+.pratica h4{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#BE185D;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.pratica h4::before{content:'🤔';font-size:15px}
+.pratica p{font-size:14.5px;color:var(--ink-soft)}
+
+@media(max-width:680px){
+  .capa{padding:48px 22px 40px}
+  .capa h1{font-size:34px}
+  .aula{padding:20px}
+  .mod-head h2{font-size:23px}
+}
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:#FFF;font-size:10.5pt}
+  .aula{page-break-inside:avoid;box-shadow:none;border-color:#DDD}
+  .mod-head{page-break-after:avoid}
+  .capa{page-break-after:always}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="capa"><div class="inner">
+<div class="kick">E-book acompanhante · Curso EAD (online) · Crianças/Adolescentes (12 a 14 anos)</div>
+<h1>Vibecoding do Zero ao Avançado · 12-14</h1>
+<p class="sub">Um livro pra você levar pra qualquer lugar. Uma versão consumível do curso, pra ler na cama, no ônibus, no fim de semana. Menos "aula", mais "livro do criador".</p>
+<div class="meta"><span>30 aulas</span><span>Guia editorial</span><span>12 a 14 anos</span><span>E-book Acompanhante</span></div>
+</div></div>
+<div class="wrap">
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Antes de começar</span><h2>Como usar este livro</h2></div>
+  <p class="mod-resumo">Este livro não substitui a aula. Ele fica com você fora dela. Leia um capítulo por dia, ou dois no fim de semana. Sem pressa. É pra grudar na cabeça, não pra riscar checklist.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Leia primeiro</span><h3>Três verdades que você vai ouvir muito</h3></div>
+    <p class="objetivo"><b>Se você guardar só essas três, o livro já valeu a pena.</b></p>
+
+    <div class="bloco b-conteudo"><h4>📖 Verdade 1: A IA é ferramenta. Você é o chefe.</h4>
+      <p>A IA é tipo o comando "/give" no Minecraft criativo: ela entrega tudo que você pedir, no formato que você pediu. Se você pedir errado, ela entrega errado. Se você pedir sem pensar, ela entrega uma tranqueira brilhante que parece pronta e não é. O criador de verdade não é quem digita mais rápido. É quem pensa melhor no que quer.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Verdade 2: Segredo nunca vai no código.</h4>
+      <p>Senha, chave de API, token do Discord, nada disso pode estar dentro do código que vai pro ar. É a mesma regra do "não fala a senha do Wi-Fi em live". Se vazou, vazou. E pra colocar qualquer coisa no ar de verdade (deploy), tem que ter um adulto por perto. Não é frescura. É como não pilotar carro sem carteira.</p>
+    </div>
+
+    <div class="bloco b-pratica"><h4>📖 Verdade 3: LEIA antes de rodar. TESTE antes de mostrar.</h4>
+      <p>A IA escreve rápido. Você não vai correr atrás dela. Vai ler o que ela escreveu, entender cada bloco e só então apertar o botão de rodar. E antes de mostrar pra mãe, pro amigo, pro professor: testa você primeiro. Clica em tudo. Digita coisa errada de propósito. Se quebrar na sua mão, ninguém vê.</p>
+    </div>
+
+    <div class="skills"><h4>O método por trás disso</h4>
+      <p>Ao longo do livro você vai ver o <b>Protocolo de 5 Camadas</b> aparecendo: Entender, Ler, Blindar, Testar, Versionar. É o passo a passo que separa o vibecoder de verdade do "só cola e reza". Anota aí, porque vai voltar.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual dessas três verdades você acha que vai ser mais difícil de seguir na prática? Por quê?</p>
+    </div>
+  </article>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 1 · Semana 1-2</span><h2>O que é criar com IA (a base)</h2></div>
+  <p class="mod-resumo">Quatro aulas pra sair do zero com pé firme. O que é vibecoding, quem manda, quais são as ferramentas e como não perder o que você fez. É o alicerce do curso inteiro.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 1</span><h3>O que é vibecoding: criar com ajuda da IA</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> o que significa "criar com IA sendo o chefe da máquina" e por que isso é diferente de só copiar código pronto.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Vibecoding é uma palavra nova pra uma ideia simples: você tem uma ideia, você guia a IA, a IA faz o trabalho pesado, você revisa, ajusta e coloca pra rodar. Não é mágica. É parceria. Igual quando você joga em dupla no Fortnite: o parceiro pode ser o melhor jogador do mundo, mas se você não fala com ele, se você não decide pra onde vai, o time perde.</p>
+      <p>O erro clássico de quem começa é achar que vibecoding é digitar "faz um app pra mim" e esperar o milagre. Isso é vibehope. Vai dar errado. O certo é o oposto: você pensa muito antes de pedir, pede com detalhe, lê o que voltou, testa, corrige e só então usa. É trabalho. É bom trabalho, é divertido, mas é trabalho.</p>
+      <p>A boa notícia: quem aprende esse jeito de trabalhar agora, aos 12, 13 anos, vai chegar em 2030 muito na frente de todo mundo que só sabe "usar ChatGPT pra copiar resposta".</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Imagina que você quer fazer um site pra mostrar seus builds de Minecraft. Vibehope: "IA, faz um site legal de Minecraft". Vibecoding: "IA, faz uma página com fundo escuro, título 'Meus Builds', três cards com foto, nome do build e uma frase curta. Quero que funcione no celular. Não use imagens de terceiros, deixa placeholder cinza. Explica cada trecho antes." Sente a diferença? O segundo é o chefe falando.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Você é meu ajudante de código. Antes de escrever qualquer coisa, me explique em 3 linhas o que você vai fazer e por quê. Depois escreva o código, e no fim me diga uma coisa que pode dar errado.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se a IA começou a escrever código sem te explicar nada antes, pare tudo. Peça pra ela explicar primeiro. O criador de verdade não corre atrás da máquina.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se a IA é tão boa, por que ainda precisa de você? O que só você consegue fazer?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 2</span><h3>A IA é sua ajudante, você é o chefe</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como dar um comando bom pra IA e como ler o que ela devolve antes de aceitar qualquer coisa.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Dar comando pra IA é tipo escrever um pedido no delivery. "Quero um lanche" chega qualquer coisa. "Quero um X-tudo sem cebola, batata pequena e coca sem gelo" chega o que você quer. É o mesmo raciocínio no código. Quanto mais claro o pedido, melhor o resultado. E se veio errado, a culpa do pedido é sua.</p>
+      <p>Existe um método pra isso e o nome dele é P.R.O.M.P.T.E.R. Você vai ver ele inteiro no curso. Por enquanto, guarda o essencial: papel (quem a IA é agora), resultado (o que ela precisa te entregar), objeto (sobre o que), método (como), princípios (regras que não podem ser quebradas), tom (jeito de escrever), exemplos e refino (ajustes depois).</p>
+      <p>E tem a segunda parte, que é a mais importante: ler. Você lê tudo que a IA devolveu antes de rodar. Ler não é passar o olho. É entender. Se você não entendeu, pergunta. Se ela explicou mal, pede pra explicar de novo. Você é o chefe. Chefe não aceita entrega sem conferir.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Pedido ruim: "IA, faz um jogo". Pedido bom: "IA, faz um mini-jogo em HTML e JavaScript puro, sem bibliotecas, onde a pessoa clica em bolinhas que aparecem em posições aleatórias e ganha ponto. Botão de começar. Contador de pontos no topo. Comente cada função. Explique antes de escrever."</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Aja como um professor paciente de programação pra um adolescente iniciante. Objetivo: [descreva]. Regras: código simples, comentado, sem bibliotecas externas. Antes de escrever, liste os passos. Depois escreva. No fim, aponte 1 coisa que eu poderia melhorar.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca copie código que você não consegue explicar em voz alta pra outra pessoa. Se não consegue explicar, não entendeu. Pergunta pra IA de novo. Essa é a camada "Entender" do Protocolo de 5 Camadas.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual foi o pedido mais bem-feito que você já fez pra alguém na vida real? O que ele tinha de bom?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 3</span><h3>Conhecendo as ferramentas e a primeira tela (Olá, mundo!)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> quais são as ferramentas do criador (editor, navegador, IA) e fez a primeira página aparecer no navegador.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Todo criador tem três ferramentas na mesa. O editor de código, que é tipo o Bloco de Notas com super poderes: ele colore o código, avisa erro, autocompleta. O navegador, que é onde a página vive quando você abre. E a IA, que é a copiloto. Essas três conversam o tempo inteiro. Você escreve no editor, abre no navegador pra ver, pergunta pra IA quando trava.</p>
+      <p>O ritual do "Olá, mundo" existe há décadas. Todo programador do planeta já fez. É simbólico: você abriu uma tela em branco e escreveu algo que apareceu. A partir daí, tudo é possível. Parece pouco. Mas é a primeira vez que a máquina obedeceu você.</p>
+      <p>E vale um lembrete: não decora nome de tag, nome de comando, nada. Isso a IA lembra por você. O que você precisa lembrar é o conceito: página tem estrutura (HTML), estilo (CSS) e comportamento (JavaScript). Só isso.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Um arquivo chamado <code>index.html</code>, com um título &lt;h1&gt;Olá, mundo!&lt;/h1&gt; dentro. Você dá duplo-clique nele. O navegador abre. Você vê seu texto. Pronto: você é oficialmente uma pessoa que fez uma página na internet. Guarda esse arquivo. É a primeira pedra.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me explique o que é HTML, CSS e JavaScript em uma frase cada, usando comparação com Minecraft. Depois me dê o menor arquivo HTML possível que mostre "Olá, mundo" no navegador, com comentário explicando cada linha.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Salve tudo em uma pasta chamada "projetos" no seu computador. Nunca no Desktop bagunçado. Organização de pasta é organização da cabeça.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se o HTML é a estrutura da casa, o CSS é a pintura e o JavaScript é o interruptor de luz, o que a IA é nessa metáfora?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 4</span><h3>Guardar seu trabalho (Git de forma simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como salvar versões do seu trabalho de um jeito que ninguém perde nada, mesmo se bagunçar tudo.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Git é tipo o save automático do Minecraft, só que muito melhor. Você joga, faz uma construção, dá save. Faz mais construção, dá save. Se por algum motivo você explode tudo com TNT, você volta pro save anterior. No código funciona igual: cada vez que você faz uma mudança que ficou boa, você "commita". Se depois quebrar tudo, volta pro commit anterior.</p>
+      <p>Vai parecer chato no começo. Você vai pensar "por que salvar de novo se já salvei o arquivo?". Porque salvar arquivo é salvar o AGORA. Commit é salvar o AGORA com nome, data e história. Daqui a três meses você vai olhar pra lista de commits e vai lembrar o que fez em cada um. É diário de bordo do projeto.</p>
+      <p>Configurar Git na primeira vez pode dar um trabalhinho. Chama o adulto pra configurar junto na primeira vez. Depois disso, é um comando só e vira automático.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você terminou a página inicial do seu site de builds. Fica bonita. Comando: <code>git add .</code> depois <code>git commit -m "página inicial pronta"</code>. Agora ela está salva pra sempre. Você tenta trocar as cores, fica horrível, quer voltar. Comando: <code>git checkout .</code> e pronto, voltou pro salvo. Zero drama.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Me explique Git como se fosse o sistema de saves de um videogame. Depois liste os 4 comandos que eu vou usar 99% do tempo, com um exemplo de cada, e me diga qual é o único comando que pode apagar meu trabalho.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nome de commit ruim: "att". Nome bom: "adicionei header e menu mobile". Daqui a um mês, o seu eu do futuro vai te agradecer. Essa é a camada "Versionar" do Protocolo de 5 Camadas.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você pudesse ter Git na sua vida (não no código, na vida mesmo), pra que dia você voltaria primeiro?</p>
+    </div>
+  </article>
+
+  <div class="bloco b-conversa" style="margin-top:22px"><h4>🎯 Fim do módulo 1</h4>
+    <p>Você agora sabe o que é vibecoding, sabe que a IA é ajudante e você é chefe, conhece as três ferramentas do criador e já colocou a primeira página no ar. Não é pouco. É a base inteira. Do próximo módulo em diante, tudo vai construir em cima disso.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 2 · Semana 3-4</span><h2>Criando seu primeiro site</h2></div>
+  <p class="mod-resumo">Quatro aulas pra sair do zero absoluto e ter um mini-site no ar. Planejar antes, montar bonito, publicar com adulto e comemorar o primeiro projeto pronto de verdade.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 5</span><h3>Planejar antes de fazer (o que vou criar?)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> por que planejar é o passo mais importante do vibecoding e como definir a ideia, o público e as páginas do seu site.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Todo mundo quer pular pra parte de digitar código. Erro clássico. É como começar uma construção no Minecraft sem decidir se é castelo, casa ou cofre: você quebra e refaz cinco vezes e ainda fica feio. Planejar não é perder tempo. É ganhar tempo.</p>
+      <p>Plano bom cabe em uma folha de caderno. Três perguntas: quem vai usar isso? O que precisa aparecer? O que a pessoa vai fazer nessa tela? Se você não responde essas três em uma frase cada, você ainda não tem projeto. Tem vontade. E vontade não vira site.</p>
+      <p>Vibecoders profissionais fazem exatamente isso. Antes de abrir editor, abrem caderno. Escrevem em pt-BR normal. Só quando o plano está claro é que a IA entra em campo. Pula essa parte, e você vai ficar pedindo pra IA "arruma isso, arruma aquilo" a tarde inteira, sem sair do lugar.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Site vago: "quero um site legal sobre videogame". Site com plano: "página pra amigos da escola, com meus 5 jogos favoritos do momento, cada um com nota e uma frase curta do porquê. Botão pra mandar mensagem sugerindo jogo novo." Sente como o segundo já quase se desenha sozinho na sua cabeça?</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te contar minha ideia de site em pt-BR. Antes de escrever qualquer código, me faça 5 perguntas pra deixar a ideia clara. Depois monte um mini-plano com: público, páginas necessárias e o que cada página faz. Só depois disso vamos pro código.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se você não consegue explicar seu projeto pra sua mãe em 30 segundos, ele ainda não está pronto pra virar código. Volta pro caderno.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você tivesse que fazer um site esse fim de semana, sobre o que seria? E quem seria a primeira pessoa que você mostraria?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 6</span><h3>Montando a página (cores, textos, botões)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como pedir pra IA construir a primeira página de verdade, com texto, imagem e botão, e como mexer nos detalhes.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Agora a coisa fica visível. Você vai pedir pra IA e vai aparecer coisa na tela. É legal. É viciante. E é aqui que a maior parte dos iniciantes começa a "aceitar tudo" sem ler. Aviso: não faz isso. Cada bloco que a IA entregar, você lê. Pergunta o que não entendeu. Não tem código secreto. Tudo tem explicação.</p>
+      <p>HTML é a estrutura (título, parágrafo, botão, imagem). CSS é o visual (cor, tamanho, espaço, fonte). Você não precisa decorar tag. Você precisa saber pedir. "Um cabeçalho escuro com o título centralizado, três cartões lado a lado no computador e um em cima do outro no celular, botão com cor de destaque." A IA traduz tudo isso pra código.</p>
+      <p>Uma dica de ouro: peça pra IA usar variáveis CSS pras cores. Assim, quando você quiser mudar a cor principal do site inteiro, você troca em um lugar só. Isso separa amador do criador com método.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Pediu pra IA e ela devolveu um botão feio, cinza padrão. Em vez de reclamar, você pede: "deixa o botão com fundo laranja #F97316, texto branco, cantos arredondados e um efeito sutil de brilho quando passar o mouse". Pronto. Você acabou de virar diretor de arte. E a IA foi o estagiário de execução.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Monte uma página HTML e CSS de uma tela só, com: cabeçalho, título, subtítulo, três cartões lado a lado no desktop e empilhados no celular, e um botão. Use variáveis CSS pras cores (:root com --primaria e --fundo). Comente cada bloco. Nada de bibliotecas externas.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca aceite código sem entender pra que serve cada bloco maior. Pergunte à IA linha por linha se precisar. Essa é a camada "Ler" do Protocolo de 5 Camadas.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Você já reparou por que alguns sites parecem "profissionais" e outros parecem "amadores"? Anote 3 diferenças que você notou hoje.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 7</span><h3>Colocar no ar de graça (com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como publicar sua primeira página em um endereço público na internet, sempre com adulto responsável do seu lado.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Colocar no ar é o momento em que seu projeto sai do seu computador e passa a existir pro mundo. É um passo grande. Igual a subir um vídeo pro YouTube pela primeira vez: uma vez que está lá, qualquer um com o link acessa. Por isso: adulto por perto. Não é frescura, é procedimento.</p>
+      <p>Existem serviços gratuitos e ótimos pra isso. Vercel e Netlify são os mais usados. Você conecta sua conta do GitHub (onde os arquivos ficam guardados), autoriza, aperta um botão e em 30 segundos seu site tem um endereço com "https" na frente. É mágico. E é gratuito pra projetos pessoais.</p>
+      <p>A parte que exige adulto é a de configuração de conta. Cadastro exige e-mail, às vezes cartão de crédito pra confirmar (mesmo em plano gratuito). Nada disso deve ser feito por você sozinho. Adulto configura a conta. Você usa. Regra simples.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Sábado à tarde. Você e um adulto conectam a Vercel ao seu GitHub. Apertam "Deploy". Sai um link: <code>seu-projeto.vercel.app</code>. Você manda no grupo da família. Sua avó abre no celular dela e vê. Isso é publicar. É o mesmo sentimento de quando o primeiro vídeo seu no YouTube passa de zero visualizações. Só que aqui, você construiu.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Eu tenho um projeto HTML/CSS numa pasta e uma conta do GitHub. Me explique, passo a passo, como colocar esse site no ar de graça na Vercel. Assuma que um adulto vai fazer junto comigo. Liste o que preciso ter antes de começar.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Antes de colar o link em grupo de família, abra você mesmo no celular. Clica em tudo. Se algo estiver quebrado, arruma antes. Testar antes de mostrar é regra de ouro.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual é a diferença entre "meu site funciona no meu computador" e "meu site funciona pra qualquer pessoa na internet"? Por que essa distinção importa?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 8</span><h3>Seu primeiro mini-site pronto</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como fechar o primeiro projeto de verdade, com uma passada de capricho final e o site no ar pros colegas.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Chegou aqui? Respira. Você acabou de fazer algo que 95% dos adolescentes da sua idade nunca fizeram. Não é pouco. Anote em algum lugar a data desse primeiro deploy. Daqui a três anos, você vai olhar pra esse site e achar horroroso. Isso é bom. Significa que você evoluiu. Ele foi o começo.</p>
+      <p>Antes de bater o martelo de "pronto", faz a passada de capricho. Cores estão bem? Alinhamento tá certo? Todos os botões clicam? Todas as imagens carregam? Nomes escritos certo? Não tem "lorem ipsum" esquecido no meio do texto? Vibecoder de verdade não deixa lixo pra trás.</p>
+      <p>E aqui entra o costume mais importante pro resto da sua vida como criador: quando você fecha um projeto, você conta a história dele em três frases. Problema que resolvia. Solução que fez. O que aprendeu. Sem hype, sem fingir que virou uma empresa. Só isso. Se acostuma a fazer isso agora.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Seu primeiro mini-site é sobre seus 5 jogos favoritos. História em três frases: "queria mostrar pra galera da escola meus jogos e sugestões. Fiz uma página com 5 cards, cada um com nota e comentário curto. Aprendi que planejar antes de codar economiza horas de retrabalho." Guarda essa história. Vai virar seu primeiro portfólio.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te contar sobre um projeto que acabei de terminar. Me ajude a escrever, em 3 frases curtas e sem hype: (1) o problema que ele resolve, (2) a solução que eu construí, (3) o que eu aprendeu fazendo. Sem exagero, sem "revolucionário", sem promessa. Só a verdade.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca fale que um projeto é "incrível", "revolucionário", "vai mudar o mundo". Fala o que ele faz. Deixa quem usa decidir se é incrível.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você tivesse que dar 1 conselho pro seu eu de 3 semanas atrás (antes de começar o curso), qual seria?</p>
+    </div>
+  </article>
+
+  <div class="bloco b-conversa" style="margin-top:22px"><h4>🎯 Fim do módulo 2</h4>
+    <p>Do zero a site no ar em quatro aulas. Planejou, montou, publicou, caprichou. E, mais importante: aprendeu a contar a história do projeto sem hype. Isso é vibecoding com engenharia. O próximo módulo é o mais sério do curso: segurança.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 3 · Semana 5-6</span><h2>Fazendo com segurança (a parte séria)</h2></div>
+  <p class="mod-resumo">Três aulas onde nenhum atalho é permitido. Senha, dado de pessoa, checagem antes de publicar. É o assunto que separa o vibecoder responsável do desastre em espera.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 9</span><h3>Senhas e segredos: o que a gente esconde</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> o que é segredo em software (senha, chave de API) e por que ele nunca, jamais, em hipótese alguma, pode aparecer no código.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Toda ferramenta legal de IA hoje funciona com uma "chave de API". Pensa nela como a senha do Netflix da família: se você compartilha, todo mundo assiste. Se você posta o número dela em qualquer lugar público, adeus. E chave de API tem uma diferença dolorosa: cada uso custa dinheiro. Deixou vazar? Pode aparecer conta gigante no cartão do adulto responsável. Já aconteceu com muita gente. Não é lenda.</p>
+      <p>A regra é simples e sem exceção: segredo mora em um arquivo separado, chamado <code>.env</code>, que fica no seu computador e NUNCA vai pro GitHub. Existe um arquivo mágico chamado <code>.gitignore</code> que serve pra isso: você lista o <code>.env</code> lá dentro e o Git nunca sobe ele pro mundo.</p>
+      <p>Se você tem qualquer dúvida se algo é segredo, considere que é. Chave de qualquer serviço, token do Discord, senha, e-mail privado, tudo isso é segredo. E nada disso pode nunca estar num arquivo que vai pro repositório público. Zero exceções.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você quer usar uma IA no seu site. A IA te dá uma chave gigante do tipo <code>sk-abc123...</code>. Você fica tentado a colar direto no JavaScript pra funcionar rápido. NÃO. Você cria um arquivo <code>.env</code> na raiz do projeto, coloca <code>OPENAI_KEY=sk-abc123</code> lá dentro. Adiciona <code>.env</code> no <code>.gitignore</code>. O código só lê da variável de ambiente, nunca do texto puro. Adulto por perto pra revisar.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Meu projeto vai usar uma chave de API de [serviço]. Me mostre, passo a passo: (1) como criar o arquivo .env, (2) como adicionar ele no .gitignore, (3) como ler a chave no código sem que ela apareça no arquivo público, (4) o que fazer se eu por acidente commitar uma chave.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se você por acidente subiu uma chave pro GitHub, mesmo por 1 minuto, considere ela vazada. Cancela a chave no site do serviço na hora e cria uma nova. Não conta com sorte.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se um amigo te pedir "só me passa sua chave pra eu testar", qual é a resposta correta e por quê?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 10</span><h3>Quem pode entrar (login) e cuidar dos dados</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> o que é login, quando ele é necessário e como tratar os dados das pessoas com respeito.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Login parece só uma tela de e-mail e senha. Não é. Login é a porta da sua casa. Se você põe uma porta mal-feita, qualquer um entra. Uma porta boa protege o que tem dentro. E o que tem dentro, no software, é o dado das pessoas. Nome, foto, mensagem, o que jogaram, o que curtiram. Tudo isso é do usuário. Não é seu.</p>
+      <p>Existe uma lei no Brasil chamada LGPD. Ela existe pra dizer uma coisa óbvia que muita empresa fingia esquecer: dado de pessoa é sagrado. Você só pode coletar o que a pessoa concordou em dar. Não pode usar pra outra coisa sem avisar. Não pode passar pra terceiros sem permissão. E precisa deixar a pessoa apagar tudo se ela quiser.</p>
+      <p>Enquanto você tá estudando, uma regra: não use dado pessoal real de ninguém no seu projeto. Use "João da Silva", "teste@teste.com", "senha1234". Nunca o e-mail real do seu colega, nunca a foto real da sua irmã. Dados falsos pra treinar. Dados reais só quando o projeto for pro ar de verdade, com adulto responsável cuidando da conformidade.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você tá fazendo um "quiz do amigo". Ele pede nome e três respostas. Errado: guarda tudo no seu computador com o e-mail do amigo. Certo: usa só o primeiro nome, não pede e-mail, não guarda em lugar nenhum sem ele saber. Se guardar, ele decide se quer ou não. E se ele mandar apagar, você apaga tudo. Sem drama.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Meu projeto vai coletar [tipo de dado] das pessoas. Me ajude a listar: (1) esse dado é realmente necessário?, (2) por quanto tempo devo guardar?, (3) como aviso a pessoa disso de forma clara?, (4) como ofereço a opção de apagar? Considere LGPD e adolescente responsável.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se você precisa perguntar "posso guardar esse dado?", provavelmente não precisa guardar. Pensa duas vezes antes de coletar qualquer informação. Menos é mais.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Que dados sobre você estão em algum site que você não lembra ter deixado lá? Como isso te faz sentir?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 11</span><h3>Conferir antes de mostrar pro mundo</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> a checagem de segurança básica que você faz antes de publicar qualquer coisa. É uma lista curta, mas ela salva o projeto.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Piloto de avião não decola sem checklist. Não é porque ele não sabe pilotar. É porque errar em altitude custa vida. No código, errar em produção custa vazamento, prejuízo e vergonha. Antes de qualquer publicação, você passa uma lista rápida. É a camada "Blindar" do Protocolo de 5 Camadas.</p>
+      <p>A lista é curta. Nenhum segredo no código? <code>.env</code> no <code>.gitignore</code>? Formulários validam o que a pessoa digita? Só pessoa autorizada vê o que é privado? Erros aparecem de forma amigável, sem expor detalhe técnico? Backup pronto caso quebre? Se todas as respostas são "sim", pode subir.</p>
+      <p>E tem um truque de ouro: peça pra IA revisar a segurança. "Analisa esse código como se você fosse um auditor de segurança. Liste tudo que pode dar problema, do mais crítico ao mais leve." A IA aponta coisas que você não veria. É como pedir pro amigo revisar sua redação: ele acha erro que seu olho não acha mais.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Antes de dar deploy no seu segundo projeto, você abre o terminal. Digita <code>git status</code>. Vê os arquivos que vão subir. Confirma que <code>.env</code> NÃO está na lista. Cola o código no chat da IA e pede: "faz uma checagem de segurança nível bastião nesse código". Ela aponta 3 coisas. Você corrige as 3. Só então dá deploy. Isso é vibecoding sério.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te colar meu código antes de colocar no ar. Faça uma revisão de segurança como se você fosse a skill Bastião. Liste problemas do mais crítico ao mais leve. Para cada um, mostre o conserto. No fim, me diga se está seguro pra publicar ou se precisa mais ajuste.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca pule a checagem porque "é projeto pequeno". Vazou é vazou, mesmo em projeto pequeno. O tamanho do estrago não depende do tamanho do projeto.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você tivesse que criar sua própria checklist de segurança em 3 itens só, quais seriam? Por quê?</p>
+    </div>
+  </article>
+
+  <div class="bloco b-conversa" style="margin-top:22px"><h4>🎯 Fim do módulo 3</h4>
+    <p>Esse foi o módulo mais sério do curso. Segredo escondido, dado de pessoa respeitado, checagem antes de publicar. Nada disso é opcional. É o que separa quem cria com responsabilidade de quem só vibehope. Guarde esse capítulo. Você vai voltar aqui muitas vezes.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 4 · Semana 7-8</span><h2>Deixando bonito (design que funciona)</h2></div>
+  <p class="mod-resumo">Quatro aulas pra virar chefe também no visual. Cor, tipografia, celular, botão, formulário. O objetivo é um: seu site fica bonito de verdade, não com "jeitinho".</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 12</span><h3>O que deixa um site legal (cores, letras, imagens)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> os princípios simples que fazem qualquer site parecer profissional, mesmo feito por iniciante.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Existe uma diferença enorme entre "site que a IA vomitou" e "site com identidade". A diferença não é dinheiro. É regra. Duas regras que salvam qualquer projeto: no máximo três cores principais e no máximo duas fontes. Vale pra Nike, vale pra Netflix, vale pro seu primeiro site.</p>
+      <p>Espaço em branco é seu maior aliado. Todo iniciante quer encher a tela. Reels lotado, texto grudado, botão colado no canto. Fica sufocante. Site bonito respira. Você olha e o olho tem onde descansar. Peça pra IA "aumentar respiro" quando algo tá apertado. Ela entende.</p>
+      <p>E cuidado com o visual "IA genérica": aquele fundo com gradiente arco-íris, ícones flutuantes, palavras em inglês misturadas, tudo com "AI" no nome. É a moda 2024 e envelhece rápido. Prefira o tempero da sua própria personalidade. Netflix é escuro. Notion é limpo. Duolingo é colorido e brincalhão. Cada um tem cara. Qual é a sua?</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Escolhe uma cor forte que você gosta. Digamos, roxo #7C3AED. Uma cor de fundo suave, quase branco. Uma cor de texto quase preto. Fonte de título mais grossa, fonte do corpo mais leve. Pronto. Esse é seu sistema. Todo o site inteiro segue isso. Consistência vira estilo.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te descrever meu projeto em uma frase. Sugira 3 opções de paleta com 3 cores cada (código hex), 2 combinações de fontes do Google Fonts (título + corpo) e me diga qual paleta combina melhor com o público. Sem gradiente arco-íris.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se você não consegue explicar por que escolheu uma cor, provavelmente escolheu errado. Cor é decisão, não sorteio. Um site sério tem justificativa pra cada tom.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual é seu app favorito hoje? Se você olhar bem, quantas cores diferentes ele usa? Qual é a fonte?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 13</span><h3>Funciona no celular também (responsivo)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> por que hoje quase todo mundo entra pelo celular e como fazer o site funcionar bem lá antes de funcionar no computador.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Verdade dura: se você faz site que só funciona no computador, você fez site pra ninguém. 8 de cada 10 pessoas que vão abrir o seu projeto vão abrir no celular. Instagram, TikTok, WhatsApp, tudo é celular. O computador virou exceção. Design mobile-first não é moda, é a realidade de quem usa.</p>
+      <p>Design responsivo é uma palavra pomposa pra uma ideia simples: o site se ajusta ao tamanho da tela. Cartões que ficam lado a lado no computador viram empilhados no celular. Menu enorme vira hambúrguer. Texto gigante vira menor. E a IA sabe fazer isso, se você pedir. "Faz responsivo, mobile-first". Ela entende.</p>
+      <p>Teste é ritual sagrado: você abre no celular DE VERDADE antes de mostrar pra qualquer um. Não confia no "modo mobile" do navegador do computador. É diferente. Abre no seu celular. Rola. Clica em tudo. Digita nos campos. Se qualquer coisa parece ruim, arruma. Sempre.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você fez a home dos seus builds de Minecraft. No computador, três cards lado a lado, lindos. Abre no seu celular e os cards viraram uma tirinha esmagada, texto grudado. Você pede pra IA: "no celular, cards empilhados, um por linha, com respiro entre eles". Recarrega. Agora sim. Isso é responsivo.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Faça esse layout responsivo, mobile-first. Regras: no celular, tudo empilhado com bom respiro entre elementos. No tablet, dois por linha. No computador, três ou mais por linha. Use CSS puro com media queries, sem framework. Explique cada breakpoint.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Antes de mandar o link do seu site pra qualquer pessoa, abre no seu próprio celular e faz o percurso completo. Se tem qualquer parte ruim, ninguém precisa ver ela. Testar antes de mostrar.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Você já entrou em um site pelo celular que era horrível? O que exatamente estava ruim? Como você faria diferente?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 14</span><h3>Botões e formulários que funcionam</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como fazer botão, campo de texto e formulário que qualquer pessoa consegue usar, sem adivinhar.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Botão bom parece botão. Parece que pode ser clicado. Tem cor de destaque, tem borda ou fundo, o cursor vira mãozinha quando passa em cima. Botão ruim é aquela palavra sublinhada em cinza quase preto, no meio de um monte de texto, e você fica adivinhando se clica ou não. Nunca faça o usuário adivinhar. Adivinhação é frustração.</p>
+      <p>Formulário é outra armadilha clássica. Nome do campo em cima ou dentro do campo. Sempre em cima é mais claro. Se algo é obrigatório, avisa com um asterisco ou aviso curto. Se o campo espera formato específico (e-mail, número, data), avisa antes, não depois. Erro que só aparece quando você aperta enviar é ruim. Erro que aparece do lado enquanto você digita é bom.</p>
+      <p>E botão que faz coisa importante (enviar, apagar, salvar) precisa ter estado. Enquanto envia, mostra "enviando". Se deu certo, mostra "enviado". Se deu erro, avisa o erro de forma legível. Silêncio é o pior feedback possível. Igual quando você mensagem alguém no zap e não aparece nem o "digitando".</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Formulário de contato do seu site. Três campos: nome, e-mail e mensagem. Você digita e-mail errado ("teste") e sai do campo. Aparece em vermelho, na hora, embaixo: "coloca um e-mail válido, com @". Você aperta enviar. Botão vira "enviando..." e some por um segundo. Volta como "mensagem enviada!" verde. Isso é UX de gente grande.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Crie um formulário de contato com nome, e-mail e mensagem. Validação em tempo real (avisar erro assim que a pessoa sair do campo). Botão de envio com 3 estados: normal, enviando e enviado. Não permitir envio se algum campo estiver vazio. Comentar o JavaScript de cada validação.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Teste seu formulário como se você fosse o usuário mais chato do mundo. Digita coisa errada. Aperta enviar duas vezes rápido. Deixa campo em branco. Cada furada que você achar antes de publicar é uma que ninguém vai passar depois.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual foi o pior formulário que você já preencheu na vida? O que tinha de errado?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 15</span><h3>Capricho final: polindo os detalhes</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> a passada final de capricho que separa amador de criador de verdade.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Capricho não é frescura. É a diferença entre "quase bom" e "muito bom". E, honesto, é o que faz seu projeto parecer profissional mesmo você tendo 13 anos e três semanas de curso. Todo mundo consegue montar. Poucos param pra polir. Quem polir sai na frente.</p>
+      <p>Lista do capricho: tudo alinhado (nada torto), tudo clicável clica (nenhum link morto), textos sem erro de português (você lê em voz alta pra pegar), imagens carregam (nenhum quadrado quebrado), site abre rápido (sem espera longa), funciona no celular (você testou), todas as páginas têm o mesmo estilo (consistência), e o navegador não mostra nenhum erro no console (você aperta F12 e olha).</p>
+      <p>E existe um truque poderoso: peça pra IA fazer "code review" no seu próprio código. "Age como revisor crítico. Aponta 5 coisas que eu posso melhorar nesse código, do mais importante ao menos importante." Ela vai apontar coisas que você não viu. É constrangedor no começo, é ouro depois.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Sábado à tarde. Site funcionando. Antes de mandar pra galera, você faz a passada. Abre em três lugares: seu computador, seu celular, o tablet de alguém. Percorre tudo. Acha um botão que não clicava (link errado). Acha uma foto que não carregava. Acha um "labendo" no lugar de "lendo". Arruma os três. Manda depois. Isso é capricho.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Age como revisor sênior de código. Vou colar meu HTML/CSS/JS. Aponte 5 melhorias possíveis, do mais crítico ao menos crítico. Foque em: consistência, performance, acessibilidade, boas práticas e capricho visual. Para cada uma, mostre o antes e o depois.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Ninguém lembra do site que foi entregue no prazo. Todo mundo lembra do site que foi entregue com capricho. Vale a hora a mais que você gastar polindo.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você tivesse mais uma hora pra polir seu projeto, no que gastaria essa hora? Por quê?</p>
+    </div>
+  </article>
+
+  <div class="bloco b-conversa" style="margin-top:22px"><h4>🎯 Fim do módulo 4</h4>
+    <p>Cor com regra, celular em primeiro lugar, botão que parece botão, formulário sem armadilha e polimento final. Seu site agora não é mais "projeto de curso". É produto. E olha só: você aprendeu tudo isso sem decorar uma linha de código de cor. Isso é vibecoding.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 5 · Semana 9-10</span><h2>Fazendo o site fazer coisas (interatividade)</h2></div>
+  <p class="mod-resumo">Quatro aulas pra sair da página estática. Aqui o site guarda, responde, conecta e avisa. Programação de verdade, com IA como copiloto e você como piloto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 16</span><h3>Guardar e mostrar informação (dados)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> o básico de guardar dado (nome, mensagem, item de lista) e mostrar de volta no site.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Até agora, seu site era um pôster: bonito, mas parado. Agora ele vira interativo. Alguém digita uma mensagem, você guarda. Alguém volta amanhã, a mensagem ainda tá lá. Isso muda tudo. Site que guarda é site que vive. Que evolui. Que serve.</p>
+      <p>Banco de dados é o lugar onde essas informações moram. Em uma frase: é uma tabela gigante organizada, tipo o inventário no Minecraft. Cada item tem seu lugar, sua propriedade, seu ID. Vibecoder usa um banco de dados moderno chamado Firestore (do Firebase, do Google) pra projetos que começam agora. É gratuito no início e cresce com você.</p>
+      <p>E uma regra que vem forte agora: quem pode ver o quê? Quem pode escrever o quê? Isso é regra de segurança do banco. Se você deixa "qualquer um pode ler e escrever tudo", parabéns: você acabou de criar um mural anônimo aberto pro mundo destruir. Regra do banco é como a porta da casa. Fecha bem. Adulto ajuda na primeira vez.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você faz um mural de recados na sua página. Alguém digita "boa tarde!" e aperta enviar. Aparece no mural. Você fecha o navegador. Volta no dia seguinte. Recado tá lá. Isso é porque o dado foi pro banco. Não pro seu computador. Pra "nuvem" do Firebase. Qualquer pessoa que abrir seu site vê o mesmo recado. Mágico.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou criar um mural de recados simples. Use Firestore. Cada recado tem: texto, data e apelido. Escreva o código pra: salvar recado novo, buscar todos os recados em ordem do mais novo pro mais antigo, mostrar na tela. E me dê as regras de segurança do Firestore que impedem que qualquer um apague tudo.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Antes de qualquer coisa ir pro ar com banco de dados, revise as regras de segurança do banco com adulto. Nunca deixe em "modo aberto pra qualquer um". Nunca.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>O que você acha que acontece com os dados dos jogos que você joga? Onde eles ficam guardados?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 17</span><h3>O site que responde (interatividade)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como fazer o site responder ao que a pessoa clica ou escreve, com JavaScript básico gerado pela IA.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>JavaScript é a alma que faz o site se mexer. HTML é o esqueleto, CSS é a roupa, JavaScript é o cérebro. É ele que faz o botão fazer algo, que muda o texto quando você clica, que abre um menu, que valida o formulário. Sem ele, seu site é um panfleto. Com ele, vira aplicativo.</p>
+      <p>E aqui vale um lembrete: você não vai decorar JavaScript. Isso a IA gera por você. O que você vai aprender é a LER JavaScript. Entender o que cada função faz. Saber quando é uma variável, quando é um botão sendo escutado, quando é uma resposta sendo mostrada. Isso é o que faz de você chefe. Decorar sintaxe é coisa do século passado.</p>
+      <p>Detalhe que gente grande esquece e faz seu projeto parecer profissional: feedback ao usuário. Toda vez que alguém clica ou envia algo, o site precisa dar sinal de vida. "Enviando...", "Salvo!", "Deu erro, tenta de novo". Silêncio é ruim. Feedback rápido faz o site parecer vivo e confiável.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você tem um botão "curtir" no seu mural. A pessoa clica. Na hora, o coraçãozinho fica vermelho, o contador sobe (+1) e aparece uma micro-animação. A pessoa sente que aconteceu. Comparação: no Instagram, você clica e o coração explode. No seu site, faz igual. Detalhinho custa 3 linhas de CSS e vale ouro.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Crie um botão de "curtir" em JavaScript puro que: (1) quando clicado, muda de cinza pra vermelho, (2) incrementa um contador ao lado, (3) faz uma animação sutil de "pop", (4) impede clique duplo (usuário não conta como 2). Comente cada linha em pt-BR.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Toda vez que algo importante acontece, dê feedback visual. Alguém enviou? Mostra "enviado". Deu erro? Mostra o erro. Silêncio no software é o mesmo que silêncio no meio de uma conversa: incômodo e ruim.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual é o feedback mais satisfatório que você recebe de um app hoje? Descreva o que acontece.</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 18</span><h3>Conectar com outras coisas (APIs mágicas prontas)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como usar API pública gratuita pra puxar dado de fora (previsão do tempo, piada, curiosidade) e trazer pro seu site.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>API é a palavra chique pra uma ideia simples: um site pergunta pra outro site e recebe dado de volta. Igual você mandando mensagem pro amigo perguntando "que horas?" e ele respondendo. Só que entre computadores. E rápido. E automático. O seu site pergunta "que tempo tá em São Paulo?" pra uma API do tempo, e recebe "24 graus, ensolarado". Aí você mostra na tela.</p>
+      <p>Existem APIs públicas e gratuitas pra quase tudo: previsão do tempo, piadas aleatórias, cotação de moeda, curiosidades sobre gatos, dados do Pokémon, letras de música. Muita coisa é aberta e sem chave. Outras precisam de chave. E é aqui que a regra volta forte: chave nunca no código. Sempre no <code>.env</code>. Sempre com adulto por perto na hora de configurar.</p>
+      <p>Uma dica de criador: quando o serviço é grátis pra sempre e não pede chave, é seu playground. Quando pede chave, respira. Lê as regras. Vê quantos pedidos por dia dá pra fazer sem pagar. Muita gente entra em programa gratuito e sem saber estoura o limite, aí vem cobrança. Sempre chama o adulto quando envolve chave e conta paga.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você faz um botão "me diga uma curiosidade" na sua página. Cada vez que a pessoa clica, você chama uma API pública gratuita chamada "uselessfacts". Recebe uma curiosidade aleatória. Mostra na tela. Zero chave, zero risco, zero conta pra pagar. Site que aprendeu a conversar com outros sites. Sensacional.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Crie um botão que, ao ser clicado, chama a API [nome da API pública gratuita], recebe a resposta em JSON e mostra na tela. Use fetch() em JavaScript. Trate erro de rede (mostre mensagem amigável). Não use chave (é uma API pública). Comente cada etapa.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se a API pede chave, PARA. Adulto responsável configura a conta e a chave vai pro <code>.env</code>. Nunca colada no código público. Sem exceção. É a mesma regra do módulo 3, e vale sempre.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você pudesse conectar seu site a qualquer serviço da internet, qual seria e por quê?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 19</span><h3>Avisos automáticos e deixar rápido</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como mandar aviso quando algo importante rolar e como deixar o site mais rápido, porque site lento perde gente.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Site rápido é site que respeita a pessoa. Se você abre um site e demora mais de 3 segundos pra aparecer, a maioria das pessoas fecha. É estatística. TikTok, Netflix, Instagram: tudo abre em milissegundos porque estudaram isso. Você também pode estudar. E é mais fácil do que parece.</p>
+      <p>As três causas mais comuns de site lento em projeto de iniciante: imagem gigante (foto de 5MB quando podia ser 100KB), muitas requisições (o site carrega 20 arquivos quando podia carregar 3) e código bagunçado (JavaScript pesado sem precisão). Peça pra IA "otimize esse projeto pra carregar rápido". Ela sabe o que fazer.</p>
+      <p>Aviso automático é a outra parte: quando algo acontece no site, avisa quem precisa. Alguém deixou recado? Manda notificação. Alguém tentou entrar sem senha 5 vezes? Alerta. Alguma coisa deu erro? Você é o primeiro a saber. Isso se chama observabilidade e é o que separa site esquecido de site vivo.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Antes: foto do banner pesava 2,5MB. O site levava 4 segundos pra abrir no celular no 4G. Depois: você comprimiu a foto pra 200KB (dá pra fazer em site gratuito tipo TinyPNG). Site abre em menos de 1 segundo. Ninguém desistiu de esperar. Uma otimização de 5 minutos que mudou o projeto.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Analise meu site pra performance. Me diga: (1) imagens que estão pesadas demais e podem ser comprimidas, (2) requisições desnecessárias, (3) código JS ou CSS que pode ser reduzido. Para cada problema, mostre o antes e depois. Foco em Core Web Vitals.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Toda vez que você adicionar uma nova imagem, comprime antes de colocar. TinyPNG ou Squoosh salvam vidas. Uma vez adquirido o costume, seu site nunca mais será lento.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual foi a última vez que você desistiu de esperar um site abrir? Quantos segundos você esperou antes de fechar?</p>
+    </div>
+  </article>
+
+  <div class="bloco b-conversa" style="margin-top:22px"><h4>🎯 Fim do módulo 5</h4>
+    <p>Guarda dado, responde ao clique, conversa com outros sites e abre rápido. Seu site virou plataforma. E olha só: você não decorou nem uma sintaxe pra chegar aqui. Aprendeu a pedir bem, ler o que voltou e testar. Próximo módulo é sobre não deixar essa base virar bagunça.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 6 · Semana 11-12</span><h2>Fazendo direito (qualidade e método)</h2></div>
+  <p class="mod-resumo">Três aulas duras e importantes. Ler o código que a IA escreveu, testar de verdade, arrumar bagunça. Sem esse módulo, não é vibecoding, é vibehope. Aqui entra o Protocolo de 5 Camadas inteiro.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 20</span><h3>Ler o que a IA escreveu e achar erros (revisão de código)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> por que ler código é a maior habilidade do criador, não escrever. E como achar bug antes de ele te achar.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Aqui tem um segredo que ninguém conta no começo: escrever código, hoje, é o passo mais fácil. A IA faz. O difícil, o que separa nível junior de nível sênior, é LER e ENTENDER o código que veio. Achar o bug escondido, ver a lógica errada, prever o problema. Isso é caro. Isso é o valor.</p>
+      <p>A IA erra. Muito. Ela troca nome de variável, inverte lógica ("se maior" quando devia ser "se menor"), esquece um caso especial, usa função que não existe. É comum. Ela é rápida, mas não é perfeita. Seu papel é o de revisor. Lê tudo, questiona tudo, roda cada linha na cabeça.</p>
+      <p>Truque de leitura: pega o código e explica cada bloco em voz alta, como se você tivesse ensinando pra alguém. Se você trava numa parte, é ali que o bug tá escondido, ou é ali que você não entendeu. Nos dois casos, você pergunta pra IA: "explica esse bloco linha por linha, e me diga o que pode dar errado nele". Ela abre o jogo.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>A IA gerou uma função que calcula "está aprovado?" com base na média. Você lê e vê: <code>if (media > 6)</code>. Espera. Se a média é exatamente 6, aprovado ou não? A regra diz que sim (média maior ou igual a 6). Mas o código tá <code>&gt;</code>, não <code>&gt;=</code>. Bug clássico. Você não teria pego se não parasse pra ler. Vibecoder sério pega bugs assim antes de subir.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te colar um trecho de código que você mesma gerou antes. Explique cada bloco linha por linha em pt-BR simples, para um adolescente. No fim, aponte pelo menos 2 casos onde esse código pode se comportar de forma inesperada. Não me diga que está tudo certo. sempre há algo.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se a IA falar "esse código está perfeito", desconfia. Pede pra ela apontar 3 coisas que podem dar errado. Todo código tem 3 coisas que podem dar errado. Essa é a camada "Ler" do Protocolo de 5 Camadas, no talo.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual é mais difícil pra você: escrever uma redação do zero, ou revisar a redação de outra pessoa e achar os erros? Por quê?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 21</span><h3>Testar pra ver se funciona (de verdade)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como testar o programa como se você fosse o usuário mais chato do mundo, e escrever um teste simples que roda sozinho.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Testar não é "abrir o site e ver se aparece". Testar é atacar o site com maldade proposital. Você é o inimigo agora. Digita cinco letras onde só cabe número. Cola texto gigante no campo pequeno. Aperta enter em vez de clicar. Recarrega no meio de um envio. Volta pra tela anterior. Cada furada que você achar aqui é uma que não vai te dar dor de cabeça em produção.</p>
+      <p>Existem dois caminhos que você sempre testa: o feliz (usuário faz tudo direitinho, funciona) e o triste (usuário faz besteira, o site trata com elegância). O caminho feliz é fácil. O triste é o que separa amador de profissional. Site profissional NUNCA quebra na cara do usuário. Ele mostra mensagem amigável e segue.</p>
+      <p>Pra projetos de iniciante, teste é manual, você mesmo faz. Pra projetos que crescem, entram testes automáticos: uma outra parte do código que testa a primeira. Você aperta um botão e ele testa 50 coisas em 3 segundos. É a camada "Testar" do Protocolo de 5 Camadas. Se sério, adota cedo.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Formulário de recado do seu mural. Feliz: escreve "oi", aperta enviar, aparece na lista. Triste: envia vazio (o site precisa avisar "escreva algo"). Envia com 10 mil caracteres (o site precisa cortar ou avisar). Envia com script malicioso (o site precisa filtrar). Se todos os três casos tristes forem tratados sem quebra, você fez seu trabalho.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te colar meu código. Age como testador chato. Liste 10 casos que podem dar errado: 5 do caminho triste (usuário digitando errado, sem internet, tentando burlar) e 5 casos borda (limite de tamanho, caractere especial, muito rápido, muito lento). Para cada, mostre como o código deveria reagir.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Se você acha que testou tudo, testou metade. Peça pra outra pessoa clicar no seu site. Ela vai achar problema em 30 segundos que você não achou em 3 dias. Olho fresco encontra tudo.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você tivesse que "sabotar" seu próprio projeto pra ver ele quebrar, o que faria primeiro?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 22</span><h3>Arrumar a bagunça e saber quando quebrou</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como refatorar código bagunçado sem mudar o que ele faz, e como saber rápido quando algo quebra em produção.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Refatorar é palavra chique pra "arrumar a casa sem mudar de casa". Você tem um código funcionando, mas bagunçado. Refatorar é deixar mais limpo, mais claro, sem mudar o comportamento. É o passo que gente pula sempre e depois sofre pra achar bug em código embaralhado. Se algo funciona hoje, funciona amanhã, mas tá difícil de entender, refatora.</p>
+      <p>Regra de ouro da refatoração: nunca refatore sem ter teste pronto pra provar que continua funcionando. Se refatora e quebra sem perceber, virou pesadelo. Se refatora e o teste passa, dorme tranquilo. Por isso o teste do capítulo anterior é irmão gêmeo desse.</p>
+      <p>E tem a segunda parte da aula: observabilidade. Palavra difícil, ideia simples. Você precisa saber, sem depender de usuário te avisar, quando seu site quebrou. Log é o mínimo: cada erro é registrado em algum lugar (console, arquivo, ferramenta gratuita tipo Sentry). Aviso automático é o próximo passo: alguma coisa quebrou? Chega notificação. Sem isso, seu site pode ficar fora do ar semanas e você não saber.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você tem uma função gigante de 80 linhas que faz três coisas: valida dado, salva no banco, manda e-mail. Refatorar é quebrar em três funções separadas de 25 linhas cada, uma pra cada tarefa. Continua fazendo a mesma coisa. Mas agora, se quebrar, você sabe exatamente qual das três falhou. E se precisar mudar só uma, mexe só nela.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te colar uma função grande e bagunçada. Refatore ela sem mudar o comportamento. Regras: (1) quebre em funções menores com nome claro, (2) cada função faz uma coisa só, (3) comente cada função em pt-BR, (4) me mostre um teste simples que prove que o comportamento ficou igual.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca refatore junto com adicionar nova funcionalidade. Faça uma coisa por vez. Refatora, testa, commita. Depois adiciona a feature nova. Misturar as duas coisas é receita de dor de cabeça.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se seu quarto fosse código, ele estaria refatorado ou bagunçado? Que "refatoração" você faria hoje pra ele ser mais fácil de usar?</p>
+    </div>
+  </article>
+
+  <div class="bloco b-conversa" style="margin-top:22px"><h4>🎯 Fim do módulo 6</h4>
+    <p>Ler antes de aceitar, testar como inimigo, refatorar sem quebrar e saber quando algo caiu. Esse é o módulo que faz você virar vibecoder sério. Sem isso, tudo que vem antes é castelo em cima da areia. Guarde bem o Protocolo de 5 Camadas: Entender, Ler, Blindar, Testar, Versionar. É o seu jeito de trabalhar pro resto da vida.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 7 · Semana 13-14</span><h2>Mostrar pro mundo (do jeito certo)</h2></div>
+  <p class="mod-resumo">Quatro aulas pra transformar projeto de gaveta em produto real. Publicar de verdade, ser achado, convidar as pessoas e fazer um mini-lançamento pra galera perto.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 23</span><h3>Colocar no ar do jeito certo (com um adulto)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como publicar de verdade, com endereço seguro, HTTPS e a checagem de segurança feita antes.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>No módulo 2 você fez um deploy de teste. Agora é diferente. Aqui você vai pro ar "de verdade": com nome definitivo, checklist de segurança fechado e a mão de um adulto do lado. Não é a mesma coisa que "publicou um HTML pra família ver". É estreia de peça. Precisa de ensaio geral.</p>
+      <p>HTTPS não é opcional. Todo site sério hoje tem o cadeado do lado do endereço. Vercel e Netlify entregam isso automático. Se o seu não tem, algo tá errado. Sem HTTPS, o navegador avisa a pessoa que o site é inseguro. Ninguém confia. Regra: HTTPS ou nada.</p>
+      <p>Domínio próprio é opcional pro adolescente. É legal ter <code>seunome.com.br</code>, mas custa dinheiro (registro anual) e envolve adulto pra pagar. Enquanto isso, o endereço grátis da Vercel (<code>seuprojeto.vercel.app</code>) é 100% profissional pra portfólio. Muita empresa começa assim. Nada de complexo demais no começo.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Ritual de deploy sério: (1) roda o teste que você fez no módulo 6, tudo passa; (2) pede pra IA fazer revisão de segurança (skill Bastião), tudo limpo; (3) confere que <code>.env</code> não tá no commit; (4) commita com mensagem clara ("v1.0 pronta pra lançamento"); (5) adulto do lado, aperta deploy; (6) abre no celular, testa o percurso todo; (7) só depois disso, manda o link. Seis passos que te tornam profissional.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Meu projeto está indo pra produção. Me guie na revisão final passo a passo: (1) checklist de segurança, (2) checklist de performance, (3) checklist de UX no celular, (4) checklist de acessibilidade básica. Marque cada item que preciso verificar antes de dar deploy oficial.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Deploy oficial nunca é sozinho. Sempre com adulto responsável na primeira vez, e sempre com o checklist do módulo 3 revisado. Isso é regra, não sugestão.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual é a diferença entre "mostrei pra minha mãe funcionando" e "coloquei no ar publicamente"? Por que a segunda exige mais cuidado?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 24</span><h3>Fazer as pessoas acharem (SEO básico)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> o básico de SEO. O que é título, descrição, e como o Google decide encontrar seu site.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Site no ar sem SEO é loja no shopping com a porta trancada. Ninguém acha, nem se estiver procurando. SEO é a arte de fazer o Google entender o que seu site é sobre e mostrar ele pra quem procura. Bom SEO abre a porta. Nada de mágica. É estrutura básica bem feita.</p>
+      <p>Duas coisas resolvem 80% do SEO em projeto pequeno: título da página (a <code>&lt;title&gt;</code>) e descrição (a meta description). Título é o que aparece na aba do navegador e no resultado do Google, em fonte azul. Descrição é o textinho embaixo, cinza. Se os dois forem bons, específicos e verdadeiros, você ganhou metade da batalha.</p>
+      <p>Título ruim: "Home". Título bom: "Meus 5 jogos favoritos de RPG em 2026 - análise honesta de um jogador de 13 anos". Sente a diferença? O primeiro é vago, o segundo é específico. Google adora específico. Gente que busca também. E a IA sabe gerar isso muito bem, se você pedir com contexto.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você tem uma landing sobre seu projeto de mural de recados. Título fraco: "Mural". Título forte: "Mural de recados online grátis - deixe uma mensagem para seus amigos". Descrição: "Site simples e gratuito onde você deixa recado curto e público, feito por um adolescente de 13 anos como projeto de curso de vibecoding". Vagem, honesta, e o Google entende.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te descrever meu projeto e o público-alvo. Gere: (1) 3 opções de &lt;title&gt; entre 50 e 60 caracteres cada, (2) 3 opções de meta description entre 140 e 160 caracteres, (3) 5 palavras-chave que a pessoa provavelmente digitaria no Google pra chegar aqui, (4) sugestão de open graph tag pra quando o link for compartilhado no WhatsApp.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca invente palavra-chave que não tem a ver com o site só pra atrair mais gente. Google penaliza e usuário sente enganado. Verdade sempre ganha no longo prazo.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você fosse buscar seu próprio site no Google, que palavras digitaria? Elas aparecem no seu título e descrição hoje?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 25</span><h3>Uma página que convida (landing page)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como fazer landing page que explica o projeto em segundos e convida a pessoa a usar sem enrolar.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Landing page é o cartão de visita do seu projeto. É a primeira página que a pessoa vê. Você tem 5 segundos pra ela entender o que é, gostar da ideia e clicar. Cinco. Segundos. Se não conseguiu explicar em 5 segundos, ela fecha. Isso vale pra Netflix, pra Duolingo, pro seu projeto.</p>
+      <p>A "dobra" é o que aparece antes da pessoa rolar a tela. É a parte mais preciosa da página. Três coisas moram ali: título forte (o que é), sub-título (pra quem), botão (o que fazer). Se essas três estão claras, você já ganhou. Se são confusas, perdeu a pessoa.</p>
+      <p>Erro clássico de landing: chamar tudo de "revolucionário", "único", "vai mudar tudo". Isso é hype. Adolescente antenado percebe hype na hora e desliga. O certo é honesto e específico: "mural de recados público, gratuito, sem cadastro". A pessoa sabe exatamente o que é. Zero engano. E o botão embaixo: "Deixar recado agora". Simples, específico, ação clara.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Dobra da landing do seu mural. Título: "Um mural, um recado, para o mundo". Sub: "Deixe uma mensagem curta pra qualquer pessoa que passar por aqui. Sem cadastro, sem drama". Botão: "Deixar recado". Três linhas explicam tudo. Zero adjetivo besta. E a pessoa que abriu sabe se é pra ela em menos de 5 segundos.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou te contar sobre meu projeto em uma frase. Gere uma landing page HTML+CSS com: (1) dobra com título forte, subtítulo claro e um CTA único, (2) 3 blocos explicando os benefícios, (3) FAQ com 5 dúvidas comuns, (4) rodapé simples. Sem hype. Sem "revolucionário". Só verdade, tom Rodrigo.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Peça pra 3 pessoas diferentes lerem sua dobra por 5 segundos e te dizerem o que o site faz. Se as 3 disserem coisas diferentes, sua dobra não tá clara. Refaz.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual foi a última landing que te convenceu a clicar em "quero saber mais"? O que ela tinha de bom?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 26</span><h3>Mini-lançamento: contar pros amigos</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como planejar um mini-lançamento pra família, amigos ou colegas, com objetivo claro e devolutiva do que aprendeu.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Mini-lançamento não é evento grande. É você mandando o link pra 10 pessoas certas. Só isso. Mas com método: você define quem vai receber, o que quer aprender com essas pessoas e como vai medir se deu certo. Sem plano vira grupo aleatório no WhatsApp. Com plano vira dado pra evoluir.</p>
+      <p>Escolha bem quem recebe o link primeiro. Não manda no grupão da escola. Escolhe 10 pessoas que representam quem seria o usuário real: 3 amigos do jogo, 2 primos da idade, 1 professor, 4 outros colegas que gostam do assunto. Manda pra elas com um pedido: "usa 3 minutos e me manda o que achou, sem drama". Você quer feedback honesto, não "tá lindo, parabéns".</p>
+      <p>E a parte que ninguém faz: anota o que aprendeu. Três coisas que funcionaram, três que não funcionaram, três que quer testar na próxima versão. Anotar isso vira seu diário de criador. Daqui a um ano, você lê e vê como evoluiu. Vibecoder cresce mais rápido quando anota o que aprendeu.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Sábado. Você manda o link do mural pra 10 pessoas. 7 respondem. 3 amaram, 2 acharam ok, 2 disseram que "não sabia o que fazer na tela inicial". Anota. Você aprendeu que a dobra da landing precisa ser mais clara. Volta na aula 25. Ajusta. Manda de novo. Isso é ciclo de criador. Não é derrota, é combustível.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou fazer um mini-lançamento do meu projeto. Me ajude a: (1) listar 10 tipos de pessoas que devo mandar primeiro, (2) escrever a mensagem que vou enviar (curta, sem hype), (3) 3 perguntas que devo fazer pra pegar feedback útil, (4) como organizar as respostas pra decidir o que ajustar na versão 1.1.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Feedback negativo dói mais e vale mais. Quando alguém diz "não entendi", agradece de verdade. Essa pessoa te deu ouro. Feedback só positivo é lisonja, não ajuda a evoluir.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você recebesse um projeto de amigo pra dar feedback, qual é a melhor pergunta que você poderia responder pra ele?</p>
+    </div>
+  </article>
+
+  <div class="bloco b-conversa" style="margin-top:22px"><h4>🎯 Fim do módulo 7</h4>
+    <p>Site no ar de verdade, achável no Google, com landing que convence e mini-lançamento com feedback real. Você agora sabe transformar projeto em produto. Falta um módulo. E ele é o mais divertido de todos: o próximo nível.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Módulo 8 · Semana 15</span><h2>Criador avançado (o próximo nível)</h2></div>
+  <p class="mod-resumo">Quatro aulas pra dar um passo além do que a maioria dos adultos que "usam ChatGPT" chega. Agente, skill, evolução sem quebrar e projeto final apresentado ao vivo.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 27</span><h3>Ajudantes automáticos (agentes simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> o que é agente de IA e como criar um ajudante super simples pro seu próprio projeto.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Agente é o passo além do "chat com IA". Chat é você fazendo pergunta e recebendo resposta. Agente é a IA fazendo uma tarefa de várias etapas sozinha, sem você guiar cada passo. Pensa num npc do Minecraft que você programa pra plantar, colher e guardar. É agente, no espírito. Você define missão. Ele executa. Você fiscaliza.</p>
+      <p>Agente pequeno e útil é o melhor lugar pra começar. Não tenta fazer "meu próprio ChatGPT". Faz um agente que faz UMA coisa muito bem. Exemplo: "agente responde dúvida sobre minhas builds de Minecraft, buscando na minha lista pessoal". Especializado. Simples. Cheio de graça. E dá pra construir em uma tarde.</p>
+      <p>Regra sagrada: humano decide, agente executa. Nunca deixe agente decidir sozinho algo que envolve dinheiro, dado de pessoa, deploy em produção, envio de mensagem em massa. Agente é assistente, não é dono. Se sair do controle, você desliga em um clique. Sempre pergunte "quem tá no controle?" e a resposta tem que ser "eu".</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você cria um agente que responde perguntas sobre seus 5 jogos favoritos. Alguém pergunta no chat do seu site: "qual jogo você recomenda pra quem gosta de aventura?". O agente lê sua lista, compara, responde: "olha os seus builds, você recomendaria X porque tem essas características". Não é o Google. É seu curador digital. E é só um pedacinho do que dá pra fazer com agente.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Quero criar um agente simples pro meu projeto. Missão: [descreva em uma frase]. Regras: (1) só pode responder sobre esse assunto, (2) se não souber, diz "não sei", (3) sempre em pt-BR, tom amigável, (4) nunca envia mensagem, nunca gasta dinheiro, nunca acessa dado privado. Me mostre o system prompt e o esqueleto do código.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Todo agente precisa ter um botão de "parar tudo" bem visível. Se ele começar a agir estranho, você desliga. Sem hesitar. Não deixa agente ligado sem supervisão.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você pudesse ter um agente que faz UMA coisa chata pra você todo dia, qual seria?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 28</span><h3>Criar suas próprias habilidades (skills simples)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como criar skill pequena que ensina a IA a fazer uma coisa do seu jeito, todo dia igual.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Skill é o próximo passo depois de "prompt bom". Prompt bom você digita toda vez. Skill é você ensinar a IA a lembrar do jeito certo pra sempre. Uma vez pronta, você invoca a skill em uma palavra e a IA faz igual toda vez, com o seu tom, seu método, seus padrões.</p>
+      <p>Skill pequena e útil vale mais que skill gigante e genérica. Comece com algo bem definido: "skill que gera nome de commit no meu padrão", "skill que revisa se o meu texto tem hype", "skill que verifica se meu código tem segredo colado". Um problema, uma solução, texto claro do que fazer.</p>
+      <p>Estrutura básica de skill: nome, gatilho (quando ativar), objetivo (o que faz), regras (o que sempre segue), exemplos (mostra funcionando). Não precisa ser gigante. Uma skill boa cabe em uma página. E fica com você pra sempre, salvando tempo toda vez que você invocar.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Skill "sem hype": você ensina a IA que "sem hype" significa "cortar todo adjetivo tipo revolucionário, incrível, único" e "trocar por descrição concreta do que a coisa faz". Toda vez que você invoca /sem-hype num texto, ela aplica a regra. Ganho: seus textos ficam consistentes, no seu tom, sem esforço.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Quero criar minha primeira skill. Ela vai [descreva o que faz]. Me ajude a escrever: (1) nome curto e específico, (2) quando ela deve ativar, (3) o objetivo em 1 frase, (4) 5 regras que ela sempre segue, (5) 2 exemplos de antes/depois pra ilustrar. Formato claro pra IA seguir.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Skill boa é aquela que você usa toda semana. Skill ruim é aquela que você criou, usou uma vez, esqueceu. Antes de criar, pergunta: vou usar toda semana? Se sim, cria. Se não, deixa pra depois.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual é uma tarefa que você faz igual toda semana e que se tivesse skill, viraria mais rápida?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 29</span><h3>Mudar e melhorar sem quebrar</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como evoluir o projeto sem quebrar o que já estava funcionando, mesmo com o site no ar e pessoas usando.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Chegou aqui? Ótimo. Isso é onde 90% dos iniciantes se enrolam. Site tá no ar, pessoas usam, você quer adicionar coisa nova. Muda direto no ar e quebra tudo. Frustração. Aprende agora o caminho certo: testa antes, muda com plano, tem como voltar.</p>
+      <p>Regra 1: nunca teste em produção. Existe o "ambiente de desenvolvimento" (só no seu computador) e "produção" (no ar, público). Toda mudança começa no seu, testa, confere, commit, aí sim vai pro ar. Nunca ao contrário. Vercel e Netlify já dão isso de graça (chamado de "preview branch"). Adulto ajuda a configurar a primeira vez.</p>
+      <p>Regra 2: sempre tenha como voltar. Isso é Git. Você commita cada mudança grande. Se subir uma versão nova e quebrar, você reverte pra versão anterior em um comando. Chama-se "rollback". Zero pânico. Isso é a camada "Versionar" do Protocolo de 5 Camadas de novo, mostrando o valor.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Você quer adicionar botão "curtir" no mural. Cria uma nova branch no Git chamada <code>feature-curtir</code>. Trabalha lá. Testa. Manda pra preview da Vercel (ela cria um link temporário). Abre o preview no celular. Testa. Um amigo testa. Tudo ok. Mescla pra branch principal. Vai pro ar. Se algo desse errado, era só apagar a branch. Zero risco pro projeto principal.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou adicionar a feature [descrição] no meu projeto que já está no ar. Me guie no fluxo: (1) criar branch nova no Git, (2) fazer a mudança e testar localmente, (3) subir pro preview e testar no celular, (4) checklist de segurança antes de mesclar, (5) o que fazer se der ruim depois de subir pra produção.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Nunca mexa em código que tá no ar às 22h de sexta. Serio. Se der ruim, você não vai ter tempo nem ajuda. Faz mudança nas horas úteis, com adulto por perto.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Qual é a mudança mais legal que você faria hoje no seu projeto? Ela é grande ou pequena? Por onde começaria?</p>
+    </div>
+  </article>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Aula 30</span><h3>Projeto final: meu programa no ar (apresentação)</h3></div>
+    <p class="objetivo"><b>Nesta aula você viu:</b> como apresentar o projeto final ao vivo pros colegas, professor e família. Fechamento do curso.</p>
+
+    <div class="bloco b-conteudo"><h4>📖 Recado editorial</h4>
+      <p>Última aula. Momento raro. Você tem cinco minutos pra contar a história do que fez. Não é palestra motivacional. Não é hype. É honesto, curto, específico. O formato é sagrado: problema (o que você quis resolver), solução (o que você construiu), demo (mostra funcionando ao vivo), aprendizado (o que você tira pra vida).</p>
+      <p>Prepara antes. Anota os 5 minutos no papel. Ensaia sozinho, cronometrando. Ensaia pra uma pessoa (mãe, irmão, amigo). Ajusta. Ninguém apresenta bem sem ensaiar. Ninguém. Nem YouTuber famoso improvisa realmente: ele preparou tanto que parece natural. Você também.</p>
+      <p>E o mais importante: você chegou aqui. Do zero ao ar em 30 aulas. Site no ar, endereço público, revisão de segurança feita, capricho aplicado. Isso não é pouca coisa. Muita gente adulta paga curso caro pra chegar onde você chegou. Você fez com 13 anos e um adulto por perto. Fica orgulhoso disso do jeito calmo, sem hype. O que vale é o que você aprendeu.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Um exemplo pra guardar</h4>
+      <p>Sua apresentação de 5 minutos: 1 minuto de problema ("queria mostrar meus builds e receber sugestões dos amigos"), 1 minuto de solução ("fiz um mural de recados com galeria de builds"), 2 minutos de demo ao vivo (site no ar, funcionando no celular na sua mão), 1 minuto de aprendizado ("aprendi que planejar antes economiza tempo, que segurança não é opcional, que testar antes de mostrar é regra"). Cinco minutos. Bem gasto.</p>
+    </div>
+
+    <div class="prompt"><span class="ptag">Prompt pra guardar</span><pre>Vou apresentar meu projeto final em 5 minutos. Me ajude a estruturar: (1) 1 minuto de problema, (2) 1 minuto de solução, (3) 2 minutos de demo (o que mostrar exatamente na tela), (4) 1 minuto de aprendizado. Sem hype. Tom Rodrigo. Frases curtas. E dê 3 dicas de como não travar na hora da demo ao vivo.</pre></div>
+
+    <div class="skills"><h4>Fica esperto</h4>
+      <p>Antes da apresentação, abre o site em 2 lugares (computador e celular) e deixa aberto. Se um travar, o outro funciona. Se o Wi-Fi cair, você já pensou em plano B. Piloto sempre tem plano B.</p>
+    </div>
+
+    <div class="pratica"><h4>Pergunte pra pensar</h4>
+      <p>Se você fosse resumir o que aprendeu no curso inteiro em 3 frases, quais seriam? Anota. Elas vão te acompanhar.</p>
+    </div>
+  </article>
+
+  <div class="bloco b-conversa" style="margin-top:22px"><h4>🎯 Fim do módulo 8 · Fim do curso</h4>
+    <p>Agente rodando, skill sua, evolução sem quebrar e projeto final apresentado. Você fechou o curso. Não é diploma. É partida. A partir daqui, é você e a IA construindo o que quiser, do jeito que aprendeu: com engenharia, com segurança, com capricho e sem hype.</p>
+  </div>
+</section>
+
+<section class="modulo">
+  <div class="mod-head"><span class="mod-num">Chegou aqui</span><h2>O próximo capítulo é você quem escreve</h2></div>
+  <p class="mod-resumo">Fim de curso não é fim de estrada. É o começo da sua estrada. Aqui vai o que vem pela frente, e como continuar sem parar de aprender.</p>
+
+  <article class="aula">
+    <div class="aula-head"><span class="aula-num">Convite</span><h3>O que fazer agora que o curso acabou</h3></div>
+    <p class="objetivo"><b>Três caminhos pra continuar crescendo como vibecoder.</b></p>
+
+    <div class="bloco b-conteudo"><h4>📖 Caminho 1: construa um projeto real</h4>
+      <p>O melhor jeito de aprender vibecoding depois do curso é fazer um projeto que resolve um problema seu. Um site pra vender doce da mãe. Uma agenda pra os treinos. Um mural pros amigos da escola. Escolhe UM. Constrói. Publica. Coleta feedback. Melhora. Isso vale mais que 10 cursos novos.</p>
+    </div>
+
+    <div class="bloco b-exemplo"><h4>💡 Caminho 2: se aprofunde no que gostou mais</h4>
+      <p>Alguma parte do curso te deixou com fome? Design, segurança, IA, banco de dados? Escolhe uma e aprofunda. Existem materiais gratuitos ótimos. Freecodecamp, YouTube, documentação oficial. E, sempre, a IA como copiloto. Aprofundar em um assunto é o que faz de você especialista, não generalista raso.</p>
+    </div>
+
+    <div class="bloco b-pratica"><h4>📖 Caminho 3: adote o Método Rodrigo pro resto da vida</h4>
+      <p>Independentemente do que você for construir, leva com você o método: P.R.O.M.P.T.E.R. pra pedir bem. Protocolo de 5 Camadas pra construir com rigor (Entender, Ler, Blindar, Testar, Versionar). Sem hype na hora de vender. Adulto por perto pra deploy. Segurança em primeiro lugar. Esse método é seu agora. Não é do curso, é seu.</p>
+    </div>
+
+    <div class="skills"><h4>Última dica</h4>
+      <p>Não pare. Faz um projeto pequeno por mês. Compartilha os aprendizados. Ajuda alguém que tá começando (ensinar é a melhor forma de aprender). Em um ano, você olha pra trás e não reconhece o iniciante que era. Em dois anos, você tá construindo coisa séria. Vibecoding com engenharia é caminho longo, mas o começo você já deu.</p>
+    </div>
+
+    <div class="pratica"><h4>Última pergunta</h4>
+      <p>Qual é o próximo projeto que você quer construir? Não deixa a resposta na cabeça. Escreve. Guarda. E começa amanhã.</p>
+    </div>
+  </article>
+</section>
+
+</div>
+</body>
+</html>

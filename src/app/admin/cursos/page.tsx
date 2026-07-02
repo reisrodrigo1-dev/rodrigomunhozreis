@@ -115,7 +115,7 @@ export default function AdminCursos() {
           </p>
           <p className="mt-0.5 text-xs text-muted">
             30 aulas de 1h em 15 semanas com encontro ao vivo semanal. Criar sites e programas com IA como copiloto, do &quot;Olá, mundo!&quot; ao projeto no ar.
-            Apostilas e e-book sendo gerados agora.
+            Pacote completo: ementa, apostila do aluno, apostila do professor e e-book.
           </p>
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
