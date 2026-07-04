@@ -7,6 +7,252 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "curso-em-video-crianca-duolingo-matou-2026",
+    slug: "curso-em-video-crianca-duolingo-matou-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-04",
+    coverUrl:
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80",
+    title: "Curso em vídeo pra criança já morreu. Duolingo matou",
+    excerpt:
+      "Eu ia gravar 60 vídeos de 25 minutos pra um curso de IA infantil. Parei no 5º. O motivo tá em 500 milhões de baixadas do Duolingo. Por que jogo web venceu a aula gravada.",
+    content: `## O plano original
+
+Curso EAD de 30 horas de IA pra criança de 11 a 13 anos. Alinhado ao MEC. 30 aulas, dois vídeos por aula, 25 minutos cada. 60 vídeos totais.
+
+Passei uma semana montando a stack de produção. Voz sintética em português, robô mascote animado, screencast das IAs, composição automática em Python. Tudo grátis, tudo escalável.
+
+Rodou. Funcionou. E aí eu percebi que ia produzir algo que ninguém ia terminar de assistir.
+
+## A pergunta que travou tudo
+
+Você tem 11 anos. Você vai passar 30 horas assistindo um robô falar sobre IA. De verdade?
+
+Sua concorrência não é outro curso. É o TikTok tocando na tela ao lado.
+
+Aula em vídeo pra criança é passiva. Ela assiste. Talvez. Enquanto rola o feed.
+
+A cada 30 segundos ela decide se continua ou não. E vídeo não pergunta nada. Não interrompe. Não sabe se ela entendeu.
+
+## O que o Duolingo entendeu antes de todo mundo
+
+Duolingo tem 500 milhões de baixadas. Não porque ensina idioma melhor. Ensina pior que curso presencial.
+
+Vence porque prende. Streak. XP. Coração perdido. "Você vai deixar Duo triste?" na notificação.
+
+E o formato mudou tudo: fase curta de 5 minutos, exercício interativo, feedback na hora, próxima fase desbloqueada. A criança clica. Erra. Refaz. Aprende.
+
+Aula em vídeo virou fita cassete. Ainda existe. Ninguém compra.
+
+## Meu take
+
+Curso em vídeo pra adulto ainda funciona porque adulto tem carreira, dor, compromisso. Adulto assiste porque precisa.
+
+Criança não precisa. Ela quer diversão. Quer feedback rápido. Quer subir de nível.
+
+Se o formato não entrega isso, ela troca por Roblox em 3 segundos.
+
+E a IA veio pra facilitar a produção do vídeo, não pra corrigir a essência ruim do formato.
+
+## O jogo que vou construir
+
+Refiz o plano. Mesma ementa. Mesmo alinhamento MEC. Mesmas dimensões. Mas em forma de jogo web.
+
+30 fases curtas. 8 mundos. Robô mascote como guia. Cada fase termina com desafio real: a criança conversa com uma IA de verdade e avalia a resposta.
+
+Analytics: eu vejo onde ela travou. Onde perdeu interesse. Onde acertou de primeira. Coisa que vídeo nunca me dá.
+
+Custo de produção: menor que os 60 vídeos. Engajamento estimado: 10x maior. Escala: infinita.
+
+## Vale o ponto
+
+"Mas jogo não passa a profundidade de uma aula boa em vídeo."
+
+Vale o ponto. Aula boa em vídeo pra ADULTO. Pra criança, nem uma nem outra passa profundidade sozinha. Profundidade vem da prática. Jogo força prática. Vídeo pede que ela pratique depois. E ela nunca pratica depois.
+
+## Conclusão
+
+Se você tá pensando em curso pra criança em 2026 e o formato é vídeo, dá um passo atrás. Pergunta: minha filha de 11 anos vai terminar isso?
+
+Se a resposta for "só se eu obrigar", o formato tá errado. Muda antes de produzir.
+
+Vídeo não morreu. Vídeo pra criança educar sozinha morreu.
+
+A decisão é sua.`,
+  },
+  {
+    id: "bncc-computacao-obrigatoria-escola-fundeb-2026",
+    slug: "bncc-computacao-obrigatoria-escola-fundeb-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-04",
+    coverUrl:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "BNCC Computação virou obrigatória. Sua escola tem 3 meses pra correr",
+    excerpt:
+      "Escola sem BNCC Computação em vigor perde Fundeb condicionado a partir do ano letivo de 2027. A maioria não tá preparada. Nem os professores. Isso abre janela pra quem tem produto pronto agora.",
+    content: `## O que mudou
+
+MEC publicou em abril de 2026 o Documento Orientador da BNCC Computação. Traz três eixos obrigatórios (Pensamento Computacional, Mundo Digital, Cultura Digital) pra ser aplicado do fundamental ao médio.
+
+E não é sugestão. Fundeb condicionado. Escola pública ou privada que não cumprir a partir do ano letivo de 2027 perde repasse.
+
+## A conta que a escola tá fazendo
+
+3 milhões de professores da rede pública. A maioria nunca deu aula de computação. A maioria nem sabe o que é pensamento computacional.
+
+Formação continuada leva 2-3 anos pra chegar em todos. Editora demora 1-2 anos pra imprimir material aprovado. Currículo escolar é mais lento ainda.
+
+Cronograma real: escola vai virar 2027 correndo. A maior parte vai improvisar. Uma parte vai contratar solução pronta.
+
+## Onde tá o buraco
+
+Escola precisa de:
+
+- Material didático alinhado aos códigos oficiais (EF69CO01, EF69CO02, etc.).
+- Formação de professor que não sabe computação.
+- Ferramenta pra alunos praticarem sem instalar nada.
+- Prova de alinhamento pra apresentar em auditoria do MEC.
+
+Quem tem essas 4 coisas prontas atendendo isso vai ter escola batendo na porta em janeiro.
+
+## Meu take
+
+Regulação nova é sempre janela. Quem já tá pronto pega o mercado antes de virar commodity.
+
+Vibecoding e IA são justo o que a BNCC Computação pede. Não precisa reinventar. Só precisa estruturar do jeito que o MEC quer.
+
+## O que fazer se você constrói produto educacional
+
+1. **Alinhamento explícito.** Cada aula, cada exercício, cada material deve citar o código de habilidade BNCC atendido. Isso vira material de venda.
+
+2. **Documento oficial de conformidade.** Um PDF ou HTML explicando como seu produto cumpre os 4 princípios do MEC (centralidade humana, salvaguardas, proteção de dados, equidade) e os 3 eixos da BNCC. Pode fazer amanhã.
+
+3. **Piloto em 1-2 escolas antes do fim de 2026.** Escola gosta de ver caso rodando. Nem que seja pequeno.
+
+4. **LGPD + ECA Digital.** Menor de 18 anos é regulado. Se seu produto trata dado de aluno, precisa consentimento dos pais no fluxo. Não é opcional.
+
+## O que fazer se você é pai ou mãe
+
+Pergunta na reunião de janeiro:
+
+- "A escola está alinhada à BNCC Computação em 2027?"
+- "Qual material vocês vão usar?"
+- "Meu filho de 12 anos vai aprender IA na escola?"
+
+Se a resposta é "estamos vendo", o resto do curso da vida do seu filho vai depender de você buscar isso fora da escola.
+
+## Conclusão
+
+MEC não tá mudando o mundo. Tá reagindo a ele. Empresa e criança já usam IA. Escola tá 5 anos atrás.
+
+Quem tem produto pronto agora pega uma janela de 12-18 meses. Depois disso vira mercado maduro com Big Tech em cima.
+
+A decisão é sua.`,
+  },
+  {
+    id: "free-tier-ia-armadilha-produtor-conteudo-2026",
+    slug: "free-tier-ia-armadilha-produtor-conteudo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-04",
+    coverUrl:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Grátis com pegadinha: o mapa dos free tiers de IA que enganam quem produz",
+    excerpt:
+      "ElevenLabs free proíbe comercial. HeyGen free bota marca d'água obrigatória. Azure Speech grátis não deixa monetizar. Pesquisei em 2026 tudo que se vende como grátis pra produtor de conteúdo. Aqui vai a verdade.",
+    content: `## O que rolou
+
+Passei 3 dias pesquisando toda ferramenta de IA que se anuncia como grátis pra criador de conteúdo. Áudio, avatar, edição, composição, tudo.
+
+Objetivo: montar stack de zero custo pra produzir 60 vídeos de um curso EAD.
+
+Descoberta: quase nenhum "free tier" é grátis pra quem vai vender o resultado. E ninguém fala isso direito.
+
+## As 5 armadilhas mais comuns
+
+### 1. Free proibindo uso comercial
+
+ElevenLabs free permite 10 mil caracteres por mês. Suficiente pra um vídeo de 10 minutos. Só que o termo de uso diz explícito: sem uso comercial. Se você monetiza, viola.
+
+Idem: Azure Speech free F0, PlayHT free, Murf free, Cartesia free.
+
+Se seu curso é pago, esses free tiers não servem. Ponto.
+
+### 2. Free com marca d'água obrigatória
+
+HeyGen free dá 3 vídeos por mês, mas com marca "Made with HeyGen" que você não remove. Synthesia idem.
+
+Marca d'água num curso pago faz o produto parecer amador. E cliente questiona por que ele paga se sua stack é grátis.
+
+### 3. Free com termos nebulosos
+
+Coqui XTTS v2 é famoso por qualidade em português. Open source. Só que a licença dos pesos (CPML) proíbe uso comercial. E a Coqui fechou em janeiro de 2024. Não tem ninguém pra vender licença.
+
+Usar em produto pago hoje é risco jurídico real. Ninguém fala.
+
+F5-TTS, Fish Speech, Meta MMS: mesma pegadinha. Código aberto, pesos com licença não-comercial.
+
+### 4. Free com risco de banimento
+
+Automatizar Claude, ChatGPT ou Gemini via Playwright pra gravar tela é violação dos termos das três. Enforcement subiu em 2026. Risco: perder a conta paga também.
+
+Free tier de HeyGen com múltiplas contas pra escalar volume: violação. Pega ban.
+
+Tem gente vendendo curso com essa estratégia. Um dia acorda sem conta.
+
+### 5. Free com data de validade
+
+Amazon Polly Neural é grátis nos primeiros 12 meses. Depois vira pago. Se o produto escala em 6 meses, você tem 6 pra migrar tudo.
+
+Google Cloud tem 300 dólares em créditos por 90 dias. Depois é pay-per-use. Precisa planejar.
+
+## O que É grátis DE VERDADE (para produto pago)
+
+Existem opções. Só que são menos famosas.
+
+- **Google Chirp 3 HD** em português brasileiro: 1 milhão de caracteres por mês, permanente, uso comercial permitido. Voz nativa BR de alta qualidade.
+- **Piper TTS** com voz Faber PT-BR: MIT, roda em CPU, uso comercial. Voz de narrador de metrô, mas funciona.
+- **Kokoro TTS**: Apache 2.0, tem voz feminina PT-BR (pf_dora), qualidade acima do Piper.
+- **OBS Studio**: sem limite, sem marca d'água, sem restrição de uso comercial.
+- **FFmpeg**: LGPL, faz composição, encoding, tudo. Grátis de verdade.
+- **DaVinci Resolve free**: edita 4K sem marca d'água, comercial liberado.
+- **Rhubarb Lip Sync**: MIT, gera timeline de boca a partir de áudio. Perfeito pra robô mascote com PNG.
+
+Sim, dá pra montar stack 100% grátis e comercial. Só que ninguém anuncia essas ferramentas porque elas não têm departamento de marketing.
+
+## Meu take
+
+Free tier de SaaS quase sempre é anúncio disfarçado. Serve pra viciar você. Depois cobra.
+
+Software open source com licença permissiva (MIT, Apache 2.0, LGPL, GPL v3) é o único grátis de verdade. Menos brilhante. Mais estável. Sem armadilha.
+
+Se você produz pra viver, faz auditoria da licença ANTES de gerar 60 assets em cima. Não depois.
+
+## Como fazer sua checagem em 3 minutos
+
+Para cada ferramenta:
+
+1. Abre a página de termos ou o arquivo LICENSE.
+2. Procura "commercial use" ou "monetize".
+3. Se não achar autorização explícita, considera proibido.
+4. Se achar restrição por tier, verifica em qual tier você tá.
+
+Feio? É. Rápido? É. Salva de reescrever 6 meses de trabalho? Sempre.
+
+## Conclusão
+
+Grátis não significa livre. Grátis com armadilha custa mais que pago sem armadilha.
+
+Antes de escolher a stack do seu próximo produto, faça a auditoria dos 3 minutos. E aceita: "de graça, comercial, sem watermark" é um filtro que reduz 90% das opções que aparecem no Google.
+
+A decisão é sua.`,
+  },
+  {
     id: "criancas-aprender-vibecoding-metodo-2026",
     slug: "criancas-aprender-vibecoding-metodo-2026",
     contentVersion: 1,
