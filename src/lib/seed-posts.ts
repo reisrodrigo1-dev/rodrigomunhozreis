@@ -7,6 +7,236 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "prompter-na-pratica-5-exemplos-tutorial-2026",
+    slug: "prompter-na-pratica-5-exemplos-tutorial-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-04",
+    coverUrl:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "P.R.O.M.P.T.E.R. na prática: 5 prompts ruins virando prompts profissionais",
+    excerpt:
+      "Peguei 5 prompts reais que a galera manda no dia a dia, apliquei o método P.R.O.M.P.T.E.R. e comparei o resultado. Antes: 4 linhas vagas. Depois: prompt que devolve resposta utilizável.",
+    content: `## O método em 30 segundos
+
+P.R.O.M.P.T.E.R. é meu framework pra estruturar prompt:
+
+- **P**apel: quem a IA é (identidade e contexto)
+- **R**egras: o que ela pode e não pode
+- **O**bjetivo: o que precisa entregar
+- **M**odelo: formato da resposta
+- **P**arâmetros: valores, tamanho, tom
+- **T**este: pequena verificação embutida
+- **E**xemplo: pelo menos 1 caso do output esperado
+- **R**etorno: como você vai receber (JSON, markdown, texto)
+
+Método completo aqui: [P.R.O.M.P.T.E.R.](/blog/prompter). Neste post mostro 5 casos reais de refino.
+
+## Exemplo 1: pedir código
+
+**Prompt ruim (o que 90% da galera manda):**
+
+> Faz uma função em JavaScript pra validar email.
+
+**Problema:** a IA vai inventar 15 padrões diferentes. Você recebe algo, cola, roda, erra. E aí?
+
+**Prompt com P.R.O.M.P.T.E.R.:**
+
+> **Papel:** você é engenheiro sênior de back-end. Se um caso for ambíguo, pergunte antes de gerar código.
+> **Regras:** use apenas regex nativo do JS. Sem lib externa. JavaScript puro, sem TypeScript.
+> **Objetivo:** função \`validaEmail(email)\` que retorna boolean.
+> **Modelo:** função pura, sem side-effect. JSDoc no topo com 1 linha.
+> **Teste embutido:** inclua 3 casos de teste depois da função (email válido, sem @, com espaço).
+> **Retorno:** só o código, sem comentário fora dele.
+
+**Diferença:** você recebe função utilizável, testada, com 3 casos de verificação. Já dá pra colar.
+
+## Exemplo 2: pedir texto
+
+**Prompt ruim:**
+
+> Escreva um email pro meu cliente avisando que atrasei a entrega.
+
+**Problema:** IA devolve texto genérico, tom de startup, cheio de "esperamos que compreenda". Você reescreve tudo.
+
+**Prompt com P.R.O.M.P.T.E.R.:**
+
+> **Papel:** você é founder de agência escrevendo pro cliente que confia em você. Voz honesta, sem enfeitar.
+> **Regras:** NUNCA usar travessão. Sem "esperamos que compreenda". Sem "prezado". Frases curtas.
+> **Objetivo:** email de 5 a 8 linhas contando que atrasou a entrega e o novo prazo é sexta.
+> **Modelo:** subject line + corpo. Sem assinatura.
+> **Teste embutido:** ao final, faça varredura buscando travessão e substitua se achou.
+> **Retorno:** só o email, sem introdução.
+
+**Diferença:** você recebe email que você mandaria. Não precisa reescrever.
+
+## Exemplo 3: pedir análise
+
+**Prompt ruim:**
+
+> Analisa esses 3 currículos e me diz qual eu contrato.
+
+**Problema:** IA dá resposta política ("todos têm qualidades"). Você fica na mesma.
+
+**Prompt com P.R.O.M.P.T.E.R.:**
+
+> **Papel:** você é headhunter sênior. Fala direto, sem enrolar.
+> **Regras:** foco em fit técnico e histórico de entrega. Ignore título de faculdade. NÃO seja neutro: escolha um. Explique o descarte dos outros dois em 1 linha cada.
+> **Objetivo:** decidir qual dos 3 currículos passa pra próxima fase.
+> **Modelo:** 1 escolha + 1 parágrafo de por quê + 2 linhas de descarte.
+> **Teste:** se todos parecerem iguais, aponte o que faltou nos currículos pra decidir.
+> **Retorno:** markdown com H2 "Escolha", H2 "Por quê", H2 "Descarte".
+
+**Diferença:** decisão real, base clara, ainda te avisa se precisar de mais info.
+
+## Exemplo 4: pedir revisão de código
+
+**Prompt ruim:**
+
+> Revisa esse código pra mim.
+
+**Problema:** IA elogia. Devolve "bom código, parabéns". Zero utilidade.
+
+**Prompt com P.R.O.M.P.T.E.R.:**
+
+> **Papel:** você é revisor cético. Sua missão é achar problema, não elogiar.
+> **Regras:** só aponte problemas com potencial de bug ou segurança. Ignore estilo. Ignore "seria melhor se".
+> **Objetivo:** lista de problemas reais em ordem de severidade.
+> **Modelo:** cada problema em 1 bloco: linha, problema em 1 frase, fix sugerido em 1 frase.
+> **Parâmetros:** severidade CRÍTICO/ALTO/MÉDIO. Corte tudo abaixo de MÉDIO.
+> **Teste:** se não achou nada crítico, diga isso explicitamente. Não invente.
+> **Retorno:** markdown com tabela.
+
+**Diferença:** você recebe auditoria, não elogio.
+
+## Exemplo 5: pedir aula ou tutorial
+
+**Prompt ruim:**
+
+> Me explica o que é REST.
+
+**Problema:** IA cospe artigo genérico da Wikipedia. Você já leu esse texto 10 vezes.
+
+**Prompt com P.R.O.M.P.T.E.R.:**
+
+> **Papel:** você é professor que sabe que eu já sei o básico de HTTP.
+> **Regras:** nada de "REST significa REpresentational". Zero jargão sem explicar antes. Nada de "vamos começar do começo".
+> **Objetivo:** me passar o entendimento prático de REST em 5 minutos de leitura.
+> **Modelo:** 4 princípios com 1 exemplo de cada em código curto (curl ou fetch).
+> **Parâmetros:** tom conversado. Exemplo prefere API pública real (GitHub).
+> **Teste:** ao final, me faça 2 perguntas que eu preciso responder pra saber se entendi.
+> **Retorno:** markdown.
+
+**Diferença:** você aprende. Não recebe conteúdo enlatado.
+
+## O padrão que aparece
+
+Prompt ruim é pedido em 1 linha. Prompt profissional é contrato em 8 linhas.
+
+Você gasta 2 minutos escrevendo o prompt bem. Economiza 20 minutos consertando resposta ruim.
+
+## Vale o ponto
+
+"Mas isso não é excesso?"
+
+Vale o ponto. Pra pergunta rápida (o que é X?), não precisa. Pro trabalho de verdade, sempre. A regra: quanto mais importante o output, mais estrutura no input.
+
+## Conclusão
+
+Prompt curto rende resposta curta. Prompt bagunçado rende bagunça. Prompt profissional rende ferramenta.
+
+Pega esses 5 exemplos, cola no Claude/ChatGPT/Gemini e roda. Compara antes e depois. Vai perceber que a IA sempre soube. Você é quem não sabia pedir.
+
+Método completo em [P.R.O.M.P.T.E.R.](/blog/prompter).
+
+A decisão é sua.`,
+  },
+  {
+    id: "sora-openai-media-suite-consolidacao-2026",
+    slug: "sora-openai-media-suite-consolidacao-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-04",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Sora deixou de existir standalone. E isso é aviso pra quem constrói com IA",
+    excerpt:
+      "OpenAI integrou Sora ao Media Suite em abril e matou a app separada. Padrão que vai voltar. Se você constrói em cima de features de SaaS, tá em cima de decisão dos outros. Meu take.",
+    content: `## O que aconteceu
+
+Em abril de 2026, OpenAI descontinuou Sora como app independente. Virou "OpenAI Media Suite", plataforma consolidada dentro da conta OpenAI que junta ChatGPT, DALL-E, geração de vídeo e as ferramentas de mídia num só lugar.
+
+Pra quem usava Sora standalone com integração custom, foi surpresa. Assinatura mudou, endpoint mudou, tier de vídeo diluiu na tarifa geral.
+
+## Não foi só Sora
+
+Padrão que se repete há 18 meses.
+
+- **Google matou Bard** em 2024. Virou Gemini.
+- **Google matou Duet AI** em 2025. Virou Gemini for Workspace.
+- **Microsoft descontinuou Bing Chat**. Virou Copilot.
+- **Meta consolidou Meta AI** dentro do WhatsApp e Instagram.
+- **Anthropic** manteve Claude, mas juntou console e app numa experiência única.
+
+Cada Big Tech tá fazendo a mesma coisa: consolidar produtos separados numa suite.
+
+## Por que isso está acontecendo
+
+Duas razões.
+
+**Razão 1: retenção.** Usuário que assina 4 produtos separados cancela 3 no primeiro corte. Usuário que assina 1 pack não cancela: perde tudo.
+
+**Razão 2: LTV.** Empresa consolidada vende mais fácil. "Assina Google Workspace" é mais gerenciável que "assina Gmail + Docs + Drive + Meet + Duet".
+
+Ninguém consolida por bem-querer do consumidor. Consolida porque a métrica de retenção pede.
+
+## O que muda pra quem constrói
+
+Você tem produto que usa Sora via API. Assinatura de 20 dólares por mês. Volume que cabe.
+
+Vem a consolidação: agora é Media Suite, tier básico de 50. Sua conta triplicou. Endpoint mudou. Você refatora ou perde a feature.
+
+Isso é norma, não exceção. Vai acontecer com Claude, com Gemini, com Grok. Todos vão consolidar. E cada consolidação move o chão de baixo de quem construiu por cima.
+
+## Meu take
+
+Quem constrói produto em cima de **produtos** de IA está construindo em cima de decisão dos outros.
+
+Quem constrói em cima de **APIs** tem soberania parcial: a API vira mais estável, mais barata, mais aberta com o tempo, porque é fluxo B2B.
+
+Quem constrói em cima de **modelos open-source** tem soberania total: Llama 4, Mistral, Qwen, Kokoro. Roda no seu servidor. Você não depende de decisão de ninguém.
+
+Vale o ponto: modelo aberto ainda tem qualidade abaixo do fechado em alguns casos. Mas o gap fecha rápido. E a diferença de risco é enorme.
+
+## O que fazer
+
+**Se seu produto depende de features de app fechado (Sora, Runway, Kling):** planeje migração agora. Considera que a app vai virar suite em 12 meses e o pricing vai dobrar.
+
+**Se depende de API fechada (Anthropic, OpenAI, Google):** paz por 2-3 anos. Fluxo B2B é mais estável. Mas mantenha código agnóstico: use camada de abstração (LiteLLM, LangChain, ou wrapper seu) que troca provedor em 5 minutos.
+
+**Se depende de modelo open-source:** você tá em posição privilegiada. Só cuidado com licença (pesos CC-BY-NC continuam sendo problema). Auditoria antes. Ver: [free tier com pegadinha](/blog/free-tier-ia-armadilha-produtor-conteudo-2026).
+
+## Vale o ponto
+
+"Mas open-source ainda é pior que Claude ou GPT em muitos casos."
+
+Vale o ponto. Não é decisão de "abandonar o fechado". É decisão de **não colocar todos os ovos numa cesta que muda de dono a cada trimestre**.
+
+Meu setup pessoal: 70% Claude via API. 20% Llama 4 rodando local pra tarefa que não pode depender de rede. 10% GPT via API pra caso específico.
+
+Se qualquer um dos 3 sumir amanhã, mantenho operação.
+
+## Conclusão
+
+Sora sumir standalone é sinal. Vai acontecer de novo. Vai acontecer com o produto que você adora.
+
+Constrói com camada de abstração. Constrói agnóstico. E principalmente: nunca constrói dependendo de UI de SaaS. Só de API ou de modelo aberto.
+
+A decisão é sua.`,
+  },
+  {
     id: "curso-em-video-crianca-duolingo-matou-2026",
     slug: "curso-em-video-crianca-duolingo-matou-2026",
     contentVersion: 1,
