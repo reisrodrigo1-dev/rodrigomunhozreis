@@ -63,10 +63,13 @@ function welcomeHtml() {
 
 async function sendWelcome(email: string) {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return;
+  if (!apiKey) {
+    console.warn("[blog-subscribe] RESEND_API_KEY nao configurada");
+    return;
+  }
   const from = process.env.EMAIL_FROM || "Rodrigo Munhoz Reis <onboarding@resend.dev>";
   try {
-    await fetch("https://api.resend.com/emails", {
+    const r = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -76,6 +79,10 @@ async function sendWelcome(email: string) {
         html: welcomeHtml(),
       }),
     });
+    if (!r.ok) {
+      const txt = await r.text().catch(() => "");
+      console.error("[blog-subscribe] resend respondeu", r.status, txt);
+    }
   } catch (err) {
     console.error("[blog-subscribe] resend falhou:", err);
   }
@@ -95,9 +102,9 @@ export async function POST(req: Request) {
   }
   const source = (body.source ?? "unknown").slice(0, 120);
 
-  await saveSubscriber(email, source);
-  // Não aguarda o e-mail: fire-and-forget.
-  sendWelcome(email);
+  // Aguarda ambos: em serverless (Vercel), promise sem await é abortada quando a
+  // rota responde. Custo adicional é ~500ms, mas garante que o e-mail sai.
+  await Promise.all([saveSubscriber(email, source), sendWelcome(email)]);
 
   return NextResponse.json({ ok: true });
 }
