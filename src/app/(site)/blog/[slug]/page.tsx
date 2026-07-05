@@ -10,6 +10,9 @@ import { ViewTracker } from "@/components/view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { RelatedPosts } from "@/components/related-posts";
 import { AuthorBio } from "@/components/author-bio";
+import { PostSummary } from "@/components/post-summary";
+import { PostFaq } from "@/components/post-faq";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { site } from "@/lib/site";
 
 // ISR: revalida a cada 5 min.
@@ -146,9 +149,13 @@ export default async function PostPage({ params }: Props) {
               priority
               sizes="(max-width: 768px) 100vw, 768px"
               className="object-cover"
+              // Data URLs (capa embutida em base64) não passam pelo otimizador do Next:
+              // ele tentaria refetchar via /_next/image e falha com payload grande.
+              unoptimized={post.coverUrl.startsWith("data:")}
             />
           </div>
         )}
+        {post.summary && <PostSummary text={post.summary} />}
         {toc.length >= 3 && (
           <nav aria-label="Conteúdo do artigo" className="glass mt-10 p-5">
             <p className="text-xs font-semibold uppercase tracking-widest text-amber-light">
@@ -166,6 +173,8 @@ export default async function PostPage({ params }: Props) {
           </nav>
         )}
         <div className="prose-dark mt-10" dangerouslySetInnerHTML={{ __html: html }} />
+        {post.faq && post.faq.length > 0 && <PostFaq items={post.faq} />}
+        <NewsletterSignup source={`blog/${post.slug}`} />
         <PostCta />
         <AuthorBio />
         <RelatedPosts posts={related} />

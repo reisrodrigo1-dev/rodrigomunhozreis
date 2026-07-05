@@ -7,6 +7,153 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "guia-completo-vibecoding-com-engenharia-2026",
+    slug: "guia-completo-vibecoding-com-engenharia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-04",
+    coverUrl:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Guia completo: vibecoding com engenharia (do zero ao produto no ar)",
+    excerpt:
+      "Tudo que aprendi construindo software com IA em 5 anos, reunido num só lugar. Método, riscos, ferramentas, casos reais e o passo a passo pra você não cair no vibecoding às cegas.",
+    summary:
+      "Vibecoding é construir com IA. Vibecoding com engenharia é construir com IA sem virar risco. Este guia reúne o método (P.R.O.M.P.T.E.R.), o Protocolo de 5 Camadas, as armadilhas mais comuns e os posts que aprofundam cada parte. É a página que amarra o resto do blog.",
+    content: `Este é o mapa. Se você caiu aqui pela primeira vez, começa por ele. Se já leu vários posts, use pra achar o próximo.
+
+## O que é vibecoding com engenharia
+
+Vibecoding é criar software conversando com uma IA. Você descreve o que quer, ela devolve código. Rápido. Divertido. Perigoso quando feito sem método.
+
+**Vibecoding com engenharia** é a mesma velocidade da IA com o rigor de um engenheiro. Você continua criando rápido, mas com revisão, teste, segurança e método. Não perde velocidade. Ganha durabilidade.
+
+O oposto (vibecoding às cegas) rende MVP bonito na primeira semana e produto quebrado no terceiro mês. Backend feio, senha vazada, tratamento de erro em 5 padrões diferentes, código que ninguém mais entende. O time abandona. O usuário some. O founder aprende do jeito mais caro.
+
+Este guia é a alternativa.
+
+## Quem deve ler
+
+- Fundador não-técnico construindo produto com IA.
+- Desenvolvedor que quer acelerar sem quebrar sua reputação.
+- CTO que precisa provar que dá pra ir rápido E ter qualidade.
+- Estudante começando agora e não quer aprender do jeito errado.
+
+Se você tá em qualquer um desses, o resto do guia é seu.
+
+## Os 3 pilares
+
+### Pilar 1: método pra falar com a IA
+
+Sem método, você depende da sorte de a IA entender o que você quer. Com método, você extrai o melhor de qualquer modelo (Claude, ChatGPT, Gemini) de forma repetível.
+
+O método é o **P.R.O.M.P.T.E.R.**: framework de 8 elementos (Papel, Regras, Objetivo, Modelo, Parâmetros, Teste, Exemplo, Retorno) que transforma pedido vago em contrato claro.
+
+**Aprofunde:**
+- [Como usar IA no trabalho: o método P.R.O.M.P.T.E.R. com exemplos](/blog/prompter)
+- [P.R.O.M.P.T.E.R. na prática: 5 prompts ruins virando profissionais](/blog/prompter-na-pratica-5-exemplos-tutorial-2026)
+- [Como criar seu assistente de IA personalizado (sem código)](/blog/como-criar-assistente-de-ia-personalizado-sem-codigo-2026)
+
+### Pilar 2: método pra revisar o que a IA fez
+
+A IA nunca vai pensar por você. Ela adiciona código. Repete padrão errado. Cria função duplicada. Coloca senha em variável exposta.
+
+O jeito de não cair nisso é o **Protocolo de 5 Camadas**: Entender → Ler → Blindar → Testar → Versionar. Aplicável a qualquer código que sai da IA, seja você quem gera ou seu dev.
+
+**Aprofunde:**
+- [Protocolo de 5 Camadas: como revisar código gerado por IA](/blog/protocolo-de-5-camadas)
+- [Manifesto: por que eu construo (e ensino) vibecoding com engenharia](/blog/manifesto-vibecoding-com-engenharia)
+- [Os 7 pecados do vibecoding às cegas (e como evitá-los)](/blog/7-pecados-vibecoding-as-cegas)
+
+### Pilar 3: método pra escalar sem quebrar
+
+Vibecoding funciona pra criar. Não funciona sozinho pra escalar. Precisa de arquitetura, teste, observabilidade, segurança.
+
+**Aprofunde:**
+- [Seu app funciona. O dev fugiu do seu repositório. E agora?](/blog/seu-app-funciona-mas-o-dev-fugiu-do-repo-2026)
+- [Num produto de IA, a observabilidade é parte do produto](/blog/observabilidade-e-o-produto-falha-silenciosa-ia-2026)
+- [O risco não é o código que você escreve. É o que você instala](/blog/risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026)
+- [Você soltou um agente de IA sem revisar o que ele pode](/blog/agente-de-ia-sem-revisar-permissao-2026)
+
+## O passo a passo prático (do zero ao ar)
+
+Se você tá começando um projeto novo com vibecoding, essa é a sequência:
+
+1. **Escrever spec em 1 página.** Não código. Não figma. Só quem vai usar, o que precisa fazer, o que NÃO precisa fazer.
+2. **Pedir pra IA gerar o esqueleto.** Prompt com P.R.O.M.P.T.E.R. completo. Papel: engenheiro sênior. Regras: stack específica.
+3. **LER cada linha do que veio.** Não colar sem entender.
+4. **Blindar segredos.** Chave de API vai em variável de ambiente. Nunca no código.
+5. **Escrever teste da fatia crítica.** Não teste bonito. Teste feio que verifica o comportamento.
+6. **Refatorar em fatias.** Uma parte por vez. Nunca abraçar o repositório inteiro.
+7. **Versionar sempre.** Git com mensagem que descreve o comportamento, não a mudança.
+8. **Observar em produção.** Log, erro, latência. Sem isso, você não sabe quando quebrou.
+
+**Aprofunde:**
+- [Do zero ao primeiro sistema: configure o VS Code + GitHub Copilot](/blog/do-zero-ao-primeiro-sistema-vscode-copilot)
+- [Boas práticas de vibecoding para empresas](/blog/boas-praticas-vibecoding-para-empresas)
+- [Como escrever spec de produto que uma IA entende](/blog/como-criar-assistente-de-ia-personalizado-sem-codigo-2026)
+
+## As armadilhas mais comuns
+
+Erros que 90% dos vibecoders cometem no primeiro ano:
+
+- **Dependência de UI de SaaS.** Sora acabou standalone. Bard virou Gemini. Se seu produto usa feature de app fechado, vai quebrar. [Leia sobre consolidação de IA](/blog/sora-openai-media-suite-consolidacao-2026).
+- **Instalar tudo sem auditar.** O risco maior não é o código que você escreve. É o pacote que você instala com \`npm i\`. [Leia sobre supply chain](/blog/risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026).
+- **Free tier com pegadinha.** Ferramenta grátis pra você prototipar frequentemente proíbe uso comercial. [Veja o mapa das armadilhas](/blog/free-tier-ia-armadilha-produtor-conteudo-2026).
+- **Agente com permissão demais.** Você deu acesso ao banco e ao e-mail pra um agente sem revisar. Ele deletou coisa que você não queria. [Como evitar](/blog/agente-de-ia-sem-revisar-permissao-2026).
+- **Compra de IA sem método.** Empresa que compra ChatGPT Enterprise mas não muda o processo não fica mais produtiva. [Leia o diagnóstico](/blog/comprar-ia-nao-deixa-empresa-produtiva-2026).
+
+## Ensino: se você quer aprender a ensinar isso
+
+Se você é pai, mãe, educador ou constrói produto EAD, tem um outro cluster completo:
+
+- [Criança sabe vibecoding. Falta ensinar com método](/blog/criancas-aprender-vibecoding-metodo-2026)
+- [Curso em vídeo pra criança já morreu. Duolingo matou](/blog/curso-em-video-crianca-duolingo-matou-2026)
+- [BNCC Computação virou obrigatória. Sua escola tem 3 meses pra correr](/blog/bncc-computacao-obrigatoria-escola-fundeb-2026)
+
+E temos cursos EAD 30h estruturados pra 11-13 (IA) e 12-14 (Vibecoding) alinhados ao MEC + BNCC. Se quiser, [dá uma olhada nos materiais](/#materiais).
+
+## Ferramentas que uso
+
+Sem hype. Só o que eu uso de verdade no dia a dia:
+
+- **Claude Code + Cursor**: escrita e refatoração assistida.
+- **Antigravity da DeepMind**: pra tarefas específicas de análise. [Análise comparativa aqui](/blog/claude-code-cursor-antigravity-qual-usar-2026).
+- **Vercel + Next.js**: deploy e hospedagem. Site que você tá lendo agora usa isso.
+- **Firebase (Firestore + Auth + Admin)**: banco e login. Simples, barato, escala.
+- **Resend**: e-mail transacional.
+
+Setup completo com passo a passo: [Do zero ao primeiro sistema](/blog/do-zero-ao-primeiro-sistema-vscode-copilot).
+
+## Onde procurar mais
+
+Se você quer ir mais fundo:
+
+- **[E-book IA Sem Medo](/#materiais)**: gratuito, 130+ prompts prontos, plano de 7 dias.
+- **[Newsletter](/newsletter)**: os próximos posts direto no seu e-mail.
+- **[Blog completo](/blog)**: todos os posts organizados.
+- **[Sobre mim](/sobre)**: quem eu sou, por que eu ensino isso.
+
+## O que NÃO fazer
+
+Se levar só uma coisa deste guia:
+
+**Nunca cole código da IA sem entender o que ele faz.**
+
+É essa uma linha. Se você seguir só ela, já tá 80% na frente da média.
+
+Método completo, casos reais, exemplos e ferramentas você acha nos posts linkados aqui em cima. Este guia é o mapa. Os posts são o território.
+
+A decisão é sua.`,
+    faq: [
+      {"q": "O que é vibecoding com engenharia?", "a": "Vibecoding é construir software conversando com uma IA. Vibecoding com engenharia é a mesma velocidade da IA com o rigor de um engenheiro: revisão do código gerado, teste da fatia crítica, blindagem de segredos, arquitetura minimamente pensada. Sem isso, o produto quebra no terceiro mês."},
+      {"q": "Por onde começar se sou não-técnico?", "a": "Pelo e-book IA Sem Medo (gratuito) e pelo post do método P.R.O.M.P.T.E.R.. Depois, aplique em um projeto pequeno e leia o Protocolo de 5 Camadas antes de ir pra produção."},
+      {"q": "Vibecoding é o mesmo que 'no-code'?", "a": "Não. No-code é ferramenta visual que gera código pronto sem você escrever. Vibecoding é você conversando com uma IA que escreve código de verdade em linguagens de verdade (JavaScript, Python, TypeScript). Você fica dono do código e roda onde quiser."},
+      {"q": "Preciso saber programar antes de aprender vibecoding?", "a": "Não pra começar. Mas conforme o projeto cresce, aprender o básico de leitura de código, Git e teste te separa de quem depende 100% da IA e não sabe corrigir quando ela erra. Este guia mostra o caminho."},
+      {"q": "Qual IA usar pra vibecoding em 2026?", "a": "Depende da tarefa. Claude Code é forte pra código longo e revisão. Cursor é forte pra edição contextual dentro do editor. Antigravity da DeepMind é bom pra análise. Uso as três dependendo do caso. Análise completa no post sobre elas."},
+    ],
+  },
+    {
     id: "prompter-na-pratica-5-exemplos-tutorial-2026",
     slug: "prompter-na-pratica-5-exemplos-tutorial-2026",
     contentVersion: 1,
@@ -18,7 +165,26 @@ export const seedPosts: Post[] = [
     title: "P.R.O.M.P.T.E.R. na prática: 5 prompts ruins virando prompts profissionais",
     excerpt:
       "Peguei 5 prompts reais que a galera manda no dia a dia, apliquei o método P.R.O.M.P.T.E.R. e comparei o resultado. Antes: 4 linhas vagas. Depois: prompt que devolve resposta utilizável.",
-    content: `## O método em 30 segundos
+summary: "Prompt vago em uma linha rende resposta genérica. Prompt profissional em 8 linhas (P.R.O.M.P.T.E.R.) rende ferramenta pronta. Neste tutorial, 5 exemplos ANTES e DEPOIS mostram a diferença em código, texto, análise, revisão e aula.",
+    faq: [
+      {
+            "q": "O que é o método P.R.O.M.P.T.E.R.?",
+            "a": "É um framework em 8 elementos para estruturar prompt: Papel, Regras, Objetivo, Modelo, Parâmetros, Teste, Exemplo e Retorno. Serve pra qualquer IA (Claude, ChatGPT, Gemini) e transforma pedido vago em contrato claro."
+      },
+      {
+            "q": "Quando NÃO usar o P.R.O.M.P.T.E.R.?",
+            "a": "Pergunta rápida do tipo 'o que é X' não precisa. Vale a pena pra trabalho de verdade: código, texto, análise, revisão, aula. Regra prática: quanto mais importante o output, mais estrutura no input."
+      },
+      {
+            "q": "O método funciona só no Claude?",
+            "a": "Não. Funciona em qualquer LLM moderno (Claude, ChatGPT, Gemini, Grok, Llama). O framework é agnóstico. A diferença de qualidade entre modelos existe, mas o método reduz a diferença ao mínimo."
+      },
+      {
+            "q": "Preciso escrever os 8 elementos toda vez?",
+            "a": "Não. Papel, Regras e Objetivo são os essenciais. Modelo, Parâmetros e Retorno afinam o formato. Teste e Exemplo são pra tarefa crítica. Use o que faz sentido pro caso, sem burocratizar."
+      }
+],
+        content: `## O método em 30 segundos
 
 P.R.O.M.P.T.E.R. é meu framework pra estruturar prompt:
 
@@ -164,7 +330,8 @@ A decisão é sua.`,
     title: "Sora deixou de existir standalone. E isso é aviso pra quem constrói com IA",
     excerpt:
       "OpenAI integrou Sora ao Media Suite em abril e matou a app separada. Padrão que vai voltar. Se você constrói em cima de features de SaaS, tá em cima de decisão dos outros. Meu take.",
-    content: `## O que aconteceu
+summary: "OpenAI matou Sora standalone em abril de 2026 e virou Media Suite. Padrão que se repete: Bard virou Gemini, Duet virou Gemini for Workspace, Bing Chat virou Copilot. Quem constrói em cima de produto de IA depende de decisão dos outros. API dá soberania parcial, open source dá soberania total.",
+        content: `## O que aconteceu
 
 Em abril de 2026, OpenAI descontinuou Sora como app independente. Virou "OpenAI Media Suite", plataforma consolidada dentro da conta OpenAI que junta ChatGPT, DALL-E, geração de vídeo e as ferramentas de mídia num só lugar.
 
@@ -248,7 +415,8 @@ A decisão é sua.`,
     title: "Curso em vídeo pra criança já morreu. Duolingo matou",
     excerpt:
       "Eu ia gravar 60 vídeos de 25 minutos pra um curso de IA infantil. Parei no 5º. O motivo tá em 500 milhões de baixadas do Duolingo. Por que jogo web venceu a aula gravada.",
-    content: `## O plano original
+summary: "Aula em vídeo pra criança é passivo e não segura atenção. Duolingo provou que jogo curto com feedback prende. Para EAD infantil em 2026, jogo web supera curso em vídeo em custo, engajamento e escala.",
+        content: `## O plano original
 
 Curso EAD de 30 horas de IA pra criança de 11 a 13 anos. Alinhado ao MEC. 30 aulas, dois vídeos por aula, 25 minutos cada. 60 vídeos totais.
 
@@ -324,7 +492,22 @@ A decisão é sua.`,
     title: "BNCC Computação virou obrigatória. Sua escola tem 3 meses pra correr",
     excerpt:
       "Escola sem BNCC Computação em vigor perde Fundeb condicionado a partir do ano letivo de 2027. A maioria não tá preparada. Nem os professores. Isso abre janela pra quem tem produto pronto agora.",
-    content: `## O que mudou
+summary: "MEC publicou em abril de 2026 o Documento Orientador da BNCC Computação. Escola pública ou privada sem alinhamento perde Fundeb condicionado a partir do ano letivo de 2027. Quem tem produto pronto agora pega janela de 12 a 18 meses.",
+    faq: [
+      {
+            "q": "A BNCC Computação é obrigatória mesmo em escola particular?",
+            "a": "Sim. O documento se aplica à educação básica pública e privada. Escolas privadas que oferecem regularidade e alinhamento ao MEC precisam cumprir também, principalmente as que recebem Fundeb condicionado ou têm alunos com bolsa PROUNI."
+      },
+      {
+            "q": "Quais são os 3 eixos da BNCC Computação?",
+            "a": "Pensamento Computacional (algoritmos, abstração, resolução de problemas), Mundo Digital (como funcionam internet, redes, hardware) e Cultura Digital (uso ético, cidadania, letramento). Todos os três precisam estar no currículo."
+      },
+      {
+            "q": "O que é o código EF69CO01?",
+            "a": "É um código de habilidade da BNCC. EF = Ensino Fundamental, 69 = Anos Finais (6º ao 9º), CO = Computação, 01 = primeira habilidade do eixo. Material didático alinhado deve mapear cada aula ao código correspondente pra facilitar auditoria."
+      }
+],
+        content: `## O que mudou
 
 MEC publicou em abril de 2026 o Documento Orientador da BNCC Computação. Traz três eixos obrigatórios (Pensamento Computacional, Mundo Digital, Cultura Digital) pra ser aplicado do fundamental ao médio.
 
@@ -395,7 +578,26 @@ A decisão é sua.`,
     title: "Grátis com pegadinha: o mapa dos free tiers de IA que enganam quem produz",
     excerpt:
       "ElevenLabs free proíbe comercial. HeyGen free bota marca d'água obrigatória. Azure Speech grátis não deixa monetizar. Pesquisei em 2026 tudo que se vende como grátis pra produtor de conteúdo. Aqui vai a verdade.",
-    content: `## O que rolou
+summary: "Free tier de SaaS de IA quase sempre proíbe uso comercial, exige atribuição, coloca watermark ou expira. Software open source com licença MIT/Apache 2.0/LGPL/GPL é o único grátis DE VERDADE pra quem monetiza. Audite a licença antes de gerar 60 assets em cima.",
+    faq: [
+      {
+            "q": "ElevenLabs free pode ser usado em curso pago?",
+            "a": "Não. O termos de uso do ElevenLabs free proíbe uso comercial e exige atribuição. Curso pago é uso comercial. Precisa do plano Starter ($6/mês) no mínimo."
+      },
+      {
+            "q": "Coqui XTTS v2 é grátis pra uso comercial?",
+            "a": "Não. Apesar de ser open source, os pesos do XTTS v2 usam licença CPML que proíbe uso comercial. Coqui fechou em janeiro de 2024, não tem ninguém pra vender licença. Usar em produto pago é risco jurídico."
+      },
+      {
+            "q": "Automatizar Claude/ChatGPT via Playwright é permitido?",
+            "a": "Não. OpenAI, Anthropic e Google proíbem automação de suas interfaces web. Enforcement subiu em 2026. Risco: perder a conta paga também."
+      },
+      {
+            "q": "Qual TTS grátis serve pra curso comercial em português?",
+            "a": "Google Chirp 3 HD (1M chars/mês grátis, comercial), Amazon Polly Camila Generative (12 meses grátis), Piper TTS local (MIT, ilimitado) e Kokoro TTS local (Apache 2.0)."
+      }
+],
+        content: `## O que rolou
 
 Passei 3 dias pesquisando toda ferramenta de IA que se anuncia como grátis pra criador de conteúdo. Áudio, avatar, edição, composição, tudo.
 
@@ -494,7 +696,22 @@ A decisão é sua.`,
     title: "Criança sabe vibecoding. Falta ensinar com método",
     excerpt:
       "Criança de 11 anos já cria mundo no Roblox e mod no Minecraft. Com IA, então, voa. O problema não é acesso. É método. Como ensinar vibecoding pra criança sem virar copy-cola de IA.",
-    content: `## O que criança já faz sozinha (e ninguém fala)
+summary: "Criança de 11 anos já cria mundo no Roblox e mod no Minecraft. Sem método, com IA vira copy-cola sem entender. Ensine com 5 regras (adulto por perto, LER antes de rodar, nunca segredo no código, testar antes de mostrar, guardar versões) e o Protocolo de 5 Camadas em linguagem simples.",
+    faq: [
+      {
+            "q": "Qual a idade certa pra criança aprender vibecoding?",
+            "a": "A partir de 10-11 anos, com adulto por perto. Antes disso, é melhor foco em pensamento computacional e algoritmos visuais (Scratch, Blockly). Pra vibecoding com IA precisa mínimo de leitura fluente e atenção sustentada por 30-40 minutos."
+      },
+      {
+            "q": "Vibecoding pra criança não vai fazer ela virar 'só copiadora de IA'?",
+            "a": "Só se ensinar do jeito errado. Com método, criança aprende a LER o que a IA escreveu, testar e decidir o que fica. É igual calculadora: sem entender vira dependência, com entendimento vira alavanca."
+      },
+      {
+            "q": "Qual IA usar pra criança aprender vibecoding?",
+            "a": "Prefira contas do responsável adulto no Claude ou ChatGPT. Termos exigem 13+ e alguns 18+. Adulto conduz o cadastro e revisa o uso. Nunca coloca dado pessoal real da criança no prompt."
+      }
+],
+        content: `## O que criança já faz sozinha (e ninguém fala)
 
 Criança de 11 anos hoje:
 
@@ -540,7 +757,7 @@ Site que quebra na frente da família é lição inesquecível. Pior: site que q
 ### 5. Guardar versões
 Git básico. Um comando por semana. Depois de 5 semanas ela sabe voltar uma versão quando bagunçou tudo. Habilidade que salva projeto inteiro.
 
-## O Protocolo de 5 Camadas em linguagem de criança
+## O [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) em linguagem de criança
 
 O [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) é meu método pra vibecoding adulto. Pra criança, vira isso:
 
@@ -742,7 +959,7 @@ A vantagem competitiva está se movendo:
 Se você ainda está esperando "a hora certa", a hora passou.
 
 ## Conclusão
-A IA virou commodity. **A engenharia de IA não.** A Foxconn não ganhou implantando "uma IA" — ganhou implantando **arquitetura de agentes** com método, isolamento, observabilidade e foco. É vibecoding com engenharia em escala industrial.
+A IA virou commodity. **A engenharia de IA não.** A Foxconn não ganhou implantando "uma IA" — ganhou implantando **arquitetura de agentes** com método, isolamento, observabilidade e foco. É [vibecoding com engenharia](/blog/vibecoding-com-engenharia) em escala industrial.
 
 > "Agente de IA" parou de ser apresentação de PowerPoint e virou linha de produção. Quem ainda está fazendo apresentação vai descobrir tarde demais.
 
@@ -1501,7 +1718,7 @@ A parte difícil de um produto de IA não é fazer a IA responder bem uma vez, n
 
 > Num produto de IA, a resposta certa é metade do trabalho. A outra metade é garantir que ela sempre chega — e saber, na hora, quando não chegou.
 
-É exatamente isso que eu chamo de **vibecoding com engenharia**: a velocidade de construir com IA, com o rigor de quem trata produção a sério. O método completo está no e-book gratuito [**IA Sem Medo**](/materiais), e dá pra começar pelos [robôs de IA gratuitos](/robos).
+É exatamente isso que eu chamo de **[vibecoding com engenharia](/blog/vibecoding-com-engenharia)**: a velocidade de construir com IA, com o rigor de quem trata produção a sério. O método completo está no e-book gratuito [**IA Sem Medo**](/materiais), e dá pra começar pelos [robôs de IA gratuitos](/robos).
 
 A decisão é sua.`,
   },
@@ -1847,7 +2064,7 @@ A boa notícia: dá para ter a velocidade da IA sem herdar os riscos. O básico 
 ## A parte que ninguém vai fazer por você
 A IA não vai te avisar que deixou a porta aberta. Ela vai dizer "pronto, está funcionando" — e estará falando a verdade. A fechadura é com você.
 
-Isso é vibecoding com engenharia: a velocidade da máquina **com** a desconfiança saudável de quem já viu sistema vazar. A decisão de revisar é sua — e, em 2026, ela ficou muito mais barata que o vazamento.
+Isso é [vibecoding com engenharia](/blog/vibecoding-com-engenharia): a velocidade da máquina **com** a desconfiança saudável de quem já viu sistema vazar. A decisão de revisar é sua — e, em 2026, ela ficou muito mais barata que o vazamento.
 
 ## Quer o método completo?
 No e-book gratuito **"Vibecoding para CEOs"** eu detalho como blindar cada etapa — banco, segredos, deploy — com 22 prompts prontos (incluindo o **Revisor de Código & Segurança**, que audita o que a IA escreveu antes de você confiar).
@@ -1930,7 +2147,7 @@ Baixe as últimas alterações antes de enviar as suas. Evita sobrescrever traba
 No Firebase, configure as regras de segurança — sem elas, qualquer um lê e escreve seus dados. E mapeie quais dados pessoais você coleta (LGPD não é opcional).
 
 ## 5. Revise antes de aceitar
-Use um agente revisor e o Protocolo de 5 Camadas: Entender, Ler, Blindar, Testar e Versionar. "Funcionou na tela" não é "está pronto".
+Use um agente revisor e o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas): Entender, Ler, Blindar, Testar e Versionar. "Funcionou na tela" não é "está pronto".
 
 ## 6. Saiba os custos (não terceirize às cegas)
 Quase tudo começa de graça e a conta cresce com o uso. Conheça onde ela pode explodir antes de escalar — e como avaliar um dev sem ser técnico.

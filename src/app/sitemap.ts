@@ -15,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/materiais`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/ia-sem-medo`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${base}/newsletter`, changeFrequency: "monthly", priority: 0.6 },
   ];
 
   let postRoutes: MetadataRoute.Sitemap = [];

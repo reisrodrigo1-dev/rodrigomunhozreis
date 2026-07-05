@@ -6,7 +6,7 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import { MetaPixel } from "@/components/meta-pixel";
 
-// ID de medição do GA4 (público — visível no HTML). Pode ser trocado via env.
+// ID de medição do GA4 (público: visível no HTML). Pode ser trocado via env.
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-CPH3JR9WZ7";
 
 const fraunces = Fraunces({
@@ -34,17 +34,16 @@ const instrument = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${site.domain}`),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name}: ${site.tagline}`,
+    template: `%s: ${site.name}`,
   },
   description: site.description,
   authors: [{ name: site.name }],
-  alternates: { canonical: "/" },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
     : {}),
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}: ${site.tagline}`,
     description: site.description,
     url: `https://${site.domain}`,
     siteName: site.name,
@@ -53,8 +52,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}: ${site.tagline}`,
     description: site.description,
+  },
+  // Sinaliza pros leitores RSS que o feed existe (autodiscovery).
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": [
+        { title: `${site.name}: Blog`, url: "/rss.xml" },
+      ],
+    },
   },
 };
 

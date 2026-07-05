@@ -1,3 +1,5 @@
+export type FaqItem = { q: string; a: string };
+
 export type Post = {
   id: string;
   title: string;
@@ -12,6 +14,10 @@ export type Post = {
   publishedAt?: unknown;
   createdAt?: unknown;
   updatedAt?: unknown;
+  /** Resumo em 3 linhas exibido no topo (AEO/GEO — resposta direta pra IA citar). */
+  summary?: string;
+  /** FAQ opcional exibida no fim + JSON-LD FAQPage (bom pra AI Overviews). */
+  faq?: FaqItem[];
 };
 
 /** Gera um slug a partir do título (sem acentos, kebab-case). */
