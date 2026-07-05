@@ -11,6 +11,9 @@ import { GA4Overview } from "@/components/admin/ga4-overview";
 
 const PAGE_SIZE = 10;
 
+type SortKey = "title" | "status" | "views" | "lastVisit" | "updated";
+type SortDir = "asc" | "desc";
+
 function fmtRelativo(iso?: string): string {
   if (!iso) return "—";
   const ms = Date.parse(iso);
@@ -33,6 +36,18 @@ export default function AdminPosts() {
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
   const [importing, setImporting] = useState(false);
   const [page, setPage] = useState(1);
+  const [sortBy, setSortBy] = useState<SortKey>("views");
+  const [sortDir, setSortDir] = useState<SortDir>("desc");
+
+  function toggleSort(key: SortKey) {
+    if (sortBy === key) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortBy(key);
+      setSortDir(key === "title" || key === "status" ? "asc" : "desc");
+    }
+    setPage(1);
+  }
 
   useEffect(() => {
     getAllPosts()
@@ -46,10 +61,40 @@ export default function AdminPosts() {
   }, []);
 
   const totalViews = Object.values(views).reduce((a, b) => a + b, 0);
-  const sorted = useMemo(
-    () => [...rows].sort((a, b) => (views[b.slug] ?? 0) - (views[a.slug] ?? 0)),
-    [rows, views]
-  );
+  const sorted = useMemo(() => {
+    const dir = sortDir === "asc" ? 1 : -1;
+    const arr = [...rows];
+    arr.sort((a, b) => {
+      let av: string | number;
+      let bv: string | number;
+      switch (sortBy) {
+        case "title":
+          av = (a.title || "").toLocaleLowerCase("pt-BR");
+          bv = (b.title || "").toLocaleLowerCase("pt-BR");
+          break;
+        case "status":
+          av = a.status === "published" ? 0 : 1;
+          bv = b.status === "published" ? 0 : 1;
+          break;
+        case "views":
+          av = views[a.slug] ?? 0;
+          bv = views[b.slug] ?? 0;
+          break;
+        case "lastVisit":
+          av = lastViews[a.slug] ? Date.parse(lastViews[a.slug]) : 0;
+          bv = lastViews[b.slug] ? Date.parse(lastViews[b.slug]) : 0;
+          break;
+        case "updated":
+          av = (a as Row).updatedAt ? Date.parse((a as Row).updatedAt as string) : 0;
+          bv = (b as Row).updatedAt ? Date.parse((b as Row).updatedAt as string) : 0;
+          break;
+      }
+      if (av < bv) return -1 * dir;
+      if (av > bv) return 1 * dir;
+      return 0;
+    });
+    return arr;
+  }, [rows, views, lastViews, sortBy, sortDir]);
   const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
   const pageRows = sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
@@ -92,7 +137,7 @@ export default function AdminPosts() {
 
       <p className="mt-4 text-sm text-muted">
         Total de visualizações: <b className="text-ink">{totalViews}</b>
-        {totalViews > 0 && " · lista ordenada pelos mais lidos"}
+        {" · clique numa coluna para ordenar"}
       </p>
 
       {state === "error" && (
@@ -105,11 +150,11 @@ export default function AdminPosts() {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-line text-left text-xs uppercase tracking-wide text-muted">
-              <th className="px-4 py-3 font-semibold">Título</th>
-              <th className="px-4 py-3 font-semibold">Status</th>
-              <th className="px-4 py-3 font-semibold">Views</th>
-              <th className="px-4 py-3 font-semibold">Última visita</th>
-              <th className="px-4 py-3 font-semibold">Atualizado</th>
+              <SortableTh label="Título"         k="title"     current={sortBy} dir={sortDir} onClick={toggleSort} />
+              <SortableTh label="Status"         k="status"    current={sortBy} dir={sortDir} onClick={toggleSort} />
+              <SortableTh label="Views"          k="views"     current={sortBy} dir={sortDir} onClick={toggleSort} />
+              <SortableTh label="Última visita"  k="lastVisit" current={sortBy} dir={sortDir} onClick={toggleSort} />
+              <SortableTh label="Atualizado"     k="updated"   current={sortBy} dir={sortDir} onClick={toggleSort} />
             </tr>
           </thead>
           <tbody>
@@ -184,5 +229,37 @@ export default function AdminPosts() {
       {/* Métricas oficiais do GA4 */}
       <GA4Overview />
     </div>
+  );
+}
+
+function SortableTh({
+  label,
+  k,
+  current,
+  dir,
+  onClick,
+}: {
+  label: string;
+  k: SortKey;
+  current: SortKey;
+  dir: SortDir;
+  onClick: (k: SortKey) => void;
+}) {
+  const active = current === k;
+  const arrow = active ? (dir === "asc" ? "↑" : "↓") : "↕";
+  return (
+    <th className="px-4 py-3 font-semibold">
+      <button
+        type="button"
+        onClick={() => onClick(k)}
+        className={`flex items-center gap-1.5 uppercase tracking-wide transition ${
+          active ? "text-amber-deep" : "text-muted hover:text-ink"
+        }`}
+        aria-sort={active ? (dir === "asc" ? "ascending" : "descending") : "none"}
+      >
+        <span>{label}</span>
+        <span className={`text-[10px] ${active ? "opacity-100" : "opacity-40"}`}>{arrow}</span>
+      </button>
+    </th>
   );
 }
