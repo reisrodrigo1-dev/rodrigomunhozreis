@@ -38,6 +38,7 @@ export default function AdminPosts() {
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState<SortKey>("views");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [query, setQuery] = useState("");
 
   function toggleSort(key: SortKey) {
     if (sortBy === key) {
@@ -61,9 +62,16 @@ export default function AdminPosts() {
   }, []);
 
   const totalViews = Object.values(views).reduce((a, b) => a + b, 0);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLocaleLowerCase("pt-BR");
+    if (!q) return rows;
+    return rows.filter((p) => (p.title || "").toLocaleLowerCase("pt-BR").includes(q));
+  }, [rows, query]);
+
   const sorted = useMemo(() => {
     const dir = sortDir === "asc" ? 1 : -1;
-    const arr = [...rows];
+    const arr = [...filtered];
     arr.sort((a, b) => {
       let av: string | number;
       let bv: string | number;
@@ -94,7 +102,7 @@ export default function AdminPosts() {
       return 0;
     });
     return arr;
-  }, [rows, views, lastViews, sortBy, sortDir]);
+  }, [filtered, views, lastViews, sortBy, sortDir]);
   const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
   const pageRows = sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
@@ -135,10 +143,44 @@ export default function AdminPosts() {
         </div>
       </div>
 
-      <p className="mt-4 text-sm text-muted">
-        Total de visualizações: <b className="text-ink">{totalViews}</b>
-        {" · clique numa coluna para ordenar"}
-      </p>
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <div className="relative">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setPage(1);
+            }}
+            placeholder="Filtrar por título…"
+            className="w-72 rounded-lg border border-line bg-white px-3 py-2 pr-8 text-sm text-ink placeholder:text-muted focus:border-amber-deep focus:outline-none focus:ring-1 focus:ring-amber-deep"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => {
+                setQuery("");
+                setPage(1);
+              }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-0.5 text-muted hover:text-ink"
+              aria-label="Limpar filtro"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+        <p className="text-sm text-muted">
+          Total de visualizações: <b className="text-ink">{totalViews}</b>
+          {query && (
+            <>
+              {" · "}
+              <b className="text-ink">{sorted.length}</b>{" "}
+              {sorted.length === 1 ? "resultado" : "resultados"}
+            </>
+          )}
+          {" · clique numa coluna para ordenar"}
+        </p>
+      </div>
 
       {state === "error" && (
         <p className="mt-6 text-sm text-amber-deep">
@@ -162,6 +204,8 @@ export default function AdminPosts() {
               <tr><td className="px-4 py-4 text-muted" colSpan={5}>Carregando…</td></tr>
             ) : rows.length === 0 ? (
               <tr><td className="px-4 py-4 text-muted" colSpan={5}>Nenhum post ainda. Crie o primeiro!</td></tr>
+            ) : sorted.length === 0 ? (
+              <tr><td className="px-4 py-4 text-muted" colSpan={5}>Nenhum post com &ldquo;{query}&rdquo; no título.</td></tr>
             ) : (
               pageRows.map((p) => (
                 <tr key={p.id} className="border-b border-line/60 last:border-0 hover:bg-paper">
