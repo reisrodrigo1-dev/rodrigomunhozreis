@@ -9,12 +9,12 @@ export const seedPosts: Post[] = [
   {
     id: "qual-ia-usar-cada-situacao-mapa-pratico-2026",
     slug: "qual-ia-usar-cada-situacao-mapa-pratico-2026",
-    contentVersion: 1,
+    contentVersion: 2,
     status: "published",
     tags: ["IA & Carreira"],
     publishedAt: "2026-07-05",
     coverUrl:
-      "https://images.unsplash.com/photo-1642790551116-18e150f248e5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
     title: "Qual IA usar pra cada situação em 2026: o mapa que eu uso",
     excerpt:
       "Não existe 'a melhor IA'. Existe a certa pra cada tarefa. Programar, escrever, pesquisar, gerar imagem, transcrever, criar vídeo, aprender. Preços, links oficiais, prós e contras. Sem hype.",
