@@ -1,4 +1,4 @@
-import type { Post } from "./posts";
+import type { FaqItem, Post } from "./posts";
 import { seedPosts } from "./seed-posts";
 
 export type PostInput = {
@@ -10,6 +10,10 @@ export type PostInput = {
   status: "draft" | "published";
   tags?: string[];
   contentVersion?: number;
+  /** Resumo em 3 linhas exibido no topo (AEO/GEO). */
+  summary?: string;
+  /** FAQ opcional pra schema FAQPage. */
+  faq?: FaqItem[];
 };
 
 /** Remove chaves com valor undefined (o Firestore Web SDK rejeita undefined). */
@@ -85,6 +89,8 @@ export async function importSeedPosts(): Promise<{ created: number; updated: num
         status: p.status,
         tags: p.tags,
         contentVersion: p.contentVersion,
+        summary: p.summary,
+        faq: p.faq,
       });
       created++;
     } else if ((p.contentVersion ?? 1) > ((cur.contentVersion as number) ?? 1)) {
@@ -97,10 +103,18 @@ export async function importSeedPosts(): Promise<{ created: number; updated: num
           coverUrl: p.coverUrl,
           tags: p.tags,
           contentVersion: p.contentVersion,
+          summary: p.summary,
+          faq: p.faq,
           updatedAt: serverTimestamp(),
         })
       );
       updated++;
+    } else if (!cur.summary && p.summary) {
+      // Backfill: seed já tem summary mas Firestore não (bug antigo). Não conta como updated.
+      await updateDoc(
+        doc(db, "posts", cur.id),
+        clean({ summary: p.summary, faq: p.faq, updatedAt: serverTimestamp() })
+      );
     }
   }
   return { created, updated };
