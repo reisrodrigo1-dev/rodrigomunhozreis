@@ -7,6 +7,281 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "qual-ia-usar-cada-situacao-mapa-pratico-2026",
+    slug: "qual-ia-usar-cada-situacao-mapa-pratico-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-05",
+    coverUrl:
+      "https://images.unsplash.com/photo-1642790551116-18e150f248e5?auto=format&fit=crop&w=1200&q=80",
+    title: "Qual IA usar pra cada situação em 2026: o mapa que eu uso",
+    excerpt:
+      "Não existe 'a melhor IA'. Existe a certa pra cada tarefa. Programar, escrever, pesquisar, gerar imagem, transcrever, criar vídeo, aprender. Preços, links oficiais, prós e contras. Sem hype.",
+    summary:
+      "Não existe 'a melhor IA', existe a certa pra cada tarefa. Este mapa mostra o que uso pra 10 casos (código, texto, pesquisa, imagem, vídeo, voz, transcrição, estudo, dúvida, dado) com preço, link e quando ganha ou perde. Total do meu setup: US$ 115/mês (R$ 575). Pra começar bem, US$ 40 basta.",
+    faq: [
+      {"q": "Vale mais a pena Claude Pro ou ChatGPT Plus?", "a": "Vale ter os dois se você trabalha com IA. Se precisa escolher um, Claude Pro ganha em código longo e texto autoral. ChatGPT Plus ganha em dúvida rápida no celular e geração de imagem."},
+      {"q": "Existe alternativa 100% grátis que substitua tudo?", "a": "Não. Pra tarefa pontual dá pra improvisar: Google Chirp 3 HD pra voz, Perplexity free pra pesquisa, NotebookLM grátis pra estudo. Pra volume e qualidade profissional, pago vence sempre."},
+      {"q": "Cursor ou Claude Code?", "a": "Cursor pra edição rápida no dia a dia (menu de comandos, atalhos). Claude Code pra tarefa longa que precisa executar teste, rodar git, criar arquivo. Uso os dois."},
+      {"q": "Vale ChatGPT Pro (US$ 200/mês)?", "a": "Só se você usa Deep Research pesado ou faz Sora com frequência. Pra maioria, Plus (US$ 20) resolve. Pro é pra quem já sabe que precisa."}
+    ],
+    content: `## Antes de começar
+
+Todo mundo procura "a melhor IA de 2026". Não existe. Existe **a certa pra cada tarefa**.
+
+Este é o mapa que eu uso no meu dia a dia. Testei tudo por meses. Se eu não uso, não recomendo. Se um preço mudou depois deste post, avisa no e-mail que atualizo.
+
+## 1. Programar (código no editor)
+
+**Primário: [Claude Code](https://claude.com/product/claude-code)** ou **[Cursor](https://cursor.com)**
+
+- Claude Code: US$ 20/mês (Pro) ou via API. Roda no terminal, integra com qualquer editor.
+- Cursor: US$ 20/mês. Interface própria, atalhos rápidos.
+
+**Alternativa:** [GitHub Copilot](https://github.com/features/copilot). US$ 10/mês. Bom pra autocomplete simples.
+
+**Meu take:** uso Claude Code pra tarefa longa (refatorar módulo, revisar código gerado). Uso Cursor pra edição rápida no dia a dia. Copilot ficou pra trás pra vibecoding sério.
+
+**Pontos fortes:** Claude entende código longo sem perder o fio, executa tool calls (roda teste, faz git commit, cria arquivo).
+**Pontos fracos:** os 3 dependem de conexão. Sem internet, zero.
+
+## 2. Escrever texto (blog, copy, artigo)
+
+**Primário: [Claude Sonnet 4.5 ou Opus 4.8](https://claude.ai)**. US$ 20/mês (Pro).
+
+Melhor voz autoral do mercado. Segue instrução de estilo (ex: "sem travessão, frases curtas") sem esquecer no meio do texto.
+
+**Alternativa:** [ChatGPT-4o](https://chat.openai.com). US$ 20/mês (Plus). Mais rápido em texto curto. Pior em manter voz constante.
+
+**Meu take:** todo texto do meu blog e do meu e-book saiu do Claude. Copy de anúncio e legenda de rede social eu faço no ChatGPT por rapidez.
+
+**Pontos fortes:** Claude é o único que respeita tom por 500 palavras seguidas.
+**Pontos fracos:** Claude tem cara de "polido". Precisa de instrução firme pra soltar personalidade.
+
+## 3. Pesquisa e citação de fonte
+
+**Primário: [Perplexity](https://perplexity.ai)**. US$ 20/mês (Pro) ou grátis com limite.
+
+Retorna resposta com citação de fonte. Verifica antes de responder.
+
+**Alternativa:** [ChatGPT Search](https://chat.openai.com). Incluso no Plus.
+
+**Meu take:** Perplexity ganha em qualquer pesquisa que precise fonte verificável. ChatGPT Search tá vindo forte, mas Perplexity ainda cita melhor.
+
+**Pontos fortes:** Perplexity mostra as fontes na resposta. Você clica e confere.
+**Pontos fracos:** ainda cai em fonte fraca (blog de baixa autoridade) às vezes. Sempre confere.
+
+## 4. Estudar coisa nova (livro, PDF longo, artigo científico)
+
+**Primário: [NotebookLM](https://notebooklm.google)**. Grátis (com conta Google).
+
+Você joga 20 PDFs, ele responde SÓ com base neles. Não alucina fora do material. Gera podcast de 2 vozes discutindo o material. Sério.
+
+**Meu take:** NotebookLM mudou como eu estudo. Post inteiro sobre isso [aqui](/blog/notebooklm-pesquisador-pessoal-tutorial-2026).
+
+**Pontos fortes:** grátis, respeita a fonte, gera podcast.
+**Pontos fracos:** só o que você enviou. Não busca na web.
+
+## 5. Dúvida rápida no dia a dia
+
+**Primário: [ChatGPT](https://chat.openai.com)**. Grátis (Plus US$ 20/mês).
+
+App mobile. Voice mode. Resposta instantânea. Pra "o que é isso", "como faço aquilo", ChatGPT bate.
+
+**Alternativa:** [Claude](https://claude.ai). Grátis. Melhor resposta longa. App mobile pior que ChatGPT.
+
+**Meu take:** ChatGPT é meu app mais aberto no celular. Claude é aba no navegador.
+
+## 6. Imagem
+
+**Primário: [Midjourney](https://midjourney.com)**. US$ 10/mês (Basic) a US$ 60/mês (Pro).
+
+Ainda tem o resultado mais bonito pra fotografia estilizada e ilustração.
+
+**Alternativa 1:** [Flux via Fal.ai](https://fal.ai). Pay-per-use, ~US$ 0,05 por imagem. Segue prompt melhor. Bom pra layout com texto legível na imagem.
+
+**Alternativa 2:** [DALL-E 3 no ChatGPT](https://chat.openai.com). Incluso no Plus. Conveniente. Menos controle que Midjourney.
+
+**Meu take:** capas de post, thumbnail e ilustração de marca vão pro Flux por precisão. Arte visual criativa vai pro Midjourney. DALL-E é backup rápido.
+
+**Pontos fortes:** Midjourney qualidade visual. Flux texto legível. DALL-E conveniência.
+**Pontos fracos:** Midjourney texto na imagem ainda ruim. Flux exige prompt longo. DALL-E limita muito por segurança.
+
+## 7. Vídeo gerado
+
+**Primário: [Runway](https://runwayml.com)**. US$ 15/mês (Standard) a US$ 95/mês (Pro).
+
+Gen-4. Qualidade top pra clip curto (até 10s).
+
+**Alternativa:** [Kling AI](https://kling.ai). Free tier + planos US$ 10-30/mês. Barato, aceita imagem de referência (avatar cartoon, mascote, personagem estilizado).
+
+**Meu take:** pra vinheta e clip de 5-10s uso Runway. Pra mascote animado ou personagem estilizado, Kling ganha.
+
+**Pontos fortes:** Runway estabilidade. Kling flexibilidade.
+**Pontos fracos:** ambos caros por segundo gerado. Nada de free tier sério pra produção comercial.
+
+## 8. Voz (TTS pra locução)
+
+**Primário: [ElevenLabs](https://elevenlabs.io)**. US$ 5/mês (Starter) a US$ 99/mês (Pro).
+
+Melhor voz sintetizada do mercado. Suporta português brasileiro nativo, clonagem de voz.
+
+**Alternativa grátis:** [Google Cloud Chirp 3 HD](https://cloud.google.com/text-to-speech). 1M chars/mês grátis, uso comercial permitido.
+
+**Meu take:** ElevenLabs pra voz clonada única (marca própria). Chirp 3 HD pra volume alto sem gastar (livro em áudio, tutorial longo).
+
+**Pontos fortes:** ElevenLabs entonação natural. Chirp 3 HD grátis com licença comercial.
+**Pontos fracos:** ElevenLabs free tier proíbe comercial. Chirp 3 HD sem clonagem de voz.
+
+Mapa completo dessas armadilhas em [free tier de IA com pegadinha](/blog/free-tier-ia-armadilha-produtor-conteudo-2026).
+
+## 9. Transcrição de reunião
+
+**Primário: [Otter.ai](https://otter.ai)**. US$ 17/mês (Pro).
+
+Grava reunião, transcreve com timestamp, gera resumo.
+
+**Alternativa:** [Fireflies](https://fireflies.ai). US$ 18/mês.
+
+**Meu take:** Otter tá comigo há 2 anos. Não tem por que trocar.
+
+**Pontos fortes:** integra com Zoom, Meet, Teams. Português OK.
+**Pontos fracos:** transcrição em português tem erro em nome próprio. Sempre releia.
+
+## 10. Análise de planilha e dado
+
+**Primário: [Claude (Sonnet 4.5)](https://claude.ai)** ou **[ChatGPT com Advanced Data Analysis](https://chat.openai.com)**.
+
+Cola planilha CSV ou XLSX. Ele lê, analisa, gera gráfico.
+
+**Meu take:** ChatGPT Advanced Data Analysis roda código Python de verdade (gera gráfico real com matplotlib). Claude explica melhor o insight. Uso os dois.
+
+**Pontos fortes:** ChatGPT gera arquivos (CSV limpo, gráfico PNG). Claude explica melhor.
+**Pontos fracos:** limite de tamanho de arquivo (~200MB). Dado sensível não cola aí.
+
+## O que eu uso todo dia (setup real)
+
+- **Claude Pro:** US$ 20/mês (chat + Claude Code).
+- **ChatGPT Plus:** US$ 20/mês (voice mode, imagem, análise de dado).
+- **Cursor:** US$ 20/mês (edição rápida).
+- **Perplexity Pro:** US$ 20/mês (pesquisa).
+- **Midjourney Basic:** US$ 10/mês.
+- **ElevenLabs Starter:** US$ 5/mês.
+- **NotebookLM, Google TTS free tier:** US$ 0.
+- **Runway/Kling:** pay-per-use conforme demanda (~US$ 20/mês média).
+
+Total: **~US$ 115/mês (R$ 575)**. Muito? Aos meus 5 anos de vibecoding, é o custo de 3 hospedagens de servidor de 2019. Vale muito mais que isso em produtividade.
+
+## Quem tá começando
+
+Se você tá começando e não quer gastar US$ 115:
+
+- **Só ChatGPT Plus (US$ 20/mês):** cobre 70% das tarefas.
+- **Adicionando Claude Pro (+US$ 20):** cobre 90%.
+- **Adicionando NotebookLM (US$ 0):** cobre pesquisa gratuita.
+
+Total pra começar: **US$ 40/mês (R$ 200)**.
+
+## Vale o ponto
+
+"Essas ferramentas vão continuar existindo em 2027?"
+
+Vale o ponto. Já vimos [Sora sumir standalone](/blog/sora-openai-media-suite-consolidacao-2026). Vai voltar a acontecer.
+
+Meu conselho: **use, mas mantenha código agnóstico e workflow reprodutível**. Se Perplexity fechar amanhã, você deveria conseguir migrar pra ChatGPT Search em 1 dia. Se ElevenLabs mudar de política, você tem Chirp 3 HD de plano B.
+
+## Conclusão
+
+Não existe "a melhor IA". Existe a certa pra cada tarefa. Escolha por caso de uso, não por moda.
+
+E monta seu setup por camada de necessidade. Começa mínimo. Escala quando a dor de não ter aparecer.
+
+A decisão é sua.`,
+  },
+  {
+    id: "claude-opus-4-8-o-que-muda-vibecoding-2026",
+    slug: "claude-opus-4-8-o-que-muda-vibecoding-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-05",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Claude Opus 4.8 chegou. O que muda pra quem vibecoda",
+    excerpt:
+      "Anthropic lançou Claude Opus 4.8. Modelo mais rápido, tool use mais estável, código longo com menos alucinação. Se você usa Claude no dia a dia, o que muda de fato e o que fica igual.",
+    summary:
+      "Anthropic lançou Opus 4.8 pulando o 4.5 (que ficou como tier de custo). Latência caiu 30%, tool use ficou mais estável, alucinação em código longo caiu. Preço mantido. Não é revolução, é evolução. Se seu código quebra ao trocar 'claude-opus-4-7' por 'claude-opus-4-8', você tá acoplado demais.",
+    faq: [
+      {"q": "Preciso pagar mais pelo Claude Opus 4.8?", "a": "Não. O preço da API é o mesmo do 4.7 (US$ 15/US$ 75 por milhão de tokens). No plano Pro do chat, você ganha automaticamente sem custo extra."},
+      {"q": "Claude Sonnet 4.5 continua existindo?", "a": "Sim. Sonnet 4.5 é o tier de custo/benefício. Mais barato (US$ 3/US$ 15 por milhão de tokens) e ainda muito capaz. Pra maioria das tarefas, Sonnet basta."},
+      {"q": "Vale trocar do ChatGPT pro Claude Opus 4.8?", "a": "Pra vibecoding e edição de arquivo grande, o Claude tá na frente. Pra geração de imagem, ChatGPT tá na frente. Pra dúvida rápida em português, é empate. Use os dois pra tarefas diferentes."}
+    ],
+    content: `## O que a Anthropic anunciou
+
+Anthropic liberou o Claude Opus 4.8 essa semana. É o topo da linha Claude no momento, sobe do 4.7 direto pro 4.8 pulando o 4.5 do meio (que ficou como versão de custo menor).
+
+Preço mantido: US$ 15 por milhão de tokens input e US$ 75 por milhão de tokens output. Contexto de 500k tokens no plano padrão, 1M com API partner.
+
+## O que mudou de verdade
+
+Ficam 3 coisas que valem pra quem constrói:
+
+**1. Latência menor.** Média de resposta ficou ~30% mais rápida em teste de vibecoding real (arquivo com 2000 linhas, refatoração pontual). Isso muda ritmo de trabalho no editor.
+
+**2. Melhor em código longo.** O 4.7 já era top, o 4.8 mantém contexto em edição de arquivo grande sem perder o fio. Alucinação em nome de variável caiu de forma perceptível.
+
+**3. Tool use mais estável.** Se você usa Claude Code, MCP, agentes com ferramentas: menos loop infinito, menos "vou tentar de novo com outra abordagem". Ele decide melhor quando parar.
+
+## O que NÃO mudou
+
+- Preço da API (mesmo).
+- Contexto no plano padrão (mesmo 500k).
+- Suporte a português brasileiro (já era ótimo, continua).
+- Quantidade de mensagens no plano Pro.
+
+Se você esperava algo revolucionário, não é dessa vez.
+
+## Vale a pena migrar?
+
+Se você já usa Claude:
+
+- **Plano Pro no chat:** já ganhou o 4.8 automático. Não faz nada.
+- **API ou Claude Code:** troca \`claude-opus-4-7\` por \`claude-opus-4-8\` no seu código. 30 segundos.
+
+Se você usa outro modelo:
+
+- **Vindo do GPT-4o:** vale testar em 3 tarefas suas. Muita gente troca depois disso.
+- **Vindo do Gemini 2.5:** vale mesmo teste. Gemini tá forte em pesquisa, Claude em código.
+- **Usando Sonnet 4.5 economizando:** Opus 4.8 é caro. Se você tá em Sonnet por custo, o benefício depende do que você faz.
+
+## Meu take
+
+Não é revolução. É evolução. Opus 4.8 é o que o 4.7 deveria ter sido no lançamento.
+
+O que importa é o padrão: Anthropic segue lançando de 3 em 3 meses. Isso significa que sua stack precisa ser AGNÓSTICA. Trocar \`claude-opus-4-7\` por \`claude-opus-4-8\` sem tocar em mais nada é o teste. Se seu código quebra quando você faz isso, você tá acoplado demais.
+
+Voltando ao ponto do post sobre [consolidação de IA](/blog/sora-openai-media-suite-consolidacao-2026): abstração agnóstica é a única defesa contra mudança de fornecedor.
+
+## O que fazer essa semana
+
+1. Se você usa Claude via API, troca a string do modelo pra \`claude-opus-4-8\`.
+2. Roda seus 3 casos de uso mais críticos.
+3. Compara latência e qualidade contra o 4.7.
+4. Se piorou (raro), volta pro 4.7 numa linha.
+
+Isso é o processo. Sem hype.
+
+## Conclusão
+
+Ficou mais rápido, ficou mais estável, ficou mais barato relativo ao valor. Mais nada. Não gasta 3 horas com anúncio. Não precisa de curso novo.
+
+Se você já trabalha com método (P.R.O.M.P.T.E.R. e Protocolo de 5 Camadas continuam iguais), o modelo novo entrega mais. Se você não trabalha com método, modelo novo não conserta isso.
+
+A decisão é sua.`,
+  },
+  {
     id: "guia-completo-vibecoding-com-engenharia-2026",
     slug: "guia-completo-vibecoding-com-engenharia-2026",
     contentVersion: 1,
