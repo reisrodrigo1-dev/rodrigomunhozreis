@@ -173,7 +173,7 @@ export default async function PostPage({ params }: Props) {
           </nav>
         )}
         <div className="prose-dark mt-10" dangerouslySetInnerHTML={{ __html: html }} />
-        {post.faq && post.faq.length > 0 && <PostFaq items={post.faq} />}
+        {Array.isArray(post.faq) && post.faq.length > 0 && <PostFaq items={post.faq} />}
         <NewsletterSignup source={`blog/${post.slug}`} />
         <PostCta />
         <AuthorBio />
