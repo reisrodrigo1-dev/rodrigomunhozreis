@@ -7,6 +7,540 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "custo-api-ia-2026-comparativo-real",
+    slug: "custo-api-ia-2026-comparativo-real",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-06",
+    coverUrl:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Custo real de API de IA em 2026: quanto você paga por mês em cada modelo (em reais)",
+    excerpt:
+      "Câmbio hoje: 1 USD = R$ 5,15. Simulei um cenário real (5M tokens de input + 2M de output por mês) em 9 modelos flagship. DeepSeek V4 Flash sai R$ 6,50/mês. Claude Opus 4.8 sai R$ 386. É 60x mais caro. Vale a pena? Depende do que você faz.",
+    summary:
+      "9 modelos flagship de 2026 comparados por custo mensal real em reais. DeepSeek V4 Flash (R$ 6,50), Grok 4.3 (R$ 58), Gemini 2.5 Pro (R$ 135), Sonnet 5 (R$ 155), GPT-4o (R$ 167), Opus 4.8 (R$ 386), GPT-5.5 (R$ 438). Câmbio: 1 USD = R$ 5,15 (07/07/2026). Custo baixo não é vitória se qualidade não bate. Custo alto não é problema se receita bate.",
+    faq: [
+      {"q": "Qual API de IA é a mais barata em 2026?", "a": "DeepSeek V4 Flash. US$ 0,14 por milhão de input tokens e US$ 0,28 por output. Num cenário de 5M input + 2M output por mês, sai R$ 6,50/mês. É 60x mais barata que Claude Opus 4.8 no mesmo uso."},
+      {"q": "Vale mais a pena Claude Opus 4.8 ou GPT-5.5?", "a": "Depende do caso. Opus 4.8 (R$ 386/mês) ganha em código longo e voz autoral. GPT-5.5 (R$ 438/mês) ganha em raciocínio matemático e ferramenta (tool use). Pra maioria dos casos, Sonnet 5 (R$ 155/mês) atende com fração do custo."},
+      {"q": "DeepSeek e Grok são seguros pra uso empresarial?", "a": "Depende de compliance. DeepSeek roda em servidor chinês (LGPD e dado sensível são risco). Grok tem menos histórico corporativo. Pra dado sensível, prefira Claude, GPT ou Gemini. Pra código sem PII, DeepSeek economiza brutal."},
+      {"q": "O câmbio USD/BRL desse post vale por quanto tempo?", "a": "Câmbio muda toda semana. Este post usa 07/07/2026 (1 USD = R$ 5,15). Antes de decidir, cheque a cotação atual em [wise.com/us/currency-converter](https://wise.com/us/currency-converter). Preços de API mudam a cada 3-6 meses também. Sempre confira na página oficial do fornecedor."}
+    ],
+    content: `Preço de API de IA muda toda semana. Câmbio muda todo dia. Post de "quanto custa" com número velho é inútil.
+
+Este é o snapshot de hoje: **07 de julho de 2026, 1 USD = R$ 5,15** (Wise, Bloomberg). Preços de API tiradas das páginas oficiais dos fornecedores no mesmo dia. Se você lê isso 3 meses depois, confere a fonte antes de decidir.
+
+## Metodologia
+
+Cenário de uso típico de founder ou dev solo trabalhando com IA no dia a dia:
+
+- **5 milhões de tokens de input por mês** (roteiros, contexto de projeto, arquivos que a IA precisa ler)
+- **2 milhões de tokens de output por mês** (respostas geradas)
+
+Isso equivale a mais ou menos **500 conversas longas por mês**, ou **~15 conversas grandes por dia**. É uso pesado, não casual.
+
+Cálculo: input * preço_input + output * preço_output.
+
+## Ranking por custo mensal (em reais)
+
+| Modelo | Fornecedor | Input (USD/M) | Output (USD/M) | Total mês (USD) | Total mês (BRL) |
+|---|---|---|---|---|---|
+| DeepSeek V4 Flash | DeepSeek | 0,14 | 0,28 | 1,26 | R$ 6,50 |
+| Gemini 2.5 Flash | Google | 0,30 | 2,50 | 6,50 | R$ 33,50 |
+| Grok 4.3 | xAI | 1,25 | 2,50 | 11,25 | R$ 58 |
+| DeepSeek V4 Pro | DeepSeek | 1,74 | 3,48 | 15,66 | R$ 81 |
+| Gemini 2.5 Pro | Google | 1,25 | 10 | 26,25 | R$ 135 |
+| Claude Sonnet 5 (intro) | Anthropic | 2 | 10 | 30 | R$ 155 |
+| GPT-4o | OpenAI | 2,50 | 10 | 32,50 | R$ 167 |
+| Claude Opus 4.8 | Anthropic | 5 | 25 | 75 | R$ 386 |
+| GPT-5.5 | OpenAI | 5 | 30 | 85 | R$ 438 |
+
+Claude Sonnet 5 tá em introductory pricing até 31 de agosto. Depois vai pra US$ 3/US$ 15 (mesmo que Sonnet 4.6). Nesse cenário fica em R$ 232/mês.
+
+## Análise por modelo
+
+### DeepSeek V4 Flash (R$ 6,50/mês)
+
+**Pontos fortes:**
+- 60x mais barato que Opus 4.8 no mesmo uso.
+- Qualidade "boa" pra tarefa geral: gerar código simples, responder pergunta técnica, refatoração básica.
+- Contexto grande (128k+ tokens).
+
+**Pontos fracos:**
+- Roda em servidor chinês. **Cuidado com LGPD e dado sensível**.
+- Menos treinado em português brasileiro que Claude ou GPT (comete mais erro de acento e concordância).
+- Não faz tool use avançado (function calling) tão bem quanto Claude/GPT.
+
+**Meu take:** ideal pra projeto pessoal, prototipagem rápida, código sem dado sensível. Não uso em produto de cliente sério.
+
+### Gemini 2.5 Flash (R$ 33/mês)
+
+**Pontos fortes:**
+- Contexto de 1 milhão de tokens (você joga o codebase inteiro e ele lê).
+- Rápido, latência baixa.
+- Integrado com Google Workspace e Cloud.
+- Multimodal nativo (vê imagem, PDF, vídeo).
+
+**Pontos fracos:**
+- Escreve texto mais mecânico em português.
+- Menos preciso em código complexo que Claude.
+- Ainda "encanto do Google": muda modelo/preço com frequência.
+
+**Meu take:** ótimo pra pipeline batch (processar centenas de itens). Ruim pra texto autoral.
+
+### Grok 4.3 (R$ 58/mês)
+
+**Pontos fortes:**
+- Contexto de 1 milhão de tokens.
+- Preço competitivo pra flagship (mais barato que Gemini 2.5 Pro em output).
+- Bom em raciocínio matemático.
+- Acesso a dados em tempo real do X.
+
+**Pontos fracos:**
+- Menos maduro que Claude/GPT em código.
+- Menos ecossistema (poucos SDKs, poucos exemplos).
+- Restrições geográficas em alguns países.
+
+**Meu take:** vale testar se você tá em ambiente que já usa o X. Fora disso, não é primeira escolha.
+
+### DeepSeek V4 Pro (R$ 81/mês)
+
+**Pontos fortes:**
+- Qualidade próxima de Claude Sonnet em código, por muito menos.
+- Modo reasoning integrado (herdou capacidade do R1).
+- Cache de input custa 1/10 do preço (economia gigante em conversa longa).
+
+**Pontos fracos:**
+- Mesmos problemas de LGPD e servidor chinês.
+- Ainda evolui rápido: nomes de modelo mudam (R1 virou "reasoner mode do V4").
+
+**Meu take:** melhor custo/benefício absoluto se compliance não for problema.
+
+### Gemini 2.5 Pro (R$ 135/mês)
+
+**Pontos fortes:**
+- Contexto de 1M tokens no flagship (raro).
+- Multimodal top de linha.
+- Integração nativa Google Cloud.
+
+**Pontos fracos:**
+- Output custa igual a modelos mais caros (US$ 10/M).
+- Texto em português menos natural que Claude.
+- Comportamento mudou várias vezes em 2025-2026 (menos estável).
+
+**Meu take:** ganha em batch multimodal (processar milhares de PDFs, imagens). Perde em código conversacional.
+
+### Claude Sonnet 5 introductory (R$ 155/mês)
+
+**Pontos fortes:**
+- Melhor custo/benefício da linha Claude.
+- Qualidade em código próxima do Opus 4.8.
+- Tool use estável (Claude Code, MCP).
+- Português brasileiro nativo excelente.
+
+**Pontos fracos:**
+- Preço vai subir 50% em setembro (pra US$ 3/US$ 15).
+- Contexto de 500k (menos que Gemini/Grok flagship).
+
+**Meu take:** meu default pra 80% das tarefas. Melhor equilíbrio da tabela.
+
+### GPT-4o (R$ 167/mês)
+
+**Pontos fortes:**
+- Voice mode top (uso no celular).
+- Multimodal maduro (imagem, áudio).
+- Integração com ecossistema OpenAI (assistants, memory, canvas).
+
+**Pontos fracos:**
+- Contexto de 128k (menor que quase todos).
+- Qualidade em código atrás do Claude Sonnet 5.
+- Modelo "velho" (2024), OpenAI já empurra pra GPT-5.
+
+**Meu take:** manter pra uso mobile (voice mode). Migrar pra GPT-5 base em projetos novos.
+
+### Claude Opus 4.8 (R$ 386/mês)
+
+**Pontos fortes:**
+- Melhor modelo pra código longo (arquivo com 2000+ linhas).
+- Voz autoral top (uso pra escrever posts, incluindo este).
+- Tool use mais estável do mercado.
+- Menos alucinação em nome de variável, função, arquivo.
+
+**Pontos fracos:**
+- Caro. 5x o preço do Sonnet 5.
+- Latência maior (~30% mais lento que Sonnet).
+- Não faz diferença perceptível em tarefa simples.
+
+**Meu take:** uso Opus só quando Sonnet 5 falha. Isso é 10% dos casos.
+
+### GPT-5.5 (R$ 438/mês)
+
+**Pontos fortes:**
+- Melhor raciocínio matemático da tabela.
+- Contexto de 400k.
+- Ferramenta (function calling) muito madura.
+- Multimodal completo.
+
+**Pontos fracos:**
+- Mais caro da lista.
+- Voz autoral menos consistente que Claude.
+- Latência alta em prompt complexo.
+
+**Meu take:** justifica se seu produto depende de matemática pesada ou raciocínio simbólico. Fora disso, Sonnet 5 entrega 90% por 35% do preço.
+
+## Ranking prático (não só por custo)
+
+Custo é um dos eixos. Qualidade e ajuste ao caso são os outros. Meu ranking pessoal pra founder ou dev solo em 2026:
+
+1. **Claude Sonnet 5** (R$ 155) — melhor default. 80% das tarefas.
+2. **DeepSeek V4 Pro** (R$ 81) — se compliance não é problema. Corta custo em 50%.
+3. **Claude Opus 4.8** (R$ 386) — reserve pros 10% que Sonnet falha.
+4. **Gemini 2.5 Flash** (R$ 33) — pra pipeline batch massivo.
+5. **GPT-4o** (R$ 167) — pra experiência mobile (voice, imagem).
+
+O resto é otimização por caso específico.
+
+## Vale o ponto: custo não é tudo
+
+Alguém vai dizer: "por R$ 6,50/mês eu tenho DeepSeek Flash, tô economizando R$ 400".
+
+Vale o ponto. Só que:
+
+- Se DeepSeek te faz gastar 2 horas debugando código ruim, você perdeu mais em salário do que economizou em API.
+- Se seu produto é pago (curso, SaaS, cliente), a diferença de R$ 380 no seu custo é 0,3% do seu revenue típico. Não vale trocar qualidade por isso.
+- Se você tá começando e testando ideia, DeepSeek pra prototipar e Sonnet pra polir final é o sweet spot.
+
+Custo baixo não é vitória se qualidade não bate. Custo alto não é problema se receita bate.
+
+## Meu setup atual (transparência total)
+
+- **Uso principal:** Claude Sonnet 5 via API (~R$ 200/mês real considerando cache hits)
+- **Backup pra código difícil:** Claude Opus 4.8 (~R$ 80/mês pontual)
+- **Batch e multimodal:** Gemini 2.5 Flash (~R$ 20/mês)
+- **Voice mobile:** GPT-4o pelo app Plus (US$ 20/mês fixo)
+
+Total: ~R$ 400/mês. Vale o que eu economizo em tempo.
+
+## Como manter esse controle
+
+1. **Cotação e preço:** [wise.com/us/currency-converter](https://wise.com/us/currency-converter/usd-to-brl-rate/history) pra câmbio. Página oficial de cada API pra preço.
+2. **Dashboard de uso:** cada API tem. Cheque semanal. Se disparar, algo tá errado.
+3. **Log local:** grave request e response. Custo real vem de tokens, não de "quantas conversas".
+4. **Alerta de billing:** todo fornecedor deixa configurar. Ative em US$ 50 pra ser avisado antes de explodir.
+
+## Conclusão
+
+Preço não decide sozinho. Qualidade percebida no seu caso é o que importa. Cenário deste post ajuda a ter noção, não a fechar decisão.
+
+Se você tá começando, roda 1 semana em DeepSeek Flash pra sentir o mais barato. Depois roda 1 semana em Sonnet 5 pra comparar. Aí decide.
+
+Se você já roda em produção, revisa o custo real do último mês antes de acreditar em qualquer post (incluindo este).
+
+A decisão é sua.`,
+  },
+  {
+    id: "load-balancer-redis-vibecoding-tutorial-2026",
+    slug: "load-balancer-redis-vibecoding-tutorial-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-06",
+    coverUrl:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "Load Balancer e Redis no seu sistema: tutorial pra pedir pra IA e validar",
+    excerpt:
+      "Load Balancer e Redis são 2 mudanças que transformam MVP em produto sério. Não são luxo, são sinal de que você tá levando a sério. Este tutorial mostra pra que serve cada um, quando ativar, como pedir pra IA em prompts P.R.O.M.P.T.E.R. estruturados e como validar em 3 comandos.",
+    summary:
+      "Load Balancer distribui tráfego entre várias instâncias do seu servidor (se cair uma, o site fica no ar). Redis é memória rápida em RAM pra cache, sessão e rate limit (cai latência de 800ms pra 30ms). Este tutorial mostra quando ativar, prompts P.R.O.M.P.T.E.R. prontos pra pedir pra IA em Next.js/Vercel/Firebase, e como validar em 3 comandos.",
+    faq: [
+      {"q": "Preciso de Load Balancer se meu site tem 100 usuários por dia?", "a": "Não. Load Balancer faz sentido a partir de ~1000 requests concorrentes ou quando você quer alta disponibilidade (SLA de 99.9%+). Vercel e Cloudflare já fazem isso por baixo dos panos no plano padrão. Se você tem seu próprio servidor Node/Python rodando, aí sim vale."},
+      {"q": "Redis substitui banco de dados?", "a": "Não. Redis é memória rápida (dados em RAM). Perde se o servidor reinicia (a menos que configure persistência). Use como CACHE do banco, sessão de login e rate limit. Nunca como fonte única de verdade."},
+      {"q": "Qual Redis gratuito eu uso pra começar?", "a": "Upstash Redis (upstash.com) tem free tier real: 10 mil comandos por dia + 256MB. Suficiente pra MVP. Integra nativo com Vercel e Firebase. Depois escala pago por uso."},
+      {"q": "A IA sabe fazer isso sozinha?", "a": "Sabe fazer, mas erra em detalhes críticos (chave em código, TTL esquecido, cache stale). Por isso o P.R.O.M.P.T.E.R.: você dá o contrato certo e a IA entrega. Sem contrato, ela chuta e você vaza chave ou perde dado."},
+      {"q": "Como sei se o Redis tá funcionando de verdade?", "a": "3 comandos: (1) redis-cli PING deve retornar PONG, (2) redis-cli MONITOR mostra em tempo real cada operação, (3) Chrome DevTools → Network mostra latência da rota antes/depois. Se caiu de 800ms pra 30ms, tá cacheando."}
+    ],
+    content: `Load Balancer e Redis são as 2 mudanças que separam MVP de produto sério. Não são luxo. São o momento em que você para de rezar pra o servidor não cair e começa a projetar pra ele **não cair**.
+
+Este tutorial é o que eu ensino pra founder que começou no vibecoding e chegou no ponto de "o site travou de novo com 200 usuários".
+
+## O que é Load Balancer (LB)
+
+Imagina que seu site é uma padaria. Se você tem 1 balconista e chega uma fila de 20 pessoas, cria gargalo. Load Balancer é você ter 5 balconistas, com um segurança na porta distribuindo:
+
+- Cliente A → balconista 1
+- Cliente B → balconista 2
+- Cliente C → balconista 3
+
+Se balconista 2 falta ou fica doente, o segurança sabe e para de mandar cliente pra ele. Loja continua funcionando.
+
+Em software:
+
+- **Sem LB:** 1 servidor recebe tudo. Se cair, site cai.
+- **Com LB:** 3 servidores recebem tráfego. Se um cair, os outros 2 seguem. LB detecta e retira o quebrado da roleta.
+
+## Quando ativar Load Balancer
+
+Regra prática:
+
+- **Tráfego < 1000 requests concorrentes:** não precisa. Vercel/Cloudflare já fazem isso.
+- **Tráfego 1000-10.000 requests concorrentes:** ative se tem servidor próprio Node/Python.
+- **SLA de 99.9%+ pra cliente:** obrigatório.
+- **Vários países acessando:** LB geográfico melhora latência.
+
+Se você tá em Vercel, Cloudflare, Netlify: **você já tem LB por default**. Só se importe se saiu desses.
+
+## O que é Redis
+
+Redis é uma memória rápida em RAM. Bem rápida. **Latência de 1-2ms** contra 20-100ms de banco tradicional.
+
+Use pra 3 coisas:
+
+1. **Cache:** guardar resposta de query pesada. Se você pergunta "quantos produtos tem?" e o banco leva 800ms pra responder, você guarda a resposta no Redis por 60 segundos. Próximas 100 pessoas que perguntam recebem em 2ms.
+
+2. **Sessão de login:** guardar quem tá logado. Toda request precisa verificar isso. Se guardar no banco, cada request paga 20ms. No Redis, 1ms.
+
+3. **Rate limit:** contar "quantas vezes o usuário X fez essa ação nos últimos 60 segundos". Rate limit no banco é dor. No Redis é 2 linhas.
+
+## Quando ativar Redis
+
+- **Rota lenta que muita gente acessa:** ativa pra essa rota específica.
+- **Muitos logins simultâneos:** ativa pra sessão.
+- **Endpoint público sendo abusado:** ativa rate limit.
+
+Se você ainda não tem esses problemas, **não instala**. Complexidade sem dor é dívida técnica adiantada.
+
+## Como pedir pra IA fazer isso: 4 prompts P.R.O.M.P.T.E.R. prontos
+
+O erro comum é pedir "coloca Redis no meu app". IA vai chutar formato, colar chave no código, esquecer TTL. Prompts abaixo são o contrato certo.
+
+### Prompt 1: Adicionar Redis (cache de query)
+
+\`\`\`
+Papel: você é engenheiro sênior de back-end, especialista em Next.js
+       e Upstash Redis. Se algo ficar ambíguo, pergunta antes de gerar.
+
+Regras:
+- Usar Upstash Redis via cliente @upstash/redis (não instalar redis package puro).
+- Chave da conexão SEMPRE em variável de ambiente
+  (UPSTASH_REDIS_REST_URL e UPSTASH_REDIS_REST_TOKEN).
+- NUNCA colar chave no código.
+- Todo cache tem TTL. Default 60 segundos.
+- Nome da chave do cache tem prefixo (ex: "produto:count") pra debug fácil.
+
+Objetivo: adicionar cache Redis na rota /api/produtos/count
+que hoje leva 800ms.
+
+Modelo: função pura src/lib/cache.ts com getOrSet(chave, ttl, fn)
++ modificação da rota.
+
+Parâmetros:
+- TTL 60 segundos.
+- Se Redis falhar, cai pra fetch direto no banco (não quebra o app).
+
+Teste: incluir 3 casos:
+1. cache miss (pega do banco, salva no cache)
+2. cache hit (retorna do cache)
+3. Redis offline (fallback pro banco)
+
+Retorno: só código, sem comentário fora dele.
+\`\`\`
+
+### Prompt 2: Session em Redis (login)
+
+\`\`\`
+Papel: você é engenheiro sênior de segurança e Redis.
+
+Regras:
+- Sessão fica em Redis com TTL de 7 dias.
+- ID de sessão é UUID v4 gerado no servidor
+  (nunca deixar cliente escolher).
+- Chave no formato "session:{uuid}".
+- Payload da sessão contém APENAS: userId, createdAt, lastSeen.
+- NÃO guardar senha, e-mail, token de terceiros.
+- Logout apaga a chave.
+
+Objetivo: substituir sessão em cookie stateful atual por sessão Redis.
+
+Modelo: src/lib/session.ts com create, get, refresh, destroy.
+
+Parâmetros:
+- TTL 604800 segundos (7 dias).
+- Refresh a cada acesso: atualiza lastSeen mas NÃO reseta TTL.
+
+Teste: 4 casos:
+1. Criar sessão nova.
+2. Ler sessão válida.
+3. Ler sessão expirada (retorna null).
+4. Destruir sessão.
+
+Retorno: código completo do session.ts + como usar
+em middleware Next.js.
+\`\`\`
+
+### Prompt 3: Rate limit no Redis
+
+\`\`\`
+Papel: você é engenheiro sênior anti-abuso.
+
+Regras:
+- Rate limit por IP + rota (não só IP).
+- Janela deslizante de 60 segundos.
+- Limite: 100 requests por janela.
+- Se estourar, retornar HTTP 429 com header Retry-After.
+- Chave no formato "ratelimit:{ip}:{rota}".
+- Usar comando INCR + EXPIRE pra ser atômico.
+
+Objetivo: proteger rota /api/lead-email de abuso.
+
+Modelo: middleware src/lib/rate-limit.ts com função rateLimit(req)
+que retorna { ok, retryAfter }.
+
+Parâmetros:
+- Limite 100 req por 60 segundos.
+- IP vem de x-forwarded-for (Vercel).
+
+Teste: 3 casos:
+1. Primeira request passa.
+2. 101ª request retorna 429.
+3. Após 60 segundos, contador reseta.
+
+Retorno: só código.
+\`\`\`
+
+### Prompt 4: Load Balancer via Cloudflare
+
+Aqui muda: LB não é código, é configuração. O prompt pra IA é orientação, não geração de código.
+
+\`\`\`
+Papel: você é engenheiro DevOps especialista em Cloudflare.
+
+Regras:
+- Configurar Load Balancer Cloudflare (não AWS ELB).
+- 3 origins: Vercel principal, Vercel backup, Render como fallback.
+- Health check a cada 30 segundos no endpoint /api/health.
+- Se origin retornar não-200 em 3 checks seguidos, retira da roleta.
+- Voltar automaticamente quando /api/health voltar a retornar 200.
+- Distribuição: round robin com peso 3-2-1.
+
+Objetivo: guia passo a passo pra configurar Load Balancer
+Cloudflare pra domínio [seu-dominio.com.br].
+
+Modelo: lista numerada de passos com screenshots ou nomes exatos
+dos campos no dashboard Cloudflare.
+
+Teste: incluir o comando curl pra validar cada origin manualmente
++ como simular queda de um origin.
+
+Retorno: markdown com passos + endpoint /api/health que o Next.js
+precisa expor (código dele).
+\`\`\`
+
+## Como validar se tá funcionando
+
+Não confia no "acho que sim". Testa.
+
+### Validar Redis (3 comandos)
+
+**1. Ping:**
+
+\`\`\`bash
+redis-cli -h [seu-redis-host] PING
+# Retorna: PONG
+\`\`\`
+
+Se retornar PONG, conexão OK.
+
+**2. Monitor em tempo real:**
+
+\`\`\`bash
+redis-cli -h [seu-redis-host] MONITOR
+\`\`\`
+
+Deixa rodando. Faz uma request no seu app. Deve aparecer SET e GET
+em tempo real. Se não aparece, o app não tá chamando Redis.
+
+**3. Latência caindo (o teste que importa):**
+
+Abre Chrome → F12 → Network. Roda a rota **1x** (cold cache).
+Anota tempo. Roda **2x seguidas** (warm cache). Compara.
+
+- Antes de Redis: 800ms, 800ms, 800ms.
+- Depois de Redis: 800ms (primeira, cold), 15ms, 15ms.
+
+Se não caiu, Redis não tá ativado ou o TTL tá zerado.
+
+### Validar Load Balancer
+
+**1. Ver headers de resposta:**
+
+\`\`\`bash
+curl -I https://seu-dominio.com.br
+# Procura header: cf-ray ou x-vercel-id
+# Se aparecer, LB tá roteando.
+\`\`\`
+
+**2. Simular queda de origin:**
+
+Desliga uma das 3 instâncias. Roda \`curl\` 20 vezes.
+
+Se todas responderam com 200, LB detectou e desviou.
+Se algumas deram 502, o health check ainda não removeu a instância morta.
+Aguarda 90 segundos e tenta de novo.
+
+**3. Ver distribuição:**
+
+\`\`\`bash
+for i in {1..30}; do
+  curl -s https://seu-dominio.com.br/api/health | grep instance;
+done
+\`\`\`
+
+Se apareceu \`instance:1\`, \`instance:2\`, \`instance:3\` misturados, LB
+tá distribuindo mesmo. Se veio tudo instance:1, algo tá errado.
+
+## Custo aproximado (07/07/2026)
+
+**Redis via Upstash (recomendado pra começar):**
+- Free tier: 10.000 comandos/dia + 256 MB. Suficiente pra MVP.
+- Pago: US$ 0,20 por 100.000 comandos. R$ 1,03 por 100k.
+- App médio (10.000 req/dia com cache): ~R$ 30/mês.
+
+**Load Balancer Cloudflare:**
+- Free tier: LB básico incluso.
+- Plano Pro: US$ 20/mês (R$ 103) + US$ 5 por health check ativo.
+- Vale se você tá em Cloudflare Pro por outros motivos (WAF, CDN).
+
+**AWS ALB (só se você tá em AWS):**
+- US$ 22/mês fixo + US$ 8 por LCU (load capacity unit).
+- Complexo. Não recomendo pra começar.
+
+## Vale o ponto
+
+"Mas isso tudo não é overengineering pra MVP?"
+
+Vale o ponto. **Não faça antes de precisar**. Se seu MVP tem 50 usuários por dia e uma rota rápida, você não precisa de Redis. Não precisa de Load Balancer.
+
+Você precisa quando:
+- Rota fica >500ms consistentemente.
+- Ver 500 error no log com tráfego médio.
+- Cliente reclama de lentidão em horário de pico.
+- SLA de 99.9%+ virou requisito de contrato.
+
+Sinal de que tá na hora: você já mediu, você já sabe que a dor existe. Não é sensação, é dado.
+
+## Conclusão
+
+Load Balancer é sobre **não cair**. Redis é sobre **não ficar lento**. Os dois juntos transformam MVP em produto sério.
+
+A IA sabe fazer isso, mas erra em detalhes críticos (chave vazada, TTL zerado, cache stale). Prompts P.R.O.M.P.T.E.R. deste post te dão o contrato certo.
+
+Depois de ativar, VALIDA. Nenhuma dessas mudanças é "confia que funcionou". Roda os 3 comandos.
+
+Se travou algo, me manda no e-mail. Respondo direto.
+
+A decisão é sua.`,
+  },
+  {
     id: "qual-ia-usar-cada-situacao-mapa-pratico-2026",
     slug: "qual-ia-usar-cada-situacao-mapa-pratico-2026",
     contentVersion: 2,
