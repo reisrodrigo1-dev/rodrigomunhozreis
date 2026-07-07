@@ -71,11 +71,30 @@ const orgJsonLd = {
   "@type": "Person",
   "@id": `https://${site.domain}/#person`,
   name: site.name,
-  jobTitle: site.role,
+  jobTitle: [
+    "Consultor de Inteligência Artificial",
+    "Diretor de Tecnologia (CTO)",
+    "Autor",
+  ],
   url: `https://${site.domain}`,
   description: site.description,
   sameAs: [site.links.linkedin, site.links.instagram],
-  knowsAbout: ["Inteligência Artificial", "Vibecoding", "Engenharia de Software", "Segurança em IA"],
+  knowsAbout: [
+    "Consultoria em Inteligência Artificial",
+    "Auditoria de IA",
+    "Mentoria em desenvolvimento com IA",
+    "Vibecoding com Engenharia",
+    "Inteligência Artificial",
+    "Vibecoding",
+    "Engenharia de Software",
+    "Segurança em IA",
+    "LGPD e IA",
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Consultor de Inteligência Artificial",
+    occupationLocation: { "@type": "Country", name: "Brasil" },
+  },
 };
 
 export default function RootLayout({

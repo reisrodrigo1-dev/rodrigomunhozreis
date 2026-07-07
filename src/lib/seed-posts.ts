@@ -7,6 +7,129 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "quando-contratar-consultor-de-ia-2026",
+    slug: "quando-contratar-consultor-de-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-06",
+    coverUrl:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "Quando contratar um consultor de IA em 2026 (e quando não)",
+    excerpt:
+      "Toda semana vejo empresa contratar consultor de IA pra resolver dor que não é técnica, e outra que precisa desesperadamente de consultor e ainda tenta fazer sozinha. Este post é o filtro: 5 sinais claros de que faz sentido contratar e 5 sinais de que ainda não é a hora.",
+    summary:
+      "Contratar consultor de IA em 2026 faz sentido quando: sua empresa já perdeu tempo/dinheiro tentando sozinha, você tem processo que 3 devs não conseguem otimizar, cliente cobra prazo que a IA promete cumprir, existe risco de LGPD ou vazamento visível, ou o CTO pede mas ninguém traduziu pra decisão. Não faz sentido quando: você quer terceirizar o pensamento, quer promessa de milagre, ou ainda não sabe qual é o seu problema.",
+    faq: [
+      {"q": "Quanto custa uma consultoria de IA em 2026 no Brasil?", "a": "Varia demais. Auditoria pontual: R$ 15-40 mil pra empresa média. Mentoria mensal de time: R$ 8-25 mil/mês. Projeto ponta a ponta: sob medida. Cotação séria é feita depois de conversa técnica, nunca em pacote de site. Fuja de quem cota antes de entender seu caso."},
+      {"q": "Consultor de IA e prompt engineer são a mesma coisa?", "a": "Não. Prompt engineer trabalha na camada de prompt (como conversar com o modelo). Consultor de IA trabalha 2 níveis acima: método, arquitetura, risco, integração com processo, LGPD, ROI. Prompt engineer é execução. Consultor é decisão."},
+      {"q": "Consultor externo ou contratar CTO/head de IA interno?", "a": "Fase early (até 20 pessoas): consultor externo economiza carga fixa. Fase escala (50+): head interno vale porque decisão é diária. Melhor híbrido: head interno + consultor externo pra ponto cego. Nunca só consultor sem alguém interno pra segurar continuidade."}
+    ],
+    content: `Consultor de IA virou hype em 2026. Todo mundo se apresenta como um. LinkedIn tem 50 mil "AI Consultants" só no Brasil. A maioria nunca colocou IA em produção.
+
+Este post é o filtro. Serve pra você (empresa) decidir se contratar faz sentido. E pra você (dev/CTO) entender quando o serviço ajuda de verdade.
+
+## 5 sinais de que faz sentido contratar
+
+### 1. Sua empresa já queimou tempo tentando sozinha
+
+Time gastou 3 meses testando ChatGPT, Cursor e Copilot. Chegou em algum lugar, mas cheio de bug, arquitetura confusa e ninguém sabe o que tá em produção. Você paga 10 devs, mas o produto tá mais frágil que antes.
+
+Sinal: **custo interno já superou o custo de trazer alguém que sabe**.
+
+### 2. Você tem processo que 3 devs não conseguem otimizar
+
+Existe uma rotina no seu negócio (atendimento, cotação, análise de contrato, geração de proposta) que ninguém do time acha jeito de automatizar. Você sabe que IA resolve, mas o time não sabe traduzir.
+
+Sinal: **o gap não é ferramenta. É método**.
+
+### 3. Cliente cobra prazo que a IA promete cumprir
+
+Você fechou contrato que exige entrega mais rápida do que sua stack atual entrega. Concorrente virou "AI-first" e você tá perdendo licitação.
+
+Sinal: **a receita depende de você acelerar já**.
+
+### 4. Existe risco de LGPD ou vazamento visível
+
+Alguém do time colou dado de cliente em prompt público. Chave de API foi commitada no GitHub. Agente de IA tem acesso ao banco de produção e ninguém revisa o que ele faz.
+
+Sinal: **o próximo incidente é questão de tempo**.
+
+### 5. CTO pediu, mas ninguém traduziu pra decisão
+
+Seu CTO ou head de tech tá pedindo verba, orientação ou apoio pra colocar IA em pauta. Mas o CEO não entende, o CFO acha caro, e ninguém tem o mapa executivo.
+
+Sinal: **falta ponte entre técnico e decisão**.
+
+## 5 sinais de que ainda NÃO é hora
+
+### 1. Você quer terceirizar o pensamento
+
+Se seu plano é "contrata consultor e ele faz tudo", contrato ruim. Consultor sério trabalha COM seu time, não NO LUGAR dele. Se você não tem time nem quer envolver, você quer agência de execução, não consultoria.
+
+### 2. Você quer promessa de milagre
+
+Se você espera "vou ter 10x menos custo com IA em 3 meses", consultor honesto vai dizer que provavelmente é falso. Ganho real é 20-40% em processos específicos, em 6-12 meses.
+
+Quem promete milagre é vendedor. Quem entrega método é consultor.
+
+### 3. Você não sabe qual é o seu problema
+
+"Quero IA no meu negócio" não é problema, é vibe. Consultor sério vai gastar sua primeira semana só descobrindo qual é o problema real. Se você não quer pagar por isso, contrata quando souber.
+
+### 4. Sua stack ainda tem dor mais urgente que IA
+
+Se você tem sistema legado que cai toda semana, banco lento, deploy manual sem CI/CD, você tem dor MAIOR que IA vai resolver. Consertar isso primeiro. IA em cima de infra ruim vira acelerador de risco.
+
+### 5. Você tá numa fase de negócio errada
+
+Startup que ainda não tem product-market fit não precisa de consultor de IA. Precisa de cliente. Empresa que tá em plano de restruturação financeira não precisa de IA nova. Precisa de fluxo de caixa.
+
+IA é meio, não fim. Se o fim tá em risco, IA é distração cara.
+
+## O que consultor de IA sério faz na prática
+
+Rotina real que aplico nos meus clientes:
+
+**Semana 1:** entender o negócio. Método SPIN (Situação, Problema, Implicação, Necessidade). Não olho código na primeira semana. Olho processo, gente, dor.
+
+**Semana 2:** olhar código, dados, integrações. Auditar o que já existe de IA. Achar chave vazada, agente com permissão demais, dívida técnica escondida.
+
+**Semana 3:** relatório executivo. Prioridades, riscos, plano de 90 dias. Onde economiza, onde gera receita, onde precisa reforçar.
+
+**Semanas 4-12:** implantação com o time do cliente. Eu direciono, reviso, ensino. Time implementa. Sai com **capacidade instalada**, não com dependência.
+
+Se o "consultor" que você conversou vai direto pra promessa de fazer sozinho, é execução mascarada.
+
+## Como escolher o consultor certo
+
+3 filtros rápidos:
+
+1. **Ele tem produto de IA rodando em produção?** Consultor que só ensina e não constrói fala do que leu. Consultor que constrói fala do que quebrou.
+
+2. **Ele fala do risco antes de falar da promessa?** Consultor sério fala de LGPD, licença de modelo, dependência de fornecedor ANTES de vender caso de sucesso.
+
+3. **Ele te ensina ou te vende?** Se saindo da primeira conversa você aprendeu algo aplicável, ele é consultor. Se saiu com "assina o contrato pra ver mais", é vendedor.
+
+## Meu take
+
+Consultor de IA em 2026 é útil pra empresa que tem dor real, time razoável e disposição de aprender. É inútil pra quem quer atalho.
+
+O que muda com a chegada da IA é o **método**, não o time. Consultor bom te dá método. Consultor ruim te vende ferramenta cara.
+
+Se você tá lendo isso e reconheceu 2+ dos 5 sinais positivos, faz sentido conversar. Se reconheceu 2+ dos negativos, resolve primeiro o que tá antes.
+
+## Conclusão
+
+Contratar consultor de IA é decisão executiva, não impulso. Pergunta antes: **eu tenho dor específica, time pra absorver e clareza do que quero resolver?** Se sim, contrate. Se não, o problema não é falta de consultor. É falta de definição.
+
+Se você acha que o momento é agora e quer conversar sobre o caso da sua empresa, [me chama no LinkedIn](https://www.linkedin.com/in/rodrigoreisoda/). Sem formulário, sem robô. Respondo pessoalmente.
+
+Se você ainda não sabe se é a hora, [lê o restante do blog](/blog) primeiro. Vai te economizar mais tempo do que a primeira conversa nossa.
+
+A decisão é sua.`,
+  },
+  {
     id: "custo-api-ia-2026-comparativo-real",
     slug: "custo-api-ia-2026-comparativo-real",
     contentVersion: 1,

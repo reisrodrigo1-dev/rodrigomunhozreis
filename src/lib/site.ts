@@ -1,14 +1,19 @@
 export const site = {
   name: "Rodrigo Munhoz Reis",
   shortName: "Rodrigo Munhoz Reis",
-  role: "Diretor de Tecnologia (CTO)",
+  role: "Consultor de IA e Diretor de Tecnologia (CTO)",
   domain: "rodrigomunhozreis.com.br",
   tagline: "Vibecoding com Engenharia",
   description:
-    "Aprenda a construir e usar IA do jeito certo: rápido, mas com rigor de engenheiro. Vibecoding com engenharia — sem cair no vibecoding às cegas.",
+    "Consultor de Inteligência Artificial para empresas que querem escalar com método. Vibecoding com engenharia: a velocidade da IA com o rigor de engenheiro. Sem hype, sem cair no vibecoding às cegas.",
   heroSubtitle:
     "Sou Diretor de TI e sócio de produtos reais, 100% construídos em vibecoding. Ensino a usar IA com a velocidade da máquina e a segurança de quem entende de engenharia.",
   keywords: [
+    "consultor de IA",
+    "consultor de inteligência artificial",
+    "consultoria em IA para empresas",
+    "auditoria de IA",
+    "mentoria em IA",
     "vibecoding",
     "vibecoding com engenharia",
     "vibecoding seguro",
@@ -23,7 +28,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/rodrigoreisoda/",
     instagram: "https://instagram.com/rodrigomunhozreis",
     email: "mailto:contato@rodrigomunhozreis.com.br",
-    // WHATSAPP OCULTO temporariamente (anúncio pago rodando — não quero o número
+    // WHATSAPP OCULTO temporariamente (anúncio pago rodando: não quero o número
     // pessoal circulando). Para REATIVAR: restaure as 2 linhas comentadas abaixo,
     // apague as 2 vazias e descomente os usos marcados "WHATSAPP OCULTO".
     // whatsapp: "5511974696172",
@@ -73,14 +78,14 @@ export const site = {
     },
   ],
   nav: [
+    { label: "Consultoria", href: "/consultoria" },
     { label: "Método", href: "/#metodo" },
     { label: "Robôs", href: "/robos" },
     { label: "Materiais", href: "/#materiais" },
     { label: "Blog", href: "/blog" },
     { label: "Sobre", href: "/sobre" },
-    { label: "Trabalhe comigo", href: "/#trabalhe" },
   ],
-  // Acesso à área logada — separado do menu principal.
+  // Acesso à área logada: separado do menu principal.
   clienteArea: { label: "Área do Cliente", href: "/cliente" },
 };
 
