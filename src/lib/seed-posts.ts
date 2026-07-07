@@ -192,11 +192,11 @@ Claude Sonnet 5 tá em introductory pricing até 31 de agosto. Depois vai pra US
 
 Custo é um dos eixos. Qualidade e ajuste ao caso são os outros. Meu ranking pessoal pra founder ou dev solo em 2026:
 
-1. **Claude Sonnet 5** (R$ 155) — melhor default. 80% das tarefas.
-2. **DeepSeek V4 Pro** (R$ 81) — se compliance não é problema. Corta custo em 50%.
-3. **Claude Opus 4.8** (R$ 386) — reserve pros 10% que Sonnet falha.
-4. **Gemini 2.5 Flash** (R$ 33) — pra pipeline batch massivo.
-5. **GPT-4o** (R$ 167) — pra experiência mobile (voice, imagem).
+1. **Claude Sonnet 5** (R$ 155): melhor default. 80% das tarefas.
+2. **DeepSeek V4 Pro** (R$ 81): se compliance não é problema. Corta custo em 50%.
+3. **Claude Opus 4.8** (R$ 386): reserve pros 10% que Sonnet falha.
+4. **Gemini 2.5 Flash** (R$ 33): pra pipeline batch massivo.
+5. **GPT-4o** (R$ 167): pra experiência mobile (voice, imagem).
 
 O resto é otimização por caso específico.
 
