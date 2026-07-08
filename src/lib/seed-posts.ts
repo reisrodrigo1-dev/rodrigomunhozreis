@@ -7,6 +7,342 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "alibaba-baniu-claude-code-licao-confianca-2026",
+    slug: "alibaba-baniu-claude-code-licao-confianca-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-07",
+    coverUrl:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+    title: "A Alibaba baniu o Claude Code. A história real é sobre confiança em ferramenta",
+    excerpt:
+      "Pesquisadores acharam código escondido no Claude Code que detectava se o usuário estava na China e reportava isso de um jeito quase invisível. A Alibaba baniu tudo. A Anthropic diz que era anti-abuso. Os dois têm razão em parte. E a lição vale pra você que vibecoda.",
+    summary:
+      "A Alibaba baniu o Claude Code a partir de 10/07/2026 depois que pesquisadores acharam código ofuscado que detectava usuários na China e reportava alterando o system prompt de forma invisível (troca de separador de data, apóstrofo Unicode diferente). A Anthropic diz que era experimento anti-abuso de março, removido em 01/07. Os dois têm parte da razão. A lição real: a ferramenta que você mais confia pode ter comportamento escondido. Vibecoding com engenharia é ler o que roda, não só o que você escreve.",
+    faq: [
+      {"q": "O Claude Code espionava usuários?", "a": "Não no sentido de roubar seu código. O experimento (março a julho de 2026) detectava se o usuário estava na China e sinalizava isso de forma ofuscada, pra combater revenda não autorizada e distillation. A Anthropic removeu em 01/07/2026. Não houve exfiltração do seu código, mas houve comportamento não documentado, e é isso que gera desconfiança."},
+      {"q": "Devo parar de usar o Claude Code por causa disso?", "a": "Não necessariamente. O Claude Code continua sendo uma das melhores ferramentas de vibecoding. A lição não é 'abandone', é 'entenda que qualquer ferramenta pode ter comportamento escondido' e mantenha seu workflow auditável. Trate ferramenta como dependência: confie, mas verifique."},
+      {"q": "Como sei se uma ferramenta de IA tem comportamento escondido?", "a": "Difícil pra usuário comum. Sinais: ferramenta open-source com código legível (você ou a comunidade audita), changelog transparente, empresa que publica o que mudou. Ferramenta fechada exige confiança na marca. Por isso diversifique e nunca dependa 100% de uma só."}
+    ],
+    content: `Ontem saiu a notícia que mais mexeu com quem vibecoda em 2026: a Alibaba vai banir o Claude Code de todos os funcionários a partir de 10 de julho.
+
+O motivo é o tipo de coisa que parece roteiro de filme. Mas a história real é mais interessante (e mais útil pra você) do que a manchete.
+
+## O que aconteceu
+
+Pesquisadores de segurança acharam código ofuscado dentro do Claude Code. Esse código fazia uma coisa específica: detectava se o usuário estava na China.
+
+E aqui vem a parte que impressiona: em vez de fazer uma chamada de rede óbvia (que seria fácil de detectar), ele reportava a descoberta de um jeito quase invisível. Fazia pequenas alterações no system prompt do próprio Claude Code:
+
+- Trocava o separador de data de traço pra barra.
+- Trocava um apóstrofo Unicode específico por outro.
+
+Essas mudanças minúsculas funcionavam como dado escondido dentro de comportamento normal. Ninguém olhando de fora percebia. Era esteganografia: mensagem escondida em algo que parece inofensivo.
+
+## A resposta da Anthropic
+
+O engenheiro Thariq Shihipar, da Anthropic, respondeu no X: era um experimento lançado em março, pra prevenir abuso de conta por revendedores não autorizados e proteger contra distillation (quando alguém usa o modelo pra treinar um clone mais barato).
+
+A Anthropic diz que removeu o código no dia 1 de julho, três dias antes da Alibaba anunciar o banimento.
+
+Contexto importante: a Anthropic já proíbe empresas chinesas de usar os modelos dela. Então detectar uso na China tinha uma lógica de negócio, não era espionagem gratuita.
+
+## Os dois têm parte da razão
+
+Vou ser honesto porque a internet vai simplificar isso em "Anthropic é vilã" ou "Alibaba é paranoica". Nenhum dos dois é verdade completa.
+
+**A Anthropic tem razão em:** combater revenda pirata e distillation é legítimo. Toda empresa protege o produto. E não houve roubo do seu código.
+
+**A Alibaba tem razão em:** código ofuscado, escondido, não documentado, que detecta sua localização e reporta de forma esteganográfica é inaceitável numa ferramenta que roda com acesso total ao seu repositório. Não importa a intenção. O método quebra confiança.
+
+O problema nunca foi o objetivo. Foi o método escondido.
+
+## A lição que vale pra você
+
+Isso não é sobre geopolítica China vs EUA. É sobre a coisa que eu falo desde o primeiro post: **a ferramenta que você mais confia pode ter comportamento que você não vê**.
+
+Você instala o Claude Code, o Cursor, uma extensão do VS Code, um pacote npm. Todos rodam com o seu acesso, no seu computador, no seu servidor. Você confia porque a marca é grande.
+
+O caso da Alibaba mostra que até a marca grande, com boa intenção, pode colocar comportamento escondido. Imagina as ferramentas pequenas, sem auditoria, que você instala sem pensar.
+
+Isso conversa direto com o que escrevi em [o risco não é o código que você escreve, é o que você instala](/blog/risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026). O caso de ontem é a prova viva.
+
+## O que fazer na prática
+
+Não é "abandone o Claude Code". Continua sendo uma das melhores ferramentas de vibecoding que existe. É outra coisa:
+
+### 1. Trate ferramenta como dependência
+
+Você não instala qualquer pacote npm sem olhar. Trate ferramenta de IA igual. Confie, mas saiba que confiança não é cheque em branco.
+
+### 2. Prefira o auditável quando der
+
+Ferramenta open-source tem código que você (ou a comunidade) pode ler. Ferramenta fechada exige confiar na marca. Quando o auditável e o fechado empatam em qualidade, escolhe o auditável.
+
+### 3. Diversifique
+
+Se você depende 100% de uma ferramenta, você tá refém da decisão dela. Eu uso Claude Code, Cursor e mais uma ou outra. Se uma mudar de comportamento ou de política, eu troco em um dia.
+
+### 4. Isole o que é sensível
+
+Dado de cliente, chave de produção, segredo de negócio: não deixa isso passar por ferramenta que você não controla. Ambiente separado, credencial separada, acesso mínimo.
+
+### 5. Acompanhe o changelog
+
+Empresa séria publica o que muda. A própria Anthropic reconheceu e removeu. Ferramenta que nunca publica changelog, que muda comportamento sem avisar, é sinal amarelo.
+
+## Vale o ponto
+
+"Mas se até a Anthropic faz isso, não dá pra confiar em ninguém?"
+
+Vale o ponto. Só que confiança não é sim ou não. É gradiente. Você confia mais no que é auditável, no que tem changelog, no que a comunidade vigia. Confia menos no que é fechado e opaco.
+
+E principalmente: você confia, mas com arquitetura que aguenta a quebra de confiança. Se amanhã sua ferramenta favorita fizer algo que você não gosta, seu workflow sobrevive?
+
+Se a resposta é não, você tá acoplado demais. Igual eu falei sobre [a consolidação de IA](/blog/sora-openai-media-suite-consolidacao-2026): a defesa é a mesma. Arquitetura agnóstica, workflow reprodutível, dependência diversificada.
+
+## Conclusão
+
+A Alibaba baniu o Claude Code. A Anthropic explicou e corrigiu. Os dois agiram dentro de uma lógica. E você, no meio disso, aprende a lição que vale mais que a fofoca:
+
+A ferramenta que você mais confia pode fazer algo que você não vê. Vibecoding com engenharia é ler o que roda, não só o que você escreve. É manter workflow que sobrevive à quebra de confiança.
+
+Não é paranoia. É engenharia. A diferença entre os dois é método.
+
+A decisão é sua.`,
+  },
+  {
+    id: "banco-de-dados-vibecoding-comparativo-2026",
+    slug: "banco-de-dados-vibecoding-comparativo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-07",
+    coverUrl:
+      "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "Qual banco de dados usar no seu projeto vibecoding em 2026 (comparativo honesto)",
+    excerpt:
+      "Firebase, Supabase, Neon, Convex, Turso. Testei os 5 em projeto real. Cada um tem um jeito de pensar diferente. Este é o comparativo que eu queria ter lido antes de escolher: free tier, prós, contras, quando cada um ganha. Eu uso Firebase e vou te dizer honestamente onde ele perde.",
+    summary:
+      "5 bancos pra vibecoding comparados: Firebase (ecossistema completo, trava no Google), Supabase (Postgres + auth + storage, melhor pacote), Neon (Postgres serverless puro, branching, integra Vercel), Convex (backend reativo em TypeScript), Turso (SQLite na edge, barato). Free tier de cada, prós, contras. Eu uso Firebase e digo onde ele ganha e onde perde. Não existe melhor. Existe o certo pro seu caso.",
+    faq: [
+      {"q": "Qual banco de dados é melhor pra quem tá começando no vibecoding?", "a": "Supabase pra maioria. Você ganha Postgres (banco de verdade), autenticação e storage num pacote só, com free tier generoso (500MB DB, 50k usuários). Firebase é ótimo se você quer o ecossistema Google inteiro, mas trava você nele. Comece pelo Supabase e migre só se precisar."},
+      {"q": "Firebase é bom ou ultrapassado em 2026?", "a": "Não é ultrapassado, mas tem trade-offs. É excelente pra prototipar rápido e ter auth + hosting + functions num lugar. Perde em: te trava no Google, o Firestore é NoSQL (query complexa é dor), e removeram o Cloud Storage do plano grátis em fevereiro de 2026. Eu uso Firebase e recomendo com ressalvas."},
+      {"q": "Neon ou Supabase, qual escolher?", "a": "Neon é o melhor banco (Postgres serverless puro, scale-to-zero, branching, integra nativo com Vercel). Supabase é a melhor plataforma (banco + auth + storage + realtime num pacote). Se você só precisa de Postgres e já tem auth resolvido, Neon. Se quer tudo junto, Supabase."},
+      {"q": "Vale usar Convex em vez de banco tradicional?", "a": "Convex é diferente: backend reativo onde suas funções TypeScript SÃO o backend inteiro, sem camada de API separada. Ganha em produtividade pra app realtime (chat, colaborativo). Perde em: modelo mental novo pra aprender e menos portável (mais difícil migrar depois). Vale se você começa do zero e valoriza velocidade."}
+    ],
+    content: `Toda vez que alguém começa um projeto vibecoding, trava na mesma pergunta: qual banco de dados eu uso?
+
+A IA vai sugerir o que ela viu mais nos dados de treino (geralmente Firebase ou Supabase). Mas "o mais comum" não é "o certo pro seu caso".
+
+Testei os 5 principais em projeto real. Este é o comparativo honesto. E vou começar confessando: **eu uso Firebase**, e vou te dizer exatamente onde ele ganha e onde ele perde.
+
+## Câmbio e método
+
+Preços de hoje, 07 de julho de 2026, 1 USD = R$ 5,15. Free tiers das páginas oficiais no mesmo dia. Se você lê isso meses depois, confere na fonte.
+
+## 1. Firebase (Google)
+
+**O que é:** plataforma completa do Google. Banco NoSQL (Firestore), autenticação, hosting, functions, tudo integrado.
+
+**Free tier (plano Spark):**
+- Firestore: 1 GB de dados, 50k leituras/dia, 20k escritas/dia.
+- Auth: ilimitado pra e-mail/senha e provedores sociais.
+- Hosting: 10 GB.
+- **Atenção:** o Cloud Storage saiu do plano grátis em fevereiro de 2026. Agora precisa de cartão.
+
+**Pontos fortes:**
+- Ecossistema completo. Auth + banco + hosting + functions num lugar.
+- Prototipagem rapidíssima. Do zero ao app funcionando em horas.
+- Auth é o melhor do mercado. Login social em 3 linhas.
+- Integra nativo com o resto do Google (Analytics, etc.).
+
+**Pontos fracos:**
+- **Te trava no Google.** Migrar pra fora depois é dor.
+- Firestore é NoSQL. Query complexa (join, agregação) é sofrimento.
+- Custo escala de forma imprevisível. Muita leitura vira conta alta.
+- Vendor lock-in real: seu código fica cheio de API específica do Firebase.
+
+**Meu take:** uso Firebase no meu site e em projeto que precisa de auth robusto rápido. Recomendo com ressalva: sabe que você tá casando com o Google. Se seu projeto vai crescer e você quer portabilidade, pensa duas vezes.
+
+**Link:** [firebase.google.com](https://firebase.google.com)
+
+## 2. Supabase
+
+**O que é:** o "Firebase open-source". Postgres (banco relacional de verdade) + auth + storage + realtime, num pacote.
+
+**Free tier:**
+- 500 MB de banco Postgres.
+- 1 GB de storage.
+- 50.000 usuários ativos/mês pra auth.
+- Até 2 projetos.
+
+**Pontos fortes:**
+- Postgres de verdade. Query complexa é natural (SQL padrão).
+- Open-source. Você pode self-hostar se quiser (sem lock-in forçado).
+- Pacote completo igual Firebase, mas com banco relacional.
+- Auth e storage inclusos, bons.
+- Realtime nativo (bom pra chat, colaborativo).
+
+**Pontos fracos:**
+- Free tier pausa projeto após 1 semana de inatividade (precisa reativar).
+- Menos maduro que Firebase em alguns cantos (functions, por exemplo).
+- 500 MB de banco enche rápido em app com muito dado.
+
+**Meu take:** se eu fosse começar hoje do zero, provavelmente iria de Supabase. Postgres de verdade + pacote completo + sem lock-in forçado é o sweet spot pra maioria. É meu recomendado pra quem tá começando.
+
+**Link:** [supabase.com](https://supabase.com)
+
+## 3. Neon
+
+**O que é:** Postgres serverless puro. Sem auth, sem storage, sem firula. Só o melhor banco Postgres possível.
+
+**Free tier:**
+- 0,5 GB por projeto.
+- Até 100 projetos.
+- Scale-to-zero: banco "dorme" quando não usa e você não paga por isso.
+- Branching: cria uma cópia do banco pra testar, igual branch do Git.
+
+**Pontos fortes:**
+- Melhor Postgres serverless do mercado.
+- Scale-to-zero economiza muito (paga só quando o banco tá ativo).
+- Branching é revolucionário pra testar migração sem medo.
+- Integração nativa com Vercel (deploy conectado).
+- Rápido de verdade.
+
+**Pontos fracos:**
+- Só banco. Auth e storage você resolve por fora.
+- Exige que você já saiba montar as outras peças.
+- Não é "tudo num lugar" como Firebase/Supabase.
+
+**Meu take:** se você já tem auth resolvido (ou usa Clerk, Auth.js) e só quer o melhor Postgres, Neon ganha. Especialmente se você tá em Vercel. Branching sozinho já justifica pra projeto sério.
+
+**Link:** [neon.tech](https://neon.tech)
+
+## 4. Convex
+
+**O que é:** um modelo mental completamente diferente. Backend reativo onde suas funções TypeScript SÃO o backend inteiro. Sem camada de API separada.
+
+**Free tier:**
+- Generoso pra começar (funções, banco reativo, storage inclusos).
+- Limites por volume de função e dado.
+
+**Pontos fortes:**
+- Produtividade absurda pra app realtime (chat, colaborativo, dashboard ao vivo).
+- Você escreve TypeScript e pronto: sem montar API REST, sem configurar websocket.
+- Reatividade nativa: dado muda, tela atualiza sozinha.
+- Ótimo pra vibecoding: a IA gera função TypeScript e já é o backend.
+
+**Pontos fracos:**
+- Modelo mental novo. Você precisa desaprender o jeito tradicional.
+- Menos portável. Migrar pra fora depois é mais difícil.
+- Comunidade menor que Postgres (menos exemplo, menos Stack Overflow).
+- Lock-in de arquitetura (seu código pensa "do jeito Convex").
+
+**Meu take:** se você começa do zero, valoriza velocidade e o app é realtime, Convex é surpreendente. Mas você casa com o modelo dele. Pra app CRUD tradicional, é overkill.
+
+**Link:** [convex.dev](https://convex.dev)
+
+## 5. Turso
+
+**O que é:** SQLite na edge. Banco leve, distribuído perto do usuário, barato pra caramba.
+
+**Free tier:**
+- 500 databases (sim, quinhentos).
+- 9 GB de storage total.
+- 1 bilhão de row reads/mês.
+
+**Pontos fortes:**
+- Barato demais. Free tier absurdamente generoso.
+- Edge: banco perto do usuário, latência baixíssima.
+- SQLite: simples, testado, roda em qualquer lugar.
+- Ótimo pra multi-tenant (um banco por cliente, com 500 no free).
+
+**Pontos fracos:**
+- SQLite tem limites (concorrência de escrita alta é problema).
+- Ecossistema menor que Postgres.
+- Menos indicado pra query analítica pesada.
+- Ainda amadurecendo em ferramenta e integração.
+
+**Meu take:** pra projeto edge, multi-tenant ou que precisa de muitos bancos pequenos, Turso é imbatível em custo. Pra app monolítico com escrita concorrente pesada, prefira Postgres.
+
+**Link:** [turso.tech](https://turso.tech)
+
+## Tabela resumo
+
+| Banco | Tipo | Melhor pra | Free tier | Lock-in |
+|---|---|---|---|---|
+| Firebase | NoSQL + tudo | Prototipagem rápida com auth | 1 GB, 50k reads/dia | Alto (Google) |
+| Supabase | Postgres + tudo | Começar bem, pacote completo | 500 MB, 50k users | Baixo (open-source) |
+| Neon | Postgres puro | Melhor banco, Vercel | 0,5 GB, 100 projetos | Baixo (Postgres padrão) |
+| Convex | Reativo TS | App realtime do zero | Generoso | Médio (arquitetura) |
+| Turso | SQLite edge | Multi-tenant, edge, barato | 500 DBs, 9 GB | Baixo (SQLite) |
+
+## Como escolher (decisão em 3 perguntas)
+
+**1. Você precisa de auth pronto agora?**
+- Sim, e quer tudo junto → Firebase ou Supabase.
+- Já resolvo por fora → Neon.
+
+**2. Seu app é realtime (chat, colaborativo)?**
+- Sim, e começo do zero → Convex.
+- Não, é CRUD tradicional → Supabase ou Neon.
+
+**3. Você quer portabilidade (poder migrar depois)?**
+- Sim, importa muito → Supabase, Neon ou Turso (padrões abertos).
+- Não, velocidade importa mais → Firebase ou Convex.
+
+## Como pedir pra IA configurar
+
+Não peça "coloca banco no meu app". Peça com contrato. Exemplo pra Supabase:
+
+\`\`\`
+Papel: você é engenheiro sênior especialista em Supabase e Next.js.
+
+Regras:
+- Usar o cliente @supabase/supabase-js.
+- Chaves SEMPRE em variável de ambiente
+  (NEXT_PUBLIC_SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY).
+- Service role key NUNCA no client. Só em rota de servidor.
+- Ativar Row Level Security (RLS) em toda tabela.
+- Nenhuma tabela pública sem policy explícita.
+
+Objetivo: configurar Supabase pra tabela "produtos"
+com CRUD e RLS que só deixa o dono ler/editar.
+
+Modelo: SQL da tabela + policies RLS + cliente src/lib/db.ts.
+
+Teste: incluir 1 query de exemplo que respeita a RLS.
+
+Retorno: SQL + código, com comentário de onde colar cada chave.
+\`\`\`
+
+O ponto crítico é a RLS (Row Level Security). Sem ela, seu banco fica aberto. É o erro número 1 de quem vibecoda com Supabase. Falei sobre isso em [a IA deixa seu banco de dados aberto por padrão](/blog/ia-deixa-banco-aberto-incidentes-2026).
+
+## Vale o ponto
+
+"Você usa Firebase mas recomenda Supabase. Não é contradição?"
+
+Vale o ponto. Eu escolhi Firebase há anos, quando o cenário era outro e o auth dele era imbatível. Migrar meu site agora não vale o esforço (funciona, tá no ar, cliente feliz).
+
+Mas se você começa hoje, do zero, sem legado, o Supabase te dá quase tudo que o Firebase dá sem o lock-in. Recomendar o que eu faria hoje é diferente de defender o que eu escolhi ontem. Honestidade é isso.
+
+## Conclusão
+
+Não existe melhor banco. Existe o certo pro seu caso.
+
+- Quer prototipar rápido com auth top → Firebase.
+- Quer começar bem, pacote completo, sem lock-in → Supabase.
+- Quer o melhor Postgres e tá em Vercel → Neon.
+- App realtime do zero → Convex.
+- Multi-tenant, edge, barato → Turso.
+
+Escolhe por caso de uso, não por moda. E qualquer que seja, ativa a segurança (RLS, regras do Firestore) desde o primeiro dia. Banco aberto é o erro mais caro do vibecoding.
+
+A decisão é sua.`,
+  },
+  {
     id: "quando-contratar-consultor-de-ia-2026",
     slug: "quando-contratar-consultor-de-ia-2026",
     contentVersion: 1,
