@@ -7,6 +7,379 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "testes-automatizados-vibecoding-como-pedir-ia-2026",
+    slug: "testes-automatizados-vibecoding-como-pedir-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-08",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Testes automatizados no vibecoding: como pedir pra IA (e por que isso te salva)",
+    excerpt:
+      "A IA gera código que funciona na demo e quebra em produção. Teste automatizado é a rede de segurança que te avisa ANTES do cliente. Este tutorial mostra o que testar, como pedir pra IA em prompt estruturado, e como rodar sem ser especialista em QA.",
+    summary:
+      "Teste automatizado é código que verifica se o seu código funciona, rodando sozinho. No vibecoding é vital: a IA gera algo que passa na demo e quebra no caso de borda. Este tutorial mostra os 3 tipos de teste que importam (unit, integração, e2e), o que priorizar, prompts P.R.O.M.P.T.E.R. prontos pra IA gerar teste, e como rodar. Regra de ouro: peça o teste ANTES de aceitar o código, não depois.",
+    faq: [
+      {"q": "Preciso saber testar pra vibecodar?", "a": "Não pra começar, mas conforme o projeto cresce, teste é o que separa quem entrega com confiança de quem reza pra não quebrar. A boa notícia: a IA escreve os testes pra você. Você só precisa saber pedir e rodar. Este tutorial ensina os dois."},
+      {"q": "Qual tipo de teste devo priorizar no vibecoding?", "a": "Teste de integração da fatia crítica primeiro. É o que verifica se a peça mais importante do seu app (login, pagamento, salvar dado) funciona de ponta a ponta. Teste unitário vem depois, pra lógica complexa. Teste e2e por último, pra fluxos principais."},
+      {"q": "A IA consegue escrever teste sozinha?", "a": "Sim, e bem. O truque é pedir com contrato: quais casos cobrir (caminho feliz + casos de borda + caso de erro), qual framework, e que ela NÃO invente comportamento. Sem contrato, ela escreve teste que só confirma o que o código já faz, sem pegar bug real."},
+      {"q": "Qual ferramenta de teste usar em 2026?", "a": "Depende da stack. Next.js/React: Vitest + Testing Library pra unit/integração, Playwright pra e2e. Python: pytest. Node puro: node:test nativo ou Vitest. A IA sabe todas. Diga qual você usa no prompt."}
+    ],
+    content: `A IA gera código que funciona na demo. Você mostra pro cliente, todo mundo aplaude. Aí um usuário digita algo que você não previu e o app quebra. Em produção. Na frente de quem paga.
+
+Teste automatizado é a rede de segurança que pega isso ANTES. É a diferença entre "acho que funciona" e "sei que funciona".
+
+Este é o tutorial que eu queria ter lido quando comecei. Sem jargão de QA, direto ao ponto.
+
+## O que é teste automatizado (sem enrolação)
+
+É código que verifica se o seu código funciona. Roda sozinho. Você escreve uma vez, roda mil vezes.
+
+Exemplo bobo: você tem uma função \`soma(a, b)\`. O teste diz: "se eu chamar soma(2, 3), o resultado TEM que ser 5". Se um dia alguém quebra a função, o teste grita.
+
+No vibecoding isso é vital. Por quê? A IA gera código que passa no caso óbvio e falha no caso de borda. Teste é o que pega o caso de borda antes do usuário.
+
+## Os 3 tipos que importam
+
+Não precisa saber 15 tipos. Precisa saber 3.
+
+### 1. Teste unitário
+
+Testa uma peça pequena isolada. Uma função, um cálculo, uma validação.
+
+Exemplo: "a função que valida e-mail aceita joao@email.com e rejeita joao@". Rápido de escrever, rápido de rodar.
+
+**Quando usar:** lógica com regra (cálculo de preço, validação, formatação).
+
+### 2. Teste de integração
+
+Testa se várias peças funcionam JUNTAS. A rota chama o banco, o banco responde, a resposta volta certa.
+
+Exemplo: "quando eu chamo POST /api/pedido, ele salva no banco e retorna o ID". Testa a peça crítica de ponta a ponta.
+
+**Quando usar:** o coração do seu app. Login, pagamento, salvar dado. **É o mais importante pra vibecoding.**
+
+### 3. Teste end-to-end (e2e)
+
+Simula o usuário de verdade. Abre o navegador, clica, digita, confere o resultado na tela.
+
+Exemplo: "o usuário abre a página, preenche o formulário, clica em enviar, e vê a mensagem de sucesso".
+
+**Quando usar:** os 2 ou 3 fluxos principais do seu produto. Não teste tudo assim, é lento.
+
+## Por onde começar (a ordem certa)
+
+Erro comum: querer testar tudo. Você desiste em 1 hora.
+
+Ordem certa:
+
+1. **Teste de integração da fatia mais crítica.** A que mais dói se quebrar. Login? Pagamento? Comece por ela.
+2. **Teste unitário da lógica complexa.** Aquele cálculo que ninguém entende direito.
+3. **1 teste e2e do fluxo principal.** O caminho que 80% dos usuários fazem.
+
+Isso já te dá 80% da segurança com 20% do esforço. É o [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) na prática: a camada "Testar" não é testar tudo, é testar o que importa.
+
+## Como pedir pra IA: prompts prontos
+
+Não peça "escreve testes pro meu código". A IA vai escrever teste que só confirma o que o código já faz, sem pegar bug. Peça com contrato.
+
+### Prompt 1: teste de integração de rota
+
+\`\`\`
+Papel: você é engenheiro sênior especialista em testes.
+Se algo ficar ambíguo, pergunta antes de gerar.
+
+Regras:
+- Framework: Vitest (não Jest).
+- Testar a rota POST /api/pedido de ponta a ponta.
+- Mockar o banco (não bater no banco real).
+- Cobrir 3 cenários OBRIGATÓRIOS:
+  1. Caminho feliz (dados válidos, salva, retorna 200 + ID).
+  2. Caso de borda (campo faltando, retorna 400).
+  3. Caso de erro (banco offline, retorna 500 sem vazar detalhe).
+- NÃO inventar comportamento que o código não tem.
+  Se o código não trata um caso, aponta isso em vez de testar errado.
+
+Objetivo: arquivo de teste completo pra rota de pedido.
+
+Modelo: um describe com 3 it, nomes claros em português.
+
+Retorno: só o código do teste + o comando pra rodar.
+\`\`\`
+
+### Prompt 2: teste unitário de lógica
+
+\`\`\`
+Papel: você é engenheiro sênior de testes.
+
+Regras:
+- Framework: Vitest.
+- Testar a função calculaFrete(peso, distancia, urgente).
+- Cobrir: peso zero, peso negativo (deve dar erro),
+  distância grande, urgente vs normal, valores limite.
+- Incluir pelo menos 1 caso que eu provavelmente esqueci
+  (pensa como usuário mal-intencionado ou distraído).
+
+Objetivo: cobertura real da função de frete.
+
+Modelo: describe + vários it, cada um com 1 asserção clara.
+
+Teste: ao final, liste os casos que você acha que o código
+NÃO trata bem e deveria.
+
+Retorno: código do teste + a lista de gaps.
+\`\`\`
+
+### Prompt 3: teste e2e do fluxo
+
+\`\`\`
+Papel: você é engenheiro sênior de testes e2e.
+
+Regras:
+- Framework: Playwright.
+- Simular o fluxo: usuário abre /cadastro, preenche nome
+  e e-mail, clica em Enviar, vê mensagem "Cadastro confirmado".
+- Testar também: se deixar e-mail vazio, mostra erro no campo.
+- Seletores por role ou test-id, nunca por classe CSS
+  (que muda toda hora).
+
+Objetivo: teste e2e do cadastro que roda no CI.
+
+Modelo: 2 testes (sucesso e erro de validação).
+
+Retorno: código Playwright + o comando pra rodar headless.
+\`\`\`
+
+## Como rodar (o passo que ninguém explica)
+
+Depois que a IA gerou, você roda. Exemplo com Vitest:
+
+\`\`\`bash
+# instala (uma vez)
+npm install -D vitest
+
+# roda todos os testes
+npx vitest run
+
+# roda e fica observando (re-roda quando você salva)
+npx vitest
+\`\`\`
+
+Saída boa:
+
+\`\`\`
+✓ src/api/pedido.test.ts (3)
+  ✓ POST /api/pedido salva e retorna 200
+  ✓ campo faltando retorna 400
+  ✓ banco offline retorna 500
+
+Test Files  1 passed (1)
+     Tests  3 passed (3)
+\`\`\`
+
+Verde = tá funcionando. Vermelho = quebrou, e o teste te diz onde.
+
+Pra Playwright (e2e):
+
+\`\`\`bash
+npm install -D @playwright/test
+npx playwright install
+npx playwright test
+\`\`\`
+
+## A regra de ouro do vibecoding com teste
+
+**Peça o teste ANTES de aceitar o código, não depois.**
+
+Fluxo errado (o que quase todo mundo faz):
+1. IA gera código.
+2. Você cola, roda na mão, parece OK.
+3. Aceita.
+4. Quebra em produção.
+
+Fluxo certo:
+1. IA gera código.
+2. Você pede: "agora escreve teste pros casos de borda desse código".
+3. Roda o teste.
+4. Se passou, aceita. Se falhou, a IA conserta. Aí aceita.
+
+A diferença: no fluxo certo, o bug morre no seu computador, não na frente do cliente.
+
+## Vale o ponto
+
+"Teste não é perda de tempo? Eu ando mais rápido sem."
+
+Vale o ponto pra protótipo que você vai jogar fora. Não vale pra nada que vai pra produção.
+
+A conta é simples: escrever teste da fatia crítica leva 20 minutos. Um bug em produção custa: o tempo de descobrir + o tempo de corrigir às pressas + a confiança do cliente que você perdeu. Sempre mais que 20 minutos.
+
+E com IA, os 20 minutos viram 5. Ela escreve, você revisa e roda. Não tem desculpa em 2026.
+
+## Conclusão
+
+Teste automatizado não é coisa de empresa grande. É o que te deixa dormir tranquilo com seu app no ar.
+
+Comece pela fatia crítica. Peça pra IA com contrato (casos de borda, framework, sem inventar). Rode antes de aceitar. Repita.
+
+Em 2026, vibecodar sem teste é dirigir sem cinto porque "nunca bati". Bater é questão de tempo. Cinto é 5 minutos.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-que-audito-primeiro-empresa-ia-2026",
+    slug: "o-que-audito-primeiro-empresa-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-08",
+    coverUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "As 7 coisas que eu audito primeiro quando uma empresa me chama pra ver a IA deles",
+    excerpt:
+      "Toda empresa acha que o problema de IA é técnico. Quase nunca é. Quando me chamam pra auditar, eu olho 7 pontos antes de tocar em uma linha de código. 6 deles não são código. Este é o checklist que uso, aberto pra você aplicar sozinho.",
+    summary:
+      "Quando uma empresa me chama pra auditar a IA deles, eu olho 7 pontos antes de ver código: (1) quem tem acesso a quê, (2) onde estão os segredos, (3) qual dado vai pro prompt, (4) o que os agentes podem fazer, (5) quem revisa o que a IA gera, (6) o custo real vs percebido, (7) o que acontece se o fornecedor mudar. Seis dos sete não são código. São processo, risco e método. Checklist aberto pra você auditar sozinho.",
+    faq: [
+      {"q": "O que um consultor de IA audita primeiro numa empresa?", "a": "Não é o código. É o processo e o risco: quem tem acesso a quê, onde estão as chaves e segredos, qual dado sensível está passando por prompt público, o que os agentes autônomos podem executar, e quem revisa o que a IA gera antes de ir pra produção. Código vem depois."},
+      {"q": "Como saber se minha empresa tem risco de IA sem contratar consultor?", "a": "Rode este checklist de 7 pontos você mesmo. Se em 3 ou mais você respondeu 'não sei' ou 'ninguém', você tem risco ativo. Os mais comuns e perigosos: chave de API no código, dado de cliente em prompt do ChatGPT, e agente com acesso ao banco de produção sem revisão."},
+      {"q": "Auditoria de IA é só sobre segurança?", "a": "Não. Segurança é parte. Também cobre custo (empresa paga 3x mais do que precisa por falta de método), dependência de fornecedor (o que quebra se a ferramenta mudar), e método (quem revisa, quem decide). É análise técnica e de negócio junto."}
+    ],
+    content: `Toda empresa que me chama pra ver a IA deles começa igual: "o problema é técnico, a gente precisa de alguém que entenda de modelo".
+
+Quase nunca é técnico. Em 5 anos fazendo isso, o problema real tá em processo, risco e método. Não em código.
+
+Quando eu entro, olho 7 pontos antes de tocar em uma linha. Seis deles não são código. Este é o checklist que uso, aberto pra você rodar sozinho antes de gastar dinheiro com qualquer consultor (inclusive eu).
+
+## 1. Quem tem acesso a quê
+
+Primeira pergunta, sempre: quem na empresa pode usar quais ferramentas de IA, com qual conta, com qual permissão?
+
+O que eu costumo achar:
+- Conta de ChatGPT compartilhada entre 10 pessoas (ninguém sabe quem fez o quê).
+- Chave de API de produção na mão de estagiário.
+- Ninguém com visão de quem acessa o quê.
+
+**Pergunta pra você:** se um funcionário sair amanhã, você sabe exatamente quais acessos de IA revogar? Se a resposta é "não sei", você tem risco.
+
+## 2. Onde estão os segredos
+
+Chave de API, senha, token. Onde estão?
+
+O que eu costumo achar:
+- Chave commitada no GitHub (às vezes em repo público).
+- Chave em arquivo .env que foi pro Git sem querer.
+- Chave hardcoded no código do front-end (visível pra qualquer um que abra o navegador).
+
+Esse é o achado mais comum e o mais perigoso. Já escrevi sobre isso em [nunca vaze uma senha](/blog/nunca-vaze-uma-senha) e [o risco não é o código que você escreve](/blog/risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026).
+
+**Pergunta pra você:** suas chaves de API estão em variável de ambiente no servidor, nunca no código? Tem certeza?
+
+## 3. Qual dado vai pro prompt
+
+Quando alguém da empresa usa IA, o que ela digita?
+
+O que eu costumo achar:
+- Dado de cliente (nome, CPF, e-mail) colado em prompt do ChatGPT público.
+- Contrato inteiro jogado numa IA sem saber onde aquilo é armazenado.
+- Código proprietário passando por ferramenta que treina em cima do input.
+
+Isso é bomba de LGPD. Dado pessoal em prompt de ferramenta pública pode ser violação. E ninguém percebe até virar processo.
+
+**Pergunta pra você:** existe regra clara na empresa sobre o que pode e o que não pode ir pra um prompt de IA? Alguém treinou o time nisso?
+
+## 4. O que os agentes podem fazer
+
+Se a empresa usa agente de IA (automação que age sozinha), qual o poder dele?
+
+O que eu costumo achar:
+- Agente com acesso de escrita ao banco de produção.
+- Agente que manda e-mail em nome da empresa sem revisão.
+- Agente que executa código sem sandbox.
+
+Agente é poderoso e perigoso na mesma medida. Já falei disso em [você soltou um agente de IA sem revisar o que ele pode](/blog/agente-de-ia-sem-revisar-permissao-2026).
+
+**Pergunta pra você:** cada agente da sua empresa tem o mínimo de permissão necessário, ou você deu acesso amplo "pra facilitar"?
+
+## 5. Quem revisa o que a IA gera
+
+A IA gerou código, texto, decisão. Quem olha antes de ir pra produção ou pro cliente?
+
+O que eu costumo achar:
+- Código da IA indo direto pra produção sem review.
+- Texto gerado por IA publicado sem alguém ler.
+- Decisão baseada em análise de IA sem ninguém questionar.
+
+Isso é o vibecoding às cegas em escala corporativa. Sem revisão, você multiplica erro na velocidade da máquina.
+
+**Pergunta pra você:** existe uma etapa humana obrigatória de revisão entre "a IA gerou" e "foi pro mundo"? Ou a IA tem passe livre?
+
+## 6. Custo real vs percebido
+
+Quanto a empresa acha que gasta com IA, e quanto gasta de verdade?
+
+O que eu costumo achar:
+- Empresa pagando 3x mais do que precisa por usar modelo caro pra tarefa simples.
+- Assinatura de ferramenta que ninguém usa mais.
+- Custo de API disparando sem ninguém acompanhar dashboard.
+
+Método corta custo sem cortar qualidade. Falei sobre isso em [custo real de API de IA](/blog/custo-api-ia-2026-comparativo-real).
+
+**Pergunta pra você:** você sabe, com número, quanto sua empresa gastou com IA no último mês? Se não sabe, provavelmente tá gastando demais.
+
+## 7. O que acontece se o fornecedor mudar
+
+A empresa depende de qual ferramenta? E se ela mudar preço, política ou sumir?
+
+O que eu costumo achar:
+- Produto inteiro amarrado numa API que pode mudar amanhã.
+- Zero plano B se a ferramenta principal cair.
+- Código acoplado a um fornecedor específico, impossível de trocar rápido.
+
+Vimos [Sora sumir standalone](/blog/sora-openai-media-suite-consolidacao-2026) e [Alibaba banir o Claude Code](/blog/alibaba-baniu-claude-code-licao-confianca-2026). Muda o tempo todo.
+
+**Pergunta pra você:** se sua ferramenta de IA principal mudasse as regras amanhã, quanto tempo você levaria pra migrar? Se a resposta é "meses" ou "não sei", você tá refém.
+
+## O padrão que aparece sempre
+
+Reparou? Só 1 dos 7 pontos é sobre código de verdade (a revisão do que a IA gera toca nisso). Os outros 6 são acesso, segredo, dado, permissão, custo e dependência.
+
+Por isso eu digo: **empresa quase nunca tem problema técnico de IA. Tem problema de método.**
+
+O CTO acha que precisa de alguém que entenda de modelo. Precisa de alguém que organize o processo. São coisas diferentes.
+
+## Como usar esse checklist
+
+Roda os 7 pontos na sua empresa hoje. Marca cada um:
+
+- **Verde:** você tem controle e sabe a resposta.
+- **Amarelo:** você tem alguma coisa mas não tem certeza.
+- **Vermelho:** você respondeu "não sei" ou "ninguém".
+
+Conta os vermelhos:
+- **0-1 vermelho:** você tá bem. Método já existe.
+- **2-3 vermelhos:** risco ativo. Resolve antes de escalar.
+- **4+ vermelhos:** para de adicionar IA nova e organiza o que já tem. Você tá sentado num barril.
+
+## Vale o ponto
+
+"Isso não é só o consultor querendo vender medo?"
+
+Vale o ponto. Por isso o checklist tá aberto de graça. Roda sozinho. Se der tudo verde, ótimo, você não precisa de mim.
+
+Consultor que vende medo esconde o método. Consultor que entrega valor abre o método e deixa você decidir se precisa de ajuda pra executar. A diferença é essa.
+
+## Conclusão
+
+Quando me chamam pra auditar a IA de uma empresa, eu não começo pelo código. Começo por quem acessa o quê, onde estão os segredos, qual dado vaza, o que os agentes podem fazer, quem revisa, quanto custa e o que quebra se o fornecedor mudar.
+
+Seis dos sete não são código. São método. E método é o que separa empresa que usa IA com segurança de empresa que tá esperando o próximo incidente.
+
+Rodou o checklist e achou vermelho demais? [Me chama no LinkedIn](https://www.linkedin.com/in/rodrigoreisoda/) com o contexto. Se achou tudo verde, parabéns, continua fazendo o que faz.
+
+A decisão é sua.`,
+  },
+  {
     id: "alibaba-baniu-claude-code-licao-confianca-2026",
     slug: "alibaba-baniu-claude-code-licao-confianca-2026",
     contentVersion: 1,
