@@ -7,6 +7,206 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "melhor-editor-ia-vibecoding-comparativo-2026",
+    slug: "melhor-editor-ia-vibecoding-comparativo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-09",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Melhor editor de IA pra vibecoding em 2026: Cursor vs Claude Code vs Windsurf vs Copilot vs Antigravity",
+    excerpt:
+      "Testei os 5 principais editores de IA por meses. Cursor, Claude Code, Windsurf, Copilot, Antigravity. Cada um ganha em algo. Este é o comparativo com preço em real, prós, contras e o combo que eu uso de verdade no dia a dia.",
+    summary:
+      "5 editores de IA pra vibecoding comparados: Cursor (líder, flexível, rápido, US$ 20), Claude Code (melhor qualidade em tarefa longa, US$ 17), Windsurf (melhor free tier + agentes paralelos, US$ 20), GitHub Copilot (melhor custo, US$ 10), Antigravity do Google (Gemini 3.1 grátis, multi-agente). Câmbio 1 USD = R$ 5,15. Preço, prós/contras de cada + o combo que eu uso (Cursor no editor + Claude Code pra tarefa autônoma). Não existe melhor. Existe o certo pro seu jeito de trabalhar.",
+    faq: [
+      {"q": "Qual o melhor editor de IA pra programar em 2026?", "a": "Não existe um único melhor. Cursor lidera em flexibilidade e velocidade no editor. Claude Code ganha em qualidade de tarefa longa e autônoma. Windsurf tem o melhor free tier. Copilot tem o melhor custo (US$ 10/mês). O combo mais usado por devs sérios: Cursor pra edição + Claude Code pra tarefa grande."},
+      {"q": "Cursor ou Claude Code, qual escolher?", "a": "Cursor pra trabalho dentro do editor (autocomplete, edição rápida, escolher modelo por tarefa). Claude Code pra tarefa longa e autônoma (refatorar módulo inteiro, rodar teste, fazer git). Eu uso os dois: Cursor no dia a dia, Claude Code quando a tarefa é grande. Não é ou/ou, é os dois."},
+      {"q": "Existe editor de IA gratuito bom?", "a": "Sim. Windsurf tem o free tier mais generoso (tab completion ilimitado, sem gastar crédito). GitHub Copilot tem free tier limitado. Antigravity do Google dá acesso grátis ao Gemini 3.1 Pro. Pra começar sem pagar, Windsurf é o caminho."},
+      {"q": "Vale pagar Cursor Ultra ou Claude Code Max (US$ 200/mês)?", "a": "Só se você programa o dia inteiro e bate no limite do plano de US$ 20. Pra maioria, o plano Pro (US$ 17-20) sobra. Os planos de US$ 200 são pra quem vive dentro do editor e o custo se paga em produtividade. Se você tá na dúvida, não precisa."}
+    ],
+    content: `Todo dev me pergunta a mesma coisa: qual editor de IA você usa?
+
+A resposta não é um nome só. É um combo. E depende de como você trabalha.
+
+Testei os 5 principais por meses, em projeto real. Este é o comparativo honesto, com preço em real e o setup que eu uso de verdade. Câmbio de hoje, 09 de julho de 2026: 1 USD = R$ 5,15.
+
+## 1. Cursor
+
+**O que é:** o líder de mercado. Editor próprio (fork do VS Code) com IA no núcleo. Deixa você escolher o modelo por tarefa (Claude, GPT, Gemini).
+
+**Preço:**
+- Free: limitado.
+- Pro: US$ 20/mês (R$ 103). Tab completion ilimitado.
+- Business: US$ 40/usuário. Pro+: US$ 60. Ultra: US$ 200.
+
+**Pontos fortes:**
+- Autocomplete (Tab) é o melhor do mercado. Prevê o que você vai escrever.
+- Flexibilidade de modelo: troca entre Claude Opus, GPT, Gemini por tarefa.
+- Rápido. Edição no editor é fluida.
+- Maior comunidade, mais exemplo, mais tutorial.
+
+**Pontos fracos:**
+- Tarefa longa e autônoma não é o forte (é editor, não agente pesado).
+- Custo escala se você usa muito modelo caro.
+- Fork do VS Code: você troca de editor pra usar.
+
+**Meu take:** Cursor é meu editor do dia a dia. Pra edição rápida, autocomplete e trabalho dentro do arquivo, ganha. É onde eu passo a maior parte do tempo.
+
+**Link:** [cursor.com](https://cursor.com)
+
+## 2. Claude Code
+
+**O que é:** o agente de código da Anthropic. Roda no terminal, faz tarefa autônoma longa: refatora módulo, roda teste, faz commit, cria arquivo.
+
+**Preço:**
+- Pro: US$ 17/mês (R$ 88).
+- Max: US$ 100+/mês.
+- Ou pay-per-use via API.
+
+**Pontos fortes:**
+- Melhor qualidade em tarefa longa. Mantém contexto em arquivo grande sem perder o fio.
+- Executa de verdade: roda comando, teste, git, cria arquivo.
+- Menos alucinação em código complexo.
+- Funciona em qualquer editor (é terminal).
+
+**Pontos fracos:**
+- Não é editor. É agente. Você não fica digitando nele.
+- Curva de aprendizado pra tirar o melhor.
+- Ficou no centro da polêmica com a Alibaba (leia abaixo).
+
+**Meu take:** Claude Code é o que eu chamo quando a tarefa é grande. Refatorar um módulo, revisar código gerado, fazer uma mudança que toca vários arquivos. Cursor pra edição, Claude Code pra empreitada.
+
+**Nota importante:** semana passada a Alibaba baniu o Claude Code depois de acharem código escondido que detectava usuário na China. A Anthropic explicou (era anti-abuso) e removeu. Escrevi a análise completa em [a Alibaba baniu o Claude Code](/blog/alibaba-baniu-claude-code-licao-confianca-2026). Continua sendo excelente, mas a lição de confiança em ferramenta vale.
+
+**Link:** [claude.com/product/claude-code](https://claude.com/product/claude-code)
+
+## 3. Windsurf
+
+**O que é:** editor de IA (ex-Codeium) com foco em agentes. Concorrente direto do Cursor, com o melhor free tier do mercado.
+
+**Preço:**
+- Free: o mais generoso do mercado. Tab completion ilimitado, sem gastar crédito.
+- Pro: US$ 20/mês (R$ 103, subiu de US$ 15 em maio de 2026).
+- Max: US$ 200/mês.
+
+**Pontos fortes:**
+- Melhor free tier. Dá pra usar como ferramenta principal sem pagar por semanas.
+- Agentes paralelos (Wave 13): roda várias instâncias ao mesmo tempo, cada uma numa parte do código.
+- Interface limpa, boa pra quem tá começando.
+
+**Pontos fracos:**
+- Comunidade menor que Cursor (menos exemplo).
+- Subiu preço em 2026 (o free tier compensa, mas o Pro empatou com Cursor).
+- Menos maduro em algumas integrações.
+
+**Meu take:** se você tá começando e não quer pagar ainda, Windsurf é o caminho. O free tier é honesto de verdade. Os agentes paralelos são um diferencial real pra quem trabalha em várias partes ao mesmo tempo.
+
+**Link:** [windsurf.com](https://windsurf.com)
+
+## 4. GitHub Copilot
+
+**O que é:** o pioneiro. Extensão de IA que roda dentro do VS Code (e outros). Da Microsoft/GitHub, integrado ao ecossistema.
+
+**Preço:**
+- Free: limitado.
+- Pro: US$ 10/mês (R$ 52). O melhor custo do mercado.
+- Pro+: US$ 39/mês. Modelos mais fortes + modo agente.
+
+**Pontos fortes:**
+- Melhor custo. US$ 10/mês com 300 requests premium, agente, code review, multi-modelo (inclui Claude Opus).
+- Roda dentro do VS Code (não troca de editor).
+- Integração nativa com GitHub (PR, issues, review).
+- Maduro, estável, corporativo.
+
+**Pontos fracos:**
+- Autocomplete atrás do Cursor.
+- Modo agente menos poderoso que Claude Code.
+- Menos flexível na escolha de modelo que Cursor.
+
+**Meu take:** se você quer o melhor custo e já vive no VS Code + GitHub, Copilot Pro a US$ 10 é imbatível de preço. Não é o mais potente, mas entrega muito por pouco.
+
+**Link:** [github.com/features/copilot](https://github.com/features/copilot)
+
+## 5. Antigravity (Google)
+
+**O que é:** o editor de IA do Google, com acesso grátis ao Gemini 3.1 Pro e foco em multi-agente.
+
+**Preço:**
+- Acesso grátis ao Gemini 3.1 Pro (o grande atrativo).
+- Integração com Google Cloud.
+
+**Pontos fortes:**
+- Gemini 3.1 Pro de graça é uma oferta forte.
+- Multi-agente: subagentes dinâmicos, tarefas agendadas em background.
+- Antigravity CLI (escrito em Go), SDK público.
+- Integração tight com Google Cloud.
+
+**Pontos fracos:**
+- Mais novo, menos maduro que Cursor/Copilot.
+- Amarra você no ecossistema Google.
+- Comunidade ainda pequena.
+- Qualidade do Gemini em código atrás do Claude em alguns casos.
+
+**Meu take:** vale testar pelo Gemini 3.1 grátis, especialmente se você já tá no Google Cloud. Mas ainda não é onde eu passo o dia. Fica de olho, tá evoluindo rápido.
+
+**Link:** [antigravity.google](https://antigravity.google)
+
+## Tabela resumo
+
+| Editor | Melhor pra | Preço Pro | Free tier | Diferencial |
+|---|---|---|---|---|
+| Cursor | Edição no dia a dia | US$ 20 | Limitado | Autocomplete + flexibilidade |
+| Claude Code | Tarefa longa autônoma | US$ 17 | Não | Qualidade em código grande |
+| Windsurf | Começar sem pagar | US$ 20 | O melhor | Agentes paralelos |
+| Copilot | Melhor custo | US$ 10 | Limitado | Preço + integração GitHub |
+| Antigravity | Testar Gemini grátis | Grátis (Gemini) | Sim | Gemini 3.1 + multi-agente |
+
+## O combo que eu uso de verdade
+
+Transparência total. Meu setup diário:
+
+- **Cursor (US$ 20/mês):** meu editor principal. Autocomplete, edição rápida, trabalho dentro do arquivo.
+- **Claude Code (via plano Claude):** pra tarefa grande. Refatorar módulo, revisar código gerado, mudança que toca vários arquivos.
+
+Isso é o padrão dos devs sérios em 2026: **um editor pra edição (Cursor) + um agente pra empreitada (Claude Code)**. Não é ou/ou. Os dois se completam.
+
+Custo do combo: ~US$ 40/mês (R$ 206). Pra quem vive de construir, é o custo de meio dia de trabalho. Paga fácil.
+
+## Como escolher (decisão em 3 perguntas)
+
+**1. Você tá começando e não quer pagar ainda?**
+- Sim → Windsurf (melhor free tier) ou Antigravity (Gemini grátis).
+
+**2. Você quer o melhor custo pagando pouco?**
+- Sim, e vivo no VS Code → Copilot Pro (US$ 10).
+
+**3. Você constrói a sério e quer o melhor resultado?**
+- Sim → Cursor (edição) + Claude Code (tarefa longa). O combo.
+
+## Vale o ponto
+
+"Não dá pra usar um só e economizar?"
+
+Vale o ponto. Dá. Se você quer um só, Cursor cobre 80% (edição + tarefa média). Ou Copilot se o preço aperta. O combo é otimização pra quem constrói o dia inteiro. Se você programa por hobby ou meio período, um só resolve.
+
+E lembra da lição do caso Alibaba: não fique 100% refém de uma ferramenta. Saber usar 2 te dá liberdade se uma mudar de política ou preço. Falei disso em [a Alibaba baniu o Claude Code](/blog/alibaba-baniu-claude-code-licao-confianca-2026).
+
+## Conclusão
+
+Não existe melhor editor de IA. Existe o certo pro seu jeito de trabalhar.
+
+- Começando sem pagar → Windsurf.
+- Melhor custo → Copilot.
+- Testar Gemini grátis → Antigravity.
+- Construir a sério → Cursor + Claude Code.
+
+Escolhe por como você trabalha, não por moda. E não fica refém de um só. A ferramenta é meio. O produto no ar é o fim.
+
+A decisão é sua.`,
+  },
+  {
     id: "gpt-live-voz-tempo-real-o-que-muda-2026",
     slug: "gpt-live-voz-tempo-real-o-que-muda-2026",
     contentVersion: 1,
