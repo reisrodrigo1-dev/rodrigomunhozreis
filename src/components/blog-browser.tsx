@@ -44,6 +44,8 @@ function PostCard({ p }: { p: Post }) {
           <img
             src={p.coverUrl}
             alt=""
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
           />
         </div>
@@ -57,14 +59,23 @@ function PostCard({ p }: { p: Post }) {
   );
 }
 
+// Quantos cartões (fora o destaque) mostrar por vez.
+const PAGE_SIZE = 9;
+
 export function BlogBrowser({ posts }: { posts: Post[] }) {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("Todos");
   const [views, setViews] = useState<Record<string, number>>({});
+  const [visible, setVisible] = useState(PAGE_SIZE);
 
   useEffect(() => {
     getViews().then(setViews).catch(() => {});
   }, []);
+
+  // Ao mudar busca ou categoria, volta a mostrar só a primeira página.
+  useEffect(() => {
+    setVisible(PAGE_SIZE);
+  }, [q, cat]);
 
   const categories = useMemo(
     () => ["Todos", ...Array.from(new Set(posts.flatMap((p) => p.tags ?? [])))],
@@ -93,6 +104,8 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
 
   const featured = filtered[0];
   const rest = filtered.slice(1);
+  const shown = rest.slice(0, visible);
+  const hasMore = rest.length > visible;
 
   return (
     <>
@@ -181,6 +194,8 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
                     <img
                       src={featured.coverUrl}
                       alt=""
+                      fetchPriority="high"
+                      decoding="async"
                       className="h-full w-full object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
                     />
                   </div>
@@ -204,11 +219,26 @@ export function BlogBrowser({ posts }: { posts: Post[] }) {
 
           {rest.length > 0 && (
             <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {rest.map((p, i) => (
-                <Reveal key={p.id} delay={0.05 * i}>
+              {shown.map((p, i) => (
+                <Reveal key={p.id} delay={0.05 * (i % PAGE_SIZE)}>
                   <PostCard p={p} />
                 </Reveal>
               ))}
+            </div>
+          )}
+
+          {hasMore && (
+            <div className="mt-10 flex flex-col items-center gap-3">
+              <button
+                onClick={() => setVisible((v) => v + PAGE_SIZE)}
+                className="btn btn-dark-ghost !px-7 !py-3"
+              >
+                Carregar mais artigos
+              </button>
+              <p className="text-sm text-paper/40">
+                Mostrando <b className="text-paper/70">{Math.min(visible, rest.length) + (featured ? 1 : 0)}</b> de{" "}
+                <b className="text-paper/70">{filtered.length}</b> artigos
+              </p>
             </div>
           )}
         </>
