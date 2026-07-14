@@ -7,6 +7,137 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "velocidade-vs-qualidade-modelos-ia-comparativo-2026",
+    slug: "velocidade-vs-qualidade-modelos-ia-comparativo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-10",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Velocidade vs qualidade dos modelos de IA: o comparativo que ninguém faz direito (julho 2026)",
+    excerpt:
+      "Todo mundo pergunta 'qual o melhor modelo de IA'. Pergunta errada. O certo é: rápido ou inteligente? Você não tem o máximo dos dois ao mesmo tempo. Comparei velocidade (tokens/s) e qualidade (benchmark) dos modelos mais conhecidos. Os dados são claros e mudam a escolha.",
+    summary:
+      "Velocidade e qualidade em modelos de IA são um trade-off: o mais rápido não é o mais inteligente. Dados de julho/2026: em velocidade, Gemini Flash lidera (~190-284 tok/s), Claude Haiku e GPT mini vêm rápido; os frontier (Claude Opus 4.8, GPT-5.5) rodam a 40-92 tok/s. Em qualidade, Claude Fable 5 lidera código (SWE-bench 95%), GPT-5.6 lidera raciocínio (GPQA 94.6%), Claude Opus 4.8 lidera agente. Modo reasoning é bomba de latência (TTFT pode ir a 67s). Escolha por tarefa: chat ao vivo pede rápido, código complexo pede inteligente.",
+    faq: [
+      {"q": "Qual o modelo de IA mais rápido em 2026?", "a": "Entre os mainstream, os modelos 'Flash' do Google lideram (Gemini 2.5 Flash ~190 tok/s, 3.5 Flash ~284 tok/s), seguidos de GPT mini (~160 tok/s) e Claude Haiku 4.5 (time-to-first-token abaixo de 600ms). Os modelos frontier (Claude Opus, GPT-5.5) são mais lentos (40-92 tok/s) porque são maiores e mais inteligentes."},
+      {"q": "Qual o modelo de IA de melhor qualidade em 2026?", "a": "Depende da tarefa. Código: Claude Fable 5 (SWE-bench Verified 95%), com Claude Opus 4.8 e GPT-5.5 empatados logo atrás (~88%). Raciocínio: GPT-5.6 (GPQA Diamond 94.6%) e Gemini 3.1 Pro (94.3%). Agente/computer-use: Claude Opus 4.8 e GPT-5.4. Não existe um campeão único."},
+      {"q": "Modelo mais rápido é pior que o mais inteligente?", "a": "Não é pior, é diferente. Modelo rápido (Flash, mini, Haiku) é ótimo pra tarefa simples em volume: classificar, resumir, responder chat. Modelo inteligente (Opus, GPT-5.5) é pra tarefa complexa: código difícil, raciocínio, decisão. Usar o inteligente pra tarefa simples é desperdício de tempo e dinheiro."},
+      {"q": "O que é o modo reasoning e por que deixa a IA lenta?", "a": "Modo reasoning (ou 'extended thinking') faz o modelo 'pensar' antes de responder, gerando raciocínio interno. Melhora muito a qualidade em problema difícil, mas explode a latência: o tempo até a primeira resposta pode ir de 1 segundo pra mais de 60 segundos. Use só quando a tarefa precisa de raciocínio profundo, não pra pergunta simples."}
+    ],
+    content: `Todo mundo pergunta a mesma coisa: "qual o melhor modelo de IA?"
+
+Pergunta errada. A certa é: **você quer rápido ou inteligente?** Porque você não tem o máximo dos dois ao mesmo tempo.
+
+Comparei velocidade e qualidade dos modelos mais conhecidos com dados de julho de 2026. O resultado muda a sua escolha. Aviso: benchmark e modelo mudam toda semana. Se você lê isso meses depois, confere nas fontes que linko no fim.
+
+## O trade-off que ninguém explica
+
+Modelo de IA tem dois eixos que puxam pra lados opostos:
+
+**Velocidade:** quantas palavras por segundo ele gera (tokens/s) e quanto demora pra começar a responder (TTFT, time-to-first-token). Quanto maior a velocidade, melhor pra tarefa ao vivo.
+
+**Qualidade:** quão bom é o resultado em benchmark de código, raciocínio, agente. Quanto maior a qualidade, melhor pra tarefa difícil.
+
+E aqui mora o ponto: **modelo mais inteligente costuma ser mais lento**. Ele é maior, tem mais parâmetros, pensa mais. Modelo mais rápido é menor e mais leve, mas erra mais no complexo.
+
+Escolher o modelo é escolher onde nesse trade-off você quer ficar. Depende da tarefa.
+
+## Ranking de velocidade (julho 2026)
+
+Quem responde mais rápido, do mais veloz pro mais lento:
+
+| Modelo | Velocidade (tokens/s) | Primeira resposta (TTFT) | Categoria |
+|---|---|---|---|
+| Gemini 3.5 Flash | ~284 tok/s | Baixíssima | Rápido |
+| Gemini 2.5 Flash | ~190 tok/s | Menos de 600ms | Rápido |
+| GPT mini | ~160 tok/s | Baixa | Rápido |
+| Claude Haiku 4.5 | Alta | Menos de 600ms | Rápido |
+| GPT-5.5 (standard) | ~92 tok/s | ~1,1s | Frontier |
+| Claude Opus 4.8 | ~78 tok/s | ~0,85s | Frontier |
+| Modelos com reasoning ligado | Varia | Pode passar de 60s | Landmine |
+
+**O que ler nessa tabela:** os modelos "Flash", "mini" e "Haiku" são feitos pra velocidade. Os "Opus" e "GPT-5.5" são feitos pra qualidade e pagam com latência. E o modo reasoning ligado é a bomba de latência: melhora a resposta, mas o tempo até a primeira palavra pode ir pra mais de 1 minuto.
+
+## Ranking de qualidade (julho 2026)
+
+Aqui não tem campeão único. Depende da tarefa:
+
+| Tarefa | Líder | Benchmark |
+|---|---|---|
+| Código | Claude Fable 5 | SWE-bench Verified 95% |
+| Código (prático) | Claude Opus 4.8 / GPT-5.5 | ~88% (empatados) |
+| Raciocínio | GPT-5.6 | GPQA Diamond 94.6% |
+| Raciocínio científico | Gemini 3.1 Pro | GPQA 94.3% |
+| Agente / computer-use | Claude Opus 4.8 | Intelligence Index 61.4 |
+| Uso do computador | GPT-5.4 | Líder na categoria |
+
+**O que ler nessa tabela:** não existe "o melhor modelo". Existe o melhor pra CADA tarefa. Claude Fable 5 e Opus 4.8 dominam código. GPT-5.6 e Gemini 3.1 Pro brigam em raciocínio. Cada um tem seu terreno.
+
+## O cruzamento: rápido E bom pra cada caso
+
+Junta os dois eixos e aparece a decisão prática:
+
+### Tarefa simples em volume (rápido ganha)
+
+Classificar mil e-mails, resumir texto, responder chat ao vivo, autocomplete de código.
+
+**Use:** Gemini Flash, GPT mini, Claude Haiku. São rápidos, baratos, e a tarefa não exige o topo de inteligência. Usar Opus aqui é desperdício.
+
+### Tarefa complexa (qualidade ganha)
+
+Código difícil, refatoração grande, raciocínio de negócio, análise que não pode errar.
+
+**Use:** Claude Opus 4.8, Claude Fable 5, GPT-5.5. Aceita a latência maior porque o resultado importa mais que o segundo a mais.
+
+### Chat ao vivo com voz (velocidade é tudo)
+
+Aqui latência mata a experiência. Ninguém espera 3 segundos numa conversa.
+
+**Use:** modelo rápido sempre. Flash ou Haiku. Foi por isso que o [GPT-Live](/blog/gpt-live-voz-tempo-real-o-que-muda-2026) fez barulho: baixou a latência de voz.
+
+### Decisão crítica única (qualidade, com reasoning)
+
+Uma análise que vai definir algo importante e você faz uma vez.
+
+**Use:** o modelo mais inteligente COM reasoning ligado. Aceita esperar 1 minuto porque é uma vez e o resultado vale.
+
+## Meu setup (transparência)
+
+Como eu escolho no dia a dia:
+
+- **Autocomplete no editor (Cursor):** modelo rápido. Não quero esperar enquanto digito.
+- **Tarefa de código grande (Claude Code):** Claude Opus 4.8 ou Sonnet. Aceito a latência pela qualidade.
+- **Resumir/classificar em volume:** Gemini Flash. Rápido e barato.
+- **Escrever texto (posts, este aqui):** Claude, sem reasoning. Qualidade de voz sem esperar demais.
+- **Decisão difícil única:** o mais inteligente disponível, com reasoning ligado.
+
+Não uso um modelo só. Uso o certo pra cada tarefa. Isso é o oposto de "qual o melhor". É "qual serve agora".
+
+## Vale o ponto
+
+"Isso não é complicação demais? Não dá pra usar um bom pra tudo?"
+
+Vale o ponto. Dá, e muita gente faz. Se você quer simplicidade, escolhe um frontier bom (Claude Opus 4.8 ou GPT-5.5) e usa pra tudo. Funciona. Só é mais lento no simples e mais caro no volume.
+
+A otimização (rápido no simples, inteligente no complexo) vale quando você faz volume ou quando latência importa pro seu produto. Pra uso casual, um bom resolve. Pra quem constrói a sério, escolher por tarefa economiza tempo e dinheiro.
+
+E lembra: isso conversa com o [custo de API](/blog/custo-api-ia-2026-comparativo-real). Modelo rápido geralmente é mais barato também. Rápido + barato pro simples, inteligente + caro pro complexo. A conta fecha.
+
+## Conclusão
+
+Não existe "melhor modelo de IA". Existe o mais rápido e o mais inteligente, e eles quase nunca são o mesmo.
+
+- Tarefa simples, volume, chat ao vivo → rápido (Flash, mini, Haiku).
+- Código difícil, raciocínio, decisão crítica → inteligente (Opus, GPT-5.5, Fable 5).
+- Precisa dos dois → usa dois, um pra cada tarefa.
+
+Escolhe por tarefa, não por moda nem por "qual tá no topo do ranking". O topo do ranking de qualidade é lento. O topo de velocidade erra no difícil. Saber qual você precisa AGORA é o que separa quem usa IA com método de quem só segue hype.
+
+A decisão é sua.`,
+  },
+  {
     id: "melhor-editor-ia-vibecoding-comparativo-2026",
     slug: "melhor-editor-ia-vibecoding-comparativo-2026",
     contentVersion: 1,
