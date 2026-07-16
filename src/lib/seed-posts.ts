@@ -7,6 +7,348 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "chatgpt-claude-gemini-grok-qual-assinar-2026",
+    slug: "chatgpt-claude-gemini-grok-qual-assinar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-10",
+    coverUrl:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "ChatGPT, Claude, Gemini ou Grok: qual assinar em 2026 (comparativo honesto)",
+    excerpt:
+      "Todos custam quase o mesmo (uns R$ 103/mês). Então a pergunta não é preço, é qual serve pro seu trabalho. Comparei limite de mensagem, força de cada um e as novidades da semana. Se você só pode pagar um, este post decide por você.",
+    summary:
+      "ChatGPT Plus (US$ 20), Claude Pro (US$ 20), Google AI Pro (US$ 19,99) e SuperGrok (US$ 30) comparados. Preço quase igual, então decida por trabalho: ChatGPT ganha em versatilidade e ecossistema, Claude em código e escrita longa (225 msgs/5h, o maior limite), Gemini em contexto (1M tokens) e integração Google, Grok em dado do X ao vivo. Grok 4.5 saiu com 54% de alucinação. Se só pode pagar um: Claude pra construir, ChatGPT pra tudo.",
+    faq: [
+      {"q": "Qual assinatura de IA vale mais a pena em 2026?", "a": "Depende do seu trabalho, porque o preço é quase igual (uns US$ 20/mês). Se você programa ou escreve muito: Claude Pro (melhor código, escrita longa e o maior limite de mensagem). Se quer o mais versátil com maior ecossistema: ChatGPT Plus. Se vive no Google Workspace: Google AI Pro. Se precisa de dado do X em tempo real: SuperGrok."},
+      {"q": "Qual IA tem o maior limite de mensagens?", "a": "Claude Pro, com cerca de 225 mensagens a cada 5 horas no Sonnet. ChatGPT Plus fica em torno de 150 mensagens a cada 3 horas. SuperGrok é o mais restrito: cerca de 30 mensagens a cada 2 horas no Grok 4, mesmo custando mais caro (US$ 30)."},
+      {"q": "Vale assinar mais de uma IA?", "a": "Se você trabalha com IA todo dia, sim. O combo mais comum é Claude Pro (construir, escrever, código) + ChatGPT Plus (voz no celular, imagem, versatilidade). Sai uns R$ 206/mês. Se você usa IA casualmente, uma só resolve: escolhe pelo que você mais faz."},
+      {"q": "Gemini vale a pena pelos 2TB de armazenamento?", "a": "Se você já paga Google One ou usa Drive cheio, sim: o Google AI Pro inclui 2TB, o que sozinho já custaria uns US$ 10/mês. Aí a IA sai quase de graça. Se você não usa o ecossistema Google, o armazenamento não conta como vantagem real."}
+    ],
+    content: `Se você só pode pagar uma assinatura de IA, qual escolher?
+
+A boa notícia: em 2026 o preço parou de ser o critério. Todos convergiram pra mais ou menos US$ 20/mês (R$ 103). A escolha virou sobre **trabalho**, não sobre dinheiro.
+
+Comparei os 4 principais. Câmbio de hoje, 10 de julho de 2026: 1 USD = R$ 5,15.
+
+## Antes: o que mudou essa semana
+
+Vale saber, porque muda a conta:
+
+- **GPT-5.6 saiu público ontem (9 de julho)**, nas versões Sol, Terra e Luna. Já tá no ChatGPT e na API.
+- **OpenAI fundiu Codex e ChatGPT num app só** e lançou o ChatGPT Work.
+- **Anthropic respondeu com o Claude Cowork** pra mobile.
+- **Grok 4.5 lançou** com 4,2x mais eficiência de token. Mas com **54% de taxa de alucinação** reportada, o que é muito alto.
+- **Gemini 3.5 Flash virou a interface principal da busca do Google** (não é mais um bloco acima do resultado, é o resultado).
+
+A briga tá quente. Isso é bom pra você: preço estável, qualidade subindo.
+
+## 1. ChatGPT Plus
+
+**Preço:** US$ 20/mês (R$ 103).
+**Limite:** ~150 mensagens a cada 3 horas no modelo top.
+
+**Pontos fortes:**
+- O mais versátil. Faz texto, imagem, voz, análise de dado, tudo bem.
+- Maior ecossistema: GPTs customizados, Canvas, memória, Codex integrado.
+- Melhor app mobile. Voice mode é o melhor do mercado (agora com [GPT-Live](/blog/gpt-live-voz-tempo-real-o-que-muda-2026)).
+- Geração de imagem inclusa (DALL-E).
+- Mais gente usa, então mais tutorial e mais integração de terceiro.
+
+**Pontos fracos:**
+- Limite de mensagem menor que o Claude.
+- Qualidade em código atrás do Claude.
+- Voz autoral menos consistente em texto longo.
+
+**Meu take:** é o canivete suíço. Se você quer UMA assinatura que faz de tudo razoavelmente bem, é essa. Eu mantenho principalmente pelo app mobile e voz.
+
+**Link:** [chat.openai.com](https://chat.openai.com)
+
+## 2. Claude Pro
+
+**Preço:** US$ 20/mês (R$ 103).
+**Limite:** ~225 mensagens a cada 5 horas no Sonnet. **O maior limite dos quatro.**
+
+**Pontos fortes:**
+- Melhor em código. Disparado.
+- Melhor em escrita longa com voz consistente (este post saiu daqui).
+- Maior limite de mensagem por dinheiro.
+- Claude Code incluso (agente que roda no terminal).
+- Melhor em tarefa longa que exige manter contexto.
+
+**Pontos fracos:**
+- App mobile atrás do ChatGPT.
+- Sem geração de imagem nativa.
+- Ecossistema menor de integração de terceiro.
+
+**Meu take:** se você programa, escreve ou constrói, Claude Pro ganha. É onde eu passo a maior parte do tempo. O limite de 225 mensagens faz diferença real em dia pesado.
+
+**Link:** [claude.ai](https://claude.ai)
+
+## 3. Google AI Pro (Gemini)
+
+**Preço:** US$ 19,99/mês (R$ 103).
+**Inclui:** Gemini 3 Pro, Deep Research, **2TB de armazenamento** e IA no Gmail, Docs e Workspace.
+
+**Pontos fortes:**
+- Contexto de 1 milhão de tokens. Umas 5x mais que os outros. Você joga o documento inteiro.
+- Integração nativa com Gmail, Docs, Drive, Meet.
+- Os 2TB de armazenamento (sozinhos valeriam uns US$ 10/mês).
+- Deep Research pra pesquisa longa.
+- Multimodal forte (vê imagem, PDF, vídeo).
+
+**Pontos fracos:**
+- Texto em português menos natural que Claude.
+- Comportamento mudou várias vezes (menos estável entre versões).
+- Te amarra no ecossistema Google.
+
+**Meu take:** se você vive no Google Workspace, essa é matemática simples. Você já ia pagar pelos 2TB. A IA vem junto. E o contexto de 1M é imbatível pra ler documento gigante.
+
+**Link:** [gemini.google.com](https://gemini.google.com)
+
+## 4. SuperGrok
+
+**Preço:** US$ 30/mês (R$ 155). **O mais caro.**
+**Limite:** ~30 mensagens a cada 2 horas no Grok 4. **O mais restrito.**
+
+**Pontos fortes:**
+- Acesso a dado do X (Twitter) em tempo real. Ninguém mais tem isso.
+- Bom em raciocínio matemático.
+- Grok 4.5 trouxe 4,2x mais eficiência de token.
+- Menos filtro (pra quem quer resposta mais direta).
+
+**Pontos fracos:**
+- Mais caro e com o menor limite de mensagem. Conta ruim.
+- **Grok 4.5 reportou 54% de taxa de alucinação.** Isso é altíssimo. Precisa checar tudo.
+- Menos maduro em código que Claude.
+- Polêmica de viés político recorrente.
+
+**Meu take:** só vale se você precisa especificamente de dado do X ao vivo. Fora isso, paga mais caro por menos mensagem e mais alucinação. Não é minha recomendação pra uso geral.
+
+**Link:** [grok.com](https://grok.com)
+
+## Tabela resumo
+
+| Assinatura | Preço/mês | Limite | Ganha em | Perde em |
+|---|---|---|---|---|
+| ChatGPT Plus | R$ 103 | ~150/3h | Versatilidade, app, voz, imagem | Código, limite |
+| Claude Pro | R$ 103 | ~225/5h | Código, escrita longa, limite | App mobile, sem imagem |
+| Google AI Pro | R$ 103 | Generoso | Contexto 1M, Workspace, 2TB | Texto PT-BR, estabilidade |
+| SuperGrok | R$ 155 | ~30/2h | Dado do X ao vivo | Preço, limite, alucinação |
+
+## Se você só pode pagar UMA
+
+Decisão direta, sem enrolação:
+
+- **Você programa ou escreve muito** → Claude Pro. Fim.
+- **Você quer uma que faz de tudo** → ChatGPT Plus.
+- **Você vive no Gmail/Docs/Drive** → Google AI Pro (os 2TB fecham a conta).
+- **Você precisa de dado do X ao vivo** → SuperGrok. Só nesse caso.
+
+## Se você pode pagar duas
+
+O combo que eu uso: **Claude Pro + ChatGPT Plus**. R$ 206/mês.
+
+Por quê: Claude pra construir (código, texto, tarefa longa). ChatGPT pro celular (voz, foto, pergunta rápida na rua). Eles se completam em vez de competir.
+
+Se eu tivesse que cortar um, cortaria o ChatGPT. Mas aí perco o melhor app mobile.
+
+## Vale o ponto
+
+"R$ 103 por mês não é caro pra uma IA?"
+
+Vale o ponto pra quem usa uma vez por semana. Aí o plano grátis resolve.
+
+Pra quem trabalha com isso todo dia, R$ 103 é o custo de meio almoço por dia útil. Se a IA te economiza 30 minutos por dia, ela se paga na primeira semana. A conta não é o preço da assinatura. É o valor do seu tempo.
+
+E se você usa via API em produto, a conta é outra: [comparei o custo real de API aqui](/blog/custo-api-ia-2026-comparativo-real).
+
+## Conclusão
+
+Em 2026, o preço parou de decidir. Todos custam uns R$ 103. A escolha é sobre trabalho.
+
+Claude pra construir. ChatGPT pra tudo. Gemini se você é Google. Grok só se precisa do X.
+
+E não esquece: assinatura é meio, não fim. A melhor IA é a que você usa com método. Sem método, você paga R$ 103 pra receber resposta genérica mais rápido.
+
+A decisão é sua.`,
+  },
+  {
+    id: "framework-agente-ia-qual-usar-2026",
+    slug: "framework-agente-ia-qual-usar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-10",
+    coverUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Framework de agente de IA: qual usar em 2026 (LangGraph, CrewAI, Claude Agent SDK ou OpenAI Agents)",
+    excerpt:
+      "Você quer que a IA faça tarefa sozinha, não só responda. Aí precisa de framework de agente. LangGraph, CrewAI, Claude Agent SDK, OpenAI Agents SDK. Cada um pensa diferente. Este comparativo mostra qual usar pra quê, sem hype.",
+    summary:
+      "4 frameworks de agente de IA comparados: LangGraph (mais adotado, 47M downloads/mês, grafos com estado, melhor pra produção), CrewAI (agentes com papel definido numa 'crew', protótipo mais rápido), Claude Agent SDK (extraído do Claude Code, memória e tool use nativo, Claude-native), OpenAI Agents SDK (evoluiu do Swarm, sandbox e harness, OpenAI-native). Escolha pelo tipo de problema: fluxo com estado e revisão humana pede LangGraph, time de agentes com papéis pede CrewAI, e o nativo casa com quem você já usa.",
+    faq: [
+      {"q": "O que é um framework de agente de IA?", "a": "É a estrutura que faz a IA executar tarefa sozinha em vez de só responder. O agente decide o que fazer, chama ferramenta (busca, banco, API), avalia o resultado e continua até terminar. O framework organiza esse ciclo: quem decide, o que pode chamar, o que fazer quando erra, e como manter o estado entre passos."},
+      {"q": "Qual o framework de agente mais usado em 2026?", "a": "LangGraph, com mais de 47 milhões de downloads por mês. Virou o padrão de orquestração de agente em produção porque trata o fluxo como grafo dirigido (nós executam, arestas controlam o caminho) e resolve bem estado, persistência e revisão humana no meio do processo."},
+      {"q": "Preciso de framework ou posso fazer agente na mão?", "a": "Pra agente simples (chama 1 ou 2 ferramentas e para), fazer na mão é mais fácil e você entende tudo que roda. Framework compensa quando o fluxo tem estado, vários passos, tentativa de novo, ramificação ou vários agentes. Não instala framework porque tá na moda. Instala quando a dor aparece."},
+      {"q": "Agente de IA é seguro em produção?", "a": "Só com permissão mínima e revisão. Agente executa de verdade: escreve no banco, manda e-mail, roda código. O erro mais comum e perigoso é dar acesso amplo pra facilitar. Dá o mínimo necessário, isola o que é sensível e exige etapa humana antes de ação irreversível."}
+    ],
+    content: `Chega um momento no vibecoding em que você não quer mais que a IA só responda. Você quer que ela **faça**.
+
+Buscar dado, chamar API, salvar no banco, avaliar o resultado, tentar de novo se falhou. Sozinha, do começo ao fim. Isso é agente.
+
+E aí vem a pergunta: qual framework usar? Testei os 4 principais. Este é o comparativo sem hype.
+
+## Antes: você precisa mesmo de framework?
+
+Pergunta honesta antes de instalar qualquer coisa.
+
+**Não precisa** se seu agente é simples: chama uma ou duas ferramentas e para. Faz na mão. É menos código, você entende tudo, e não carrega dependência.
+
+**Precisa** quando aparece pelo menos uma dessas dores:
+- O fluxo tem vários passos e precisa lembrar do que já fez (estado).
+- Precisa tentar de novo quando falha, com estratégia.
+- Tem ramificação (se der X faz isso, se der Y faz aquilo).
+- Vários agentes trabalhando juntos.
+- Precisa de humano aprovando no meio do caminho.
+
+Se nenhuma dessas te dói, não instala. Complexidade sem dor é dívida técnica adiantada.
+
+## 1. LangGraph
+
+**O que é:** o mais adotado do mercado, com mais de **47 milhões de downloads por mês**. Trata o fluxo do agente como um grafo dirigido: nós executam lógica, arestas controlam o caminho.
+
+**Pontos fortes:**
+- Controle de estado de verdade. Ele lembra onde parou.
+- Persistência: o fluxo sobrevive a reinício.
+- Human-in-the-loop nativo: pausa e espera humano aprovar.
+- Maior comunidade, mais exemplo, mais gente já tropeçou antes de você.
+- Python e JavaScript.
+
+**Pontos fracos:**
+- Curva de aprendizado. Pensar em grafo exige mudar a cabeça.
+- Verboso pra caso simples (você escreve muito pra pouco).
+- Herda o peso do ecossistema LangChain.
+
+**Meu take:** se o agente vai pra produção e precisa de estado, persistência ou aprovação humana, LangGraph é a escolha segura. É o padrão do mercado por um motivo. Só não use pra agente de 2 passos.
+
+**Link:** [langchain.com](https://www.langchain.com/resources/ai-agent-frameworks)
+
+## 2. CrewAI
+
+**O que é:** modelo mental de equipe. Cada agente tem um papel (persona), um conjunto de ferramentas e uma tarefa dentro de uma "crew" (tripulação).
+
+**Pontos fortes:**
+- Abstração mais intuitiva dos quatro. Você pensa "quem faz o quê".
+- Protótipo funcionando mais rápido que os concorrentes.
+- Ótimo pra multi-agente com papéis claros (pesquisador, escritor, revisor).
+- Fácil de explicar pra quem não é técnico.
+
+**Pontos fracos:**
+- Menos controle fino que LangGraph.
+- Estado e persistência menos robustos.
+- Pode virar caixa-preta quando o fluxo cresce.
+
+**Meu take:** se você quer um time de agentes com papéis (um pesquisa, outro escreve, outro revisa) e quer ver rodando hoje, CrewAI é o mais rápido. Pra fluxo com estado complexo, prefiro LangGraph.
+
+**Link:** [crewai.com](https://www.crewai.com)
+
+## 3. Claude Agent SDK
+
+**O que é:** a Anthropic extraiu o motor do Claude Code e liberou como SDK geral. É a mesma engrenagem que faz o Claude Code funcionar.
+
+**Pontos fortes:**
+- Memória e uso de ferramenta nativos, muito bem resolvidos.
+- Herda a qualidade do Claude em tarefa longa (menos alucinação em fluxo grande).
+- Testado em produção de verdade (o Claude Code roda nisso).
+- Integração natural com MCP.
+
+**Pontos fracos:**
+- Claude-native. Você casa com a Anthropic.
+- **Desde 15 de junho de 2026, consome crédito mensal separado de Agent SDK.** Calcula antes.
+- Ecossistema menor que LangGraph.
+
+**Meu take:** se você já é Claude-native e quer o motor testado do Claude Code, é a escolha natural. Só fica de olho no consumo de crédito separado, que pegou muita gente de surpresa.
+
+**Link:** [claude.com](https://claude.com/product/claude-code)
+
+## 4. OpenAI Agents SDK
+
+**O que é:** evolução do projeto experimental Swarm, agora production-grade. Tem sandbox de execução e sistema de harness.
+
+**Pontos fortes:**
+- Sandbox de execução (roda código isolado, mais seguro).
+- Harness system pra estruturar o agente.
+- Integração nativa com o ecossistema OpenAI.
+- Simples de começar se você já usa GPT.
+
+**Pontos fracos:**
+- OpenAI-native. Casa com a OpenAI.
+- Mais novo que LangGraph, menos batido em produção.
+- Menos flexível pra multi-modelo.
+
+**Meu take:** se seu stack já é OpenAI, faz sentido. O sandbox é um diferencial real de segurança. Fora do ecossistema OpenAI, LangGraph é mais neutro.
+
+**Link:** [openai.com](https://openai.com)
+
+## Tabela resumo
+
+| Framework | Modelo mental | Melhor pra | Trava você em |
+|---|---|---|---|
+| LangGraph | Grafo com estado | Produção, estado, humano no meio | Nada (multi-modelo) |
+| CrewAI | Time com papéis | Protótipo rápido, multi-agente | Nada (multi-modelo) |
+| Claude Agent SDK | Motor do Claude Code | Quem já é Claude | Anthropic |
+| OpenAI Agents SDK | Sandbox + harness | Quem já é OpenAI | OpenAI |
+
+## Como escolher (decisão em 3 perguntas)
+
+**1. Seu fluxo tem estado, vários passos ou precisa de aprovação humana?**
+- Sim → LangGraph.
+
+**2. Você quer vários agentes com papéis e ver rodando hoje?**
+- Sim → CrewAI.
+
+**3. Você já é casado com um fornecedor e quer o nativo?**
+- Claude → Claude Agent SDK.
+- OpenAI → OpenAI Agents SDK.
+
+Se nenhuma das três, você provavelmente não precisa de framework ainda. Faz na mão.
+
+## O alerta que ninguém dá
+
+Framework de agente resolve orquestração. **Não resolve segurança.**
+
+Agente executa de verdade: escreve no banco, manda e-mail, roda comando. O erro que eu mais vejo em auditoria é agente com permissão ampla "pra facilitar". Falei disso em [você soltou um agente de IA sem revisar o que ele pode](/blog/agente-de-ia-sem-revisar-permissao-2026) e listei como o ponto 4 das [7 coisas que eu audito primeiro numa empresa](/blog/o-que-audito-primeiro-empresa-ia-2026).
+
+Regra, qualquer que seja o framework:
+- **Permissão mínima.** O agente só pode o que precisa, nada além.
+- **Isola o sensível.** Dado de cliente e produção não passam por agente sem controle.
+- **Humano antes do irreversível.** Deletar, pagar, publicar: aprovação humana sempre.
+
+## Vale o ponto
+
+"Framework não é overengineering? Não dá pra fazer tudo na mão?"
+
+Vale o ponto, e dá. Agente simples na mão é melhor: menos dependência, você entende tudo. O framework compensa quando o fluxo tem estado, ramificação e vários passos. Aí fazer na mão vira reinventar o LangGraph mal feito.
+
+A regra é a de sempre: instala quando a dor aparece, não antes.
+
+## Conclusão
+
+Não existe melhor framework de agente. Existe o certo pro seu problema.
+
+- Estado, produção, humano no meio → LangGraph.
+- Time de agentes com papéis, protótipo rápido → CrewAI.
+- Já é Claude → Claude Agent SDK (cuidado com o crédito separado).
+- Já é OpenAI → OpenAI Agents SDK (o sandbox é bom).
+- Agente de 2 passos → nenhum. Faz na mão.
+
+E qualquer que seja: permissão mínima, isola o sensível, humano antes do irreversível. Framework organiza. Método protege.
+
+A decisão é sua.`,
+  },
+  {
     id: "velocidade-vs-qualidade-modelos-ia-comparativo-2026",
     slug: "velocidade-vs-qualidade-modelos-ia-comparativo-2026",
     contentVersion: 1,
