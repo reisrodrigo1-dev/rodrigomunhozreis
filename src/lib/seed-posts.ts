@@ -7,6 +7,193 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "ia-para-empresa-qual-adotar-time-2026",
+    slug: "ia-para-empresa-qual-adotar-time-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-12",
+    coverUrl:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "IA para empresa: qual adotar no seu time em 2026 (ChatGPT, Claude, Copilot ou Gemini)",
+    excerpt:
+      "Assinar IA pra você é uma decisão. Escolher pro time inteiro é outra. Muda preço, segurança, contrato e onde o trabalho acontece. Comparei os 4 com preço por usuário, o que cada um exige e como não errar essa escolha (que é cara de desfazer).",
+    summary:
+      "4 plataformas de IA pra time comparadas com preço real por usuário: Claude Team (US$ 20-25/usuário, melhor pra documento crítico e código), ChatGPT Business (US$ 20-25/usuário, mais versátil) ou Enterprise (~US$ 60 com 150 assentos mínimo), Microsoft 365 Copilot (US$ 30 + licença M365, total ~US$ 42,50, ganha se você já é Microsoft), Gemini no Workspace (a partir de US$ 14 bundle, ganha se você já é Google). Escolha por onde o trabalho já acontece, não por benchmark.",
+    faq: [
+      {"q": "Qual IA é melhor para uma empresa adotar em 2026?", "a": "Depende de onde o trabalho já acontece. Se o time vive no Microsoft 365 (Teams, Outlook, Excel): Copilot. Se vive no Google Workspace (Gmail, Docs, Drive): Gemini. Se o trabalho é documento crítico, jurídico ou código: Claude. Se você quer o mais versátil e independente de ecossistema: ChatGPT. Ferramenta que não mora onde o time trabalha vira aba esquecida."},
+      {"q": "Quanto custa IA para empresa por usuário em 2026?", "a": "Claude Team: US$ 20-25/usuário. ChatGPT Business: US$ 20-25/usuário (Enterprise ~US$ 60 com 150 assentos mínimo). Microsoft 365 Copilot: US$ 30/usuário mais a licença M365 (total mínimo ~US$ 42,50). Gemini vem bundle no Workspace a partir de US$ 14/usuário. Cuidado com o custo escondido: Copilot exige licença Microsoft por baixo."},
+      {"q": "Vale a pena ChatGPT Enterprise ou o Business resolve?", "a": "Pra maioria das empresas, o Business resolve. O Enterprise exige 150 assentos mínimo, contrato anual pré-pago e sai ~3x mais caro por usuário. Só justifica se você precisa de compliance específico, SSO avançado, controles administrativos pesados ou volume alto de contexto. Comece no Business e migre quando a dor aparecer."},
+      {"q": "A empresa pode usar IA sem risco de vazar dado?", "a": "Com plano de empresa, sim, com cuidado. Planos Business e Enterprise das 4 plataformas não treinam nos seus dados por padrão (diferente dos planos individuais gratuitos). Mas isso não basta: você precisa de política interna de o que pode ir pro prompt, controle de acesso e treinamento do time. Ferramenta paga não substitui método."}
+    ],
+    content: `Assinar IA pra você é uma decisão de R$ 100. Escolher pro time inteiro é uma decisão de dezenas de milhares por ano, com contrato, segurança e migração dolorosa se errar.
+
+E a lógica muda completamente. Individual você escolhe pelo que é melhor. Empresa você escolhe por **onde o trabalho já acontece**.
+
+Comparei as 4 com preço real por usuário. Câmbio de hoje, 12 de julho de 2026: 1 USD = R$ 5,15.
+
+## O que mudou nas últimas semanas
+
+Contexto importante, porque a briga esquentou:
+
+- **Claude Cowork virou disponível geral** nos planos pagos. É o workspace agêntico da Anthropic (o agente trabalha no seu ambiente, não só responde no chat).
+- **Claude in Chrome saiu do beta.**
+- **OpenAI lançou o ChatGPT Work** e fundiu Codex e ChatGPT num app só.
+- **A Microsoft habilitou o Claude como opção nativa dentro do Microsoft 365 Copilot**, ligado por padrão pra maioria dos clientes comerciais nos EUA desde janeiro.
+
+Esse último é o mais interessante: os concorrentes já estão dentro uns dos outros. A escolha virou menos sobre "qual modelo é melhor" e mais sobre "qual plataforma organiza o trabalho do meu time".
+
+## 1. Claude (Team / Enterprise)
+
+**Preço:** Team US$ 20-25/usuário/mês (R$ 103-129), de 5 a 150 assentos. Enterprise ~US$ 20/assento + cobrança por uso.
+
+**Pontos fortes:**
+- Melhor em documento crítico: jurídico, regulatório, compliance, contrato longo.
+- Contexto gigante (500 mil+ tokens no Enterprise). Você joga o processo inteiro.
+- Melhor em código, disparado. Se seu time é técnico, isso pesa.
+- Claude Cowork: agente que trabalha no ambiente, não só responde.
+- Postura de segurança mais conservadora (bom pra setor regulado).
+
+**Pontos fracos:**
+- Ecossistema de integração menor que Microsoft e Google.
+- App mobile atrás do ChatGPT.
+- Não vive dentro do Office nem do Workspace nativamente.
+
+**Meu take:** se sua empresa lida com documento sério (escritório de advocacia, financeiro, saúde) ou tem time técnico forte, Claude é a escolha. É o que eu uso e recomendo pra trabalho onde errar custa caro.
+
+**Link:** [claude.ai](https://claude.ai)
+
+## 2. ChatGPT (Business / Enterprise)
+
+**Preço:** Business US$ 20-25/usuário/mês (R$ 103-129). Enterprise ~US$ 60/usuário (R$ 309), com **150 assentos mínimo** e contrato anual pré-pago.
+
+**Pontos fortes:**
+- O mais versátil. Faz de tudo razoavelmente bem.
+- Adoção massiva (a maioria do time já sabe usar, treinamento é menor).
+- GPTs customizados: você cria assistentes internos sem código.
+- Independente de ecossistema (não te obriga a ser Microsoft ou Google).
+- Melhor multimodal geral (voz, imagem, dado).
+
+**Pontos fracos:**
+- Enterprise é caro e exige 150 assentos. Barreira alta.
+- Menos integrado ao fluxo de trabalho que Copilot ou Gemini.
+- Qualidade em código e documento longo atrás do Claude.
+
+**Meu take:** se você quer uma plataforma que faz de tudo e não quer casar com Microsoft nem Google, ChatGPT Business é a escolha segura. Só evite pular pro Enterprise antes de precisar: 150 assentos e 3x o preço é uma barreira que quase ninguém precisa cruzar.
+
+**Link:** [openai.com](https://openai.com/business)
+
+## 3. Microsoft 365 Copilot
+
+**Preço:** US$ 30/usuário/mês (R$ 155) **mais a licença Microsoft 365**. Com o Business Standard (US$ 12,50), o total mínimo é **~US$ 42,50/usuário (R$ 219)**. Há promoção de US$ 18 pra pequena empresa até dezembro de 2026.
+
+**Pontos fortes:**
+- Mora dentro do Word, Excel, Outlook, Teams. O trabalho não muda de lugar.
+- Work graph: entende os arquivos, reuniões e e-mails da empresa.
+- Governança e compliance corporativos maduros.
+- Já tem o Claude como opção nativa por dentro.
+- Adoção mais fácil: o time já usa Office.
+
+**Pontos fracos:**
+- **O mais caro** quando você soma a licença M365 obrigatória.
+- Só faz sentido se você JÁ é Microsoft. Migrar pra ele é caro demais.
+- Qualidade das respostas historicamente atrás dos concorrentes diretos.
+
+**Meu take:** se sua empresa vive no Microsoft 365, Copilot ganha por um motivo simples: o trabalho não muda de lugar. Ferramenta que exige o time abrir outra aba morre em 3 meses. Mas confere a conta completa, porque os US$ 30 não são o custo real.
+
+**Link:** [microsoft.com/copilot](https://www.microsoft.com/microsoft-365/copilot)
+
+## 4. Gemini (Google Workspace)
+
+**Preço:** vem bundle no Workspace a partir de **US$ 14/usuário/mês** (R$ 72, Business Standard). Gemini Enterprise + Workspace vai de US$ 48 a US$ 60/usuário.
+
+**Pontos fortes:**
+- **O mais barato na entrada** (bundle no Workspace).
+- Mora dentro do Gmail, Docs, Drive, Meet.
+- Contexto de 1 milhão de tokens (maior que os outros no dia a dia).
+- Multimodal forte (lê PDF, imagem, vídeo).
+- Bom pra RAG e agentes com dado da empresa.
+
+**Pontos fracos:**
+- Só faz sentido se você já é Google Workspace.
+- Texto em português menos natural que Claude.
+- Comportamento mudou várias vezes entre versões (menos previsível).
+
+**Meu take:** se sua empresa é Google Workspace, Gemini é matemática simples: você já paga o Workspace, a IA vem junto, o trabalho não muda de lugar. Melhor custo de entrada dos quatro.
+
+**Link:** [workspace.google.com](https://workspace.google.com)
+
+## Tabela resumo
+
+| Plataforma | Custo real/usuário | Ganha em | Só vale se |
+|---|---|---|---|
+| Claude Team | R$ 103-129 | Documento crítico, código, contexto | Trabalho sério com texto ou código |
+| ChatGPT Business | R$ 103-129 | Versatilidade, adoção, GPTs | Você não quer casar com ninguém |
+| M365 Copilot | R$ 219 (com licença) | Fluxo Office, governança | Você JÁ é Microsoft |
+| Gemini Workspace | R$ 72+ (bundle) | Custo, contexto, fluxo Google | Você JÁ é Google |
+
+## A regra que decide (e ninguém fala)
+
+Empresa não escolhe IA por benchmark. Escolhe por **onde o trabalho já acontece**.
+
+Ferramenta de IA que exige o time abrir outra aba, sair do fluxo e lembrar de usar **morre em 3 meses**. Não importa se é a melhor do ranking. Adoção mata qualidade.
+
+Por isso:
+- Time no Microsoft 365 → Copilot (mesmo sendo o mais caro).
+- Time no Google Workspace → Gemini (mesmo com texto pior).
+- Time técnico ou documento crítico → Claude (vale sair do fluxo).
+- Time misto ou sem ecossistema forte → ChatGPT Business.
+
+## Decisão em 3 perguntas
+
+**1. Onde seu time passa o dia?**
+- Office/Teams → Copilot.
+- Gmail/Docs → Gemini.
+- Nenhum dos dois → pergunta 2.
+
+**2. O trabalho envolve documento crítico ou código?**
+- Sim → Claude.
+- Não → ChatGPT Business.
+
+**3. Você precisa de compliance pesado, SSO avançado e tem 150+ pessoas?**
+- Sim → ChatGPT Enterprise ou Claude Enterprise.
+- Não → fica no Business/Team. Economiza 3x.
+
+## O custo que ninguém calcula
+
+Preço por usuário é a parte fácil. Os custos reais que aparecem depois:
+
+- **Treinamento.** Time que não sabe usar não usa. Reserve tempo pra isso.
+- **Política interna.** O que pode ir pro prompt? Quem decide? Sem isso, dado sensível vaza.
+- **Licença por baixo.** Copilot exige M365. Gemini exige Workspace. Some antes de comparar.
+- **Migração se errar.** Trocar de plataforma depois de 200 pessoas acostumadas é caro e lento.
+
+Escolher errado não custa a assinatura. Custa a migração.
+
+## Vale o ponto
+
+"Não dá pra deixar cada um usar o que preferir?"
+
+Vale o ponto, e muita empresa faz isso no começo. Funciona até o dia que alguém cola dado de cliente num plano gratuito que treina em cima do input. Aí vira problema de LGPD.
+
+Plano de empresa (Business/Enterprise) não treina nos seus dados por padrão. Plano individual gratuito, muitas vezes, treina. Essa é a diferença que justifica centralizar.
+
+Mas ferramenta paga não substitui método. Falei disso nas [7 coisas que eu audito primeiro numa empresa](/blog/o-que-audito-primeiro-empresa-ia-2026): o problema quase nunca é a ferramenta. É a falta de regra sobre como usar.
+
+## Conclusão
+
+Pra empresa, a melhor IA não é a que ganha no benchmark. É a que o time realmente usa.
+
+- Já é Microsoft → Copilot.
+- Já é Google → Gemini.
+- Documento crítico ou código → Claude.
+- Quer versatilidade e independência → ChatGPT Business.
+
+E antes de assinar qualquer uma: define a política de uso, calcula o custo total (com licença por baixo) e reserva tempo pra treinar o time. Assinatura sem método é dinheiro queimado em velocidade maior.
+
+A decisão é sua.`,
+  },
+  {
     id: "autenticacao-login-vibecoding-qual-usar-2026",
     slug: "autenticacao-login-vibecoding-qual-usar-2026",
     contentVersion: 1,
