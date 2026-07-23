@@ -7,6 +7,153 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "claude-design-tutorial-como-usar-2026",
+    slug: "claude-design-tutorial-como-usar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-13",
+    coverUrl:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80",
+    title: "Como usar o Claude Design: tutorial pra criar protótipo, slide e landing sem ser designer",
+    excerpt:
+      "O Claude Design transforma texto, documento ou até seu código em protótipo, apresentação e landing page. E devolve código de verdade, não imagem. Este tutorial mostra como usar passo a passo, os benefícios reais e quando ele substitui (e quando não) sua ferramenta de design.",
+    summary:
+      "Claude Design (Anthropic Labs, em claude.ai/design) transforma prompt, documento, imagem ou repositório de código em protótipo interativo, slide, one-pager, wireframe e landing page, aplicando seu design system automaticamente. O diferencial: devolve HTML/CSS/JS de verdade (código funcional), não imagem estática, e exporta pra PDF, PPTX, URL ou Canva. Grátis no Pro/Max/Team/Enterprise durante o preview. Este tutorial mostra o passo a passo, os benefícios e quando usar.",
+    faq: [
+      {"q": "O que é o Claude Design?", "a": "É uma ferramenta da Anthropic Labs (em claude.ai/design) que transforma texto, documento, imagem ou até seu repositório de código em protótipo interativo, apresentação de slides, one-pager, wireframe e landing page. Diferente de gerador de imagem, ele devolve código de verdade (HTML, CSS, JavaScript) que renderiza ao vivo e você pode copiar e usar."},
+      {"q": "Como acessar o Claude Design?", "a": "Entra em claude.ai/design (ou clica no ícone de paleta na barra lateral do Claude.ai). Está em research preview e disponível pra assinantes Pro, Max, Team e Enterprise. Durante o preview, não tem cobrança separada: entra no seu plano atual."},
+      {"q": "Claude Design substitui o Figma?", "a": "Não totalmente, mas cobre muita coisa. Ele é ótimo pra ir rápido do zero ao protótipo funcional e pra gerar material (slide, landing, one-pager) sem ser designer. Perde pro Figma em design colaborativo detalhado, controle pixel a pixel e fluxo de time de design maduro. É a ferramenta pra prototipar rápido, não pra substituir o processo inteiro."},
+      {"q": "O Claude Design é grátis?", "a": "Durante o research preview (lançado em abril de 2026), está incluído sem cobrança extra nos planos Claude Pro, Max, Team e Enterprise. Você já paga o Claude, o Design vem junto. Não é um produto separado com mensalidade própria."}
+    ],
+    content: `A Anthropic lançou uma ferramenta que resolve uma dor real de quem constrói: criar visual bom sem ser designer.
+
+Chama Claude Design. Transforma texto, documento, imagem ou até seu código em protótipo, slide, one-pager e landing page. E aqui mora o pulo do gato: ele devolve **código de verdade**, não imagem estática.
+
+Testei. Este é o tutorial de como usar, os benefícios e quando vale.
+
+## O que é o Claude Design (sem hype)
+
+É uma ferramenta da Anthropic Labs, dentro do Claude.ai. Você descreve o que quer, ou joga um documento, uma imagem ou até um repositório de código, e ele gera:
+
+- Protótipo interativo (tela clicável).
+- Apresentação de slides.
+- One-pager (aquela página única de resumo).
+- Wireframe.
+- Landing page.
+- Material de marketing visual.
+
+O diferencial que separa do resto: gerador de imagem devolve um PNG que você não pode editar por dentro. O Claude Design devolve **HTML, CSS e JavaScript funcionando**. É frontend de verdade. Você copia o código e usa.
+
+## Como acessar
+
+1. Entra em [claude.ai/design](https://claude.ai/design). Ou clica no ícone de paleta na barra lateral do Claude.ai.
+2. Precisa de plano Pro, Max, Team ou Enterprise.
+3. Tá em research preview. Durante o preview, sem cobrança separada: entra no seu plano atual.
+
+Se você já paga Claude Pro (US$ 20/mês), já tem acesso. Não gasta a mais.
+
+## Tutorial: do zero a um protótipo (passo a passo)
+
+### Passo 1: descreva o que quer
+
+Não peça "faz uma landing page". Peça com contexto, igual P.R.O.M.P.T.E.R.:
+
+> "Crie uma landing page pra um curso online de vibecoding pra iniciantes. Público: adultos que querem aprender a construir com IA. Seções: hero com headline forte, 3 benefícios, depoimento, FAQ, e um CTA de inscrição. Tom: profissional, sem hype, cores escuras com detalhe âmbar."
+
+Quanto mais contexto (público, seções, tom, cor), melhor o resultado. Vago rende genérico.
+
+### Passo 2: deixe ele gerar a primeira versão
+
+O Claude cria uma versão inicial e renderiza ao vivo na tela. Você vê a página funcionando, não uma descrição dela.
+
+### Passo 3: refine com edições diretas
+
+Aqui é o poder da ferramenta. Você não recomeça, você ajusta conversando:
+
+- "Deixa o hero mais impactante e aumenta a fonte do título."
+- "Troca a ordem: coloca o depoimento antes do FAQ."
+- "As cores tão genéricas, usa um âmbar mais quente e fundo mais escuro."
+
+Ele ajusta só aquilo, mantendo o resto. Você lapida até ficar do jeito que quer.
+
+### Passo 4: aplique seu design system (o recurso matador)
+
+Se você já tem um projeto com identidade visual, faz isso: **conecta um repositório de código**. O Claude lê os componentes React de verdade do seu projeto e aplica a MESMA identidade no que ele gera.
+
+Resultado: o protótipo novo já sai com a cara do seu produto. Mesma cor, mesma tipografia, mesmos botões. Isso economiza horas de "deixa igual ao resto".
+
+### Passo 5: exporte no formato que precisa
+
+Terminou, você exporta pra:
+
+- **PDF** (pra mandar por e-mail, imprimir).
+- **URL compartilhável** (link que a pessoa abre no navegador).
+- **PPTX** (apresentação editável no PowerPoint).
+- **Canva** (pra continuar editando lá).
+- **Código** (copia o HTML/CSS/JS e usa no seu projeto).
+
+Esse último é o que muda o jogo pra quem vibecoda: o protótipo vira ponto de partida do código real.
+
+## Os benefícios reais (e os limites)
+
+### O que ganha
+
+- **Velocidade absurda.** Do zero a um protótipo funcional em minutos, não horas.
+- **Código de verdade.** Não é mockup morto. É frontend que você pode usar.
+- **Design system automático.** Conecta seu repo e ele mantém a identidade.
+- **Não precisa saber design.** Founder não-técnico gera material decente sozinho.
+- **Iteração conversada.** Ajusta falando, sem mexer em ferramenta complexa.
+
+### O que perde
+
+- **Não substitui designer sênior** pra trabalho fino, pixel a pixel.
+- **Não é Figma** pra fluxo de time de design colaborativo maduro.
+- **Preview em pesquisa:** pode mudar, pode ter limite, pode instabilizar.
+- **Sai genérico se você for genérico.** A qualidade do output depende do seu prompt.
+
+## Quando usar (e quando não)
+
+**Usa Claude Design quando:**
+- Você precisa de um protótipo rápido pra validar ideia.
+- Quer uma landing ou one-pager sem contratar designer.
+- Precisa de slides decentes pra ontem.
+- Quer partir de um visual pronto pra construir o código.
+
+**Não usa quando:**
+- Você tem time de design maduro com fluxo no Figma (deixa eles trabalharem).
+- O projeto exige controle pixel a pixel e refinamento fino.
+- Você precisa de design colaborativo em tempo real com várias pessoas.
+
+## Como isso se encaixa no vibecoding com engenharia
+
+Claude Design é acelerador de frontend. Mas frontend bonito é só parte. O que faz o produto funcionar é o que tá por baixo: backend, segurança, teste, dado.
+
+O erro seria achar que protótipo bonito é produto pronto. Não é. É o começo. Você ainda precisa do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas) no código que sustenta essa tela.
+
+Pensa assim: o Claude Design te dá a fachada rápido. A engenharia é o que segura a casa em pé. Os dois juntos são vibecoding com engenharia. Só a fachada é vibecoding às cegas com visual bonito.
+
+## Vale o ponto
+
+"Se a IA faz o design, não vou nem precisar aprender?"
+
+Vale o ponto. Você não precisa virar designer. Mas precisa saber o que é design bom pra saber pedir e pra saber quando o resultado tá ruim. A ferramenta gera. Você julga. Sem senso crítico, você aceita o genérico achando que é bom.
+
+É igual todo o resto da IA: ela acelera a geração, você mantém o critério. Ferramenta boa não substitui olho treinado. Só deixa o olho treinado ir mais rápido.
+
+## Conclusão
+
+O Claude Design é a ferramenta que faltava pra quem constrói com IA e não sabe design. Transforma texto, doc ou código em protótipo, slide e landing funcionais, com código de verdade e seu design system aplicado.
+
+Como usar: descreve com contexto, refina conversando, conecta seu repo pra manter a identidade, exporta no formato que precisa.
+
+Só não confunde protótipo bonito com produto pronto. A fachada ele faz rápido. A engenharia por baixo continua sendo sua.
+
+Testa em [claude.ai/design](https://claude.ai/design) com um projeto seu. Em 10 minutos você entende o valor.
+
+A decisão é sua.`,
+  },
+  {
     id: "melhor-gerador-imagem-ia-qual-usar-2026",
     slug: "melhor-gerador-imagem-ia-qual-usar-2026",
     contentVersion: 1,
