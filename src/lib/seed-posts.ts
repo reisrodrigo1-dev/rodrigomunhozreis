@@ -7,6 +7,180 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "melhor-gerador-imagem-ia-qual-usar-2026",
+    slug: "melhor-gerador-imagem-ia-qual-usar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-13",
+    coverUrl:
+      "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1200&q=80",
+    title: "Melhor gerador de imagem por IA em 2026: Midjourney, Flux, DALL-E ou Imagen (qual usar pra quê)",
+    excerpt:
+      "Não existe o melhor gerador de imagem. Existe o certo pra cada trabalho. Midjourney pra arte, Flux pra produto e texto legível, DALL-E pra rapidez, Imagen pra escala. Comparei os 4 com preço, força de cada um e o combo que eu uso de verdade.",
+    summary:
+      "4 geradores de imagem por IA comparados: Midjourney (melhor arte estilizada, US$ 10-60/mês), Flux (melhor controle de prompt e texto legível na imagem, open-weight, ~US$ 0,01-0,10/imagem), DALL-E / GPT Image (mais rápido e previsível, incluso no ChatGPT Plus), Imagen (fotorrealismo em escala). Não existe o melhor, existe o certo por caso: arte, produto, iteração rápida ou volume. O padrão profissional é usar dois: um pra hero, um pro dia a dia.",
+    faq: [
+      {"q": "Qual o melhor gerador de imagem por IA em 2026?", "a": "Não existe um único melhor. Midjourney lidera em arte estilizada e visual bonito. Flux ganha em controle de prompt e texto legível na imagem (ótimo pra produto e thumbnail). DALL-E / GPT Image é o mais rápido e previsível pra produção. Imagen brilha em fotorrealismo em escala. Escolha por caso de uso, não por moda."},
+      {"q": "Qual gerador de imagem escreve texto legível na imagem?", "a": "Flux, disparado. Foi por isso que ele virou padrão pra thumbnail, banner e material de marca em 2026: o texto sai legível e no lugar, o que os outros ainda erram. Se seu uso precisa de palavra escrita dentro da imagem (capa, anúncio, post), Flux é a escolha."},
+      {"q": "Vale pagar Midjourney ou o DALL-E do ChatGPT resolve?", "a": "Depende do que você faz. Se é imagem eventual pra ilustrar um post ou apresentação, o DALL-E incluso no ChatGPT Plus resolve e você não paga a mais. Se você produz arte, identidade visual ou hero de marca com estética distinta, Midjourney (US$ 10/mês no básico) vale pela qualidade superior. Muitos profissionais usam os dois."},
+      {"q": "Flux é gratuito?", "a": "O modelo Flux é open-weight (você pode rodar localmente de graça se tiver GPU), mas na prática a maioria usa via API hospedada, que custa entre US$ 0,01 e US$ 0,10 por imagem (uns 5 a 50 centavos de real). É barato por imagem e você paga só pelo que gera, sem mensalidade."}
+    ],
+    content: `Você precisa de uma imagem: capa de post, thumbnail, ilustração, mockup de produto. Abre a lista de geradores de IA e trava. Qual usar?
+
+A resposta não é um nome. Como quase tudo em IA, é: **depende do trabalho**. Não existe o melhor gerador. Existe o certo pra cada tipo de imagem.
+
+Testei os 4 principais em uso real (as capas do meu blog saem daqui). Este é o comparativo honesto. Câmbio de hoje, 13 de julho de 2026: 1 USD = R$ 5,15.
+
+## 1. Midjourney
+
+**O que é:** o rei da arte estilizada. Visual bonito, composição distinta, estética que impressiona.
+
+**Preço:** US$ 10 a 60/mês (R$ 52 a 309), por assinatura.
+
+**Pontos fortes:**
+- Melhor resultado estético do mercado. Arte, ilustração, imagem com "alma".
+- Composição distinta: as imagens têm cara de arte, não de banco de imagem.
+- Ótimo pra hero de marca, capa que precisa impressionar, arte conceitual.
+- Comunidade gigante, muito exemplo de prompt.
+
+**Pontos fracos:**
+- Texto na imagem ainda ruim (palavra sai errada ou borrada).
+- Menos controle fino do prompt (ele tem "opinião" própria).
+- Não é o mais rápido pra produção em volume.
+
+**Meu take:** quando eu quero uma imagem que impressiona, arte de verdade, vou de Midjourney. Pra hero de landing, capa especial, identidade visual. Pra imagem funcional do dia a dia, uso outro (mais abaixo).
+
+**Link:** [midjourney.com](https://midjourney.com)
+
+## 2. Flux
+
+**O que é:** o modelo de controle. Open-weight, melhor em seguir prompt e o único que escreve texto legível na imagem.
+
+**Preço:** ~US$ 0,01 a 0,10 por imagem (R$ 0,05 a 0,50) via API hospedada. Ou grátis rodando local (precisa GPU).
+
+**Pontos fortes:**
+- **Texto legível na imagem.** Isso é raro e valioso. Thumbnail com palavra, banner, anúncio.
+- Melhor controle de prompt (faz o que você pede, não o que ele acha).
+- Open-weight (dá pra rodar local, sem depender de ninguém).
+- Fotorrealismo forte, bate a maioria dos fechados.
+- Paga por imagem, sem mensalidade.
+
+**Pontos fracos:**
+- Menos "arte" que Midjourney (é mais técnico, menos poético).
+- Exige prompt mais detalhado pra brilhar.
+- Setup local exige saber mexer com GPU.
+
+**Meu take:** Flux é meu cavalo de trabalho. As capas dos posts, thumbnail, qualquer imagem que precisa de texto legível ou controle preciso. Barato por imagem e faz o que eu peço. Pra material de marca funcional, ganha.
+
+**Link:** [fal.ai](https://fal.ai) (via API) ou [blackforestlabs.ai](https://blackforestlabs.ai)
+
+## 3. DALL-E / GPT Image
+
+**O que é:** o gerador da OpenAI, dentro do ChatGPT. O mais rápido e previsível, menor fricção.
+
+**Preço:** incluso no ChatGPT Plus (US$ 20/mês) ou pay-per-image via API.
+
+**Pontos fortes:**
+- O mais rápido e sem fricção. Você já tá no ChatGPT, pede a imagem, pronto.
+- Segue prompt de forma previsível (menos surpresa).
+- Bom pra iteração rápida (gera, ajusta, gera de novo em segundos).
+- Se você já paga ChatGPT Plus, não gasta a mais.
+- Edição integrada (muda parte da imagem conversando).
+
+**Pontos fracos:**
+- Qualidade estética atrás do Midjourney.
+- Filtros de segurança bloqueiam bastante coisa.
+- Menos controle que o Flux.
+
+**Meu take:** DALL-E é o "já tá aqui, resolve rápido". Pra ilustrar um post na hora, um mockup rápido, uma ideia visual, ele entrega sem eu sair do ChatGPT. Não é o mais bonito, mas é o mais conveniente.
+
+**Link:** [chat.openai.com](https://chat.openai.com)
+
+## 4. Imagen (Google)
+
+**O que é:** o gerador do Google. Fotorrealismo de topo, feito pra escala.
+
+**Preço:** via Google Cloud / Gemini, pay-per-use.
+
+**Pontos fortes:**
+- Fotorrealismo de primeira linha (a versão 4 chegou no topo em abril de 2026).
+- Feito pra escala: gerar muita imagem de forma consistente.
+- Integrado ao ecossistema Google Cloud.
+- Bom pra produção em volume com qualidade uniforme.
+
+**Pontos fracos:**
+- Menos "arte" que Midjourney.
+- Te amarra no Google Cloud.
+- Menos comunidade e exemplo que os outros.
+
+**Meu take:** Imagen brilha se você precisa gerar centenas de imagens fotorrealistas de forma consistente, dentro do Google Cloud. Pra uso pontual, é overkill. Pra pipeline de volume, vale.
+
+**Link:** [cloud.google.com/imagen](https://cloud.google.com/vertex-ai)
+
+## Tabela resumo
+
+| Gerador | Melhor pra | Preço | Texto na imagem | Diferencial |
+|---|---|---|---|---|
+| Midjourney | Arte, hero, estética | US$ 10-60/mês | Ruim | Beleza e composição |
+| Flux | Produto, texto, controle | ~US$ 0,01-0,10/img | O melhor | Controle + open-weight |
+| DALL-E | Rapidez, iteração | Incluso no Plus | Médio | Conveniência |
+| Imagen | Fotorrealismo em escala | Pay-per-use | Médio | Volume consistente |
+
+## O combo que eu uso de verdade
+
+Transparência, como sempre:
+
+- **Flux:** meu cavalo de trabalho. Capa de post, thumbnail, qualquer imagem com texto ou que precisa de controle. Barato por imagem, faz o que peço.
+- **Midjourney:** quando quero arte que impressiona. Hero, imagem conceitual, algo especial.
+- **DALL-E (no ChatGPT):** rascunho rápido, quando quero uma ideia visual sem sair do chat.
+
+O padrão profissional em 2026 é esse: **dois geradores, não um.** Um pra hero (Midjourney), um pro dia a dia (Flux ou DALL-E). Ninguém sério usa um só pra tudo.
+
+## Como escolher (decisão em 3 perguntas)
+
+**1. A imagem precisa de texto legível dentro dela (thumbnail, banner, anúncio)?**
+- Sim → Flux. Os outros ainda erram texto.
+
+**2. É arte que precisa impressionar (hero, identidade, conceito)?**
+- Sim → Midjourney.
+
+**3. Você quer rápido, sem sair do ChatGPT, e já paga o Plus?**
+- Sim → DALL-E. Iteração rápida sem custo extra.
+
+Volume alto e fotorrealista dentro do Google Cloud → Imagen.
+
+## O alerta de direito de imagem
+
+Antes de usar imagem gerada por IA comercialmente, confere 2 coisas:
+
+- **Termos do gerador.** Cada um tem regra de uso comercial diferente. Midjourney libera nos planos pagos, DALL-E libera pra quem gerou, Flux depende da licença do modelo/host. Lê antes de vender.
+- **Não imite marca nem pessoa real.** Gerar imagem "no estilo de" um artista vivo ou com rosto de pessoa real é campo minado jurídico. Evita.
+
+Imagem de IA é ferramenta poderosa. Poderosa sem cuidado é passivo. Igual eu falo de código: [o risco não é só o que você cria, é o que você usa sem checar](/blog/risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026).
+
+## Vale o ponto
+
+"Não dá pra usar só um e economizar?"
+
+Vale o ponto. Dá. Se seu uso é casual (uma imagem por semana pra ilustrar algo), DALL-E no ChatGPT Plus que você já paga resolve tudo. Não precisa de mais nada.
+
+O combo de dois vale quando imagem faz parte do seu trabalho: você produz capa, thumbnail, material de marca com frequência. Aí ter o certo pra cada caso economiza tempo e melhora o resultado.
+
+## Conclusão
+
+Não existe o melhor gerador de imagem. Existe o certo pro seu caso.
+
+- Arte que impressiona → Midjourney.
+- Texto legível e controle → Flux.
+- Rápido e conveniente → DALL-E.
+- Fotorrealismo em escala → Imagen.
+
+E o padrão profissional é usar dois, não um. Escolhe pelo trabalho, não pela moda. E sempre confere direito de uso antes de vender imagem de IA.
+
+A decisão é sua.`,
+  },
+  {
     id: "ia-para-empresa-qual-adotar-time-2026",
     slug: "ia-para-empresa-qual-adotar-time-2026",
     contentVersion: 1,
