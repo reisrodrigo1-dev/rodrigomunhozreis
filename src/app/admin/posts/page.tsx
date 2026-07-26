@@ -5,7 +5,8 @@ import Link from "next/link";
 import { getAllPosts, importSeedPosts } from "@/lib/posts-admin";
 import { getViews, getLastViews } from "@/lib/views";
 import { fmtDate, type Row } from "@/lib/admin-data";
-import type { Post } from "@/lib/posts";
+import { isLive, toIsoDate, type Post } from "@/lib/posts";
+import { seedPosts } from "@/lib/seed-posts";
 import { BlogAnalytics } from "@/components/admin/blog-analytics";
 import { GA4Overview } from "@/components/admin/ga4-overview";
 
@@ -52,11 +53,20 @@ export default function AdminPosts() {
 
   useEffect(() => {
     getAllPosts()
-      .then((p) => {
-        setRows(p);
+      .then((fs) => {
+        // Mescla seed (código) + Firestore, deduplicado por slug (Firestore vence).
+        // Assim os posts AGENDADOS (ainda no código, data futura) aparecem na fila.
+        const bySlug = new Map<string, Post>();
+        for (const p of seedPosts) bySlug.set(p.slug, p);
+        for (const p of fs) bySlug.set(p.slug, p);
+        setRows([...bySlug.values()]);
         setState("ok");
       })
-      .catch(() => setState("error"));
+      .catch(() => {
+        // Firestore fora do ar: mostra ao menos os posts do código.
+        setRows([...seedPosts]);
+        setState("ok");
+      });
     getViews().then(setViews).catch(() => {});
     getLastViews().then(setLastViews).catch(() => {});
   }, []);
@@ -133,6 +143,7 @@ export default function AdminPosts() {
           <button
             onClick={handleImport}
             disabled={importing}
+            title="Não é mais necessário: posts do código sobem sozinhos na data. Use só se quiser gravar no Firestore agora."
             className="btn btn-ghost !px-4 !py-2 disabled:opacity-50"
           >
             {importing ? "Atualizando…" : "Importar / atualizar posts"}
@@ -141,6 +152,13 @@ export default function AdminPosts() {
             Novo post
           </Link>
         </div>
+      </div>
+
+      <div className="mt-3 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+        <b>Agendamento automático:</b> posts escritos no código sobem sozinhos na
+        data de publicação. Não precisa mais importar. Os marcados como{" "}
+        <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Agendado</span>{" "}
+        entram no ar automaticamente na data indicada (o site atualiza a cada ~5 min).
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -215,15 +233,31 @@ export default function AdminPosts() {
                     </Link>
                   </td>
                   <td className="px-4 py-3">
-                    <span
-                      className={`rounded-full px-2.5 py-1 text-xs font-semibold ${
-                        p.status === "published"
-                          ? "bg-amber-soft text-amber-deep"
-                          : "bg-line/60 text-muted"
-                      }`}
-                    >
-                      {p.status === "published" ? "Publicado" : "Rascunho"}
-                    </span>
+                    {(() => {
+                      const scheduled = p.status === "published" && !isLive(p);
+                      const label = p.status !== "published"
+                        ? "Rascunho"
+                        : scheduled
+                        ? "Agendado"
+                        : "Publicado";
+                      const cls = scheduled
+                        ? "bg-blue-100 text-blue-700"
+                        : p.status === "published"
+                        ? "bg-amber-soft text-amber-deep"
+                        : "bg-line/60 text-muted";
+                      const iso = scheduled ? toIsoDate(p.publishedAt) : undefined;
+                      const when = iso
+                        ? new Date(iso).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })
+                        : "";
+                      return (
+                        <span
+                          className={`rounded-full px-2.5 py-1 text-xs font-semibold ${cls}`}
+                          title={scheduled ? `Sobe automaticamente em ${when}` : ""}
+                        >
+                          {label}{scheduled && when ? ` · ${when}` : ""}
+                        </span>
+                      );
+                    })()}
                   </td>
                   <td className="px-4 py-3 font-semibold text-ink">{views[p.slug] ?? 0}</td>
                   <td className="px-4 py-3 text-muted" title={lastViews[p.slug] ? new Date(lastViews[p.slug]).toLocaleString("pt-BR") : ""}>

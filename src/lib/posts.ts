@@ -52,27 +52,59 @@ export function toIsoDate(v: unknown): string | undefined {
   return ms ? new Date(ms).toISOString() : undefined;
 }
 
-/** Posts publicados — direto do Firestore (banco de dados). */
-export async function getPublishedPosts(): Promise<Post[]> {
-  const { collection, getDocs, query, where } = await import("firebase/firestore");
-  const { db } = await import("./firebase");
-  const snap = await getDocs(query(collection(db, "posts"), where("status", "==", "published")));
-  return (snap.docs.map((d) => ({ id: d.id, ...(d.data() as object) })) as Post[]).sort(sortByDate);
+/**
+ * Um post está "no ar" quando:
+ * - status é "published", E
+ * - a data de publicação já chegou (publishedAt <= agora).
+ *
+ * Isso habilita AGENDAMENTO: um post com publishedAt no futuro fica invisível
+ * até a data chegar. Sem data, considera no ar (compat com posts antigos).
+ */
+export function isLive(p: Post, now: number = Date.now()): boolean {
+  if (p.status !== "published") return false;
+  const ms = toMillis(p.publishedAt ?? p.createdAt);
+  if (!ms) return true;
+  return ms <= now;
 }
 
-/** Um post publicado pelo slug — direto do Firestore, ou null. */
+/** Lê os posts publicados do Firestore (posts criados/editados via /admin). */
+async function fetchFirestorePublished(): Promise<Post[]> {
+  try {
+    const { collection, getDocs, query, where } = await import("firebase/firestore");
+    const { db } = await import("./firebase");
+    const snap = await getDocs(query(collection(db, "posts"), where("status", "==", "published")));
+    return snap.docs.map((d) => ({ id: d.id, ...(d.data() as object) })) as Post[];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Todos os posts publicados de AMBAS as fontes, deduplicados por slug:
+ * - seed (posts escritos no código, sobem no deploy sem precisar importar)
+ * - Firestore (posts criados/editados no /admin)
+ * Quando o mesmo slug existe nos dois, a versão do Firestore vence
+ * (uma edição feita no /admin sobrescreve o seed).
+ */
+async function getMergedPublished(): Promise<Post[]> {
+  const { seedPosts } = await import("./seed-posts");
+  const bySlug = new Map<string, Post>();
+  for (const p of seedPosts) if (p.status === "published") bySlug.set(p.slug, p);
+  const fs = await fetchFirestorePublished();
+  for (const p of fs) bySlug.set(p.slug, p);
+  return [...bySlug.values()];
+}
+
+/** Posts que já estão no ar (respeitando a data de agendamento), mais recentes primeiro. */
+export async function getPublishedPosts(): Promise<Post[]> {
+  const all = await getMergedPublished();
+  return all.filter((p) => isLive(p)).sort(sortByDate);
+}
+
+/** Um post pelo slug — só retorna se já passou da data de publicação, senão null (404). */
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  const { collection, getDocs, query, where, limit } = await import("firebase/firestore");
-  const { db } = await import("./firebase");
-  const snap = await getDocs(
-    query(
-      collection(db, "posts"),
-      where("slug", "==", slug),
-      where("status", "==", "published"),
-      limit(1)
-    )
-  );
-  if (snap.empty) return null;
-  const d = snap.docs[0];
-  return { id: d.id, ...(d.data() as object) } as Post;
+  const all = await getMergedPublished();
+  const p = all.find((x) => x.slug === slug);
+  if (!p || !isLive(p)) return null;
+  return p;
 }
