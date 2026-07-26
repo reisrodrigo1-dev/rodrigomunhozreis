@@ -7,6 +7,93 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "claude-opus-5-chegou-o-que-muda-2026",
+    slug: "claude-opus-5-chegou-o-que-muda-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-26T12:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Claude Opus 5 chegou: inteligência de topo pela metade do preço. O que muda de verdade",
+    excerpt:
+      "A Anthropic lançou o Opus 5 dia 24. Contexto de 1 milhão de tokens, bateu todos os concorrentes no benchmark de código agêntico, e custa metade do modelo anterior de mesma força. Mas o que importa não é o placar. É o que isso muda no seu trabalho.",
+    summary:
+      "Anthropic lançou o Claude Opus 5 em 24/07/2026: contexto de 1M tokens, US$ 5/US$ 25 por milhão (metade do preço pra inteligência nível Fable 5), toggle de esforço baixo/médio/alto e 79,2% no SWE-bench Pro. Bateu todos no Frontier-Bench de código agêntico. É evolução real, não hype. Mas modelo melhor não conserta método ruim: quem já trabalha com revisão ganha mais, quem cola sem ler continua no mesmo buraco, mais rápido.",
+    faq: [
+      {"q": "O que mudou no Claude Opus 5?", "a": "Três coisas práticas: contexto de 1 milhão de tokens (você joga o projeto inteiro), preço pela metade do modelo anterior de mesma força (US$ 5 input / US$ 25 output por milhão), e um toggle de esforço (baixo, médio, alto) pra você trocar custo por capacidade em cada pedido. Também lidera os benchmarks de código agêntico e é o modelo mais alinhado da Anthropic até hoje."},
+      {"q": "Vale trocar do Opus 4.8 pro Opus 5?", "a": "Se você usa via API, troca a string do modelo pra claude-opus-5 e testa seus casos. Mais que dobrou a pontuação no Frontier-Bench e custa menos. Se você é Claude Max, já é o modelo padrão, não faz nada. Pra tarefa simples, o toggle de esforço baixo economiza."},
+      {"q": "O Opus 5 é melhor que o GPT-5.6?", "a": "Em código agêntico (Frontier-Bench) e raciocínio abstrato (ARC-AGI-3), o Opus 5 lidera com folga em julho de 2026. Mas benchmark muda toda semana e depende da tarefa. Pra código longo e agente, Opus 5 está na frente agora. Confira sempre no seu caso antes de decidir."},
+      {"q": "O contexto de 1 milhão de tokens serve pra quê?", "a": "Pra você mandar muito material de uma vez: um codebase grande, um processo jurídico inteiro, dezenas de documentos. O modelo lê tudo sem perder o fio. Antes você precisava fatiar. Agora joga o conjunto e pergunta em cima do todo."}
+    ],
+    content: `A Anthropic lançou o Claude Opus 5 no dia 24. E dessa vez o salto é de verdade, não reembalagem.
+
+Vou ao ponto: contexto de 1 milhão de tokens, lidera os benchmarks de código agêntico, e custa metade do modelo anterior de mesma força. Mas o placar não é o que importa pra você. Importa o que muda no seu trabalho.
+
+## O que mudou de fato
+
+Três coisas práticas:
+
+**1. Contexto de 1 milhão de tokens.** Você joga o projeto inteiro, o processo jurídico inteiro, dezenas de documentos, e ele lê tudo sem perder o fio. Antes você fatiava. Agora manda o conjunto e pergunta em cima do todo.
+
+**2. Metade do preço.** US$ 5 por milhão de tokens de entrada, US$ 25 de saída. Isso é inteligência nível topo de linha por metade do que custava. Tem um modo rápido a mais ou menos o dobro do preço pra cerca de 2,5x a velocidade.
+
+**3. Toggle de esforço.** Você escolhe baixo, médio ou alto por pedido. Tarefa simples: esforço baixo, paga menos. Tarefa difícil: esforço alto, aceita pagar mais. Você controla o custo por tarefa.
+
+## Os números que impressionam
+
+Pra quem gosta de placar:
+
+- **79,2% no SWE-bench Pro** (código de verdade, não brinquedo).
+- **Frontier-Bench de código agêntico:** mais que dobrou o Opus 4.8 e passou todos os outros, incluindo o GPT-5.6.
+- **ARC-AGI-3** (raciocínio abstrato): três vezes a pontuação do segundo colocado.
+- **Knowledge cutoff em maio de 2026:** o mais atual de qualquer modelo Claude.
+- E o detalhe que ninguém olha: é o modelo **mais alinhado** da Anthropic até hoje, com a menor taxa de comportamento enganoso.
+
+Esse último importa mais do que parece. Modelo que erra menos com confiança é modelo que exige menos verificação sua. Depois do [Grok 4.5 com 54% de alucinação](/blog/grok-4-5-mais-confiante-mais-errado-2026), calibração virou diferencial.
+
+## Meu take
+
+Opus 5 é o melhor modelo pra construir que existe agora. Ponto.
+
+Mas aqui mora o que ninguém fala: **modelo melhor não conserta método ruim.**
+
+Se você já trabalha com revisão, teste e contexto, o Opus 5 te entrega mais. A qualidade sobe, o custo cai, o contexto de 1M abre coisa nova.
+
+Se você cola resposta sem ler, o Opus 5 não te salva. Ele só te leva pro mesmo buraco mais rápido e com mais confiança. Ferramenta melhor nas mãos erradas é erro mais eficiente.
+
+## O que fazer essa semana
+
+Se você usa Claude via API:
+
+1. Troca a string do modelo pra claude-opus-5.
+2. Roda seus 3 casos de uso mais críticos.
+3. Testa o toggle de esforço: baixo no simples, alto no difícil.
+4. Compara custo e qualidade contra o que você usava.
+
+Se você é Claude Max: já é o modelo padrão. Não faz nada, só usa.
+
+Se você usa outro modelo: vale testar em 3 tarefas suas antes de migrar. Não troca por moda, troca por resultado no seu caso.
+
+## Vale o ponto
+
+"Toda semana sai um modelo melhor. Vale correr atrás?"
+
+Vale o ponto. Não vale trocar de ferramenta a cada lançamento. Vale manter sua stack agnóstica pra que trocar seja fácil quando fizer sentido.
+
+O teste continua o mesmo: se você troca claude-opus-4-8 por claude-opus-5 e seu código quebra, você tá acoplado demais. Modelo é peça trocável. Método é o que fica.
+
+## Conclusão
+
+Claude Opus 5 chegou e é o melhor pra construir hoje. Contexto de 1M, metade do preço, lidera os benchmarks, e erra menos com confiança.
+
+Mas modelo bom entrega mais pra quem tem método e a mesma coisa pra quem não tem. A ferramenta subiu de nível. A pergunta é se você subiu junto.
+
+Testa no seu caso. Sem hype, sem correr atrás de placar. Resultado no seu trabalho é o único benchmark que importa.
+
+A decisão é sua.`,
+  },
+  {
     id: "como-dar-primeiro-prompt-que-presta-2026",
     slug: "como-dar-primeiro-prompt-que-presta-2026",
     contentVersion: 1,
