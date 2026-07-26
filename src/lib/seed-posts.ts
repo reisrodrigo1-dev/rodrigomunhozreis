@@ -7,6 +7,4685 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "como-dar-primeiro-prompt-que-presta-2026",
+    slug: "como-dar-primeiro-prompt-que-presta-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-27T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Como dar o primeiro prompt que presta (guia pra quem nunca usou IA)",
+    excerpt: "Um passo a passo do prompt básico ao estruturado, com o método P.R.O.M.P.T.E.R. pra você parar de receber resposta genérica.",
+    summary: "Um prompt que presta tem papel, tarefa, contexto e formato de saída. O erro de quem começa é pedir pouco e esperar muito. Use o método P.R.O.M.P.T.E.R. pra montar o pedido em camadas e a resposta muda de nível na hora.",
+    faq: [
+      {"q": "O que é um prompt?", "a": "É a instrução que você dá pra IA. Quanto mais claro o pedido, melhor a resposta. Prompt vago gera resposta vaga."},
+      {"q": "Preciso saber programar pra escrever um bom prompt?", "a": "Não. Prompt é linguagem comum. O que muda é a estrutura: dizer quem a IA deve ser, o que você quer e em que formato."},
+      {"q": "O que é o método P.R.O.M.P.T.E.R.?", "a": "É um checklist pra montar prompts: Papel, Resultado, Objetivo, Material, Passos, Tom, Exemplos e Refinar. Você não precisa usar tudo sempre, mas cobrir esses pontos já resolve 90% dos casos."}
+    ],
+    content: `Você abriu o ChatGPT ou o Claude, digitou "me ajuda com marketing" e recebeu um texto genérico que não serve pra nada. A culpa não é da IA. É do prompt.
+
+Prompt ruim gera resposta ruim. Sempre.
+
+Neste guia você vai sair do prompt de uma linha pro prompt estruturado. Sem enrolação, sem teoria demais.
+
+## O que é um prompt (e por que o seu está fraco)
+
+Prompt é o pedido que você faz pra IA. Só isso.
+
+O problema é que a maioria das pessoas trata a IA como um buscador. Digita três palavras e espera mágica. A IA não adivinha o seu contexto. Ela responde o que você deu.
+
+Pense assim: se você contratasse um freelancer e mandasse só "me ajuda com marketing", ele ia te devolver algo genérico também. Com a IA é igual.
+
+## O prompt básico: sujeito, tarefa, contexto
+
+Comece com três coisas.
+
+Primeiro, o que você quer. Segundo, pra quê. Terceiro, qualquer detalhe que importe.
+
+Compare os dois:
+
+    Ruim: escreve um e-mail de vendas
+
+    Melhor: escreve um e-mail curto pra oferecer meu curso de Excel pra donos de pequenos negócios que já me seguem no Instagram
+
+O segundo já entrega algo aproveitável. E você só adicionou contexto.
+
+## O método P.R.O.M.P.T.E.R.
+
+Quando o pedido é importante, vale montar em camadas. Uso o P.R.O.M.P.T.E.R. como checklist:
+
+    P - Papel: quem a IA deve ser (um copywriter, um professor de física)
+    R - Resultado: o que você quer no final (um texto, uma lista, um plano)
+    O - Objetivo: pra que serve isso (converter, ensinar, resumir)
+    M - Material: o contexto e os dados que você tem
+    P - Passos: se tiver uma ordem, diga
+    T - Tom: formal, direto, casual
+    E - Exemplos: mostra um modelo do que você espera
+    R - Refinar: pede ajuste no que veio
+
+Você não precisa usar as oito camadas toda vez. Mas cobrir Papel, Resultado, Material e Tom já muda o jogo.
+
+## Um exemplo montado do zero
+
+Digamos que você quer um roteiro pra um vídeo curto.
+
+    Papel: você é roteirista de vídeos curtos pra Instagram.
+    Resultado: um roteiro de 30 segundos.
+    Objetivo: fazer donos de restaurante quererem meu sistema de reservas.
+    Material: o sistema reduz falta de cliente em 40% e custa 90 reais por mês.
+    Tom: direto, sem hype, como quem conversa.
+    Exemplo: comece com uma pergunta que doa, tipo "quantas mesas ficaram vazias essa semana?"
+
+Manda isso e compara com "escreve um roteiro de vídeo". A diferença é gritante.
+
+## Refinar é parte do trabalho
+
+O primeiro resultado quase nunca é o final. E tudo bem.
+
+Leia o que veio. Diga o que ficou bom e o que ficou ruim. Peça o ajuste específico: "encurta pela metade", "tira o tom de vendedor", "deixa mais concreto".
+
+A IA é boa em iterar. Ruim em adivinhar de primeira.
+
+Vale o ponto: no começo isso dá trabalho. Mas depois de uns dias vira automático. Você para de aceitar resposta genérica porque aprende a pedir melhor.
+
+Prompt bom não é dom. É estrutura.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-organizar-trabalho-claude-projects-2026",
+    slug: "como-organizar-trabalho-claude-projects-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-28T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "Como organizar seu trabalho com IA usando Claude Projects",
+    excerpt: "Pare de repetir o mesmo contexto em toda conversa. Aprenda a criar um Projeto, subir seus documentos e reusar tudo.",
+    summary: "Claude Projects deixa você guardar contexto fixo (instruções e arquivos) que a IA usa em todas as conversas daquele projeto. Isso elimina a repetição de contexto e deixa as respostas mais consistentes. Crie um projeto por cliente ou por área, suba os documentos base e escreva as instruções uma vez.",
+    faq: [
+      {"q": "O que é um Claude Project?", "a": "É um espaço onde você guarda instruções e arquivos que a IA usa em todas as conversas dali. Serve pra não repetir o mesmo contexto toda vez."},
+      {"q": "Preciso pagar pra usar Projects?", "a": "Sim, Projects está nos planos pagos do Claude. Mas a lógica de guardar contexto fixo vale pra qualquer ferramenta que tenha recurso parecido."},
+      {"q": "Quantos projetos devo criar?", "a": "Um por contexto que se repete: um por cliente, um por produto, um por área da sua vida. O objetivo é que cada projeto tenha um contexto coeso."}
+    ],
+    content: `Se você conversa com IA todo dia, provavelmente repete o mesmo contexto toda vez. "Eu tenho uma empresa de X", "meu tom é Y", "meu cliente é Z". Cansa. E dá margem pra inconsistência.
+
+Claude Projects existe pra resolver isso.
+
+## O que é e por que importa
+
+Um Projeto é uma pasta com memória. Você guarda dois tipos de coisa: instruções fixas e arquivos de contexto.
+
+Toda conversa que você abre dentro daquele projeto já nasce sabendo de tudo isso. Você não precisa colar de novo.
+
+Pensa no ganho. Em vez de explicar quem é o seu cliente em cada chat, você escreve uma vez e a IA sempre lembra.
+
+## Passo 1: crie um projeto por contexto
+
+Não crie um projeto genérico chamado "trabalho". Isso vira bagunça.
+
+Crie um por contexto que se repete:
+
+    Um projeto por cliente
+    Um projeto por produto seu
+    Um projeto pra vida pessoal (estudos, finanças)
+
+Cada projeto tem que ter um assunto coeso. Isso mantém as respostas afiadas.
+
+## Passo 2: escreva as instruções do projeto
+
+Aqui você define como a IA deve se comportar naquele espaço. É o campo mais importante.
+
+Escreva coisas como:
+
+    Você é meu assistente de conteúdo pra empresa X.
+    Meu tom é direto, sem hype, sem emoji.
+    Meu cliente é dono de pequeno negócio.
+    Sempre me devolva texto pronto pra publicar, não rascunho.
+
+Isso é o equivalente a treinar um funcionário uma vez, em vez de a cada tarefa.
+
+## Passo 3: suba os documentos de contexto
+
+Projects deixa você anexar arquivos que ficam disponíveis em todas as conversas.
+
+Suba o que a IA precisa saber:
+
+    Seu manual de marca
+    Exemplos dos seus melhores textos
+    Dados do produto (preço, benefícios, público)
+    Um FAQ do seu negócio
+
+Agora, quando você pede "escreve um post", a IA já tem tudo na mão. A resposta sai no seu tom, com os seus dados.
+
+## Passo 4: reuse e refine
+
+A parte que quase ninguém faz: o projeto melhora com o tempo.
+
+Toda vez que a IA erra o tom ou esquece algo, você não corrige só naquela conversa. Você volta nas instruções do projeto e ajusta lá. Assim o erro não se repete.
+
+Vale o ponto: montar isso dá um trabalho inicial de uns 20 minutos. Mas você recupera esse tempo na primeira semana, porque para de repetir contexto em toda conversa.
+
+## O erro comum: tratar todo chat como novo
+
+Muita gente usa IA como se fosse a primeira vez, sempre. Explica tudo de novo, todo dia.
+
+Projects quebra esse ciclo. Você constrói contexto uma vez e colhe pra sempre.
+
+Trabalho organizado com IA não é sobre prompts mágicos. É sobre contexto reaproveitável.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-aprender-qualquer-assunto-com-ia-2026",
+    slug: "como-aprender-qualquer-assunto-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-29T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Como usar IA pra aprender qualquer assunto do zero",
+    excerpt: "Um método de estudo com IA que ensina de verdade, sem virar cola. Do mapa geral à prática com correção.",
+    summary: "IA é o melhor tutor particular já inventado, se você usar pra aprender e não pra colar. O método: peça o mapa do assunto, estude por camadas, teste seu entendimento com perguntas e peça correção dos seus erros. Explicar de volta pra IA é o que fixa o conhecimento.",
+    faq: [
+      {"q": "Dá pra aprender de verdade com IA ou é só cola?", "a": "Dá pra aprender de verdade, se você usar pra te ensinar e te testar, não pra fazer por você. A diferença está em quem faz o esforço mental: você ou a máquina."},
+      {"q": "Qual a primeira coisa a pedir quando quero aprender algo novo?", "a": "Peça o mapa do assunto: os grandes blocos, na ordem que fazem sentido aprender. Assim você vê o todo antes de mergulhar nos detalhes."},
+      {"q": "Como sei que aprendi mesmo e não só entendi na hora?", "a": "Explique o conceito de volta pra IA, com suas palavras, e peça pra ela apontar o que ficou errado ou faltando. Se você consegue ensinar, você aprendeu."}
+    ],
+    content: `Você tem, de graça ou por poucos reais, um tutor particular que sabe de quase tudo e tem paciência infinita. A maioria das pessoas usa isso pra colar. Perde o melhor uso.
+
+IA pra estudar é outra coisa. Vou te mostrar o método.
+
+## O princípio: quem faz o esforço aprende
+
+Aprender é esforço mental. Se a IA faz o esforço por você, ela aprende. Você não.
+
+Colar é pedir a resposta pronta. Aprender é usar a IA pra te levar até a resposta por conta própria.
+
+Segure isso na cabeça o tempo todo. Todo o método vem daqui.
+
+## Passo 1: peça o mapa do assunto
+
+Antes de mergulhar, veja o território.
+
+    Você é professor de finanças pessoais. Me dê o mapa do assunto: os grandes blocos que eu preciso dominar, na ordem que faz sentido aprender, do básico ao avançado. Só a estrutura, sem explicar ainda.
+
+Agora você tem um plano. Sabe onde está e pra onde vai. Sem isso, você estuda no escuro.
+
+## Passo 2: estude por camadas, do simples ao completo
+
+Pegue o primeiro bloco e peça a explicação mais simples possível.
+
+    Me explica o que é juros compostos como se eu tivesse 12 anos. Depois me explica de novo, num nível adulto.
+
+A explicação dupla é ótima. A versão simples te dá a intuição. A versão adulta te dá a precisão.
+
+Só avance pro próximo bloco quando o atual estiver firme.
+
+## Passo 3: teste seu entendimento
+
+Aqui separa quem aprende de quem se ilude.
+
+Peça pra IA te testar:
+
+    Me faz 5 perguntas sobre juros compostos, da mais fácil pra mais difícil. Espera eu responder cada uma antes de dar a próxima. No fim, corrige.
+
+Responda de cabeça. Erre. O erro é onde o aprendizado mora.
+
+## Passo 4: explique de volta
+
+O teste final: ensine.
+
+    Vou te explicar juros compostos com minhas palavras. Me escuta e aponta o que eu errei, o que ficou impreciso e o que faltou.
+
+Se você consegue explicar sem gaguejar, você aprendeu. Se trava, achou exatamente o buraco que precisa fechar.
+
+Esse passo, explicar de volta, é o mais poderoso. É a técnica Feynman com um tutor que corrige na hora.
+
+## Passo 5: leve pra prática
+
+Teoria sem aplicação evapora.
+
+Peça um exercício real:
+
+    Me dá um problema prático de juros compostos com números do dia a dia. Eu resolvo, você corrige o raciocínio, não só o resultado.
+
+Vale o ponto: esse método é mais lento que colar. Muito mais. Mas colar te deixa com a tarefa feita e a cabeça vazia. Estudar te deixa com a cabeça cheia.
+
+Uma dessas você leva pra vida. A outra você esquece amanhã.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-criar-assistente-pessoal-ia-dia-a-dia-2026",
+    slug: "como-criar-assistente-pessoal-ia-dia-a-dia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-30T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "Como criar um assistente pessoal de IA pro seu dia a dia (sem código)",
+    excerpt: "Um prompt de sistema bem feito transforma a IA num assistente que conhece você. Sem programar nada.",
+    summary: "Um assistente pessoal de IA é uma instrução fixa (prompt de sistema) que ensina a IA quem você é, como você trabalha e o que você espera. Sem código: você escreve em português. Defina papel, contexto pessoal, rotinas e formato de resposta, e a IA passa a agir sob medida pra você.",
+    faq: [
+      {"q": "Preciso saber programar pra criar um assistente de IA?", "a": "Não. Um assistente pessoal é só um texto de instruções em português. Você descreve quem você é e como quer ser ajudado, e salva isso pra reusar."},
+      {"q": "O que é um prompt de sistema?", "a": "É a instrução base que a IA sempre lê antes de responder. Define o papel dela, o seu contexto e as regras de como ela deve agir com você."},
+      {"q": "Onde eu guardo esse assistente?", "a": "Nas instruções de um projeto (como Claude Projects ou GPTs personalizados), ou num documento que você cola no começo de cada conversa importante."}
+    ],
+    content: `Assistente pessoal de IA parece coisa de filme. Não é. É um texto. Um texto bem escrito que ensina a IA a te conhecer.
+
+E você monta isso hoje, sem escrever uma linha de código.
+
+## O que é, de verdade
+
+Um assistente pessoal é um prompt de sistema. Uma instrução fixa que a IA lê antes de qualquer conversa.
+
+Nela você diz quem você é, como trabalha e o que espera. A IA passa a agir sob medida. Para de te tratar como um estranho a cada mensagem.
+
+Sem código. Só português claro.
+
+## Os quatro blocos do seu assistente
+
+Todo bom assistente cobre quatro coisas.
+
+Papel: o que a IA é pra você.
+
+    Você é meu chefe de gabinete pessoal. Me ajuda a organizar tarefas, escrever textos e pensar decisões.
+
+Contexto pessoal: quem você é.
+
+    Eu tenho uma agência com 3 pessoas. Trabalho melhor de manhã. Odeio reunião e texto longo. Sou direto.
+
+Regras de comportamento: como a IA deve agir.
+
+    Seja objetivo. Nunca me dê parágrafos longos. Se eu pedir algo vago, me faça uma pergunta antes de responder. Nunca use emoji.
+
+Formato de resposta: como você quer receber.
+
+    Respostas em tópicos quando der. Sempre termine com o próximo passo concreto.
+
+## Passo a passo pra montar
+
+Primeiro, escreva os quatro blocos num documento. Leva 15 minutos.
+
+Segundo, cole isso nas instruções de um projeto de IA, ou no começo de uma conversa importante.
+
+Terceiro, use por alguns dias.
+
+Quarto, ajuste. Toda vez que a IA agir de um jeito que te irrita, volte no texto e adicione uma regra. O assistente melhora com o uso.
+
+## Um exemplo de rotina real
+
+Digamos que você quer começar o dia organizado.
+
+    Bom dia. Aqui está minha lista de hoje: [cola a lista]. Me ajuda a priorizar por impacto, me diz o que eu deveria fazer primeiro e o que pode esperar. Seja direto.
+
+Como o assistente já sabe que você trabalha melhor de manhã e odeia texto longo, a resposta sai afiada. Sem preâmbulo.
+
+## Onde isso brilha
+
+O assistente rende mais nas tarefas repetitivas:
+
+    Transformar suas anotações soltas em texto organizado
+    Redigir respostas de e-mail no seu tom
+    Ser o interlocutor pra pensar uma decisão em voz alta
+    Resumir documentos do jeito que você lê
+
+Vale o ponto: um assistente genérico é pior que um prompt bom feito na hora. O valor está no contexto pessoal. Quanto mais você se descreve, mais útil ele fica.
+
+Assistente pessoal não é tecnologia. É autoconhecimento escrito num prompt.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-escrever-email-profissional-com-ia-2026",
+    slug: "como-escrever-email-profissional-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-31T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Como escrever e-mail profissional com IA sem parecer robô",
+    excerpt: "O problema não é usar IA pra escrever e-mail. É aceitar o primeiro rascunho. Aprenda a dar contexto e revisar a voz.",
+    summary: "IA escreve e-mail em segundos, mas o padrão dela soa robótico e genérico. Pra soar humano: dê contexto (quem recebe, qual a relação, o objetivo), peça um tom específico e revise a voz cortando frases feitas. O segredo é usar a IA como rascunho, nunca como versão final.",
+    faq: [
+      {"q": "Por que os e-mails escritos por IA parecem robóticos?", "a": "Porque, sem contexto, a IA usa o tom mais genérico e formal possível. Ela enche de frases feitas tipo 'espero que esteja bem'. Falta a sua voz e a relação real com quem recebe."},
+      {"q": "Como faço a IA escrever no meu tom?", "a": "Dê exemplos de e-mails seus e peça pra ela imitar o estilo. Diga o tom que quer (direto, caloroso, formal) e pra quem é. Depois revise cortando o que não soa como você."},
+      {"q": "Devo enviar o e-mail que a IA escreveu direto?", "a": "Não. Sempre leia e ajuste antes de enviar. A IA erra tom, inventa detalhes e usa clichês. Você é responsável pelo que assina."}
+    ],
+    content: `Todo mundo já recebeu aquele e-mail óbvio escrito por IA. Começa com "espero que este e-mail o encontre bem". Tem três parágrafos pra dizer o que cabia em duas linhas. Soa como robô fingindo ser gente.
+
+O problema não é a IA. É como você a usou.
+
+## Por que o padrão soa robótico
+
+Sem contexto, a IA escolhe o caminho mais seguro: formal, genérico, cheio de gordura.
+
+Ela não sabe quem vai receber. Não sabe a sua relação com a pessoa. Não sabe se você é do tipo direto ou cerimonioso. Então ela chuta pro meio e enche de frase feita.
+
+O resultado é técnico e sem alma. Correto e esquecível.
+
+## Passo 1: dê o contexto que importa
+
+Antes de pedir o e-mail, diga o essencial.
+
+    Preciso responder um cliente que atrasou o pagamento há 10 dias. Ele é bom cliente, primeira vez que atrasa. Quero cobrar sem azedar a relação. Tom firme mas cordial. Curto.
+
+Veja quanta coisa a IA agora sabe: a situação, o histórico, o objetivo, o tom, o tamanho. A resposta muda completamente.
+
+## Passo 2: peça um tom específico
+
+"Profissional" não diz nada. Todo e-mail se acha profissional.
+
+Seja concreto no tom:
+
+    Direto, sem rodeio
+    Caloroso, como quem conhece a pessoa
+    Formal, primeiro contato
+    Firme, mas sem grosseria
+
+Quanto mais preciso o tom, menos robótico o texto.
+
+## Passo 3: ensine a IA a sua voz
+
+Aqui está o pulo do gato. Dê exemplos seus.
+
+    Aqui estão 2 e-mails que eu escrevi antes: [cola]. Escreva o novo imitando meu estilo: frases curtas, sem "espero que esteja bem", direto ao ponto.
+
+A IA é boa em copiar padrão. Se você mostra como escreve, ela te imita. Sem exemplo, ela usa o padrão dela, que não é o seu.
+
+## Passo 4: revise a voz, corte os clichês
+
+O rascunho veio. Agora leia como leitor, não como quem pediu.
+
+Cace e corte:
+
+    "Espero que esteja bem" e variações
+    "Não hesite em entrar em contato"
+    "Fico à disposição" repetido três vezes
+    Parágrafos que dizem nada
+
+Cada frase feita que você corta, o e-mail soa mais humano. Mais seu.
+
+## Passo 5: cheque os fatos
+
+A IA às vezes inventa. Um valor, uma data, um nome.
+
+Se o e-mail menciona números ou compromissos, confira. Você assina embaixo, não a IA.
+
+## Um exemplo do antes e depois
+
+Antes, versão robô:
+
+    Prezado, espero que este e-mail o encontre bem. Gostaria de gentilmente lembrá-lo a respeito da pendência financeira em aberto.
+
+Depois, com contexto e voz:
+
+    Oi, Marcos. Tudo certo? Passando pra lembrar do boleto que venceu semana passada. Sei que deve ter passado batido. Consegue acertar até sexta?
+
+O segundo é curto, humano e resolve. Mesma IA. Contexto diferente.
+
+Vale o ponto: dar contexto e revisar leva mais tempo que copiar o primeiro rascunho. Mas o e-mail que você envia carrega o seu nome. Vale os dois minutos.
+
+IA escreve o rascunho. A voz é sua.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-revisar-documento-contrato-com-ia-2026",
+    slug: "como-revisar-documento-contrato-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-01T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Como usar IA pra revisar documento e contrato (com cuidado)",
+    excerpt: "IA ajuda a entender e revisar documentos, mas tem limite. Um guia prático com o alerta de LGPD que ninguém te dá.",
+    summary: "IA é ótima pra traduzir juridiquês, apontar cláusulas de risco e listar perguntas pro advogado. Mas não substitui advogado e não deve receber dados pessoais sensíveis sem cuidado (LGPD). Use pra entender e preparar, não pra decidir. A revisão final é sempre humana e qualificada.",
+    faq: [
+      {"q": "Posso usar IA pra revisar um contrato no lugar de um advogado?", "a": "Não. IA ajuda a entender e a apontar pontos de atenção, mas não substitui advogado. Um contrato tem consequências legais que exigem análise humana qualificada."},
+      {"q": "É seguro colar um contrato com dados pessoais na IA?", "a": "Com cuidado. Dados pessoais e sensíveis exigem atenção à LGPD. Prefira anonimizar (tirar nomes, CPF, valores) antes de colar, ou usar ferramentas com garantia de privacidade."},
+      {"q": "Pra que a IA serve na revisão de documentos, então?", "a": "Pra traduzir linguagem técnica, resumir, apontar cláusulas de risco e gerar uma lista de perguntas pra você levar ao advogado. Ela prepara o terreno, não decide por você."}
+    ],
+    content: `Contrato é aquele documento que você assina sem entender direito. Letra miúda, juridiquês, dez páginas. A IA pode ajudar a decifrar isso. Mas tem um limite que você precisa respeitar.
+
+Vou te mostrar o uso certo e o alerta que quase ninguém dá.
+
+## O que a IA faz bem com documentos
+
+Três coisas, e faz bem.
+
+Traduz juridiquês. Cola a cláusula e peça: "explica isso em português simples, como se eu não fosse advogado". Ela desmonta a frase complicada.
+
+Resume. Documento de 15 páginas vira um resumo de meia página com os pontos principais.
+
+Aponta risco. Peça: "quais cláusulas aqui podem me prejudicar? O que está incomum?". Ela sinaliza o que merece atenção.
+
+## Passo 1: entenda antes de assinar
+
+Comece pela tradução.
+
+    Sou prestador de serviço e recebi este contrato. Me explica em linguagem simples: o que eu me comprometo a fazer, o que eles se comprometem, e o que acontece se alguém quebrar o acordo.
+
+Agora você entende o que está assinando. Só isso já vale muito.
+
+## Passo 2: cace as cláusulas de risco
+
+Peça pra IA fazer o papel de cético.
+
+    Lê este contrato como se você fosse um advogado protegendo os meus interesses. Aponta as 5 cláusulas mais perigosas pra mim e explica por quê.
+
+Ela vai achar coisas: multas desproporcionais, exclusividade escondida, prazo de rescisão ruim. Coisas que passam batido numa leitura corrida.
+
+## Passo 3: monte perguntas pro advogado
+
+Aqui está o uso mais inteligente. Não peça a decisão. Peça as perguntas.
+
+    Com base neste contrato, me dá uma lista de perguntas que eu deveria fazer pro meu advogado antes de assinar.
+
+Você chega no advogado preparado. A conversa rende mais e você não paga hora pra ouvir o óbvio.
+
+## O alerta de LGPD que ninguém te dá
+
+Aqui é sério. Preste atenção.
+
+Documentos costumam ter dados pessoais: nomes, CPF, endereços, valores, às vezes dados sensíveis. Colar isso numa IA é tratar dado pessoal. A LGPD se aplica.
+
+Antes de colar:
+
+    Anonimize. Troque nomes reais por "Parte A" e "Parte B". Tire CPF, endereço, valores exatos.
+    Cheque a ferramenta. Veja se ela promete não treinar com seus dados. Ferramentas pagas costumam ter melhor garantia.
+    Nunca cole documento de terceiro sem autorização. O dado não é seu pra compartilhar.
+
+Vazar dado de cliente ou parceiro num chat de IA é problema legal real. Não brinque com isso.
+
+## O limite que você não pode cruzar
+
+IA não é advogada. Ponto.
+
+Ela erra. Inventa jurisprudência que não existe. Não conhece a legislação atualizada do seu estado. Não entende o contexto do seu negócio como um humano entende.
+
+Use a IA pra entender e preparar. A decisão sobre assinar, e a revisão final de um contrato que importa, é de um profissional qualificado.
+
+Vale o ponto: pra um documento simples e sem risco, a IA sozinha resolve. Pra um contrato que mexe com dinheiro sério ou responsabilidade, ela é o primeiro filtro, não o último.
+
+IA lê o contrato com você. Quem responde pela assinatura é você.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-montar-rotina-de-estudo-com-ia-2026",
+    slug: "como-montar-rotina-de-estudo-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-02T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "Como montar uma rotina de estudo com IA que funciona",
+    excerpt: "Estudar com IA sem rotina é passeio turístico. Um método de plano, prática e revisão que faz o conhecimento grudar.",
+    summary: "Uma rotina de estudo com IA que funciona tem três pilares: um plano com metas por semana, prática ativa com correção e revisão espaçada do que já viu. A IA monta o plano, cria os exercícios e te testa. O erro comum é só consumir explicação sem nunca praticar nem revisar.",
+    faq: [
+      {"q": "Como a IA me ajuda a montar uma rotina de estudo?", "a": "Ela monta o plano com metas por período, cria exercícios pra você praticar e te testa sobre o que já viu. Você define o objetivo e o tempo disponível, ela organiza o resto."},
+      {"q": "Por que preciso de revisão espaçada?", "a": "Porque o cérebro esquece o que não revisita. Revisar um assunto alguns dias depois, e de novo mais tarde, é o que transforma entendimento momentâneo em memória duradoura."},
+      {"q": "Qual o maior erro de quem estuda com IA?", "a": "Só consumir explicação e nunca praticar nem revisar. Ler resposta da IA dá sensação de aprendizado, mas sem prática ativa o conhecimento não gruda."}
+    ],
+    content: `Estudar com IA sem rotina é igual viajar sem roteiro. Você anda muito e chega em lugar nenhum. Lê explicação, sente que aprendeu, esquece na semana seguinte.
+
+Rotina é o que separa aprender de passear. Vou te dar o método.
+
+## Os três pilares de uma rotina que funciona
+
+Toda rotina de estudo que gruda tem três coisas: plano, prática e revisão.
+
+Plano é saber o que estudar e quando. Prática é fazer, não só ler. Revisão é voltar no que já viu antes de esquecer.
+
+Falta um dos três e a rotina desmorona. A maioria das pessoas só faz o primeiro pedaço, consumir conteúdo, e para aí. Por isso não avança.
+
+## Pilar 1: o plano
+
+Comece pedindo pra IA estruturar o caminho.
+
+    Quero aprender fundamentos de programação em 8 semanas. Tenho 1 hora por dia, 5 dias por semana. Monta um plano semana a semana, com o que estudar em cada uma e uma meta clara pro fim de cada semana.
+
+Agora você tem um mapa. Sabe o que fazer na segunda-feira sem pensar. Isso mata a maior desculpa pra não estudar: não saber por onde começar.
+
+## Pilar 2: a prática ativa
+
+Ler é passivo. Fazer é ativo. Só o ativo aprende.
+
+Toda sessão de estudo tem que terminar com prática:
+
+    Me dá 3 exercícios sobre o que estudei hoje. Eu resolvo, você corrige o raciocínio.
+
+Ou, pra assuntos teóricos:
+
+    Me faz 5 perguntas sobre isso. Espera minha resposta, depois corrige.
+
+Errar na prática é bom. É ali que você descobre o que achava que sabia e não sabia.
+
+## Pilar 3: a revisão espaçada
+
+Este é o pilar que quase todo mundo pula. E é o que mais importa pra memória de longo prazo.
+
+O cérebro esquece o que não revisita. A solução é revisar em intervalos crescentes: um dia depois, três dias depois, uma semana depois.
+
+Peça pra IA gerenciar isso:
+
+    Toda segunda, me faça um quiz rápido sobre o que estudei nas 2 semanas anteriores, misturando os assuntos.
+
+Misturar os assuntos é de propósito. Força o cérebro a buscar a resposta, em vez de reconhecer no piloto automático.
+
+## Montando a semana na prática
+
+Um exemplo de semana real:
+
+    Segunda a quinta: 1 estudo novo + prática do dia
+    Sexta: revisão da semana, sem conteúdo novo
+    Segunda seguinte: quiz das semanas anteriores antes de começar o novo
+
+Simples. Repetível. E cobre os três pilares.
+
+## O erro que trava todo mundo
+
+Consumir explicação vicia. É gostoso ler a IA explicando bonito e sentir que você entendeu.
+
+Mas entender na hora não é aprender. Aprender é conseguir usar dias depois, sem consultar.
+
+Vale o ponto: praticar e revisar é mais chato que ler. Dá mais trabalho e machuca o ego quando você erra. Mas é exatamente esse trabalho que faz o conhecimento grudar.
+
+Quem só consome, esquece. Quem pratica e revisa, retém.
+
+A decisão é sua.`,
+  },
+  {
+    id: "5-erros-de-quem-comeca-a-usar-ia-2026",
+    slug: "5-erros-de-quem-comeca-a-usar-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-27T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "5 erros de quem começa a usar IA (e como evitar)",
+    excerpt: "A IA não é o problema. Cinco erros comuns de iniciante que fazem você tirar 20% do que a ferramenta pode dar.",
+    summary: "Os cinco erros mais comuns de quem começa com IA: dar prompt vago, não dar contexto, aceitar a primeira resposta, confiar sem checar e usar pra colar em vez de aprender. Todos têm conserto simples. O denominador comum: tratar a IA como buscador mágico em vez de colaborador que precisa ser dirigido.",
+    faq: [
+      {"q": "Qual o erro número um de quem começa a usar IA?", "a": "Dar prompt vago. Pedir 'me ajuda com X' em três palavras e esperar uma resposta sob medida. A IA responde o que você deu: pouco contexto gera pouca qualidade."},
+      {"q": "Por que não devo aceitar a primeira resposta da IA?", "a": "Porque a primeira resposta quase nunca é a melhor. A IA é ótima em iterar. Pedir ajuste, encurtar, mudar o tom, é onde a qualidade real aparece."},
+      {"q": "Usar IA pra colar é errado?", "a": "Depende do objetivo. Pra entregar tarefa, resolve no curto prazo. Pra aprender, é o pior uso: quem faz o esforço mental aprende, e se a IA faz por você, você não retém nada."}
+    ],
+    content: `A IA não vai te substituir. Mas quem usa mal vai ficar pra trás de quem usa bem. E a diferença mora em erros bobos, fáceis de corrigir.
+
+Aqui estão os cinco que mais vejo em quem está começando.
+
+## Erro 1: prompt vago
+
+O clássico. "Me ajuda com marketing." "Escreve um texto." "Me dá umas ideias."
+
+Três palavras, expectativa de mágica. A IA responde genérico porque você pediu genérico.
+
+Conserto: diga o que você quer, pra quem, e com qual objetivo. Uma frase de contexto muda tudo.
+
+## Erro 2: não dar contexto
+
+Você sabe do seu negócio, do seu cliente, da sua situação. A IA não sabe nada disso.
+
+Ela não lê sua mente. Cada detalhe que você guarda pra si é um detalhe a menos na resposta.
+
+Conserto: antes de pedir, gaste duas linhas dizendo quem você é e qual o cenário. "Tenho uma loja de roupa infantil, meu cliente é mãe de primeira viagem." Agora a resposta tem pra onde ir.
+
+## Erro 3: aceitar a primeira resposta
+
+A primeira resposta é rascunho. Não é entrega final.
+
+Quem para na primeira versão está deixando 80% da qualidade na mesa. A IA é excelente em iterar, se você mandar.
+
+Conserto: leia, diga o que ficou ruim, peça o ajuste. "Encurta." "Tira o tom de vendedor." "Deixa mais concreto." Duas ou três rodadas e o texto fica bom.
+
+## Erro 4: confiar sem checar
+
+A IA fala com a mesma confiança quando acerta e quando inventa. Ela não avisa quando está chutando.
+
+Ela cria dados, cita fontes que não existem, erra conta. E soa convincente fazendo isso.
+
+Conserto: todo dado, nome, número ou fato que você vai usar, confira na fonte. Especialmente se for pra publicar ou tomar decisão em cima. A responsabilidade é sua, não da máquina.
+
+## Erro 5: usar pra colar em vez de aprender
+
+Esse é o mais silencioso. E o mais caro no longo prazo.
+
+Pedir a resposta pronta resolve a tarefa de hoje. Mas você não aprende nada. E fica dependente: sem a IA, você trava.
+
+Conserto: quando o assunto é algo que você quer dominar, use a IA pra te ensinar e te testar, não pra fazer por você. Quem faz o esforço mental aprende. Se a IA faz o esforço, ela aprende e você fica pra trás.
+
+## O que une os cinco
+
+Repare no padrão. Todos os cinco erros vêm da mesma raiz: tratar a IA como um buscador mágico.
+
+Ela não é buscador. É um colaborador que precisa ser dirigido. Você dá o contexto, você revisa, você decide. A IA executa.
+
+Vale o ponto: corrigir esses erros dá um trabalho que o atalho não dá. Mas é a diferença entre usar 20% da ferramenta e usar ela inteira.
+
+A ferramenta é a mesma pra todo mundo. O resultado, não.
+
+A decisão é sua.`,
+  },
+  {
+    id: "prompt-de-uma-linha-que-melhora-tudo-2026",
+    slug: "prompt-de-uma-linha-que-melhora-tudo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-28T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "O prompt de 1 linha que melhora qualquer resposta",
+    excerpt: "Uma frase que você adiciona ao fim do pedido e a qualidade da resposta sobe na hora. Simples e subestimado.",
+    summary: "O prompt de uma linha que muda tudo: 'antes de responder, me faça as perguntas que faltam pra você dar a melhor resposta'. Isso força a IA a buscar contexto em vez de chutar. Variações úteis: pedir pra ela criticar a própria resposta, ou explicar o raciocínio antes da conclusão.",
+    faq: [
+      {"q": "Qual é o prompt de uma linha que melhora tudo?", "a": "'Antes de responder, me faça as perguntas que faltam pra você dar a melhor resposta possível.' Isso faz a IA coletar o contexto que ela precisa em vez de chutar com o que tem."},
+      {"q": "Por que pedir pra IA fazer perguntas melhora a resposta?", "a": "Porque o maior limitador da IA é falta de contexto. Quando ela pergunta, você preenche as lacunas certas, e a resposta sai sob medida em vez de genérica."},
+      {"q": "Tem outras frases de uma linha que funcionam?", "a": "Sim: 'critique sua própria resposta e melhore' e 'explique seu raciocínio antes de dar a conclusão'. As duas forçam a IA a pensar mais antes de entregar."}
+    ],
+    content: `Existe uma frase que você adiciona ao fim de quase qualquer pedido e a resposta melhora na hora. Não é truque de guru. É lógica.
+
+A frase é essa:
+
+    Antes de responder, me faça as perguntas que faltam pra você dar a melhor resposta possível.
+
+Parece boba. Não é.
+
+## Por que isso funciona
+
+O maior limitador da IA não é inteligência. É falta de contexto.
+
+Você pede um plano de marketing. A IA não sabe seu orçamento, seu público, seu produto, seu prazo. Então ela chuta pro meio e entrega genérico.
+
+Quando você manda ela perguntar primeiro, o jogo vira. Ela para, identifica o que não sabe e pergunta. Você responde. Aí ela entrega com o contexto certo.
+
+Você transformou um monólogo num diálogo. E diálogo rende resposta melhor.
+
+## O antes e depois
+
+Sem a frase:
+
+    Me dá um plano de conteúdo pro meu Instagram.
+
+A IA cospe um plano genérico que serve pra qualquer um e ajuda ninguém.
+
+Com a frase:
+
+    Me dá um plano de conteúdo pro meu Instagram. Antes de responder, me faça as perguntas que faltam.
+
+Agora ela pergunta: qual seu nicho? Quantos posts por semana? Vende o quê? Qual seu tom? Você responde e o plano sai sob medida.
+
+Mesma IA. Uma linha de diferença.
+
+## Duas variações que também funcionam
+
+A frase das perguntas é a principal. Mas guarde mais duas no bolso.
+
+Primeira, a autocrítica:
+
+    Depois de responder, critique a sua própria resposta e me entregue uma versão melhorada.
+
+A IA revisa o próprio trabalho. Costuma achar as fraquezas e consertar sozinha.
+
+Segunda, o raciocínio antes da conclusão:
+
+    Explique seu raciocínio passo a passo antes de me dar a conclusão.
+
+Isso força a IA a pensar em vez de pular pra resposta. Em problemas com lógica ou conta, a diferença é grande. E você vê onde ela errou, se errar.
+
+## Quando usar cada uma
+
+A frase das perguntas: quando o pedido é importante e você tem contexto que ainda não deu.
+
+A autocrítica: quando a primeira resposta veio boa mas não ótima.
+
+O raciocínio: quando o problema envolve lógica, decisão ou cálculo.
+
+Vale o ponto: nem todo pedido precisa disso. Pra uma pergunta simples e direta, só atrapalha. O ganho aparece nas tarefas onde o contexto importa, e são a maioria das que valem a pena.
+
+A melhor resposta não vem do melhor prompt gigante. Vem de deixar a IA perguntar o que falta.
+
+A decisão é sua.`,
+  },
+  {
+    id: "por-que-dar-contexto-pra-ia-2026",
+    slug: "por-que-dar-contexto-pra-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-29T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que você deve dar contexto pra IA (e como fazer)",
+    excerpt: "Contexto é o que separa resposta genérica de resposta que serve. Entenda por que importa tanto e como dar do jeito certo.",
+    summary: "Contexto é o fator que mais muda a qualidade da resposta da IA. Sem ele, a IA responde pra uma média imaginária que não é você. Dê quatro tipos de contexto: quem você é, pra quem é o resultado, qual o objetivo e exemplos do que você espera. Contexto de mais também atrapalha, então foque no que muda a resposta.",
+    faq: [
+      {"q": "Por que a IA precisa de contexto?", "a": "Porque sem contexto ela responde pra uma pessoa média imaginária, que não é você. O contexto diz pra ela quem você é, o que você precisa e pra quê, e a resposta sai sob medida."},
+      {"q": "Que tipo de contexto eu devo dar?", "a": "Quem você é, pra quem é o resultado, qual o objetivo e exemplos do que você espera. Esses quatro cobrem a maioria dos casos."},
+      {"q": "Existe contexto demais?", "a": "Sim. Encher a IA de detalhes irrelevantes dilui o que importa. Dê o contexto que muda a resposta, não a sua biografia inteira."}
+    ],
+    content: `Se eu pudesse te ensinar uma coisa só sobre usar IA, seria essa: dê contexto. É o que mais muda a qualidade da resposta. Mais que prompt bonito, mais que ferramenta paga, mais que truque.
+
+E quase ninguém faz direito.
+
+## O problema de não dar contexto
+
+Sem contexto, a IA responde pra uma pessoa média imaginária. Uma pessoa que não é você, não tem seu problema, não trabalha no seu ramo.
+
+Você pergunta "como eu aumento minhas vendas?". A IA não sabe se você vende software ou pastel, se fatura mil ou um milhão, se vende online ou na esquina. Então ela dá a resposta que serve pra todo mundo e ajuda ninguém.
+
+Resposta genérica não é culpa da IA. É falta de contexto.
+
+## O que é dar contexto, na prática
+
+Contexto é tudo que você sabe e a IA não. Sua situação, seu objetivo, suas restrições, seu público.
+
+Pensa numa consulta médica. Se você chega e diz só "estou mal", o médico chuta. Se você diz "estou com dor de cabeça há três dias, do lado direito, piora com luz", ele tem por onde começar.
+
+A IA é igual. Sintoma detalhado, diagnóstico melhor.
+
+## Os quatro contextos que mais importam
+
+Você não precisa escrever uma redação. Quatro coisas cobrem a maioria dos casos.
+
+Quem você é.
+
+    Sou nutricionista, atendo online, tenho 2 anos de consultório.
+
+Pra quem é o resultado.
+
+    O texto é pra mães que querem melhorar a alimentação dos filhos sem brigar.
+
+Qual o objetivo.
+
+    Quero que elas agendem uma consulta comigo.
+
+Exemplos do que você espera.
+
+    Gosto de texto assim: [cola um exemplo].
+
+Junte os quatro e a resposta muda de patamar.
+
+## Como dar sem escrever um textão
+
+Você não precisa dar tudo em toda mensagem. Duas formas de facilitar.
+
+Primeira: guarde o contexto fixo num lugar reutilizável, como as instruções de um projeto de IA. Aí você escreve uma vez e a IA sempre lembra.
+
+Segunda: comece a conversa com um bloco de contexto e depois só peça as tarefas. A IA carrega o contexto pela conversa toda.
+
+## O outro lado: contexto demais atrapalha
+
+Vale o ponto: dá pra exagerar. Encher a IA com sua biografia inteira, dados que não importam, três parágrafos de história, dilui o que é relevante.
+
+O bom contexto é o que muda a resposta. Se a informação não afeta o que a IA vai produzir, corta.
+
+Pergunte-se: isso muda a resposta que eu quero? Se sim, inclua. Se não, deixa fora.
+
+## O teste simples
+
+Quer saber se você deu contexto suficiente? Leia seu prompt como se fosse um estranho.
+
+Se um estranho conseguisse dar uma boa resposta com o que você escreveu, a IA também consegue. Se o estranho ficaria perdido, a IA também fica.
+
+Contexto não é etapa opcional. É a etapa que decide tudo.
+
+A decisão é sua.`,
+  },
+  {
+    id: "3-sinais-de-que-a-ia-esta-te-enrolando-2026",
+    slug: "3-sinais-de-que-a-ia-esta-te-enrolando-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-30T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "3 sinais de que a IA está te enrolando",
+    excerpt: "A IA erra com a mesma confiança com que acerta. Três sinais de que a resposta pode ser invenção, e o que fazer.",
+    summary: "A IA às vezes inventa com total confiança, o que se chama alucinação. Três sinais de alerta: excesso de certeza sem fonte, resposta genérica que não engaja com a sua pergunta específica, e detalhes bonitos demais (números redondos, citações precisas) que ela não teria como saber. Diante deles, peça a fonte e verifique.",
+    faq: [
+      {"q": "O que é alucinação de IA?", "a": "É quando a IA inventa uma informação e apresenta como verdade, com total confiança. Ela não mente de propósito: gera o texto mais provável, que nem sempre é o correto."},
+      {"q": "Como sei se a IA está inventando?", "a": "Desconfie de excesso de certeza sem fonte, respostas genéricas que ignoram sua pergunta específica e detalhes precisos demais, como citações e números exatos que ela não teria como saber."},
+      {"q": "O que fazer quando desconfio da resposta?", "a": "Peça a fonte e verifique por fora. Pergunte 'como você sabe disso?' e 'qual a fonte?'. Se ela recua ou inventa a fonte, era enrolação."}
+    ],
+    content: `A IA tem um problema perigoso: ela erra com a mesma cara de quem acerta. Não gagueja, não avisa, não coloca um "acho que". Ela afirma. E soa convincente afirmando bobagem.
+
+Isso tem nome: alucinação. E você precisa aprender a farejar.
+
+## Antes: por que a IA inventa
+
+A IA não sabe nada, no sentido humano. Ela prevê a próxima palavra mais provável.
+
+Na maioria das vezes, o mais provável é o certo. Mas às vezes o mais provável é um texto que soa certo e é falso. Ela preenche o buraco com algo plausível, não verdadeiro.
+
+Ela não está mentindo. Não tem intenção. Mas o efeito, pra você, é o mesmo: informação errada com cara de verdade.
+
+Aqui estão os três sinais pra ligar o alerta.
+
+## Sinal 1: certeza demais, fonte de menos
+
+Desconfie quando a IA afirma algo específico com total segurança e nenhuma fonte.
+
+"O estudo X de 2019 provou que Y." "A lei Z determina exatamente W." "A média do setor é 37%."
+
+Soa autoridade. Mas cadê a fonte? Se ela cravou um número ou um fato preciso sem dizer de onde tirou, acenda o farol.
+
+O que fazer: pergunte "qual a fonte disso?". Se ela inventa um link que não abre ou recua e reformula, era chute.
+
+## Sinal 2: resposta genérica que ignora sua pergunta
+
+Você faz uma pergunta específica e recebe uma resposta que serviria pra qualquer pergunta parecida.
+
+Isso costuma significar que a IA não sabe a resposta do seu caso, então devolve o lugar-comum. Ela enrola pra não dizer "não sei".
+
+O que fazer: repare se a resposta engaja com o detalhe da sua pergunta ou fica na superfície. Se está genérica, pressione: "responda especificamente pro meu caso, que é [detalhe]". Se ela continua genérica, provavelmente não sabe.
+
+## Sinal 3: detalhes bonitos demais
+
+Este é o mais traiçoeiro, porque parece o oposto de enrolação.
+
+A IA te dá uma citação exata, com autor, ano e página. Um número redondo e preciso. Uma estatística específica. Detalhes tão perfeitos que dão vontade de acreditar.
+
+Mas pergunte-se: ela teria como saber isso com essa precisão? Citações literais e dados exatos são exatamente o tipo de coisa que a IA inventa com mais confiança, porque o formato é fácil de imitar.
+
+O que fazer: quanto mais preciso e verificável o detalhe, mais você deve verificar. Cole a citação num buscador. Cheque o número na fonte oficial.
+
+## A regra que resolve
+
+Uma pergunta simples desarma quase toda alucinação:
+
+    Como você sabe disso? Qual a fonte?
+
+A IA honesta te dá a fonte ou admite que está estimando. A resposta enrolada gagueja, inventa fonte ou reformula pra fugir.
+
+Vale o ponto: nem toda resposta segura é mentira. A IA acerta muito. O ponto não é desconfiar de tudo, é desconfiar do que você vai publicar, usar numa decisão ou repassar como verdade.
+
+Confiança da IA não é prova de verdade. Fonte é.
+
+A decisão é sua.`,
+  },
+  {
+    id: "pergunta-antes-de-confiar-na-ia-2026",
+    slug: "pergunta-antes-de-confiar-na-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-31T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "A pergunta que você deve fazer antes de confiar na resposta da IA",
+    excerpt: "Uma pergunta simples, feita antes de usar qualquer resposta, filtra a maioria dos erros da IA. Descubra qual é.",
+    summary: "A pergunta que filtra os erros da IA: 'o que acontece se isso estiver errado?'. Se a resposta tem baixo custo de erro, use e siga em frente. Se um erro traz consequência séria (dinheiro, saúde, legal, reputação), verifique na fonte antes. Calibrar a confiança pelo risco é mais inteligente que confiar ou desconfiar de tudo.",
+    faq: [
+      {"q": "Qual pergunta fazer antes de confiar na IA?", "a": "'O que acontece se isso estiver errado?' Ela mede o custo do erro. Se for baixo, use direto. Se for alto, verifique na fonte antes de agir."},
+      {"q": "Preciso verificar tudo que a IA responde?", "a": "Não. Verificar tudo é perda de tempo. Calibre pelo risco: quanto maior a consequência de um erro, mais você deve checar. Coisa trivial não precisa."},
+      {"q": "Quando devo sempre verificar a resposta da IA?", "a": "Quando envolve dinheiro, saúde, questão legal, dados numéricos que você vai publicar, ou decisão difícil de desfazer. Nesses casos, o custo do erro é alto demais pra confiar cego."}
+    ],
+    content: `Tem gente que confia em tudo que a IA diz. Tem gente que não confia em nada. As duas estão erradas.
+
+O certo é calibrar. E existe uma pergunta que faz essa calibragem por você, em segundos, antes de usar qualquer resposta.
+
+A pergunta é:
+
+    O que acontece se isso estiver errado?
+
+## Por que essa pergunta
+
+Ela desloca o foco. Em vez de perguntar "a IA está certa?", que você nem sempre consegue responder, ela pergunta "quanto custa se estiver errada?".
+
+Essa segunda pergunta você quase sempre consegue responder. E é ela que decide se você verifica ou segue em frente.
+
+Custo baixo do erro: use e toca o barco. Custo alto do erro: para e confere.
+
+## O espectro do risco
+
+Pense num termômetro de consequência.
+
+Risco baixo. Você pediu ideias de nome pra um projeto pessoal. Se a IA sugerir algo bobo, você descarta e pede de novo. Custo do erro: zero. Não verifique nada, só use.
+
+Risco médio. Você pediu um resumo de um artigo pra estudar. Se ela distorcer um ponto, você aprende algo torto, mas dá pra corrigir depois. Custo do erro: moderado. Uma olhada rápida na fonte resolve.
+
+Risco alto. Você pediu a dosagem de um remédio, a interpretação de uma cláusula de contrato, ou um número que vai pro seu relatório financeiro. Se estiver errado, o estrago é real. Custo do erro: alto. Verifique sempre, na fonte, antes de agir.
+
+## Os territórios de verificação obrigatória
+
+Alguns assuntos são risco alto por natureza. Nesses, verifique sempre, sem exceção:
+
+    Dinheiro: valores, cálculos, decisões financeiras
+    Saúde: sintomas, remédios, dosagens
+    Legal: contratos, leis, direitos
+    Números pra publicar: dados, estatísticas, citações
+    Decisões difíceis de desfazer
+
+Nesses campos, a confiança da IA não vale. A fonte vale.
+
+## Por que não verificar tudo
+
+Vale o ponto: verificar cada resposta seria absurdo. Você perderia o ganho de usar IA. Se pra tudo você tem que ir na fonte, então usa direto a fonte.
+
+O objetivo não é desconfiar de tudo. É gastar sua energia de verificação onde ela importa. A maioria das interações com IA é de baixo risco, e nessas você pode andar rápido.
+
+A inteligência está em saber quando parar.
+
+## Como isso vira hábito
+
+No começo você faz a pergunta de forma consciente. Depois de uns dias, vira automático.
+
+Você lê a resposta e o seu cérebro já classifica: isso é trivial, uso. Isso é sério, confiro. Sem esforço.
+
+É o mesmo instinto que você já usa na vida. Você confia num palpite de amigo sobre um filme. Você não confia num palpite de amigo sobre um investimento sem checar. Consequência diferente, cuidado diferente.
+
+Uma pergunta antes de confiar. E o custo do erro te diz o que fazer.
+
+A decisão é sua.`,
+  },
+  {
+    id: "copiar-resposta-de-ia-sem-ler-perigo-2026",
+    slug: "copiar-resposta-de-ia-sem-ler-perigo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-01T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que copiar resposta de IA sem ler é perigoso",
+    excerpt: "Copiar e colar sem ler transfere a autoria pra IA e a responsabilidade pra você. Um combo ruim. Veja o que dá errado.",
+    summary: "Copiar resposta de IA sem ler é perigoso porque a IA erra fatos, inventa dados, foge do tom e às vezes contradiz a si mesma, e você assina embaixo de tudo. A responsabilidade é de quem publica, não da máquina. Ler antes de usar leva segundos e evita o vexame ou o prejuízo. É a primeira camada de qualquer revisão.",
+    faq: [
+      {"q": "Por que é perigoso copiar resposta de IA sem ler?", "a": "Porque a IA erra fatos, inventa dados e foge do tom, e quem assina o conteúdo é você. O erro vira seu no momento em que você publica ou envia sem ler."},
+      {"q": "Mas a IA não está cada vez melhor?", "a": "Está, e mesmo assim erra. Melhor não é perfeito. E os erros ficam mais difíceis de pegar justamente porque o texto está mais convincente. Ler continua obrigatório."},
+      {"q": "Quanto tempo eu perco lendo antes de usar?", "a": "Segundos a poucos minutos, dependendo do tamanho. É barato perto do custo de publicar um erro, mandar um número errado pro chefe ou entregar um contrato com uma cláusula que você não viu."}
+    ],
+    content: `Existe um gesto pequeno que causa problema grande: copiar a resposta da IA e colar direto, sem ler. Num e-mail, num relatório, num post, num código.
+
+Parece produtividade. É risco disfarçado de atalho.
+
+## O que você está fazendo quando copia sem ler
+
+Você está transferindo a autoria pra IA e mantendo a responsabilidade com você.
+
+A IA escreveu. Mas quem manda o e-mail é você. Quem assina o relatório é você. Quem publica o post leva o seu nome. Se tem erro, o erro é seu no instante em que você aperta enviar.
+
+É o pior dos dois mundos: você não fez, mas responde por tudo.
+
+## O que costuma dar errado
+
+Não é raro. É comum. E os erros são destes tipos.
+
+Fato errado. A IA afirma algo que não é verdade, com toda a confiança. Você repassa como verdade.
+
+Dado inventado. Um número, uma estatística, uma citação que não existe. Você publica e alguém checa.
+
+Tom fora. A IA escreveu formal demais, ou vendedor demais, ou com um "espero que esteja bem" que não é seu. Chega no destinatário soando falso.
+
+Contradição interna. Em textos longos, a IA às vezes diz uma coisa no começo e o oposto no fim. Quem lê percebe. Quem colou sem ler, não.
+
+Detalhe do seu caso ignorado. A resposta é boa em geral e errada pro seu contexto específico. Você não notou porque não leu.
+
+## O caso do código
+
+Pra quem constrói com IA, o perigo é maior ainda.
+
+Código copiado sem ler pode funcionar e ainda assim estar errado. Pode ter uma falha de segurança. Pode vazar um dado. Pode quebrar em produção num caso que você não testou.
+
+Estudos de segurança já mostraram que código gerado por IA traz vulnerabilidade com frequência preocupante. Colar sem ler é abrir a porta e nem olhar quem entrou.
+
+Por isso a primeira camada de qualquer revisão de código é a mais óbvia: ler. Entender o que aquilo faz antes de confiar.
+
+## O contra-argumento e por que ele não cola
+
+Vale o ponto: a IA está cada vez melhor. Erra menos que ano passado. É verdade.
+
+Mas melhor não é perfeito. E tem uma armadilha aí: quanto melhor o texto, mais convincente o erro. O deslize que sobra é justamente o mais difícil de pegar, porque vem embrulhado num texto redondo.
+
+IA melhor não te dispensa de ler. Te obriga a ler com mais atenção.
+
+## O hábito que resolve
+
+A correção é ridícula de simples: leia antes de usar. Sempre.
+
+Leva segundos num e-mail curto. Leva poucos minutos num texto longo. É o investimento mais barato que existe perto do custo de publicar um erro com o seu nome.
+
+Ler não é desconfiança da IA. É assumir a autoria do que você entrega.
+
+Quem cola sem ler terceiriza o texto e fica com a conta.
+
+A decisão é sua.`,
+  },
+  {
+    id: "habito-diario-usar-ia-10x-melhor-2026",
+    slug: "habito-diario-usar-ia-10x-melhor-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-02T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "O hábito diário que faz você usar IA 10x melhor",
+    excerpt: "Não é um prompt secreto nem uma ferramenta nova. É um hábito de cinco minutos que quase ninguém tem. Veja qual.",
+    summary: "O hábito que multiplica seu uso de IA: guardar os prompts que funcionaram e reusar. A maioria das pessoas reescreve tudo do zero toda vez e nunca melhora. Quem guarda o que deu certo constrói uma biblioteca pessoal que fica mais forte a cada dia. Cinco minutos por dia salvando e refinando prompts compõem como juro.",
+    faq: [
+      {"q": "Qual o hábito que faz usar IA muito melhor?", "a": "Guardar os prompts que funcionaram e reusar. Em vez de reescrever do zero toda vez, você constrói uma biblioteca pessoal de pedidos que já deram certo e só ajusta pro caso novo."},
+      {"q": "Onde eu guardo os prompts que funcionam?", "a": "Onde for fácil de achar: um documento, um app de notas, ou as instruções de um projeto de IA. O importante é ter um lugar único e voltar nele sempre."},
+      {"q": "Por que reusar prompt é melhor que criar sempre do zero?", "a": "Porque cada prompt bom foi um trabalho que você já fez. Reusar aproveita esse esforço e melhora com pequenos ajustes. Criar do zero toda vez é recomeçar do zero toda vez, sem nunca acumular."}
+    ],
+    content: `Todo mundo procura o prompt secreto, a ferramenta nova, o truque que ninguém conhece. E ignora a coisa mais simples que separa quem usa IA bem de quem usa mal.
+
+Não é técnica. É hábito. E é este:
+
+    Guarde os prompts que funcionaram. Reuse.
+
+Cinco minutos por dia. Quase ninguém faz.
+
+## O erro que quase todo mundo comete
+
+Repare no seu próprio uso. Você provavelmente escreve cada prompt do zero, toda vez.
+
+Ontem você montou um pedido ótimo que gerou um texto excelente. Hoje você precisa de algo parecido e começa da estaca zero, tentando lembrar como fez. Amanhã, de novo.
+
+Você joga fora o trabalho de ontem todo santo dia. Nunca acumula nada.
+
+## O hábito que muda tudo
+
+Quem usa IA bem faz o oposto. Quando um prompt funciona, ele guarda.
+
+Não na memória. Num lugar. Um documento, um app de notas, as instruções de um projeto. Um lugar único onde ele volta sempre.
+
+Com o tempo, isso vira uma biblioteca pessoal. Prompt de e-mail que funciona. Prompt de resumo que funciona. Prompt de plano de estudo que funciona. Cada um testado, refinado, pronto pra usar.
+
+Da próxima vez, ele não cria do zero. Ele pega o que já deu certo e ajusta o detalhe. Trinta segundos em vez de dez minutos, e com qualidade melhor.
+
+## Por que isso compõe como juro
+
+Aqui está a mágica, e ela é chata de tão simples.
+
+Cada prompt bom que você guarda é um ativo. Ele te serve hoje, semana que vem, mês que vem. Você paga o custo uma vez e colhe pra sempre.
+
+E melhora. Toda vez que você reusa, você nota um jeito de deixar melhor. Ajusta. O prompt fica mais afiado. Depois de um mês, seus prompts guardados são muito melhores que o que você escreveria na hora.
+
+Isso é juro composto aplicado a habilidade. Pequeno acúmulo diário que vira uma vantagem grande.
+
+## Como montar isso em cinco minutos por dia
+
+Simples assim.
+
+Primeiro, escolha um lugar. Um documento chamado "meus prompts" já resolve. Não complique.
+
+Segundo, ao fim do dia, olhe o que você usou. Achou um prompt que rendeu? Cola lá. Dá um título curto pra achar depois.
+
+Terceiro, quando for fazer uma tarefa parecida, abra a biblioteca antes de escrever do zero. Ache o parecido, copie, ajuste.
+
+Quarto, quando reusar e melhorar, atualize a versão guardada. A biblioteca cresce e se afia sozinha.
+
+## O que separa os dois grupos
+
+No fim, existem dois tipos de gente usando as mesmas ferramentas.
+
+O primeiro recomeça do zero todo dia. O uso dele hoje é igual ao de três meses atrás.
+
+O segundo acumula. O uso dele fica melhor a cada semana, porque cada acerto vira ativo.
+
+Vale o ponto: guardar prompt dá uma preguicinha no começo. Parece burocracia. Mas é a diferença entre andar em círculo e andar pra frente.
+
+A ferramenta é igual pra todo mundo. Quem acumula, ganha.
+
+A decisão é sua.`,
+  },
+{
+    id: "como-criar-primeiro-site-do-zero-com-ia-2026",
+    slug: "como-criar-primeiro-site-do-zero-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-03T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "Como criar seu primeiro site do zero com IA (passo a passo)",
+    excerpt: "Do nada pra um site no ar em uma tarde. Sem enrolação, sem curso de 40 horas. Passo a passo real.",
+    summary: "Você não precisa saber programar pra ter um site no ar hoje. Precisa de um objetivo claro, um prompt bom e um lugar pra publicar. Este tutorial mostra o caminho do zero até o link funcionando, com o método P.E.D.E.R. na mão.",
+    faq: [
+      {"q": "Preciso saber programar pra fazer isso?", "a": "Não. Você precisa saber descrever o que quer com clareza. A IA escreve o código. Você conduz."},
+      {"q": "Qual ferramenta usar?", "a": "Qualquer uma que gere e publique: Lovable, v0, Bolt ou Cursor com deploy na Vercel. Comece com uma só."},
+      {"q": "Quanto tempo leva?", "a": "Um site simples de uma página sai em uma tarde. O primeiro sempre demora mais porque você está aprendendo o fluxo."}
+    ],
+    content: `Você abre o editor. Tela branca. E trava.
+
+Todo mundo trava na primeira vez. O problema não é a ferramenta. É que ninguém te ensinou a pedir direito.
+
+Vou te mostrar o caminho do zero até o link funcionando. Sem pular etapa.
+
+## Antes de tocar em qualquer ferramenta
+
+Escreva em uma frase o que o site faz. Uma frase.
+
+"Uma página que apresenta meu serviço de consultoria e tem um botão de WhatsApp."
+
+Pronto. Isso é seu escopo. Se você não consegue dizer em uma frase, você não sabe o que quer, e a IA vai adivinhar. Adivinhação vira retrabalho.
+
+## Passo 1: escolha uma ferramenta só
+
+Não abra cinco abas. Escolha uma:
+
+    Lovable ou v0 para gerar e publicar rápido
+    Cursor + Vercel se você quer mais controle
+
+Meu take: comece com Lovable ou v0. Você vê o resultado na hora e publica com um clique. Controle vem depois.
+
+## Passo 2: monte o prompt com P.E.D.E.R.
+
+P.E.D.E.R. é Papel, Exemplo, Desejo, Estilo, Refinar. É o que separa um prompt que funciona de um "faz um site aí".
+
+    Papel: Você é um desenvolvedor front-end sênior.
+    Exemplo: Parecido com uma landing page de SaaS moderno, limpa.
+    Desejo: Uma página com topo, seção de benefícios, depoimento e botão de WhatsApp.
+    Estilo: Fundo escuro, detalhes em âmbar, tipografia grande e legível.
+    Refinar: Depois de ver, você ajusta.
+
+Cole isso na ferramenta. Veja o que sai.
+
+## Passo 3: leia o que a IA gerou
+
+Não aceite de olhos fechados. Olhe a tela. O botão funciona? O texto é o seu ou é placeholder? O link do WhatsApp tem o seu número?
+
+Esse é o começo do Protocolo de Revisão em 5 Camadas: Entender e Ler. Você não precisa entender cada linha de código. Precisa entender o que a página faz e ler se ela faz certo.
+
+## Passo 4: refine em pedidos pequenos
+
+Erro clássico: pedir dez mudanças de uma vez. A IA erra três, você não sabe qual.
+
+Peça uma coisa por vez:
+
+    Troque o texto do topo para "Consultoria que resolve".
+    Deixe o botão de WhatsApp verde.
+    Aumente o espaçamento entre as seções.
+
+Um pedido. Vê o resultado. Próximo pedido. Assim você mantém o controle.
+
+## Passo 5: publique
+
+Nas ferramentas tipo Lovable e v0, publicar é um botão. No Cursor, você conecta na Vercel e faz o deploy. Em minutos você tem um link real, no ar, que você manda pra alguém.
+
+Esse é o momento que vicia. Deixa de ser exercício. Vira coisa de verdade.
+
+## O que fazer no dia seguinte
+
+Não pare no "está no ar". Volte e blinde:
+
+    O botão de WhatsApp abre a conversa certa?
+    A página abre no celular sem quebrar?
+    Tem algum dado seu exposto que não devia estar?
+
+Vibecoding com engenharia é isso. Você constrói rápido. E revisa antes de confiar. Não constrói às cegas e reza.
+
+Seu primeiro site não vai ser perfeito. Vai estar no ar. E isso já te coloca na frente de quem só assiste tutorial.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-conectar-formulario-ao-banco-de-dados-2026",
+    slug: "como-conectar-formulario-ao-banco-de-dados-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-04T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Como conectar um formulário ao seu banco de dados",
+    excerpt: "Um formulário que só manda e-mail é bonito e inútil. Aprenda a salvar os dados de verdade, com segurança.",
+    summary: "A maioria dos formulários gerados por IA não salva nada ou salva de um jeito que qualquer um pode ler. Este tutorial mostra como conectar um formulário ao Firestore, validar os dados e fechar as regras antes de subir.",
+    faq: [
+      {"q": "Preciso de servidor pra salvar dados de um formulário?", "a": "Não necessariamente. Firestore ou Supabase resolvem sem você montar servidor. Mas as regras de acesso precisam estar fechadas."},
+      {"q": "Por que não salvar direto do navegador no banco?", "a": "Pode, se as regras estiverem certas. O perigo é deixar o banco aberto, onde qualquer um lê e escreve. Isso é o erro número um."},
+      {"q": "Como sei se meus dados estão protegidos?", "a": "Teste. Tente ler a coleção sem estar logado. Se conseguir, sua regra está aberta e precisa ser corrigida antes de subir."}
+    ],
+    content: `Seu formulário está lindo. Envia. Mostra "obrigado".
+
+E não salva nada.
+
+Ou pior: salva num banco que qualquer pessoa do mundo consegue ler. Vou te mostrar como fazer certo.
+
+## O que é "conectar ao banco" na prática
+
+Quando alguém preenche o formulário, três coisas precisam acontecer:
+
+    1. Os dados são validados (o e-mail é e-mail mesmo?)
+    2. Os dados são gravados numa coleção do banco
+    3. As regras do banco permitem só o que deve ser permitido
+
+A IA faz o passo 2 fácil. Ela quase sempre ignora o 1 e o 3. Esse é o buraco.
+
+## Passo 1: escolha o banco
+
+Pra vibecoding, dois caminhos simples:
+
+    Firestore (Firebase) se você já usa o ecossistema Google
+    Supabase se você prefere SQL e um painel mais direto
+
+Meu take: Firestore pra começar rápido. É o que roda em vários dos meus produtos. Mas o princípio de segurança vale pros dois.
+
+## Passo 2: peça a conexão com um prompt bom
+
+Não peça "salva o formulário no banco". Peça com contexto:
+
+    Você é dev full-stack. Conecte este formulário ao Firestore.
+    Grave nome, e-mail e mensagem numa coleção chamada contatos.
+    Valide o e-mail antes de gravar. Rejeite campos vazios.
+    Retorne uma mensagem de erro clara se a gravação falhar.
+
+Repare que eu já pedi validação e tratamento de erro no prompt. Se você não pedir, não vem.
+
+## Passo 3: leia o que veio
+
+Abra o código gerado e procure três coisas:
+
+    A validação está lá? Campo vazio é rejeitado?
+    O erro é tratado ou o app quebra em silêncio?
+    A gravação usa a coleção certa?
+
+Isso é a camada Ler do Protocolo de 5 Camadas. Cinco minutos aqui evitam uma dor de cabeça depois.
+
+## Passo 4: feche as regras do banco (a parte que ninguém faz)
+
+Aqui está o erro que derruba app de vibecoder. O Firestore, por padrão em muitos setups, deixa a regra assim:
+
+    allow read, write: if true;
+
+Isso quer dizer: qualquer um, no mundo, lê e escreve no seu banco. Seus dados de clientes, expostos.
+
+O certo pra um formulário público é permitir só a escrita controlada e bloquear a leitura geral:
+
+    allow create: if request.resource.data.email is string;
+    allow read: if false;
+
+Ou seja: pode criar um registro se tiver e-mail válido. Ninguém lê a coleção pelo navegador. A leitura fica no seu painel autenticado.
+
+## Passo 5: teste como um invasor
+
+Não confie. Teste.
+
+    Tente enviar o formulário com campo vazio. Foi rejeitado?
+    Abra o console e tente ler a coleção sem login. Deu erro? Ótimo.
+    Envie um dado real. Ele apareceu no banco?
+
+Segundo a Veracode, código gerado por IA tem 2,74 vezes mais chance de trazer falhas de segurança. Formulário aberto é uma das mais comuns. Testar não é paranoia. É o mínimo.
+
+## O resumo
+
+Salvar dado é fácil. Salvar dado com segurança é o que separa protótipo de produto.
+
+A IA te dá o formulário funcionando em minutos. Blindar o banco é seu trabalho. Vibecoding com engenharia é não pular esse passo.
+
+A decisão é sua.
+
+## Fontes
+
+Veracode, State of Software Security 2025, sobre vulnerabilidades em código gerado por IA.`,
+  },
+  {
+    id: "como-adicionar-busca-no-seu-site-2026",
+    slug: "como-adicionar-busca-no-seu-site-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-05T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Como adicionar busca no seu site com IA",
+    excerpt: "Busca boa parece simples e quase nunca é. Aprenda a começar pelo caminho certo, do filtro básico à busca de verdade.",
+    summary: "Busca é uma daquelas features que a IA entrega funcionando na demo e quebra com dados reais. Este tutorial mostra os três níveis de busca, qual escolher pro seu caso e como não cair na armadilha de trazer o banco inteiro pro navegador.",
+    faq: [
+      {"q": "Preciso de um serviço pago tipo Algolia pra ter busca?", "a": "Não pra começar. Um filtro simples resolve sites pequenos. Serviço dedicado só quando o volume justificar."},
+      {"q": "Por que minha busca fica lenta?", "a": "Geralmente porque você trouxe todos os registros pro navegador e filtra na tela. Com poucos dados funciona. Com muitos, trava."},
+      {"q": "Busca com IA semântica vale a pena?", "a": "Vale quando o usuário busca por significado, não por palavra exata. Pra catálogo pequeno, é canhão pra matar mosquito."}
+    ],
+    content: `Busca é a feature mais subestimada que existe.
+
+Na demo, com dez itens, tudo funciona. Você sobe pra produção com dez mil e a tela congela.
+
+O erro não é a IA. É pedir busca sem entender que existem três buscas diferentes.
+
+## Os três níveis de busca
+
+Antes de pedir qualquer código, decida qual você precisa:
+
+    Nível 1: filtro simples. Digita, esconde o que não bate. Bom pra listas pequenas.
+    Nível 2: busca no banco. Consulta indexada no servidor. Bom pra volume médio.
+    Nível 3: busca semântica. Entende significado, não só palavra. Bom pra conteúdo grande.
+
+Noventa por cento dos sites precisam do nível 1 ou 2. Gente que começa pelo 3 gasta dinheiro e tempo à toa.
+
+## Passo 1: comece pelo filtro simples
+
+Se sua lista tem até algumas centenas de itens, filtro na tela resolve. Prompt:
+
+    Você é dev front-end. Adicione um campo de busca acima desta lista.
+    Ao digitar, filtre os itens que contêm o texto no título, sem diferenciar maiúscula de minúscula.
+    A busca deve ser instantânea, sem botão de enviar.
+
+Simples, rápido, funciona. Não complique antes da hora.
+
+## Passo 2: quando crescer, mova a busca pro banco
+
+O filtro simples tem um teto. Quando você tem milhares de registros, trazer tudo pro navegador fica lento e caro.
+
+A pergunta que denuncia o problema: sua busca carrega o banco inteiro pra filtrar na tela?
+
+Se sim, é hora de mudar. Peça a busca no servidor:
+
+    Refatore a busca para consultar diretamente no Firestore.
+    Traga só os registros que batem com o termo, com limite de 20 resultados por vez.
+    Use um índice no campo de título.
+
+Agora o banco faz o trabalho pesado. O navegador só mostra o resultado.
+
+## Passo 3: leia e teste com dados reais
+
+Aqui mora o erro que a demo esconde. Teste com volume:
+
+    Coloque 500 itens de mentira e busque. Ainda é rápido?
+    Busque um termo que não existe. Mostra "nenhum resultado" ou quebra?
+    Busque com acento e sem acento. Os dois funcionam?
+
+Esse último pega muita gente no Brasil. "São" e "sao" precisam achar a mesma coisa. Se a IA não tratou, você trata.
+
+## Passo 4: só suba pra semântica se o caso pedir
+
+Busca semântica com IA é linda quando o usuário procura por ideia. "Camiseta pra frio" achando "moletom". Mas ela custa mais, é mais complexa e exige embeddings.
+
+Meu take: não comece por aqui. Vale o ponto de subir pra semântica quando você já tem usuários reclamando que a busca por palavra exata não acha o que eles querem. Antes disso, é over-engineering.
+
+## O resumo
+
+Busca boa é a que resolve o problema do seu tamanho hoje. Não a mais avançada do mercado.
+
+Comece simples. Meça. Suba de nível quando doer. Vibecoding com engenharia é construir pro problema real, não pro problema imaginário.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-fazer-upload-de-arquivo-com-seguranca-2026",
+    slug: "como-fazer-upload-de-arquivo-com-seguranca-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-06T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "Como permitir upload de arquivo no seu app com segurança",
+    excerpt: "Upload é a porta dos fundos favorita de invasor. Aprenda a deixar o usuário enviar arquivo sem abrir o seu app.",
+    summary: "Deixar o usuário subir uma foto ou um PDF parece inofensivo. É uma das features mais perigosas quando feita sem cuidado. Este tutorial mostra como validar tipo, limitar tamanho e fechar o Storage antes de liberar upload no seu app.",
+    faq: [
+      {"q": "Qual o maior risco de um upload aberto?", "a": "Dois: alguém subir arquivo malicioso e alguém encher seu Storage de lixo, estourando seu custo. Ambos evitáveis com regras."},
+      {"q": "Preciso validar o arquivo no navegador ou no servidor?", "a": "Nos dois. No navegador pra experiência, no servidor ou nas regras pra segurança. Validação só no navegador é fácil de burlar."},
+      {"q": "Posso deixar qualquer tipo de arquivo?", "a": "Não. Aceite só os tipos que seu app usa de verdade. Uma foto de perfil não precisa aceitar arquivo executável."}
+    ],
+    content: `Upload parece a feature mais boba do mundo. Um botão, escolhe o arquivo, envia.
+
+É uma das mais perigosas.
+
+Upload aberto é convite pra três problemas: arquivo malicioso, Storage lotado e conta estourada. Vou te mostrar como fechar cada porta.
+
+## Por que upload é perigoso
+
+Quando você deixa alguém subir um arquivo, você está deixando um estranho gravar dados no seu servidor. Sem regras, ele pode:
+
+    Subir um arquivo executável disfarçado
+    Subir milhares de arquivos gigantes e estourar seu custo
+    Sobrescrever arquivos de outros usuários
+
+A IA gera o botão de upload em segundos. Ela raramente gera as travas. Você coloca.
+
+## Passo 1: defina o que é permitido antes de codar
+
+Responda três perguntas:
+
+    Quais tipos de arquivo? (só imagem? só PDF?)
+    Qual tamanho máximo? (2 MB? 10 MB?)
+    Quem pode subir? (qualquer visitante ou só logado?)
+
+Sem essas três respostas, você não tem como blindar. Tem como só liberar.
+
+## Passo 2: peça o upload com as travas no prompt
+
+    Você é dev full-stack. Implemente upload de imagem para o Firebase Storage.
+    Aceite apenas arquivos JPG e PNG.
+    Rejeite arquivos maiores que 5 MB.
+    Só permita upload de usuário autenticado.
+    Mostre erro claro se o arquivo for inválido.
+
+Repare: as regras estão no pedido. Se você pedir só "faça upload", vem o botão sem trava.
+
+## Passo 3: valide no navegador (pra experiência)
+
+A validação no navegador é pra dar feedback rápido. O usuário escolhe um arquivo errado e vê o erro na hora, sem esperar o envio.
+
+    Verifique a extensão e o tamanho antes de enviar.
+    Mostre "só JPG ou PNG, até 5 MB" se estiver errado.
+
+Mas atenção: isso é conforto, não segurança. Validação no navegador se burla com dois cliques. Ela não protege nada sozinha.
+
+## Passo 4: feche o Storage nas regras (a segurança real)
+
+Aqui está a trava que importa. As regras do Firebase Storage decidem quem sobe o quê, e elas rodam no servidor. Ninguém burla.
+
+    allow write: if request.auth != null
+      && request.resource.size < 5 * 1024 * 1024
+      && request.resource.contentType.matches('image/.*');
+
+Traduzindo: só sobe quem está logado, arquivo menor que 5 MB, e só se for imagem. Essa regra é a diferença entre um app e um problema.
+
+## Passo 5: teste tentando quebrar
+
+Vire o invasor por cinco minutos:
+
+    Tente subir um PDF onde só devia entrar imagem. Foi barrado?
+    Tente subir um arquivo de 50 MB. Foi barrado?
+    Tente subir sem estar logado. Foi barrado?
+
+Se qualquer um passou, sua regra tem furo. Conserte antes de subir.
+
+## O custo de não fazer
+
+Storage aberto não é só risco de segurança. É risco financeiro. Alguém pode automatizar upload e encher seu bucket em uma noite. Você acorda com uma conta absurda.
+
+Segundo a Veracode, código de IA tem 2,74 vezes mais falhas de segurança. Upload sem validação é uma delas, e das mais caras.
+
+Upload seguro não é difícil. É só não pular a etapa das regras. Vibecoding com engenharia é lembrar que todo campo onde o usuário envia dado é uma porta. E porta boa tem fechadura.
+
+A decisão é sua.
+
+## Fontes
+
+Veracode, State of Software Security 2025.`,
+  },
+  {
+    id: "como-criar-api-simples-e-testar-2026",
+    slug: "como-criar-api-simples-e-testar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-07T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Como criar uma API simples e testar se funciona",
+    excerpt: "API deixou de ser bicho de sete cabeças. Aprenda a criar uma rota, entender o que ela faz e testar de verdade.",
+    summary: "API parece coisa de dev sênior, mas o conceito é simples: uma porta que recebe pedido e devolve resposta. Este tutorial mostra como criar uma rota com IA, entender cada parte e testar antes de confiar que funciona.",
+    faq: [
+      {"q": "O que é uma API, sem jargão?", "a": "Uma porta do seu app que recebe um pedido e devolve uma resposta. Você pede dados, ela entrega. Você manda dados, ela salva."},
+      {"q": "Preciso de servidor pra criar uma API?", "a": "Com Next.js e Vercel, não monta servidor. Você cria uma rota num arquivo e a hospedagem cuida do resto."},
+      {"q": "Como testo uma API sem front-end?", "a": "Com uma ferramenta como o Postman, ou até pelo navegador para rotas simples. Você chama a rota direto e vê o que volta."}
+    ],
+    content: `A palavra API assusta mais do que a coisa.
+
+Uma API é uma porta. Você bate, faz um pedido, ela devolve uma resposta. Só isso.
+
+Vou te mostrar como criar uma e, mais importante, como testar se ela funciona de verdade.
+
+## O que é uma API na prática
+
+Imagine um garçom. Você pede o prato, ele leva o pedido pra cozinha, volta com a comida. Você não entra na cozinha.
+
+A API é o garçom. Seu front-end faz o pedido, a API busca no banco, devolve o resultado. Quem faz o trabalho pesado fica escondido atrás da porta.
+
+Isso é bom por dois motivos: organização e segurança. A lógica sensível fica no servidor, longe do navegador.
+
+## Passo 1: crie uma rota simples
+
+Com Next.js, uma API é um arquivo numa pasta. Prompt:
+
+    Você é dev back-end. Crie uma rota de API em Next.js no caminho /api/contatos.
+    No método GET, retorne a lista de contatos do Firestore.
+    No método POST, receba nome e e-mail e salve um novo contato.
+    Valide os dados no POST. Retorne erro claro se faltar campo.
+
+Duas rotas: uma que busca, uma que salva. É o feijão com arroz de qualquer app.
+
+## Passo 2: entenda o que a IA gerou
+
+Não avance sem entender o essencial. Abra o arquivo e identifique:
+
+    Onde ele lê o pedido que chega (o corpo do POST)?
+    Onde ele fala com o banco?
+    Onde ele devolve a resposta e com qual código (200 ok, 400 erro)?
+
+Você não precisa dominar cada linha. Precisa saber apontar essas três partes. Essa é a camada Entender do Protocolo de 5 Camadas. Sem ela, você não tem como testar direito.
+
+## Passo 3: teste o caminho feliz
+
+Primeiro, teste do jeito certo. Use o Postman ou o navegador:
+
+    Chame o GET. Voltou a lista? Voltou vazia mas sem erro?
+    Chame o POST com nome e e-mail válidos. Salvou? Voltou 200?
+
+Se os dois funcionam, você tem uma API viva. Mas parar aqui é o erro clássico.
+
+## Passo 4: teste o caminho triste (o que importa)
+
+Código de verdade se prova no erro, não no acerto. Teste o que dá errado:
+
+    Chame o POST sem e-mail. Ele rejeita com erro claro ou quebra?
+    Mande um e-mail inválido, tipo "abc". Ele aceita? (não devia)
+    Mande um campo a mais que não existe. Ele ignora ou explode?
+
+A demo passa no caminho feliz. O usuário real vai mandar dado errado o tempo todo. Se sua API não trata isso, ela não está pronta.
+
+## Passo 5: proteja antes de expor
+
+Uma pergunta antes de subir: essa API pode ser chamada por qualquer um?
+
+Se o GET devolve dados de clientes, ele não pode ser público. Blinde:
+
+    Exija autenticação nas rotas que leem ou escrevem dado sensível.
+    Nunca coloque chave de API ou segredo dentro do código da rota que vai pro navegador.
+
+Segredo em API é assunto sério. Chave exposta é conta invadida.
+
+## O resumo
+
+Criar a API é a parte fácil, a IA faz rápido. Testar o que dá errado e proteger o acesso é o que faz dela profissional.
+
+Uma API que só funciona quando tudo dá certo não funciona. Vibecoding com engenharia é testar o erro antes do usuário testar por você.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-conectar-app-a-api-externa-2026",
+    slug: "como-conectar-app-a-api-externa-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-08T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Como conectar seu app a uma API externa (clima, CEP, etc.)",
+    excerpt: "Buscar CEP, clima, cotação. Aprenda a puxar dados de serviços prontos sem expor sua chave nem quebrar quando eles caem.",
+    summary: "Metade da graça de um app é usar dados que já existem: CEP, clima, cotação, mapa. Este tutorial mostra como conectar seu app a uma API externa com segurança, escondendo a chave e tratando o momento em que o serviço externo falha.",
+    faq: [
+      {"q": "Onde guardo a chave da API externa?", "a": "Nunca no código do navegador. Em variável de ambiente, usada por uma rota no servidor. Chave no front-end é chave vazada."},
+      {"q": "E se a API externa cair?", "a": "Seu app precisa tratar isso. Mostre uma mensagem, não uma tela quebrada. Serviço externo sempre cai uma hora."},
+      {"q": "Toda API externa é paga?", "a": "Não. CEP e muitas de clima têm plano grátis. Mas leia o limite de uso antes de depender dela em produção."}
+    ],
+    content: `Você não precisa construir tudo. Metade dos dados que seu app quer já existe pronto em algum lugar.
+
+CEP, clima, cotação do dólar, mapa. Tudo isso é uma chamada de API externa.
+
+O truque não é conectar. A IA faz isso fácil. O truque é conectar sem expor sua chave e sem quebrar quando o serviço do outro lado falha.
+
+## O que é uma API externa
+
+É a mesma ideia de porta, só que a porta é de outra pessoa. Você bate na porta da API dos Correios, pede um CEP, ela devolve o endereço.
+
+Você não mantém aquele dado. Você consome. Isso economiza um trabalho gigante.
+
+## Passo 1: leia a documentação antes de codar
+
+Toda API externa tem um manual. Antes de pedir código, saiba:
+
+    Qual o endereço da chamada?
+    Precisa de chave? Como se pega?
+    Qual o limite grátis? (100 chamadas por dia? 1000?)
+    O que ela devolve quando dá certo e quando dá erro?
+
+Cinco minutos lendo o manual economiza uma hora de tentativa e erro. A IA às vezes inventa endereço de API que não existe. O manual é a verdade.
+
+## Passo 2: esconda a chave no servidor
+
+Este é o erro que mais vejo. A pessoa coloca a chave da API direto no código do navegador. Qualquer um abre o inspecionar e rouba.
+
+O certo: a chave fica numa variável de ambiente e só o servidor a usa. Prompt:
+
+    Você é dev full-stack. Crie uma rota de API em Next.js que chama a API de clima externa.
+    A chave da API externa deve vir de variável de ambiente, nunca do código do cliente.
+    O front-end chama a minha rota. A minha rota chama a externa com a chave.
+
+Assim o navegador nunca vê a chave. Ele fala com o seu servidor, e o seu servidor fala com o serviço externo.
+
+## Passo 3: trate a falha do outro lado
+
+Serviço externo cai. É questão de quando, não de se. E quando cai, seu app não pode quebrar junto.
+
+Pergunte no prompt e verifique no código:
+
+    E se a API externa demorar demais? (precisa de tempo limite)
+    E se ela devolver erro? (precisa mostrar mensagem, não tela branca)
+    E se o CEP não existir? (precisa avisar o usuário)
+
+    try {
+      resposta da API externa
+    } catch {
+      mostra "serviço indisponível, tente de novo"
+    }
+
+Um app que quebra quando o serviço externo tosse é um app frágil. O usuário culpa você, não o serviço.
+
+## Passo 4: respeite o limite de uso
+
+O plano grátis tem teto. Se você bate na API externa a cada tecla que o usuário digita, você estoura o limite num dia.
+
+    Chame só quando precisa, não a cada letra.
+    Guarde resultados que se repetem, pra não pedir a mesma coisa duas vezes.
+
+Isso é cuidado com custo e com o serviço do outro lado. Vale o ponto.
+
+## Passo 5: teste os dois cenários
+
+    Busque um CEP válido. Voltou o endereço certo?
+    Busque um CEP que não existe. Mostrou mensagem amigável?
+    Simule a API fora do ar. Seu app aguentou?
+
+Se o terceiro teste quebrou seu app, você tem trabalho a fazer antes de subir.
+
+## O resumo
+
+Conectar a uma API externa é ganhar dados de graça. Mas com uma condição: esconder sua chave e tratar a falha do outro lado.
+
+A IA conecta em minutos. Blindar a chave e o erro é seu trabalho. Vibecoding com engenharia é depender de terceiros sem ficar refém deles.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-colocar-dominio-proprio-e-https-2026",
+    slug: "como-colocar-dominio-proprio-e-https-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-09T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "Como colocar domínio próprio e HTTPS no seu site",
+    excerpt: "Seu site num link feio de teste não passa confiança. Aprenda a colocar seu domínio e o cadeado verde, do jeito certo.",
+    summary: "Um link tipo meu-app.vercel.app funciona, mas não passa profissionalismo. Este tutorial mostra como registrar um domínio, apontar pro seu site e ativar HTTPS, sem drama de DNS. Passo a passo do link feio ao endereço próprio com cadeado.",
+    faq: [
+      {"q": "Preciso pagar por HTTPS?", "a": "Não. Em plataformas como Vercel e Netlify, o certificado HTTPS é grátis e automático. Você paga só pelo domínio."},
+      {"q": "Quanto custa um domínio?", "a": "Um .com.br ou .com sai por volta de algumas dezenas de reais por ano. É o investimento que mais rende em credibilidade."},
+      {"q": "Por que meu domínio novo não funciona na hora?", "a": "Propagação de DNS. Pode levar de minutos a algumas horas pra valer no mundo todo. Paciência, não é erro seu."}
+    ],
+    content: `Seu site está no ar. Mas o link é meu-projeto-final-2.vercel.app.
+
+Ninguém confia num link assim. Parece teste. Parece amador.
+
+Colocar seu domínio próprio e o cadeado do HTTPS muda a percepção na hora. E é mais simples do que parece. Vou te mostrar.
+
+## Por que isso importa
+
+Duas coisas mudam quando você coloca domínio próprio:
+
+    Confiança: seunegocio.com.br passa profissionalismo. Link de teste não.
+    Segurança visível: o cadeado do HTTPS diz ao visitante que a conexão é protegida.
+
+Sem HTTPS, o navegador hoje mostra "não seguro" na barra. Isso espanta cliente antes dele ler uma linha.
+
+## Passo 1: registre o domínio
+
+Escolha um registrador. No Brasil, o Registro.br pra domínios .com.br. Pra .com, provedores como Namecheap ou Cloudflare.
+
+    Pesquise se o nome está livre.
+    Prefira nomes curtos e fáceis de digitar.
+    Registre. Isso é uma compra sua, no site do registrador, com o seu cartão.
+
+Meu take: não trave semanas escolhendo o nome perfeito. Um nome bom e disponível hoje vale mais que o nome perfeito indisponível.
+
+## Passo 2: conecte o domínio à sua hospedagem
+
+Aqui entra o DNS, que assusta mas é simples. DNS é a lista telefônica da internet: ela diz "esse nome aponta pra esse site".
+
+Na Vercel ou Netlify, o fluxo é:
+
+    No painel da hospedagem, adicione seu domínio.
+    A hospedagem te dá alguns registros pra copiar (tipo A ou CNAME).
+    No painel do registrador, cole esses registros.
+
+É copiar e colar de um painel pro outro. A hospedagem te diz exatamente o que colar. Não precisa decorar o que cada registro significa.
+
+## Passo 3: espere a propagação
+
+Você configurou e o site não abre no domínio novo. Calma. Isso é normal.
+
+O DNS leva um tempo pra se espalhar pelo mundo. Pode ser dez minutos, pode ser algumas horas. Não é erro. É a internet atualizando os servidores.
+
+Enquanto espera, não fique refazendo a configuração achando que errou. Isso só atrapalha. Configurou uma vez? Espere.
+
+## Passo 4: ative o HTTPS (quase automático)
+
+Aqui está a boa notícia. Em Vercel e Netlify, o HTTPS é automático e grátis.
+
+Assim que o domínio propaga, a plataforma gera o certificado sozinha. O cadeado aparece. Você não faz nada além de esperar.
+
+Se depois de horas o cadeado não veio, confira:
+
+    O domínio está apontando certo? (às vezes um registro ficou errado)
+    Você forçou o redirecionamento de HTTP pra HTTPS no painel?
+
+Esse redirecionamento garante que quem digita o endereço sem https caia na versão segura. Ative sempre.
+
+## Passo 5: teste tudo
+
+    Abra o domínio novo. Carregou o site certo?
+    O cadeado aparece na barra?
+    Digite o endereço sem https. Ele redireciona pro seguro?
+    Abra no celular. Funciona igual?
+
+Se os quatro passam, você saiu do link de teste pro endereço profissional.
+
+## O resumo
+
+Domínio próprio e HTTPS são o passo que transforma seu projeto de "coisa que eu fiz" em "negócio de verdade". Custa pouco e rende muito em confiança.
+
+A parte técnica é copiar e colar mais um pouco de paciência com o DNS. Vibecoding com engenharia é não deixar o produto profissional morar num link amador.
+
+A decisão é sua.`,
+  },
+  {
+    id: "5-coisas-que-a-ia-gera-errado-no-codigo-2026",
+    slug: "5-coisas-que-a-ia-gera-errado-no-codigo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-03T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "5 coisas que a IA gera errado por padrão no seu código",
+    excerpt: "A IA escreve rápido. E erra sempre nas mesmas cinco coisas. Saiba onde olhar antes de aceitar o código.",
+    summary: "Código de IA tem 2,74 vezes mais falhas de segurança, segundo a Veracode. E os erros se repetem. Estas são as cinco coisas que a IA erra por padrão, e onde você precisa olhar antes de confiar.",
+    faq: [
+      {"q": "A IA erra sempre nas mesmas coisas?", "a": "Nas mesmas categorias, sim. Segurança, validação e tratamento de erro são os buracos recorrentes. Por isso dá pra criar um checklist."},
+      {"q": "Isso quer dizer que não devo usar IA pra codar?", "a": "Não. Quer dizer que você revisa o que ela gera. IA pra escrever, você pra blindar. Esse é o método."},
+      {"q": "Como pego esses erros rápido?", "a": "Com um checklist fixo. Você olha os mesmos cinco pontos toda vez. Vira hábito e leva minutos."}
+    ],
+    content: `A IA escreve código em segundos. E erra nas mesmas cinco coisas toda vez.
+
+Não é azar. É padrão. Ela otimiza pra funcionar na demo, não pra aguentar o mundo real.
+
+A Veracode mediu: código gerado por IA tem 2,74 vezes mais chance de trazer falha de segurança. Estas são as cinco que mais aparecem. Decore, vira checklist.
+
+## 1. Banco de dados aberto
+
+O campeão. A IA gera regras que deixam qualquer um ler e escrever no seu banco.
+
+    allow read, write: if true;
+
+Isso é o banco escancarado pro mundo. Seus dados de clientes, de graça, pra quem quiser.
+
+Onde olhar: sempre nas regras do Firestore ou Supabase. Leitura pública só do que pode ser público. O resto, fechado.
+
+## 2. Chave e segredo dentro do código
+
+A IA adora colocar a chave de API direto no código que vai pro navegador. Fica visível pra qualquer um que abra o inspecionar.
+
+Chave exposta é conta invadida, é custo estourado, é dor de cabeça.
+
+Onde olhar: procure qualquer coisa parecida com senha, token ou key escrita no código do cliente. Segredo vive em variável de ambiente, no servidor. Ponto.
+
+## 3. Validação ausente
+
+A IA assume que o usuário vai preencher tudo certinho. O usuário real não faz isso.
+
+Campo de e-mail que aceita "abc". Campo de número que aceita texto. Formulário que envia vazio.
+
+Onde olhar: todo campo que o usuário preenche. Pergunte: e se vier vazio? E se vier lixo? Se o código não responde, não tem validação.
+
+## 4. Erro que quebra tudo em silêncio
+
+A IA escreve o caminho feliz. Quando algo dá errado, o app trava, mostra tela branca ou quebra sem avisar.
+
+O serviço externo caiu? O banco não respondeu? Sem tratamento, o usuário vê uma tela morta e culpa você.
+
+Onde olhar: toda chamada que depende de fora (banco, API externa). Tem tratamento de erro? Tem mensagem pro usuário? Ou só reza pra dar certo?
+
+## 5. Excesso do que não foi pedido
+
+O erro silencioso que ninguém comenta. Você pede um botão, a IA entrega um botão mais três bibliotecas, uma configuração nova e uma função que você não vai usar.
+
+Cada linha a mais é uma superfície a mais pra falhar. Código que você não pediu é código que você não entende. E código que você não entende, você não controla.
+
+Onde olhar: leia o que veio. Sobrou o quê? Se tem coisa que você não pediu e não entende, questione. Menos é mais.
+
+## O que fazer com essa lista
+
+Transforme em ritual. Toda vez que a IA entrega código, você passa pelos cinco:
+
+    1. O banco está fechado?
+    2. Tem segredo exposto?
+    3. Os campos são validados?
+    4. Os erros são tratados?
+    5. Veio só o que eu pedi?
+
+Leva cinco minutos. Esse é o coração do Protocolo de Revisão em 5 Camadas. A IA escreve. Você blinda.
+
+Vibecoding às cegas é aceitar o código porque funcionou na tela. Vibecoding com engenharia é olhar esses cinco pontos antes de confiar.
+
+A decisão é sua.
+
+## Fontes
+
+Veracode, State of Software Security 2025, sobre falhas em código gerado por IA.`,
+  },
+  {
+    id: "por-que-seu-mvp-nao-precisa-ser-perfeito-2026",
+    slug: "por-que-seu-mvp-nao-precisa-ser-perfeito-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-04T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que seu MVP não precisa ser perfeito",
+    excerpt: "Perfeição no MVP é procrastinação disfarçada de capricho. O que ele precisa é resolver uma dor e estar seguro.",
+    summary: "A maioria dos MVPs morre antes de nascer porque o dono quis fazer perfeito. MVP não é sobre perfeição, é sobre resolver uma dor real e não vazar dado. Este texto mostra a diferença entre o que você pode deixar tosco e o que nunca pode.",
+    faq: [
+      {"q": "MVP feio não afasta usuário?", "a": "Menos do que você pensa. O que afasta é não resolver o problema. Feio que funciona ganha de bonito que não faz nada."},
+      {"q": "Então posso relaxar em tudo no MVP?", "a": "Não. Segurança e dados nunca. O visual e as features extras, sim. A linha é essa: nunca economize onde o usuário pode se machucar."},
+      {"q": "Quando paro de melhorar e lanço?", "a": "Quando ele resolve a dor principal e está seguro. Se passa nesses dois, lança. O resto você ajusta com usuário real."}
+    ],
+    content: `Seu MVP está pronto há três semanas. Você não lançou.
+
+Está ajustando a cor do botão. O espaçamento. Um efeito de transição.
+
+Isso não é capricho. É medo disfarçado de perfeição. E está te custando o que mais importa: o feedback de gente de verdade.
+
+## O que MVP quer dizer de novo
+
+MVP é a menor versão que resolve uma dor real. A palavra-chave é dor, não perfeição.
+
+Se ele resolve o problema de alguém, ele cumpriu a função. Bonito é bônus. Completo é depois.
+
+O mercado não te paga por capricho. Te paga por problema resolvido.
+
+## O que você pode deixar tosco
+
+Solta a mão nestas coisas. Ninguém vai embora por causa delas no começo:
+
+    Visual não pode ser feio de doer, mas não precisa ser obra de arte
+    Você não precisa de dez features, precisa da uma que resolve
+    Animações, temas, modo escuro: tudo isso é depois
+    Casos raros que quase ninguém vai fazer: trate quando aparecerem
+
+Meu take: MVP com uma feature que funciona ganha de MVP com dez pela metade. Todo dia.
+
+## O que você NUNCA pode deixar tosco
+
+Aqui a conversa muda. Tem coisa que não é capricho, é obrigação. E MVP nenhum tem desculpa:
+
+    Segurança: banco fechado, chave escondida, dados protegidos
+    Dados do usuário: se você coleta, você protege. Sempre.
+    O caminho principal: a coisa que ele veio fazer tem que funcionar
+
+Essa é a linha. Você economiza no que é enfeite. Nunca no que pode machucar o usuário.
+
+Um MVP feio que vaza dado de cliente não é MVP. É processo esperando pra acontecer.
+
+## Por que perfeição atrasa mata
+
+Enquanto você lapida sozinho, três coisas acontecem:
+
+    Você está adivinhando o que o usuário quer, sem perguntar a ele
+    Você pode estar caprichando numa feature que ninguém usa
+    Um concorrente menos perfeccionista já lançou e está aprendendo
+
+Feedback de usuário real vale mais que mil ajustes no escuro. Você só descobre o que importa depois que gente de verdade toca no produto.
+
+## A pergunta que destrava
+
+Quando bater a vontade de ajustar mais uma coisa antes de lançar, pergunte:
+
+    Isso impede o usuário de resolver o problema dele?
+
+Se não impede, não é pra agora. Anota numa lista e lança. Você melhora com gente usando, não sozinho no escuro.
+
+## O resumo
+
+MVP não é sobre perfeito. É sobre resolver e não vazar. Bonito e completo vêm depois, com feedback real na mão.
+
+Perfeição no MVP é procrastinação com roupa de capricho. Lance o que resolve, blinde o que protege, e melhore com quem usa.
+
+A decisão é sua.`,
+  },
+  {
+    id: "erro-de-arquitetura-que-todo-vibecoder-comete-2026",
+    slug: "erro-de-arquitetura-que-todo-vibecoder-comete-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-05T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "O erro de arquitetura que todo vibecoder comete",
+    excerpt: "Colocar lógica sensível no navegador. É o erro que parece funcionar e abre seu app de par em par.",
+    summary: "O erro de arquitetura mais comum no vibecoding é confiar no navegador. Colocar no front-end o que devia estar no servidor. Funciona na tela e deixa seu app aberto. Este texto mostra o erro, por que ele engana e como corrigir a linha de pensamento.",
+    faq: [
+      {"q": "Qual é o erro de arquitetura mais comum?", "a": "Confiar no navegador. Colocar validação, regra de negócio e segredo no front-end, onde qualquer um vê e burla."},
+      {"q": "Se funciona na tela, por que está errado?", "a": "Porque funcionar não é o mesmo que estar seguro. O navegador é território do usuário. Tudo lá pode ser alterado."},
+      {"q": "Como corrijo isso?", "a": "Regra que importa vive no servidor. O navegador mostra e facilita. O servidor decide e protege. Essa é a linha."}
+    ],
+    content: `Existe um erro de arquitetura que quase todo vibecoder comete. Inclusive eu, no começo.
+
+Confiar no navegador.
+
+Colocar no front-end aquilo que devia morar no servidor. Funciona na tela. E deixa seu app aberto de par em par.
+
+## O erro, em uma frase
+
+O navegador é do usuário, não seu.
+
+Tudo que roda no navegador, o usuário pode ver, copiar e mudar. A validação que você fez ali? Ele desativa. A regra que você escondeu no código? Ele lê. O preço que você travou no front? Ele altera.
+
+Se a decisão importa, ela não pode morar onde o usuário manda.
+
+## Por que ele engana tanto
+
+O erro é traiçoeiro porque funciona. Você testa, valida, mostra a mensagem de erro certinha. Parece blindado.
+
+Mas você testou como usuário bonzinho. O invasor não é bonzinho. Ele abre as ferramentas do navegador e pula a sua validação em dois cliques.
+
+Funcionar na tela e estar seguro são duas coisas diferentes. O erro é achar que a primeira garante a segunda.
+
+## Três exemplos que eu já vi
+
+    Validação só no navegador: o campo checa o e-mail na tela, mas a API aceita qualquer coisa. Basta chamar a API direto.
+    Preço no front-end: a loja calcula o total no navegador e envia pro pagamento. O usuário muda o total pra um real.
+    Regra de acesso no botão: o botão de admin fica escondido pro usuário comum, mas a rota de admin responde pra qualquer um. Esconder não é proteger.
+
+Os três funcionam na demo. Os três são buraco.
+
+## A linha de pensamento certa
+
+A correção não é uma técnica. É uma forma de pensar. Divida cada coisa em dois lugares:
+
+    O navegador mostra, facilita e dá feedback rápido
+    O servidor decide, valida de verdade e protege
+
+Validação no navegador é conforto pro usuário. Validação no servidor é segurança. Você faz as duas. Mas nunca confia só na primeira.
+
+Preço, permissão, regra de negócio, dado sensível: tudo isso é decisão. Decisão vive no servidor.
+
+## Como saber se você comete o erro
+
+Faça a pergunta a cada feature:
+
+    Se o usuário abrir as ferramentas do navegador e mexer, ele quebra alguma regra minha?
+
+Se a resposta é sim, aquela regra está no lugar errado. Mova pro servidor.
+
+Essa pergunta única pega a maioria dos furos de arquitetura antes de virarem incidente.
+
+## O resumo
+
+O erro que todo vibecoder comete é confiar no navegador. Ele funciona, engana e abre o app.
+
+A correção é uma linha: o navegador facilita, o servidor decide. Vibecoding às cegas confia no que vê na tela. Vibecoding com engenharia sabe que a tela é território do usuário.
+
+A decisão é sua.`,
+  },
+  {
+    id: "quando-nao-usar-ia-pra-programar-2026",
+    slug: "quando-nao-usar-ia-pra-programar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-06T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "Quando NÃO usar IA pra programar",
+    excerpt: "IA é ferramenta, não religião. Tem hora que ela atrapalha mais do que ajuda. Saiba reconhecer.",
+    summary: "Vibecoding com engenharia inclui saber quando não usar IA. Tem situações onde ela cria mais problema que solução. Este texto lista os momentos de parar de pedir código e pensar, sem virar refém da ferramenta nem inimigo dela.",
+    faq: [
+      {"q": "Não é contraditório um vibecoder dizer pra não usar IA?", "a": "É o contrário. Saber a hora de não usar é o que separa quem domina a ferramenta de quem é dominado por ela."},
+      {"q": "Em que momento a IA mais atrapalha?", "a": "Quando você não entende o problema. Ela te dá uma solução convincente pra um problema que você nem definiu direito."},
+      {"q": "Devo aprender a programar mesmo usando IA?", "a": "O básico, sim. Não pra escrever tudo à mão, mas pra entender, revisar e saber quando a IA está te enganando."}
+    ],
+    content: `Sou vibecoder. Rodo produtos feitos com IA. E vou te dizer uma coisa que soa contraditória:
+
+Tem hora que você não deve usar IA pra programar.
+
+Saber a hora de não usar é o que separa quem domina a ferramenta de quem virou refém dela. A IA é martelo. Nem todo problema é prego.
+
+## 1. Quando você não entende o problema
+
+Este é o mais importante. Se você não sabe direito o que quer resolver, a IA vai te dar uma resposta linda pro problema errado.
+
+Ela é convincente. Vai gerar código bonito, seguro na aparência, pra uma coisa que você nem definiu. Você aceita, avança, e três dias depois percebe que construiu a coisa errada.
+
+Pare. Defina o problema em uma frase primeiro. Depois peça o código.
+
+## 2. Quando é uma decisão, não uma tarefa
+
+IA é ótima pra executar. É ruim pra decidir por você.
+
+Qual banco usar? Qual arquitetura? Vale a pena esse recurso? Isso é decisão de dono, com trade-offs que dependem do seu contexto, seu bolso e seu prazo.
+
+A IA te ajuda a listar opções. Mas a escolha é sua. Terceirizar decisão pra IA é terceirizar o seu negócio.
+
+## 3. Quando você não vai conseguir revisar
+
+Se o código é tão crítico e tão complexo que você não tem como entender nem testar o que a IA gerou, cuidado.
+
+Código que você não revisa é código que você não controla. Em coisa sensível, pagamento, dado de saúde, autenticação, isso é risco alto. Melhor ir devagar, entender parte por parte, do que aceitar um bloco mágico.
+
+Não é sobre desconfiar da IA. É sobre não assinar embaixo do que você não leu.
+
+## 4. Quando um comando pronto resolve
+
+Às vezes a pessoa pede pra IA gerar cinquenta linhas pra fazer o que um comando de terminal faz em um.
+
+A IA não vai te dizer "isso já existe pronto". Ela vai gerar. Antes de pedir código pra tudo, pergunte se não tem uma ferramenta ou comando que já resolve. Menos código é menos coisa pra manter.
+
+## 5. Quando você está com pressa e cansado
+
+Erro humano, não da IA. Cansado, com pressa, você aceita tudo que ela gera sem ler. É aí que o banco aberto e a chave exposta entram no seu app.
+
+A IA acelera. Mas ela não substitui os cinco minutos de revisão. Se você não tem esses cinco minutos hoje, não suba pra produção hoje.
+
+## O que fazer no lugar
+
+Nesses momentos, a jogada não é abandonar a IA. É mudar o uso:
+
+    Use a IA pra pensar com você, não pra decidir por você
+    Peça que ela explique as opções, não que escolha
+    Defina o problema antes de pedir a solução
+    Reserve os cinco minutos de revisão. Sempre.
+
+## O resumo
+
+IA pra programar é ferramenta poderosa. E ferramenta boa se usa com critério, não com fé.
+
+Saber quando não usar é sinal de maturidade, não de fraqueza. Vibecoding com engenharia é dominar a ferramenta. Não ser dominado por ela.
+
+A decisão é sua.`,
+  },
+  {
+    id: "3-perguntas-antes-de-instalar-biblioteca-2026",
+    slug: "3-perguntas-antes-de-instalar-biblioteca-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-07T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "3 perguntas antes de instalar qualquer biblioteca",
+    excerpt: "Cada biblioteca que você instala vira sua responsabilidade. Faça três perguntas antes de dar o comando.",
+    summary: "A IA sugere instalar biblioteca pra tudo. Cada uma é uma dependência que você passa a carregar, com riscos de segurança e manutenção. Estas são as três perguntas que separam a biblioteca que vale a pena da que vira dor de cabeça.",
+    faq: [
+      {"q": "Por que instalar biblioteca é um risco?", "a": "Porque você passa a depender de código de estranhos. Se ele tem falha ou é abandonado, o problema vira seu. Supply-chain é ataque real."},
+      {"q": "Devo evitar bibliotecas então?", "a": "Não. Boas bibliotecas economizam meses. O ponto é escolher com critério, não instalar por instalar toda vez que a IA sugere."},
+      {"q": "Como sei se uma biblioteca é confiável?", "a": "Olhe manutenção recente, popularidade e se ela faz só o que você precisa. Uma biblioteca gigante pra uma função pequena é sinal de alerta."}
+    ],
+    content: `A IA adora resolver tudo instalando biblioteca. "Pra isso, instale tal pacote."
+
+Parece grátis. Não é.
+
+Cada biblioteca que entra no seu projeto vira sua responsabilidade. O código de um estranho passa a rodar dentro do seu app. Antes de dar o comando de instalar, faça três perguntas.
+
+## Por que isso importa
+
+Ataque de supply-chain é real e cresce todo ano. Alguém coloca código malicioso numa biblioteca popular, e todo mundo que instala leva o problema junto.
+
+Fora isso, tem o custo silencioso: biblioteca abandonada, biblioteca que quebra na próxima atualização, biblioteca gigante que pesa seu app inteiro por uma função de dez linhas.
+
+Instalar é um comando. Carregar é pra sempre. Faça as perguntas.
+
+## Pergunta 1: eu preciso mesmo disso?
+
+A primeira e a mais ignorada. Muita biblioteca resolve algo que você faz em poucas linhas suas.
+
+Uma função pra formatar data. Um jeito de gerar número aleatório. Coisas pequenas que não justificam trazer um pacote inteiro pra dentro.
+
+Pergunte: isso é código que eu escrevo em dez minutos, ou é problema complexo de verdade? Se é simples, escreva. Menos dependência, menos risco.
+
+Meu take: biblioteca vale pra problema difícil e resolvido (pagamento, autenticação, gráfico). Não pra coisa que você faz sozinho.
+
+## Pergunta 2: ela é viva e confiável?
+
+Se você precisa mesmo, olhe a saúde da biblioteca antes de instalar:
+
+    Teve atualização recente? Ou está parada há dois anos?
+    Muita gente usa? Popularidade é sinal de que problemas aparecem e são corrigidos.
+    Tem gente mantendo, ou é projeto de uma pessoa que sumiu?
+
+Biblioteca abandonada é bomba-relógio. Um dia ela para de funcionar com o resto do seu app, e não tem ninguém pra consertar do outro lado. O conserto sobra pra você.
+
+## Pergunta 3: ela faz só o que eu preciso?
+
+Cuidado com a biblioteca canivete suíço que faz mil coisas quando você quer uma.
+
+Cada função a mais é código a mais rodando, superfície a mais pra ter falha, peso a mais no seu app. Você importa um monstro pra usar uma unha dele.
+
+Prefira a biblioteca pequena e focada. Faz uma coisa, faz bem. Se a IA sugeriu uma gigante, pergunte se não existe uma menor pro seu caso específico.
+
+## O checklist rápido
+
+Antes de rodar o comando de instalar, três perguntas em trinta segundos:
+
+    1. Eu preciso mesmo, ou escrevo sozinho?
+    2. Ela está viva e é confiável?
+    3. Ela faz só o que eu preciso, sem excesso?
+
+Passou nas três? Instale com tranquilidade. Falhou em alguma? Pense de novo.
+
+## O resumo
+
+Biblioteca boa economiza meses. Biblioteca ruim vira dívida que você paga por anos, às vezes com segurança do seu app.
+
+A IA instala sem pensar. Você pensa antes de instalar. Vibecoding com engenharia é saber que toda dependência que entra é uma responsabilidade que fica.
+
+A decisão é sua.`,
+  },
+  {
+    id: "funciona-na-minha-maquina-nao-basta-2026",
+    slug: "funciona-na-minha-maquina-nao-basta-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-08T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que 'funciona na minha máquina' não é suficiente",
+    excerpt: "Funcionar no seu computador é o começo, não o fim. O usuário está em outro celular, outra rede, outro tudo.",
+    summary: "Funcionar na sua máquina prova que o código roda num único cenário: o seu. O usuário está em outro dispositivo, outra rede, com outros dados. Este texto mostra por que a frase 'funciona aqui' é uma armadilha e o que testar antes de confiar.",
+    faq: [
+      {"q": "Por que funcionar na minha máquina não basta?", "a": "Porque sua máquina é um cenário só. O usuário tem outro celular, outra internet, outros dados. O que roda pra você pode quebrar pra ele."},
+      {"q": "O que muda da minha máquina pra do usuário?", "a": "Tudo: tamanho de tela, velocidade da rede, dados que ele digita, navegador, se está logado ou não. Cada diferença é um teste que você não fez."},
+      {"q": "Como testo além da minha máquina?", "a": "Abra no celular, numa rede lenta, com dados errados, deslogado. Simule o usuário real, não o seu uso ideal."}
+    ],
+    content: `"Funciona na minha máquina."
+
+A frase mais perigosa do desenvolvimento. Parece vitória. É armadilha.
+
+Funcionar no seu computador prova uma coisa só: o código roda num cenário. O seu. O usuário vive em outro planeta.
+
+## O problema da sua máquina
+
+Sua máquina é o cenário mais fácil que existe pro seu código. Você tem:
+
+    A internet boa
+    A tela grande
+    Os dados certos, digitados por quem construiu
+    Você logado, com sua conta perfeita
+    O navegador que você usou pra desenvolver
+
+O usuário não tem nada disso garantido. Cada diferença dele pra você é um teste que você não fez.
+
+## O que muda no mundo real
+
+Vamos ver o que quebra quando sai da sua bolha:
+
+    Tela: você testou no monitor. Ele abre no celular e o botão sumiu.
+    Rede: você tem fibra. Ele está no 4G no ônibus, e sua tela fica carregando pra sempre.
+    Dados: você digita e-mail certo. Ele digita "asdf" no campo e o app explode.
+    Login: você testou logado. Ele chega deslogado e a página mostra erro.
+    Volume: você testou com três itens. Ele tem trezentos e a lista trava.
+
+Cada um desses é um "funcionava na minha máquina" esperando pra acontecer.
+
+## Por que a IA piora isso
+
+A IA gera código que passa no caminho feliz. O caminho feliz é justo o da sua máquina: dados certos, tudo carregado, usuário comportado.
+
+Ela não testa a rede ruim. Não testa o celular pequeno. Não testa o dado errado. Se você também não testa, ninguém testou. O usuário vira seu controle de qualidade, e isso é caro.
+
+## O que testar antes de dizer que funciona
+
+Saia da sua máquina de propósito. Simule o usuário real:
+
+    Abra no celular. De verdade, não só encolhendo a janela.
+    Teste numa rede lenta. As ferramentas do navegador simulam 3G.
+    Digite lixo nos campos. E-mail inválido, campo vazio, texto gigante.
+    Abra deslogado. A página trata isso ou quebra?
+    Teste com volume. Coloque muitos dados e veja se aguenta.
+
+Isso é a camada Testar do Protocolo de 5 Camadas. Não é testar se funciona. É testar onde quebra.
+
+## A mudança de mentalidade
+
+Pare de perguntar "funciona?". Comece a perguntar "onde quebra?".
+
+A primeira pergunta você responde na sua máquina e relaxa. A segunda te obriga a sair dela e olhar o mundo do usuário. É a diferença entre achar que está pronto e estar pronto.
+
+## O resumo
+
+Funciona na sua máquina é o ponto de partida, nunca o de chegada. Sua máquina é o cenário mais fácil, e o usuário vive no mais difícil.
+
+Vibecoding às cegas para no "funcionou aqui". Vibecoding com engenharia pergunta onde quebra e testa antes que o usuário descubra.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-que-separa-prototipo-de-produto-de-verdade-2026",
+    slug: "o-que-separa-prototipo-de-produto-de-verdade-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-09T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "O que separa protótipo de produto de verdade",
+    excerpt: "Protótipo funciona pra você mostrar. Produto aguenta o usuário sozinho. A distância entre os dois tem nome.",
+    summary: "Todo protótipo parece pronto na demo. Produto de verdade é o que sobrevive ao usuário real, ao erro, ao volume e ao tempo. Este texto mostra os pontos exatos que separam o protótipo bonito do produto que aguenta, e como cruzar essa linha.",
+    faq: [
+      {"q": "Qual a diferença entre protótipo e produto?", "a": "Protótipo prova a ideia numa demo controlada. Produto aguenta usuário real, erro, volume e tempo sem você por perto pra segurar."},
+      {"q": "Meu protótipo funciona. Ele já é produto?", "a": "Só se aguenta o que você não controla: dado errado, muita gente, serviço externo caindo, ataque. Se não testou isso, ainda é protótipo."},
+      {"q": "Preciso virar produto pra tudo?", "a": "Não. Protótipo é ótimo pra validar ideia. Vire produto quando gente de verdade vai depender dele. Aí a régua sobe."}
+    ],
+    content: `Seu protótipo funciona. Você mostrou pra três pessoas, todo mundo elogiou.
+
+Isso não faz dele um produto.
+
+Protótipo prova a ideia numa demo que você controla. Produto aguenta o usuário sozinho, sem você por perto pra segurar as pontas. A distância entre os dois tem nome, e não é sorte.
+
+## A diferença em uma frase
+
+Protótipo funciona quando tudo dá certo. Produto funciona quando as coisas dão errado.
+
+O usuário digita lixo. A rede cai. O serviço externo trava. Chega muita gente de uma vez. Alguém tenta invadir. O protótipo desaba em qualquer um desses. O produto aguenta.
+
+Vale o ponto: a demo é o caminho fácil. O mundo real é o difícil. Produto é o que sobrevive ao difícil.
+
+## Os cinco pontos que separam os dois
+
+### 1. Tratamento de erro
+
+Protótipo assume que tudo dá certo. Produto assume que vai dar errado e se prepara.
+
+Serviço caiu? Mostra mensagem, não tela branca. Dado veio errado? Rejeita com aviso, não quebra. O erro é tratado, não ignorado.
+
+### 2. Segurança
+
+Protótipo deixa o banco aberto e a chave exposta, porque "é só um teste". Produto fecha tudo, porque tem dado de gente de verdade dentro.
+
+Essa é a linha que mais gente cruza errado. Sobe o protótipo aberto pra produção e vira incidente. Código de IA tem 2,74 vezes mais falha de segurança, segundo a Veracode. Protótipo herda todas.
+
+### 3. Validação
+
+Protótipo confia no usuário. Produto desconfia. Todo campo é checado, todo dado é validado, porque o usuário real não preenche do jeito que você imaginou.
+
+### 4. Aguentar volume
+
+Protótipo funciona com três itens. Produto funciona com três mil. O que era rápido na demo trava quando os dados crescem, se você não pensou nisso.
+
+### 5. Sobreviver ao tempo
+
+Protótipo você entende hoje, porque acabou de escrever. Produto precisa ser entendível daqui a três meses, quando você voltar pra ajustar e não lembra de nada. Código organizado e versionado é o que segura isso.
+
+## Como cruzar a linha
+
+Não precisa fazer tudo de uma vez. Mas precisa fazer, antes de chamar de produto:
+
+    Blindar a segurança: banco fechado, segredos escondidos
+    Tratar os erros: nada de tela branca quando algo falha
+    Validar as entradas: desconfie de todo campo
+    Testar com volume e com dado errado
+    Versionar: pra você conseguir voltar e consertar
+
+Esse é o Protocolo de Revisão em 5 Camadas na prática: Entender, Ler, Blindar, Testar, Versionar. É o que transforma o que funciona na demo no que aguenta o mundo.
+
+## O resumo
+
+Protótipo é pra você validar a ideia. Produto é pra o usuário depender dele. A diferença não é capricho, é sobrevivência ao que dá errado.
+
+Vibecoding às cegas confunde os dois e sobe protótipo achando que é produto. Vibecoding com engenharia sabe a distância e cruza ela de propósito.
+
+A decisão é sua.
+
+## Fontes
+
+Veracode, State of Software Security 2025, sobre vulnerabilidades em código gerado por IA.`,
+  },
+{
+    id: "como-revisar-codigo-gerado-por-ia-checklist-2026",
+    slug: "como-revisar-codigo-gerado-por-ia-checklist-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-10T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+    title: "Como revisar código gerado por IA (checklist prático)",
+    excerpt: "A IA escreve rápido. Isso não quer dizer que escreve certo. Um checklist pra você revisar antes de confiar.",
+    summary: "Aceitar código de IA sem ler é onde a maioria dos bugs nasce. A resposta é revisar em camadas: entender, ler, blindar, testar e versionar. Este post é o passo a passo pra rodar essa revisão em qualquer trecho gerado.",
+    faq: [
+      {"q": "Preciso revisar tudo mesmo?", "a": "Sim. Se você vai colocar seu nome no projeto, você é o dono do código. A IA sugere, você decide o que entra."},
+      {"q": "Quanto tempo isso leva?", "a": "Menos do que consertar um bug em produção às 2h da manhã. Uma revisão de 10 minutos economiza horas depois."},
+      {"q": "Dá pra automatizar parte disso?", "a": "Sim. Testes e linters pegam parte. Mas entender o que o código faz continua sendo trabalho seu."}
+    ],
+    content: `A IA te entrega 200 linhas em 5 segundos. Você lê 3 e aperta aceitar. Esse é o momento exato em que o bug entra no seu projeto.
+
+Segundo a Veracode, código gerado por IA tem 2,74x mais chance de conter vulnerabilidades do que código escrito por humano com revisão. Não é que a IA seja ruim. É que ninguém está lendo.
+
+Meu take: velocidade sem revisão não é produtividade. É dívida com juros. Aqui está o checklist que eu rodo em todo trecho gerado.
+
+## Camada 1: Entender antes de ler
+
+Antes de olhar linha por linha, responda uma pergunta: o que esse código deveria fazer?
+
+Se você não sabe explicar em uma frase o que pediu, você não tem como revisar. Você só vai olhar e achar bonito.
+
+Escreva o objetivo em uma linha. Depois compare com o que a IA entregou. Muita coisa quebra aqui: você pediu A, ela fez B parecido.
+
+## Camada 2: Ler de verdade
+
+Agora sim, linha por linha. Procure três coisas:
+
+- Nomes de variável que não fazem sentido pro seu contexto.
+- Lógica que você não entende. Se você não entende, você não mantém.
+- Coisas "a mais" que você não pediu. IA adora adicionar features fantasma.
+
+Regra dura: se tem uma linha que você não sabe explicar, ela não entra. Pergunta pra IA o que aquilo faz. Ou apaga.
+
+## Camada 3: Blindar
+
+Aqui é onde a maioria falha. Pergunte:
+
+- E se o input vier vazio?
+- E se vier um valor gigante ou malicioso?
+- Tem validação antes de usar o dado?
+- Tem tratamento de erro ou vai explodir na cara do usuário?
+
+Exemplo do que procurar. Isso aqui é bomba:
+
+    const user = await db.query("SELECT * FROM users WHERE id = " + req.params.id)
+
+Concatenar input direto na query é SQL injection servido em bandeja. O certo usa parâmetro:
+
+    const user = await db.query("SELECT * FROM users WHERE id = ?", [req.params.id])
+
+## Camada 4: Testar
+
+Código que roda uma vez não é código que funciona. Teste os casos de borda:
+
+- O caminho feliz (o que deveria acontecer).
+- O input vazio.
+- O input errado.
+- O limite (número máximo, string enorme).
+
+Se não deu pra testar, não deu pra confiar. Rode. Veja quebrar. Conserte.
+
+## Camada 5: Versionar
+
+Antes de aceitar de vez, commit. Assim você tem ponto de retorno. Se der ruim depois, você volta uma casa em vez de reconstruir tudo.
+
+Mensagem de commit clara ajuda você a lembrar por que aquilo entrou. Falo disso em outro post.
+
+## O checklist em formato de bolso
+
+Cola isso perto da tela:
+
+1. Sei explicar o que esse código faz?
+2. Li linha por linha?
+3. Tem validação de input?
+4. Tem tratamento de erro?
+5. Testei o caso de borda?
+6. Commitei antes de seguir?
+
+Seis perguntas. Se alguma for "não", você ainda não terminou.
+
+Vibecoding com engenharia é isso. Não é escrever menos. É revisar o que a máquina escreveu com olho de dono. A IA é sua estagiária mais rápida. Não é sua chefe.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-escrever-mensagens-de-commit-que-fazem-sentido-2026",
+    slug: "como-escrever-mensagens-de-commit-que-fazem-sentido-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-11T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "Como escrever mensagens de commit que fazem sentido",
+    excerpt: "Seu histórico de commits está cheio de 'update', 'fix' e 'aaa'. Daqui a 3 meses você não vai entender nada.",
+    summary: "Mensagem de commit boa é bilhete pro seu eu do futuro. A regra: diga o que mudou e por quê, no imperativo, curto. Este tutorial mostra o padrão que uso e como fazer a IA gerar mensagens decentes.",
+    faq: [
+      {"q": "Isso importa se eu trabalho sozinho?", "a": "Importa mais ainda. Seu unico revisor futuro e voce mesmo, e voce vai esquecer tudo em duas semanas."},
+      {"q": "Preciso seguir Conventional Commits?", "a": "Ajuda, mas nao e obrigatorio. O minimo e: verbo no imperativo, o que mudou, e por que se nao for obvio."},
+      {"q": "A IA pode escrever meus commits?", "a": "Pode gerar um rascunho a partir do diff. Mas voce revisa. Ela nao sabe a intencao, so o que mudou."}
+    ],
+    content: `Abre teu histórico de git agora. Quantos commits dizem "update", "fix", "ajuste", "aaa", "agora vai"?
+
+Esse histórico é inútil. Daqui a três meses você vai procurar quando um bug entrou e vai encontrar uma parede de "fix" sem sentido.
+
+Meu take: commit é bilhete pro seu eu do futuro. Ele acorda às 2h da manhã com o app quebrado e precisa entender o que você fez. Escreva pra ele.
+
+## Por que a mensagem importa
+
+O commit não é burocracia. Ele é a única memória confiável do projeto. Código mostra o "o quê". A mensagem mostra o "por quê".
+
+O "por quê" é o que se perde. Você olha o código e vê que mudou uma linha. Não vê o motivo. A mensagem guarda isso.
+
+## A anatomia de um bom commit
+
+Estrutura simples que funciona:
+
+    feat: adiciona rate limit no login
+
+    Bloqueia mais de 5 tentativas por minuto por IP.
+    Evita brute force na tela de senha.
+
+Três partes:
+
+- Primeira linha: tipo e resumo, no imperativo, até 50 caracteres.
+- Linha em branco.
+- Corpo: o porquê, se não for óbvio.
+
+O imperativo é importante. "Adiciona", não "adicionado" nem "adicionando". Você está dando uma ordem ao repositório: aplique esta mudança.
+
+## Os tipos que uso
+
+Não precisa decorar norma. Esses cobrem quase tudo:
+
+- feat: funcionalidade nova.
+- fix: conserto de bug.
+- refactor: mudou a estrutura, não o comportamento.
+- docs: documentação.
+- chore: config, dependência, coisa de manutenção.
+
+Exemplo real de um projeto meu:
+
+    fix: corrige data errada no relatório mensal
+
+    O fuso estava em UTC e mostrava o dia anterior pra
+    quem estava no Brasil. Forçado timezone America/Sao_Paulo.
+
+Seis meses depois eu leio isso e entendo na hora. Isso é o objetivo.
+
+## O que evitar
+
+Coisas que transformam seu histórico em lixo:
+
+- "fix" sozinho. Fix do quê?
+- "update final". Nunca é final.
+- "asdf". Você teve pressa. Seu eu futuro paga.
+- Commit gigante com 40 arquivos e mensagem "várias coisas". Divide.
+
+Commit pequeno e frequente vence commit gigante. Cada commit deveria fazer uma coisa. Assim, quando algo quebra, você isola rápido.
+
+## Como a IA entra aqui
+
+Você pode pedir pra IA gerar a mensagem a partir do diff:
+
+    Olhe este diff e escreva uma mensagem de commit no
+    formato "tipo: resumo no imperativo" mais um corpo
+    curto explicando o porquê.
+
+Ela lê o "o quê" bem. Mas ela não sabe sua intenção. Então você revisa e completa o "por quê". A máquina rascunha, você assina.
+
+## O teste final
+
+Antes de commitar, leia sua mensagem e pergunte: se eu ler isso daqui a três meses, entendo o que foi feito e por quê?
+
+Se sim, manda. Se não, reescreve.
+
+Histórico limpo não é vaidade. É a diferença entre debugar em 5 minutos ou em 5 horas.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-fazer-backup-do-projeto-e-nao-perder-nada-2026",
+    slug: "como-fazer-backup-do-projeto-e-nao-perder-nada-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-12T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Como fazer backup do seu projeto e não perder nada",
+    excerpt: "Todo mundo faz backup depois de perder algo pela primeira vez. Faça antes.",
+    summary: "Backup não é uma cópia. É várias cópias, em lugares diferentes, testadas. A regra 3-2-1 resolve. Este tutorial mostra como aplicar em código, banco de dados e arquivos sem complicar.",
+    faq: [
+      {"q": "Git ja nao e backup?", "a": "Git versiona seu codigo, mas se so existe na sua maquina, nao e backup. Precisa estar num remoto tambem."},
+      {"q": "E o banco de dados?", "a": "Codigo no Git nao salva seus dados. Banco precisa de rotina de dump separada, automatica e testada."},
+      {"q": "Com que frequencia?", "a": "Depende do quanto voce aguenta perder. Se perder um dia dói, faça backup diario."}
+    ],
+    content: `Existem dois tipos de gente: quem faz backup e quem ainda vai perder tudo pela primeira vez.
+
+Eu já fui o segundo tipo. Perdi um projeto de semana num HD que morreu. Aprendi na dor. Você não precisa.
+
+Meu take: backup não é uma cópia. É várias cópias, em lugares diferentes, e pelo menos uma testada. Cópia que você nunca restaurou não é backup. É esperança.
+
+## A regra 3-2-1
+
+É o padrão da indústria e funciona:
+
+- 3 cópias dos dados.
+- 2 mídias diferentes.
+- 1 fora do local (offsite, na nuvem).
+
+Traduzindo pra vibecoder: seu código na máquina, no GitHub e o banco exportado num storage na nuvem. Se um pega fogo, você tem os outros.
+
+## Passo 1: código no Git remoto
+
+Git na sua máquina não é backup. É versionamento local. Se o notebook morre, morreu junto.
+
+Suba pra um remoto:
+
+    git remote add origin https://github.com/voce/seu-projeto.git
+    git push -u origin main
+
+Agora seu código existe em dois lugares. Toda vez que fizer algo importante:
+
+    git add .
+    git commit -m "feat: descrição clara"
+    git push
+
+Repositório privado, sempre, se tiver segredo ou lógica de negócio. Falo mais nisso quando o assunto é vazamento.
+
+## Passo 2: banco de dados é outra história
+
+Aqui mora o erro mais comum. As pessoas acham que Git salva tudo. Git salva código. Não salva os dados dos seus usuários.
+
+Se você usa Firebase, Postgres, MySQL, o banco precisa de rotina própria. Exemplo com Postgres:
+
+    pg_dump -U usuario nome_do_banco > backup_2026_08_12.sql
+
+Isso gera um arquivo com todos os dados. Guarde esse arquivo fora da máquina do banco. Storage na nuvem, bucket separado.
+
+No Firebase, use o export do Firestore agendado pro Cloud Storage. Configura uma vez e esquece.
+
+## Passo 3: automatize ou vai esquecer
+
+Backup manual é backup que você faz duas vezes e abandona. Automatize.
+
+Um cron simples que roda todo dia às 3h:
+
+    0 3 * * * pg_dump -U usuario banco > /backups/backup_$(date +\\%F).sql
+
+Depois manda pra nuvem. Guarde os últimos 7, 30 dias, o que fizer sentido. Backup antigo demais some sozinho pra não lotar.
+
+## Passo 4: teste a restauração
+
+Este passo é o que separa quem tem backup de quem acha que tem.
+
+Uma vez por mês, pegue um backup e restaure num ambiente de teste. Veja se os dados voltam inteiros.
+
+    psql -U usuario banco_de_teste < backup_2026_08_12.sql
+
+Se restaurou, você tem backup de verdade. Se nunca testou, você tem um arquivo e uma reza.
+
+## O checklist de backup
+
+Cola na parede:
+
+1. Código no Git remoto e privado.
+2. Banco exportado automático, todo dia.
+3. Cópias em pelo menos dois lugares.
+4. Uma cópia na nuvem, fora do servidor.
+5. Restauração testada uma vez por mês.
+
+Vibecoding com engenharia é assumir que tudo pode dar errado e estar pronto. O HD morre. A conta é suspensa. O comando errado apaga a tabela. Backup é o que te faz dormir.
+
+Faça antes de perder. Não depois.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-configurar-rate-limit-pra-proteger-app-2026",
+    slug: "como-configurar-rate-limit-pra-proteger-app-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-13T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Como configurar rate limit pra proteger seu app",
+    excerpt: "Sem rate limit, uma pessoa mal-intencionada faz 10 mil requisições por minuto no seu login. E você paga a conta.",
+    summary: "Rate limit é o freio que impede abuso, brute force e conta de nuvem explodindo. A ideia: limitar quantas requisições um IP faz por janela de tempo. Este tutorial mostra como aplicar no login e nas rotas caras.",
+    faq: [
+      {"q": "Rate limit atrapalha usuario legitimo?", "a": "Se bem configurado, nao. Usuario normal nunca chega perto do limite. So quem abusa esbarra nele."},
+      {"q": "Onde aplicar primeiro?", "a": "Login, cadastro, recuperacao de senha e qualquer rota que chame IA ou custe dinheiro por requisicao."},
+      {"q": "Da pra fazer sem lib?", "a": "Da, mas nao vale a pena. Use uma lib testada. Reinventar controle de concorrencia e pedir bug."}
+    ],
+    content: `Você subiu seu app. Tem uma tela de login. Sem rate limit, alguém pode tentar 10 mil senhas por minuto até acertar. Ou fazer 100 mil chamadas na sua rota de IA e estourar sua conta da OpenAI num fim de semana.
+
+Rate limit é o freio. Ele limita quantas requisições um mesmo cliente faz num intervalo de tempo. Simples e essencial.
+
+Meu take: rate limit não é feature avançada. É higiene básica. Todo app público precisa. Ponto.
+
+## O que rate limit resolve
+
+Três problemas de uma vez:
+
+- Brute force: impede tentar mil senhas na tela de login.
+- Abuso de API: impede alguém drenar sua cota de IA ou de e-mail.
+- Sobrecarga: impede que um cliente sozinho derrube seu servidor.
+
+Sem ele, você está dependendo da boa vontade de quem acessa. Boa vontade não é estratégia de segurança.
+
+## A ideia por trás
+
+Simples: para cada cliente, conte quantas requisições ele fez numa janela de tempo. Passou do limite, bloqueia por um tempo.
+
+O cliente costuma ser identificado por IP. Em rotas autenticadas, pode ser o ID do usuário.
+
+Exemplo de política: máximo 5 tentativas de login por minuto por IP. Na sexta, espera.
+
+## Passo 1: instale uma lib testada
+
+Não escreva isso do zero. Controle de tempo e concorrência é onde bugs se escondem. Em Node com Express:
+
+    npm install express-rate-limit
+
+Configuração básica pro login:
+
+    import rateLimit from "express-rate-limit"
+
+    const loginLimiter = rateLimit({
+      windowMs: 60 * 1000,
+      max: 5,
+      message: "Muitas tentativas. Tente de novo em 1 minuto.",
+      standardHeaders: true,
+    })
+
+Aplique só na rota que precisa:
+
+    app.post("/login", loginLimiter, loginHandler)
+
+Cinco tentativas por minuto por IP. Na sexta, resposta 429 e a mensagem.
+
+## Passo 2: proteja as rotas caras
+
+Login é o óbvio. Mas pense em qualquer rota que custa dinheiro ou recurso:
+
+- Rota que chama IA (cada chamada custa tokens).
+- Envio de e-mail ou SMS.
+- Upload de arquivo.
+- Geração de relatório pesado.
+
+Limite mais apertado nessas:
+
+    const iaLimiter = rateLimit({
+      windowMs: 60 * 1000,
+      max: 10,
+    })
+
+    app.post("/gerar", iaLimiter, autenticar, gerarHandler)
+
+Dez chamadas por minuto por pessoa. Usuário normal nunca sente. Abusador para na porta.
+
+## Passo 3: em produção, use um store compartilhado
+
+O limite em memória funciona num servidor só. Se você escala pra vários, cada um conta separado e o limite vaza.
+
+A solução é guardar a contagem num lugar central, tipo Redis:
+
+    npm install rate-limit-redis
+
+Aí todos os servidores compartilham a mesma contagem. Se você ainda está num servidor só, deixe pra depois. Mas saiba que existe.
+
+## Passo 4: responda direito
+
+Quando bloquear, use o status certo: 429 Too Many Requests. E diga quando a pessoa pode tentar de novo, pelo header Retry-After.
+
+Cliente legítimo que esbarrou por acaso entende e espera. Bot que estava abusando leva porta na cara.
+
+## O checklist de rate limit
+
+1. Login, cadastro e recuperação de senha protegidos.
+2. Rotas que custam dinheiro com limite mais apertado.
+3. Lib testada, não código próprio.
+4. Store compartilhado se roda em vários servidores.
+5. Resposta 429 com Retry-After.
+
+Vibecoding com engenharia é lembrar que seu app vai ser testado por gente que não te quer bem. Rate limit é o primeiro muro. Barato de colocar. Caro de não ter.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-validar-dados-de-formulario-front-e-back-2026",
+    slug: "como-validar-dados-de-formulario-front-e-back-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-14T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Como validar dados de formulário (no front e no back)",
+    excerpt: "Validação só no front é fechadura na porta de vidro. Bonita, inútil pra quem quer entrar.",
+    summary: "Validação no front melhora a experiência. Validação no back protege seus dados. Você precisa das duas, e por motivos diferentes. Este tutorial mostra como fazer as duas camadas sem duplicar dor de cabeça.",
+    faq: [
+      {"q": "Se valido no front, preciso validar no back?", "a": "Sim, sempre. Qualquer um manda requisicao direto pro seu back sem passar pelo seu formulario. O front nao protege nada."},
+      {"q": "Nao e trabalho duplicado?", "a": "As duas validam a mesma coisa por motivos diferentes. Front pra experiencia, back pra seguranca. Da pra compartilhar o schema."},
+      {"q": "Qual a validacao mais esquecida?", "a": "Tamanho maximo e tipo. Todo mundo checa se esta vazio e esquece de barrar um texto de 5MB num campo de nome."}
+    ],
+    content: `Você validou o formulário no front. Campo obrigatório, e-mail com arroba, senha com 8 caracteres. Ficou lindo. E não protege nada.
+
+Porque qualquer pessoa abre o console, ou manda uma requisição direto pro seu servidor com uma ferramenta, e pula seu formulário inteiro. Validação só no front é fechadura numa porta de vidro.
+
+Meu take: você precisa validar nos dois lugares. E por motivos diferentes. Front é experiência. Back é segurança.
+
+## Por que dois lugares
+
+Front e back validam a mesma coisa, mas servem a propósitos distintos:
+
+- Validação no front: dá feedback rápido, sem recarregar. "E-mail inválido" aparece na hora. É gentileza com o usuário.
+- Validação no back: é a última linha de defesa. É o que impede lixo, ataque e dado corrompido de entrar no seu banco.
+
+O front você faz pela pessoa. O back você faz contra o atacante. Nunca confie no que vem do cliente. Nunca.
+
+## Passo 1: valide no front pra experiência
+
+O objetivo aqui é responder rápido e claro. Exemplo simples:
+
+    function validarEmail(email) {
+      if (!email) return "E-mail é obrigatório"
+      if (!email.includes("@")) return "E-mail inválido"
+      return null
+    }
+
+Mostre o erro perto do campo, no momento certo. Não deixe a pessoa preencher tudo pra só no fim dizer que o primeiro campo está errado.
+
+Mas lembre: isso é conveniência. Não é proteção. Um clique no console derruba tudo.
+
+## Passo 2: valide no back de verdade
+
+Aqui é onde a segurança acontece. Use um schema. Em Node, a lib Zod é excelente:
+
+    import { z } from "zod"
+
+    const schema = z.object({
+      nome: z.string().min(1).max(100),
+      email: z.string().email().max(200),
+      idade: z.number().int().min(0).max(120),
+    })
+
+No handler:
+
+    const resultado = schema.safeParse(req.body)
+    if (!resultado.success) {
+      return res.status(400).json({ erro: "Dados inválidos" })
+    }
+    const dados = resultado.data
+
+Se não bate com o schema, rejeita antes de tocar no banco. O dado sujo nunca entra.
+
+## O que quase todo mundo esquece
+
+Três validações que faltam nos formulários iniciantes:
+
+- Tamanho máximo. Campo de nome sem limite aceita um texto de 5MB. Isso enche seu banco e pode derrubar o app.
+- Tipo. Você espera número, chega texto. Sem checar, quebra depois.
+- Caracteres perigosos. Dado que vai virar HTML ou query precisa ser tratado, ou você abre XSS e injection.
+
+Checar se está vazio é o básico. O ataque mora no que passa do básico.
+
+## Passo 3: compartilhe o schema
+
+Sente que é trabalho duplicado? Reduza. Com Zod você define o schema uma vez e usa no front e no back:
+
+    export const usuarioSchema = z.object({
+      nome: z.string().min(1).max(100),
+      email: z.string().email(),
+    })
+
+Mesma regra nos dois lados. Menos chance de divergir. Manutenção num lugar só.
+
+## Passo 4: mensagens úteis, sem vazar demais
+
+No front, seja específico: "senha precisa de 8 caracteres". No back, seja genérico pra quem ataca: "dados inválidos". Não entregue de bandeja o que exatamente falhou pra quem está sondando seu sistema.
+
+## O checklist de validação
+
+1. Front valida pra dar feedback rápido.
+2. Back valida sempre, com schema.
+3. Checa tamanho máximo, tipo e conteúdo perigoso.
+4. Dado sujo é rejeitado antes do banco.
+5. Schema compartilhado entre front e back.
+
+Vibecoding com engenharia é entender que o formulário bonito é só a vitrine. A segurança está no servidor, onde o usuário não vê. Validação no front impressiona. Validação no back protege.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-monitorar-seu-app-e-saber-quando-quebra-2026",
+    slug: "como-monitorar-seu-app-e-saber-quando-quebra-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-15T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "Como monitorar seu app e saber quando ele quebra",
+    excerpt: "Você quer ser o primeiro a saber que quebrou. Não o último, avisado por um cliente irritado.",
+    summary: "Monitorar é ter olhos no app 24h por dia. Sem isso, quem descobre o erro é o cliente. A base: captura de erro, logs úteis e alertas. Este tutorial mostra como montar o mínimo que funciona.",
+    faq: [
+      {"q": "Preciso disso num projeto pequeno?", "a": "Assim que tem usuario de verdade, sim. Erro silencioso em producao e cliente perdido sem voce saber por que."},
+      {"q": "Isso e caro?", "a": "As ferramentas tem plano gratuito que cobre projeto pequeno. O custo real e nao ter e descobrir tarde."},
+      {"q": "Qual a diferenca entre log e alerta?", "a": "Log e o registro que voce le depois. Alerta e o aviso que te acorda na hora. Voce precisa dos dois."}
+    ],
+    content: `Seu app quebrou às 3h da manhã. Uma rota parou de responder. Cinquenta usuários tentaram usar e desistiram. Você só descobriu ao meio-dia, quando um cliente mandou mensagem irritado.
+
+Isso é o que acontece sem monitoramento. Você fica cego. O erro existe, mas ninguém te avisa.
+
+Meu take: você quer ser o primeiro a saber que quebrou. Não o último. Monitoramento é o que troca "o cliente me avisou" por "eu já estava consertando".
+
+## Os três pilares
+
+Monitorar não é uma coisa só. São três, que trabalham juntas:
+
+- Captura de erro: registra toda exceção que acontece, com contexto.
+- Logs: o diário do app, o que aconteceu e quando.
+- Alertas: o aviso que chega até você quando algo dá errado.
+
+Sem captura, você não sabe o que quebrou. Sem log, não sabe por quê. Sem alerta, não sabe que quebrou. Precisa dos três.
+
+## Passo 1: capture os erros
+
+Ferramentas como Sentry fazem isso pronto. Você instala, e toda exceção não tratada é registrada com stack trace, navegador, usuário afetado.
+
+    npm install @sentry/node
+
+    import * as Sentry from "@sentry/node"
+
+    Sentry.init({ dsn: "sua-dsn-aqui" })
+
+A partir daí, erro que estoura vira um registro com contexto. Você abre o painel e vê exatamente onde, quando e pra quem quebrou. Sem isso, você fica adivinhando.
+
+## Passo 2: logue o que importa
+
+Log não é encher o console de mensagem. É registrar os momentos-chave: requisição recebida, operação importante concluída, erro tratado.
+
+Use níveis:
+
+    logger.info("Usuário 42 iniciou pagamento")
+    logger.warn("Tentativa de login falhou para IP 1.2.3.4")
+    logger.error("Falha ao processar pagamento", { userId: 42, erro })
+
+Regra de ouro: nunca logue senha, token ou dado sensível. Log vaza. Se você logou o cartão do cliente, você criou um problema de LGPD.
+
+Log bom responde a pergunta "o que estava acontecendo quando quebrou?". Sem detalhe demais, sem detalhe de menos.
+
+## Passo 3: configure alertas
+
+Log você lê depois. Alerta te acorda agora. Configure avisos pros eventos críticos:
+
+- Taxa de erro subiu acima do normal.
+- Uma rota importante parou de responder.
+- Tempo de resposta explodiu.
+
+O alerta pode chegar por e-mail, Slack, WhatsApp. O canal importa menos que a regra: só alerte no que exige ação. Alerta demais vira ruído e você começa a ignorar. Aí quando o grave chega, passa batido.
+
+## Passo 4: monitore se o app está de pé
+
+O básico dos básicos: um serviço que chama seu app de tempos em tempos e avisa se ele não responde. Chamam de uptime monitor.
+
+Ferramentas gratuitas fazem um ping na sua URL a cada minuto. Caiu, você recebe aviso na hora. Configura em cinco minutos, dorme tranquilo.
+
+## Passo 5: uma rota de saúde
+
+Crie um endpoint simples que confirma que o essencial funciona:
+
+    app.get("/health", async (req, res) => {
+      try {
+        await db.ping()
+        res.status(200).json({ status: "ok" })
+      } catch {
+        res.status(500).json({ status: "erro" })
+      }
+    })
+
+O monitor bate nessa rota. Se o banco caiu, ela retorna erro, e você sabe que não é só o servidor, é a dependência.
+
+## O checklist de monitoramento
+
+1. Captura de erro instalada, com contexto.
+2. Logs nos pontos-chave, sem dado sensível.
+3. Alertas só no que exige ação.
+4. Uptime monitor batendo na URL.
+5. Rota de health checando as dependências.
+
+Vibecoding com engenharia é não confiar que vai dar tudo certo. Vai quebrar. A pergunta é se você vai saber antes ou depois do cliente. Monitoramento é essa diferença.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-refatorar-codigo-bagunçado-com-ia-2026",
+    slug: "como-refatorar-codigo-bagunçado-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-16T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Como refatorar código bagunçado com IA sem quebrar tudo",
+    excerpt: "Refatorar é melhorar a estrutura sem mudar o comportamento. A palavra-chave é 'sem mudar o comportamento'.",
+    summary: "Refatorar com IA é poderoso e perigoso. Poderoso porque ela reescreve rápido. Perigoso porque pode mudar o comportamento sem avisar. A regra: teste antes, mude pouco, verifique depois. Este tutorial mostra o processo seguro.",
+    faq: [
+      {"q": "Qual a diferenca entre refatorar e reescrever?", "a": "Refatorar melhora a estrutura mantendo o comportamento. Reescrever comeca do zero. Refatorar e mais seguro e quase sempre suficiente."},
+      {"q": "Preciso de teste antes de refatorar?", "a": "Idealmente sim. Teste e a rede que garante que voce nao mudou o comportamento sem querer. Sem ele, voce refatora no escuro."},
+      {"q": "Posso pedir pra IA refatorar tudo de uma vez?", "a": "Pode, mas nao deveria. Mudanca grande e dificil de revisar e de reverter. Va em pedacos pequenos."}
+    ],
+    content: `Você tem uma função de 200 linhas que faz dez coisas, tem nomes tipo x2 e temp, e que ninguém entende, incluindo você que escreveu. Bate a vontade de jogar pra IA e pedir "arruma isso aí".
+
+Cuidado. Refatorar é melhorar a estrutura sem mudar o comportamento. A parte que quase todo mundo esquece é o "sem mudar o comportamento". A IA pode "arrumar" e, no caminho, mudar o que o código faz. Aí você trocou código feio que funcionava por código bonito que quebrou.
+
+Meu take: refatorar com IA é ótimo, desde que você tenha uma rede de segurança. Sem rede, é aposta.
+
+## Primeiro: entenda o que refatorar não é
+
+Refatorar não é reescrever do zero. Não é adicionar feature. Não é consertar bug. É só isto: deixar o código mais claro, mantendo exatamente o mesmo comportamento.
+
+Se o comportamento muda, não foi refatoração. Foi outra coisa, e você misturou dois trabalhos que deveriam ser separados.
+
+## Passo 1: crie a rede de segurança
+
+Antes de tocar em qualquer linha, você precisa de um jeito de saber se quebrou. A rede é teste.
+
+Se o código já tem teste, ótimo. Rode e confirme que passa. Se não tem, escreva o mínimo que cobre o comportamento atual:
+
+    test("calcula o total com desconto", () => {
+      expect(calcularTotal(100, 0.1)).toBe(90)
+    })
+
+Não precisa cobrir tudo. Cubra os casos que importam. Esse teste é o juiz: se ele passava antes e passa depois, o comportamento se manteve.
+
+Sem nenhum teste, refatore no escuro por sua conta e risco.
+
+## Passo 2: commit antes de começar
+
+Ponto de retorno. Se a refatoração der ruim, você volta uma casa.
+
+    git add .
+    git commit -m "chore: ponto antes de refatorar calcularTotal"
+
+Agora você tem pra onde voltar. Isso muda tudo psicologicamente: você experimenta sem medo.
+
+## Passo 3: peça mudanças pequenas
+
+O erro clássico é jogar 500 linhas e pedir "refatora tudo". A IA devolve 500 linhas diferentes e você não tem como revisar. Um bug se esconde fácil aí.
+
+Vá em pedaços. Peça uma melhoria por vez:
+
+    Esta função tem nomes de variável ruins. Renomeie
+    x2 e temp para nomes que descrevem o que guardam.
+    Não mude a lógica nem o comportamento.
+
+Depois:
+
+    Extraia o cálculo de desconto para uma função
+    separada. Mantenha o resultado idêntico.
+
+Uma mudança, um teste, um commit. Repita. Cada passo é reversível e revisável.
+
+## Passo 4: rode o teste depois de cada mudança
+
+Este é o coração do processo. Mudou, rodou o teste.
+
+    npm test
+
+Passou? Segue. Commit. Próxima melhoria. Falhou? A última mudança quebrou algo. Você sabe exatamente o quê, porque mudou uma coisa só. Reverte e tenta de outro jeito.
+
+Comparado com mudar tudo de uma vez e o teste quebrar sem saber onde, isso é dia e noite.
+
+## Passo 5: leia o que a IA fez
+
+Teste passando não é permissão pra confiar cego. Leia o diff. A IA pode ter "melhorado" removendo uma verificação que parecia inútil mas cobria um caso raro.
+
+Pergunte a cada trecho: isso muda o comportamento em algum caso? Se você não tem certeza, você não terminou.
+
+## O processo em resumo
+
+1. Escreva teste do comportamento atual.
+2. Commit antes de começar.
+3. Peça uma mudança pequena por vez.
+4. Rode o teste depois de cada mudança.
+5. Leia o diff antes de aceitar.
+6. Commit a cada passo que passa.
+
+Vibecoding com engenharia é usar a velocidade da IA sem abrir mão do controle. Ela reescreve em segundos. Você garante que o que ela reescreveu ainda faz o que devia. Código bonito que quebrou é pior que código feio que funciona.
+
+A decisão é sua.`,
+  },
+  {
+    id: "5-habitos-de-seguranca-que-salvam-seu-projeto-2026",
+    slug: "5-habitos-de-seguranca-que-salvam-seu-projeto-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-10T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "5 hábitos de segurança que salvam seu projeto",
+    excerpt: "Segurança não é uma feature que você adiciona no fim. É um hábito que você repete todo dia.",
+    summary: "Segurança de app não vem de uma ferramenta mágica. Vem de cinco hábitos simples, repetidos. Segredo fora do código, dependência atualizada, input validado, permissão fechada e backup testado. Faça sempre.",
+    faq: [
+      {"q": "Preciso ser especialista em seguranca?", "a": "Nao. Esses cinco habitos cobrem a maioria dos incidentes de projeto pequeno. Nao e sobre saber tudo, e sobre repetir o basico."},
+      {"q": "Qual habito importa mais?", "a": "Nao vazar segredo. Chave de API no Git publico e o erro que mais custa caro e mais rapido explode."},
+      {"q": "Da pra automatizar?", "a": "Boa parte sim. Scanner de segredo, atualizacao de dependencia e backup podem rodar sozinhos. Configura uma vez."}
+    ],
+    content: `Segurança não é um botão que você aperta antes de subir. Não é uma ferramenta que resolve tudo. É hábito. Coisa pequena que você repete até virar automático.
+
+Segundo a Veracode, código gerado por IA tem 2,74x mais chance de trazer vulnerabilidade. Ir rápido com IA sem hábito de segurança é acelerar em direção ao muro.
+
+Meu take: você não precisa ser especialista. Precisa de cinco hábitos. Esses cinco cobrem a maioria dos incidentes de projeto pequeno.
+
+## Hábito 1: segredo nunca no código
+
+Chave de API, senha de banco, token. Nada disso entra no código. Vai pra variável de ambiente.
+
+    const apiKey = process.env.OPENAI_API_KEY
+
+E o arquivo com os valores entra no gitignore:
+
+    .env
+
+O erro que mais custa caro é chave commitada num repositório público. Bot varre o GitHub em minutos e usa sua chave. Você acorda com uma fatura absurda. Segredo fora do código, sempre.
+
+## Hábito 2: dependência atualizada
+
+Cada biblioteca que você instala é código de outra pessoa rodando no seu app. Uma delas tem falha, você tem falha.
+
+Rode de tempos em tempos:
+
+    npm audit
+
+Ele lista o que tem vulnerabilidade conhecida. Atualize o que der. Não instale pacote aleatório sem olhar quem mantém. Menos dependência, menos superfície de ataque.
+
+## Hábito 3: nunca confie no input
+
+Todo dado que vem de fora é suspeito até prova em contrário. Formulário, URL, requisição de API. Valide tudo, no servidor.
+
+Vazio, tipo errado, tamanho gigante, caractere perigoso. Barre antes de usar. O ataque entra pelo campo que você achou que ninguém ia mexer. Input não validado é porta destrancada.
+
+## Hábito 4: permissão fechada por padrão
+
+O padrão do seu sistema deve ser "ninguém pode", e você libera o que precisa. Não o contrário.
+
+No Firebase, a regra aberta é fatal:
+
+    allow read, write: if true;
+
+Isso libera seu banco pro mundo. Qualquer um lê e escreve. O certo é liberar só pro dono do dado:
+
+    allow read, write: if request.auth.uid == resource.data.ownerId;
+
+Comece fechado. Abra o mínimo. Toda permissão a mais é risco a mais.
+
+## Hábito 5: backup testado
+
+Backup que você nunca restaurou não é backup. É esperança.
+
+Configure exportação automática do banco. Guarde em lugar separado. E uma vez por mês, restaure num ambiente de teste pra confirmar que os dados voltam inteiros.
+
+O dia que você precisar do backup é o pior dia pra descobrir que ele não funciona.
+
+## O que esses cinco têm em comum
+
+São todos preventivos. Nenhum deles é heroísmo depois do incidente. São coisa chata que você faz antes, quando parece que não precisa.
+
+É exatamente aí que está o valor. Segurança boa é invisível. Ninguém elogia o app que não foi hackeado. Mas o que foi hackeado, todo mundo lembra.
+
+Vibecoding com engenharia é isso: a parte que não aparece na demo é a que salva o projeto. Cinco hábitos. Repete até virar automático.
+
+A decisão é sua.`,
+  },
+  {
+    id: "por-que-voce-precisa-de-teste-mesmo-indo-rapido-2026",
+    slug: "por-que-voce-precisa-de-teste-mesmo-indo-rapido-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-11T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que você precisa de teste mesmo indo rápido",
+    excerpt: "Teste parece que atrasa. Ele acelera. O que atrasa é debugar em produção com cliente reclamando.",
+    summary: "A ideia de que teste atrasa é falsa. Teste é o que te deixa ir rápido com segurança, mudar sem medo e dormir tranquilo. Este post explica por que pular teste é ilusão de velocidade.",
+    faq: [
+      {"q": "Teste nao atrasa o desenvolvimento?", "a": "Atrasa a primeira entrega em minutos. Economiza horas de debug depois. O saldo e sempre positivo."},
+      {"q": "Preciso testar tudo?", "a": "Nao. Teste o que quebra caro: pagamento, login, calculo, regra de negocio. O resto pode esperar."},
+      {"q": "A IA pode escrever os testes?", "a": "Pode, e ajuda muito nos casos de borda. Mas voce revisa se o teste esta checando a coisa certa."}
+    ],
+    content: `"Não tenho tempo pra teste, preciso entregar rápido." Essa frase é a mais cara do desenvolvimento. Porque ela mente sobre onde o tempo vai.
+
+Você economiza 10 minutos não escrevendo o teste. Depois perde 3 horas caçando um bug que o teste teria pego na hora. Isso não é ir rápido. É ir rápido pra trás.
+
+Meu take: teste não é o que te atrasa. É o que te deixa acelerar sem medo. Quem vai rápido de verdade tem rede embaixo.
+
+## O que teste realmente compra
+
+Teste não é sobre "código certo". É sobre três liberdades:
+
+- Liberdade de mudar. Você mexe numa parte e o teste avisa se quebrou outra. Sem isso, toda mudança é aposta.
+- Liberdade de confiar na IA. Ela reescreve, o teste confirma que ainda funciona. Sem teste, você aceita cego.
+- Liberdade de dormir. Subiu pra produção com os testes passando. Você descansa.
+
+Quem não tem teste não tem essas liberdades. Tem medo. E medo desacelera muito mais que qualquer teste.
+
+## O custo de não testar aparece depois
+
+O bug tem um preço que cresce com o tempo:
+
+- Pego no teste: 2 minutos.
+- Pego em desenvolvimento: 20 minutos.
+- Pego em produção pelo cliente: horas, mais a confiança perdida.
+
+Pular o teste é empurrar o custo pra frente com juros. Você não eliminou o trabalho. Adiou e encareceu.
+
+## Não precisa testar tudo
+
+Aqui é onde a maioria trava. Acha que teste é oito horas cobrindo cada linha. Não é.
+
+Teste o que quebra caro:
+
+- Pagamento. Se erra, some dinheiro.
+- Login e permissão. Se erra, vaza dado.
+- Cálculo e regra de negócio. Se erra, mostra número errado pro cliente.
+
+O botão que muda a cor do tema? Deixa pra depois. Foque no que dói se falhar.
+
+## Como é um teste simples
+
+Não é bicho de sete cabeças. É você descrevendo o que espera:
+
+    test("aplica 10 por cento de desconto", () => {
+      expect(calcularTotal(100, 0.1)).toBe(90)
+    })
+
+Rodou, passou, verde. Você mexe no cálculo semana que vem, roda de novo, e ele grita se você quebrou. Essa é a rede.
+
+## Comece pelos casos de borda
+
+O caminho feliz quase sempre funciona. O bug mora nos extremos:
+
+- E se o valor for zero?
+- E se for negativo?
+- E se vier vazio ou nulo?
+- E se for gigante?
+
+Teste esses. É onde o código real quebra. O input que você não imaginou é o que o usuário vai digitar.
+
+## A IA ajuda, você revisa
+
+Peça pra IA gerar os testes, principalmente os casos de borda que você esqueceria. Ela é boa nisso. Mas leia: confira se o teste checa a coisa certa. Teste que passa testando nada é pior que teste nenhum, porque dá falsa segurança.
+
+Vibecoding com engenharia é entender que velocidade sem rede é queda esperando pra acontecer. Teste não é freio. É cinto de segurança. Ele não te deixa mais lento. Deixa você poder acelerar.
+
+A decisão é sua.`,
+  },
+  {
+    id: "erro-de-senha-que-90-porcento-dos-iniciantes-cometem-2026",
+    slug: "erro-de-senha-que-90-porcento-dos-iniciantes-cometem-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-12T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "O erro de senha que 90% dos iniciantes cometem",
+    excerpt: "Guardar a senha do usuário como texto puro no banco. Um vazamento e todo mundo fica pelado.",
+    summary: "O erro fatal é salvar senha em texto puro no banco. Se vaza, vazou tudo. A solução é hash: você nunca guarda a senha, guarda uma impressão digital dela. Este post explica o certo em linguagem simples.",
+    faq: [
+      {"q": "Qual o erro exatamente?", "a": "Salvar a senha do usuario como texto legivel no banco. Se alguem acessa o banco, le todas as senhas de uma vez."},
+      {"q": "O que e hash?", "a": "Uma transformacao de mao unica. Vira uma sequencia sem volta. Voce compara hashes no login, nunca guarda a senha real."},
+      {"q": "Preciso implementar isso na mao?", "a": "Nao. Use bcrypt ou o sistema de auth pronto do seu provedor. Fazer criptografia na mao e o segundo maior erro."}
+    ],
+    content: `Você monta a tela de cadastro. Usuário digita a senha. Você salva no banco. Simples. E é aqui que 90% dos iniciantes cometem o erro mais perigoso do desenvolvimento web.
+
+O erro: salvar a senha como texto puro. Do jeitinho que o usuário digitou, legível no banco. Parece inofensivo. É uma bomba com pavio aceso.
+
+Meu take: senha em texto puro é o pecado original da segurança. Se vaza o banco, vazou a vida de todo mundo que confiou em você.
+
+## Por que isso é tão grave
+
+Imagine que alguém acessa seu banco. Pode ser vazamento, backup exposto, funcionário mal-intencionado. Se as senhas estão em texto puro, ele lê todas de uma vez.
+
+E aqui o problema explode: as pessoas repetem senha. A senha que ela usou no seu app é a mesma do e-mail, do banco, do Instagram. Você não vazou só o acesso ao seu sistema. Você entregou a vida digital dos seus usuários.
+
+Isso não é hipótese. É como a maioria dos grandes vazamentos vira notícia.
+
+## A solução se chama hash
+
+A regra é: você nunca guarda a senha. Você guarda uma impressão digital dela.
+
+Hash é uma transformação de mão única. A senha vira uma sequência embaralhada da qual não dá pra voltar. Você joga "batata123" e sai algo como uma linha de caracteres sem sentido aparente.
+
+No login, você aplica o mesmo hash na senha digitada e compara com o guardado. Bateu, é a pessoa certa. E você nunca precisou saber a senha real.
+
+Vazou o banco? O atacante vê os hashes, não as senhas. Muito, muito mais difícil de explorar.
+
+## Não faça na mão
+
+Segundo erro clássico: tentar criar seu próprio hash com uma função qualquer. Não faça. Criptografia é área onde amador vira vítima.
+
+Use uma ferramenta feita pra isso. Em Node, o bcrypt:
+
+    import bcrypt from "bcrypt"
+
+    const hash = await bcrypt.hash(senha, 12)
+
+Guarde o hash no banco. No login:
+
+    const confere = await bcrypt.compare(senhaDigitada, hash)
+
+O bcrypt já cuida de detalhes que você nem sabe que existem, como o "sal" que impede duas senhas iguais de gerarem o mesmo hash. Deixa quem entende fazer.
+
+## Melhor ainda: nem guarde senha
+
+O caminho mais seguro é não gerenciar senha nenhuma. Use um sistema de autenticação pronto: Firebase Auth, Auth0, o login do seu provedor.
+
+Eles cuidam de hash, recuperação, tentativas, tudo. Você não reinventa segurança crítica. E menos código de senha seu é menos código pra errar.
+
+Fazer login "do zero" parece impressionante. Na prática, é assumir um risco que gente muito maior que você já resolveu melhor.
+
+## O checklist da senha
+
+1. Nunca salve senha em texto puro. Nunca.
+2. Use hash com bcrypt ou equivalente.
+3. Não escreva sua própria criptografia.
+4. De preferência, use um sistema de auth pronto.
+5. No login, compare hashes, nunca a senha real.
+
+Vibecoding com engenharia é saber onde não improvisar. Design de tela, você experimenta. Senha do usuário, você segue o que funciona. A confiança de quem se cadastrou está nas suas mãos. Texto puro joga essa confiança fora.
+
+A decisão é sua.`,
+  },
+  {
+    id: "3-perguntas-pra-saber-se-seu-app-esta-seguro-2026",
+    slug: "3-perguntas-pra-saber-se-seu-app-esta-seguro-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-13T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "3 perguntas pra saber se seu app está seguro",
+    excerpt: "Você não precisa auditoria completa pra começar. Precisa responder três perguntas com honestidade.",
+    summary: "Segurança parece grande demais pra saber por onde começar. Reduza a três perguntas: meus segredos estão protegidos, meus dados estão fechados, e eu confio no que entra. Responda com honestidade e você já sai na frente.",
+    faq: [
+      {"q": "Isso substitui uma auditoria de seguranca?", "a": "Nao. Mas cobre os erros mais comuns de projeto pequeno. E o filtro que pega 80% dos problemas com 20% do esforco."},
+      {"q": "Se eu responder nao pra alguma?", "a": "Voce achou seu proximo trabalho. Comece por essa antes de adicionar qualquer feature nova."},
+      {"q": "Com que frequencia devo revisar?", "a": "Antes de todo deploy importante e sempre que adicionar algo que mexe com dado ou acesso."}
+    ],
+    content: `Segurança assusta porque parece um oceano. Firewall, criptografia, pentest, OWASP. Você não sabe por onde começar, então não começa. E o app sobe torcendo pra dar certo.
+
+Meu take: você não precisa auditar tudo pra melhorar muito. Precisa responder três perguntas com honestidade brutal. Elas pegam a maioria dos erros de projeto pequeno.
+
+## Pergunta 1: meus segredos estão protegidos?
+
+Segredo é chave de API, senha de banco, token. A pergunta real é: se alguém abrir meu repositório agora, encontra alguma chave?
+
+Cheque:
+
+- Tem chave escrita direto no código? Erro.
+- O arquivo .env está no gitignore?
+- Já commitei segredo antes, mesmo que depois removi? Se sim, ele ainda está no histórico e precisa ser rotacionado.
+
+Teste rápido. Procure no seu projeto:
+
+    grep -r "sk-" .
+    grep -r "API_KEY" .
+
+Achou chave de verdade no código versionado? Você tem trabalho urgente. Chave vazada em repositório é o erro que bot explora em minutos.
+
+## Pergunta 2: meus dados estão fechados por padrão?
+
+A pergunta: se alguém descobrir o endereço do meu banco ou da minha API, ele consegue ler o que não deveria?
+
+O erro clássico está aqui. No Firebase, a regra aberta:
+
+    allow read, write: if true;
+
+Isso libera geral. Qualquer pessoa lê e escreve tudo. Já vi app sério no ar com isso, expondo dado de milhares de usuários.
+
+O certo começa fechado e libera o mínimo:
+
+    allow read: if request.auth.uid == resource.data.ownerId;
+
+Cheque:
+
+- Minhas rotas de API pedem autenticação onde precisam?
+- O usuário A consegue ver os dados do usuário B?
+- Meu banco aceita conexão de qualquer lugar?
+
+Se um usuário logado consegue puxar dado de outro trocando um ID na URL, você tem um buraco. Chama-se acesso indireto, e é dos mais comuns.
+
+## Pergunta 3: eu confio no que entra?
+
+Todo dado que vem de fora é suspeito. A pergunta: eu valido o que chega antes de usar?
+
+Cheque:
+
+- Formulários validam no servidor, não só no front?
+- Input vira query de banco com concatenação? Isso é SQL injection.
+- Input vira HTML na tela sem tratamento? Isso é XSS.
+- Tem limite de tamanho nos campos?
+
+O exemplo que não pode existir:
+
+    db.query("SELECT * FROM users WHERE email = '" + input + "'")
+
+Isso é convite pra invasão. O certo usa parâmetro e nunca cola input direto na query.
+
+## O que fazer com as respostas
+
+Simples. Toda pergunta que você respondeu "não" ou "não sei" é seu próximo trabalho. Antes de qualquer feature nova.
+
+Segurança não é tudo ou nada. É melhorar uma camada por vez. Essas três perguntas cobrem os erros que mais aparecem em projeto de vibecoder: segredo vazado, dado aberto e input não validado.
+
+Vibecoding com engenharia é ter a coragem de responder essas três com honestidade, mesmo quando a resposta dói. Melhor você descobrir o buraco do que o atacante.
+
+A decisão é sua.`,
+  },
+  {
+    id: "por-que-backup-nao-e-opcional-2026",
+    slug: "por-que-backup-nao-e-opcional-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-14T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que backup não é opcional",
+    excerpt: "Existe quem faz backup e quem ainda não perdeu tudo. Você escolhe de qual lado ficar antes ou depois.",
+    summary: "Backup parece paranoia até o dia que salva seu projeto. Um comando errado, uma conta suspensa, um HD morto. Backup não é sobre desconfiar da tecnologia. É sobre respeitar a lei de Murphy. Este post explica por que não é opcional.",
+    faq: [
+      {"q": "Meu provedor nao faz backup por mim?", "a": "As vezes faz, as vezes nao, e voce nem sabe. Nao terceirize a responsabilidade pelo que voce nao pode perder. Tenha o seu."},
+      {"q": "E se eu for so um projeto pequeno?", "a": "Projeto pequeno tem menos recurso pra se recuperar de uma perda. O backup importa mais, nao menos."},
+      {"q": "Quanto custa fazer backup?", "a": "Quase nada. Storage e barato. Caro e o dia que voce perde tudo e tem que reconstruir do zero."}
+    ],
+    content: `Tem uma frase velha no mundo da tecnologia: existem dois tipos de pessoas, quem faz backup e quem ainda vai perder tudo pela primeira vez.
+
+Eu já fui o segundo. Um projeto de semanas num HD que simplesmente morreu numa terça de manhã. Nenhum aviso. Só a tela preta e o silêncio. Aprendi na pele o que é backup: é a coisa que você só valoriza depois de precisar e não ter.
+
+Meu take: backup não é paranoia. É respeito pela lei de Murphy. O que pode dar errado vai dar, e sempre no pior momento.
+
+## As formas de perder tudo
+
+Você acha que perder dado é raro. Não é. É uma lista comprida de formas comuns:
+
+- O comando errado. Um DELETE sem WHERE, um rm no diretório errado, e a tabela some.
+- A conta suspensa. Um problema de pagamento, uma denúncia falsa, e seu provedor te bloqueia sem aviso.
+- O hardware que morre. HD, SSD, tudo tem prazo de validade e ele nunca avisa.
+- O ataque. Ransomware criptografa seus dados e pede resgate.
+- O erro da IA. Você pede uma limpeza, ela "otimiza", e leva junto o que importava.
+
+Cada uma dessas acontece todo dia com alguém. A pergunta não é se vai acontecer com você. É quando.
+
+## Backup não é a mesma coisa que Git
+
+Erro comum: "meu código está no GitHub, estou coberto". Metade certo.
+
+Git salva seu código. Não salva os dados dos seus usuários. Cadastros, pedidos, mensagens, tudo isso está no banco. E o banco não vai pro Git.
+
+Perder o código é chato. Você reescreve. Perder os dados dos usuários é fatal. Você não reescreve o cadastro de mil pessoas. Backup de verdade cobre os dois: código e dados.
+
+## Não terceirize a responsabilidade
+
+"Mas meu provedor faz backup." Faz? Você tem certeza? Já testou restaurar? Sabe de quantos dias atrás?
+
+Não terceirize a responsabilidade pelo que você não pode perder. O provedor pode ter backup, pode não ter, pode ter e você não conseguir acessar quando precisar. Tenha o seu, sob seu controle.
+
+## É barato ser precavido
+
+A parte boa: backup custa quase nada. Storage na nuvem é barato. Automatizar a exportação do banco leva uma tarde. Depois roda sozinho.
+
+Compare com o custo do outro lado: reconstruir tudo do zero, recuperar a confiança dos usuários que perderam os dados, o projeto morto. O backup é o seguro mais barato que existe.
+
+## O mínimo que resolve
+
+Não precisa de sistema complexo. O mínimo:
+
+- Código no Git remoto e privado.
+- Banco exportado automaticamente, todo dia.
+- Cópias em pelo menos dois lugares, um deles na nuvem.
+- Uma restauração testada por mês pra confirmar que funciona.
+
+Backup que você nunca restaurou não é backup. É esperança com nome bonito.
+
+Vibecoding com engenharia é construir assumindo que tudo pode falhar. Você não faz backup porque desconfia da tecnologia. Faz porque respeita que a máquina, a conta e o comando erram. O backup é o que transforma um desastre em um susto.
+
+Faça antes de perder. Depois é tarde.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-que-fazer-quando-a-ia-da-codigo-que-voce-nao-entende-2026",
+    slug: "o-que-fazer-quando-a-ia-da-codigo-que-voce-nao-entende-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-15T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "O que fazer quando a IA te dá código que você não entende",
+    excerpt: "A tentação é apertar aceitar e seguir. Não faça. Código que você não entende é código que você não mantém.",
+    summary: "A IA entrega algo que funciona mas você não faz ideia de como. Aceitar cego é dívida técnica na veia. O caminho é fazer a própria IA te ensinar antes de aceitar. Este post mostra como transformar cada trecho em aprendizado.",
+    faq: [
+      {"q": "E errado usar codigo que eu nao entendo?", "a": "Nao e sobre certo ou errado. E sobre risco. O que voce nao entende, voce nao conserta quando quebra. E vai quebrar."},
+      {"q": "Nao e perda de tempo entender tudo?", "a": "E investimento. Cada trecho que voce entende hoje e um bug que voce resolve sozinho amanha, em vez de ficar refem da IA."},
+      {"q": "Como faco a IA me explicar bem?", "a": "Peca explicacao linha por linha, em portugues simples, como se fosse pra um iniciante. E pergunte o que acontece se der errado."}
+    ],
+    content: `A IA te entrega um bloco de código. Roda. Funciona. E você não faz a menor ideia de como. Tem umas linhas estranhas ali no meio que parecem magia.
+
+A tentação é óbvia: aperta aceitar e segue. Funcionou, né? O problema aparece três semanas depois, quando aquilo quebra e você fica olhando pra tela sem saber nem por onde começar.
+
+Meu take: código que você não entende é código que você não mantém. Aceitar cego não é velocidade. É dívida técnica que você pega emprestado de si mesmo.
+
+## Por que isso é uma armadilha
+
+O código que a IA escreve vira responsabilidade sua no momento que entra no projeto. Seu nome está nele. E aí:
+
+- Quando quebra, você não sabe consertar.
+- Quando precisa mudar, você não sabe onde mexer.
+- Quando alguém pergunta como funciona, você não sabe responder.
+
+Você fica refém. Refém da IA pra qualquer ajuste, refém do medo de tocar em algo que "está funcionando". Isso é o oposto de ser dono do seu projeto.
+
+## A boa notícia: você tem um professor 24h
+
+O mesmo modelo que escreveu o código pode te explicar. E de graça. A diferença entre o vibecoder às cegas e o com engenharia está em uma pergunta a mais.
+
+Em vez de aceitar, pergunte:
+
+    Explique este código linha por linha, em português
+    simples, como se eu fosse iniciante. O que cada
+    parte faz e por quê?
+
+Leia a explicação. Se ainda não entendeu, insista:
+
+    Não entendi a parte X. Me dá um exemplo concreto
+    do que acontece ali com um dado real.
+
+Você transforma cada trecho misterioso em aula. Cinco minutos hoje contra horas de pânico depois.
+
+## Pergunte o que dá errado
+
+Entender o que o código faz é metade. A outra metade é entender como ele falha. Pergunte:
+
+    O que acontece se este código receber um valor
+    vazio, nulo, ou muito grande? Onde ele pode quebrar?
+
+A IA costuma revelar aqui os pontos frágeis que ela mesma deixou. Aí você decide se blinda ou aceita o risco conscientemente. A diferença é essa palavra: conscientemente.
+
+## Reescreva com suas palavras
+
+Teste final de entendimento: peça a versão que você conseguiria ter escrito.
+
+    Reescreva isso da forma mais simples e clara
+    possível, mesmo que fique um pouco mais longo.
+    Prefiro entender a ser esperto.
+
+Muitas vezes o código "elegante" da IA é elegante demais pro seu nível. A versão mais longa e óbvia é a que você mantém. Código que você entende vale mais que código que impressiona.
+
+## Quando é ok não entender tudo
+
+Sejamos honestos: você não vai entender cada linha de cada biblioteca. Não precisa saber como o bcrypt faz hash por dentro. Precisa saber o que ele faz e por que usar.
+
+A linha é essa: você não precisa entender o motor do carro. Precisa saber dirigir, freiar e o que fazer quando a luz acende. Código de terceiro confiável, você usa. Código no seu projeto, você entende.
+
+## O hábito que muda tudo
+
+Toda vez que a IA te der algo que você não entende, pare. Pergunte. Aprenda. Só então aceite.
+
+Parece que atrasa. Não atrasa. Cada trecho que você entende hoje é um bug que você resolve sozinho amanhã. Você vai ficando mais forte enquanto o outro vibecoder vai ficando mais dependente.
+
+Vibecoding com engenharia é usar a IA pra aprender, não pra fugir de aprender. Ela é a ferramenta mais poderosa que você já teve nas mãos. Mas quem tem que entender o que sai dela é você.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-nao-virar-refem-de-uma-ferramenta-de-ia-2026",
+    slug: "como-nao-virar-refem-de-uma-ferramenta-de-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-16T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+    title: "Como não virar refém de uma ferramenta de IA",
+    excerpt: "A ferramenta que você ama hoje pode dobrar de preço, mudar de dono ou fechar amanhã. Não construa em cima de uma só.",
+    summary: "Depender de uma única ferramenta de IA é risco de negócio. Ela sobe o preço, muda a regra ou some, e você fica na mão. A defesa é dominar o método, não a ferramenta. Este post mostra como manter sua liberdade.",
+    faq: [
+      {"q": "Nao e mais produtivo dominar uma ferramenta so?", "a": "No curto prazo sim. No longo prazo voce fica preso. O equilibrio e dominar o metodo e trocar de ferramenta sem dor."},
+      {"q": "Como testo se estou refem?", "a": "Se sua ferramenta principal sumisse hoje, voce continuaria trabalhando amanha? Se a resposta e nao, voce esta refem."},
+      {"q": "Vale usar varias ferramentas ao mesmo tempo?", "a": "Vale conhecer mais de uma e nao amarrar seu processo aos recursos exclusivos de nenhuma. Portabilidade e liberdade."}
+    ],
+    content: `Você encontrou a ferramenta de IA perfeita. Aprendeu todos os atalhos, decorou os comandos, montou seu fluxo inteiro em cima dela. Produtividade nas alturas.
+
+Aí, numa terça qualquer, chega o e-mail: o preço triplicou. Ou o recurso que você mais usava saiu do plano gratuito. Ou a empresa foi comprada e vai fechar em 60 dias. E agora?
+
+Meu take: depender de uma única ferramenta não é fidelidade. É risco de negócio. A ferramenta que você ama hoje não te deve nada amanhã.
+
+## O mercado de IA é instável de propósito
+
+Não é azar. É a natureza do momento. As ferramentas de IA estão numa corrida:
+
+- Preços mudam do dia pra noite. O que era barato vira caro quando eles precisam de receita.
+- Recursos aparecem e somem conforme a estratégia muda.
+- Empresas são compradas, fundidas ou fechadas o tempo todo.
+- Regras de uso mudam e o que você fazia ontem pode ser proibido hoje.
+
+Construir seu trabalho todo em cima de uma base que muda assim é construir na areia. Bonito enquanto dura.
+
+## O teste do refém
+
+Pergunta simples e honesta: se sua ferramenta principal sumisse hoje, você continuaria trabalhando amanhã?
+
+Se a resposta é "sim, com um pouco de ajuste", você está livre. Se a resposta é "não, eu pararia", você é refém. E refém não negocia. Aceita as condições que aparecem.
+
+## A defesa é o método, não a ferramenta
+
+Aqui está o pulo do gato. A ferramenta muda. O método fica.
+
+Se o que você domina é "onde fica o botão tal nesse app específico", você perde tudo quando o app muda. Se o que você domina é "como estruturar um bom pedido pra qualquer IA", você leva isso pra qualquer ferramenta.
+
+Por isso eu trabalho com método, não com ferramenta. O jeito de pedir claro. O jeito de revisar em camadas. O jeito de blindar o código. Isso funciona no ChatGPT, no Claude, no Gemini, no que vier depois. A ferramenta é o carro. O método é saber dirigir.
+
+## Práticas que mantêm sua liberdade
+
+Coisas concretas pra não se amarrar:
+
+- Conheça mais de uma ferramenta. Não precisa ser expert em todas. Precisa saber que existem e conseguir usar.
+- Não amarre seu processo a recurso exclusivo de ninguém. Se só funciona numa ferramenta, é uma corda no seu pescoço.
+- Guarde seus prompts que funcionam num arquivo seu, não dentro do app. Eles são seus, valem pra qualquer modelo.
+- Mantenha seu código e seus dados portáteis. Nada de formato que só um serviço abre.
+
+## O código também não pode ser refém
+
+Vale pra ferramenta de gerar código, mas vale pro seu app também. Se você construiu tudo travado num único provedor, você virou refém dele. Preço subiu, você não tem pra onde ir.
+
+Não precisa evitar todo provedor. Precisa saber o custo de sair e não se enterrar fundo demais em recurso que só existe num lugar.
+
+## A liberdade vale o esforço
+
+Dominar uma ferramenta só é mais rápido no começo. Mas te deixa preso. Dominar o método é mais trabalhoso e te deixa livre pra vida toda de trocar de ferramenta sem dor.
+
+Segundo a PwC, os salários sobem duas vezes mais rápido em setores expostos à IA. Quem vai capturar isso é quem domina o jogo, não quem depende de uma peça só do tabuleiro.
+
+Vibecoding com engenharia é usar as ferramentas sem se tornar propriedade delas. Ame a ferramenta enquanto ela serve. Mas mantenha o método na mão. Ferramenta é meio. Você é o dono.
+
+A decisão é sua.`,
+  },
+{
+    id: "como-usar-ia-pra-criar-proposta-comercial-2026",
+    slug: "como-usar-ia-pra-criar-proposta-comercial-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-17T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Como usar IA pra criar uma proposta comercial que fecha",
+    excerpt: "Proposta que fecha não é a mais bonita. É a que fala da dor do cliente antes do preço. Veja o passo a passo com IA.",
+    summary: "Proposta comercial não vende preço. Vende a solução de um problema. Use a IA pra estruturar problema, escopo e próximos passos na ordem certa, e revise você mesmo antes de mandar. O passo a passo abaixo funciona pros três negócios que eu toco.",
+    faq: [
+      {"q": "A IA escreve a proposta inteira sozinha?", "a": "Não. Ela estrutura e acelera. Você dá o contexto do cliente, revisa o preço e ajusta a voz. Proposta é decisão comercial, não texto gerado."},
+      {"q": "Preciso de ferramenta paga?", "a": "Não. Qualquer chat de IA resolve. O que muda o jogo é o prompt e o contexto que você dá, não a ferramenta."},
+      {"q": "E se o cliente perceber que usei IA?", "a": "Ele não percebe se você revisou. O problema é mandar cru. Cru tem cara de genérico e genérico não fecha."}
+    ],
+    content: `## Proposta boa não é bonita. É clara.
+
+Vou ser direto. A maioria das propostas morre no primeiro parágrafo.
+
+Começa falando da empresa. "Somos líderes desde 2010." O cliente não liga. Ele tem um problema e quer saber se você resolve.
+
+Proposta que fecha inverte isso. Fala da dor primeiro. Preço por último.
+
+A IA acelera essa estrutura. Mas ela só funciona se você der o contexto certo. Vamos ao passo a passo.
+
+## Passo 1: junte o contexto antes de abrir a IA
+
+Não abra o chat com a mão vazia. Junte:
+
+- O problema que o cliente falou, nas palavras dele
+- O que ele já tentou e não deu certo
+- O orçamento aproximado, se você souber
+- O prazo que ele espera
+
+Sem isso, a IA devolve proposta de template. Genérica. E genérico não fecha.
+
+## Passo 2: peça a estrutura, não o texto pronto
+
+Use um prompt com papel e ordem clara:
+
+    Você é um consultor comercial sênior. Vou te dar o contexto de um
+    cliente. Monte a estrutura de uma proposta nesta ordem: 1) o problema
+    do cliente nas palavras dele, 2) a solução em uma frase, 3) o escopo
+    do que entra e do que NÃO entra, 4) o investimento, 5) os próximos
+    passos. Contexto do cliente: [cole aqui].
+
+Repare no detalhe. O que NÃO entra no escopo evita briga depois. Cliente que sabe o limite não cobra o que não foi combinado.
+
+## Passo 3: revise o preço você mesmo
+
+A IA chuta preço. Sempre. Ela não sabe sua margem, seu custo, seu tempo.
+
+Apague o número que ela colocou. Coloque o seu. Preço é decisão sua, não sugestão de modelo.
+
+Vale o ponto: eu já vi gente mandar proposta com o preço que a IA inventou. Perdeu dinheiro num caso, assustou o cliente no outro.
+
+## Passo 4: corte o hype
+
+A IA adora "solução inovadora e disruptiva". Corte tudo.
+
+Troque por frases que o cliente entende:
+
+- "Reduz o tempo de fechamento de 5 dias pra 1"
+- "Elimina a planilha manual que trava sua equipe"
+
+Número concreto vende. Adjetivo não.
+
+## Passo 5: leia em voz alta antes de mandar
+
+Se travou na leitura, o cliente também trava. Corte a frase.
+
+Meu take: a proposta que eu mando hoje leva 20 minutos pra ficar pronta. Antes levava duas horas. A IA fez a estrutura. Eu fiz a venda.
+
+## O erro que quase todo mundo comete
+
+Mandar a proposta crua, do jeito que a IA cuspiu.
+
+Tem cara de robô. O cliente sente. E o que tem cara de genérico perde pro concorrente que personalizou.
+
+A IA monta o esqueleto. A carne é sua: o contexto do cliente, o preço, a voz.
+
+Quer o método completo de como eu uso IA com engenharia nos meus negócios? Baixe o e-book gratuito no site ou chama no WhatsApp.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-automatizar-tarefa-repetitiva-com-ia-sem-codigo-2026",
+    slug: "como-automatizar-tarefa-repetitiva-com-ia-sem-codigo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-18T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "Como automatizar tarefa repetitiva com IA (sem código)",
+    excerpt: "Você faz a mesma coisa toda semana. A IA pode fazer por você sem escrever uma linha de código. Veja como mapear e automatizar.",
+    summary: "Automatizar não é programar. É mapear a tarefa repetitiva, descrever pra IA o passo a passo e deixar ela executar o chato. Sem código. O tutorial mostra como escolher a primeira tarefa, montar o processo e checar o resultado sem confiar cego.",
+    faq: [
+      {"q": "Sem código mesmo?", "a": "Sim. Chat de IA e ferramentas no-code resolvem a maioria das tarefas de texto, planilha e e-mail. Código só entra quando o volume cresce muito."},
+      {"q": "Qual tarefa eu automatizo primeiro?", "a": "A mais chata e mais frequente. Se você faz toda semana e odeia, é a primeira. Começa pequeno."},
+      {"q": "E se a IA errar?", "a": "Ela vai errar às vezes. Por isso você revisa a saída no começo. Depois de calibrar o processo, o erro cai. Confiança cega é que quebra."}
+    ],
+    content: `## Você tá pagando com o seu tempo
+
+Toda semana você faz a mesma coisa. Copia dado de um lugar pro outro. Responde o mesmo tipo de e-mail. Formata o mesmo relatório.
+
+Isso é imposto que você paga com o seu tempo. E dá pra parar de pagar sem escrever código.
+
+Vou mostrar como. Passo a passo.
+
+## Passo 1: mapeie a tarefa antes de automatizar
+
+Não dá pra automatizar o que você não entende. Pegue papel e escreva:
+
+- Qual o gatilho? (chegou um e-mail, virou segunda-feira)
+- Quais os passos, na ordem?
+- Qual o resultado final que você espera?
+
+Se você não consegue escrever os passos, a IA também não consegue segui-los. Clareza primeiro.
+
+## Passo 2: escolha a primeira tarefa certa
+
+Não comece pela mais difícil. Comece pela mais chata e frequente.
+
+Regra simples: faz toda semana + você odeia + é sempre igual. Essa é a primeira.
+
+Exemplos reais que dá pra automatizar hoje:
+
+- Resumir reuniões a partir da transcrição
+- Transformar anotações soltas em ata organizada
+- Classificar e-mails por prioridade
+- Gerar primeira versão de resposta padrão
+
+## Passo 3: descreva o processo pra IA como se fosse um estagiário
+
+A IA é um estagiário rápido e sem memória. Você precisa explicar tudo, toda vez, ou salvar as instruções.
+
+Monte um prompt reutilizável:
+
+    Você vai [tarefa]. Siga sempre estes passos: 1) [passo], 2) [passo],
+    3) [passo]. O resultado deve ter este formato: [formato]. Se faltar
+    informação, pergunte antes de inventar.
+
+Aquela última frase importa. "Pergunte antes de inventar" evita que a IA preencha buraco com invenção.
+
+## Passo 4: rode com supervisão nas primeiras vezes
+
+Não confie de cara. Rode três, quatro vezes olhando cada saída.
+
+Você vai ver os erros de padrão. Ajusta o prompt. Roda de novo. Em uma semana o processo tá calibrado.
+
+Isso é vibecoding com engenharia aplicado à rotina: você automatiza, mas revisa. Não terceiriza cego.
+
+## Passo 5: só depois deixe rodar sozinho
+
+Quando a saída fica consistente, aí sim você relaxa a supervisão. Mas mantém um check semanal. Processo automatizado ainda quebra quando o input muda.
+
+## O que muda na prática
+
+Nos meus negócios eu automatizei o resumo de reuniões e a triagem de suporte. Ganhei umas cinco horas por semana. Sem código. Só processo bem descrito.
+
+O segredo nunca foi a ferramenta. Foi mapear a tarefa direito antes de jogar pra IA.
+
+Quer o passo a passo completo de como eu construo com IA de forma segura? O e-book é gratuito. Link no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-usar-ia-pra-pesquisar-mercado-e-concorrente-2026",
+    slug: "como-usar-ia-pra-pesquisar-mercado-e-concorrente-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-19T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Como usar IA pra pesquisar mercado e concorrente",
+    excerpt: "Pesquisa de mercado com IA é rápida e perigosa. Rápida porque acelera. Perigosa porque a IA inventa. Veja como fazer certo.",
+    summary: "IA acelera pesquisa de mercado, mas inventa número quando não sabe. O tutorial mostra como usar a IA pra mapear concorrentes, achar seu diferencial e organizar o mercado, sempre verificando a fonte. Velocidade sem verificação é como você toma decisão errada rápido.",
+    faq: [
+      {"q": "Posso confiar nos números que a IA dá?", "a": "Não sem verificar. A IA inventa dado com confiança. Todo número que vai pra uma decisão precisa de fonte real, checada por você."},
+      {"q": "A IA acessa a internet pra ver o concorrente?", "a": "Depende da ferramenta. Algumas buscam, outras não. Se ela não busca, ela chuta pelo que treinou. Saiba qual você está usando."},
+      {"q": "Isso substitui pesquisa de mercado de verdade?", "a": "Não. Acelera a parte de organizar e levantar hipóteses. Falar com cliente real e olhar dado de fonte ninguém substitui."}
+    ],
+    content: `## Rápida e perigosa ao mesmo tempo
+
+Pesquisa de mercado com IA tem duas caras.
+
+A boa: você organiza em uma hora o que levava um dia. A ruim: a IA inventa número e você toma decisão errada, só que rápido.
+
+Velocidade sem verificação não é vantagem. É armadilha. Vou mostrar como usar o lado bom.
+
+## Passo 1: separe o que a IA sabe do que ela chuta
+
+A IA é ótima pra organizar e estruturar. É péssima pra dado factual específico.
+
+Ela sabe montar uma matriz de concorrentes. Ela não sabe o faturamento real de uma empresa que ela nunca viu.
+
+Regra de ouro: use a IA pra estrutura e hipótese. Verifique todo número na fonte.
+
+## Passo 2: mapeie os concorrentes com um prompt de estrutura
+
+    Você é um analista de mercado. Vou listar meus concorrentes.
+    Para cada um, monte: proposta de valor em uma frase, público que
+    eles atacam, faixa de preço aparente e um ponto fraco visível.
+    Deixe em branco o que você não tem base pra afirmar. Concorrentes:
+    [liste os nomes e sites].
+
+Aquele "deixe em branco o que você não tem base" é o freio. Sem ele, a IA preenche tudo com invenção.
+
+## Passo 3: ache seu diferencial pela lacuna
+
+Depois de mapear, pergunte:
+
+    Olhando esses concorrentes, que dor do cliente nenhum deles resolve
+    bem? Onde está a lacuna?
+
+A IA é boa em cruzar informação e achar o buraco. Esse buraco costuma ser o seu posicionamento.
+
+Foi assim que eu separei meus produtos de educação. Todo mundo vendia curso. Ninguém vendia método com prova. A lacuna virou marca.
+
+## Passo 4: verifique tudo que virou número
+
+Aqui é onde a maioria erra. A IA disse "mercado de 2 bilhões"? Ache a fonte.
+
+Se você não achar a fonte, o número não existe. Ponto.
+
+Peça sempre:
+
+    Para cada dado numérico, cite a fonte e o ano. Se você não tem
+    fonte confiável, diga que não sabe.
+
+## Passo 5: feche com cliente real
+
+IA nenhuma substitui conversa com quem paga. Depois de organizar as hipóteses, ligue pra três clientes. Pergunte se a dor que você mapeou é real.
+
+Meu take: a IA me economiza a parte chata de organizar. A parte que decide o negócio, falar com gente de verdade, continua comigo.
+
+## O resumo
+
+A IA pesquisa mercado rápido. Você verifica. Sem verificação, você só erra mais rápido que antes.
+
+Estrutura vem da IA. A decisão vem do dado checado.
+
+Quer aprender a construir com IA sem cair nas armadilhas dela? Baixe o e-book gratuito no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-montar-funil-de-email-com-ia-2026",
+    slug: "como-montar-funil-de-email-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-20T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Como montar um funil de e-mail com IA",
+    excerpt: "Funil de e-mail não é spam automatizado. É valor entregue na ordem certa até a oferta. Veja como montar com IA sem soar robô.",
+    summary: "Funil de e-mail que converte entrega valor antes de vender. O tutorial mostra a sequência isca, boas-vindas, nutrição e oferta, com prompts pra IA escrever cada e-mail na sua voz. E o cuidado pra não virar aquele spam que todo mundo ignora.",
+    faq: [
+      {"q": "Quantos e-mails tem um funil bom?", "a": "Começa com cinco a sete. Boas-vindas, dois ou três de valor, um de prova e um de oferta. Mais que isso só depois de validar."},
+      {"q": "A IA escreve na minha voz?", "a": "Se você der exemplos seus, sim. Cole três e-mails ou textos que você escreveu e mande ela seguir o tom. Sem exemplo, sai genérico."},
+      {"q": "Isso funciona pra quem tá começando?", "a": "Funciona melhor pra quem tá começando. Você monta a estrutura uma vez e ela trabalha por você enquanto você faz outra coisa."}
+    ],
+    content: `## Funil não é spam. É valor na ordem certa.
+
+A maioria trata e-mail como megafone. Manda oferta atrás de oferta. O cliente descadastra.
+
+Funil bom é o contrário. Entrega valor primeiro. Vende no fim. Quem recebeu ajuda de graça compra com mais facilidade.
+
+A IA escreve a sequência inteira. Mas na sua voz, ou não funciona. Vamos ao passo a passo.
+
+## Passo 1: entenda a espinha do funil
+
+Todo funil que converte tem a mesma estrutura:
+
+- Isca: o material grátis que captura o e-mail
+- Boas-vindas: entrega a isca e se apresenta
+- Nutrição: dois ou três e-mails de valor real
+- Prova: caso ou resultado concreto
+- Oferta: aí sim você vende
+
+Cada e-mail tem um trabalho. Não misture. E-mail que tenta vender e ensinar ao mesmo tempo não faz nem um nem outro.
+
+## Passo 2: alimente a IA com a sua voz
+
+Este é o passo que separa funil bom de funil robô.
+
+    Vou te dar três textos que eu escrevi. Estude o tom: frases curtas,
+    sem hype, exemplos concretos. Todos os e-mails que você escrever
+    devem soar como esses. Textos: [cole aqui].
+
+Sem exemplos, a IA escreve como todo mundo. Com exemplos, ela escreve como você.
+
+## Passo 3: peça um e-mail de cada vez
+
+Não peça o funil inteiro de uma vez. A qualidade cai.
+
+    Escreva o e-mail de boas-vindas. Objetivo: entregar a isca [nome] e
+    criar conexão. Uma ideia só. Assunto com no máximo 6 palavras.
+    Termine com uma frase que dê vontade de abrir o próximo e-mail.
+
+Depois o de nutrição. Depois o de prova. Um por vez, revisando cada um.
+
+## Passo 4: a regra do valor antes da venda
+
+Nos e-mails de nutrição, proibido vender. Só entrega.
+
+Ensina algo que a pessoa usa hoje. Resolve um pedaço do problema dela de graça.
+
+Quando chega o e-mail de oferta, ela já confia. A venda vira consequência, não interrupção.
+
+## Passo 5: escreva a oferta com prova, não com pressão
+
+E-mail de oferta ruim usa "últimas vagas" e "só hoje". Cansa.
+
+E-mail de oferta bom mostra resultado. "Esse método montou o funil de três empresas minhas." Prova antes de pitch. Sempre.
+
+    Escreva o e-mail de oferta. Comece com um resultado concreto.
+    Apresente a oferta. CTA suave, sem pressão artificial.
+
+## O que eu aprendi tocando isso
+
+Meu funil não é o mais elaborado. É o mais honesto. Entrega valor até o cliente pedir pra comprar.
+
+A IA escreveu os textos. Eu dei a voz e o valor. Essa divisão é o que faz funcionar.
+
+Quer o e-book que ensina meu método completo? É de graça. Link no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-criar-conteudo-de-rede-social-com-ia-mantendo-sua-voz-2026",
+    slug: "como-criar-conteudo-de-rede-social-com-ia-mantendo-sua-voz-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-21T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "Como criar conteúdo de rede social com IA mantendo sua voz",
+    excerpt: "O problema de conteúdo com IA não é velocidade. É que tudo soa igual. Veja como usar IA e continuar soando como você.",
+    summary: "IA cria conteúdo rápido, mas todo mundo soa igual. O tutorial mostra como treinar a IA na sua voz com exemplos, gerar ideias sem terceirizar o pensamento e revisar pra manter o que te diferencia. Voz genérica é ruído. Voz sua é o ativo.",
+    faq: [
+      {"q": "Dá pra IA copiar minha voz de verdade?", "a": "Ela imita se você der exemplos fortes. Mas a voz nasce em você. A IA reproduz padrão, não cria identidade. O núcleo é seu."},
+      {"q": "Quanto de conteúdo posso automatizar?", "a": "O rascunho e a variação, quase tudo. A ideia central e a opinião, nada. Terceirize a execução, nunca o pensamento."},
+      {"q": "As pessoas percebem conteúdo feito com IA?", "a": "Percebem quando você não revisa. Conteúdo cru tem cara de template. Conteúdo revisado tem cara sua. A diferença é o trabalho de acabamento."}
+    ],
+    content: `## Todo mundo com IA soa igual
+
+Abre o feed. Metade dos posts tem a mesma cara. Mesma abertura, mesma estrutura, mesma lista de três pontos.
+
+É IA sem voz. Rápido de fazer, impossível de lembrar.
+
+O objetivo não é produzir mais. É produzir e continuar soando como você. Vou mostrar como.
+
+## Passo 1: defina sua voz antes de abrir a IA
+
+Você não pode pedir pra IA soar como você se você não sabe como soa.
+
+Escreva suas regras:
+
+- Frase curta ou longa?
+- Usa gíria ou formal?
+- Direto ou explicativo?
+- Que palavras você sempre usa? Quais você nunca usa?
+
+Eu, por exemplo: frase curta, sem travessão, punchline no fim, exemplo concreto, zero hype. Isso é regra escrita, não intuição.
+
+## Passo 2: treine a IA com exemplos, não com adjetivos
+
+"Escreva de forma descontraída" não funciona. Descontraído pra IA é genérico.
+
+Cole exemplos:
+
+    Aqui estão cinco posts que eu escrevi. Estude o padrão: abertura
+    forte, frases curtas, um exemplo real, fechamento marcante. Escreva
+    seguindo exatamente esse padrão. Posts: [cole aqui].
+
+Exemplo ensina o que adjetivo não consegue.
+
+## Passo 3: use a IA pra ideia e variação, não pra opinião
+
+Aqui está a linha que não se cruza.
+
+A IA é ótima pra:
+
+- Gerar 20 ângulos de um tema
+- Reescrever um post pra três formatos
+- Achar o gancho de abertura
+
+A IA é péssima pra:
+
+- Ter a opinião central
+- Saber o que você viveu
+- Decidir o que importa
+
+Terceirize a execução. Nunca o pensamento. O que você pensa é o que te diferencia.
+
+## Passo 4: revise pra devolver a alma
+
+O rascunho da IA é ponto de partida, não de chegada.
+
+Leia e pergunte: isso soa como eu? Onde tá genérico?
+
+Corte os "é importante ressaltar". Troque o exemplo inventado pelo seu exemplo real. Bota a punchline que só você faria.
+
+## Passo 5: mantenha um banco da sua voz
+
+Salve seus melhores textos num arquivo. Toda vez que for usar a IA, cole eles como referência.
+
+Quanto mais exemplo seu, mais a IA acerta o tom. Isso é engenharia aplicada a conteúdo: você constrói um sistema de voz, não sai improvisando.
+
+## O ponto que fica
+
+Na era da IA, a execução ficou barata. A voz ficou cara.
+
+Quem tem voz própria vira referência. Quem terceiriza a voz vira ruído no feed.
+
+Use a IA pra fazer mais. Nunca pra pensar menos.
+
+Quer o método completo de construir com IA sem perder o que é seu? E-book gratuito no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-usar-ia-pra-preparar-apresentacao-e-pitch-2026",
+    slug: "como-usar-ia-pra-preparar-apresentacao-e-pitch-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-22T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Como usar IA pra preparar uma apresentação ou pitch",
+    excerpt: "Slide bonito não salva pitch fraco. O que salva é a estrutura da história. Veja como usar IA pra montar o argumento, não só o design.",
+    summary: "Pitch não se ganha no slide bonito. Se ganha na estrutura do argumento. O tutorial mostra como usar IA pra montar a narrativa, cortar o excesso e antecipar objeção, antes de pensar em design. História primeiro. Slide depois.",
+    faq: [
+      {"q": "A IA faz os slides?", "a": "Ela ajuda com estrutura e texto. Design fica melhor em ferramenta própria. Mas o slide é o último passo, não o primeiro. Comece pelo argumento."},
+      {"q": "Quantos slides um pitch precisa?", "a": "Menos do que você acha. Problema, solução, prova, mercado, oferta, próximo passo. Se passou de dez, você tá enchendo linguiça."},
+      {"q": "Como uso IA pra treinar o pitch?", "a": "Peça pra ela agir como o investidor ou cliente e fazer as perguntas difíceis. Você responde. Ela aponta os buracos. Treino barato e brutal."}
+    ],
+    content: `## O slide bonito não salva o pitch fraco
+
+Todo mundo abre o Canva primeiro. Escolhe cor, fonte, animação.
+
+Erro. Slide bonito com argumento fraco é maquiagem em cima de nada.
+
+Pitch se ganha na história. A IA ajuda a montar essa história antes de qualquer design. Passo a passo.
+
+## Passo 1: comece pela estrutura, não pelo visual
+
+Todo pitch que convence segue uma espinha:
+
+- Problema: a dor real, específica
+- Solução: como você resolve, em uma frase
+- Prova: por que acreditar em você
+- Mercado: quem paga e quanto
+- Oferta: o que você quer da pessoa
+- Próximo passo: o que acontece se ela disser sim
+
+Monte isso em texto antes de tocar num slide.
+
+## Passo 2: use a IA pra afiar o problema
+
+A maioria dos pitches erra aqui. O problema fica vago.
+
+    Aqui está o problema que meu produto resolve: [descreva]. Reescreva
+    de três formas, cada uma mais específica e concreta que a anterior.
+    Use número ou situação real, não adjetivo.
+
+Problema vago não gera urgência. Problema específico faz a pessoa pensar "isso é comigo".
+
+## Passo 3: corte o excesso sem dó
+
+Pitch longo perde. A IA é boa pra enxugar.
+
+    Este é o rascunho do meu pitch: [cole]. Corte 30% sem perder o
+    argumento. Marque o que é essencial e o que é enfeite.
+
+Você vai ver que metade era enfeite. Corte. Pitch bom cabe no tempo do elevador.
+
+## Passo 4: antecipe as objeções
+
+Aqui a IA vira seu adversário de treino.
+
+    Aja como um investidor cético. Leia meu pitch e faça as 5 perguntas
+    mais difíceis que você faria. Não pegue leve.
+
+Você responde cada uma. As respostas viram parte do pitch ou do seu preparo. Ninguém te pega de surpresa depois.
+
+Meu take: esse passo sozinho já vale a IA inteira. Treino de objeção que antes exigia um mentor, agora você faz sozinho às onze da noite.
+
+## Passo 5: só agora pense no slide
+
+Com o argumento pronto, o slide vira suporte, não muleta.
+
+Uma ideia por slide. Texto mínimo. Número grande. O slide reforça o que você fala, não repete.
+
+Se o slide diz tudo, você é dispensável. O slide serve pra você, não o contrário.
+
+## O que fica
+
+Preparei pitch de três produtos meus com esse processo. O que fechou não tinha o slide mais bonito. Tinha o argumento mais claro.
+
+A IA montou a estrutura e treinou minhas respostas. A entrega foi minha.
+
+História primeiro. Slide depois. Nessa ordem, sempre.
+
+Quer o método completo de construir e apresentar com IA? Baixe o e-book gratuito.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-usar-ia-pra-organizar-financas-pessoais-2026",
+    slug: "como-usar-ia-pra-organizar-financas-pessoais-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-23T08:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "Como usar IA pra organizar suas finanças pessoais (com cuidado de privacidade)",
+    excerpt: "IA ajuda a organizar suas finanças. Mas dado bancário não se joga em qualquer chat. Veja como fazer útil e seguro ao mesmo tempo.",
+    summary: "IA organiza gasto, categoriza e mostra padrão que você não vê. Mas dado financeiro é sensível e não vai pra qualquer lugar. O tutorial mostra como usar IA pra clareza financeira sem entregar número de conta, senha ou dado que te expõe.",
+    faq: [
+      {"q": "Posso colar meu extrato no chat de IA?", "a": "Só depois de tirar o que identifica você: nome, número de conta, agência. Cole os valores e categorias, nunca os dados que te ligam à conta."},
+      {"q": "A IA pode me dar conselho de investimento?", "a": "Ela pode explicar conceito. Conselho personalizado de onde investir é trabalho de profissional licenciado. IA não substitui isso e nem eu."},
+      {"q": "É seguro usar IA pra finanças?", "a": "É seguro se você controla o que entra. O perigo não é a IA calcular. É você entregar dado sensível sem pensar. Privacidade é sua responsabilidade."}
+    ],
+    content: `## Útil de um lado. Perigoso do outro.
+
+A IA é excelente pra organizar finanças. Categoriza gasto, acha padrão, mostra pra onde seu dinheiro vai.
+
+Mas tem um porém que quase ninguém fala. Dado financeiro é sensível. E muita gente cola o extrato inteiro num chat sem pensar.
+
+Dá pra ter o útil sem o perigoso. Vou mostrar como.
+
+## Passo 1: entenda o que nunca vai pro chat
+
+Antes de qualquer coisa, a regra de privacidade. Nunca cole:
+
+- Número de conta, agência, cartão
+- Senha ou dado de acesso
+- Seu nome ligado aos valores
+- CPF, documento
+
+A IA não precisa saber que a conta é sua pra categorizar um gasto. Ela precisa dos valores e das descrições. Só isso.
+
+## Passo 2: anonimize antes de colar
+
+Pegue seu extrato e limpe. Tire nome, conta, tudo que identifica.
+
+Sobra o que interessa:
+
+    Mercado - 450
+    Restaurante - 120
+    Streaming - 40
+    Farmacia - 85
+
+Isso a IA usa sem te expor. Valor e categoria não dizem quem você é.
+
+## Passo 3: peça categorização e padrão
+
+Agora sim a IA trabalha:
+
+    Aqui está uma lista de gastos do mês, sem dados pessoais. Agrupe por
+    categoria, some cada grupo e me diga onde está o maior vazamento de
+    dinheiro. Aponte 3 padrões que eu talvez não perceba.
+
+A IA vê o que você não vê. Aquele gasto pequeno e repetido que soma muito no fim do mês.
+
+## Passo 4: monte um orçamento simples
+
+    Com base nesses gastos e numa renda mensal de [valor aproximado],
+    monte um orçamento simples pela regra 50/30/20. Mostre onde eu estou
+    fora e o que ajustar primeiro.
+
+Orçamento não precisa ser planilha complexa. Precisa ser claro e você seguir.
+
+## Passo 5: onde a IA para e o profissional começa
+
+A IA organiza. A IA explica conceito. A IA mostra padrão.
+
+A IA não decide onde você investe seu dinheiro. Isso é conselho financeiro personalizado e é trabalho de profissional licenciado.
+
+Eu não dou esse conselho. A IA também não deveria. Ela pode te ensinar o que é renda fixa. Não pode dizer "coloque tudo aqui".
+
+## O equilíbrio que importa
+
+Vibecoding com engenharia vale pra finanças também. Você usa a ferramenta poderosa, mas controla o que entra e o que sai.
+
+A clareza que a IA dá é real. O risco de privacidade também. Você fica com a clareza e corta o risco controlando o input.
+
+Dado sensível é seu. Trate como seu.
+
+Quer aprender a usar IA com segurança em tudo que você faz? O e-book é gratuito. Link no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "5-formas-de-usar-ia-que-economizam-uma-hora-por-dia-2026",
+    slug: "5-formas-de-usar-ia-que-economizam-uma-hora-por-dia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-17T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "5 formas de usar IA que economizam 1 hora por dia",
+    excerpt: "Uma hora por dia é uma semana de trabalho por mês. Cinco usos de IA que devolvem esse tempo sem esforço.",
+    summary: "Cinco usos simples de IA que economizam uma hora por dia: triagem de e-mail, resumo de reunião, primeiro rascunho, busca interna e planejamento do dia. Nenhum exige ferramenta paga. Todos exigem processo. Tempo é o único recurso que não volta.",
+    faq: [
+      {"q": "Uma hora por dia é real?", "a": "É conservador. Se você soma triagem de e-mail, resumo e rascunho, passa de uma hora fácil. O truque é usar todo dia, não só quando lembra."},
+      {"q": "Precisa de ferramenta cara?", "a": "Não. Um chat de IA cobre os cinco usos. O que economiza tempo é o hábito, não a assinatura premium."},
+      {"q": "Qual desses eu começo?", "a": "O primeiro rascunho. É onde a maioria trava mais tempo. A IA quebra o bloqueio da página em branco na hora."}
+    ],
+    content: `## Uma hora por dia é uma semana por mês
+
+Faz a conta. Uma hora por dia, cinco dias, quatro semanas. Vinte horas. Meia semana de trabalho por mês, de volta pro seu bolso.
+
+Não precisa de mágica. Cinco usos de IA que qualquer um aplica hoje. Sem ferramenta cara.
+
+## 1. Triagem de e-mail
+
+Você não precisa ler tudo pra saber o que é urgente.
+
+    Aqui estão os assuntos e primeiras linhas dos meus e-mails de hoje.
+    Classifique em: responder agora, responder depois, ignorar. Justifique
+    em uma linha.
+
+Você lê só o que importa. Os quinze minutos de triagem viram três.
+
+## 2. Resumo de reunião
+
+Reunião gravada ou transcrita? Não releia uma hora de conversa.
+
+    Resuma esta transcrição em: 3 decisões tomadas, tarefas com
+    responsável, e pontos em aberto. Só o que ficou definido.
+
+O que levava vinte minutos de releitura vira dois de leitura de resumo.
+
+## 3. Primeiro rascunho de qualquer coisa
+
+Página em branco é onde o tempo morre. E-mail difícil, proposta, texto.
+
+    Escreva um primeiro rascunho de [o quê] com [objetivo]. Não precisa
+    estar perfeito, preciso de um ponto de partida pra editar.
+
+Editar é rápido. Começar do zero é lento. A IA te dá o começo.
+
+## 4. Busca dentro dos seus documentos
+
+Você tem a informação, mas não acha.
+
+Cole o documento e pergunte direto. "Onde fala do prazo?" "Qual foi o valor combinado?" A IA acha em segundos o que você caçaria por minutos.
+
+## 5. Planejamento do dia
+
+Cinco minutos de manhã que organizam oito horas.
+
+    Aqui estão minhas tarefas de hoje: [liste]. Organize por prioridade e
+    esforço. Me diga o que fazer primeiro e o que pode esperar.
+
+Você começa o dia com plano, não com lista bagunçada.
+
+## O ponto que separa quem economiza de quem não
+
+Todo mundo conhece esses usos. Poucos fazem todo dia.
+
+A hora economizada não vem da ferramenta. Vem do hábito. Quem usa quando lembra, economiza minutos. Quem usa como rotina, economiza horas.
+
+Escolhe um dos cinco. Faz por uma semana. Depois adiciona o próximo. Não muda tudo de uma vez.
+
+Quer os prompts e o método completo? Baixe o e-book gratuito no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "por-que-metodo-vale-mais-que-ferramenta-2026",
+    slug: "por-que-metodo-vale-mais-que-ferramenta-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-18T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que método vale mais que ferramenta",
+    excerpt: "Todo mês sai uma IA nova e todo mundo corre atrás. Erro. A ferramenta muda. O método fica. Veja por que apostar no método.",
+    summary: "Ferramenta de IA muda toda semana. Quem aposta na ferramenta recomeça sempre. Quem aposta no método aproveita qualquer ferramenta nova no dia seguinte. Método é o que se acumula. Ferramenta é o que se descarta. A diferença define quem sai na frente.",
+    faq: [
+      {"q": "Então não preciso testar ferramenta nova?", "a": "Testa, mas sem ansiedade. Ferramenta nova roda melhor se você já tem método. Sem método, a ferramenta nova só te dá lixo mais rápido."},
+      {"q": "O que é método na prática?", "a": "É o seu jeito repetível de pedir, revisar e validar o que a IA faz. Como o P.E.D.E.R. ou o Protocolo de 5 Camadas. Funciona em qualquer modelo."},
+      {"q": "Método não fica velho também?", "a": "O princípio não. Dar contexto, revisar antes de confiar, validar a saída. Isso vale desde o primeiro modelo até o que ainda vai sair."}
+    ],
+    content: `## Toda semana uma IA nova. Toda semana a mesma corrida.
+
+Saiu modelo novo. Todo mundo migra. Aprende do zero. Reconfigura tudo. Um mês depois sai outro. Corre de novo.
+
+Isso é correr numa esteira. Muito esforço, zero avanço.
+
+O erro está na aposta. Quem aposta na ferramenta recomeça sempre. Quem aposta no método acumula.
+
+## A ferramenta é descartável. O método não.
+
+Pensa assim. A ferramenta é o carro. O método é saber dirigir.
+
+Troca o carro toda semana? Tudo bem, você já sabe dirigir. Entra e anda.
+
+Não sabe dirigir? O carro mais caro do mundo bate na primeira esquina.
+
+A IA é o carro. Seu método de usar é dirigir. Adivinha o que importa mais.
+
+## O que método resolve que ferramenta não resolve
+
+Ferramenta nova não te ensina a:
+
+- Dar o contexto certo pra IA
+- Revisar antes de confiar na saída
+- Saber quando a resposta tá inventada
+- Repetir o resultado bom de propósito
+
+Isso é método. E método funciona no modelo de hoje e no que sai ano que vem.
+
+Meu P.E.D.E.R. e meu Protocolo de 5 Camadas não dependem de qual IA você usa. São jeitos de pensar. Trocou de ferramenta? O método vai junto, intacto.
+
+## Por que quem tem método sai na frente
+
+Sai modelo novo. O sem-método começa do zero, tateando.
+
+O com-método já sabe o que pedir e como validar. No primeiro dia ele já tá extraindo o melhor da ferramenta nova.
+
+Vale o ponto: a vantagem não é ter a ferramenta. Todo mundo tem. A vantagem é saber usar. E isso não vem no pacote.
+
+## O que isso significa pra você
+
+Para de correr atrás de cada lançamento como se fosse a salvação. Não é.
+
+Investe no que fica. Aprende a dar contexto. Aprende a revisar. Aprende a validar. Constrói seu jeito repetível.
+
+A ferramenta você troca num clique. O método leva tempo pra construir e ninguém tira de você.
+
+Vibecoding às cegas troca de ferramenta achando que resolve. Vibecoding com engenharia constrói método e usa qualquer ferramenta.
+
+Quer o método que uso nos meus três negócios? Está no e-book gratuito. Link no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-erro-de-quem-terceiriza-o-pensamento-pra-ia-2026",
+    slug: "o-erro-de-quem-terceiriza-o-pensamento-pra-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-19T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "O erro de quem terceiriza o pensamento pra IA",
+    excerpt: "Terceirizar a execução pra IA é inteligente. Terceirizar o pensamento é como você para de crescer. Veja a diferença.",
+    summary: "Delegar tarefa pra IA é ganho. Delegar o pensamento é perda. Quem para de pensar vira operador de uma máquina que ele não entende. O erro não é usar IA demais. É usar o cérebro de menos. Ferramenta amplifica quem pensa e afunda quem parou.",
+    faq: [
+      {"q": "Qual a diferença entre delegar execução e pensamento?", "a": "Execução é o trabalho braçal: escrever, calcular, formatar. Pensamento é decidir o quê, por quê e se está certo. Delegue o primeiro. Nunca o segundo."},
+      {"q": "Usar IA pra tudo me deixa mais burro?", "a": "Usar sem revisar, sim. Você perde a capacidade de julgar. Usar como amplificador do seu julgamento, não. A diferença está em quem decide no fim."},
+      {"q": "Como saber se eu terceirizei o pensamento?", "a": "Se você aceita a resposta da IA sem conseguir explicar por que está certa, terceirizou. Se você entende e valida, ainda está pensando."}
+    ],
+    content: `## Delegar tarefa é esperto. Delegar cabeça é burrice.
+
+Tem uma linha fina e quase ninguém vê.
+
+De um lado: usar IA pra escrever, calcular, formatar, resumir. Isso é delegar execução. Inteligente.
+
+Do outro: aceitar o que a IA decide sem entender por quê. Isso é delegar pensamento. Perigoso.
+
+O erro de muita gente não é usar IA demais. É usar o cérebro de menos.
+
+## O que acontece quando você para de pensar
+
+No começo parece ótimo. A IA responde, você aceita, tá tudo rápido.
+
+Aí vem o problema. Você aceita uma resposta errada e não percebe. Porque você parou de conseguir julgar.
+
+Vira operador de uma máquina que você não entende. E operador de máquina que não entende a máquina é o primeiro a ser trocado.
+
+## O sinal de que você cruzou a linha
+
+Teste simples. Pega a última resposta que a IA te deu e que você usou.
+
+Consegue explicar por que ela está certa? Consegue defender cada parte?
+
+Se sim, você pensou. Usou a IA como ferramenta.
+
+Se não, você só copiou. Terceirizou o pensamento e nem viu.
+
+## A IA amplifica. Não substitui.
+
+Ferramenta amplifica quem você é. Ponto.
+
+Se você pensa, a IA te faz pensar mais rápido e mais longe. Vira alavanca.
+
+Se você parou de pensar, a IA amplifica o vazio. Você produz mais lixo, mais rápido, com mais confiança. Pior dos mundos.
+
+Meu take: a Veracode achou que código gerado por IA tem 2,74 vezes mais chance de conter vulnerabilidade grave. Não é a IA que é ruim. É a IA usada sem cabeça que passa erro adiante.
+
+## Como usar IA sem desligar o cérebro
+
+Regra prática que eu sigo:
+
+- A IA propõe. Você dispõe.
+- Toda resposta importante, você revisa antes de usar.
+- Se você não entende, você não aprova.
+- A decisão final é sempre humana.
+
+Isso é o Protocolo de 5 Camadas em espírito. Entender antes de aceitar. Sempre.
+
+## O que fica
+
+A IA é a melhor ferramenta que já existiu pra quem pensa. E o pior atalho pra quem quer parar de pensar.
+
+Ela não vai te substituir. Mas a pessoa que usa IA e pensa vai substituir quem usa IA e parou.
+
+Terceiriza o trabalho. Nunca o julgamento.
+
+Quer aprender a usar IA amplificando seu julgamento, não anulando? E-book gratuito no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "3-sinais-de-que-sua-empresa-precisa-de-metodo-de-ia-2026",
+    slug: "3-sinais-de-que-sua-empresa-precisa-de-metodo-de-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-08-20T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "3 sinais de que sua empresa precisa de método de IA",
+    excerpt: "Sua equipe usa IA, mas cada um do seu jeito, sem padrão. Isso não é adoção. É bagunça. Três sinais de que falta método.",
+    summary: "Ter gente usando IA não é ter método de IA. Sem padrão, cada um faz de um jeito, o resultado é imprevisível e o risco cresce escondido. Três sinais claros de que sua empresa passou da hora de padronizar como usa IA. Bagunça escala rápido.",
+    faq: [
+      {"q": "Minha equipe já usa IA. Não basta?", "a": "Usar não é método. Se cada um faz diferente, sem revisão nem padrão, você tem uso, não método. Método é padrão repetível e verificável."},
+      {"q": "Método de IA é burocracia?", "a": "Não. É o oposto. Sem método você gasta tempo refazendo e corrigindo. Método é o que deixa a equipe rápida sem virar bagunça."},
+      {"q": "Empresa pequena precisa disso?", "a": "Precisa mais ainda. Empresa pequena não tem margem pra erro caro. Método barato evita retrabalho caro. Começa cedo, sofre menos."}
+    ],
+    content: `## Usar IA não é ter método de IA
+
+Sua equipe usa IA. Todo mundo tá empolgado. Parece adoção.
+
+Mas olha de perto. Cada um usa de um jeito. Ninguém revisa igual. Resultado varia de pessoa pra pessoa.
+
+Isso não é método. É bagunça com verniz de inovação. E bagunça escala rápido.
+
+Três sinais de que sua empresa precisa parar e padronizar.
+
+## Sinal 1: cada um faz de um jeito
+
+Pergunta pra três pessoas da sua equipe como elas usam IA. Vem três respostas diferentes.
+
+Uma cola tudo sem revisar. Outra revisa demais e perde a velocidade. A terceira nem sabe o que os outros fazem.
+
+Sem padrão, o resultado é loteria. Às vezes bom, às vezes desastre. Você não controla qual dos dois vai chegar no cliente.
+
+Método é o padrão repetível. Todo mundo pedindo, revisando e validando do mesmo jeito. Aí sim você tem qualidade previsível.
+
+## Sinal 2: ninguém revisa o que a IA produz
+
+Este é o sinal que assusta.
+
+A IA gera, alguém copia, vai pro cliente ou pro código. Sem revisão. Sem segunda leitura.
+
+Lembra do dado da Veracode: código de IA tem 2,74 vezes mais chance de vulnerabilidade grave. Sem revisão, esse risco entra na sua empresa sem ninguém ver.
+
+Se a sua empresa não tem um passo obrigatório de revisão, você tá publicando o que a IA inventou. E vai descobrir o erro no pior momento.
+
+## Sinal 3: você não consegue repetir o resultado bom
+
+Deu certo uma vez. Ótimo. Consegue repetir?
+
+Se a resposta é "não sei, deu certo daquela vez", você não tem método. Tem sorte.
+
+Método é quando o resultado bom é de propósito, não de acaso. Você sabe o que fez, documenta e repete.
+
+Empresa que depende de sorte não escala. Escala o que é repetível.
+
+## O que fazer com esses sinais
+
+Se você reconheceu os três, não entra em pânico. Reconhecer é o começo.
+
+O caminho é simples de dizer, trabalhoso de fazer:
+
+- Define um jeito padrão de pedir pra IA
+- Cria um passo obrigatório de revisão
+- Documenta o que funciona pra repetir
+
+Isso é vibecoding com engenharia dentro da empresa. Não é usar mais IA. É usar com método.
+
+Vibecoding às cegas espalha bagunça na velocidade da IA. Com engenharia, você espalha qualidade na mesma velocidade.
+
+Quer o método que padroniza uso de IA em três empresas minhas? Está no e-book gratuito. Ou chama no WhatsApp.
+
+A decisão é sua.`,
+  },
+  {
+    id: "por-que-sua-voz-importa-mais-na-era-da-ia-2026",
+    slug: "por-que-sua-voz-importa-mais-na-era-da-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-21T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que a sua voz importa mais na era da IA",
+    excerpt: "Quando todo mundo produz igual com IA, o que te separa é o que a IA não tem: sua voz. Veja por que ela virou seu ativo mais raro.",
+    summary: "IA deixou a produção barata e igual. Texto, imagem, código, todo mundo gera. O que ficou raro é a voz própria, a opinião vivida, o jeito único de ver. Quando a execução vira commodity, a identidade vira o ativo. Sua voz é o que a IA não copia.",
+    faq: [
+      {"q": "Voz não é coisa de escritor?", "a": "Não. Voz é seu jeito de pensar e posicionar, em qualquer área. O dev tem voz no código, o vendedor na abordagem. Voz é identidade, não estilo literário."},
+      {"q": "A IA não vai aprender minha voz?", "a": "Ela imita padrão se você der exemplo. Mas não vive o que você vive. A voz nasce da experiência, e experiência a IA não tem."},
+      {"q": "Como desenvolvo minha voz?", "a": "Produzindo com opinião, não só executando. Toda vez que você escolhe um lado e explica por quê, sua voz fica mais nítida. É prática, não talento."}
+    ],
+    content: `## Quando todo mundo produz igual, o diferente vence
+
+A IA deixou a produção barata. Texto, imagem, código, apresentação. Todo mundo gera, e gera parecido.
+
+Aí acontece uma coisa interessante. O que era abundante virou commodity. E o que era commodity perdeu valor.
+
+O que ficou raro? A voz própria. A opinião de quem viveu. O jeito único de ver o problema.
+
+Na era da IA, a sua voz virou o seu ativo mais valioso. Vou explicar por quê.
+
+## A execução virou commodity
+
+Antes, escrever bem era diferencial. Programar era diferencial. Fazer um slide bonito era diferencial.
+
+Agora a IA faz tudo isso em segundos. O diferencial evaporou.
+
+Quando qualquer um produz o mesmo output, o output para de valer. O que passa a valer é o que tem por trás: quem pensou, quem decidiu, quem tem opinião.
+
+## O que a IA não tem
+
+A IA não viveu nada. Ela não errou num projeto real e aprendeu na dor. Não tocou três empresas e sentiu o que funciona.
+
+Ela recombina o que já existe. Bem, mas recombina.
+
+Sua voz vem do que você viveu. Das suas cicatrizes, das suas escolhas, do seu jeito de enxergar. Isso a IA não gera porque isso não estava no treino dela.
+
+Vale o ponto: quem tem voz própria vira referência. Quem só executa vira substituível.
+
+## Voz não é só pra quem escreve
+
+Não pensa que voz é coisa de escritor.
+
+O dev tem voz no jeito de resolver o problema. O vendedor, na abordagem que só ele faz. O designer, no olhar. O gestor, nas decisões que toma.
+
+Voz é identidade aplicada ao trabalho. É o "isso tem a cara do fulano". Todo mundo pode ter. Poucos desenvolvem.
+
+## Como sua voz fica mais forte
+
+Não é talento. É prática.
+
+Toda vez que você produz com opinião, sua voz aparece mais. Escolhe um lado. Explica por quê. Discorda quando discorda.
+
+Quem só executa some no meio da multidão que a IA multiplicou. Quem posiciona se destaca justamente porque a multidão ficou genérica.
+
+Meu take: eu uso IA pra tudo. Mas a opinião é minha, a experiência é minha, a voz é minha. A IA amplifica isso, não substitui.
+
+## O que fica
+
+A IA nivelou a execução por baixo. Todo mundo faz igual.
+
+Sobrou um espaço enorme pra quem tem voz. Nunca foi tão fácil se destacar, porque nunca teve tanta gente soando igual.
+
+Usa a IA pra produzir mais. Usa a sua voz pra importar mais.
+
+Quer aprender a usar IA sem perder o que te torna você? E-book gratuito no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-que-a-ia-nao-vai-substituir-no-seu-trabalho-2026",
+    slug: "o-que-a-ia-nao-vai-substituir-no-seu-trabalho-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-22T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "O que a IA não vai substituir no seu trabalho",
+    excerpt: "Medo de ser substituído pela IA é legítimo. Mas tem coisa que ela não faz. Saber quais é o que protege sua carreira.",
+    summary: "A IA substitui tarefa, não julgamento. Ela não assume responsabilidade, não entende contexto humano, não decide o que importa nem carrega confiança. Saber o que fica com você é o mapa pra onde investir sua carreira. Foque no que a IA não alcança.",
+    faq: [
+      {"q": "A IA vai substituir minha profissão?", "a": "Ela substitui tarefas da sua profissão, não a profissão inteira. Quem faz só as tarefas que a IA faz corre risco. Quem faz o que ela não faz, não."},
+      {"q": "O que a IA nunca vai fazer?", "a": "Assumir responsabilidade pelo resultado, entender o não-dito de uma conversa, decidir o que importa de verdade e carregar a confiança que só se constrói entre pessoas."},
+      {"q": "Como me protejo?", "a": "Migra seu tempo das tarefas que a IA faz pras coisas que ela não faz: julgamento, relação, decisão, responsabilidade. É pra lá que o valor foi."}
+    ],
+    content: `## O medo é legítimo. O mapa importa mais.
+
+Todo mundo pergunta: a IA vai me substituir?
+
+Resposta honesta. Ela vai substituir tarefas do seu trabalho. A pergunta certa é: o que sobra que é só seu?
+
+Porque é aí que sua carreira mora daqui pra frente. Saber o que a IA não faz é o mapa de onde investir. Vamos ao mapa.
+
+## Ela não assume responsabilidade
+
+A IA gera. Mas quando dá errado, quem responde é você.
+
+Nenhum cliente aceita "a IA que fez". Ninguém demite a IA. A responsabilidade fica com um humano, sempre.
+
+Isso não é detalhe. É o núcleo. Quem assume o resultado tem valor que a máquina não tem, porque a máquina não pode assumir nada.
+
+## Ela não entende o não-dito
+
+Numa reunião, metade da conversa é o que não foi falado.
+
+O cliente que diz "tá bom" com a voz murcha. O sócio que concorda mas cruza os braços. O silêncio que quer dizer não.
+
+A IA lê texto. Ela não lê a sala. Não sente o clima, não pega a ironia, não entende o contexto humano que muda tudo.
+
+Quem lê pessoas faz o que a IA não faz.
+
+## Ela não decide o que importa
+
+A IA te dá dez opções. Ela não te diz qual importa pra você, agora, no seu contexto.
+
+Priorizar é decisão. E decisão envolve valores, objetivo, risco, coisas que são suas e não da máquina.
+
+A IA calcula. Você decide. E decidir o que importa é o trabalho mais humano que existe.
+
+## Ela não carrega confiança
+
+Negócio se faz na confiança. E confiança se constrói entre pessoas, ao longo do tempo.
+
+O cliente compra de você porque confia em você. O time te segue porque acredita em você. Isso levou anos pra construir e a IA não herda.
+
+Vale o ponto: relação é o ativo que a IA não replica. Ela pode escrever o e-mail. A confiança por trás do e-mail é sua.
+
+## O que fazer com esse mapa
+
+Simples de dizer. Migra seu tempo.
+
+- Das tarefas que a IA faz, pro julgamento que ela não faz
+- Da execução, pra decisão
+- Do output, pra relação
+
+A IA vai fazer cada vez mais do trabalho braçal. Ótimo. Usa isso pra fazer mais do trabalho humano, que é onde o valor foi parar.
+
+Não compete com a IA no que ela é boa. Vai pra onde ela nunca vai chegar.
+
+Quer aprender a usar IA e se fortalecer no que é só seu? E-book gratuito no site.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-se-manter-relevante-na-carreira-com-ia-avancando-2026",
+    slug: "como-se-manter-relevante-na-carreira-com-ia-avancando-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-23T18:00:00-03:00",
+    coverUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Como se manter relevante na carreira com a IA avançando",
+    excerpt: "A IA não vai parar de avançar. Correr atrás de cada novidade cansa e não resolve. Veja o que realmente mantém você relevante.",
+    summary: "Relevância na era da IA não vem de saber a última ferramenta. Vem de dominar o método, ter voz própria e crescer no que a IA não faz. O guia mostra onde investir sua energia pra não virar refém do próximo lançamento. Direção vale mais que velocidade.",
+    faq: [
+      {"q": "Preciso aprender cada IA nova que sai?", "a": "Não. Isso cansa e não sustenta. Aprende o método de usar qualquer IA. Com método, ferramenta nova você domina rápido, sem ansiedade."},
+      {"q": "Programador vai perder o emprego pra IA?", "a": "Quem faz só o que a IA faz corre risco em qualquer área. Quem soma método, julgamento e voz, não. A questão nunca foi a profissão. É como você trabalha."},
+      {"q": "É tarde pra começar?", "a": "Não. A maioria ainda usa IA sem método. Quem começa a usar com engenharia agora já sai na frente da maioria. O momento é bom."}
+    ],
+    content: `## A IA não vai parar. Você não precisa correr atrás.
+
+A IA avança toda semana. Se sua estratégia é correr atrás de cada novidade, você já perdeu. Cansa, e não chega em lugar nenhum.
+
+Relevância não vem da velocidade. Vem da direção.
+
+O dado da PwC mostra que salário cresce duas vezes mais rápido em setores expostos à IA. A oportunidade é real. Mas ela é de quem sabe onde investir a energia. Vou mostrar onde.
+
+## 1. Domina método, não ferramenta
+
+Ferramenta muda. Método fica.
+
+Quem aposta em decorar a IA da vez recomeça a cada lançamento. Quem domina o método de usar qualquer IA, aproveita a nova no dia seguinte.
+
+Aprende a dar contexto. Aprende a revisar. Aprende a validar. Isso vale em qualquer modelo, hoje e daqui a cinco anos.
+
+Meu P.E.D.E.R. e meu Protocolo de 5 Camadas não dependem de ferramenta. É por isso que eles duram.
+
+## 2. Desenvolve a sua voz
+
+Quando todo mundo produz igual com IA, a voz própria vira o diferencial.
+
+O que você pensa, como você posiciona, o jeito que só você resolve. Isso a IA não copia porque não viveu.
+
+Produz com opinião, não só executando. Toda vez que você escolhe um lado e explica, sua voz fica mais forte e mais difícil de substituir.
+
+## 3. Investe no que a IA não faz
+
+A IA faz a execução. Ótimo. Vai pra onde ela não chega.
+
+- Julgamento: decidir o que importa
+- Responsabilidade: assumir o resultado
+- Relação: construir a confiança que fecha negócio
+- Contexto humano: ler a sala, o não-dito
+
+Migra seu tempo do braçal pro humano. É pra lá que o valor foi.
+
+## 4. Vira quem usa IA com engenharia
+
+Tem dois tipos de profissional agora.
+
+O que usa IA às cegas: rápido e perigoso, espalha erro com confiança.
+
+O que usa IA com engenharia: rápido e seguro, revisa antes de confiar, entende o que aprova.
+
+O segundo é o que as empresas vão querer. Porque ele entrega velocidade sem o risco. Seja esse.
+
+## 5. Continua aprendendo, mas o certo
+
+Não aprende cada ferramenta. Aprende os fundamentos que não mudam.
+
+Como pensar. Como decidir. Como se comunicar. Como construir com segurança. Isso a IA não torna obsoleto, ela torna mais valioso.
+
+## O que fica
+
+Relevância não é acompanhar a IA. É estar onde a IA não vai.
+
+Domina método. Desenvolve voz. Cresce no que é humano. Usa IA com engenharia, não às cegas.
+
+Faz isso e a IA avançando vira vento a favor, não ameaça.
+
+Quer o método completo de trabalhar com IA sem virar refém dela? Baixe o e-book gratuito no site ou chama no WhatsApp.
+
+A decisão é sua.`,
+  },
+  {
     id: "claude-design-tutorial-como-usar-2026",
     slug: "claude-design-tutorial-como-usar-2026",
     contentVersion: 1,
