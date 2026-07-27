@@ -7,6 +7,135 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "rag-tutorial-como-fazer-ia-responder-com-base-nos-seus-dados-2026",
+    slug: "rag-tutorial-como-fazer-ia-responder-com-base-nos-seus-dados-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-07-26T15:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    title: "RAG na prática: como fazer a IA responder com base nos SEUS dados (sem alucinar)",
+    excerpt:
+      "A IA sozinha inventa. RAG é a técnica que faz ela responder só com base no seu material: seus documentos, seu produto, sua empresa. Este tutorial explica o que é, como funciona por dentro e como montar o seu, sem enrolação.",
+    summary:
+      "RAG (Retrieval-Augmented Generation) faz a IA responder com base nos seus documentos em vez de inventar. O fluxo tem duas fases: preparar (quebrar os documentos em pedaços, virar vetor e guardar num banco vetorial) e responder (transformar a pergunta em vetor, buscar os pedaços relevantes, mandar só eles pra IA junto com a pergunta, exigindo que ela cite a fonte). Este tutorial mostra o passo a passo, os erros comuns (chunk errado, sem citar fonte) e um prompt pronto pra IA montar o seu.",
+    faq: [
+      {"q": "O que é RAG em uma frase?", "a": "RAG (Retrieval-Augmented Generation) é uma técnica que dá pra IA um material seu antes de ela responder, obrigando a resposta a se basear nesse material em vez do que o modelo 'acha'. Na prática: você busca os trechos relevantes dos seus documentos e passa só eles pra IA junto com a pergunta."},
+      {"q": "Quando eu preciso de RAG?", "a": "Quando você quer que a IA responda com base em informação que ela não tem no treino: seus documentos internos, sua base de conhecimento, dados da sua empresa, catálogo de produto, políticas, contratos. Se a resposta precisa vir do SEU material e não pode ser inventada, você precisa de RAG."},
+      {"q": "RAG resolve alucinação?", "a": "Reduz muito, não zera. Ao forçar a IA a responder só com base nos trechos recuperados e a citar a fonte, você corta a maior parte das invenções. Mas se a busca traz o trecho errado, a IA responde errado com cara de certo. Por isso a qualidade da recuperação é o que mais importa."},
+      {"q": "Preciso de banco de dados especial pra RAG?", "a": "Sim, um banco vetorial (vector database) pra guardar os embeddings e buscar por similaridade. Opções: pgvector (extensão do Postgres, ótimo se você já usa Postgres), Pinecone, Weaviate, Qdrant. Pra começar, pgvector no Supabase ou Neon resolve e é barato."}
+    ],
+    content: `A IA sozinha inventa. Pergunta uma coisa específica da sua empresa e ela responde com confiança uma informação que não existe. Em contexto sério, isso é inaceitável.
+
+RAG é a técnica que resolve isso. Faz a IA responder só com base no SEU material: seus documentos, seu produto, sua base de conhecimento. É o que eu uso em produto de verdade. Vou te explicar sem enrolação.
+
+## O que é RAG (sem jargão)
+
+RAG é a sigla de Retrieval-Augmented Generation. Traduzindo pro que importa: em vez de deixar a IA responder do que ela "sabe", você entrega o material certo pra ela antes, e obriga a resposta a se basear nesse material.
+
+Pensa numa prova. IA sem RAG é o aluno respondendo de cabeça, chutando quando não sabe. IA com RAG é o aluno com consulta: ele busca no material a parte relevante e responde com base nela.
+
+A diferença é enorme. Um chuta. O outro responde ancorado na fonte.
+
+## Como funciona por dentro (o fluxo)
+
+RAG tem duas fases. A primeira você faz uma vez. A segunda roda a cada pergunta.
+
+### Fase 1: preparar o material (uma vez)
+
+Você pega seus documentos e faz três coisas:
+
+1. **Quebra em pedaços (chunks).** Um documento grande vira vários trechos menores. Nem grande demais (perde precisão), nem pequeno demais (perde contexto). Uns poucos parágrafos por pedaço costuma funcionar.
+
+2. **Transforma cada pedaço em vetor (embedding).** Um vetor é uma representação numérica do significado do texto. Textos parecidos viram vetores parecidos. É isso que permite buscar por significado, não por palavra exata.
+
+3. **Guarda os vetores num banco vetorial.** Um banco especial que busca por similaridade. Você joga uma pergunta e ele te devolve os pedaços mais parecidos.
+
+### Fase 2: responder (a cada pergunta)
+
+Quando o usuário pergunta algo:
+
+1. **A pergunta vira vetor** também.
+2. **Você busca no banco** os pedaços mais parecidos com a pergunta.
+3. **Manda só esses pedaços pra IA**, junto com a pergunta, num prompt tipo: "Responda a pergunta abaixo usando SÓ o material a seguir. Se a resposta não estiver no material, diga que não sabe. Cite a fonte."
+4. **A IA responde ancorada no material**, não no que ela achava.
+
+Esse passo 3 é o coração. É onde você tira a liberdade da IA de inventar.
+
+## Montando o seu (passo a passo prático)
+
+Pra um projeto de vibecoding, o caminho mais simples:
+
+### Passo 1: escolha o banco vetorial
+
+Se você já usa Postgres (Supabase ou Neon), usa a extensão **pgvector**. É barato e fica tudo no mesmo banco. Se quer algo dedicado, Pinecone ou Qdrant.
+
+### Passo 2: quebre e indexe seus documentos
+
+Um script que lê seus arquivos, quebra em pedaços, gera o embedding de cada um (via API de embedding da OpenAI, Cohere ou um modelo local) e salva no banco com o texto e a fonte.
+
+### Passo 3: crie a rota de pergunta
+
+Uma rota no backend que recebe a pergunta, gera o embedding dela, busca os pedaços mais próximos no banco, monta o prompt com esses pedaços e chama a IA.
+
+### Passo 4: force a citação da fonte
+
+No prompt, exige que a IA diga de qual documento tirou a resposta. Isso deixa o usuário conferir e mata a maior parte das alucinações.
+
+## Prompt pra IA montar o seu RAG
+
+Não peça "faz um RAG". Peça com contrato:
+
+    Papel: você é engenheiro sênior especialista em RAG e Next.js.
+    Se algo ficar ambíguo, pergunta antes de gerar.
+
+    Regras:
+    - Usar pgvector no Postgres (Supabase) como banco vetorial.
+    - Chaves de API sempre em variável de ambiente, nunca no código.
+    - Quebrar documento em pedaços de poucos parágrafos, com sobreposição pequena.
+    - Guardar junto com cada pedaço: o texto e a fonte (nome do documento).
+    - Na resposta, a IA usa SÓ os trechos recuperados e cita a fonte.
+    - Se a resposta não estiver nos trechos, a IA diz que não sabe.
+
+    Objetivo: um RAG que responde perguntas sobre os meus documentos.
+
+    Modelo: script de indexação + rota de pergunta em Next.js.
+
+    Teste: incluir como testar (indexar um doc, fazer uma pergunta,
+    verificar que cita a fonte e que recusa quando não sabe).
+
+    Retorno: código + passos pra configurar o pgvector.
+
+## Os erros que derrubam um RAG
+
+Onde eu mais vejo RAG falhar:
+
+**1. Chunk do tamanho errado.** Pedaço grande demais joga lixo no contexto. Pequeno demais corta a informação no meio. Testa tamanhos até achar o que funciona pro seu material.
+
+**2. Não citar a fonte.** Sem citação, o usuário não confere e você não sabe se a IA inventou. Fonte à vista sempre.
+
+**3. Confiar na primeira busca.** Às vezes o pedaço mais parecido não é o mais útil. Um passo de reordenação (reranking) melhora muito. Vale quando a precisão importa.
+
+**4. Deixar a IA responder sem material.** Se a busca não trouxe nada relevante, a IA deve dizer "não sei", não chutar. Isso vai no prompt.
+
+## Vale o ponto
+
+"Não é mais fácil só jogar tudo no contexto da IA, já que os modelos novos aceitam 1 milhão de tokens?"
+
+Vale o ponto. Pra pouco material, sim, joga tudo no contexto e pronto. Mas isso não escala: custa caro a cada pergunta, fica lento, e a IA se perde em meio a muito texto. RAG traz só o pedaço relevante, então é mais barato, mais rápido e mais preciso quando o material é grande. Contexto gigante e RAG não competem. Se completam.
+
+## Conclusão
+
+RAG é o que separa "IA que inventa" de "IA que responde com base no seu material". O fluxo é simples: prepara os documentos uma vez (quebra, vetoriza, guarda), e a cada pergunta busca o relevante e obriga a IA a responder ancorada nele, citando a fonte.
+
+Não é mágica. É engenharia. E é o que faz IA virar produto sério em vez de demo bonita que alucina.
+
+Monta um pequeno com um punhado de documentos seus. Em uma tarde você entende o valor.
+
+A decisão é sua.`,
+  },
+  {
     id: "claude-opus-5-chegou-o-que-muda-2026",
     slug: "claude-opus-5-chegou-o-que-muda-2026",
     contentVersion: 1,
