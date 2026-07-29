@@ -18,6 +18,10 @@ import { site } from "@/lib/site";
 // ISR: revalida a cada 5 min.
 export const revalidate = 300;
 
+// Permite gerar sob demanda um slug que não veio do build (ex.: post criado no
+// /admin depois do deploy). Sem isso, esses posts dariam 404 em vez de renderizar.
+export const dynamicParams = true;
+
 type Props = { params: Promise<{ slug: string }> };
 
 /**
