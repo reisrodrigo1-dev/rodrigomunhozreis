@@ -20,14 +20,24 @@ export const revalidate = 300;
 
 type Props = { params: Promise<{ slug: string }> };
 
-// Pré-renderiza os slugs publicados no build (os novos entram on-demand via ISR).
+/**
+ * Pré-renderiza TODOS os slugs do seed, inclusive os agendados (data futura).
+ * Motivo: sem isso, um post agendado só teria a página gerada sob demanda quando
+ * a data chegasse, e essa geração dependeria do Firestore em runtime (que pode
+ * falhar e devolver 500). Pré-gerando tudo, o post agendado já tem rota pronta
+ * e só passa a ser exibido quando isLive() libera, via ISR.
+ */
 export async function generateStaticParams() {
+  const slugs = new Set<string>();
+  try {
+    const { seedPosts } = await import("@/lib/seed-posts");
+    for (const p of seedPosts) if (p.status === "published") slugs.add(p.slug);
+  } catch {}
   try {
     const posts = await getPublishedPosts();
-    return posts.map((p) => ({ slug: p.slug }));
-  } catch {
-    return [];
-  }
+    for (const p of posts) slugs.add(p.slug);
+  } catch {}
+  return [...slugs].map((slug) => ({ slug }));
 }
 
 async function load(slug: string): Promise<Post | null> {

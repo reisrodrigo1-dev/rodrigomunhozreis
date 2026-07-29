@@ -87,11 +87,16 @@ async function fetchFirestorePublished(): Promise<Post[]> {
  * (uma edição feita no /admin sobrescreve o seed).
  */
 async function getMergedPublished(): Promise<Post[]> {
-  const { seedPosts } = await import("./seed-posts");
   const bySlug = new Map<string, Post>();
-  for (const p of seedPosts) if (p.status === "published") bySlug.set(p.slug, p);
-  const fs = await fetchFirestorePublished();
-  for (const p of fs) bySlug.set(p.slug, p);
+  // O seed é a base garantida: se o Firestore falhar, o blog continua no ar.
+  try {
+    const { seedPosts } = await import("./seed-posts");
+    for (const p of seedPosts) if (p.status === "published") bySlug.set(p.slug, p);
+  } catch {}
+  try {
+    const fs = await fetchFirestorePublished();
+    for (const p of fs) bySlug.set(p.slug, p);
+  } catch {}
   return [...bySlug.values()];
 }
 
