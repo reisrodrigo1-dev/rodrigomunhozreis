@@ -25,7 +25,7 @@ export const site = {
   ],
   enemy: "vibecoding às cegas",
   links: {
-    linkedin: "https://www.linkedin.com/in/rodrigoreisoda/",
+    linkedin: "https://www.linkedin.com/in/rodrigomunhozreis/",
     instagram: "https://instagram.com/rodrigomunhozreis",
     email: "mailto:contato@rodrigomunhozreis.com.br",
     // WHATSAPP OCULTO temporariamente (anúncio pago rodando: não quero o número

@@ -7360,7 +7360,7 @@ Quando me chamam pra auditar a IA de uma empresa, eu não começo pelo código. 
 
 Seis dos sete não são código. São método. E método é o que separa empresa que usa IA com segurança de empresa que tá esperando o próximo incidente.
 
-Rodou o checklist e achou vermelho demais? [Me chama no LinkedIn](https://www.linkedin.com/in/rodrigoreisoda/) com o contexto. Se achou tudo verde, parabéns, continua fazendo o que faz.
+Rodou o checklist e achou vermelho demais? [Me chama no LinkedIn](https://www.linkedin.com/in/rodrigomunhozreis/) com o contexto. Se achou tudo verde, parabéns, continua fazendo o que faz.
 
 A decisão é sua.`,
   },
@@ -7817,7 +7817,7 @@ Se você tá lendo isso e reconheceu 2+ dos 5 sinais positivos, faz sentido conv
 
 Contratar consultor de IA é decisão executiva, não impulso. Pergunta antes: **eu tenho dor específica, time pra absorver e clareza do que quero resolver?** Se sim, contrate. Se não, o problema não é falta de consultor. É falta de definição.
 
-Se você acha que o momento é agora e quer conversar sobre o caso da sua empresa, [me chama no LinkedIn](https://www.linkedin.com/in/rodrigoreisoda/). Sem formulário, sem robô. Respondo pessoalmente.
+Se você acha que o momento é agora e quer conversar sobre o caso da sua empresa, [me chama no LinkedIn](https://www.linkedin.com/in/rodrigomunhozreis/). Sem formulário, sem robô. Respondo pessoalmente.
 
 Se você ainda não sabe se é a hora, [lê o restante do blog](/blog) primeiro. Vai te economizar mais tempo do que a primeira conversa nossa.
 
