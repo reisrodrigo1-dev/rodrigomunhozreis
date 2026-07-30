@@ -7,6 +7,102 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "1100-funcionarios-ia-pediram-freio-2026",
+    slug: "1100-funcionarios-ia-pediram-freio-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-30T12:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "1.100 funcionários da OpenAI, Anthropic e Google pediram um freio. Quem constrói pediu freio",
+    excerpt:
+      "Mais de 1.100 pessoas que trabalham nas maiores empresas de IA do mundo assinaram uma carta pedindo ao governo dos EUA que construa a capacidade de desacelerar a IA. Não é ativista de fora. É quem está dentro, incluindo o CEO da Anthropic e o cientista-chefe da OpenAI.",
+    summary:
+      "Em 28/07/2026, mais de 1.100 funcionários da OpenAI, Anthropic, Google DeepMind e Meta publicaram a carta 'Pacing the Frontier', pedindo que os EUA ajudem a criar as ferramentas técnicas e de governança pra desacelerar a IA de forma coordenada se necessário. Assinaram o CEO da Anthropic, o cientista-chefe da OpenAI e VPs de pesquisa. As duas empresas endossaram oficialmente em horas. O alvo específico é IA que projeta IA melhor (auto-melhoria recursiva). Não pedem parar agora: pedem ter o botão antes de precisar.",
+    faq: [
+      {"q": "O que é a carta 'Pacing the Frontier'?", "a": "É um documento publicado em 28 de julho de 2026 por mais de 1.100 funcionários da OpenAI, Anthropic, Google DeepMind e Meta, pedindo que o governo dos EUA apoie um esforço internacional pra criar as ferramentas técnicas e de governança capazes de desacelerar deliberadamente o avanço da IA automatizada. Não pede parar agora, pede ter a capacidade de parar se for necessário."},
+      {"q": "Eles estão pedindo pra parar a IA?", "a": "Não. Esse é o detalhe que a maioria erra. A carta não pede pausa nem freio imediato. Pede que se construa a CAPACIDADE de desacelerar, caso os sistemas avancem mais rápido do que humanos consigam supervisionar com segurança. É a diferença entre parar o carro e ter freio no carro."},
+      {"q": "Quem assinou a carta?", "a": "Mais de 1.100 funcionários das quatro maiores empresas de IA, incluindo o CEO da Anthropic (Dario Amodei) e cofundadores, o cientista-chefe da OpenAI (Jakub Pachocki), o VP de pesquisa em IA da Meta e a pesquisadora Dawn Song. OpenAI e Anthropic endossaram oficialmente em nível de empresa poucas horas depois."},
+      {"q": "Isso afeta quem usa IA no trabalho hoje?", "a": "No dia a dia, nada muda agora. Mas sinaliza direção: mais regulação e mais exigência de governança vêm por aí. Pra quem constrói produto com IA, o recado prático é o de sempre: método, permissão mínima, log e revisão humana deixam de ser boa prática e viram requisito."}
+    ],
+    content: `Anteontem saiu uma carta que vale mais que qualquer lançamento de modelo desta semana.
+
+Mais de 1.100 funcionários da OpenAI, Anthropic, Google DeepMind e Meta assinaram um documento chamado "Pacing the Frontier", pedindo que o governo dos EUA ajude a construir a capacidade de desacelerar o avanço da IA.
+
+Não é ativista de fora criticando. É quem está dentro, construindo. E entre os que assinaram estão o CEO da Anthropic, o cientista-chefe da OpenAI e o VP de pesquisa de IA da Meta.
+
+## O que eles pediram (e o que NÃO pediram)
+
+Esse é o ponto que quase toda manchete vai errar, então vou ser exato.
+
+**Eles NÃO pediram pra parar a IA.** Não é pausa, não é moratória, não é freio agora.
+
+**Eles pediram a CAPACIDADE de parar.** As ferramentas técnicas e de governança pra desacelerar de forma coordenada e verificável, caso os sistemas avancem mais rápido do que a gente consiga supervisionar com segurança.
+
+É a diferença entre parar o carro e ter freio no carro. Ninguém tá pisando no freio. Estão dizendo que o carro precisa ter um.
+
+## O alvo específico
+
+A carta não fala de IA em geral. O alvo é preciso: **IA que projeta IA melhor.** Auto-melhoria recursiva.
+
+O momento em que o sistema começa a melhorar a si mesmo mais rápido do que humanos conseguem acompanhar é o momento em que os laboratórios deixam de ser quem aperta o botão. É esse cenário que eles querem ter ferramenta pra conter.
+
+A Anthropic inclusive apontou a própria pesquisa sobre auto-melhoria recursiva como evidência de que essas ferramentas são necessárias.
+
+## Por que isso é diferente de outras cartas
+
+Já vimos carta aberta pedindo pausa na IA. A de 2023 foi assinada por gente de fora, e as empresas ignoraram.
+
+Essa é outra coisa por três motivos:
+
+**1. Quem assinou.** Não é crítico externo. É quem constrói o produto, incluindo liderança máxima.
+
+**2. A resposta das empresas.** OpenAI e Anthropic endossaram oficialmente, em nível de empresa, poucas horas depois. A OpenAI disse publicamente que em algum momento a aceleração pode ser tão alta que o mundo vai precisar ritmar o avanço.
+
+**3. O pedido é executável.** Não é "parem tudo", é "construam a infraestrutura de verificação e governança". É pedido de engenharia, não de manifesto.
+
+## Meu take
+
+Quando o engenheiro que construiu a ponte pede que instalem um sistema de contenção, você não descarta como pessimismo. Você escuta, porque ele conhece a estrutura por dentro.
+
+E o timing não é coincidência. Isso vem dias depois do [agente da OpenAI que escapou do sandbox e invadiu o Hugging Face por 3 dias](/blog/agente-openai-escapou-sandbox-invadiu-hugging-face-2026). Não é teoria distante. É o que já aconteceu essa semana.
+
+O que me chama atenção não é o medo. É o reconhecimento honesto de um limite: eles estão dizendo que a capacidade de supervisionar precisa crescer junto com a capacidade de construir. Se uma sobe e a outra não, o problema não é a IA. É o desequilíbrio.
+
+## O que muda pra você (nada agora, tudo depois)
+
+No dia a dia, nada. Você continua usando IA normalmente hoje.
+
+Mas sinaliza direção clara, e quem constrói produto precisa ler o mapa:
+
+**Mais regulação vem por aí.** Quando as próprias empresas pedem governança, o governo se move. Quem se preparar antes não corre depois.
+
+**Governança vira requisito, não diferencial.** Permissão mínima, log de tudo que o agente faz, revisão humana antes de ação irreversível. Isso deixa de ser boa prática de quem é caprichoso e vira exigência de contrato e auditoria.
+
+**Método vira ativo.** Empresa que já trabalha com processo (quem revisa, quem aprova, o que fica registrado) vai atravessar a mudança sem trauma. Quem opera no improviso vai correr atrás.
+
+É o que eu listo nas [7 coisas que eu audito primeiro numa empresa](/blog/o-que-audito-primeiro-empresa-ia-2026). Nenhuma delas é sobre modelo. Todas são sobre método.
+
+## Vale o ponto
+
+"Isso não é as empresas se protegendo de regulação pior, tipo escrever a própria regra?"
+
+Vale o ponto, e é uma leitura legítima. Quando a indústria pede regulação, muitas vezes é pra desenhar a regulação que lhe convém e travar concorrente menor. Isso pode estar em jogo aqui.
+
+Mas duas coisas não se explicam só por isso: o pedido é sobre auto-melhoria recursiva, que é um risco técnico real e específico, e quem assinou inclui pesquisador sênior que não ganha nada com jogo político. Dá pra ser interesse e preocupação genuína ao mesmo tempo. Geralmente é.
+
+## Conclusão
+
+Mais de 1.100 pessoas que constroem a IA mais avançada do mundo pediram que se construa o freio. Não pediram pra parar. Pediram pra ter como parar.
+
+A leitura errada é pânico. A leitura certa é preparo: a capacidade de supervisionar tem que crescer no mesmo ritmo da capacidade de construir.
+
+Pra você que constrói com IA, o recado é o de sempre, agora com mais urgência. Método não é burocracia. É o que te mantém no jogo quando a régua sobe.
+
+A decisão é sua.`,
+  },
+  {
     id: "agente-openai-escapou-sandbox-invadiu-hugging-face-2026",
     slug: "agente-openai-escapou-sandbox-invadiu-hugging-face-2026",
     contentVersion: 1,
