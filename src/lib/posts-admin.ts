@@ -14,6 +14,12 @@ export type PostInput = {
   summary?: string;
   /** FAQ opcional pra schema FAQPage. */
   faq?: FaqItem[];
+  /**
+   * Data de publicação explícita (ISO). Quando vem preenchida, é ela que vale.
+   * Sem isso, um post AGENDADO gravado no Firestore perderia a data futura e
+   * entraria no ar na hora, furando a fila.
+   */
+  publishedAt?: string;
 };
 
 /** Remove chaves com valor undefined (o Firestore Web SDK rejeita undefined). */
@@ -39,11 +45,18 @@ export async function getPost(id: string): Promise<Post | null> {
 export async function createPost(data: PostInput): Promise<string> {
   const { addDoc, collection, serverTimestamp } = await import("firebase/firestore");
   const { db } = await import("./firebase");
+  // Respeita a data informada (posts agendados). Só usa "agora" quando não vier data.
+  const publishedAt =
+    data.status !== "published"
+      ? null
+      : data.publishedAt
+      ? new Date(data.publishedAt)
+      : serverTimestamp();
   const ref = await addDoc(collection(db, "posts"), clean({
     ...data,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
-    publishedAt: data.status === "published" ? serverTimestamp() : null,
+    publishedAt,
   }));
   return ref.id;
 }
@@ -91,6 +104,8 @@ export async function importSeedPosts(): Promise<{ created: number; updated: num
         contentVersion: p.contentVersion,
         summary: p.summary,
         faq: p.faq,
+        // Preserva a data do seed (mantém posts agendados agendados).
+        publishedAt: typeof p.publishedAt === "string" ? p.publishedAt : undefined,
       });
       created++;
     } else if ((p.contentVersion ?? 1) > ((cur.contentVersion as number) ?? 1)) {
@@ -118,4 +133,32 @@ export async function importSeedPosts(): Promise<{ created: number; updated: num
     }
   }
   return { created, updated };
+}
+
+/**
+ * Remove do Firestore os posts que já vivem no código (seed).
+ *
+ * Por que existe: o blog lê seed + Firestore. Quando o mesmo slug está nos dois,
+ * o Firestore vence. Uma cópia desatualizada no banco (por exemplo, com a data
+ * de publicação errada) sequestra o post do código. Apagar a cópia devolve o
+ * controle ao seed, que é a fonte de verdade dos posts escritos em código.
+ *
+ * Só apaga slug que EXISTE no seed. Post criado à mão pelo /admin fica intacto.
+ */
+export async function deleteSeedMirroredPosts(): Promise<{ deleted: number; kept: number }> {
+  const { doc, deleteDoc } = await import("firebase/firestore");
+  const { db } = await import("./firebase");
+  const seedSlugs = new Set(seedPosts.map((p) => p.slug));
+  const all = await getAllPosts();
+  let deleted = 0;
+  let kept = 0;
+  for (const p of all) {
+    if (seedSlugs.has(p.slug)) {
+      await deleteDoc(doc(db, "posts", p.id));
+      deleted++;
+    } else {
+      kept++;
+    }
+  }
+  return { deleted, kept };
 }

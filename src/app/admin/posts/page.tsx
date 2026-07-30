@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { getAllPosts, importSeedPosts } from "@/lib/posts-admin";
+import { getAllPosts, importSeedPosts, deleteSeedMirroredPosts } from "@/lib/posts-admin";
 import { getViews, getLastViews } from "@/lib/views";
 import { fmtDate, type Row } from "@/lib/admin-data";
 import { isLive, toIsoDate, type Post } from "@/lib/posts";
@@ -117,7 +117,38 @@ export default function AdminPosts() {
   const currentPage = Math.min(page, totalPages);
   const pageRows = sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
+  async function handleLimpar() {
+    const ok = confirm(
+      "Isso apaga do banco as cópias dos posts que já vivem no código.\n\n" +
+        "Use quando o agendamento sair do lugar: o site volta a seguir as datas do código.\n\n" +
+        "Posts criados à mão aqui no painel NÃO são afetados.\n\nContinuar?"
+    );
+    if (!ok) return;
+    setImporting(true);
+    try {
+      const { deleted, kept } = await deleteSeedMirroredPosts();
+      const fs = await getAllPosts();
+      const bySlug = new Map<string, Post>();
+      for (const p of seedPosts) bySlug.set(p.slug, p);
+      for (const p of fs) bySlug.set(p.slug, p);
+      setRows([...bySlug.values()]);
+      alert(
+        `${deleted} cópia(s) removida(s) do banco. ${kept} post(s) próprio(s) mantido(s).\n\n` +
+          "O agendamento voltou a valer. O site atualiza em alguns minutos."
+      );
+    } catch {
+      alert("Não consegui limpar. Confira o login de admin e as regras do Firestore.");
+    } finally {
+      setImporting(false);
+    }
+  }
+
   async function handleImport() {
+    const ok = confirm(
+      "Você NÃO precisa mais importar: os posts do código sobem sozinhos na data.\n\n" +
+        "Importar copia tudo pro banco e pode atrapalhar o agendamento.\n\nImportar mesmo assim?"
+    );
+    if (!ok) return;
     setImporting(true);
     try {
       const { created, updated } = await importSeedPosts();
@@ -141,12 +172,20 @@ export default function AdminPosts() {
         <h1 className="font-serif text-3xl font-semibold">Blog</h1>
         <div className="flex gap-2">
           <button
-            onClick={handleImport}
+            onClick={handleLimpar}
             disabled={importing}
-            title="Não é mais necessário: posts do código sobem sozinhos na data. Use só se quiser gravar no Firestore agora."
+            title="Apaga do banco as cópias dos posts do código. Restaura o agendamento."
             className="btn btn-ghost !px-4 !py-2 disabled:opacity-50"
           >
-            {importing ? "Atualizando…" : "Importar / atualizar posts"}
+            {importing ? "Processando…" : "Corrigir agendamento"}
+          </button>
+          <button
+            onClick={handleImport}
+            disabled={importing}
+            title="Não é mais necessário. Posts do código sobem sozinhos na data."
+            className="btn btn-ghost !px-3 !py-2 text-xs opacity-50 disabled:opacity-30"
+          >
+            Importar (legado)
           </button>
           <Link href="/admin/posts/new" className="btn btn-primary !px-5 !py-2.5">
             Novo post
@@ -156,9 +195,12 @@ export default function AdminPosts() {
 
       <div className="mt-3 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
         <b>Agendamento automático:</b> posts escritos no código sobem sozinhos na
-        data de publicação. Não precisa mais importar. Os marcados como{" "}
+        data de publicação. Não precisa importar nada. Os marcados como{" "}
         <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Agendado</span>{" "}
-        entram no ar automaticamente na data indicada (o site atualiza a cada ~5 min).
+        entram no ar na data indicada (o site atualiza a cada ~5 min).
+        <br />
+        Se a fila sair do lugar (post futuro aparecendo como publicado), clique em{" "}
+        <b>Corrigir agendamento</b>.
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-3">
