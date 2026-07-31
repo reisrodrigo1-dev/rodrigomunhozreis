@@ -7,6 +7,100 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "openai-cortou-preco-80-porcento-modelo-virou-commodity-2026",
+    slug: "openai-cortou-preco-80-porcento-modelo-virou-commodity-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-07-31T12:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "A OpenAI cortou 80% do preço em 3 semanas. O modelo virou commodity",
+    excerpt:
+      "Ontem a OpenAI derrubou o preço do GPT-5.6 Luna em 80% e do Terra em 20%. Três semanas depois de lançar. O motivo tem nome: os modelos chineses já respondem por 46% do uso empresarial nos EUA. Se você constrói com IA, sua conta muda hoje.",
+    summary:
+      "Em 30/07/2026 a OpenAI cortou o preço do GPT-5.6 Luna em 80% (de US$ 1/US$ 6 para US$ 0,20/US$ 1,20 por milhão de tokens) e do Terra em 20% (para US$ 2/US$ 12). O topo de linha Sol ficou igual. Motivo: modelos chineses como o DeepSeek já capturaram 46% do uso empresarial de tokens nos EUA. A leitura: modelo virou commodity, preço não é mais diferencial. Quem constrói deve revisar a conta hoje e parar de usar modelo caro para tarefa simples.",
+    faq: [
+      {"q": "Quanto caiu o preço do GPT-5.6?", "a": "O Luna, o mais barato e rápido da família, caiu 80%: de US$ 1 por milhão de tokens de entrada e US$ 6 de saída para US$ 0,20 e US$ 1,20. O Terra caiu 20%: de US$ 2,50/US$ 15 para US$ 2/US$ 12. O Sol, topo de linha, continua em US$ 5/US$ 30."},
+      {"q": "Por que a OpenAI baixou o preço?", "a": "Pressão de concorrência, principalmente chinesa. Uma investigação da CNBC mostrou que modelos chineses já respondem por 46% do uso empresarial de tokens nos EUA no OpenRouter. O DeepSeek V4 Pro custa US$ 0,435/US$ 0,87 por milhão. Com o Luna a US$ 0,20 de entrada, a OpenAI passou a cobrar menos que o DeepSeek nesse item."},
+      {"q": "Devo trocar de modelo por causa do preço?", "a": "Não só por causa do preço. Troque quando o modelo mais barato resolver a sua tarefa com a mesma qualidade. Para classificar, resumir e responder pergunta simples em volume, o tier barato costuma bastar. Para código difícil e decisão crítica, o caro ainda compensa. Teste no seu caso antes de migrar."},
+      {"q": "O que fazer hoje se eu uso a API?", "a": "Três coisas: abra seu painel de custo e veja quanto gastou no último mês, identifique quais chamadas usam modelo caro para tarefa simples, e mova essas chamadas para o tier barato. Em muitos casos isso corta a conta pela metade sem perder qualidade nenhuma."}
+    ],
+    content: `Ontem a OpenAI fez uma coisa que diz mais sobre o mercado do que qualquer lançamento de modelo: cortou o preço do GPT-5.6 Luna em 80%.
+
+Três semanas depois de lançar a família.
+
+## Os números
+
+Câmbio de hoje, 31 de julho de 2026: 1 dólar igual a R$ 5,07.
+
+**GPT-5.6 Luna** (o mais rápido e barato): caiu de US$ 1 / US$ 6 para **US$ 0,20 / US$ 1,20** por milhão de tokens (entrada / saída). Queda de 80%.
+
+**GPT-5.6 Terra** (intermediário): caiu de US$ 2,50 / US$ 15 para **US$ 2 / US$ 12**. Queda de 20%.
+
+**GPT-5.6 Sol** (topo de linha): continua em US$ 5 / US$ 30. Não mexeram.
+
+Traduzindo pra conta real: se você processa 5 milhões de tokens de entrada e 2 milhões de saída por mês no Luna, sua conta caiu de mais ou menos US$ 17 (R$ 86) para **US$ 3,40 (R$ 17)**.
+
+## Por que baixaram
+
+Não foi bondade. Foi concorrência, e ela tem endereço.
+
+Uma investigação da CNBC mostrou que **os modelos chineses já respondem por 46% do uso empresarial de tokens nos Estados Unidos** no OpenRouter. Em alguns momentos, passaram os modelos americanos.
+
+O DeepSeek V4 Pro custa US$ 0,435 / US$ 0,87 por milhão. Com o Luna a US$ 0,20 de entrada, a OpenAI passou a cobrar **menos que o DeepSeek** nesse item. Continua mais cara na saída, mas o recado foi dado.
+
+Tem um detalhe que quase ninguém notou e que eu achei o mais interessante da história: segundo o noticiado, o próprio modelo Sol reescreveu parte da stack de inferência da OpenAI, e foi esse ganho de eficiência que bancou a queda de preço. IA otimizando a infraestrutura da própria IA pra ficar mais barata. Esse ciclo vai acelerar.
+
+## Meu take: o modelo virou commodity
+
+Essa é a leitura que importa.
+
+Quando o preço de um produto cai 80% em três semanas por pressão de concorrente, esse produto não é mais diferencial. É commodity. É insumo.
+
+E isso muda onde está o seu valor.
+
+Se o modelo é commodity, o que te diferencia não é qual modelo você usa. É o que você constrói em volta dele: o dado que só você tem, o método que garante qualidade, a arquitetura que torna a coisa confiável, o produto que resolve uma dor real.
+
+Quem apostou tudo em "usamos o modelo X" acabou de ver a aposta virar pó. Modelo qualquer um pluga. Em três semanas fica cinco vezes mais barato.
+
+É o mesmo raciocínio que escrevi quando o [Claude Opus 5 chegou pela metade do preço](/blog/claude-opus-5-chegou-o-que-muda-2026): modelo é peça trocável. Método é o que fica.
+
+## O que fazer hoje (dá pra fazer em 20 minutos)
+
+Se você usa API em produto, essa queda é dinheiro no seu bolso. Mas só se você agir:
+
+**1. Abra o painel de custo.** Veja quanto gastou no último mês e em quais modelos. Muita gente não sabe esse número, e é o primeiro sintoma de que está pagando demais.
+
+**2. Separe suas chamadas por dificuldade.** Classificar texto, resumir, extrair dado, responder pergunta simples: isso é tarefa de tier barato. Código difícil, análise que não pode errar, raciocínio longo: aí sim o caro compensa.
+
+**3. Mova o simples pro barato.** Na maioria dos produtos que eu audito, mais da metade das chamadas usa modelo caro sem precisar. Trocar essas para o tier barato corta a conta pela metade sem perder nada.
+
+**4. Meça antes e depois.** Não confie no achismo. Rode os dois em cima dos seus casos reais e compare o resultado.
+
+Falei disso em detalhe no comparativo de [velocidade contra qualidade dos modelos](/blog/velocidade-vs-qualidade-modelos-ia-comparativo-2026). A regra não mudou: use o modelo certo para cada tarefa, não o mais forte para tudo.
+
+## Vale o ponto
+
+"Se cai tanto assim, não é melhor esperar cair mais antes de construir?"
+
+Vale o ponto, mas não. Esperar preço é a desculpa mais cara que existe.
+
+O preço vai continuar caindo, sim. E justamente por isso o custo do modelo deixa de ser o fator que decide se seu projeto acontece. Quem esperou 2024 inteiro pra construir "quando ficasse barato" perdeu dois anos de aprendizado enquanto o concorrente errava, corrigia e ficava bom.
+
+Constrói agora com método. O preço cai sozinho no caminho.
+
+## Conclusão
+
+A OpenAI cortou 80% em três semanas porque a China forçou. O modelo virou insumo barato, e vai ficar mais barato ainda.
+
+A consequência prática pra você tem duas partes. A imediata: revisa sua conta hoje, porque provavelmente está pagando modelo caro pra tarefa simples. A estratégica: para de tratar o modelo como diferencial, porque ele não é mais.
+
+Modelo é commodity. Método, dado e produto continuam sendo seus.
+
+A decisão é sua.`,
+  },
+  {
     id: "1100-funcionarios-ia-pediram-freio-2026",
     slug: "1100-funcionarios-ia-pediram-freio-2026",
     contentVersion: 1,
