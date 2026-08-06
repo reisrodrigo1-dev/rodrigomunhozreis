@@ -2,8 +2,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { connection } from "next/server";
 import { marked } from "marked";
-import { getPostBySlug, getPublishedPosts, slugify, toIsoDate, type Post } from "@/lib/posts";
+import {
+  findPostBySlug,
+  getPostBySlug,
+  getPrerenderableSlugs,
+  getPublishedPosts,
+  slugify,
+  toIsoDate,
+  type Post,
+} from "@/lib/posts";
 import { renderMarkdown } from "@/lib/markdown";
 import { PostCta } from "@/components/post-cta";
 import { ViewTracker } from "@/components/view-tracker";
@@ -25,17 +34,23 @@ export const dynamicParams = true;
 type Props = { params: Promise<{ slug: string }> };
 
 /**
- * Pré-renderiza TODOS os slugs do seed, inclusive os agendados (data futura).
- * Motivo: sem isso, um post agendado só teria a página gerada sob demanda quando
- * a data chegasse, e essa geração dependeria do Firestore em runtime (que pode
- * falhar e devolver 500). Pré-gerando tudo, o post agendado já tem rota pronta
- * e só passa a ser exibido quando isLive() libera, via ISR.
+ * Pré-renderiza SÓ os posts que já estão no ar.
+ *
+ * O agendado fica de fora de propósito. Pré-renderizar um post com data futura
+ * fazia o build assar a página de "não encontrado" no lugar dele, e essa entrada
+ * não se conserta sozinha quando a hora chega: o ISR não revalida resultado de
+ * notFound. Na prática o post estreava em 404 e só nascia no deploy seguinte.
+ *
+ * O agendado agora é gerado sob demanda (dynamicParams), na primeira visita
+ * depois da hora marcada. O 500 que isso já causou uma vez está coberto: o seed
+ * vem no bundle e `getMergedPublished` não quebra se o Firestore cair.
  */
 export async function generateStaticParams() {
   const slugs = new Set<string>();
   try {
     const { seedPosts } = await import("@/lib/seed-posts");
-    for (const p of seedPosts) if (p.status === "published") slugs.add(p.slug);
+    const published = seedPosts.filter((p) => p.status === "published");
+    for (const slug of getPrerenderableSlugs(published)) slugs.add(slug);
   } catch {}
   try {
     const posts = await getPublishedPosts();
@@ -73,7 +88,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const post = await load(slug);
-  if (!post) notFound();
+
+  if (!post) {
+    // Dois motivos levam a "sem post": o slug não existe, ou existe e está agendado.
+    // Só o segundo é temporário, e é justamente o que não pode virar cache.
+    // Um notFound() gravado no cache NÃO se recupera sozinho quando a data chega
+    // (o ISR não revalida resultado de notFound), então o post estreava em 404
+    // e ficava assim até o próximo deploy. Foi o que aconteceu em 05/08/2026.
+    // `connection()` marca este render como dinâmico: o 404 do agendado nunca é
+    // guardado, e a checagem de horário volta a ser feita a cada requisição.
+    const scheduled = await findPostBySlug(slug).catch(() => null);
+    if (scheduled) await connection();
+    notFound();
+  }
 
   // Renderiza o markdown e, de quebra, monta o sumário (TOC) a partir dos H2.
   const rawHtml = await marked.parse(post.content || "");

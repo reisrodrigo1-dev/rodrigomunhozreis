@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { toIsoDate } from "@/lib/posts";
 
-// Revalida de hora em hora (em vez de recalcular a cada request).
-export const revalidate = 3600;
+// Revalida a cada 10 min: post novo entra no sitemap perto da hora de estreia.
+export const revalidate = 600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = `https://${site.domain}`;

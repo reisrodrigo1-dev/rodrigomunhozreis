@@ -1,8 +1,9 @@
 import { site } from "@/lib/site";
 import { getPublishedPosts, toIsoDate } from "@/lib/posts";
 
-// ISR: revalida de hora em hora (RSS não precisa ser real-time).
-export const revalidate = 3600;
+// ISR: 10 min. Publicamos 3x por dia em horário fixo, e de hora em hora o post
+// novo demorava demais pra aparecer no feed.
+export const revalidate = 600;
 
 function esc(s: string): string {
   return s

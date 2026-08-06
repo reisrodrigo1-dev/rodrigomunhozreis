@@ -113,3 +113,25 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   if (!p || !isLive(p)) return null;
   return p;
 }
+
+/**
+ * Um post pelo slug IGNORANDO a data de publicação (retorna também o agendado).
+ * Serve pra rota do post distinguir dois casos que antes se confundiam:
+ * - slug que não existe            -> 404 legítimo, pode ser cacheado
+ * - slug que existe mas é agendado -> 404 TEMPORÁRIO, nunca pode ser cacheado
+ * Ver o comentário em `src/app/(site)/blog/[slug]/page.tsx` sobre o 404 grudado.
+ */
+export async function findPostBySlug(slug: string): Promise<Post | null> {
+  const all = await getMergedPublished();
+  return all.find((x) => x.slug === slug) ?? null;
+}
+
+/**
+ * Slugs que o build pode pré-renderizar com segurança: só os que JÁ estão no ar.
+ * Pré-renderizar um post agendado assa a página de "não encontrado" no cache, e
+ * essa entrada não se recupera sozinha quando a data chega (o ISR não revalida
+ * resultado de notFound). O agendado é gerado sob demanda, via dynamicParams.
+ */
+export function getPrerenderableSlugs(posts: Post[], now: number = Date.now()): string[] {
+  return posts.filter((p) => isLive(p, now)).map((p) => p.slug);
+}
