@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { connection } from "next/server";
 import { marked } from "marked";
 import {
-  findPostBySlug,
   getPostBySlug,
   getPrerenderableSlugs,
   getPublishedPosts,
@@ -24,8 +22,9 @@ import { PostFaq } from "@/components/post-faq";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { site } from "@/lib/site";
 
-// ISR: revalida a cada 5 min.
-export const revalidate = 300;
+// ISR: 60s. Teto de atraso pra um post agendado estrear (medido: aparece dentro
+// de uma janela de revalidação depois da hora marcada).
+export const revalidate = 60;
 
 // Permite gerar sob demanda um slug que não veio do build (ex.: post criado no
 // /admin depois do deploy). Sem isso, esses posts dariam 404 em vez de renderizar.
@@ -37,13 +36,17 @@ type Props = { params: Promise<{ slug: string }> };
  * Pré-renderiza SÓ os posts que já estão no ar.
  *
  * O agendado fica de fora de propósito. Pré-renderizar um post com data futura
- * fazia o build assar a página de "não encontrado" no lugar dele, e essa entrada
- * não se conserta sozinha quando a hora chega: o ISR não revalida resultado de
- * notFound. Na prática o post estreava em 404 e só nascia no deploy seguinte.
+ * fazia o build assar a página de "não encontrado" no lugar dele, e página assada
+ * no build fica congelada durante todo aquele deploy: quando a hora chegava, o
+ * ISR continuava servindo o 404 (medido em produção: STALE com Age de 13h). Na
+ * prática o post estreava em 404 e só nascia no deploy seguinte.
  *
- * O agendado agora é gerado sob demanda (dynamicParams), na primeira visita
- * depois da hora marcada. O 500 que isso já causou uma vez está coberto: o seed
- * vem no bundle e `getMergedPublished` não quebra se o Firestore cair.
+ * Gerado sob demanda é diferente: aí o ISR se recupera sozinho. Medido em
+ * 06/08/2026 com revalidate de 15s, o post apareceu 35s depois da hora marcada,
+ * sem deploy nenhum. Por isso o agendado sai daqui e cai no dynamicParams.
+ *
+ * O 500 que isso já causou uma vez está coberto: o seed vem no bundle e o
+ * `getMergedPublished` não quebra se o Firestore cair.
  */
 export async function generateStaticParams() {
   const slugs = new Set<string>();
@@ -89,18 +92,7 @@ export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const post = await load(slug);
 
-  if (!post) {
-    // Dois motivos levam a "sem post": o slug não existe, ou existe e está agendado.
-    // Só o segundo é temporário, e é justamente o que não pode virar cache.
-    // Um notFound() gravado no cache NÃO se recupera sozinho quando a data chega
-    // (o ISR não revalida resultado de notFound), então o post estreava em 404
-    // e ficava assim até o próximo deploy. Foi o que aconteceu em 05/08/2026.
-    // `connection()` marca este render como dinâmico: o 404 do agendado nunca é
-    // guardado, e a checagem de horário volta a ser feita a cada requisição.
-    const scheduled = await findPostBySlug(slug).catch(() => null);
-    if (scheduled) await connection();
-    notFound();
-  }
+  if (!post) notFound();
 
   // Renderiza o markdown e, de quebra, monta o sumário (TOC) a partir dos H2.
   const rawHtml = await marked.parse(post.content || "");
