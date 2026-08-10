@@ -1,15 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { getPrerenderableSlugs, isLive, type Post } from "./posts";
+import { isLive, type Post } from "./posts";
 import { seedPosts } from "./seed-posts";
 
 /**
- * Regressão do 404 grudado (05/08/2026).
- *
- * O build pré-renderizava também os posts agendados. Como `getPostBySlug` devolve
- * null antes da hora, a página assada virava "não encontrado", e o ISR não desfaz
- * um notFound cacheado. Resultado: o post estreava em 404 e ficava assim até o
- * deploy seguinte. Estes testes garantem que nenhum post agendado volte a entrar
- * na lista de pré-renderização.
+ * A regra de estreia é o coração do agendamento: as páginas do blog renderizam a
+ * cada acesso e perguntam a `isLive` se o post já pode aparecer. Se ela errar, ou
+ * o post estreia adiantado ou não estreia nunca.
  */
 
 const base: Omit<Post, "slug" | "publishedAt"> = {
@@ -41,35 +37,6 @@ describe("isLive", () => {
 
   it("libera post sem data (compat com posts antigos)", () => {
     expect(isLive(post("d", undefined), AGORA)).toBe(true);
-  });
-});
-
-describe("getPrerenderableSlugs", () => {
-  /**
-   * A invariante que não pode cair: TODO post publicado tem página assada no
-   * build. Post que depende de geração sob demanda estreia em 500 na Vercel.
-   * Se alguém voltar a filtrar por data aqui, estes testes quebram.
-   */
-  it("inclui o agendado, não só o que já está no ar", () => {
-    const slugs = getPrerenderableSlugs([
-      post("no-ar", "2026-08-06T08:00:00-03:00"),
-      post("agendado-hoje", "2026-08-06T12:00:00-03:00"),
-      post("agendado-semana-que-vem", "2026-08-13T08:00:00-03:00"),
-    ]);
-    expect(slugs).toEqual(["no-ar", "agendado-hoje", "agendado-semana-que-vem"]);
-  });
-
-  it("não deixa nenhum post publicado de fora", () => {
-    const posts = [
-      post("a", "2026-08-01T08:00:00-03:00"),
-      post("b", "2026-08-20T08:00:00-03:00"),
-      post("c", undefined),
-    ];
-    expect(getPrerenderableSlugs(posts)).toHaveLength(posts.length);
-  });
-
-  it("devolve lista vazia sem quebrar quando não há post", () => {
-    expect(getPrerenderableSlugs([])).toEqual([]);
   });
 });
 

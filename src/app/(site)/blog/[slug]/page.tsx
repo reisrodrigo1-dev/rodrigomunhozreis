@@ -3,15 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
-import {
-  findPostBySlug,
-  getPrerenderableSlugs,
-  getPublishedPosts,
-  isLive,
-  slugify,
-  toIsoDate,
-  type Post,
-} from "@/lib/posts";
+import { getPostBySlug, getPublishedPosts, slugify, toIsoDate, type Post } from "@/lib/posts";
 import { renderMarkdown } from "@/lib/markdown";
 import { PostCta } from "@/components/post-cta";
 import { ViewTracker } from "@/components/view-tracker";
@@ -23,46 +15,30 @@ import { PostFaq } from "@/components/post-faq";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { site } from "@/lib/site";
 
-// ISR: 60s. Teto de atraso pra um post agendado estrear (medido: aparece dentro
-// de uma janela de revalidação depois da hora marcada).
-export const revalidate = 60;
-
-// Permite gerar sob demanda um slug que não veio do build (ex.: post criado no
-// /admin depois do deploy). Sem isso, esses posts dariam 404 em vez de renderizar.
-export const dynamicParams = true;
+/**
+ * Renderiza a cada acesso, em vez de assar a página no build.
+ *
+ * O blog publica por horário, e página assada não sabe que horas são: o build
+ * congela a decisão "já estreou?" e ela fica errada quando a hora chega. Foi a
+ * raiz de tudo que quebrou aqui (o 404 que grudava, o 500 do caminho sob
+ * demanda, o noindex que sobrava depois da estreia).
+ *
+ * Renderizando a cada acesso, a hora é conferida na hora. O post agendado
+ * responde 404 até o horário dele e passa a responder sozinho depois, sem
+ * deploy, sem rebuild agendado e sem depender de revalidação de cache.
+ *
+ * Custo: cada acesso roda a função em vez de servir arquivo pronto. Dá pra
+ * pagar porque o conteúdo vem do bundle, sem ida ao banco no caminho crítico
+ * (a leitura do Firestore é cacheada em `posts.ts`).
+ */
+export const dynamic = "force-dynamic";
 
 type Props = { params: Promise<{ slug: string }> };
 
-/**
- * Pré-renderiza TODOS os posts publicados, agendados inclusive.
- *
- * Nenhum post pode depender de geração sob demanda: em produção esse caminho
- * falha em 500 (8 posts seguidos em 10/08/2026, e já tinha acontecido no
- * 55f35e1). O histórico completo das duas tentativas anteriores está no
- * comentário de `getPrerenderableSlugs`, em `src/lib/posts.ts`.
- */
-export async function generateStaticParams() {
-  const slugs = new Set<string>();
-  try {
-    const { seedPosts } = await import("@/lib/seed-posts");
-    const published = seedPosts.filter((p) => p.status === "published");
-    for (const slug of getPrerenderableSlugs(published)) slugs.add(slug);
-  } catch {}
-  try {
-    const posts = await getPublishedPosts();
-    for (const p of posts) slugs.add(p.slug);
-  } catch {}
-  return [...slugs].map((slug) => ({ slug }));
-}
-
-/**
- * Carrega o post ignorando a data de estreia: a página existe desde o build.
- * Quem segura o agendado são as listagens (índice, RSS, sitemap, relacionados),
- * que filtram por `isLive`, mais o `noindex` abaixo enquanto não chega a hora.
- */
+/** Só entrega o post se a hora de estreia já passou. Antes disso, 404. */
 async function load(slug: string): Promise<Post | null> {
   try {
-    return await findPostBySlug(slug);
+    return await getPostBySlug(slug);
   } catch {
     return null;
   }
@@ -75,8 +51,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
-    // Agendado existe mas não é pra ser achado: fora do índice de busca até estrear.
-    ...(isLive(post) ? {} : { robots: { index: false, follow: false } }),
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,

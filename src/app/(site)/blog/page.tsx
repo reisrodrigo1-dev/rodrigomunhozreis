@@ -3,8 +3,10 @@ import { Reveal } from "@/components/reveal";
 import { BlogBrowser } from "@/components/blog-browser";
 import { getPublishedPosts, type Post } from "@/lib/posts";
 
-// ISR: revalida a cada 5 min (servido do CDN, sem round-trip frio ao Firestore por request).
-export const revalidate = 300;
+// Renderiza a cada acesso: o índice precisa mostrar o post no minuto em que ele
+// estreia, e página assada carrega a lista congelada do build. A leitura do
+// Firestore é cacheada em `posts.ts`, então isso não vira round-trip por request.
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog — IA, Vibecoding e Tecnologia",
