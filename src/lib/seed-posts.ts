@@ -3514,8 +3514,8 @@ Vibecoding com engenharia é não confiar que vai dar tudo certo. Vai quebrar. A
 A decisão é sua.`,
   },
   {
-    id: "como-refatorar-codigo-bagunçado-com-ia-2026",
-    slug: "como-refatorar-codigo-bagunçado-com-ia-2026",
+    id: "como-refatorar-codigo-baguncado-com-ia-2026",
+    slug: "como-refatorar-codigo-baguncado-com-ia-2026",
     contentVersion: 1,
     status: "published",
     tags: ["Vibecoding"],

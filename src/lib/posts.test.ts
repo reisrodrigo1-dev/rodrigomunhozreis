@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { getPrerenderableSlugs, isLive, type Post } from "./posts";
+import { seedPosts } from "./seed-posts";
 
 /**
  * Regressão do 404 grudado (05/08/2026).
@@ -69,5 +70,27 @@ describe("getPrerenderableSlugs", () => {
 
   it("devolve lista vazia sem quebrar quando não há post", () => {
     expect(getPrerenderableSlugs([])).toEqual([]);
+  });
+});
+
+describe("slugs do seed", () => {
+  /**
+   * Um post tinha "ç" no slug. A página era gerada, mas a URL que o navegador
+   * manda não batia com o texto do arquivo, e o post respondia como inexistente.
+   * Ia estourar na estreia dele. Slug é só a-z, 0-9 e hífen.
+   */
+  it("são todos ASCII em kebab-case", () => {
+    const fora = seedPosts.filter((p) => !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.slug));
+    expect(fora.map((p) => p.slug)).toEqual([]);
+  });
+
+  it("não têm slug repetido", () => {
+    const vistos = new Set<string>();
+    const repetidos: string[] = [];
+    for (const p of seedPosts) {
+      if (vistos.has(p.slug)) repetidos.push(p.slug);
+      vistos.add(p.slug);
+    }
+    expect(repetidos).toEqual([]);
   });
 });
