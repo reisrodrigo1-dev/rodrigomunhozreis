@@ -1,5 +1,3 @@
-import { unstable_cache } from "next/cache";
-
 export type FaqItem = { q: string; a: string };
 
 export type Post = {
@@ -71,8 +69,8 @@ export function isLive(p: Post, now: number = Date.now()): boolean {
 
 /**
  * Teto de espera pela leitura do Firestore, em ms.
- * As páginas do blog renderizam a cada acesso, dentro de uma função serverless
- * com tempo limitado. Uma leitura pendurada derruba a requisição inteira.
+ * Página estática não sente isso (não chama nada em runtime), mas página gerada
+ * sob demanda chama, dentro de uma função serverless com tempo limitado.
  */
 const FIRESTORE_TIMEOUT_MS = 2500;
 
@@ -81,13 +79,14 @@ const FIRESTORE_TIMEOUT_MS = 2500;
  *
  * NUNCA pode pendurar. O SDK web do Firebase rodando no servidor às vezes não
  * responde nem devolve erro, e aí quem estoura é a função inteira: a requisição
- * morre em 500 em vez de cair no seed.
+ * morre em 500 em vez de cair no seed. Foi assim que os posts agendados voltaram
+ * a dar 500 depois que passaram a ser gerados sob demanda (10/08/2026).
  *
  * Um try/catch não resolve isso: ele pega exceção, não travamento. Por isso o
  * timeout explícito. Se estourar, devolve lista vazia e o blog segue no seed,
  * que já é a fonte de verdade do conteúdo.
  */
-async function readFirestorePublished(): Promise<Post[]> {
+async function fetchFirestorePublished(): Promise<Post[]> {
   const timeout = new Promise<Post[]>((resolve) =>
     setTimeout(() => resolve([]), FIRESTORE_TIMEOUT_MS),
   );
@@ -103,20 +102,6 @@ async function readFirestorePublished(): Promise<Post[]> {
   })();
   return Promise.race([read, timeout]);
 }
-
-/**
- * Mesma leitura, cacheada por 60s.
- *
- * As páginas do blog renderizam a cada acesso, pra conferir a hora de estreia na
- * hora. Isso não pode virar uma ida ao Firestore por visita. O cache separa as
- * duas coisas: a decisão de horário continua a cada acesso (ela é só comparação
- * de data, custo zero), e a ida ao banco acontece no máximo 1x por minuto.
- * Post criado pelo /admin aparece em até 60s.
- */
-const fetchFirestorePublished = unstable_cache(readFirestorePublished, ["posts-firestore"], {
-  revalidate: 60,
-  tags: ["posts"],
-});
 
 /**
  * Todos os posts publicados de AMBAS as fontes, deduplicados por slug:
@@ -151,4 +136,39 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   const p = all.find((x) => x.slug === slug);
   if (!p || !isLive(p)) return null;
   return p;
+}
+
+/**
+ * Um post pelo slug IGNORANDO a data de estreia. Devolve também o agendado.
+ *
+ * A rota do post usa esta, e não a `getPostBySlug`, de propósito. A data decide
+ * ONDE o post aparece (índice, RSS, sitemap, relacionados), não SE a página
+ * existe. Ver o comentário de `getPrerenderableSlugs`.
+ */
+export async function findPostBySlug(slug: string): Promise<Post | null> {
+  const all = await getMergedPublished();
+  return all.find((x) => x.slug === slug) ?? null;
+}
+
+/**
+ * Slugs que o build pré-renderiza: TODOS os posts publicados, agendados inclusive.
+ *
+ * Já tentamos os dois extremos e os dois quebraram:
+ *
+ * 1. Pré-renderizar tudo E barrar o agendado por data na própria página. O build
+ *    assava a página de "não encontrado" no lugar do post, e o que o build assa
+ *    fica congelado no deploy inteiro. O post estreava em 404 (05/08/2026).
+ * 2. Deixar o agendado fora, pra ser gerado sob demanda. Em produção a geração
+ *    sob demanda falha em 500, de forma consistente e rápida (8 posts seguidos,
+ *    10/08/2026). Não reproduz no `next start`, porque a Vercel empacota a função
+ *    de outro jeito. Já tinha acontecido antes, no commit 55f35e1.
+ *
+ * A saída é não depender de nenhum dos dois: toda página existe desde o build, e
+ * quem controla a estreia são as listagens, que já filtram por `isLive`. Enquanto
+ * não chega a hora, o post não é anunciado em lugar nenhum e sai com `noindex`.
+ * O custo assumido: quem souber a URL exata consegue ler antes. O conteúdo já
+ * está no repositório, então a troca compensa contra estrear quebrado.
+ */
+export function getPrerenderableSlugs(posts: Post[]): string[] {
+  return posts.map((p) => p.slug);
 }

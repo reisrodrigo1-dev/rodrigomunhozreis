@@ -1,8 +1,9 @@
 import { site } from "@/lib/site";
 import { getPublishedPosts, toIsoDate } from "@/lib/posts";
 
-// Gera a cada acesso: o feed tem que trazer o post no minuto da estreia.
-export const dynamic = "force-dynamic";
+// ISR: 10 min. Publicamos 3x por dia em horário fixo, e de hora em hora o post
+// novo demorava demais pra aparecer no feed.
+export const revalidate = 600;
 
 function esc(s: string): string {
   return s
