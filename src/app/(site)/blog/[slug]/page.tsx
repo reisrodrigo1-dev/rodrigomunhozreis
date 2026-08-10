@@ -4,9 +4,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 import {
-  getPostBySlug,
+  findPostBySlug,
   getPrerenderableSlugs,
   getPublishedPosts,
+  isLive,
   slugify,
   toIsoDate,
   type Post,
@@ -33,20 +34,12 @@ export const dynamicParams = true;
 type Props = { params: Promise<{ slug: string }> };
 
 /**
- * Pré-renderiza SÓ os posts que já estão no ar.
+ * Pré-renderiza TODOS os posts publicados, agendados inclusive.
  *
- * O agendado fica de fora de propósito. Pré-renderizar um post com data futura
- * fazia o build assar a página de "não encontrado" no lugar dele, e página assada
- * no build fica congelada durante todo aquele deploy: quando a hora chegava, o
- * ISR continuava servindo o 404 (medido em produção: STALE com Age de 13h). Na
- * prática o post estreava em 404 e só nascia no deploy seguinte.
- *
- * Gerado sob demanda é diferente: aí o ISR se recupera sozinho. Medido em
- * 06/08/2026 com revalidate de 15s, o post apareceu 35s depois da hora marcada,
- * sem deploy nenhum. Por isso o agendado sai daqui e cai no dynamicParams.
- *
- * O 500 que isso já causou uma vez está coberto: o seed vem no bundle e o
- * `getMergedPublished` não quebra se o Firestore cair.
+ * Nenhum post pode depender de geração sob demanda: em produção esse caminho
+ * falha em 500 (8 posts seguidos em 10/08/2026, e já tinha acontecido no
+ * 55f35e1). O histórico completo das duas tentativas anteriores está no
+ * comentário de `getPrerenderableSlugs`, em `src/lib/posts.ts`.
  */
 export async function generateStaticParams() {
   const slugs = new Set<string>();
@@ -62,9 +55,14 @@ export async function generateStaticParams() {
   return [...slugs].map((slug) => ({ slug }));
 }
 
+/**
+ * Carrega o post ignorando a data de estreia: a página existe desde o build.
+ * Quem segura o agendado são as listagens (índice, RSS, sitemap, relacionados),
+ * que filtram por `isLive`, mais o `noindex` abaixo enquanto não chega a hora.
+ */
 async function load(slug: string): Promise<Post | null> {
   try {
-    return await getPostBySlug(slug);
+    return await findPostBySlug(slug);
   } catch {
     return null;
   }
@@ -77,6 +75,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    // Agendado existe mas não é pra ser achado: fora do índice de busca até estrear.
+    ...(isLive(post) ? {} : { robots: { index: false, follow: false } }),
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,

@@ -44,24 +44,30 @@ describe("isLive", () => {
 });
 
 describe("getPrerenderableSlugs", () => {
-  it("nunca inclui post agendado (o bug do 404 grudado)", () => {
-    const slugs = getPrerenderableSlugs(
-      [
-        post("no-ar", "2026-08-06T08:00:00-03:00"),
-        post("agendado-hoje", "2026-08-06T12:00:00-03:00"),
-        post("agendado-semana-que-vem", "2026-08-13T08:00:00-03:00"),
-      ],
-      AGORA,
-    );
-    expect(slugs).toEqual(["no-ar"]);
+  /**
+   * A invariante que não pode cair: TODO post publicado tem página assada no
+   * build. Post que depende de geração sob demanda estreia em 500 na Vercel.
+   * Se alguém voltar a filtrar por data aqui, estes testes quebram.
+   */
+  it("inclui o agendado, não só o que já está no ar", () => {
+    const slugs = getPrerenderableSlugs([
+      post("no-ar", "2026-08-06T08:00:00-03:00"),
+      post("agendado-hoje", "2026-08-06T12:00:00-03:00"),
+      post("agendado-semana-que-vem", "2026-08-13T08:00:00-03:00"),
+    ]);
+    expect(slugs).toEqual(["no-ar", "agendado-hoje", "agendado-semana-que-vem"]);
   });
 
-  it("não inclui rascunho", () => {
-    const slugs = getPrerenderableSlugs([post("rascunho", "2026-01-01T00:00:00-03:00", "draft")], AGORA);
-    expect(slugs).toEqual([]);
+  it("não deixa nenhum post publicado de fora", () => {
+    const posts = [
+      post("a", "2026-08-01T08:00:00-03:00"),
+      post("b", "2026-08-20T08:00:00-03:00"),
+      post("c", undefined),
+    ];
+    expect(getPrerenderableSlugs(posts)).toHaveLength(posts.length);
   });
 
   it("devolve lista vazia sem quebrar quando não há post", () => {
-    expect(getPrerenderableSlugs([], AGORA)).toEqual([]);
+    expect(getPrerenderableSlugs([])).toEqual([]);
   });
 });
