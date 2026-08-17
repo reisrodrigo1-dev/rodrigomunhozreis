@@ -7,6 +7,485 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "por-que-arquitetura-nao-se-delega-pra-ia-2026",
+    slug: "por-que-arquitetura-nao-se-delega-pra-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-26T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que arquitetura não se delega pra IA",
+    excerpt:
+      "A IA escreve a função melhor e mais rápido que você. Mas decidir onde essa função mora, quem pode chamar ela e o que acontece quando ela falha continua sendo seu.",
+    summary:
+      "Arquitetura é a decisão sobre onde cada coisa mora, quem fala com quem e o que acontece quando algo falha. A IA responde qualquer pergunta de arquitetura com confiança, mas escolhe o padrão mais comum da internet, não o que cabe no seu caso, no seu orçamento e no seu risco. Delegue a escrita, não a decisão: quem constrói decide a forma, a IA preenche a forma.",
+    faq: [
+      {"q": "A IA não sabe arquitetura?", "a": "Ela conhece os padrões, e bem. O que ela não tem é o seu contexto: quanto você pode gastar, quantos usuários existem de verdade, qual dado é sensível, quem vai manter isso em seis meses. Sem esse contexto, ela devolve o padrão mais comum, que quase nunca é o mais adequado."},
+      {"q": "Então eu preciso ser arquiteto pra usar IA?", "a": "Não. Você precisa saber fazer três perguntas: onde esse dado fica, quem pode chegar nele e o que quebra se essa parte cair. Quem responde isso está fazendo arquitetura, com ou sem o título."},
+      {"q": "Como uso a IA na arquitetura sem entregar a decisão?", "a": "Peça alternativas, não recomendação. Peça três caminhos com custo, risco e esforço de cada um. A IA é ótima pra ampliar suas opções e péssima pra escolher por você, porque não é ela que paga a conta do erro."}
+    ],
+    content: `A IA escreve uma função melhor e mais rápido que você. Isso já é verdade e não adianta discutir.
+
+Só que existe uma camada acima da função, e essa não mudou de dono.
+
+## O que é arquitetura, sem palavra difícil
+
+Arquitetura é decidir três coisas:
+
+**Onde cada coisa mora.** O dado do cliente fica onde. O arquivo fica onde. O segredo fica onde.
+
+**Quem fala com quem.** O navegador pode chamar o banco direto. O painel do admin passa por onde. O serviço de pagamento responde pra quem.
+
+**O que acontece quando falha.** Porque vai falhar. A pergunta é se falha barulhento ou silencioso.
+
+Repara que nenhuma das três é sobre sintaxe. Nenhuma é "como escrevo esse loop". São decisões de consequência, e consequência é sempre de quem constrói.
+
+## Por que a IA erra justamente aqui
+
+Não é falta de conhecimento. Ela conhece os padrões todos.
+
+O problema é que ela responde com o padrão mais comum da internet, e o mais comum foi escrito pra um caso que não é o seu. O tutorial que treinou o modelo não sabia que você tem 40 usuários, não 40 milhões. Não sabia que seu dado é sensível. Não sabia que quem vai mexer nisso daqui a seis meses é você sozinho, sem time.
+
+Aí você pede uma solução e recebe uma arquitetura de empresa grande num projeto de uma pessoa. Ou o contrário, que é pior: uma gambiarra de tutorial num sistema que guarda dado de gente real.
+
+E aqui mora o detalhe que engana: ela responde com a mesma confiança nos dois casos. Não existe hesitação na resposta pra te avisar que ela chutou.
+
+## O teste de uma pergunta
+
+Antes de aceitar qualquer estrutura que a IA propôs, faz uma pergunta só:
+
+**Se essa parte cair às 3 da manhã, o que o usuário vê?**
+
+Se você não sabe responder, não entendeu a arquitetura que acabou de aceitar. E não entender é exatamente o [vibecoding às cegas](/blog/os-7-pecados-do-vibecoding-as-cegas) que quebra sistema em produção.
+
+A resposta boa é chata e específica: o usuário vê uma mensagem de erro, o pedido dele não some, e você recebe um alerta. A resposta ruim é "não sei" ou "acho que dá erro".
+
+## O que delegar e o que não
+
+Delega sem medo: escrever a função, converter formato, montar o formulário, fazer o teste, explicar o que um trecho faz, sugerir alternativas.
+
+Não delega: onde o dado sensível fica, quem tem permissão de quê, o que é obrigatório validar no servidor, quanto isso vai custar quando crescer, o que acontece no erro.
+
+Um jeito prático de usar a IA sem entregar a decisão: peça **três caminhos**, não uma recomendação. Peça custo, risco e esforço de cada um. Ela é excelente pra ampliar suas opções. É péssima pra escolher.
+
+## Isso não é sobre ser programador
+
+Tem gente que lê isso e conclui que precisa virar dev pra usar IA. Não precisa.
+
+Precisa saber fazer as três perguntas. Onde mora, quem alcança, o que quebra. Quem responde essas três está fazendo arquitetura, tenha ou não o cargo.
+
+É a mesma lógica do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas): você não precisa escrever o código pra conseguir avaliar o código. Precisa saber onde olhar.
+
+A IA preenche a forma. Quem constrói decide a forma.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-usar-ia-com-dado-sensivel-sem-entregar-o-dado-2026",
+    slug: "como-usar-ia-com-dado-sensivel-sem-entregar-o-dado-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-08-26T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    title: "Como usar IA em cima de dado sensível sem entregar o dado",
+    excerpt:
+      "Dá pra corrigir prova, analisar contrato e resumir atendimento com IA sem mandar nome, CPF e documento pro modelo. A técnica é simples e quase ninguém aplica.",
+    summary:
+      "Para usar IA sobre dado sensível sem expor o dado, separe o que a IA precisa entender do que ela não precisa saber. Três técnicas resolvem a maioria dos casos: trocar o identificador por um código antes de enviar, mandar só o trecho necessário em vez do documento inteiro, e manter a associação entre código e pessoa apenas no seu banco. O modelo trabalha no conteúdo e a identidade nunca sai de casa.",
+    faq: [
+      {"q": "A IA guarda o que eu mando pra ela?", "a": "Depende do contrato do provedor. Vários oferecem modo em que o dado não é usado para treino, e alguns têm retenção zero. Mas mesmo com o melhor contrato, o dado trafega e passa por registro em algum ponto. A regra que não falha é não mandar o que não precisa ser mandado."},
+      {"q": "O que conta como dado sensível?", "a": "Qualquer coisa que identifique uma pessoa ou revele algo protegido: nome completo, CPF, e-mail, telefone, endereço, dado de saúde, dado financeiro, número de processo. Na dúvida, pergunte se você mostraria aquilo num telão em evento público."},
+      {"q": "Como anonimizar sem perder a qualidade da resposta?", "a": "Troque o identificador por um marcador estável, como ALUNO_1 ou CLIENTE_A, e mantenha a tradução só no seu banco. A IA entende a estrutura do texto igual. Quando a resposta voltar, você substitui de volta antes de mostrar pro usuário."},
+      {"q": "Isso resolve a LGPD?", "a": "Ajuda muito, mas não substitui o resto: base legal pra tratar o dado, aviso de privacidade dizendo que há uso de IA, contrato com o fornecedor e prazo de retenção. Minimizar o dado enviado é a parte técnica, e é a que mais reduz risco na prática."}
+    ],
+    content: `Corrigir prova com IA. Analisar contrato com IA. Resumir atendimento com IA.
+
+Os três casos têm o mesmo problema: o material está cheio de gente identificada. E a saída da maioria é mandar tudo pro modelo e torcer.
+
+Dá pra fazer diferente, e não é complicado.
+
+## A ideia central
+
+Separe o que a IA precisa **entender** do que ela não precisa **saber**.
+
+Pra corrigir uma redação, o modelo precisa do texto da redação. Não precisa do nome do aluno, da matrícula, nem do CPF da mãe dele.
+
+Pra apontar cláusula de risco num contrato, precisa do texto da cláusula. Não precisa do endereço das partes.
+
+Quase sempre, o que identifica a pessoa é irrelevante pra tarefa. A gente manda junto por preguiça, não por necessidade.
+
+## Técnica 1: troque o identificador por um código
+
+Antes de enviar, substitua nome, CPF, e-mail e telefone por marcadores estáveis: ALUNO_1, CLIENTE_A, PARTE_1.
+
+A tradução entre o marcador e a pessoa real fica só no seu banco. Nunca sai.
+
+O modelo entende a estrutura do texto exatamente igual, porque pra tarefa dele tanto faz se o nome é João ou ALUNO_1. Quando a resposta volta, você troca de volta antes de mostrar na tela.
+
+Duas regras fazem isso funcionar: o marcador tem que ser estável dentro do mesmo documento (o mesmo aluno é sempre ALUNO_1, senão o texto perde sentido), e a substituição tem que rodar no servidor, nunca no navegador.
+
+## Técnica 2: mande o trecho, não o arquivo
+
+O reflexo é jogar o PDF inteiro. É caro, é lento e aumenta a superfície de exposição.
+
+Se a pergunta é sobre a cláusula de rescisão, mande a cláusula de rescisão. Se a correção é da questão 3, mande a questão 3.
+
+Isso corta custo e risco de uma vez só. E melhora a resposta, porque contexto irrelevante atrapalha o modelo. É o mesmo raciocínio de [RAG](/blog/rag-tutorial-como-fazer-ia-responder-com-base-nos-seus-dados-2026): recuperar o pedaço certo em vez de despejar tudo.
+
+## Técnica 3: decida o que nunca sai
+
+Faça uma lista curta e explícita do que jamais é enviado pra fora, aconteça o que acontecer. Documento de identidade, dado bancário, dado de saúde, senha, chave.
+
+Essa lista vira regra no código, num único lugar por onde toda chamada passa. Não vira "a gente lembra de tirar". Lembrar não é controle.
+
+Enquanto isso for combinado verbal, um dia alguém com pressa manda tudo. Sempre é assim.
+
+## O que isso não resolve
+
+Anonimizar não te dispensa do resto da LGPD. Você ainda precisa de base legal pra tratar aquele dado, de aviso de privacidade dizendo que existe uso de IA, de contrato com o fornecedor e de prazo pra apagar.
+
+Também não resolve o caso em que a identidade é a própria tarefa. Se o sistema precisa comparar assinatura ou validar documento, não tem como esconder o documento. Aí o caminho é outro: fornecedor com contrato adequado, retenção zero e registro de quem acessou o quê.
+
+## O teste antes de subir
+
+Pega uma chamada real do seu sistema e olha exatamente o que sai pela rede. Não o que você acha que sai. O que sai.
+
+Se tiver nome completo, CPF ou e-mail ali dentro sem necessidade, você achou seu trabalho de amanhã.
+
+É a camada 3 do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas), a de blindagem, e é a que mais gente pula porque o sistema funciona sem ela. Funciona até o dia em que não funciona.
+
+Dado que não sai não vaza.
+
+A decisão é sua.`,
+  },
+  {
+    id: "3-lugares-por-onde-dado-sensivel-vaza-num-app-feito-com-ia-2026",
+    slug: "3-lugares-por-onde-dado-sensivel-vaza-num-app-feito-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-08-25T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Os 3 lugares por onde dado sensível vaza num app feito com IA",
+    excerpt:
+      "Não é hacker. Na prática, quase todo vazamento em app feito com IA vem de três lugares chatos e previsíveis. Os três dão pra conferir hoje, sem ser programador.",
+    summary:
+      "Vazamento em app feito com IA quase nunca vem de ataque sofisticado. Vem de três lugares: regra de banco aberta que deixa qualquer um ler tudo, segredo escrito dentro do código que vai pro navegador ou pro repositório, e endereço sem checagem de permissão que devolve o dado do outro usuário. Os três são verificáveis em minutos e são exatamente os que a IA deixa passar por padrão.",
+    faq: [
+      {"q": "Por que a IA gera código com esses problemas?", "a": "Porque ela otimiza pra funcionar, e nesses três pontos o inseguro funciona igual ao seguro. Regra aberta funciona. Segredo no código funciona. Endereço sem checagem funciona. A diferença só aparece quando alguém tenta abusar, e ninguém testa isso por padrão."},
+      {"q": "Como sei se minha regra de banco está aberta?", "a": "Abra o painel do seu banco e leia as regras. Se houver algo equivalente a permitir leitura para todos, sem condição de usuário, está aberta. No Firestore, a frase clássica é a que libera leitura e escrita sem checar quem está pedindo."},
+      {"q": "Chave de API no código é sempre problema?", "a": "Chave que roda no navegador é pública por definição, então nunca coloque ali uma que dê poder de escrita ou de gasto. Chave de servidor vai em variável de ambiente e nunca no repositório. Se já foi para o Git, considere vazada e gere outra."},
+      {"q": "Dá pra conferir isso sem ser programador?", "a": "Os três, sim. Ler a regra do banco, procurar chave no código e abrir a tela de outro usuário trocando o número no endereço. Nenhum dos três exige escrever código, só exige olhar."}
+    ],
+    content: `Vazamento de dado quase nunca é filme.
+
+Não tem invasor genial, não tem madrugada tensa. Tem uma configuração que ficou aberta e ninguém olhou.
+
+Em app feito com IA, três lugares concentram a maioria dos casos. Os três dão pra conferir hoje.
+
+## 1. A regra do banco que ficou aberta
+
+É o campeão absoluto.
+
+Você pede um sistema, a IA monta o banco, e pra tudo funcionar de primeira ela deixa a permissão liberada. Alguma variação de "qualquer um pode ler e escrever".
+
+E funciona. Funciona lindamente. O sistema roda, o cliente aprova, você sobe.
+
+Só que a regra continua lá. Qualquer pessoa com o endereço do seu banco lê a base inteira, do navegador, sem invadir nada. Não é ataque, é a porta aberta com plaquinha.
+
+**Como conferir:** abra o painel do banco e leia a regra. Se tiver permissão de leitura pra todo mundo sem condição, você achou.
+
+**O que fazer:** ninguém lê nada por padrão, e você abre exceção só onde precisa, sempre amarrada ao usuário dono do dado. Escrevi o passo a passo em [conectar banco de dados sem medo](/blog/conectar-banco-de-dados-firebase-sem-medo).
+
+## 2. O segredo que foi parar no código
+
+Chave de API, token, senha de serviço. A IA coloca no arquivo pra funcionar, você nem repara, e aquilo sobe.
+
+Dois destinos, e os dois são ruins. Se foi pro código que roda no navegador, qualquer visitante lê. Se foi pro repositório, ficou registrado na história do Git mesmo depois de você apagar.
+
+O caso mais caro é chave que gasta dinheiro. Chave de IA achada é conta de terceiro rodando na sua fatura, e você descobre pelo valor.
+
+**Como conferir:** procure no projeto por trechos como sk-, api_key, secret e password. Depois confira se existe arquivo de ambiente versionado por engano.
+
+**O que fazer:** segredo vai em variável de ambiente, no servidor, e o arquivo de ambiente entra no gitignore. Se já foi pro Git, considera vazado e gera outro, porque apagar não desfaz. Detalhei em [nunca vaze uma senha](/blog/nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore).
+
+## 3. O endereço que não confere de quem é o dado
+
+Esse é o mais silencioso.
+
+Sua tela de pedido chama algo como barra pedido barra 1024. Você troca pra 1025 e aparece o pedido de outra pessoa.
+
+Aconteceu porque a checagem de permissão ficou na tela, não no servidor. A tela esconde o botão, e quem não usa a tela pega o dado direto.
+
+E é justamente o tipo de coisa que a IA não cobre sozinha: você pediu "mostre o pedido do usuário" e ela entregou uma função que mostra o pedido. Você não pediu "recuse se o pedido for de outro", então ela não recusou.
+
+**Como conferir:** entre com uma conta, abra uma tela que mostre algo seu, troque o número no endereço e veja se aparece dado de outro. Leva um minuto.
+
+**O que fazer:** a pergunta "esse dado é dessa pessoa" mora no servidor, sempre, em toda rota que devolve dado de alguém.
+
+## O que os três têm em comum
+
+Nos três, o errado funciona igualzinho ao certo.
+
+É por isso que passam batido. Bug normal aparece: a tela quebra, o botão não responde, alguém reclama. Falha de segurança não aparece. O sistema roda perfeito até o dia em que alguém repara.
+
+Por isso não dá pra confiar em "testei e funcionou". Funcionar é o mínimo, não é a prova.
+
+Reserva vinte minutos hoje e confere os três no seu projeto. Se achar algum, você acabou de evitar a semana mais cara do seu ano.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-separar-dado-real-de-dado-de-teste-lgpd-2026",
+    slug: "como-separar-dado-real-de-dado-de-teste-lgpd-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-08-25T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Como separar dado real de dado de teste (o que a LGPD cobra)",
+    excerpt:
+      "Testar com a base de produção é o atalho mais comum e o mais caro. Separar ambiente é mais simples do que parece, e a LGPD não trata isso como detalhe.",
+    summary:
+      "Testar com dado real de cliente é tratamento de dado pessoal fora da finalidade que justificou a coleta, e a LGPD cobra isso. A separação tem três partes: dois bancos distintos, credenciais distintas para cada um, e uma base de teste feita de dados fictícios ou anonimizados. O sinal de alerta mais simples é conseguir apagar um registro de cliente de verdade rodando o projeto na sua máquina.",
+    faq: [
+      {"q": "Testar com dado real é ilegal?", "a": "A LGPD exige finalidade específica para cada tratamento. O cliente forneceu o dado para receber um serviço, não para servir de massa de teste. Usar em desenvolvimento é tratamento fora da finalidade, e ainda multiplica o número de cópias e de pessoas com acesso."},
+      {"q": "Qual o jeito mais rápido de separar?", "a": "Crie um segundo projeto no seu provedor, exclusivo para desenvolvimento, com credenciais próprias. Sua máquina aponta só para ele. Produção passa a ter credencial que não fica no seu computador."},
+      {"q": "De onde tiro dados para testar?", "a": "Duas fontes: gerar fictício, que é o ideal, ou anonimizar uma cópia da produção, trocando nome, e-mail e documento por valores falsos consistentes. Anonimizar mal é pior que não anonimizar, porque dá falsa sensação de segurança."},
+      {"q": "E se eu já venho testando em produção?", "a": "Comece pelo mais perigoso: tire de circulação a credencial de produção que está na sua máquina e crie o ambiente de desenvolvimento. Depois vá movendo o trabalho para lá. Não precisa parar tudo, precisa parar de piorar."}
+    ],
+    content: `Tem um atalho que quase todo mundo pega no começo: testar direto na base de verdade.
+
+É mais rápido. Os dados já estão lá, o cenário é real, não precisa inventar nada.
+
+E é o atalho mais caro que existe.
+
+## Por que isso é problema, e não frescura
+
+Primeiro, o lado prático. Teste quebra coisa. É pra isso que serve. A diferença é que quebrar em ambiente de teste é terça-feira comum, e quebrar em produção é o pedido do cliente sumindo.
+
+Basta um comando de limpeza rodado na janela errada. Todo mundo que trabalha com isso há tempo suficiente tem essa história.
+
+Segundo, o lado legal, que muita gente não enxerga. A LGPD exige **finalidade específica** para cada tratamento de dado pessoal. Seu cliente entregou o dado dele pra receber um serviço. Não entregou pra ser massa de teste.
+
+Usar a base real em desenvolvimento é tratamento fora da finalidade. E tem um agravante silencioso: cada cópia local multiplica o número de lugares onde aquele dado existe e o número de pessoas que alcança ele. Você deixa de saber onde o dado do seu cliente está.
+
+## O teste de uma pergunta
+
+Roda o projeto na sua máquina e responde:
+
+**Eu consigo apagar, daqui, um registro de um cliente de verdade?**
+
+Se a resposta é sim, não existe separação. Existe um único ambiente com dois nomes.
+
+## Como separar, em três partes
+
+**1. Dois bancos.** Um de produção, um de desenvolvimento. Nos serviços que você já usa isso costuma ser criar um segundo projeto, e o segundo geralmente cabe no plano gratuito porque tem pouco dado.
+
+**2. Duas credenciais.** Cada ambiente com as suas. A credencial de produção sai da sua máquina e vive só onde a aplicação roda de verdade. Isso vale mais que a separação em si: enquanto a chave de produção estiver no seu computador, qualquer descuido alcança o cliente.
+
+**3. Dados de mentira.** Aqui tem duas escolhas.
+
+A boa: gerar dados fictícios. Cinquenta usuários inventados, alguns pedidos, alguns casos estranhos de propósito. Nome com acento, e-mail gigante, campo vazio, valor negativo. Você ganha uma base que exercita o sistema melhor que a real.
+
+A aceitável: copiar da produção e anonimizar, trocando nome, e-mail e documento por valores falsos consistentes. O cuidado é fazer direito. Anonimização meia boca é pior que nenhuma, porque dá sensação de proteção sem proteger.
+
+## Onde a IA ajuda de verdade
+
+Gerar massa de teste é uma das tarefas em que a IA é boa e ninguém usa.
+
+Peça uma base fictícia com os casos difíceis incluídos, e seja específico sobre o que quer ver ali: campo vazio, texto com acento e emoji, valor negativo, data invertida, nome muito longo. Vai levar dois minutos e cobre mais borda do que sua base real cobre.
+
+O que ela não vai fazer sozinha é lembrar você de separar os ambientes. Isso é decisão, e decisão continua sendo sua, como em [toda a camada de blindagem](/blog/protocolo-de-5-camadas).
+
+## Se você já está testando em produção
+
+Não precisa parar tudo hoje. Precisa parar de piorar.
+
+Comece pelo mais perigoso: tire a credencial de produção da sua máquina. Depois crie o ambiente de desenvolvimento e vá movendo o trabalho pra lá.
+
+Uma hora de trabalho pra nunca mais ter aquele frio na barriga de rodar um comando e pensar "espera, em qual banco eu estava?".
+
+A decisão é sua.`,
+  },
+  {
+    id: "vibecoding-em-producao-e-outro-esporte-2026",
+    slug: "vibecoding-em-producao-e-outro-esporte-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-24T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    title: "Vibecoding em produção é outro esporte",
+    excerpt:
+      "Construir um app num fim de semana e manter um sistema que gente usa todo dia são duas atividades diferentes. Quem só viveu a primeira acha que a segunda é a mesma coisa, só que maior.",
+    summary:
+      "Fazer um protótipo com IA e manter um sistema em produção são atividades diferentes, não etapas da mesma escala. No protótipo o que vale é chegar na tela funcionando; em produção o que vale é o que acontece quando algo falha, quando o dado é de outra pessoa e quando você volta ao código seis meses depois. A virada não é escrever mais código, é passar a decidir com consequência.",
+    faq: [
+      {"q": "Qual a diferença prática entre protótipo e produção?", "a": "No protótipo existe um caminho, o que dá certo. Em produção existem os outros: campo vazio, conexão caindo, usuário tentando ver o dado do vizinho, dois cliques no mesmo botão. Produção é o conjunto dos caminhos que ninguém demonstra."},
+      {"q": "Então vibecoding não serve para sistema sério?", "a": "Serve, e é justamente a tese aqui. O que não serve é vibecoding sem método. A ferramenta é a mesma; o que muda é o rigor com que você revisa, blinda e testa o que ela gera."},
+      {"q": "Como saber se meu projeto passou de protótipo para produção?", "a": "No momento em que existe uma pessoa que não é você dependendo daquilo. Se alguém perde algo quando o sistema cai, acabou o protótipo, independentemente do tamanho do código."}
+    ],
+    content: `App pronto num fim de semana. A tela abre, o botão funciona, o dado salva.
+
+É real, e é uma sensação boa.
+
+Aí esse app começa a ser usado por gente que não é você. E vira outra coisa.
+
+## O que muda quando alguém depende
+
+No protótipo existe um caminho: o que dá certo. Você digita o que era pra digitar, clica onde era pra clicar, e funciona.
+
+Em produção existem os outros caminhos. E eles não são exóticos, são terça-feira:
+
+- o campo que ficou vazio
+- a conexão que caiu no meio do envio
+- o clique duplo que criou dois pedidos
+- a pessoa que trocou o número no endereço pra ver o que aparece
+- o arquivo de 2GB
+- o nome com acento que quebrou o relatório
+
+Nenhum desses aparece na demonstração. Todos aparecem na primeira semana com usuário de verdade.
+
+## O erro de leitura
+
+O engano comum é achar que produção é o protótipo, só que maior. Que é a mesma coisa com mais telas.
+
+Não é. Muda o critério de sucesso.
+
+No protótipo, sucesso é **funcionar**. Em produção, sucesso é **falhar direito**. Falhar avisando, sem perder dado, sem mostrar o dado do vizinho, deixando rastro pra você entender o que houve.
+
+Quem nunca operou um sistema com gente dentro não sente essa diferença, porque ela só aparece no dia ruim. E no dia bom os dois parecem idênticos.
+
+## Onde a IA some
+
+A IA é ótima no caminho feliz. É pra isso que ela é treinada: você pede uma tela de cadastro e ela entrega uma tela de cadastro que funciona.
+
+O que ela não faz sozinha é perguntar "e se". Ela não pergunta o que acontece quando dois usuários salvam ao mesmo tempo. Não pergunta se aquele endereço devolve dado de outra pessoa. Não pergunta o que fazer quando o pagamento confirma mas o e-mail falha.
+
+Não é limitação de inteligência. É que você não pediu. E ninguém pede o que não sabe que existe.
+
+Por isso [vibecoding com engenharia](/blog/vibecoding-com-engenharia) não é sobre desconfiar da IA. É sobre saber quais perguntas fazer depois que ela entrega.
+
+## As três perguntas que separam
+
+Antes de considerar qualquer coisa pronta pra gente usar:
+
+**1. O que acontece quando isso falha?** Se a resposta é "não sei", ainda é protótipo.
+
+**2. Esse dado é dessa pessoa mesmo?** A checagem tem que estar no servidor, não na tela. Se estiver só na tela, é enfeite.
+
+**3. Eu vou entender isso em seis meses?** Sistema que você não entende é sistema que você não conserta. E na hora que quebrar, quem vai estar lá é você.
+
+Três perguntas. Nenhuma exige escrever código. Todas exigem parar de olhar só pra tela que funcionou.
+
+## O lado bom
+
+Não leia isso como "vibecoding não presta pra coisa séria". A tese é o oposto.
+
+Vibecoding aguenta produção, sim. O que não aguenta é vibecoding sem método. A ferramenta é a mesma nos dois casos; o que muda é o rigor de quem opera.
+
+Velocidade sem método não é produtividade. É dívida com juros compostos, e o boleto chega no pior dia possível.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-estruturar-projeto-antes-da-primeira-linha-com-ia-2026",
+    slug: "como-estruturar-projeto-antes-da-primeira-linha-com-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-24T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    title: "Como estruturar um projeto antes de pedir a primeira linha pra IA",
+    excerpt:
+      "Trinta minutos decidindo cinco coisas antes de abrir o chat economizam semanas de retrabalho. É a parte que todo mundo pula porque parece que não está produzindo.",
+    summary:
+      "Antes de pedir código para a IA, decida cinco coisas: quem usa, qual é a única coisa que o sistema precisa fazer, quais dados existem e quais são sensíveis, o que acontece quando falha, e o que fica de fora da primeira versão. Sem isso, a IA escolhe por você e você descobre a escolha só quando ela dá problema. São trinta minutos que evitam semanas de retrabalho.",
+    faq: [
+      {"q": "Isso não é burocracia que atrasa?", "a": "São trinta minutos contra semanas. Sem essas decisões, a IA assume as dela por padrão, e você descobre qual foi só quando o sistema cresce ou quebra. Refazer estrutura depois custa muito mais que pensar antes."},
+      {"q": "Preciso escrever documento formal?", "a": "Não. Uma página com cinco respostas curtas resolve. O valor está em ter decidido, não no formato. Essa página vira o contexto que você entrega para a IA em cada pedido."},
+      {"q": "Como uso essas decisões no prompt?", "a": "Cole a página inteira antes do pedido: papel que a IA deve assumir, o que o sistema faz, quais dados existem, o que é sensível e o que está fora do escopo. Pedido com contexto devolve código que cabe no seu caso."},
+      {"q": "E se eu ainda não souber alguma resposta?", "a": "Escreva a dúvida em vez de fingir que decidiu. Dúvida explícita é um item de trabalho; dúvida implícita vira decisão tomada pela IA sem você saber."}
+    ],
+    content: `A vontade é abrir o chat e pedir o sistema. Entendo, eu também sinto.
+
+Só que existe meia hora antes disso que muda o projeto inteiro. E é a meia hora que todo mundo pula, porque parece que não está produzindo nada.
+
+São cinco decisões. Nenhuma envolve código.
+
+## 1. Quem usa isso
+
+Não "o público". As pessoas concretas que vão abrir a tela.
+
+É o aluno e o professor. É o cliente e o atendente. É só você.
+
+Isso importa porque define **quem enxerga o quê**, que é a decisão de permissão mais cara de mudar depois. Sistema nascido sem papéis definidos vira sistema em que todo mundo vê tudo, e consertar isso mais tarde significa mexer em cada tela.
+
+Escreve os papéis em uma linha cada. Aluno vê as próprias notas. Professor vê a turma dele. Admin vê tudo.
+
+## 2. A única coisa que isso precisa fazer
+
+Uma frase. Se precisar de duas, ainda não está decidido.
+
+"Aluno faz simulado e recebe correção." Pronto.
+
+Tudo que não serve a essa frase é candidato a ficar de fora da primeira versão. E vai ter muita coisa querendo entrar.
+
+Sem essa frase, cada conversa com a IA puxa uma funcionalidade nova, e três semanas depois você tem meio sistema de cinco coisas em vez de um sistema inteiro de uma.
+
+## 3. Quais dados existem e quais são sensíveis
+
+Lista os tipos de informação que o sistema guarda. Usuário, simulado, resposta, nota, pagamento.
+
+Marca quais são sensíveis: identifica pessoa, é financeiro, é de saúde, é jurídico.
+
+Essa marcação decide onde a checagem de permissão precisa ser rígida e o que nunca pode sair do servidor. É a matéria-prima da camada de blindagem do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas), e ela fica muito mais barata quando é decidida antes.
+
+## 4. O que acontece quando falha
+
+Escolhe agora, não no dia do problema:
+
+- o pagamento confirma mas o e-mail não sai: o que o usuário vê
+- a IA que corrige a prova não responde: fila ou erro na tela
+- o upload cai na metade: o arquivo some ou fica pela metade
+
+Você não precisa resolver os três hoje. Precisa ter decidido, porque se não decidir, a IA decide por você. E o padrão dela é sempre o mesmo: fingir que deu certo.
+
+## 5. O que fica de fora
+
+A lista mais valiosa e a que ninguém escreve.
+
+Escreve o que a primeira versão **não** vai ter. Sem relatório. Sem app de celular. Sem login social. Sem painel de administração bonito.
+
+Serve pra duas coisas. Te protege de você mesmo daqui a duas semanas, e vira instrução explícita pra IA, que por padrão sempre entrega mais do que você pediu.
+
+## Como isso vira prompt
+
+As cinco respostas cabem em uma página. Essa página é o contexto que você cola antes de cada pedido.
+
+A diferença é grosseira. Sem contexto, você pede "faça um sistema de simulado" e recebe o sistema genérico da internet. Com contexto, você pede a mesma coisa e recebe algo que já nasce com os papéis certos, o dado sensível marcado e o escopo cortado.
+
+É o mesmo princípio de [dar contexto pra IA](/blog/por-que-dar-contexto-pra-ia-2026), aplicado no momento em que ele rende mais: antes da primeira linha.
+
+## O custo real de pular
+
+Pular parece economia de meia hora. Não é.
+
+O preço aparece na terceira semana, quando você descobre que precisa mudar quem enxerga o quê e isso encosta em todas as telas. Ou quando o dado sensível está no lugar errado e mover significa refazer.
+
+Meia hora antes, ou semanas depois. Essa é a troca de verdade.
+
+A decisão é sua.`,
+  },
+  {
     id: "casa-branca-chamou-quem-invadiu-para-escrever-as-regras-2026",
     slug: "casa-branca-chamou-quem-invadiu-para-escrever-as-regras-2026",
     contentVersion: 1,
