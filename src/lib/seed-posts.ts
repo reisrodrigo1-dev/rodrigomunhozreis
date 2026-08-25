@@ -486,6 +486,88 @@ Meia hora antes, ou semanas depois. Essa é a troca de verdade.
 A decisão é sua.`,
   },
   {
+    id: "agente-de-codigo-no-canal-do-time-ver-nao-e-revisar-2026",
+    slug: "agente-de-codigo-no-canal-do-time-ver-nao-e-revisar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-25T12:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+    title: "O agente de código entrou no canal do time. Ver não é revisar",
+    excerpt:
+      "O Slack lançou canais onde agentes de IA programam na frente de todo mundo, com Claude, Copilot, Devin, ChatGPT e Vercel. É a melhor notícia de governança do ano e a maior armadilha de teatro de revisão.",
+    summary:
+      "Em 20/08/2026 a Salesforce lançou o Slack Code, que dá aos agentes de IA canais próprios onde o time acompanha, orienta e revisa o trabalho deles, com cinco agentes parceiros na largada: Claude, Devin, Copilot, ChatGPT e Vercel. O canal mostra as mudanças de código e o planejamento, e arquiva tudo como registro pesquisável ao terminar. A leitura que importa: transformar vibecoding de conversa privada em atividade com plateia melhora o rastro, mas plateia não é revisão. Sem um revisor nomeado por canal, visibilidade vira teatro.",
+    faq: [
+      {"q": "O que é o Slack Code?", "a": "Um recurso lançado pela Salesforce em 20 de agosto de 2026 que dá a agentes de IA canais dedicados dentro do Slack. O time acompanha o trabalho do agente ali, com as mudanças de código, o planejamento e prévias, e o canal é arquivado como registro pesquisável quando a tarefa termina."},
+      {"q": "Quais agentes funcionam nele?", "a": "Na largada são cinco: Claude, da Anthropic, Devin, da Cognition, Copilot, do GitHub, ChatGPT, da OpenAI, e os agentes da Vercel. O recurso funciona em qualquer plano do Slack, mas o acesso a cada agente é contratado separadamente."},
+      {"q": "Isso resolve o problema de revisar código de IA?", "a": "Não. Resolve a parte do rastro, que é ter registro do que foi feito e por quê. Revisão é outra coisa: alguém ler o que foi gerado e responder pelo que aprovou. Um canal com oito espectadores e nenhum responsável nomeado revisa menos que um desenvolvedor sozinho que sabe que a responsabilidade é dele."},
+      {"q": "Como usar isso sem cair no teatro de revisão?", "a": "Nomeie um revisor por canal, com nome e sobrenome, defina antes o que o agente pode tocar e o que é proibido, e trate o arquivamento como início da revisão, não como prova de que ela aconteceu."}
+    ],
+    content: `Na quinta passada a Salesforce lançou o Slack Code.
+
+A ideia: em vez de você conversar sozinho com um agente numa janela privada, o agente ganha um canal. O time inteiro vê o que ele está fazendo, comenta, orienta.
+
+## O que exatamente lançou
+
+O agente recebe um canal dedicado para a tarefa. Você menciona ele no Slack, ele abre o canal e puxa quem interessa pra dentro.
+
+Dentro do canal aparecem as mudanças de código, o planejamento e prévias do que está sendo construído.
+
+Quando o trabalho termina, o canal é **arquivado automaticamente**, virando registro pesquisável daquele projeto.
+
+Cinco agentes na largada: Claude, Devin, Copilot, ChatGPT e os agentes da Vercel. Funciona em qualquer plano do Slack, e o acesso a cada agente é contratado à parte.
+
+## Por que isso é bom de verdade
+
+Vou começar pelo elogio, porque ele é sincero.
+
+O maior problema do vibecoding em time nunca foi a qualidade do código. Foi o **rastro**. Alguém pediu algo pra IA numa janela privada, aceitou, subiu. Três meses depois ninguém sabe por que aquela parte existe, quem decidiu, o que foi considerado e descartado.
+
+Um canal arquivado com o pedido, o plano e as mudanças resolve boa parte disso. É documentação que nasce do processo em vez de depender da boa vontade de alguém escrever depois. Isso é ganho real e não é pouco.
+
+## Meu take: plateia não é revisão
+
+E aqui mora o problema.
+
+Ter oito pessoas vendo um agente trabalhar num canal **parece** revisão. Tem gente, tem código passando na tela, tem comentário. A sensação é de processo maduro.
+
+Só que existe um efeito conhecido em qualquer grupo: quando todo mundo é responsável, ninguém é. Chama difusão de responsabilidade, e o canal do Slack é o ambiente perfeito pra isso. Cada um assume que outro está lendo com atenção. Ninguém está.
+
+Na prática, um canal com oito espectadores e nenhum responsável nomeado revisa **menos** que um desenvolvedor sozinho que sabe que a responsabilidade é dele.
+
+Some a isso um detalhe que ninguém comenta: agente trabalhando ao vivo produz muito texto, rápido. Ler diff em canal de chat, no ritmo de chat, com notificação chegando, é a pior condição de leitura que existe. Você acompanha. Acompanhar não é ler.
+
+## Vale o ponto
+
+"Você está reclamando de mais transparência. Antes não tinha nem canal."
+
+Vale o ponto, e concordo. Isso é melhor que a janela privada. Não estou defendendo o modelo antigo.
+
+O risco não é a ferramenta. É a conclusão errada que se tira dela. Se a empresa passar a acreditar que "está no canal, logo foi revisado", ela trocou revisão de verdade por sensação de revisão. E sensação é pior que ausência, porque ausência pelo menos deixa a pessoa desconfiada.
+
+## O que fazer se você vai usar
+
+**1. Nomeia um revisor por canal.** Nome e sobrenome, antes do agente começar. Não "o time revisa". Alguém responde pelo que foi aprovado.
+
+**2. Define o que o agente pode tocar.** Antes, por escrito, no próprio canal. Quais partes do sistema, quais dados, o que é proibido. É o mesmo cuidado de [não soltar agente sem revisar permissão](/blog/agente-de-ia-sem-revisar-permissao-2026).
+
+**3. Trata o arquivamento como início, não como fim.** O canal arquivado é insumo pra revisão, não certificado dela. A leitura de verdade acontece fora do ritmo do chat, com o [checklist na mão](/blog/como-revisar-codigo-gerado-por-ia-checklist-2026).
+
+**4. Mantém as 5 camadas.** Entender, ler, blindar, testar, versionar. O [Protocolo](/blog/protocolo-de-5-camadas) não muda porque o agente ganhou plateia. Nenhuma das cinco é "alguém viu passar na tela".
+
+## Conclusão
+
+O Slack acertou no diagnóstico: vibecoding em time precisava de rastro e de lugar comum. Isso é avanço, e eu vou usar.
+
+Mas a ferramenta entrega **visibilidade**, e visibilidade é matéria-prima de revisão, não revisão. Quem confundir os dois vai ter um belo registro pesquisável de como o problema entrou em produção.
+
+Ver não é revisar. Revisar é alguém assinar embaixo.
+
+A decisão é sua.`,
+  },
+  {
     id: "chatgpt-gratis-com-anuncio-o-problema-nao-e-o-anuncio-2026",
     slug: "chatgpt-gratis-com-anuncio-o-problema-nao-e-o-anuncio-2026",
     contentVersion: 1,
