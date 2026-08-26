@@ -7,6 +7,728 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "o-que-eu-diria-pra-quem-esta-comecando-hoje-2026",
+    slug: "o-que-eu-diria-pra-quem-esta-comecando-hoje-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-30T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    title: "O que eu diria pra quem está começando hoje",
+    excerpt:
+      "Quem começa agora pega a ferramenta pronta e o método nenhum. É uma vantagem enorme e uma armadilha ao mesmo tempo. Cinco coisas que valem mais que qualquer atalho.",
+    summary:
+      "Quem começa a construir com IA hoje pula anos de dificuldade técnica, mas herda o problema inteiro do julgamento: saber o que aceitar, o que recusar e o que verificar. Cinco orientações resolvem a maior parte: construir algo que você mesmo usa, aprender a ler antes de aprender a escrever, tratar segurança como parte do primeiro projeto, terminar coisas pequenas em vez de começar coisas grandes, e escolher uma ferramenta e ficar nela por três meses.",
+    faq: [
+      {"q": "Preciso aprender a programar antes de usar IA?", "a": "Não antes, mas junto. Você não precisa saber escrever código para começar, e precisa aprender a ler o que recebe. Ler é a habilidade que separa quem usa IA de quem é usado por ela."},
+      {"q": "Qual ferramenta escolher para começar?", "a": "A que você já consegue abrir hoje. Trocar de ferramenta toda semana é a forma mais eficiente de não avançar em nenhuma. Escolha uma, fique três meses, e só troque quando souber exatamente o que está faltando nela."},
+      {"q": "Qual o primeiro projeto ideal?", "a": "Algo que resolve um problema seu, real, pequeno e chato. Você é o único usuário que dá retorno honesto e imediato, e problema seu mantém a motivação quando a parte difícil chega."},
+      {"q": "Quanto tempo até ficar bom nisso?", "a": "Ficar produtivo leva semanas. Ficar confiável leva mais, porque confiabilidade vem de ter visto coisa quebrar e entendido o motivo. Não existe atalho para experiência, mas existe atalho para o erro comum: método."}
+    ],
+    content: `Quem começa a construir com IA hoje entra num mundo que não existia dois anos atrás.
+
+A parte difícil de antes sumiu. Configurar ambiente, decorar sintaxe, brigar com erro de vírgula. Nada disso é obstáculo agora.
+
+Só que o obstáculo não desapareceu. Ele mudou de lugar.
+
+## O que ficou mais fácil e o que ficou mais difícil
+
+Ficou mais fácil: escrever código, começar projeto, sair do zero. Isso caiu para perto de zero de esforço.
+
+Ficou mais difícil: **saber o que aceitar**. Antes, se você não entendia, você não conseguia. A ignorância travava você na porta e isso, sem querer, protegia.
+
+Hoje a ignorância não trava nada. Você recebe um sistema inteiro funcionando sem entender uma linha. E aí a distância entre "funciona" e "está certo" vira responsabilidade sua, sem aviso nenhum.
+
+Então são cinco coisas.
+
+## 1. Constrói algo que você mesmo usa
+
+Não é conselho motivacional, é prático.
+
+Projeto de exemplo não te ensina nada, porque você nunca descobre se ficou bom. Projeto que você usa te dá retorno no primeiro dia. Você sente o que está lento, o que confunde, o que faltou.
+
+E tem o efeito prático: quando a parte chata chegar, e ela chega, você continua porque precisa daquilo.
+
+Pequeno e chato é o alvo. Um controle de alguma coisa que hoje você faz numa planilha bagunçada. Serve.
+
+## 2. Aprende a ler antes de aprender a escrever
+
+Essa é a que mais gente inverte.
+
+Você não precisa saber escrever código pra começar. Precisa aprender a **ler** o que recebe. São coisas diferentes, e a segunda é muito mais rápida de adquirir.
+
+Ler é conseguir olhar um bloco e dizer, com suas palavras, o que ele faz. Onde ele pega o dado, o que ele decide, o que ele devolve.
+
+Se você consegue fazer isso, você consegue avaliar. E avaliar é a habilidade inteira. É a camada 2 do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas), e é a que transforma usuário de IA em operador de IA.
+
+## 3. Segurança entra no primeiro projeto, não no décimo
+
+Tem uma ideia comum de que segurança é assunto de quando o projeto crescer.
+
+É o contrário. Segurança é barata no começo e cara depois. Mudar quem enxerga o quê num projeto de duas telas leva minutos. No mesmo projeto com quarenta telas, leva semanas.
+
+E não precisa ser especialista. Três coisas cobrem quase tudo no início: o banco não é aberto pra qualquer um, segredo não fica dentro do código, e o servidor confere de quem é o dado. Detalhei os três em [os lugares por onde dado sensível vaza](/blog/3-lugares-por-onde-dado-sensivel-vaza-num-app-feito-com-ia-2026).
+
+## 4. Termina coisa pequena em vez de começar coisa grande
+
+O padrão de quem trava é sempre o mesmo: sete projetos começados, nenhum terminado.
+
+Acontece porque começar com IA é gostoso demais. Em vinte minutos você tem tela, botão, dado salvando. A euforia é real.
+
+Aí chega a parte que ninguém posta: o caso estranho, o erro que só aparece às vezes, o ajuste chato. E é mais divertido começar outra coisa.
+
+Só que a competência inteira mora nessa parte chata. Quem só começa aprende a começar. Terminar é onde você descobre o que não sabia.
+
+## 5. Escolhe uma ferramenta e fica nela três meses
+
+Sai modelo novo toda semana. Sai editor novo todo mês. A tentação de trocar é permanente.
+
+Trocar toda semana é a forma mais eficiente de não avançar em nenhuma. Você fica sempre no nível superficial de tudo.
+
+Escolhe uma, fica três meses, e só troca quando souber dizer exatamente o que falta nela. Se você não sabe dizer, o problema não é a ferramenta.
+
+## O que eu não diria
+
+Não diria "aprenda tudo antes de começar". Isso era verdade em outro tempo e virou desculpa.
+
+Não diria "a IA faz por você". Ela faz **com** você, e a diferença aparece no dia em que algo quebra.
+
+Quem começa hoje tem uma vantagem que ninguém teve: pode construir coisa de verdade na primeira semana. A conta que vem junto é que o julgamento continua sendo humano, e julgamento não vem no pacote.
+
+A ferramenta você pega em um dia. O método leva mais tempo, e é ele que fica.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-comecar-em-vibecoding-sem-repetir-os-erros-classicos-2026",
+    slug: "como-comecar-em-vibecoding-sem-repetir-os-erros-classicos-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-08-30T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Como começar em vibecoding sem repetir os erros clássicos",
+    excerpt:
+      "Quase todo mundo que começa comete os mesmos seis erros, na mesma ordem. Dá pra pular todos sabendo quais são e o que fazer no lugar.",
+    summary:
+      "Quem começa a construir com IA repete seis erros previsíveis: pedir o sistema inteiro de uma vez, aceitar código sem ler, deixar o banco aberto, guardar segredo dentro do código, testar só o caminho que dá certo e não versionar. Cada um tem um substituto simples: pedir por pedaço, ler antes de aceitar, fechar o banco por padrão, usar variável de ambiente, testar o que dói e salvar versão a cada passo que funciona.",
+    faq: [
+      {"q": "Qual o erro número um de quem começa?", "a": "Pedir o sistema inteiro num prompt só. Você recebe algo grande demais para entender e passa a aceitar por fé. A partir daí todo o resto desanda, porque você perdeu a capacidade de avaliar o que recebeu."},
+      {"q": "Preciso usar Git desde o primeiro dia?", "a": "Sim, e é mais simples do que parece. Sem versão salva, um pedido infeliz apaga uma hora de trabalho sem volta. Com versão salva, você volta ao ponto que funcionava em segundos."},
+      {"q": "Como testar sem saber escrever teste?", "a": "Testando o que dói, na mão. Campo vazio, valor negativo, texto gigante, clique duplo, e a tentativa de ver o dado de outra pessoa. Cinco minutos disso encontram mais problema que meia hora clicando no caminho certo."},
+      {"q": "Vale a pena aprender programação junto?", "a": "Vale, mas comece por ler, não por escrever. Entender o que o código faz é rápido de aprender e é o que te protege. Escrever do zero é opcional quando você tem IA; avaliar não é."}
+    ],
+    content: `Depois de ver muita gente começar, dá pra dizer com segurança: os erros são sempre os mesmos, e na mesma ordem.
+
+A boa notícia é que erro previsível é erro evitável.
+
+## Erro 1: pedir o sistema inteiro de uma vez
+
+O primeiro prompt costuma ser algo como "crie um sistema completo de gestão de clientes com login, relatório e cobrança".
+
+Você recebe algo grande. Grande demais pra entender. E aí começa o problema de verdade: a partir desse momento você aceita por fé, porque não tem como avaliar.
+
+**No lugar:** pede uma parte. A tela de cadastro. Só ela. Entende, aceita, guarda. Depois a próxima.
+
+Demora mais no primeiro dia e é muito mais rápido no primeiro mês.
+
+## Erro 2: aceitar sem ler
+
+O código aparece, você clica em aceitar, funciona. Repete cem vezes.
+
+Três semanas depois existe um sistema que ninguém entende, incluindo você. Não é preguiça, é o caminho de menor resistência. Ler dá trabalho e aceitar é um clique.
+
+**No lugar:** antes de aceitar, lê e explica em voz alta o que aquilo faz. Se você não consegue explicar, pede pra IA explicar e lê de novo. É a camada 2 do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas).
+
+## Erro 3: deixar o banco aberto
+
+Pra tudo funcionar de primeira, a IA libera a permissão do banco. Qualquer um lê, qualquer um escreve.
+
+Funciona lindamente. E fica assim, porque nada avisa que está errado.
+
+**No lugar:** fecha por padrão e abre exceção onde precisa, amarrada ao dono do dado. É o vazamento mais comum que existe, e está entre [os três lugares por onde dado sensível vaza](/blog/3-lugares-por-onde-dado-sensivel-vaza-num-app-feito-com-ia-2026).
+
+## Erro 4: guardar segredo dentro do código
+
+Chave de API escrita no arquivo. Vai pro navegador ou pro repositório, e nos dois casos alguém acha.
+
+O caso mais caro é chave que gasta dinheiro, porque você descobre pela fatura.
+
+**No lugar:** segredo em variável de ambiente, e o arquivo de ambiente fora do Git. Se já subiu, considera vazado e gera outro.
+
+## Erro 5: testar só o caminho que dá certo
+
+Você digita o que era pra digitar, clica onde era pra clicar, funciona. Conclusão: está pronto.
+
+Não está. Está pronto pro caminho que você acabou de fazer.
+
+**No lugar:** testa o que dói. Campo vazio, valor negativo, texto gigante, clique duplo, e a clássica tentativa de trocar o número no endereço pra ver o dado de outro. Cinco minutos disso valem mais que meia hora no caminho feliz. É a diferença entre protótipo e [produto de verdade](/blog/o-que-separa-prototipo-de-produto-de-verdade-2026).
+
+## Erro 6: não salvar versão
+
+Esse dói de um jeito específico. Você tem algo funcionando, pede uma melhoria, a IA reescreve mais do que devia, e o que funcionava sumiu.
+
+Sem versão salva, acabou. Não tem volta.
+
+**No lugar:** salva uma versão a cada passo que funciona. Não precisa saber Git a fundo. Precisa saber salvar e voltar. É a camada 5, e é a única que te dá desfazer de verdade.
+
+## O padrão por trás dos seis
+
+Repara que nenhum deles é sobre programação. Nenhum exige conhecimento técnico avançado.
+
+Todos são sobre **ritmo**. A IA trabalha rápido e o instinto é acompanhar essa velocidade. Aceitar rápido, subir rápido, seguir rápido.
+
+Os seis erros são o preço de tentar acompanhar. E o conserto é o mesmo em todos: um passo por vez, entendendo cada um.
+
+Começa pequeno. Entende o que aceita. Salva o que funciona.
+
+A decisão é sua.`,
+  },
+  {
+    id: "por-que-ler-todo-codigo-que-a-ia-entrega-2026",
+    slug: "por-que-ler-todo-codigo-que-a-ia-entrega-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Manifesto"],
+    publishedAt: "2026-08-29T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que ler todo código que a IA entrega",
+    excerpt:
+      "Parece perda de tempo. Parece desconfiança. Parece o oposto de ganhar velocidade com IA. É a única prática que separa quem opera a ferramenta de quem é operado por ela.",
+    summary:
+      "Ler o código que a IA entrega não é desconfiança da ferramenta, é a condição para poder responder pelo que foi entregue. Quem não lê perde três coisas ao mesmo tempo: a capacidade de consertar quando quebra, a de perceber o que está errado enquanto ainda funciona, e a de aprender com o que recebe. Ler custa minutos por vez e é o que impede que o sistema vire uma caixa-preta que ninguém pode tocar.",
+    faq: [
+      {"q": "Ler tudo não anula o ganho de velocidade da IA?", "a": "Não, porque o que a IA acelera é a escrita, que era a parte lenta. Ler um trecho leva minutos e a escrita levava horas. O ganho continua enorme, só deixa de ser cego."},
+      {"q": "E se eu não entender o que estou lendo?", "a": "Aí você achou exatamente o que precisava achar. Peça explicação, leia de novo, pergunte o porquê de cada decisão. Não entender é informação, não é vergonha. O erro é aceitar mesmo sem entender."},
+      {"q": "Preciso ler linha por linha?", "a": "Não. Precisa entender o que cada bloco faz, de onde vem o dado, o que é decidido e o que é devolvido. Leitura de estrutura resolve a maior parte; linha por linha só onde há risco real."},
+      {"q": "Isso vale mesmo para projeto pequeno?", "a": "Vale mais ainda, porque projeto pequeno é onde o hábito se forma barato. Quem só começa a ler quando o projeto fica grande já perdeu a chance de entender como ele foi construído."}
+    ],
+    content: `Toda vez que eu falo isso, alguém revira os olhos.
+
+Ler todo código que a IA entrega parece o oposto de ganhar velocidade. Parece desconfiar de uma ferramenta que funciona bem. Parece rigor de quem gosta de dificuldade.
+
+Não é nada disso. É a diferença entre operar a ferramenta e ser operado por ela.
+
+## Não é sobre desconfiar da IA
+
+Começo por aqui porque é o mal-entendido mais comum.
+
+A IA erra menos que a maioria das pessoas na maior parte das tarefas. Isso já é verdade e não é o ponto.
+
+O ponto é que ela erra **diferente**. Erro humano tem hesitação junto: a pessoa avisa que não tem certeza, pergunta, deixa um comentário. Erro de IA vem com a mesma confiança e a mesma fluência do acerto. Não existe sinal na superfície.
+
+E quando o erro não se anuncia, a única forma de encontrar é olhando.
+
+## O que você perde quando não lê
+
+Três coisas, e a terceira é a que ninguém conta.
+
+**Perde a capacidade de consertar.** No dia em que quebrar, e vai quebrar, quem está lá é você. Se você nunca leu, não vai consertar. Vai pedir pra IA consertar algo que você não sabe descrever, e a chance de piorar é alta.
+
+**Perde a capacidade de perceber.** Bug normal aparece sozinho: a tela quebra, alguém reclama. Falha de segurança não aparece. O sistema roda perfeito com o banco aberto pra internet inteira. Só quem lê vê isso.
+
+**Perde o aprendizado.** Essa é a mais cara no longo prazo. Cada trecho que você lê ensina alguma coisa. Quem lê durante um ano vira outra pessoa profissionalmente. Quem só aceita fica exatamente onde estava, e depende cada vez mais da ferramenta.
+
+## O argumento da velocidade não se sustenta
+
+"Mas eu perco o ganho de velocidade."
+
+Faz a conta. A IA acelerou a **escrita**, que era a parte lenta, de horas. Ler um trecho leva minutos.
+
+Você trocou horas por minutos e está reclamando dos minutos.
+
+E a comparação honesta nem é essa. É entre ler agora e depurar depois um sistema que você não conhece. Qualquer um que já passou pelo segundo cenário aceita o primeiro sem discutir.
+
+## O que "ler" quer dizer aqui
+
+Não é conferir linha por linha, e não é virar revisor profissional.
+
+É entender o **formato**: o que esse bloco faz, de onde vem o dado, o que ele decide, o que devolve, o que acontece se der errado.
+
+Na prática, quatro perguntas resolvem quase tudo:
+
+- que dado entra aqui
+- quem pode chamar isso
+- o que acontece quando falha
+- isso está guardando algo que não devia
+
+Se você consegue responder as quatro, leu o suficiente. É a camada 2 do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas), e é a que sustenta as outras quatro.
+
+## A parte incômoda
+
+Vou reconhecer o que é desconfortável nisso.
+
+Ler expõe o que você não sabe. Você bate num trecho, não entende, e tem que admitir. Aceitar é mais confortável porque preserva a sensação de que está tudo sob controle.
+
+Só que sensação de controle não é controle. E o dia em que a diferença aparece é sempre o pior dia possível.
+
+Não entender é informação, não é vergonha. É exatamente o lugar onde você precisa parar e perguntar.
+
+## O que está em jogo
+
+Sistema que ninguém entende é sistema que ninguém pode mudar. Vira caixa-preta que funciona até parar de funcionar, e aí não tem quem conserte.
+
+É isso que eu chamo de [vibecoding às cegas](/blog/os-7-pecados-do-vibecoding-as-cegas). Não é usar IA. É usar sem olhar.
+
+Delegar a escrita é inteligente. Delegar o entendimento é abrir mão do controle do que leva o seu nome.
+
+Você não precisa escrever cada linha. Precisa poder responder por cada uma.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-documentar-um-sistema-que-a-ia-escreveu-2026",
+    slug: "como-documentar-um-sistema-que-a-ia-escreveu-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-29T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80",
+    title: "Como documentar um sistema que a IA escreveu",
+    excerpt:
+      "Documentação longa ninguém escreve e ninguém lê. Existe uma versão curta que cabe em uma página e resolve 90% do problema, principalmente quando quem escreveu o código foi a IA.",
+    summary:
+      "Sistema feito com IA precisa de documentação por um motivo específico: ninguém carrega na cabeça a lógica de um código que não escreveu. A versão que funciona cabe em uma página e responde cinco coisas: o que o sistema faz, onde cada dado mora, o que é sensível, o que acontece quando falha e por que as decisões estranhas foram tomadas. O registro do porquê é o que mais se perde e o que mais custa recuperar.",
+    faq: [
+      {"q": "Por que documentar se a IA pode explicar o código depois?", "a": "A IA explica o que o código faz, não por que ele foi feito assim. O motivo de uma decisão não está no código: está na conversa que ninguém guardou. É justamente essa parte que custa caro recuperar."},
+      {"q": "Qual o tamanho ideal da documentação?", "a": "Uma página por sistema. Documentação longa não é escrita nem lida, e desatualiza mais rápido porque ninguém tem paciência de manter. Uma página curta e verdadeira vale mais que vinte páginas obsoletas."},
+      {"q": "Dá para a IA escrever a documentação?", "a": "Dá para o rascunho da parte descritiva, o que o sistema faz e onde as coisas estão. A parte do porquê tem que ser sua, porque a decisão foi sua. Peça o rascunho, corrija e acrescente os motivos."},
+      {"q": "Quando atualizar?", "a": "Quando uma decisão estrutural muda: onde um dado mora, quem pode acessar o quê, ou uma escolha de tecnologia. Mudança pequena de tela não precisa entrar. Se tudo precisa entrar, o documento está grande demais."}
+    ],
+    content: `Documentação tem má fama merecida. Quase toda que existe é longa, desatualizada e ninguém lê.
+
+Só que sistema construído com IA tem um problema específico que a documentação resolve, e é um problema que quase ninguém antecipa.
+
+## O problema específico
+
+Quando você escreve o código à mão, sobra memória. Você lembra por que aquela parte é daquele jeito, lembra do que tentou antes, lembra da gambiarra e do motivo dela.
+
+Quando a IA escreve, essa memória não se forma. Você viu o resultado, aprovou, seguiu. Seis meses depois é como abrir código de estranho, com o agravante de que o estranho é você.
+
+E existe uma pergunta que nem a IA responde depois: **por que foi feito assim**. O código mostra o que faz. Não mostra o que foi considerado e descartado, nem por quê.
+
+## A versão que cabe em uma página
+
+Cinco blocos. Um arquivo na raiz do projeto. Meia hora pra escrever, cinco minutos por mês pra manter.
+
+**1. O que esse sistema faz.** Três linhas, em português, como se explicasse pra alguém de fora. Se você não consegue em três linhas, o sistema faz coisa demais.
+
+**2. Onde cada coisa mora.** Uma lista curta: usuário fica aqui, arquivo fica ali, segredo fica assim. É a informação que você mais vai procurar e a mais chata de descobrir de novo lendo código.
+
+**3. O que é sensível.** Quais dados identificam pessoa, quais são financeiros, quais têm regra de LGPD. Essa lista decide onde a permissão precisa ser rígida.
+
+**4. O que acontece quando falha.** As três ou quatro falhas mais prováveis e o comportamento esperado de cada uma. Se o pagamento confirma e o e-mail não sai, o que acontece.
+
+**5. Por que as decisões estranhas foram tomadas.** O bloco mais valioso e o único que só você pode escrever. Toda escolha que pareceria errada pra quem chega agora: por que esse banco, por que esse campo duplicado, por que essa parte não é automática.
+
+## Onde a IA ajuda e onde ela não ajuda
+
+A IA escreve o rascunho dos blocos 1 e 2 muito bem. Ela lê o projeto e descreve o que existe.
+
+Ela não escreve o bloco 5. Não tem como. A decisão foi sua, o motivo estava na sua cabeça e nunca virou código.
+
+O fluxo prático: pede o rascunho descritivo, corrige o que estiver errado, e escreve o porquê à mão. Meia hora no total.
+
+## O teste de que está boa
+
+Um teste só, e é implacável.
+
+**Entrega o documento pra alguém que nunca viu o projeto e pergunta onde ela mexeria pra mudar o texto de um e-mail.**
+
+Se a pessoa acha o caminho, está boa. Se ela precisa perguntar, falta o bloco 2.
+
+## Como não virar mentira
+
+Documentação errada é pior que documentação nenhuma, porque manda a pessoa pro lugar errado com confiança.
+
+Duas regras evitam isso:
+
+**Documenta decisão, não detalhe.** Nome de função muda toda semana. Onde o dado mora muda uma vez por ano. Documenta o segundo.
+
+**Atualiza quando a decisão muda, não quando o código muda.** Se toda alteração exige atualizar o documento, ele está detalhado demais e vai apodrecer.
+
+## Por que isso vale mais em vibecoding
+
+Porque a velocidade é maior e a memória é menor.
+
+Um sistema construído com IA cresce em semanas o que antes levava meses. Mais superfície, no mesmo tempo, com menos memória formada sobre ela.
+
+É a mesma lógica de quem [volta num projeto e não reconhece o próprio código](/blog/seu-app-funciona-mas-o-dev-fugiu-do-repo-2026). Uma página escrita hoje é o bilhete que você deixa pra alguém que vai precisar muito dele.
+
+Esse alguém provavelmente é você.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-erro-que-sai-mais-caro-em-vibecoding-2026",
+    slug: "o-erro-que-sai-mais-caro-em-vibecoding-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-08-28T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1200&q=80",
+    title: "O erro que sai mais caro em vibecoding",
+    excerpt:
+      "Não é o bug. Não é a falha de segurança. O erro mais caro é aceitar rápido demais uma coisa que você não entendeu, porque ele multiplica todos os outros.",
+    summary:
+      "O erro mais caro em vibecoding não é técnico: é aceitar rápido demais o que não foi entendido. Ele é caro porque compõe. Cada trecho aceito sem entender torna o próximo mais difícil de avaliar, até que o sistema inteiro vira território desconhecido e qualquer mudança vira aposta. O conserto é barato e chato: entender antes de aceitar, um pedaço por vez.",
+    faq: [
+      {"q": "Por que aceitar sem entender é pior que um bug?", "a": "Porque bug é pontual e some quando corrigido. Aceitar sem entender compõe: cada trecho aceito às cegas reduz sua capacidade de avaliar o próximo, e a dificuldade cresce junto com o sistema."},
+      {"q": "Como saber se estou aceitando rápido demais?", "a": "Tente explicar em voz alta o que acabou de aceitar. Se não conseguir descrever o que aquilo faz, de onde vem o dado e o que acontece no erro, você aceitou rápido demais."},
+      {"q": "E se eu já tiver um sistema cheio de código que não entendo?", "a": "Não precisa parar tudo. Escolha a parte mais crítica, normalmente onde há dado de usuário ou dinheiro, e entenda só ela. Depois a próxima. Recuperar entendimento é lento, mas não exige recomeçar."},
+      {"q": "Isso não deixa o trabalho lento demais?", "a": "Deixa o começo mais lento e o resto muito mais rápido. O custo de entender aparece hoje, em minutos. O custo de não entender aparece depois, em dias, e sempre na pior hora."}
+    ],
+    content: `Se eu tivesse que apontar o erro mais caro de quem constrói com IA, não seria nenhum dos óbvios.
+
+Não é o banco aberto. Não é a chave vazada. Não é o teste que faltou.
+
+É aceitar rápido demais uma coisa que você não entendeu.
+
+## Por que esse é o mais caro
+
+Os outros erros são pontuais. Banco aberto você fecha em dez minutos. Chave vazada você troca. Teste que faltou você escreve.
+
+Esse não é pontual. Ele **compõe**.
+
+Você aceita um trecho sem entender. Na semana seguinte, pede uma alteração em cima dele. Como você não entendia o de baixo, também não consegue avaliar o de cima. Aceita de novo.
+
+Repete quarenta vezes.
+
+Agora existe um sistema inteiro em que cada parte se apoia numa que você não conhece. Qualquer mudança vira aposta, porque você não sabe o que vai quebrar. E aí acontece a coisa mais cara de todas: você para de mexer no que funciona, mesmo sabendo que precisa mexer.
+
+Sistema que ninguém ousa tocar já está morto. Só ainda não avisou.
+
+## Por que todo mundo comete
+
+Não é preguiça, e é importante entender isso pra não se punir à toa.
+
+É que aceitar é **um clique** e entender é **cinco minutos**. Cem vezes por semana, essa diferença define o comportamento de qualquer pessoa. Não é falha de caráter, é economia de esforço funcionando como sempre funcionou.
+
+Tem um segundo motivo, mais sutil. Quando você entende, você às vezes descobre que precisa refazer. Quando você não entende, essa possibilidade nem aparece. Não entender é confortável, e o desconforto é justamente o sinal de que você chegou perto de algo importante.
+
+## O custo com prazo
+
+O detalhe cruel é o atraso.
+
+O erro acontece hoje e cobra em três meses. Nesse intervalo, tudo parece ótimo: você está rápido, entregando, o sistema cresce.
+
+A conta chega junto: no dia em que algo quebra, com usuário reclamando, num código que você não conhece. Nunca chega num dia calmo.
+
+É o mesmo mecanismo de [velocidade sem método](/blog/vibecoding-em-producao-e-outro-esporte-2026). O ganho é imediato e visível. O custo é adiado e invisível. Por isso engana tanta gente boa.
+
+## O conserto é chato e barato
+
+Não tem truque. Antes de aceitar, você explica pra si mesmo o que aquilo faz.
+
+Em voz alta, em uma frase. "Isso pega o e-mail do formulário, confere se tem arroba e salva na tabela de leads."
+
+Se você não consegue formar a frase, não aceita ainda. Pede explicação, lê de novo, pergunta por que foi feito assim.
+
+Cinco minutos. É a camada 1 do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas), e é a mais pulada justamente por parecer boba.
+
+## Se você já está no buraco
+
+Muita gente vai ler isso já com um sistema cheio de código desconhecido. Não precisa recomeçar.
+
+Escolhe a parte mais crítica: onde tem dado de usuário ou dinheiro passando. Entende só ela. Semana que vem, a próxima.
+
+Recuperar entendimento é mais lento que ter entendido no caminho, mas é possível. Recomeçar do zero quase nunca é a resposta certa.
+
+## O que separa
+
+A diferença entre quem constrói com IA por dois anos e melhora, e quem constrói por dois anos e fica dependente, não é talento nem ferramenta.
+
+É essa pausa de cinco minutos, repetida.
+
+Aceitar rápido parece produtividade. É empréstimo, e os juros são altos.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-subir-pra-producao-numa-sexta-sem-medo-2026",
+    slug: "como-subir-pra-producao-numa-sexta-sem-medo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-08-28T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80",
+    title: "Como subir pra produção numa sexta sem medo",
+    excerpt:
+      "A regra de não subir na sexta existe porque o processo é ruim, não porque sexta é perigosa. Com quatro coisas no lugar, o dia da semana para de importar.",
+    summary:
+      "O medo de subir na sexta não é sobre o dia: é sintoma de um processo em que não se sabe se algo quebrou e não se consegue voltar rápido. Quatro coisas resolvem: saber voltar à versão anterior em minutos, ser avisado quando quebra em vez de descobrir pelo cliente, subir pedaço pequeno em vez de acumular uma semana, e ter checado o que dói antes de subir. Com isso, o dia da semana deixa de ser critério.",
+    faq: [
+      {"q": "Então posso subir em qualquer dia?", "a": "Pode, desde que você consiga voltar rápido e seja avisado quando algo quebra. Sem essas duas coisas, o problema não é a sexta: é que qualquer dia é arriscado, e a sexta só torna o prejuízo mais longo."},
+      {"q": "O que é voltar rápido, na prática?", "a": "Conseguir restaurar a versão anterior em minutos, sem depender de memória nem de conserto às pressas. Na maioria das hospedagens modernas isso é um botão, e vale testar uma vez em ambiente de teste antes de precisar de verdade."},
+      {"q": "Como ser avisado quando algo quebra?", "a": "Com captura de erro e alerta configurados, mandando aviso para onde você realmente olha. Sem isso, quem te avisa é o cliente, e aí o problema já custou reputação além do conserto."},
+      {"q": "Subir pedaço pequeno não dá mais trabalho?", "a": "Dá mais deploys e muito menos investigação. Quando algo quebra depois de uma mudança pequena, a causa é óbvia. Quando quebra depois de uma semana acumulada, você procura em vinte alterações."}
+    ],
+    content: `Tem uma regra folclórica em tecnologia: não sobe na sexta.
+
+Ela existe por um motivo real. Só que o motivo não é a sexta.
+
+## O que a regra está dizendo de verdade
+
+Quando alguém tem medo de subir na sexta, está dizendo três coisas sem perceber:
+
+- não sei se vai quebrar
+- se quebrar, não vou saber
+- se eu souber, não vou conseguir voltar rápido
+
+Repara que nenhuma das três tem a ver com dia da semana. A sexta só transforma um problema de duas horas num problema de fim de semana inteiro.
+
+Consertar o dia não resolve nada. Consertar as três resolve.
+
+## 1. Saber voltar em minutos
+
+É a mais importante. Se você consegue restaurar a versão anterior em minutos, o risco de qualquer deploy cai brutalmente.
+
+Não é conserto às pressas com o cliente ligando. É voltar ao estado que funcionava e consertar com calma depois.
+
+Na maioria das hospedagens modernas isso é um botão. O problema é que quase ninguém testou esse botão. **Testa uma vez, num dia calmo.** Descobrir que o retorno não funciona no meio de um incidente é a pior forma possível de descobrir.
+
+## 2. Ser avisado antes do cliente
+
+A segunda pergunta é: se quebrar, quem te conta?
+
+Se a resposta é "o cliente", você não tem processo, tem sorte. E sorte costuma acabar no pior momento.
+
+Captura de erro e alerta chegando onde você realmente olha. Isso é uma tarde de trabalho e muda a natureza do risco: você deixa de descobrir problema por reclamação. Escrevi o passo a passo em [como monitorar seu app](/blog/como-monitorar-seu-app-e-saber-quando-ele-quebra-2026).
+
+## 3. Subir pedaço pequeno
+
+Aqui está o contraintuitivo: **subir mais vezes é mais seguro que subir menos vezes.**
+
+Parece o contrário. Mais deploy, mais chance de quebrar.
+
+Só que quando quebra depois de uma mudança pequena, a causa é evidente. Foi a única coisa que mudou. Quando quebra depois de uma semana acumulada, você procura entre vinte alterações, sob pressão.
+
+Deploy grande é raro e assustador. Deploy pequeno é rotina, e rotina é o que tira o medo.
+
+## 4. Checar o que dói antes
+
+Não precisa de suíte de testes automatizada pra melhorar muito. Cinco minutos na mão resolvem a maior parte:
+
+- o caminho principal ainda funciona
+- campo vazio não derruba
+- entrar com outra conta não mostra dado errado
+- a parte que você mexeu funciona nos dois extremos
+
+É a camada 4 do [Protocolo de 5 Camadas](/blog/protocolo-de-5-camadas), na versão mínima. Muito melhor que a versão zero, que é o padrão da maioria.
+
+## O teste da sexta
+
+Com as quatro no lugar, faz a pergunta de novo: dá pra subir na sexta às 17h?
+
+Se você consegue voltar em minutos, é avisado quando quebra, subiu uma mudança pequena e checou o básico, o pior cenário é: quebra, você recebe alerta, volta a versão, vai pro fim de semana e conserta segunda.
+
+Isso não é heroísmo. É processo.
+
+E se a resposta ainda é não, ótimo: você acabou de descobrir qual das quatro está faltando. Isso vale mais que a decisão sobre o dia.
+
+## O que isso revela
+
+Medo de subir é diagnóstico, não personalidade. É o sistema avisando que falta rede de proteção.
+
+Quem trabalha com medo constante de deploy trabalha pior em tudo: adia, acumula, sobe pacote grande, e o pacote grande aumenta o medo. O ciclo se alimenta.
+
+Sexta não é perigosa. Processo ruim é perigoso, de segunda a domingo.
+
+A decisão é sua.`,
+  },
+  {
+    id: "as-contas-que-ninguem-soma-antes-de-construir-2026",
+    slug: "as-contas-que-ninguem-soma-antes-de-construir-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-08-27T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "As contas que ninguém soma antes de construir",
+    excerpt:
+      "A conta que todo mundo faz é quanto custa construir. As que decidem se o projeto sobrevive são outras cinco, e nenhuma aparece no orçamento inicial.",
+    summary:
+      "Antes de decidir construir um software, a conta relevante não é o custo de construir: é o custo de manter. Cinco linhas ficam fora do orçamento inicial e decidem a viabilidade: infraestrutura que cresce com o uso, consumo de IA por usuário, o tempo recorrente de manutenção, o custo de suporte quando alguém depende do sistema, e o custo de sair caso a decisão se mostre errada. Construir é evento. Manter é assinatura.",
+    faq: [
+      {"q": "Qual a conta que mais surpreende?", "a": "O consumo de IA por usuário. Ele parece irrelevante nos primeiros testes e cresce junto com o uso, então costuma explodir exatamente quando o produto começa a dar certo."},
+      {"q": "Como estimar manutenção sem histórico?", "a": "Use uma regra grosseira e revise depois: reserve algumas horas por mês por sistema em produção, mesmo sem novidade nenhuma. Dependência para atualizar, erro para investigar e ajuste pequeno acontecem sozinhos."},
+      {"q": "Vale sempre comprar em vez de construir?", "a": "Não sempre, mas quase sempre no começo. Comprar tem custo previsível e some quando você cancela. Construir tem custo que continua depois que o interesse acaba."},
+      {"q": "O que é custo de saída?", "a": "O que você paga para abandonar a decisão: migrar dado, refazer integração, retreinar gente. Ninguém calcula na largada, e é o que transforma um erro barato em armadilha cara."}
+    ],
+    content: `A pergunta que todo mundo faz antes de construir é quanto custa construir.
+
+É a conta menos importante das seis.
+
+## A conta que todo mundo faz
+
+Quanto custa fazer. Com IA, essa conta despencou: o que custava meses de desenvolvimento hoje sai em dias.
+
+Justamente por isso ela parou de ser o fator de decisão. Quando algo fica barato, o barato deixa de ser argumento. E aí o que decide são as contas que continuam caras.
+
+## Conta 1: infraestrutura que cresce com o uso
+
+Todo serviço moderno tem plano gratuito generoso. Banco, hospedagem, armazenamento.
+
+O plano gratuito é desenhado pra caber no seu teste. Não é desenhado pra caber no seu sucesso.
+
+O ponto de atenção não é o valor de hoje, é a **curva**. Quanto custa com dez usuários, com quinhentos, com cinco mil. Se você não sabe responder, não sabe se o projeto é viável, só sabe que ele começa barato.
+
+## Conta 2: consumo de IA por usuário
+
+Essa é a que mais pega gente boa.
+
+Cada resposta gerada custa. Nos seus testes, o valor é irrisório e some no meio das outras despesas.
+
+Aí o produto começa a dar certo. E o custo cresce junto com o sucesso, não com o tempo. É a única linha do orçamento que aumenta exatamente quando você comemora.
+
+A conta certa é **por usuário ativo por mês**, comparada com o que aquele usuário paga. Se você cobra assinatura fixa e o consumo é livre, existe um número de usuários pesados a partir do qual você perde dinheiro trabalhando. Vale saber esse número antes, não depois.
+
+## Conta 3: manutenção que ninguém orçou
+
+Sistema em produção consome tempo mesmo sem funcionalidade nova.
+
+Dependência pra atualizar. Erro estranho pra investigar. Ajuste pequeno que o usuário pediu. Serviço externo que mudou.
+
+Nada disso aparece no orçamento inicial e tudo isso acontece. Uma regra grosseira, pra revisar depois com seus números: reserve algumas horas por mês, por sistema, só pra existir.
+
+Multiplica pelo número de sistemas que você mantém e o resultado costuma explicar por que sobra tão pouco tempo pra construir coisa nova.
+
+## Conta 4: suporte, que começa no dia em que alguém depende
+
+No momento em que existe usuário de verdade, existe pergunta de verdade.
+
+"Não consigo entrar." "Sumiu meu relatório." "Chegou dois e-mails iguais."
+
+Cada uma é interrupção, e interrupção é a coisa mais cara que existe pra quem constrói. Não é o tempo da resposta, é o tempo de voltar ao que estava fazendo.
+
+## Conta 5: o custo de sair
+
+A menos calculada de todas.
+
+Se daqui a um ano essa decisão se mostrar errada, quanto custa desfazer? Migrar o dado, refazer integração, retreinar gente, reescrever o que dependia daquilo.
+
+Custo de saída alto transforma erro barato em armadilha cara. E ele quase nunca é considerado, porque na hora de decidir ninguém está pensando em desistir.
+
+## Por que isso muda a decisão entre construir e comprar
+
+Colocando as cinco lado a lado, a comparação vira outra.
+
+**Comprar** tem custo mensal previsível, e ele **para** quando você cancela. Manutenção, suporte e infraestrutura são problema do fornecedor.
+
+**Construir** tem custo inicial baixo, e depois uma assinatura que você paga em tempo, para sempre, mesmo quando o interesse acabou.
+
+Não é argumento contra construir. É argumento contra construir **sem somar**. Falei da escolha em [construir ou contratar pronto](/blog/como-escolher-entre-construir-e-contratar-pronto-2026).
+
+## A pergunta que resume
+
+Antes de decidir, responde uma só:
+
+**Quanto custa esse sistema existir daqui a um ano, sem eu tocar nele?**
+
+Se você não sabe, ainda não fez a conta que importa.
+
+Construir é evento. Manter é assinatura.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-escolher-entre-construir-e-contratar-pronto-2026",
+    slug: "como-escolher-entre-construir-e-contratar-pronto-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-08-27T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+    title: "Como escolher entre construir e contratar pronto",
+    excerpt:
+      "Com IA, construir ficou tão barato que virou o reflexo. Existem três perguntas que decidem melhor que o instinto, e o padrão continua sendo comprar.",
+    summary:
+      "Com IA o custo de construir despencou, e por isso construir virou o reflexo automático. Três perguntas decidem melhor: isso é o que diferencia meu negócio, quanto custa manter isso vivo por um ano, e o que acontece se der errado. A regra prática é comprar o que é padrão de mercado e construir só o que é o seu diferencial, porque o que é padrão já tem fornecedor melhor que você nisso.",
+    faq: [
+      {"q": "Qual a regra mais simples para decidir?", "a": "Construa o que diferencia seu negócio e compre todo o resto. Login, pagamento, e-mail e relatório genérico são padrão de mercado, com fornecedores que fazem isso melhor que você e mais barato do que você manteria."},
+      {"q": "Mas construir ficou tão barato com IA...", "a": "O custo de construir caiu, o de manter não. Manutenção, suporte, infraestrutura e atualização continuam sendo pagos em tempo, todo mês, por anos. É esse custo que decide."},
+      {"q": "E quando o pronto não faz exatamente o que preciso?", "a": "Na maioria das vezes o que falta é hábito, não necessidade. Vale testar o pronto por um mês antes de concluir que não serve, porque adaptar seu processo costuma custar menos que manter software próprio."},
+      {"q": "Quando construir é claramente a decisão certa?", "a": "Quando aquilo é o seu diferencial, quando nenhum fornecedor atende a uma exigência real do seu setor, ou quando depender de terceiro cria um risco maior que o de manter por conta própria."}
+    ],
+    content: `Antes, construir era caro e a decisão era fácil: compra pronto.
+
+Com IA, construir ficou barato. E aí a decisão ficou difícil, porque agora dá pra fazer quase tudo.
+
+Dar pra fazer não é o mesmo que valer a pena.
+
+## O reflexo novo
+
+O padrão virou "eu faço". Precisa de um CRM, faço. Precisa de um agendador, faço. Precisa de um sistema de e-mail, faço.
+
+E funciona. Sai em dias, custa quase nada, fica do jeito que você quer.
+
+O problema aparece um ano depois, quando você mantém sete sistemas caseiros e não tem mais tempo pra melhorar nenhum. Nenhuma dessas decisões pareceu errada isoladamente. O erro foi de acumulação.
+
+## Pergunta 1: isso é o que diferencia meu negócio?
+
+A pergunta mais importante e a mais rápida.
+
+Cliente escolhe você por causa disso? Se você usasse uma ferramenta genérica aqui, alguém notaria?
+
+Login não diferencia ninguém. Envio de e-mail não diferencia. Cobrança não diferencia. Relatório padrão não diferencia.
+
+O que diferencia é o miolo do que você faz: a lógica que só você entende, o fluxo que é a sua vantagem, a experiência que o cliente lembra.
+
+**Constrói o diferencial. Compra o resto.**
+
+E tem um detalhe honesto: o que é padrão de mercado já tem fornecedor que faz melhor que você. Não porque você é ruim, mas porque a empresa dele faz só aquilo há anos, com time dedicado e usuário reclamando desde sempre.
+
+## Pergunta 2: quanto custa manter isso por um ano?
+
+A conta que decide, e quase ninguém faz.
+
+Construir é evento. Manter é assinatura paga em tempo: dependência que atualiza, erro que aparece, usuário que pergunta, serviço externo que muda.
+
+Compara com o preço da ferramenta pronta. Muita vez o pronto custa menos por mês do que as horas que você gastaria só pra deixar o seu funcionando. Detalhei as cinco linhas esquecidas em [as contas que ninguém soma](/blog/as-contas-que-ninguem-soma-antes-de-construir-2026).
+
+## Pergunta 3: o que acontece se der errado?
+
+Duas versões dessa pergunta, e as duas contam.
+
+**Se o fornecedor sumir**, quanto você perde? Se for uma ferramenta de nicho, com empresa pequena, e o dado crítico do seu negócio mora lá, é risco real. Se for um serviço grande e o dado é exportável, é risco pequeno.
+
+**Se o seu sistema quebrar às 3 da manhã**, quem conserta? Com o pronto, tem suporte. Com o seu, tem você. Se você não vai estar disponível, essa linha pesa muito.
+
+## O padrão que eu recomendo
+
+Comprar, e construir por exceção.
+
+Constrói quando: é o seu diferencial, nenhum fornecedor atende uma exigência real do seu setor, ou depender de terceiro cria risco maior que manter por conta.
+
+Compra quando: é padrão de mercado, existe fornecedor sério, e o dado é seu e exportável.
+
+## O caso mais comum de erro
+
+Alguém testa uma ferramenta pronta, esbarra numa limitação, e conclui que precisa fazer a sua.
+
+Quase sempre o que falta é **hábito**, não funcionalidade. A ferramenta faz diferente do que você está acostumado, e a sensação é de que ela não serve.
+
+Antes de decidir construir por causa disso, usa o pronto por um mês de verdade. Adaptar processo costuma custar infinitamente menos que manter software.
+
+## O resumo
+
+Construir ficou barato de fazer e continua caro de ter.
+
+A IA mudou o custo de produção. Não mudou o custo de propriedade, e é ele que aparece todo mês.
+
+Constrói o que é seu. Compra o que é de todo mundo.
+
+A decisão é sua.`,
+  },
+  {
     id: "por-que-arquitetura-nao-se-delega-pra-ia-2026",
     slug: "por-que-arquitetura-nao-se-delega-pra-ia-2026",
     contentVersion: 1,
