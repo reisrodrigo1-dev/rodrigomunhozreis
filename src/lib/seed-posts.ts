@@ -7,6 +7,1308 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "software-nao-e-entregue-e-mantido-2026",
+    slug: "software-nao-e-entregue-e-mantido-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Manifesto"],
+    publishedAt: "2026-09-20T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80",
+    title: "Software não é entregue. É mantido",
+    excerpt:
+      "A palavra entrega sugere fim. Não existe fim. Existe o dia em que você para de melhorar e continua pagando, e é aí que a maioria dos projetos feitos com IA se perde.",
+    summary:
+      "Tratar software como entrega cria a ilusão de um ponto final que não existe: depois do lançamento vem dependência que envelhece, regra de negócio que muda, serviço externo que altera comportamento e gente nova que precisa entender o que foi feito. Com IA a construção ficou barata e a manutenção não, o que inverte o peso das duas fases. Quem escolhe o que construir pensando em quem vai manter toma decisões diferentes de quem pensa só em entregar.",
+    faq: [
+      {"q": "Por que dizer que software não é entregue?", "a": "Porque o custo não termina no lançamento. Dependência envelhece, regra muda, serviço externo altera comportamento e pessoas trocam. Entrega é um marco no meio, não o fim da conta."},
+      {"q": "O que muda com IA nessa equação?", "a": "A construção ficou barata e a manutenção continuou cara. Isso inverte a proporção: antes construir dominava o custo total, agora manter domina, e a decisão de construir precisa considerar isso."},
+      {"q": "Como decidir melhor sabendo disso?", "a": "Escolhendo o que construir pelo custo de manter, não pelo custo de fazer. Menos sistemas, mais simples, com o que é padrão de mercado comprado pronto."},
+      {"q": "Isso significa construir menos?", "a": "Significa construir com escolha. Cada sistema novo é uma assinatura permanente em tempo, e a soma dessas assinaturas é o que determina quanto tempo sobra para construir coisa nova."}
+    ],
+    content: `Existe uma palavra que atrapalha mais do que ajuda quando o assunto é software: entrega.
+
+Ela sugere um ponto final. O projeto acabou, foi entregue, próximo.
+
+Não existe esse ponto.
+
+## O que acontece depois da entrega
+
+O sistema entra no ar e o mundo continua se mexendo em volta dele.
+
+A dependência que você usou lança uma versão nova e a antiga para de receber correção. O serviço externo muda o formato da resposta sem avisar direito. A regra de negócio muda porque a empresa mudou. Uma pessoa nova entra e precisa entender o que foi feito. Um caso que ninguém previu aparece no décimo mês.
+
+Nada disso é falha de projeto. É o que acontece com qualquer software que esteja vivo. Software que não muda é software que ninguém usa.
+
+## O que a IA inverteu
+
+Antes, construir dominava a conta. Levava meses, custava caro, e manter parecia detalhe em comparação.
+
+Agora construir leva dias. E manter continua custando exatamente o que custava.
+
+A proporção virou. Numa boa parte dos projetos pequenos, o custo total de existir por dois anos é quase todo manutenção.
+
+Isso muda a decisão de construir, e quase ninguém atualizou o raciocínio. Continua-se decidindo pelo custo de fazer, quando o que pesa agora é o custo de ter. Escrevi as cinco linhas esquecidas em [as contas que ninguém soma](/blog/as-contas-que-ninguem-soma-antes-de-construir-2026).
+
+## Por que isso pesa mais em vibecoding
+
+Dois motivos que se somam.
+
+**Volume.** Você constrói mais coisa, em menos tempo. Cada uma vira uma assinatura. Cinco sistemas construídos num semestre são cinco assinaturas pagas em tempo, todo mês, pra sempre.
+
+**Memória.** Quando você escreve o código, sobra lembrança do porquê. Quando a IA escreve, essa memória não se forma. Você aprovou e seguiu.
+
+Seis meses depois, você mantém um sistema que nunca entendeu por inteiro. É a pior posição possível: responsabilidade sem contexto.
+
+## O que muda quando você aceita isso
+
+**Escolhe menos.** Se cada sistema é permanente, a pergunta "isso merece existir?" fica séria. Boa parte dos processos [não merece software](/blog/nem-todo-processo-merece-software-2026).
+
+**Constrói mais simples.** Simples não é sinônimo de pobre. É o que você consegue explicar, mudar e consertar depois. Sofisticação que você não sustenta é dívida com aparência de competência.
+
+**Compra o que é padrão.** Login, pagamento, e-mail. Não diferencia ninguém e alguém já mantém melhor que você.
+
+**Documenta a decisão.** Uma página com o que faz, onde as coisas moram e por que as escolhas estranhas foram feitas. É o bilhete pra quem vai manter, e esse alguém provavelmente é você.
+
+## A pergunta que reposiciona tudo
+
+Antes de aprovar qualquer construção:
+
+**Quem mantém isso daqui a um ano, e com quanto tempo?**
+
+Se a resposta é "eu, nas horas vagas", você acabou de descobrir o teto de quantos sistemas pode ter.
+
+Se não há resposta, o projeto não está pronto pra começar.
+
+## O que isso não é
+
+Não é conservadorismo. Não é dizer pra construir menos por medo.
+
+É dizer que a conta inteira precisa aparecer na decisão. Construir é a parte visível e barata. Manter é a invisível e cara, e é ela que determina quanto tempo sobra pra você construir a próxima coisa.
+
+Entregar é um dia. Manter são todos os outros.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-fazer-o-checkup-de-manutencao-do-seu-projeto-2026",
+    slug: "como-fazer-o-checkup-de-manutencao-do-seu-projeto-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-09-20T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80",
+    title: "Como fazer o checkup de manutenção do seu projeto",
+    excerpt:
+      "Dez minutos por mês, seis perguntas. Serve pra descobrir o que está apodrecendo enquanto o sistema continua funcionando normalmente.",
+    summary:
+      "Sistema em produção envelhece em silêncio, e o checkup mensal existe para tornar isso visível antes de virar problema. Seis verificações resolvem: dependências desatualizadas, erros recorrentes no registro, backup testado, custo comparado ao mês anterior, alertas que ninguém mais lê e o teste de voltar à versão anterior. Leva dez minutos e é diferente da checagem de pré-produção, que olha se algo pode subir.",
+    faq: [
+      {"q": "Qual a diferença entre esse checkup e a checagem antes de subir?", "a": "A checagem de pré-produção pergunta se algo pode entrar no ar. O checkup mensal pergunta se o que já está no ar continua saudável. São momentos e perguntas diferentes."},
+      {"q": "Com que frequência fazer?", "a": "Uma vez por mês é suficiente para a maioria dos projetos pequenos. O valor está na regularidade: o que se procura é mudança em relação ao mês anterior, e isso exige comparação."},
+      {"q": "Preciso ser técnico para conduzir?", "a": "Não para conduzir. As seis perguntas são objetivas e a resposta é demonstrável. Consertar o que falhar pode exigir técnica; descobrir não exige."},
+      {"q": "O que fazer com o que aparecer?", "a": "Nem tudo precisa de ação imediata. Trate primeiro o que expõe dado ou impede recuperação, depois o que cresce sozinho, como custo e volume de erro."}
+    ],
+    content: `Sistema em produção não avisa que está envelhecendo.
+
+Ele continua respondendo, as telas continuam abrindo, ninguém reclama. Enquanto isso a dependência fica dois anos desatualizada, o backup nunca foi testado e o custo subiu 40% sem ninguém notar.
+
+Dez minutos por mês resolvem. Seis perguntas.
+
+## 1. Quantas dependências estão desatualizadas?
+
+Roda o comando que lista pacotes desatualizados no seu projeto e olha dois números: quantos estão atrás, e quantos estão atrás de **versão principal**.
+
+Um ou dois atrasados é normal. Vinte, com metade em versão principal antiga, significa que atualizar virou projeto em vez de tarefa. E quanto mais tempo passa, pior fica.
+
+Não precisa atualizar tudo hoje. Precisa saber o tamanho da dívida antes que ela decida por você, e é sobre isso [a dependência esquecida](/blog/a-dependencia-que-ninguem-atualiza-ha-dois-anos-2026).
+
+## 2. Que erros estão se repetindo?
+
+Abre o registro de erros e olha os mais frequentes do mês.
+
+O que interessa não é o erro dramático. É o **erro recorrente e silencioso**: aquele que acontece cem vezes por dia, ninguém percebe, e representa alguma coisa dando errado sem ninguém saber.
+
+Se não houver registro de erro pra abrir, você achou seu trabalho do mês.
+
+## 3. O backup foi testado?
+
+Não "existe backup". **Foi restaurado alguma vez?**
+
+Backup nunca testado é uma crença, não uma proteção. E o momento de descobrir que ele não funciona não pode ser o momento em que você precisa dele.
+
+Restaura numa cópia, confere se o dado está lá. Uma vez por trimestre já muda tudo.
+
+## 4. O custo mudou?
+
+Abre a fatura dos serviços e compara com o mês anterior.
+
+Você procura salto sem explicação. Custo que sobe junto com o uso é saudável. Custo que sobe sozinho é vazamento: laço repetindo, processo esquecido rodando, chamada em duplicidade.
+
+Sem comparação mensal, isso só aparece quando o número já está grande.
+
+## 5. Os alertas ainda são lidos?
+
+Essa é a mais esquecida e a mais reveladora.
+
+Se o canal de alerta virou ruído, se ninguém mais abre, se todo mundo aprendeu a ignorar, você tem monitoramento no papel e nenhum na prática.
+
+Alerta que grita toda hora é alerta desligado. Vale cortar os que não exigem ação e manter poucos que importam.
+
+## 6. Dá pra voltar à versão anterior?
+
+A pergunta que fecha o checkup.
+
+Testa uma vez, num dia calmo. Se der certo, você tem rede de proteção. Se não der, você descobriu isso hoje em vez de descobrir no meio de um incidente, que é a diferença entre um susto e uma crise.
+
+## Como usar o resultado
+
+Não é pra consertar tudo no mesmo dia.
+
+**Primeiro:** o que expõe dado ou impede recuperação. Backup quebrado e permissão errada vêm antes de qualquer outra coisa.
+
+**Depois:** o que cresce sozinho. Custo e volume de erro pioram sem ninguém fazer nada.
+
+**Por último:** dependência desatualizada, que dói mas raramente é urgente.
+
+## Por que isso é diferente da checagem antes de subir
+
+São perguntas de momentos diferentes.
+
+A [checagem de pré-produção](/blog/como-saber-se-o-sistema-que-a-ia-construiu-aguenta-producao-2026) pergunta: isso pode entrar no ar?
+
+O checkup mensal pergunta: o que já está no ar continua de pé?
+
+Quem faz só o primeiro tem um sistema que nasceu bem e envelhece sem supervisão.
+
+Dez minutos por mês. É a manutenção mais barata que existe.
+
+A decisão é sua.`,
+  },
+  {
+    id: "excluir-codigo-e-trabalho-de-senior-nao-faxina-2026",
+    slug: "excluir-codigo-e-trabalho-de-senior-nao-faxina-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-09-19T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1200&q=80",
+    title: "Excluir código é trabalho de sênior, não faxina",
+    excerpt:
+      "Adicionar é fácil e todo mundo aplaude. Remover exige entender o sistema inteiro e ninguém vê. Com IA gerando volume, essa assimetria virou o problema central.",
+    summary:
+      "Adicionar código exige entender só a parte nova; remover exige entender o sistema inteiro, e por isso remoção é trabalho mais difícil, não mais simples. Com IA multiplicando o volume gerado, a assimetria entre criar e apagar virou o principal fator de acúmulo. Sistema cresce por adição fácil e só encolhe por decisão deliberada, o que faz da capacidade de excluir uma competência sênior e não uma tarefa menor.",
+    faq: [
+      {"q": "Por que remover é mais difícil que adicionar?", "a": "Porque adicionar exige entender apenas a parte nova, enquanto remover exige saber quem depende daquilo. A dificuldade não está no ato de apagar, está na certeza de que nada quebra."},
+      {"q": "Por que isso piorou com IA?", "a": "Porque o custo de adicionar caiu quase a zero e o de remover não mudou. Quando um dos lados fica barato e o outro não, o sistema acumula por padrão."},
+      {"q": "Como identificar código que pode sair?", "a": "Procure funcionalidade que ninguém usa há meses, código que não é chamado por nada, e caminhos alternativos criados para um caso que não existe mais. Medição de uso ajuda mais que memória."},
+      {"q": "Qual o risco de remover errado?", "a": "Quebrar algo que dependia daquilo em silêncio. Por isso remoção pede o mesmo cuidado de qualquer mudança sensível: entender o alcance, mudar em passo pequeno e ter como voltar."}
+    ],
+    content: `Existe uma assimetria em software que explica quase todo sistema ruim que você já viu.
+
+Adicionar é fácil. Remover é difícil.
+
+E não é por preguiça. É estrutural.
+
+## Por que adicionar é fácil
+
+Pra adicionar, você precisa entender **a parte nova**. O resto do sistema continua lá, funcionando, e você encosta pouco nele.
+
+Se der errado, o erro aparece rápido: a tela quebra, o teste falha, alguém reclama. É um erro que se anuncia.
+
+E tem reconhecimento. Funcionalidade nova é visível, demonstrável, elogiável.
+
+## Por que remover é difícil
+
+Pra remover com segurança, você precisa saber **quem depende daquilo**. E isso exige entender o sistema, não só a parte.
+
+Se der errado, o erro pode não aparecer na hora. Vai aparecer em três semanas, num caso raro, e ninguém vai ligar as duas coisas.
+
+E não tem reconhecimento nenhum. Ninguém comemora o código que sumiu. O resultado visível de uma boa remoção é: nada mudou.
+
+## O que a IA fez com essa assimetria
+
+Escancarou.
+
+O custo de adicionar caiu pra quase zero. Você pede e recebe funcionalidade nova em minutos.
+
+O custo de remover não mudou nada. Continua exigindo entender o alcance, checar dependência, testar o que pode quebrar.
+
+Quando um lado fica barato e o outro não, o resultado é matemático: **o sistema acumula**. Não porque alguém decidiu acumular, mas porque adicionar é o caminho de menor resistência em todas as decisões.
+
+## O que sobra num sistema que nunca encolhe
+
+Funcionalidade que ninguém usa há oito meses, e continua lá porque remover dá trabalho e ninguém sabe se alguém usa.
+
+Caminho alternativo criado pra um caso que não existe mais.
+
+Três formas de fazer a mesma coisa, porque cada vez que alguém precisou, criou de novo em vez de achar a existente.
+
+Configuração que não faz mais nada e ninguém tem coragem de tirar.
+
+Cada um desses parece inofensivo. Juntos, eles são o motivo de você levar duas horas pra fazer uma mudança de dez minutos.
+
+## Por que isso é trabalho sênior
+
+Porque exige o que só se ganha entendendo o sistema:
+
+Saber o que aquilo fazia. Saber quem chamava. Saber por que foi criado, e se o motivo ainda existe. Saber o que quebra se sumir. E ter julgamento pra decidir entre remover agora, marcar como obsoleto, ou deixar.
+
+Nada disso é mecânico, e nenhuma dessas perguntas a IA responde sozinha, porque ela não sabe o que o negócio ainda precisa.
+
+Por isso chamar remoção de "limpeza" ou "faxina" desvaloriza a parte mais difícil do trabalho.
+
+## O efeito colateral bom
+
+Quem remove código aprende o sistema de um jeito que quem só adiciona nunca aprende.
+
+Pra apagar com segurança, você é obrigado a rastrear dependência, entender o histórico, mapear o alcance. É a forma mais rápida de conhecer um sistema por inteiro.
+
+É o mesmo aprendizado de [voltar num projeto antigo](/blog/como-voltar-num-projeto-que-a-ia-escreveu-ha-6-meses-2026), com um objetivo mais exigente.
+
+## O que fazer com isso
+
+Reserva tempo pra remover, do mesmo jeito que reserva pra construir. Se não estiver na agenda, não acontece, porque nunca vai ser a coisa mais urgente do dia.
+
+E mede uso antes de decidir. Memória sobre o que é usado é péssima; número é confiável.
+
+Todo sistema cresce sozinho. Encolher exige decisão.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-apagar-codigo-com-seguranca-2026",
+    slug: "como-apagar-codigo-com-seguranca-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-19T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Como apagar código com segurança",
+    excerpt:
+      "Todo projeto tem código que não faz mais nada. Tirar dá medo porque ninguém sabe quem depende daquilo. Existe um caminho de quatro passos que remove o medo.",
+    summary:
+      "Remover código com segurança não depende de coragem e sim de método: descobrir quem chama aquilo, medir se ainda é usado de verdade, desativar antes de apagar e só então remover, sempre com como voltar. O passo que muda tudo é a desativação temporária, porque transforma uma aposta irreversível em um teste com prazo. Código morto acumulado é o que faz mudança simples custar caro.",
+    faq: [
+      {"q": "Como saber se um trecho ainda é usado?", "a": "Combinando busca por referências no projeto com medição de uso real em produção. Busca mostra quem chama no código; medição mostra se aquele caminho é executado por alguém."},
+      {"q": "O que é desativar antes de apagar?", "a": "Deixar o código no lugar mas impedir que ele seja alcançado, por configuração ou por um bloqueio explícito. Se ninguém reclamar em algumas semanas, a remoção definitiva vira rotina em vez de aposta."},
+      {"q": "Preciso avisar alguém antes de remover?", "a": "Sim, quando o trecho tem qualquer chance de ser usado por outra pessoa ou por integração externa. Remoção silenciosa de algo compartilhado é a forma mais comum de quebrar o trabalho alheio."},
+      {"q": "E se eu apagar algo importante por engano?", "a": "Com versionamento você volta em minutos, e é justamente por isso que remoção só deveria acontecer em projeto versionado. Sem isso, apagar vira decisão sem volta."}
+    ],
+    content: `Todo projeto tem trechos que não fazem mais nada.
+
+A funcionalidade que foi substituída, o campo que ninguém preenche, a integração de um serviço que a empresa parou de usar.
+
+E ninguém tira, porque tirar dá medo. O medo é legítimo: você não sabe quem depende daquilo.
+
+Quatro passos resolvem.
+
+## Passo 1: descobre quem chama
+
+Busca no projeto inteiro pelo nome da função, do arquivo, do campo, da rota.
+
+Três resultados possíveis:
+
+**Ninguém chama.** Bom sinal, mas não é conclusão. Pode ser chamado por nome montado em tempo de execução, por configuração, ou por sistema externo.
+
+**Chamado só por código que também está morto.** Você achou um bloco inteiro em vez de uma peça.
+
+**Chamado por coisa viva.** Não é remoção, é refatoração. Assunto diferente.
+
+## Passo 2: mede se é usado de verdade
+
+Busca no código não basta, porque existe código alcançável que ninguém alcança.
+
+A rota existe, funciona, e nenhum usuário entra nela há sete meses.
+
+Aqui você precisa de dado de uso: registro de acesso, contador, qualquer sinal de execução real. Se não existir, coloca um contador temporário e espera algumas semanas.
+
+Parece lento e é muito mais rápido que remover errado e descobrir pelo cliente.
+
+## Passo 3: desativa antes de apagar
+
+Esse é o passo que transforma aposta em teste, e é o que quase todo mundo pula.
+
+Em vez de apagar, você **impede que aquilo seja alcançado**. Bloqueia a rota, desliga por configuração, faz o caminho falhar de forma explícita e registrada.
+
+O código continua lá, então voltar é imediato.
+
+Espera duas ou três semanas. Se ninguém reclamou e o registro não acusou tentativa de uso, você tem evidência em vez de intuição.
+
+E se alguém reclamar, ótimo: você descobriu a dependência sem ter destruído nada.
+
+## Passo 4: apaga de verdade
+
+Depois da quarentena, remove.
+
+Duas regras:
+
+**Uma remoção por vez.** Se algo quebrar, você sabe exatamente o quê. Cinco remoções juntas viram investigação.
+
+**Mensagem explicando.** Registra o que foi removido e por quê, com a evidência de uso zero. Daqui a um ano, quando alguém perguntar onde foi parar aquilo, a resposta está lá.
+
+## O que nunca remover sem avisar
+
+Três casos pedem conversa antes:
+
+**Endereço que outro sistema chama.** Integração externa não aparece na busca do seu projeto.
+
+**Campo de banco.** Dado apagado não volta. Marca como obsoleto, para de escrever nele, e só remove muito depois.
+
+**Coisa que alguém usa manualmente.** Aquele relatório que uma pessoa roda uma vez por mês não aparece em nenhuma métrica de uso diário.
+
+## Onde a IA ajuda e onde ela atrapalha
+
+**Ajuda** a mapear referências, explicar o que um trecho fazia e sugerir o que parece morto.
+
+**Atrapalha** se você aceitar a sugestão dela como decisão. Ela não sabe que aquele campo é usado uma vez por ano no fechamento contábil. Ela vê o código, não o negócio.
+
+Sugestão dela é ponto de partida da investigação, nunca conclusão. É o mesmo cuidado de [não delegar arquitetura](/blog/por-que-arquitetura-nao-se-delega-pra-ia-2026).
+
+## Por que vale o esforço
+
+Código morto não é neutro. Ele custa: aparece nas buscas, confunde quem lê, atrapalha refatoração, e engana a IA que você usa, porque ela também lê aquilo como se fosse relevante.
+
+Cada trecho removido deixa o sistema mais fácil de entender pra todo mundo, inclusive pra ferramenta.
+
+Apagar com método não é arriscado. Apagar no chute é.
+
+A decisão é sua.`,
+  },
+  {
+    id: "seu-eu-de-daqui-a-seis-meses-e-outro-desenvolvedor-2026",
+    slug: "seu-eu-de-daqui-a-seis-meses-e-outro-desenvolvedor-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Produtividade"],
+    publishedAt: "2026-09-18T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    title: "Seu eu de daqui a seis meses é outro desenvolvedor",
+    excerpt:
+      "Você vai voltar naquele projeto sem lembrar de nada. Não é falha de memória: é o normal, e piora quando quem escreveu o código foi a IA.",
+    summary:
+      "A memória do contexto de um projeto se perde em semanas, e isso é comportamento normal e não descuido. Com IA a perda é maior, porque a memória do porquê nem chega a se formar: você aprovou em vez de escrever. A consequência prática é tratar o próprio eu futuro como uma pessoa nova no projeto, deixando registro do motivo das decisões em vez de confiar na lembrança.",
+    faq: [
+      {"q": "Por que a memória de um projeto some tão rápido?", "a": "Porque memória se forma com esforço e repetição. Quando a decisão foi tomada rápido e não voltou a ser usada, ela não fica. Semanas bastam para o contexto se apagar."},
+      {"q": "Isso é pior com IA?", "a": "É, porque a memória do motivo nem chega a se formar. Quem escreve retém o raciocínio; quem aprova retém apenas o resultado, e o resultado não explica a escolha."},
+      {"q": "O que registrar para o eu futuro?", "a": "O motivo das decisões estranhas, o que foi considerado e descartado, e onde as coisas moram. O que o código faz dá para reler; por que foi feito assim, não."},
+      {"q": "Quanto tempo isso leva?", "a": "Poucos minutos por decisão relevante, feitos no momento em que a decisão acontece. Depois já não dá, porque a informação que interessa é exatamente a que se perde primeiro."}
+    ],
+    content: `Você abre um projeto seu de seis meses atrás e não reconhece nada.
+
+Olha uma parte e pensa: por que isso está assim? Quem fez essa escolha esquisita?
+
+Você fez. E não lembra.
+
+## Isso é normal, não é falha
+
+Memória se forma com esforço e repetição. Quando você toma uma decisão rápido, resolve o problema e nunca mais volta nela, ela não fica.
+
+Não é sinal de desatenção nem de sobrecarga. É como memória funciona.
+
+O prazo é mais curto do que as pessoas imaginam. Não são anos. Em algumas semanas o contexto já está apagado, e o que sobra é uma sensação vaga de que teve um motivo.
+
+## Por que piora com IA
+
+Aqui está a parte específica do nosso trabalho hoje.
+
+Quando você escreve o código, sobra rastro mental. Você lutou com aquilo, tentou de dois jeitos, escolheu um. O esforço deixa marca.
+
+Quando a IA escreve, você **aprovou**. E aprovar não deixa marca nenhuma.
+
+Você retém o resultado, não o raciocínio. Seis meses depois é como abrir código de estranho, com o agravante de que a responsabilidade é sua.
+
+E existe um tipo de informação que se perde primeiro e é a mais valiosa: **o porquê**. O que o código faz, você relê e descobre. Por que foi feito assim, e o que foi descartado, não está escrito em lugar nenhum.
+
+## A mudança de postura
+
+A saída não é melhorar a memória. É parar de contar com ela.
+
+Trata o seu eu futuro como uma pessoa nova entrando no projeto. Não como você com lembrança fraca, mas como alguém que nunca viu aquilo.
+
+Muda o que você registra. Você para de escrever bilhete pra você e passa a escrever pra alguém.
+
+## O que registrar
+
+Três coisas, e nenhuma é documentação formal.
+
+**O motivo das escolhas estranhas.** Toda decisão que pareceria errada pra quem chega agora. Por que esse campo é duplicado, por que essa parte não é automática, por que não usamos a solução óbvia.
+
+**O que foi descartado.** Metade do trabalho de quem chega é reconsiderar caminhos que já foram considerados e rejeitados. Uma linha dizendo "tentamos X e não deu por causa de Y" economiza dias.
+
+**Onde as coisas moram.** É o que você mais vai procurar e o mais chato de redescobrir lendo código.
+
+Isso cabe numa página, e é o que descrevi em [documentar um sistema que a IA escreveu](/blog/como-documentar-um-sistema-que-a-ia-escreveu-2026).
+
+## O momento certo é agora
+
+Aqui está o detalhe que decide se isso acontece ou não.
+
+Você tem que registrar **enquanto decide**, não depois.
+
+Depois é tarde, porque a informação que interessa é exatamente a primeira a evaporar. Uma semana depois você lembra o que fez; não lembra mais o que considerou e por que descartou.
+
+São dois minutos no momento da decisão, e nenhum minuto disponível depois.
+
+## O teste
+
+Pega um projeto seu de três meses atrás. Abre uma parte e tenta responder:
+
+Por que está assim? O que foi considerado antes? O que quebra se eu mudar?
+
+Se você não conseguir responder as três, esse projeto já é legado. Não pelo tempo, e sim porque perdeu o contexto.
+
+Escreve pro estranho que vai abrir isso depois. Ele vai agradecer, e ele é você.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-escrever-comentario-que-ajuda-em-vez-de-atrapalhar-2026",
+    slug: "como-escrever-comentario-que-ajuda-em-vez-de-atrapalhar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-18T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80",
+    title: "Como escrever comentário que ajuda em vez de atrapalhar",
+    excerpt:
+      "A IA gera comentário que repete o que o código já diz. Isso não é documentação, é ruído. Comentário útil responde uma pergunta que o código não consegue responder.",
+    summary:
+      "Comentário que descreve o que o código faz é ruído, porque o código já diz isso e o comentário envelhece enquanto o código muda. Comentário útil responde o que o código não consegue: por que a decisão foi tomada, o que foi descartado, qual armadilha existe ali e o que não pode ser alterado sem consequência. Com IA gerando comentário descritivo por padrão, remover o supérfluo passou a fazer parte da revisão.",
+    faq: [
+      {"q": "Por que comentário descritivo é ruim?", "a": "Porque duplica informação que já está no código e desatualiza quando o código muda. O resultado é um comentário que descreve algo que não acontece mais, o que é pior que não ter comentário."},
+      {"q": "O que um bom comentário responde?", "a": "Por que aquilo foi feito assim, o que foi tentado antes, qual armadilha existe naquele trecho e o que não pode ser mudado sem quebrar outra coisa. São informações que não estão no código."},
+      {"q": "A IA não escreve bons comentários?", "a": "Ela escreve comentários corretos e descritivos, porque só tem o código como fonte. O motivo da decisão estava na sua cabeça e nunca foi dito a ela, então ela não pode escrever."},
+      {"q": "Devo remover os comentários que a IA gerou?", "a": "Os que apenas repetem o código, sim. Eles aumentam a leitura sem acrescentar nada e viram mentira com o tempo. Mantenha os que explicam intenção."}
+    ],
+    content: `Peça código pra uma IA e ele vem comentado. Bastante comentado.
+
+O problema é o tipo de comentário. Quase sempre é assim: uma linha explicando que a próxima linha soma dois valores, logo acima de uma linha que soma dois valores.
+
+Isso não é documentação. É volume.
+
+## Por que comentário descritivo é pior que nada
+
+Dois motivos, e o segundo é o que dói.
+
+**Ele ocupa espaço sem informar.** Quem lê já sabia, porque o código estava ali. A leitura fica mais longa e não fica mais clara.
+
+**Ele vira mentira.** O código muda e o comentário fica. Seis meses depois existe um comentário afirmando com segurança algo que não acontece mais, e alguém vai acreditar nele antes de ler o código.
+
+Comentário desatualizado é pior que ausência de comentário, porque ausência deixa a pessoa desconfiada e mentira deixa confiante.
+
+## O que o código não consegue dizer
+
+Comentário bom responde o que o código é incapaz de responder sozinho. São quatro coisas:
+
+**Por quê.** A decisão. "Guardamos duplicado aqui porque o relatório antigo lê deste campo e ainda não foi migrado."
+
+**O que foi descartado.** "Tentamos fazer direto pela API, mas o limite de requisição não aguenta o volume do fechamento."
+
+**A armadilha.** "Este valor vem como texto, não como número, apesar do nome. É assim que o fornecedor manda."
+
+**O que não pode mudar.** "A ordem destes dois passos importa: se inverter, o pagamento confirma antes da reserva."
+
+Nenhuma das quatro está no código. Todas se perdem se ninguém escrever.
+
+## A regra de uma linha
+
+Antes de escrever, pergunta: **isso está no código logo abaixo?**
+
+Se está, apaga.
+Se não está, escreve.
+
+Simples assim, e resolve 90% dos casos.
+
+## Onde comentário compensa mais
+
+Nem todo trecho precisa. Os que mais rendem:
+
+**Onde tem cálculo com regra de negócio.** Prazo, imposto, desconto, arredondamento. O número mágico sempre tem uma origem, e a origem sempre se perde.
+
+**Onde tem gambiarra consciente.** Toda gambiarra tem motivo. Sem o motivo escrito, ela parece incompetência e alguém vai "consertar" e quebrar.
+
+**Onde tem ordem que importa.** Sequência que não pode ser trocada e não parece sequencial.
+
+**Onde tem exceção.** O caso especial que existe por causa de um cliente, uma lei ou um histórico.
+
+## Onde não compensa
+
+Função com nome claro fazendo coisa óbvia. Bloco simples. Configuração padrão.
+
+E o clássico: comentário que explica sintaxe da linguagem. Se a pessoa não sabe o que aquela construção faz, o comentário não é o lugar de ensinar.
+
+## O que fazer com o que a IA gera
+
+Entra na revisão, junto com o resto.
+
+**Apaga** o que só repete o código.
+**Mantém** o que explica intenção, quando existir.
+**Acrescenta** o porquê, que ela não tinha como saber.
+
+Esse último ponto merece ênfase: a IA não escreve o motivo porque o motivo nunca foi dito a ela. Ele estava na sua cabeça. Ela só tinha o código como fonte, e código não contém intenção.
+
+É a mesma limitação de quando você [volta no projeto seis meses depois](/blog/seu-eu-de-daqui-a-seis-meses-e-outro-desenvolvedor-2026): o que faz dá pra reler, o porquê não.
+
+## O teste final
+
+Lê seu comentário e pergunta: **se eu apagar o código e deixar só isso, alguém entende a decisão?**
+
+Se sim, é um bom comentário.
+Se não, provavelmente ele só estava repetindo o que já estava escrito.
+
+Código diz o que acontece. Comentário existe pra dizer por quê.
+
+A decisão é sua.`,
+  },
+  {
+    id: "a-dependencia-que-ninguem-atualiza-ha-dois-anos-2026",
+    slug: "a-dependencia-que-ninguem-atualiza-ha-dois-anos-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-09-17T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "A dependência que ninguém atualiza há dois anos",
+    excerpt:
+      "Não é sobre o pacote que você instalou ontem. É sobre o que está lá desde o começo, ninguém olha, e para de receber correção sem avisar ninguém.",
+    summary:
+      "O risco de dependência não está só na hora de instalar: está no que já está no projeto e envelhece sem supervisão. Pacote parado acumula correções de segurança não aplicadas, e projeto abandonado deixa de receber correção sem qualquer aviso. A triagem prática separa o que é crítico, o que está sem manutenção e o que dá para remover, e o pior cenário é a atualização virar projeto grande demais para caber em qualquer semana.",
+    faq: [
+      {"q": "Qual a diferença entre esse risco e o de instalar pacote novo?", "a": "Instalar é uma decisão consciente que dá para avaliar na hora. O que já está instalado envelhece em silêncio, sem nenhum momento de decisão, e por isso passa despercebido por anos."},
+      {"q": "Como saber se uma dependência foi abandonada?", "a": "Olhando a data do último lançamento e a atividade do repositório. Projeto sem atualização há muito tempo e com problemas abertos sem resposta costuma estar sem manutenção, mesmo que ainda funcione."},
+      {"q": "Preciso atualizar tudo sempre?", "a": "Não. Precisa saber o que está atrasado e decidir conscientemente. O problema não é ficar uma versão atrás, é acumular tanto atraso que atualizar deixa de caber numa tarefa."},
+      {"q": "Por onde começar se está tudo atrasado?", "a": "Pelas que têm correção de segurança pendente, depois pelas que estão sem manutenção. Deixe por último as que só ganharam funcionalidade nova, que é o atraso menos perigoso."}
+    ],
+    content: `Existe muito conteúdo bom sobre o cuidado ao instalar um pacote novo. Conferir quem mantém, olhar o que ele traz junto, desconfiar de nome parecido.
+
+Esse cuidado importa e é sobre um momento específico: a instalação.
+
+O risco maior está no que já está lá dentro há dois anos e ninguém olha.
+
+## Por que o que já está instalado é mais perigoso
+
+Porque não existe um momento de decisão.
+
+Na instalação, você para, avalia, escolhe. Existe um instante de atenção.
+
+Depois disso, nunca mais. O pacote fica no projeto, funciona, e envelhece sem que ninguém abra a questão. Não tem alerta, não tem reunião, não tem gatilho.
+
+E enquanto ele envelhece, duas coisas acontecem sem aviso.
+
+## O que acontece com pacote parado
+
+**Correção de segurança se acumula.** Cada versão que sai costuma trazer conserto de alguma coisa. Ficar dez versões atrás significa ter dez conjuntos de correção não aplicados, e as correções são públicas: quem quer explorar sabe exatamente o que procurar em quem não atualizou.
+
+**O projeto pode ter sido abandonado.** Esse é o pior caso, e o mais silencioso. O pacote continua funcionando perfeitamente, mas ninguém mais mantém. Não vai ter correção nunca mais, e nada no seu projeto avisa isso.
+
+Funcionar e ser mantido são coisas diferentes. Só a segunda protege.
+
+## Como fazer a triagem
+
+Não precisa auditoria formal. Uma hora resolve.
+
+**Passo 1: lista o que está atrasado.** O comando que mostra pacotes desatualizados existe em qualquer ecossistema. Roda e olha quantos aparecem, e quantos estão atrás de versão principal.
+
+**Passo 2: roda a checagem de vulnerabilidade.** Também é comando pronto. Ela separa "está velho" de "está velho e tem problema conhecido", que é a diferença que importa pra priorizar.
+
+**Passo 3: olha as datas de lançamento das principais.** Última versão de dois anos atrás é sinal de projeto parado. Vale conferir se o repositório tem atividade ou se as questões abertas ficam sem resposta.
+
+**Passo 4: separa o que dá pra remover.** Boa parte das dependências antigas entrou pra resolver algo que hoje a linguagem já faz nativamente, ou pra uma funcionalidade que nem existe mais. Dependência removida é a única que não envelhece.
+
+## A ordem de atacar
+
+**Primeiro:** o que tem vulnerabilidade conhecida e está no caminho de dado sensível.
+
+**Segundo:** o que está sem manutenção. Não é urgente hoje e vai ser um problema sem solução depois, porque não vai existir versão nova pra atualizar.
+
+**Terceiro:** o resto, que ganhou só funcionalidade nova. Esse atraso é o menos perigoso.
+
+## O erro de deixar acumular
+
+O cenário que trava projeto de verdade é este: ninguém atualiza por dois anos, e aí atualizar deixa de ser uma tarefa e vira um projeto.
+
+Três versões principais de distância, mudanças que quebram compatibilidade encadeadas, e nenhuma semana em que isso caiba.
+
+Aí a decisão vira "depois", pra sempre.
+
+**Atualizar de pouco em pouco é chato. Atualizar de uma vez é inviável.** É a diferença entre uma hora por mês e um trimestre que nunca acontece.
+
+## Onde a IA ajuda
+
+Ela é boa em explicar o que muda entre versões e em fazer a alteração mecânica de compatibilidade.
+
+O que ela não faz é decidir a ordem, avaliar risco no seu contexto e testar se continuou funcionando. Isso continua sendo trabalho de quem responde pelo sistema.
+
+Vale colocar essa checagem no [checkup mensal](/blog/como-fazer-o-checkup-de-manutencao-do-seu-projeto-2026). Dez minutos de olhada evitam o trimestre que ninguém tem.
+
+Código que você escreve, você revisa. Código que você instala, alguém revisa por você. E se esse alguém foi embora, ninguém revisa.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-atualizar-dependencia-sem-passar-a-noite-acordado-2026",
+    slug: "como-atualizar-dependencia-sem-passar-a-noite-acordado-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-17T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+    title: "Como atualizar dependência sem passar a noite acordado",
+    excerpt:
+      "Atualizar tudo de uma vez é o caminho garantido para a madrugada. Uma por vez, com ordem certa e ponto de retorno, transforma isso numa tarefa de meia hora.",
+    summary:
+      "Atualizar dependências vira crise quando é feito em bloco: quando algo quebra, não se sabe qual mudança causou. O método seguro é uma por vez, começando pelas de menor risco, sempre com o projeto versionado e com um ponto de retorno testado. Antes de qualquer atualização vale ler o que mudou entre versões, e depois vale exercitar os caminhos que aquela biblioteca toca, porque erro de compatibilidade costuma aparecer em uso e não na instalação.",
+    faq: [
+      {"q": "Por que não atualizar tudo de uma vez?", "a": "Porque se algo quebrar você não sabe qual das vinte mudanças causou. Uma por vez custa mais tempo de execução e economiza muito tempo de investigação."},
+      {"q": "Qual a ordem certa?", "a": "Comece pelas atualizações menores e de menor risco para ganhar ritmo, deixe as de versão principal isoladas e faça as que envolvem segurança com prioridade, mas ainda uma a uma."},
+      {"q": "Como saber o que vai quebrar?", "a": "Lendo as notas de versão, especialmente a seção de mudanças que quebram compatibilidade. É o passo que quase todo mundo pula e o que evita a maior parte das surpresas."},
+      {"q": "O que testar depois de atualizar?", "a": "Os caminhos que usam aquela biblioteca, não o sistema inteiro. Erro de compatibilidade quase sempre aparece no uso, não na instalação, então abrir a aplicação não basta."}
+    ],
+    content: `A história é sempre parecida. Alguém decide atualizar as dependências, roda o comando que atualiza tudo, e o projeto para de funcionar.
+
+Aí começa a madrugada: vinte pacotes mudaram, algo quebrou, e não dá pra saber qual foi.
+
+Existe um jeito chato e previsível de fazer isso. Chato é bom aqui.
+
+## A regra que muda tudo: uma por vez
+
+Parece ineficiente. É o oposto.
+
+Atualizar em bloco é rápido pra executar e caro pra investigar. Quando quebra, você tem vinte suspeitos e nenhuma pista.
+
+Atualizar uma por vez é mais lento pra executar e quase sem investigação. Quebrou depois de mexer numa? Foi essa.
+
+O tempo total é menor. E o mais importante: é previsível, então cabe numa manhã em vez de sequestrar um dia inteiro.
+
+## Antes de começar: dois pré-requisitos
+
+**Projeto versionado, com tudo salvo.** Sem isso não faz. Você precisa poder voltar em segundos, e voltar é parte normal do processo, não sinal de fracasso.
+
+**Saber como o sistema deveria se comportar.** Se você não sabe o que testar depois, não vai saber se quebrou. Anota antes os três ou quatro caminhos principais.
+
+## A ordem
+
+**1. Correções e versões menores primeiro.** São as de menor risco. Atualiza várias, testa, salva. Isso limpa a lista e dá ritmo.
+
+**2. Versões principais, uma de cada vez, isoladas.** Aqui mora o risco de verdade. Cada uma sozinha, com teste e ponto de salvamento entre elas.
+
+**3. As de segurança com prioridade, mas ainda uma a uma.** Urgência não justifica atropelar o método. Justifica ser a primeira da fila.
+
+## O passo que ninguém dá
+
+Antes de atualizar uma versão principal: **lê o que mudou**.
+
+Todo projeto sério publica notas de versão, e nelas existe a seção que importa, a das mudanças que quebram compatibilidade. É uma leitura de cinco minutos que evita duas horas de confusão.
+
+E é aqui que a IA rende bem: cola as notas e pede pra ela apontar o que afeta o seu uso específico. Ela é boa nisso e economiza a leitura de coisa irrelevante.
+
+## Depois de cada atualização: testa o caminho, não a tela
+
+O erro mais comum é abrir a aplicação, ver que ela carrega, e concluir que está tudo bem.
+
+Problema de compatibilidade quase nunca aparece no carregamento. Aparece **no uso**: na hora de salvar, de gerar o arquivo, de chamar o serviço externo.
+
+Testa os caminhos que aquela biblioteca toca. Se você atualizou a que gera PDF, gera um PDF. Não adianta olhar a tela inicial.
+
+## Quando quebrar
+
+Vai quebrar em alguma. Faz parte.
+
+**Volta pro ponto anterior.** Imediatamente, sem tentar consertar no calor.
+
+**Anota qual foi e o que aconteceu.**
+
+**Decide com calma:** conserta a incompatibilidade, fica na versão antiga por enquanto, ou troca de biblioteca.
+
+Ficar na versão antiga é decisão legítima **se for consciente e anotada**. O problema nunca foi estar atrasado; é estar atrasado sem saber.
+
+## O ritmo que evita a crise
+
+Uma hora por mês, no [checkup](/blog/como-fazer-o-checkup-de-manutencao-do-seu-projeto-2026). Pega as duas ou três mais importantes e atualiza.
+
+Isso impede o cenário em que atualizar vira projeto de trimestre porque acumulou três versões principais de distância, que é o que descrevi em [a dependência que ninguém atualiza](/blog/a-dependencia-que-ninguem-atualiza-ha-dois-anos-2026).
+
+Atualização é como manutenção de carro: chata, barata, e muito mais barata que a alternativa.
+
+A decisão é sua.`,
+  },
+  {
+    id: "quando-reescrever-do-zero-e-a-decisao-certa-2026",
+    slug: "quando-reescrever-do-zero-e-a-decisao-certa-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-09-16T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80",
+    title: "Quando reescrever do zero é a decisão certa (é raro)",
+    excerpt:
+      "Com IA, reescrever ficou tentador: o sistema sai de novo em uma semana. O que não sai de novo em uma semana é o conhecimento que está embutido nele.",
+    summary:
+      "Reescrever do zero parece atraente porque o código novo sai rápido, mas o que demora não é o código e sim o conhecimento acumulado no sistema antigo: casos raros tratados, regras de exceção e correções que ninguém lembra de ter feito. Reescrita compensa em poucos casos objetivos, como tecnologia sem suporte ou mudança estrutural do modelo de negócio, e mesmo aí funciona melhor por partes que de uma vez.",
+    faq: [
+      {"q": "Por que reescrever costuma dar errado?", "a": "Porque o sistema antigo contém conhecimento invisível: casos raros já tratados, exceções de negócio e correções acumuladas. O código novo nasce sem isso e passa meses redescobrindo problemas já resolvidos."},
+      {"q": "Com IA não ficou mais fácil reescrever?", "a": "Ficou mais fácil gerar o código, que nunca foi a parte difícil. A parte difícil é saber tudo que o sistema precisa tratar, e isso a IA não tem como saber a partir de uma descrição."},
+      {"q": "Quando reescrever é justificável?", "a": "Quando a tecnologia não tem mais suporte, quando o modelo de negócio mudou de forma estrutural, quando o custo de manter supera consistentemente o de refazer, ou quando ninguém consegue mais alterar o sistema com segurança."},
+      {"q": "Existe alternativa à reescrita total?", "a": "Sim, substituir por partes: novo e antigo convivem, cada pedaço migra quando estiver pronto e o antigo é desligado aos poucos. É mais lento no papel e muito mais provável de terminar."}
+    ],
+    content: `Todo sistema chega num ponto em que alguém propõe começar de novo.
+
+O código está bagunçado, ninguém entende direito, cada mudança dói. E agora tem um argumento novo e sedutor: com IA, refazer é rápido.
+
+Na maioria das vezes, é a decisão errada. Vale entender por quê antes de decidir.
+
+## O que o sistema antigo sabe
+
+O código feio que está lá não é só código feio. Ele acumulou conhecimento que ninguém escreveu em lugar nenhum.
+
+Aquele tratamento estranho existe porque um cliente manda o arquivo num formato diferente.
+
+Aquela validação aparentemente redundante existe porque um dia entrou dado quebrado e deu problema.
+
+Aquela exceção existe por causa de uma regra que vale só pra um estado, ou pra contrato antigo.
+
+Nada disso está documentado. Está **embutido**. E some inteiro na hora em que você apaga tudo.
+
+O sistema novo nasce limpo e ignorante. Ele vai passar meses redescobrindo, um a um, problemas que já estavam resolvidos, e cada redescoberta acontece em produção, com cliente reclamando.
+
+## O que a IA mudou e o que não mudou
+
+**Mudou:** gerar o código ficou rápido. A parte que levava meses agora leva dias.
+
+**Não mudou:** saber **o que** o sistema precisa fazer. E essa sempre foi a parte difícil.
+
+Se você descrever pra IA o que o sistema faz, ela constrói. Mas você vai descrever o que você lembra, e o que você lembra é a versão limpa. Os quarenta detalhes que se acumularam em três anos não estão na sua descrição, porque você não sabe que eles existem.
+
+Reescrita não falha por falta de código. Falha por falta de memória.
+
+## Quando reescrever se justifica
+
+Poucos casos, e todos objetivos:
+
+**A tecnologia acabou.** A linguagem, o framework ou a plataforma não recebe mais suporte nem correção de segurança. Aqui não tem escolha, tem prazo.
+
+**O negócio mudou de forma estrutural.** Não é uma funcionalidade nova; é o modelo mudando. O sistema foi feito pra vender produto avulso e agora a empresa é assinatura. Adaptar custa mais que refazer.
+
+**O custo de manter passou consistentemente o de refazer.** Consistentemente, medido, não sensação de um mês ruim.
+
+**Ninguém consegue mais mudar com segurança.** Toda alteração quebra algo em outro lugar, e ninguém sabe prever o quê. Aí o sistema já parou, só não avisou.
+
+## Quando não se justifica
+
+**Porque está feio.** Feio funcionando é ativo. Bonito quebrado é passivo.
+
+**Porque queremos usar outra tecnologia.** Preferência técnica não paga reescrita.
+
+**Porque ninguém entende.** Isso se resolve [entendendo](/blog/como-descobrir-o-que-uma-parte-do-codigo-faz-sem-o-autor-2026), que é mais barato e mais rápido do que refazer.
+
+**Porque a IA facilita.** Facilitar a parte fácil não muda a decisão sobre a parte difícil.
+
+## O caminho do meio, que quase sempre é melhor
+
+Substituição por partes.
+
+Novo e antigo convivem. Você escolhe um pedaço, constrói a versão nova dele, direciona o tráfego pra ela e desliga o pedaço antigo. Depois o próximo.
+
+Três vantagens que decidem:
+
+**Cada pedaço migrado já dá retorno**, em vez de esperar o fim.
+**Dá pra parar no meio** se as prioridades mudarem, e o que foi feito continua valendo.
+**O conhecimento é transferido aos poucos**, porque você olha o pedaço antigo enquanto constrói o novo.
+
+Reescrita total tem que terminar inteira pra valer alguma coisa. E projeto que só vale no fim é projeto que costuma ser cancelado no meio.
+
+## A pergunta que decide
+
+Antes de aprovar qualquer reescrita:
+
+**O que esse sistema sabe que a gente não escreveu em lugar nenhum?**
+
+Se a resposta é "não faço ideia", essa é exatamente a razão pra não apagá-lo ainda.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-mudar-uma-parte-que-o-sistema-inteiro-usa-2026",
+    slug: "como-mudar-uma-parte-que-o-sistema-inteiro-usa-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-16T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+    title: "Como mudar uma parte que o sistema inteiro usa",
+    excerpt:
+      "Existe um tipo de mudança que dá medo com razão: aquela em que quarenta lugares dependem da coisa que você vai mexer. Tem um caminho que reduz isso a passos pequenos.",
+    summary:
+      "Mudar algo usado por muitas partes do sistema é arriscado porque o alcance da alteração é maior que a área que você consegue testar. O caminho seguro evita a troca simultânea: cria-se a versão nova ao lado da antiga, migra-se um ponto por vez com validação, e só no fim a antiga é removida. Isso transforma uma mudança grande e irreversível em uma sequência de passos pequenos e reversíveis.",
+    faq: [
+      {"q": "Por que mudar algo compartilhado é tão arriscado?", "a": "Porque o alcance da mudança é maior que a área que você consegue testar. Cada ponto que depende daquilo pode usar de um jeito ligeiramente diferente, e é nas diferenças que a quebra acontece."},
+      {"q": "Qual a alternativa à troca de uma vez?", "a": "Criar a versão nova ao lado da antiga e migrar um ponto por vez. Durante a transição as duas convivem, e cada migração é pequena e reversível."},
+      {"q": "Como saber quem depende daquilo?", "a": "Buscando por referências no projeto inteiro e complementando com medição em produção, porque existem chamadas que a busca não encontra, como as montadas em tempo de execução ou vindas de fora."},
+      {"q": "Quando remover a versão antiga?", "a": "Depois que a medição mostrar que ninguém a usa mais por um período. Remover antes de comprovar é apostar, e apostar é justamente o que o método evita."}
+    ],
+    content: `Tem mudança que dá medo com razão.
+
+Não é a mudança grande. É a mudança **compartilhada**: aquela função que quarenta lugares chamam, aquele campo que todo relatório usa, aquele formato que o sistema inteiro assume.
+
+Você mexe num lugar e não faz ideia do que acontece nos outros trinta e nove.
+
+## Por que o medo é justificado
+
+Porque o alcance da mudança é maior que a área que você consegue testar.
+
+Cada ponto que depende daquilo usa de um jeito ligeiramente diferente. Um passa um parâmetro a mais, outro assume que o retorno nunca é vazio, um terceiro depende de um efeito colateral que ninguém documentou.
+
+Você testa cinco e os cinco funcionam. Os que quebram são os que você não pensou em testar, e eles aparecem depois, em produção.
+
+## A ideia central: não troca, adiciona
+
+O erro é tratar isso como substituição: apago o velho, coloco o novo, torço.
+
+O caminho seguro é outro: **o novo nasce ao lado do velho**, e os dois convivem durante a transição.
+
+Isso muda a natureza do risco. Em vez de uma mudança grande e irreversível, você tem uma sequência de mudanças pequenas, cada uma reversível sozinha.
+
+## Passo 1: descobre o alcance
+
+Antes de qualquer coisa, quem depende daquilo.
+
+Busca por referências no projeto inteiro. Depois complementa com medição em produção, porque existe chamada que a busca não acha: nome montado em tempo de execução, configuração externa, sistema de terceiro batendo na sua rota.
+
+Se você não sabe o alcance, você não sabe o tamanho do que está fazendo.
+
+## Passo 2: cria a versão nova ao lado
+
+A nova versão existe com outro nome. A antiga continua intacta, funcionando, sem ninguém tocar nela.
+
+Nesse momento nada mudou pra ninguém. O sistema está exatamente como estava, com uma coisa nova disponível e sem uso.
+
+Isso já é metade do trabalho, e é a metade que tem zero risco.
+
+## Passo 3: migra um ponto por vez
+
+Aqui é onde o método rende.
+
+Pega o ponto **menos crítico** que usa a versão antiga. Migra só ele. Testa. Salva.
+
+Depois o próximo.
+
+Se quebrar, você sabe exatamente qual foi, porque foi a única coisa que mudou. E voltar afeta um ponto, não quarenta.
+
+Ordem que funciona: começa pelo menos crítico pra pegar as diferenças de comportamento em lugar barato, e deixa o mais crítico pro fim, quando você já entendeu todas as pegadinhas.
+
+## Passo 4: confirma que ninguém usa o antigo
+
+Antes de remover, evidência.
+
+Coloca um contador na versão antiga e espera. Semanas, não horas. Existe caminho que roda uma vez por mês, no fechamento, e você não quer descobrir isso do jeito difícil.
+
+Zero uso comprovado por um período é o que autoriza a remoção. Antes disso é aposta, e o método inteiro existe pra não apostar.
+
+## Passo 5: remove
+
+Aí sim, apaga a versão antiga, seguindo o mesmo cuidado de [apagar código com segurança](/blog/como-apagar-codigo-com-seguranca-2026).
+
+Se você pulou o passo 4, esse é o momento em que descobre o que faltava.
+
+## Onde a IA ajuda e onde não
+
+**Ajuda:** encontrar as referências, gerar a versão nova, fazer a alteração mecânica em cada ponto de chamada, explicar diferenças de comportamento entre as duas versões.
+
+**Não ajuda:** decidir a ordem de migração, saber qual ponto é crítico pro negócio, e ter paciência. Se você pedir pra ela migrar tudo de uma vez, ela migra tudo de uma vez, com competência, e você fica com o problema que o método evitaria.
+
+Convivência é mais lenta e é a diferença entre uma tarde chata e uma semana ruim.
+
+A decisão é sua.`,
+  },
+  {
+    id: "codigo-que-ninguem-entende-ja-e-divida-mesmo-funcionando-2026",
+    slug: "codigo-que-ninguem-entende-ja-e-divida-mesmo-funcionando-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-15T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1200&q=80",
+    title: "Código que ninguém entende já é dívida, mesmo funcionando",
+    excerpt:
+      "A régua mais usada é se funciona. É a régua errada. Existe código funcionando perfeitamente que já custa caro, e o custo aparece na velocidade de tudo que vem depois.",
+    summary:
+      "Funcionar é o critério mais comum e o mais incompleto para avaliar código. Trecho que ninguém entende já cobra antes de quebrar: toda mudança perto dele fica mais lenta, o medo de tocar cria contorno em vez de correção, e o sistema passa a crescer em volta do problema. Com IA gerando volume acima da capacidade de leitura, o estoque de código não entendido cresce por padrão e precisa de decisão deliberada para não dominar o projeto.",
+    faq: [
+      {"q": "Se funciona, por que seria dívida?", "a": "Porque o custo não está na execução, está na manutenção. Código não entendido torna toda mudança próxima mais lenta e arriscada, e essa lentidão é paga todo mês independentemente de o sistema estar rodando bem."},
+      {"q": "Como identificar esse tipo de dívida?", "a": "Procurando os trechos que ninguém quer tocar. O sinal mais confiável é comportamental: quando a solução escolhida é contornar em vez de alterar, aquele ponto já é dívida."},
+      {"q": "Por que isso piora com IA?", "a": "Porque a geração de código passou a ser mais rápida que a leitura. Se o ritmo de aceitar for maior que o de entender, o estoque de código não compreendido cresce sozinho."},
+      {"q": "O que fazer com o que já está acumulado?", "a": "Não é preciso entender tudo. Priorize o que é tocado com frequência e o que lida com dado sensível ou dinheiro, e trate o resto quando ele aparecer no caminho."}
+    ],
+    content: `A pergunta padrão para avaliar código é: funciona?
+
+É a régua mais usada e a mais incompleta que existe.
+
+Tem código funcionando perfeitamente há dois anos que já está cobrando caro. E ninguém percebe porque o boleto não vem com nome de dívida.
+
+## Onde o custo aparece
+
+Não na execução. O código roda igual, entendido ou não. A máquina não se importa.
+
+O custo aparece **em tudo que acontece perto dele**:
+
+Uma mudança de dez minutos vira duas horas porque você precisa primeiro entender o que aquilo faz.
+
+Ninguém quer mexer, então cada nova funcionalidade **contorna** o trecho em vez de usar. E aí você tem duas formas de fazer a mesma coisa, e depois três.
+
+Bug naquela região demora o triplo pra achar.
+
+Pessoa nova leva semanas a mais pra ficar produtiva, porque tem uma parte do sistema que é território proibido.
+
+Nada disso aparece num relatório. Aparece como "as coisas estão mais lentas ultimamente".
+
+## O sinal mais confiável
+
+Não é técnico. É comportamental.
+
+**Quando a solução escolhida é contornar em vez de alterar, aquele ponto já é dívida.**
+
+Se alguém propõe uma mudança e a resposta é "melhor não mexer ali, faz por fora", pronto. O sistema tem uma zona morta, e ela cresce, porque cada contorno adiciona código novo em volta do problema em vez de resolvê-lo.
+
+## Por que isso piora com IA
+
+Por uma razão de ritmo.
+
+A geração ficou mais rápida que a leitura. Você recebe em segundos o que levaria uma tarde pra escrever, e continua levando o mesmo tempo pra ler.
+
+Se o ritmo de aceitar for maior que o de entender, o estoque de código não compreendido cresce sozinho, todo dia, sem ninguém decidir.
+
+É o [erro que sai mais caro](/blog/o-erro-que-sai-mais-caro-em-vibecoding-2026), visto pelo lado do acúmulo em vez do lado da decisão individual.
+
+## A régua melhor
+
+Troca "funciona?" por três perguntas:
+
+**Eu consigo explicar o que isso faz?** Em uma frase, sem reler três vezes.
+
+**Eu sei o que quebra se eu mudar?** O alcance da alteração.
+
+**Eu conseguiria consertar isso às 3 da manhã?** Sob pressão, sem tempo de estudar.
+
+Se a resposta das três for sim, é código saudável, mesmo feio.
+
+Se for não, é dívida, mesmo bonito.
+
+## O que fazer com o estoque acumulado
+
+Não precisa entender tudo. Seria caro e a maior parte não compensa.
+
+Prioriza por dois critérios:
+
+**O que você toca com frequência.** Se você mexe ali todo mês, entender paga rápido.
+
+**O que lida com dinheiro ou dado sensível.** Ali o custo do erro é alto demais pra operar no escuro.
+
+O resto pode esperar até aparecer no seu caminho. Aí você entende antes de mexer, e o entendimento chega junto com a necessidade.
+
+O método pra isso está em [descobrir o que uma parte do código faz](/blog/como-descobrir-o-que-uma-parte-do-codigo-faz-sem-o-autor-2026).
+
+## O que isso não é
+
+Não é defender que você precise entender cada linha de cada biblioteca. Ninguém entende a fundo tudo que usa, e não é isso.
+
+É sobre o código **do seu sistema**, o que leva o seu nome e que você vai ter que consertar. Nesse, não entender é uma posição frágil disfarçada de produtividade.
+
+Funcionar é o mínimo. Não é a prova.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-descobrir-o-que-uma-parte-do-codigo-faz-sem-o-autor-2026",
+    slug: "como-descobrir-o-que-uma-parte-do-codigo-faz-sem-o-autor-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-15T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+    title: "Como descobrir o que uma parte do código faz sem o autor",
+    excerpt:
+      "O autor saiu, ou o autor era a IA e ninguém guardou o raciocínio. Existe um método de investigação que funciona melhor que ficar encarando a tela.",
+    summary:
+      "Entender um trecho sem acesso a quem escreveu é investigação, não leitura. O caminho eficiente começa pelas bordas: descobrir quem chama aquilo e o que ele devolve, depois seguir o dado em vez do fluxo, consultar o histórico de alterações para achar o motivo, e usar a IA para explicar mecânica enquanto você reconstrói a intenção. Encarar o código do começo ao fim é o método mais lento e o mais usado.",
+    faq: [
+      {"q": "Por onde começar a entender um trecho desconhecido?", "a": "Pelas bordas, não pelo meio. Descubra quem chama aquilo e o que ele devolve, porque isso define o papel do trecho no sistema antes de você olhar a implementação."},
+      {"q": "Por que seguir o dado funciona melhor que ler o fluxo?", "a": "Porque a lógica costuma existir para transformar dado. Acompanhar a informação da entrada até a saída revela a intenção mais rápido que percorrer condicionais em ordem."},
+      {"q": "O histórico de alterações ajuda mesmo?", "a": "Muito, porque cada mudança costuma ter um motivo e às vezes uma mensagem explicando. É a fonte mais próxima da intenção original que sobra quando o autor não está."},
+      {"q": "A IA consegue explicar código que ela não escreveu?", "a": "Consegue explicar a mecânica com precisão, o que já resolve boa parte. O que ela não sabe é a intenção de negócio, então a explicação dela é ponto de partida e não conclusão."}
+    ],
+    content: `Você abre um trecho e não faz ideia do que ele faz.
+
+Quem escreveu não está mais na empresa. Ou pior, quem escreveu foi a IA e você aprovou seis meses atrás sem guardar o raciocínio.
+
+O reflexo é encarar a tela e ler do começo ao fim. É o método mais lento que existe.
+
+## Comece pelas bordas, não pelo meio
+
+Antes de olhar o que o trecho faz por dentro, descubra o papel dele.
+
+**Quem chama isso?** Busca por referências. Se é chamado pela tela de pagamento, você já sabe muito. Se é chamado por um processo que roda de madrugada, sabe outra coisa.
+
+**O que ele devolve?** Olha o retorno e o que quem chamou faz com ele.
+
+**O que acontece se falhar?** Quem trata o erro, e como.
+
+Com essas três respostas você já sabe o papel da peça. Ler o interior fica muito mais fácil quando você sabe o que procurar.
+
+## Segue o dado, não o fluxo
+
+Ler de cima pra baixo é seguir o fluxo, e você se perde na terceira condicional aninhada.
+
+Melhor: escolhe **uma informação** e acompanha ela.
+
+De onde vem esse valor. Como ele é transformado. Onde ele para.
+
+Funciona melhor porque a lógica existe pra transformar dado. Seguindo o dado você reconstrói a intenção; seguindo o fluxo você só percorre a estrutura.
+
+## Olha o histórico
+
+A fonte mais subestimada.
+
+Cada alteração naquele arquivo teve um motivo, e às vezes o motivo está escrito na mensagem da alteração.
+
+Duas coisas pra procurar:
+
+**Quando aquele trecho estranho apareceu.** Se ele foi adicionado numa alteração com mensagem "corrige erro no fechamento do mês", você acabou de descobrir por que ele existe.
+
+**Se aquilo já foi simples.** Trecho complicado costuma ter nascido simples e ganhado remendos. Ver a versão original mostra a intenção antes das exceções.
+
+Sem o autor, o histórico é o que sobra de mais próximo da intenção original.
+
+## Usa a IA pra mecânica, não pra intenção
+
+Aqui ela rende muito, com um limite claro.
+
+**Pede pra ela explicar** o que o trecho faz, em português, passo a passo. Ela é precisa nisso e economiza tempo real.
+
+**Pede os casos de borda:** o que acontece com valor vazio, negativo, nulo. Ela enxerga isso rápido.
+
+**Pede um resumo do papel** da função no arquivo.
+
+O que ela **não** vai te dar é a intenção de negócio. Ela não sabe que aquela exceção existe por causa de um contrato de 2024. Ela vê o código, não a empresa.
+
+Então: explicação dela é ponto de partida da investigação. Nunca é a conclusão. É o mesmo limite de [não delegar arquitetura](/blog/por-que-arquitetura-nao-se-delega-pra-ia-2026).
+
+## Testa a hipótese antes de confiar
+
+Depois de formar uma teoria, confirma.
+
+**Muda um valor de entrada** e vê se a saída muda como você previu.
+
+**Coloca uma marcação temporária** e roda pra ver se aquele caminho é mesmo executado.
+
+**Quebra de propósito**, num ambiente de teste, e vê o que deixa de funcionar. É a forma mais rápida de descobrir quem depende daquilo.
+
+Teoria não confirmada é chute com aparência de conhecimento, e é o que faz gente mexer com confiança e quebrar.
+
+## Escreve o que descobriu
+
+O passo final, e o mais pulado.
+
+Você gastou uma hora entendendo. Se não registrar, daqui a seis meses gasta de novo, e provavelmente é você mesmo.
+
+Três linhas no lugar certo: o que aquilo faz, por que existe, e o que descobriu que é armadilha. É o [comentário que ajuda](/blog/como-escrever-comentario-que-ajuda-em-vez-de-atrapalhar-2026), no melhor momento possível pra ser escrito.
+
+Entender código não é ler. É investigar.
+
+A decisão é sua.`,
+  },
+  {
+    id: "todo-sistema-feito-com-ia-vira-legado-mais-rapido-2026",
+    slug: "todo-sistema-feito-com-ia-vira-legado-mais-rapido-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-09-14T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80",
+    title: "Todo sistema feito com IA vira legado mais rápido",
+    excerpt:
+      "Legado não é idade. É a distância entre o que o sistema faz e o que alguém consegue explicar. Com IA essa distância nasce grande no primeiro dia.",
+    summary:
+      "Legado não é uma questão de tempo e sim da distância entre o que o sistema faz e o que alguém consegue explicar sobre ele. Sistema construído com IA nasce com essa distância grande, porque o volume gerado supera o que foi lido e a memória do porquê nunca se forma. O resultado é que o envelhecimento começa no primeiro dia, e a única defesa é reduzir a distância enquanto o contexto ainda existe.",
+    faq: [
+      {"q": "Legado não é sinônimo de sistema antigo?", "a": "Não. Existe sistema de dez anos que a equipe domina e sistema de dois meses que ninguém consegue explicar. O que define é o entendimento disponível, não a data de nascimento."},
+      {"q": "Por que sistema feito com IA nasce mais perto do legado?", "a": "Porque a quantidade gerada supera a quantidade lida, e porque aprovar não forma memória do motivo. O sistema fica maior que a compreensão dele desde o começo."},
+      {"q": "Isso é argumento contra usar IA?", "a": "Não. É argumento contra usar sem compensar o efeito. A mesma ferramenta que amplia a distância pode ajudar a reduzi-la, explicando trechos e registrando decisões."},
+      {"q": "Como evitar que isso aconteça?", "a": "Lendo o que aceita, registrando o motivo das decisões no momento em que são tomadas e mantendo o ritmo de geração compatível com o de entendimento."}
+    ],
+    content: `Legado tem uma definição errada e popular: sistema antigo.
+
+Existe sistema de dez anos que o time domina, muda com tranquilidade e mantém em paz. Não é legado, é maduro.
+
+E existe sistema de dois meses que ninguém consegue explicar. Esse já é legado.
+
+## A definição que funciona
+
+**Legado é a distância entre o que o sistema faz e o que alguém consegue explicar sobre ele.**
+
+Distância pequena: você muda com confiança, o novo entra rápido, o bug é achado em minutos.
+
+Distância grande: cada mudança é exploração, cada bug é investigação, e ninguém quer tocar em certas partes.
+
+Repara que a data de nascimento não entra na conta.
+
+## Por que a IA cria essa distância no primeiro dia
+
+Dois efeitos que se somam.
+
+**Volume acima da leitura.** Você recebe em uma tarde o que levaria uma semana pra escrever. Mas ler continua levando o mesmo tempo de sempre. Se aceitar é mais rápido que entender, o sistema fica maior que a compreensão dele. Desde o começo.
+
+**Memória que não se forma.** Quando você escreve, sobra o raciocínio: o que tentou, o que descartou, por que escolheu. Quando você aprova, sobra o resultado. E resultado não explica escolha.
+
+Junta os dois e você tem um sistema que, no dia do lançamento, já tem áreas que ninguém sabe justificar.
+
+Antes, essa distância crescia com os anos, conforme as pessoas saíam. Agora ela nasce pronta.
+
+## O que isso muda na prática
+
+**A pessoa que sai do time é você mesmo, em três meses.** A perda de contexto que antes vinha de rotatividade agora vem de esquecimento normal.
+
+**Não existe fase de maturidade.** O sistema tradicional ficava difícil depois de anos de camadas. O sistema feito com IA pode ser difícil na segunda semana.
+
+**O contorno começa cedo.** Aquele padrão de "melhor não mexer ali, faz por fora" aparece em sistemas com dois meses de vida, o que é sintoma de [dívida em código funcionando](/blog/codigo-que-ninguem-entende-ja-e-divida-mesmo-funcionando-2026).
+
+## O que não estou dizendo
+
+Não estou dizendo pra escrever tudo à mão. Isso seria trocar um problema por um pior, que é a lentidão.
+
+Não estou dizendo que IA gera código ruim. Ela costuma gerar código melhor que a média.
+
+O problema não é a qualidade do que ela produz. É a **assimetria entre produzir e compreender**. E assimetria não se resolve com ferramenta melhor; se resolve com processo.
+
+## As três defesas
+
+**Lê o que aceita.** Não linha por linha. O suficiente pra explicar em uma frase o que aquilo faz. Se não consegue, ainda não é seu.
+
+**Registra o porquê, na hora.** Depois não dá: o motivo é a primeira coisa que evapora. Dois minutos por decisão relevante.
+
+**Mantém o ritmo compatível.** Se você gera cinco vezes mais do que consegue entender, a distância cresce toda semana. Aceitar menos por dia e entender o que aceitou é mais rápido no mês.
+
+## O lado bom
+
+A mesma ferramenta que cria a distância ajuda a fechá-la.
+
+A IA é ótima em explicar código, mapear dependência, resumir o que um trecho faz. Ela não sabe a intenção de negócio, mas resolve toda a parte mecânica de entender.
+
+Quem usa IA só pra gerar acumula distância. Quem usa também pra entender mantém a distância curta e ganha nos dois lados.
+
+Legado não é uma data. É uma escolha de ritmo.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-voltar-num-projeto-que-a-ia-escreveu-ha-6-meses-2026",
+    slug: "como-voltar-num-projeto-que-a-ia-escreveu-ha-6-meses-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-14T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
+    title: "Como voltar num projeto que a IA escreveu há 6 meses",
+    excerpt:
+      "Você abre, não reconhece nada e precisa mudar uma coisa. Existe uma ordem de reconhecimento que evita as duas saídas ruins: mexer no escuro ou reescrever tudo.",
+    summary:
+      "Voltar a um projeto antigo exige reconhecimento antes de alteração. A ordem que funciona começa por colocar o sistema para rodar, seguir um caminho completo de ponta a ponta, mapear onde o dado mora e só então localizar a área da mudança pretendida. Isso evita as duas saídas ruins, que são mexer sem entender e concluir que é mais fácil refazer tudo.",
+    faq: [
+      {"q": "Qual o primeiro passo ao voltar num projeto antigo?", "a": "Colocar para rodar antes de ler qualquer coisa. Sem ambiente funcionando você não consegue testar hipótese nenhuma, e investigação sem teste é leitura no escuro."},
+      {"q": "Por que seguir um caminho completo ajuda tanto?", "a": "Porque mostra a espinha do sistema. Acompanhar uma ação da tela até o banco revela a arquitetura real em uma hora, o que a leitura por arquivos não entrega em um dia."},
+      {"q": "Devo tentar entender o projeto inteiro?", "a": "Não. Entenda a espinha e depois só a área que você vai mudar. Tentar entender tudo antes de fazer qualquer coisa é a forma mais comum de nunca começar."},
+      {"q": "E se eu concluir que é mais fácil refazer?", "a": "Costuma ser ilusão. O sistema antigo contém casos e exceções que a versão nova não terá, e essa é a parte que consome meses depois."}
+    ],
+    content: `Você abre um projeto seu de seis meses atrás porque precisa mudar uma coisa.
+
+E não reconhece nada.
+
+A partir daí existem duas saídas ruins e uma boa.
+
+## As duas saídas ruins
+
+**Mexer no escuro.** Acha o trecho que parece certo, muda, testa a tela, sobe. Funciona nove vezes em dez, e a décima é um problema que você vai descobrir por reclamação.
+
+**Concluir que é mais fácil refazer.** Sedutor agora que a IA constrói rápido. É quase sempre ilusão, pelo motivo que detalhei em [quando reescrever do zero](/blog/quando-reescrever-do-zero-e-a-decisao-certa-2026): o sistema antigo sabe coisas que ninguém escreveu.
+
+A saída boa é reconhecimento antes de alteração. Em ordem.
+
+## Passo 1: coloca pra rodar
+
+Antes de ler qualquer linha.
+
+Sem ambiente funcionando, você não consegue testar hipótese, e investigação sem teste é leitura no escuro.
+
+Esse passo costuma doer. Dependência que não instala, variável de ambiente que sumiu, versão que mudou. Resolve isso primeiro, e já anota o que foi preciso fazer, porque daqui a seis meses vai doer de novo.
+
+## Passo 2: segue um caminho inteiro
+
+O passo que mais rende e o que quase ninguém faz.
+
+Escolhe **uma ação** do sistema e acompanha do começo ao fim: da tela até o banco e de volta.
+
+Um cadastro. Um login. Um pedido.
+
+Em uma hora você aprende a espinha do sistema: onde ficam as telas, como elas falam com o servidor, onde mora a regra, como o dado é gravado.
+
+Isso vale mais que um dia lendo arquivo por arquivo, porque mostra a estrutura real em vez da estrutura de pastas.
+
+## Passo 3: mapeia onde o dado mora
+
+Segunda coisa mais útil.
+
+Lista as tabelas ou coleções e o que cada uma guarda. Nome e uma linha explicando.
+
+O dado é a parte mais estável do sistema. Telas mudam, regras mudam, o modelo de dados quase não muda. Entendendo ele, você entende o que o sistema **é**.
+
+E é a informação que você mais vai procurar depois.
+
+## Passo 4: localiza a área da mudança
+
+Só agora você olha o que veio fazer.
+
+Encontra o ponto, e antes de mexer responde três perguntas:
+
+**Quem mais usa isso?** Busca por referências.
+**O que quebra se eu mudar?** O alcance.
+**Como eu testo que continuou funcionando?** O critério.
+
+Se for algo compartilhado por muitas partes, vale o método de [mudar uma parte que o sistema inteiro usa](/blog/como-mudar-uma-parte-que-o-sistema-inteiro-usa-2026), em vez de trocar de uma vez.
+
+## O que não fazer
+
+**Não tenta entender tudo antes de fazer qualquer coisa.** É a forma mais comum de nunca começar. Entende a espinha e a área da mudança; o resto vem quando precisar.
+
+**Não reorganiza enquanto entende.** A vontade de arrumar é grande e mistura duas coisas: se algo quebrar, você não sabe se foi a mudança ou a arrumação. Anota o que quer melhorar e faz depois, separado.
+
+## Onde a IA ajuda de verdade aqui
+
+Esse é um dos melhores usos que existem pra ela.
+
+Pede um resumo da estrutura do projeto. Pede pra explicar um arquivo. Pede pra rastrear onde uma função é usada. Pede pra descrever o que acontece quando tal rota é chamada.
+
+Ela faz isso rápido e bem, porque é trabalho de leitura, que é onde ela é forte.
+
+O que ela não faz é dizer por que as decisões foram tomadas. Esse é o buraco, e é por isso que [registrar o porquê na hora](/blog/seu-eu-de-daqui-a-seis-meses-e-outro-desenvolvedor-2026) vale tanto.
+
+Você não precisa lembrar do projeto. Precisa de um método pra reconhecê-lo de novo.
+
+A decisão é sua.`,
+  },
+  {
     id: "agente-com-metodo-e-alavanca-sem-metodo-e-passageiro-sem-freio-2026",
     slug: "agente-com-metodo-e-alavanca-sem-metodo-e-passageiro-sem-freio-2026",
     contentVersion: 1,
