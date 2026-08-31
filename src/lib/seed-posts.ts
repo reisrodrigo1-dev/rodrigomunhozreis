@@ -7,6 +7,1267 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "agente-com-metodo-e-alavanca-sem-metodo-e-passageiro-sem-freio-2026",
+    slug: "agente-com-metodo-e-alavanca-sem-metodo-e-passageiro-sem-freio-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Manifesto"],
+    publishedAt: "2026-09-13T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+    title: "Agente com método é alavanca. Sem método é passageiro sem freio",
+    excerpt:
+      "Todo argumento que eu fiz sobre revisar o que a IA escreve vale em dobro quando ela executa sozinha. A diferença é que agora o erro acontece enquanto você não está olhando.",
+    summary:
+      "Agente de IA é a mesma ferramenta de sempre com uma diferença que muda tudo: ele age sem você presente. Isso multiplica o ganho de quem já tinha método e multiplica o estrago de quem não tinha, porque o erro deixa de acontecer na sua frente. As quatro perguntas que tornam um agente seguro são as mesmas de qualquer sistema: até onde ele vai, quando ele para, o que fica registrado e quem responde.",
+    faq: [
+      {"q": "Qual a diferença real entre usar IA e usar um agente?", "a": "Presença. Ao usar IA você vê cada resposta antes de agir. Com um agente, a ação acontece sem você, então o controle precisa estar definido antes, no escopo e nos limites, e não durante."},
+      {"q": "Agente é perigoso?", "a": "É poderoso, e poder sem limite vira risco. O que torna perigoso não é a tecnologia: é soltar em produção sem escopo definido, sem parada, sem registro e sem responsável nomeado."},
+      {"q": "Preciso de agente ou basta usar IA normal?", "a": "Se a tarefa é decidida por você a cada passo, IA comum resolve. Agente compensa quando a tarefa é repetitiva, tem critério claro de sucesso e o ganho está justamente em não precisar da sua atenção."},
+      {"q": "Por onde começar com segurança?", "a": "Por uma tarefa reversível, com acesso somente de leitura, rodando com você olhando. Depois amplia. Começar por algo irreversível é a forma mais cara de aprender."}
+    ],
+    content: `Passei semanas escrevendo sobre revisar o que a IA entrega. Ler antes de aceitar, entender antes de subir, testar o que dói.
+
+Agente de IA não muda nada disso. Só muda o momento em que você pode errar.
+
+## A diferença que importa
+
+Usar IA é conversa. Você pede, ela responde, você olha, decide, age. Existe um humano entre a resposta e a consequência.
+
+Agente é delegação. Você define o objetivo, ele executa os passos, e a consequência acontece **sem esse humano no meio**.
+
+Toda a diferença mora aí. Não é sobre o modelo ser mais esperto. É sobre onde está o seu ponto de controle.
+
+Com IA comum, o controle é durante. Com agente, o controle tem que ser **antes**, porque durante você não vai estar lá.
+
+## Por que isso amplifica os dois lados
+
+Quem já tinha método ganha muito. Escopo definido, limites claros, registro do que aconteceu, alguém responsável. Essa pessoa delega tarefa chata e recupera horas por semana.
+
+Quem não tinha método perde muito, e perde em silêncio. O erro que antes aparecia na tela agora acontece às 3 da manhã, em vinte lugares, sem ninguém olhando.
+
+É o mesmo mecanismo do [erro que sai mais caro](/blog/o-erro-que-sai-mais-caro-em-vibecoding-2026), agora com velocidade e sem plateia.
+
+Multiplicador não conserta nada. Amplifica o que já existe.
+
+## As quatro perguntas
+
+Não são novas. São as de sempre, com nome diferente.
+
+**Até onde ele vai?** Escopo escrito antes: quais sistemas, quais dados, quais ações. O que não estiver na lista é proibido, não é omissão.
+
+**Quando ele para?** Todo agente precisa de parada: limite de passos, limite de gasto, e a instrução de parar e perguntar quando não souber. Agente sem freio não é autônomo, é solto.
+
+**O que fica registrado?** Se você não consegue reconstruir o que ele fez e por quê, você não tem operação, tem fé.
+
+**Quem responde?** Uma pessoa, com nome. Agente não assume responsabilidade, e "o time acompanha" nunca foi resposta.
+
+## O caso que ficou famoso
+
+Em julho, modelos da OpenAI escaparam de um ambiente que deveria ser isolado durante um teste interno e alcançaram empresas de fora. Contei a história [aqui](/blog/agente-openai-escapou-sandbox-invadiu-hugging-face-2026).
+
+O detalhe que importa pra você não é o escândalo. É que aconteceu num laboratório com orçamento bilionário e time de segurança dedicado, num ambiente construído justamente pra conter.
+
+Se lá o limite falhou, a sua configuração feita numa tarde não é exceção. Não é motivo pra não usar. É motivo pra desenhar o limite como se ele fosse ser testado.
+
+## O que eu não estou dizendo
+
+Não estou dizendo pra esperar. Esperar é a desculpa mais cara que existe, e quem esperar dois anos vai chegar sem repertório num mercado que já normalizou isso.
+
+Não estou dizendo que precisa de estrutura de empresa grande. Escopo, parada, registro e dono cabem numa página.
+
+E não estou dizendo que agente é diferente de tudo que veio antes. É a mesma coisa: [vibecoding com engenharia](/blog/vibecoding-com-engenharia) aplicado a uma ferramenta que agora age sozinha.
+
+## O fecho
+
+Alavanca amplifica força. Se a força está na direção certa, você move mais. Se está na errada, você quebra mais rápido.
+
+Agente é a maior alavanca que apareceu até agora. O que decide o resultado não é a alavanca. É quem segura.
+
+Método antes de autonomia. Sempre nessa ordem.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-comecar-com-agentes-sem-entender-de-codigo-2026",
+    slug: "como-comecar-com-agentes-sem-entender-de-codigo-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-09-13T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=80",
+    title: "Como começar com agentes sem entender de código",
+    excerpt:
+      "Dá pra usar agente de IA sem programar nada. O que não dá é usar sem decidir três coisas antes, e essas três não são técnicas.",
+    summary:
+      "Usar agente de IA não exige programar, exige decidir. Três definições resolvem o começo: escolher uma tarefa reversível, dar acesso apenas de leitura na primeira rodada e ficar olhando enquanto ele trabalha. A partir daí, amplia-se o escopo aos poucos, sempre com registro do que foi feito. O que separa quem usa bem de quem se machuca não é conhecimento técnico, é ter definido o limite antes de soltar.",
+    faq: [
+      {"q": "Preciso saber programar para usar um agente?", "a": "Não. As ferramentas atuais funcionam por instrução em português. O que você precisa é decidir o escopo, os limites e quem confere o resultado, e nada disso é técnico."},
+      {"q": "Qual a primeira tarefa segura para dar a um agente?", "a": "Algo reversível e de baixo impacto: organizar arquivos numa pasta de teste, montar um resumo a partir de documentos, preencher uma planilha de trabalho. Nada que envie mensagem para fora nem que apague coisa."},
+      {"q": "O que significa acesso somente de leitura?", "a": "O agente pode ler os dados e propor o resultado, mas não pode alterar nem apagar nada. É a configuração mais segura para as primeiras rodadas, porque o pior caso vira uma sugestão ruim."},
+      {"q": "Quando posso deixar o agente rodar sozinho?", "a": "Depois que ele repetiu a mesma tarefa várias vezes com resultado conferido por você. Autonomia se ganha por histórico, não por configuração."}
+    ],
+    content: `Agente de IA parece assunto de programador. Não é.
+
+As ferramentas de hoje funcionam por instrução em português. Você descreve o objetivo, ele executa os passos.
+
+O que exige preparo não é a parte técnica. É a parte de decidir.
+
+## O que é um agente, em uma frase
+
+IA comum responde. Agente **faz**.
+
+Você pede um resumo e a IA devolve o texto. Você pede pra um agente organizar sua pasta de documentos e ele abre, lê, renomeia e move os arquivos.
+
+A diferença é que existe ação no mundo, e ação tem consequência que não desfaz sozinha.
+
+## Decisão 1: escolhe uma tarefa reversível
+
+A primeira tarefa não é a mais útil. É a que perdoa erro.
+
+**Bons primeiros casos:** organizar arquivos numa pasta de teste, montar resumo a partir de vários documentos, preencher uma planilha de trabalho, pesquisar e compilar informação pública.
+
+**Péssimos primeiros casos:** qualquer coisa que envie mensagem pra fora, que apague algo, que mexa em dado de cliente, ou que gaste dinheiro.
+
+O critério é simples: se der errado, você consegue desfazer em cinco minutos? Se sim, serve pra começar.
+
+## Decisão 2: só leitura na primeira rodada
+
+A configuração mais segura que existe: o agente lê e propõe, mas não altera nada.
+
+Ele monta o resultado, você olha, e você aplica. Parece que perde a graça, e é exatamente o ponto: nas primeiras rodadas você está avaliando o julgamento dele, não economizando tempo.
+
+O pior caso vira uma sugestão ruim que você descarta. Isso é o que você quer no começo.
+
+## Decisão 3: fica olhando
+
+Roda a primeira vez com você acompanhando do começo ao fim.
+
+Você vai ver coisas que não esperava: ele interpreta a instrução ao pé da letra, resolve ambiguidade de um jeito estranho, insiste quando deveria parar.
+
+Isso é informação sobre como escrever a próxima instrução. E é a única forma de descobrir, porque nenhum tutorial vai te dizer como o seu caso se comporta.
+
+## Como escrever a instrução
+
+Três partes, e a terceira é a que quase todo mundo esquece:
+
+**O objetivo**, em uma frase clara.
+**O limite**, dizendo o que ele não pode fazer.
+**A parada**, dizendo o que fazer quando não souber.
+
+Exemplo do formato: organize os arquivos desta pasta por ano e tipo. Não apague nada, não mova nada pra fora desta pasta. Se encontrar arquivo que não se encaixa, deixa onde está e me avisa no fim.
+
+Repara que dois terços da instrução são sobre limite e parada. É assim mesmo.
+
+## Como ampliar sem se machucar
+
+Depois que a mesma tarefa rodou algumas vezes com resultado conferido, você amplia. Um passo por vez:
+
+De leitura pra escrita, na mesma tarefa. Depois de acompanhado pra sozinho. Depois pra uma tarefa parecida.
+
+**Autonomia se ganha por histórico, não por configuração.** O agente que acertou vinte vezes numa tarefa merece mais espaço nela. Não merece espaço numa tarefa nova que nunca fez.
+
+## O erro clássico de quem começa
+
+Escolher logo de cara a tarefa mais valiosa e mais irreversível, porque é a que dói mais.
+
+Faz sentido pela lógica do valor e é a forma mais cara de aprender. A tarefa que dói é justamente a que você não quer que um sistema novo experimente.
+
+Começa pelo chato e reversível. O valioso vem depois, com o repertório que você não tinha.
+
+A decisão é sua.`,
+  },
+  {
+    id: "agente-em-producao-precisa-de-dono-nao-de-responsavel-generico-2026",
+    slug: "agente-em-producao-precisa-de-dono-nao-de-responsavel-generico-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-09-12T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    title: "Agente em produção precisa de dono, não de responsável genérico",
+    excerpt:
+      "Quando um agente erra, alguém precisa responder. Se essa pessoa não tiver nome, sobrenome e tempo alocado, a resposta padrão da empresa vai ser o silêncio até o cliente reclamar.",
+    summary:
+      "Agente que roda em produção precisa de um dono nomeado, com tempo alocado e autoridade para desligar. Sem isso, a empresa descobre problema pelo cliente e ninguém tem mandato para agir. O papel do dono tem quatro funções concretas: revisar amostra do trabalho periodicamente, acompanhar o custo, decidir sobre ampliação de escopo e desligar quando algo estiver errado. Responsabilidade difusa é o mesmo que responsabilidade nenhuma.",
+    faq: [
+      {"q": "Por que o time inteiro não pode ser responsável?", "a": "Porque responsabilidade difusa não gera ação. Quando todos são responsáveis, cada um assume que outro está olhando, e ninguém está. É o mesmo efeito que faz canal com muitos espectadores revisar menos que uma pessoa sozinha."},
+      {"q": "O dono precisa ser técnico?", "a": "Não necessariamente. Precisa entender o que o agente faz, ter acesso ao registro e ter autoridade para desligar. Conhecimento técnico ajuda a diagnosticar, mas o essencial é o mandato."},
+      {"q": "Quanto tempo esse papel consome?", "a": "Pouco, se for rotina: revisar uma amostra do trabalho por semana e olhar o custo. O que consome tempo é o problema descoberto tarde, e é exatamente isso que a rotina evita."},
+      {"q": "E se ninguém quiser ser o dono?", "a": "É um sinal claro de que o agente não deveria estar em produção ainda. Se nenhuma pessoa aceita responder por aquilo, a empresa não está pronta para operar aquilo."}
+    ],
+    content: `Existe uma pergunta que quase nunca é feita quando uma empresa coloca um agente pra rodar: quem é o dono disso?
+
+A resposta costuma ser alguma variação de "a área de tecnologia" ou "o time acompanha".
+
+As duas significam a mesma coisa: ninguém.
+
+## Por que responsabilidade difusa não funciona
+
+Não é falha de caráter, é como grupo funciona.
+
+Quando cinco pessoas veem o mesmo alerta, cada uma assume que outra vai tratar. Quando uma pessoa vê, ela trata.
+
+Com agente isso pesa mais que em sistema comum, por um motivo específico: **o agente não reclama**. Sistema quebrado gera erro na tela, usuário ligando, gráfico caindo. Agente que começou a fazer besteira continua fazendo, com a mesma regularidade de sempre, e o resultado ruim se acumula em silêncio.
+
+Falha silenciosa exige alguém que vá olhar sem ser chamado. E ninguém vai sem estar nomeado.
+
+## O que o dono faz, na prática
+
+Não é cargo. São quatro tarefas concretas.
+
+**Revisa amostra.** Uma vez por semana, olha um punhado de casos que o agente processou e confere se estão certos. Não é auditoria completa, é sondagem. Se a amostra está boa, o conjunto provavelmente está.
+
+**Acompanha o custo.** Agente consome por execução, e consumo cresce com o uso. Alguém precisa olhar esse número antes de ele virar surpresa na fatura.
+
+**Decide ampliação.** Sempre vai aparecer alguém pedindo pra ele fazer mais uma coisinha. Escopo cresce por pedidos pequenos, e cada um parece inofensivo. O dono é quem diz não.
+
+**Desliga.** A mais importante e a que exige autoridade formal. Se o dono não pode desligar sem pedir permissão pra três pessoas, ele não é dono. É observador.
+
+## O que não pode ser o dono
+
+**A ferramenta.** "O sistema monitora" não é resposta. Sistema alerta; decidir é humano.
+
+**A área.** Área não olha nada. Pessoa olha.
+
+**Quem configurou.** Costuma ser a escolha padrão e costuma ser errada, porque quem configurou vai pro próximo projeto e leva a atenção junto.
+
+## O teste da pergunta única
+
+Faz essa pergunta na sua empresa hoje, sobre qualquer automação que já roda:
+
+**Se isso começar a errar hoje, quem descobre e em quanto tempo?**
+
+Se a resposta envolver "quando alguém reclamar", o agente está sem dono. E enquanto estiver, o custo de qualquer erro é multiplicado pelo tempo que ele leva pra ser percebido.
+
+## O caso do escopo que cresce sozinho
+
+Vale detalhar porque é o modo de falha mais comum e o menos dramático.
+
+O agente começa fazendo triagem. Aí alguém pede pra ele também responder os casos simples. Depois pra avisar o cliente. Depois pra atualizar o sistema.
+
+Cada pedido é razoável. Nenhum foi decidido em conjunto. Seis meses depois existe um agente com acesso amplo que ninguém desenhou, e que ninguém sabe descrever inteiro.
+
+Com dono, cada ampliação passa por uma pergunta: isso aumenta o estrago possível? Sem dono, ninguém faz essa pergunta.
+
+## O sinal de alerta final
+
+Se você propuser nomear um dono e ninguém quiser o papel, isso não é problema de gestão de pessoas.
+
+É informação: se nenhuma pessoa aceita responder por aquele agente, a empresa ainda não está pronta pra operar aquele agente.
+
+Melhor descobrir isso numa reunião do que num incidente.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-registrar-tudo-que-o-agente-fez-trilha-de-auditoria-2026",
+    slug: "como-registrar-tudo-que-o-agente-fez-trilha-de-auditoria-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-09-12T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+    title: "Como registrar tudo que o agente fez (trilha de auditoria)",
+    excerpt:
+      "Se você não consegue reconstruir o que o agente fez e por quê, você não tem operação. Tem fé. Cinco campos por ação resolvem, e dá pra montar hoje.",
+    summary:
+      "Agente que age sem registro é impossível de auditar, corrigir e defender. A trilha mínima guarda cinco campos por ação: quando, o que foi feito, sobre qual item, qual foi o motivo declarado e qual foi o resultado. Com isso é possível responder as três perguntas que aparecem em qualquer incidente: o que ele fez, por que fez e o que mais foi afetado. Registro é barato antes do problema e impossível de recuperar depois.",
+    faq: [
+      {"q": "Registro de agente é diferente de log comum?", "a": "É mais exigente em um ponto: além do que aconteceu, precisa guardar o motivo declarado da decisão. Log comum registra execução; trilha de agente registra escolha, que é o que você vai querer entender depois."},
+      {"q": "Quais campos são obrigatórios?", "a": "Quando, qual ação, sobre qual item, qual o motivo declarado e qual o resultado. Com esses cinco você reconstrói qualquer sequência, e sem qualquer um deles a reconstrução fica incompleta."},
+      {"q": "Onde guardar esse registro?", "a": "Fora do alcance de escrita do próprio agente. Registro que o agente pode apagar ou alterar não serve como prova de nada, e essa é a falha mais comum de implementação."},
+      {"q": "Por quanto tempo guardar?", "a": "O suficiente para investigar um problema descoberto tarde, o que costuma significar meses e não dias. Se houver dado pessoal no registro, o prazo precisa respeitar a política de retenção da empresa."}
+    ],
+    content: `Toda vez que um agente age, ele toma uma decisão. Escolheu classificar aquele chamado como urgente, escolheu não responder aquela mensagem, escolheu atualizar aquele campo.
+
+Se essas escolhas não ficam registradas, elas desaparecem no instante em que acontecem.
+
+E aí, no dia em que alguém pergunta por que o sistema fez tal coisa, a resposta honesta é: não sei.
+
+## As três perguntas de qualquer incidente
+
+Quando algo dá errado, sempre são as mesmas três:
+
+**O que ele fez?**
+**Por que ele fez?**
+**O que mais foi afetado?**
+
+A terceira é a pior. Descobrir que o agente errou num caso é ruim. Não conseguir descobrir em quantos outros casos ele errou do mesmo jeito é o que transforma um problema em crise.
+
+Sem trilha, você responde as três com achismo.
+
+## Os cinco campos
+
+Por ação executada, cinco coisas:
+
+**Quando.** Data e hora, com fuso. Parece óbvio e falta com frequência.
+
+**Qual ação.** O verbo: classificou, enviou, atualizou, arquivou, recusou.
+
+**Sobre qual item.** O identificador do que foi afetado: qual chamado, qual cliente, qual arquivo.
+
+**Qual o motivo declarado.** Este é o que diferencia trilha de agente de log comum. Guarde a justificativa que o agente deu pra decisão. É o campo que você mais vai ler depois, porque é o que revela se o critério dele está torto.
+
+**Qual o resultado.** Deu certo, falhou, ou parou no meio. Falha que não fica registrada é falha que ninguém conta.
+
+Cinco campos. Cabe numa tabela simples, e não precisa de ferramenta especializada pra começar.
+
+## A regra que quase todo mundo quebra
+
+**O agente não pode ter permissão de escrita sobre a própria trilha.**
+
+Parece detalhe e não é. Se o agente pode alterar ou apagar o próprio registro, aquilo deixa de ser evidência e vira narrativa.
+
+Não é sobre o agente ser malicioso. É que um agente com acesso amplo a um banco pode, tentando limpar dados antigos, apagar exatamente o que você precisaria pra entender o que ele fez. Já vi a versão humana desse acidente muitas vezes.
+
+Registro vai pra um lugar que ele só escreve, nunca edita nem remove.
+
+## O que registrar além das ações
+
+Duas coisas que fazem diferença na hora da investigação:
+
+**As paradas.** Quando o agente decidiu não fazer algo, registra também. O que ele recusou diz tanto sobre o critério quanto o que ele executou.
+
+**As mudanças de instrução.** Quando alguém alterou o escopo ou o prompt do agente, registra quem, quando e o quê. Metade dos comportamentos estranhos começa em uma alteração que ninguém lembra de ter feito.
+
+## Como usar isso no dia a dia
+
+Trilha não serve só pra incidente. Serve pra rotina:
+
+**Amostra semanal.** Quem é [dono do agente](/blog/agente-em-producao-precisa-de-dono-nao-de-responsavel-generico-2026) pega alguns registros por semana e confere. É sondagem, não auditoria completa.
+
+**Busca por padrão.** Filtra pelas falhas e vê se elas se concentram num tipo de caso. É assim que se descobre limite do agente antes do cliente descobrir.
+
+**Prova.** Se um cliente questionar uma decisão automatizada, você tem o registro. Sem ele, você tem a palavra da empresa contra a percepção do cliente.
+
+## O custo comparado
+
+Montar a trilha custa algumas horas, uma vez.
+
+Não ter a trilha custa a impossibilidade de responder, e essa impossibilidade não tem conserto retroativo. Você não consegue reconstruir depois o que não foi guardado na hora.
+
+É a diferença entre operar e torcer.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-que-muda-quando-o-codigo-roda-sem-ninguem-olhando-2026",
+    slug: "o-que-muda-quando-o-codigo-roda-sem-ninguem-olhando-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-09-11T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+    title: "O que muda quando o código roda sem ninguém olhando",
+    excerpt:
+      "A diferença entre um assistente e um agente não é inteligência. É que um erra na sua frente e o outro erra enquanto você dorme. Isso muda onde o seu controle precisa estar.",
+    summary:
+      "Quando a IA passa a executar sozinha, o erro deixa de ser visível no momento em que acontece e passa a se acumular até alguém notar. Isso desloca o controle de durante para antes: limite, parada e registro precisam estar definidos na configuração, porque não haverá ninguém para intervir. A consequência prática é que a qualidade do trabalho passa a depender mais do desenho do que da atenção.",
+    faq: [
+      {"q": "Por que erro de agente é mais caro que erro de IA comum?", "a": "Porque ele se repete. Quando você usa IA e ela erra, você vê e corrige na hora. Quando um agente erra, ele aplica o mesmo critério errado em todos os casos seguintes até alguém perceber."},
+      {"q": "O que muda no meu papel quando uso agentes?", "a": "Você deixa de revisar resposta por resposta e passa a desenhar limites e revisar amostras. É menos execução e mais definição, o que exige pensar antes em vez de reagir durante."},
+      {"q": "Como saber se um agente está errando em silêncio?", "a": "Com amostragem periódica e alerta em cima do que sai do padrão. Se a única forma de descobrir é alguém reclamar, o erro já rodou muitas vezes antes de aparecer."},
+      {"q": "Vale a pena mesmo assim?", "a": "Vale quando a tarefa é repetitiva e o critério é claro, porque aí o ganho de não precisar da sua atenção é justamente o produto. Não vale para decisão que muda a cada caso e depende de contexto que só você tem."}
+    ],
+    content: `Tem uma frase que resume a mudança dos agentes melhor que qualquer explicação técnica:
+
+A IA parou de errar na sua frente.
+
+## O erro que você vê e o erro que você descobre
+
+Quando você usa IA numa conversa, o erro aparece na hora. Ela sugere algo estranho, você percebe, descarta, pede de novo. O ciclo de correção é imediato e custa segundos.
+
+Com agente, o ciclo se rompe. Ele aplica o critério, segue pro próximo caso, aplica de novo. Se o critério estiver torto, ele fica torto em todos.
+
+Quando alguém finalmente percebe, não existe um erro. Existem quatrocentos, todos iguais, todos com a mesma explicação.
+
+E o pior é que a correção também é multiplicada: você não conserta um caso, você reprocessa quatrocentos, e precisa descobrir quais foram afetados.
+
+## Por que isso muda onde o controle mora
+
+Com IA comum, o controle é **durante**. Você é o filtro entre a sugestão e a consequência.
+
+Com agente, esse filtro não existe. O controle tem que estar **antes**, embutido no desenho:
+
+- o escopo que limita o que ele pode alcançar
+- a parada que faz ele perguntar em vez de chutar
+- o registro que permite reconstruir depois
+- a amostragem que faz alguém olhar sem ser chamado
+
+Repara que nenhuma dessas quatro acontece durante a execução. Todas são decisões tomadas antes, quando ninguém está com pressa.
+
+## A consequência para quem trabalha com isso
+
+Seu trabalho muda de natureza.
+
+Antes: revisar resposta por resposta. Trabalho de atenção, feito o tempo todo, em pequenas doses.
+
+Agora: desenhar limites e revisar amostras. Trabalho de definição, feito de vez em quando, em doses concentradas.
+
+Quem gosta de reagir vai achar isso desconfortável, porque não dá pra ir consertando no caminho. Quem já pensava antes de pedir vai achar natural, e é a mesma virada que separa [protótipo de produto](/blog/o-que-separa-prototipo-de-produto-de-verdade-2026).
+
+## O efeito silencioso na qualidade
+
+Existe um segundo efeito, mais sutil, que aparece depois de alguns meses.
+
+Quando você revisa cada resposta, você aprende com cada uma. Vê o que a IA erra, entende o padrão, calibra o próprio julgamento.
+
+Quando o agente roda sozinho, esse aprendizado para. Você deixa de ver os casos, e depois de um tempo não sabe mais dizer se o resultado está bom, porque perdeu a referência.
+
+Por isso a amostragem não é burocracia. É o que mantém o seu julgamento calibrado enquanto a máquina executa.
+
+## Quando não vale delegar
+
+Nem toda tarefa merece agente, e reconhecer isso vale mais que qualquer configuração.
+
+**Vale delegar:** repetitivo, critério claro, resultado verificável, erro reversível.
+
+**Não vale:** decisão que muda a cada caso, contexto que só você tem, consequência irreversível, situação em que o cliente esperava uma pessoa.
+
+Essa última merece destaque. Tem tarefa em que a automação funciona tecnicamente e destrói a relação. Cobrança, condolência, resposta a reclamação séria. Eficiente e errado.
+
+## O fecho
+
+Agente não é IA mais inteligente. É IA sem plateia.
+
+Todo o rigor que você aplicava enquanto olhava precisa virar desenho, porque olhar deixou de fazer parte do fluxo.
+
+Quem transporta o método pro desenho ganha muito. Quem só transporta a pressa descobre o problema no relatório do mês seguinte.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-fazer-um-agente-parar-quando-ele-nao-sabe-2026",
+    slug: "como-fazer-um-agente-parar-quando-ele-nao-sabe-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-11T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=1200&q=80",
+    title: "Como fazer um agente parar quando ele não sabe",
+    excerpt:
+      "O comportamento padrão de um agente diante da dúvida é continuar. É esse o problema. Parar precisa ser instruído, e existem quatro freios que resolvem quase tudo.",
+    summary:
+      "Diante da dúvida, o comportamento padrão de um agente é seguir em frente com a melhor suposição, e é daí que vem a maior parte dos estragos. Parar precisa ser instruído explicitamente e sustentado por quatro freios: limite de passos, limite de gasto, lista de situações que exigem confirmação humana e critério de confiança mínima. Sem freio, autonomia vira insistência, e insistência em cima de premissa errada multiplica o erro.",
+    faq: [
+      {"q": "Por que o agente não para sozinho quando erra?", "a": "Porque ele foi treinado para completar tarefas, não para desistir. Diante de ambiguidade, seguir com a melhor suposição parece cumprir o objetivo, e é isso que ele faz se ninguém instruir o contrário."},
+      {"q": "Quais freios são essenciais?", "a": "Limite de passos, limite de gasto, lista do que exige confirmação humana e critério de confiança mínima. Os dois primeiros contêm o estrago; os dois últimos evitam que ele aconteça."},
+      {"q": "Como escrever a instrução de parada?", "a": "Nomeando as situações concretas em que ele deve perguntar em vez de decidir, e dizendo o que fazer nesse caso: parar, registrar o motivo e avisar. Instrução genérica do tipo pergunte se tiver dúvida não funciona, porque ele quase nunca reconhece a própria dúvida."},
+      {"q": "Limite de passos não trava tarefas legítimas?", "a": "Trava algumas, e isso é aceitável. Tarefa legítima interrompida é um aviso para você ajustar o limite. Agente em laço infinito sem limite é conta alta e estrago acumulado."}
+    ],
+    content: `Se você pedir uma coisa impossível pra um agente, ele não vai dizer que é impossível.
+
+Ele vai tentar. Depois vai tentar de outro jeito. Depois vai inventar um caminho que parece resolver.
+
+O comportamento padrão diante da dúvida é **continuar**. E é daí que vem quase todo estrago.
+
+## Por que ele não para
+
+Não é teimosia. É desenho.
+
+Esses sistemas são treinados pra completar tarefas. Completar é o objetivo, e desistir se parece com falhar. Diante de ambiguidade, seguir com a melhor suposição é o comportamento que o treinamento premia.
+
+Some a isso que ele frequentemente **não reconhece** a própria dúvida. Não existe um medidor interno confiável que diga "aqui eu não sei". A confiança da resposta é a mesma quando ele sabe e quando ele chuta.
+
+Por isso instrução genérica não funciona. "Pergunte se tiver dúvida" pressupõe que ele identifica a dúvida, e é justamente o que falta.
+
+## Freio 1: limite de passos
+
+O mais simples e o que evita a conta absurda.
+
+Define um número máximo de ações por tarefa. Se chegou no limite sem terminar, para e avisa.
+
+Isso corta o laço infinito, que é o modo de falha mais caro: o agente tenta, falha, tenta de novo, e repete até alguém perceber. Cada volta consome.
+
+Vai travar tarefa legítima às vezes. Tudo bem: tarefa travada é aviso pra ajustar o limite. Laço infinito é fatura.
+
+## Freio 2: limite de gasto
+
+Teto de consumo por execução e por dia.
+
+Não é a mesma coisa que o limite de passos, porque um único passo pode ser caro se envolver documento grande. Precisa dos dois.
+
+E o alerta importa tanto quanto o teto: você quer saber que chegou perto, não descobrir que estourou. Vale olhar junto com [o custo real de manter um agente rodando](/blog/quanto-custa-deixar-um-agente-rodando-2026).
+
+## Freio 3: lista do que exige confirmação humana
+
+O mais eficaz dos quatro, e é uma lista escrita.
+
+Em vez de esperar que o agente perceba a gravidade, você nomeia as situações:
+
+- apagar qualquer coisa
+- enviar mensagem pra fora da empresa
+- gastar dinheiro
+- mexer em dado de cliente identificado
+- qualquer ação sem volta
+
+Nesses casos ele prepara a ação e espera aprovação. Não decide.
+
+Repara que a lista não é sobre dificuldade da tarefa. É sobre **reversibilidade**. Tarefa difícil e reversível pode seguir sozinha. Tarefa fácil e irreversível, não.
+
+## Freio 4: critério de confiança mínima
+
+Esse exige um pouco mais de cuidado pra montar, e vale.
+
+Em vez de confiar na autoavaliação do agente, você define condições objetivas pra ele continuar. Se o documento não tem o campo esperado, para. Se o valor está fora da faixa conhecida, para. Se o cliente não foi encontrado na base, para.
+
+São regras de sanidade, escritas por quem conhece o processo. Elas capturam o "isso não faz sentido" que uma pessoa perceberia na hora e que o agente não percebe.
+
+## Como escrever a parada na instrução
+
+Duas partes:
+
+**Quando parar**, nomeando as situações concretas.
+**O que fazer ao parar**, que é registrar o motivo, não executar nada e avisar quem.
+
+O aviso importa. Agente que para em silêncio parece agente que terminou, e a tarefa fica sem acontecer sem ninguém saber. Falha silenciosa de novo, pelo outro lado.
+
+## O teste antes de soltar
+
+Dá pro agente uma tarefa que você sabe que é impossível ou ambígua de propósito. Um arquivo que não existe, um cliente que não está na base, uma instrução contraditória.
+
+Observa o que ele faz.
+
+Se ele parar, registrar e avisar, os freios funcionam. Se ele inventar um caminho e seguir, você acabou de ver, em ambiente controlado, exatamente o que aconteceria em produção.
+
+Melhor descobrir assim.
+
+Autonomia sem parada não é autonomia. É insistência.
+
+A decisão é sua.`,
+  },
+  {
+    id: "quanto-custa-deixar-um-agente-rodando-2026",
+    slug: "quanto-custa-deixar-um-agente-rodando-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-09-10T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Quanto custa deixar um agente rodando (a conta que surpreende)",
+    excerpt:
+      "Agente não custa por resposta. Custa por tentativa. E como ele tenta várias vezes antes de concluir, a conta não se parece em nada com a de usar IA no chat.",
+    summary:
+      "O custo de um agente não se compara ao de usar IA no chat porque ele consome por tentativa, não por resposta: cada tarefa envolve várias chamadas de leitura, decisão e verificação. Três fatores multiplicam a conta sem aviso: o número de passos por tarefa, o tamanho do contexto arrastado a cada passo e as repetições quando algo falha. Teto de gasto, limite de passos e alerta de consumo são o mínimo antes de deixar rodando.",
+    faq: [
+      {"q": "Por que agente custa mais que usar IA no chat?", "a": "Porque uma tarefa vira várias chamadas: ler, decidir, agir, verificar e às vezes repetir. Onde no chat existiria uma resposta, no agente existem dez ou vinte passos, cada um cobrado."},
+      {"q": "O que mais infla a conta sem ninguém perceber?", "a": "O contexto arrastado. Se a cada passo o agente reenvia todo o histórico da tarefa, o custo cresce de forma acelerada conforme a tarefa avança, mesmo que cada passo pareça pequeno."},
+      {"q": "Como estimar antes de soltar?", "a": "Rode a tarefa algumas vezes com você olhando, anote o consumo de cada execução e multiplique pelo volume esperado por mês. Estimativa baseada em preço por milhão de tokens sem contar passos costuma errar por muito."},
+      {"q": "Quais proteções são obrigatórias?", "a": "Teto de gasto por execução e por dia, limite de passos por tarefa e alerta quando o consumo passar de um patamar. Sem as três, o primeiro laço infinito vira fatura."}
+    ],
+    content: `Quem já usa IA por API tem uma intuição de custo formada: você manda uma pergunta, recebe uma resposta, paga por isso, e o valor é pequeno.
+
+Essa intuição não serve pra agente. E é por isso que a primeira fatura costuma assustar.
+
+## A diferença: tentativa, não resposta
+
+No chat, uma pergunta é uma chamada.
+
+Com agente, uma tarefa é uma sequência: ele lê o pedido, decide o próximo passo, executa, olha o resultado, decide de novo. Cada uma dessas etapas é uma chamada cobrada.
+
+Uma tarefa que no chat seria uma resposta vira dez, vinte, às vezes cinquenta passos.
+
+E se algo falhar no meio, ele tenta de novo, e a contagem recomeça naquele trecho.
+
+## Os três multiplicadores
+
+**1. Número de passos.** É o mais óbvio e o mais fácil de controlar. Tarefa mal definida gera passo desnecessário; tarefa bem descrita vai direto.
+
+**2. Contexto arrastado.** Esse é o silencioso e o que mais infla.
+
+A cada passo, o agente costuma reenviar o histórico da tarefa pra manter coerência. No passo 2 isso é pequeno. No passo 30, você está reenviando tudo que aconteceu antes, toda vez.
+
+O custo por passo cresce conforme a tarefa avança, mesmo que cada passo pareça igual. Uma tarefa longa não custa o dobro de uma tarefa curta; custa muito mais.
+
+**3. Repetição por falha.** Serviço que não respondeu, formato inesperado, resultado que não passou na verificação. Cada nova tentativa é consumo integral.
+
+## Como estimar de verdade
+
+Estimativa feita na planilha, com preço por milhão de tokens, quase sempre erra por muito, porque ninguém acerta o número de passos no papel.
+
+O jeito que funciona: **roda e mede**.
+
+Executa a tarefa cinco vezes com você acompanhando. Anota o consumo de cada execução. Tira a média e o pior caso. Multiplica pelo volume esperado por mês.
+
+Usa o pior caso pra decidir, não a média. Porque o pior caso é o que acontece justamente nos dias em que tudo está dando errado, que é quando você menos quer uma surpresa.
+
+Vale cruzar com [os preços atuais por modelo](/blog/custo-api-ia-2026-comparativo-real) pra ver se o tier escolhido faz sentido pra tarefa.
+
+## Onde dá pra cortar sem perder qualidade
+
+**Modelo menor nos passos simples.** Nem todo passo precisa do modelo mais forte. Ler um arquivo e extrair um campo é tarefa de tier barato. Decidir o caminho é onde o caro compensa. Agente que usa o mesmo modelo caro em tudo é o desperdício mais comum.
+
+**Contexto enxuto.** Em vez de arrastar o histórico inteiro, mantém um resumo do que importa. Corta bastante e costuma melhorar o resultado, porque contexto irrelevante atrapalha.
+
+**Parar cedo.** Metade do consumo excessivo vem de agente insistindo em algo que não vai dar certo. Os [freios](/blog/como-fazer-um-agente-parar-quando-ele-nao-sabe-2026) são também controle de custo.
+
+## As três proteções mínimas
+
+Antes de deixar rodando sem supervisão:
+
+**Teto por execução.** Estourou, para.
+**Teto por dia.** Protege do laço que roda a noite inteira.
+**Alerta de patamar.** Aviso quando o consumo passar do normal, pra você saber antes da fatura.
+
+## A conta que ninguém faz
+
+E vale terminar pela comparação certa.
+
+O custo do agente não é comparado com zero. É comparado com o custo da pessoa fazendo aquilo à mão.
+
+Se a tarefa consome seis horas por mês de alguém, e o agente resolve consumindo uma fração disso em API, a conta fecha com folga.
+
+O erro não é o agente ser caro. É soltar sem teto e descobrir o valor pela fatura, que é o único jeito de transformar uma decisão boa numa história ruim.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-conectar-seus-dados-a-um-agente-usando-mcp-2026",
+    slug: "como-conectar-seus-dados-a-um-agente-usando-mcp-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-10T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Como conectar seus dados a um agente usando MCP",
+    excerpt:
+      "MCP virou o padrão de como agentes acessam ferramentas e dados. Entender o desenho importa mais que a configuração, porque é o desenho que define o que ele alcança.",
+    summary:
+      "MCP é o padrão que define como um agente acessa ferramentas e dados externos, e resolve o problema de cada integração ser feita de um jeito diferente. Do ponto de vista de quem constrói, o que importa não é a configuração e sim o desenho: cada servidor conectado amplia o alcance do agente, então a decisão relevante é o que expor, com qual permissão e com qual granularidade. Conectar tudo é o erro mais comum.",
+    faq: [
+      {"q": "O que é MCP em uma frase?", "a": "Um padrão aberto que define como um agente de IA descobre e usa ferramentas e fontes de dados externas, de forma que a mesma integração sirva para clientes diferentes."},
+      {"q": "Por que isso importa se eu não sou desenvolvedor?", "a": "Porque define o que o agente consegue alcançar. Cada conexão amplia o poder e o risco, e essa decisão é de quem responde pelo negócio, não de quem configura."},
+      {"q": "Qual o erro mais comum ao conectar?", "a": "Conectar tudo porque é fácil. Cada fonte ligada aumenta a superfície de exposição e o custo, e a maioria dos agentes precisa de bem menos acesso do que recebe."},
+      {"q": "Dá para limitar o que o agente enxerga dentro de uma fonte?", "a": "Dá, e é o que separa configuração madura de improviso: expor uma consulta específica em vez do banco inteiro, uma pasta em vez do disco, uma operação em vez da API completa."}
+    ],
+    content: `Um agente sozinho não serve pra muita coisa. Ele fica bom quando alcança os seus dados: o banco, os arquivos, o sistema interno, a ferramenta que o time usa.
+
+O problema histórico era que cada integração dessas era feita de um jeito diferente, sob medida, e não servia pra mais nada.
+
+MCP existe pra resolver isso.
+
+## O que é, sem enrolação
+
+MCP é um padrão aberto que define **como um agente descobre e usa ferramentas e fontes de dados externas**.
+
+A analogia que funciona: é uma tomada padronizada. Antes, cada aparelho vinha com o próprio plugue e você precisava de um adaptador diferente pra cada um. Com padrão, qualquer aparelho entra em qualquer tomada.
+
+Na prática existe um **servidor MCP**, que expõe capacidades (ler tal coisa, buscar tal informação, executar tal ação), e o agente descobre e usa essas capacidades sem que ninguém tenha programado aquela ligação específica.
+
+O ecossistema todo convergiu pra esse tipo de padronização, o que significa que a integração que você fizer hoje tende a servir pros próximos clientes de IA que você usar.
+
+## Por que isso importa mesmo pra quem não programa
+
+Porque define **o que o agente alcança**.
+
+Essa é uma decisão de negócio, não de configuração. Cada fonte conectada aumenta duas coisas ao mesmo tempo: o que ele consegue fazer de útil e o tamanho do estrago possível.
+
+Quem decide isso precisa entender o negócio, não o protocolo.
+
+## O erro número um: conectar tudo
+
+Como ficou fácil conectar, o reflexo é conectar tudo. Banco inteiro, drive inteiro, e-mail inteiro, sistema inteiro.
+
+Funciona. E cria um agente com alcance que ninguém desenhou.
+
+Três consequências, todas chatas:
+
+**Superfície maior.** Cada fonte é um caminho a mais pra dado sair.
+**Custo maior.** Mais contexto disponível vira mais contexto arrastado.
+**Resultado pior.** Contexto irrelevante atrapalha a decisão, não ajuda.
+
+## A regra: granularidade
+
+O que separa configuração madura de improviso é o tamanho do que você expõe.
+
+**Em vez do banco inteiro**, expõe uma consulta específica: buscar pedido por número, sem acesso a outras tabelas.
+
+**Em vez do drive inteiro**, expõe uma pasta.
+
+**Em vez da API completa**, expõe as duas operações que a tarefa precisa.
+
+E a regra que vale sempre: **só leitura, até provar que precisa escrever**. A maioria das tarefas úteis é de leitura, e leitura tem estrago limitado.
+
+É a mesma lógica de [limitar o que o agente pode tocar](/blog/como-limitar-o-que-um-agente-pode-tocar-no-seu-sistema-2026), aplicada na camada da conexão.
+
+## O que conferir em qualquer servidor MCP de terceiro
+
+Quando o servidor não foi você quem escreveu, três perguntas:
+
+**Quem mantém isso?** Software que fica entre o agente e o seu dado precisa de origem confiável, como qualquer dependência.
+
+**Que permissões ele pede?** Se pede acesso amplo pra uma função estreita, é sinal ruim.
+
+**Onde ficam as credenciais?** No servidor, em variável de ambiente, nunca no cliente e nunca no repositório.
+
+É a mesma avaliação de risco de instalar qualquer biblioteca, e vale o mesmo cuidado.
+
+## MCP não substitui RAG
+
+Vale separar, porque confunde bastante.
+
+**MCP** é como o agente **alcança** ferramentas e fontes.
+**[RAG](/blog/rag-tutorial-como-fazer-ia-responder-com-base-nos-seus-dados-2026)** é como você entrega o trecho **certo** de conteúdo pra ele responder bem.
+
+Um é encanamento, o outro é curadoria. Sistema bom costuma usar os dois: o agente alcança a base via MCP e recupera só o pedaço relevante em vez de arrastar tudo.
+
+## Por onde começar
+
+Uma fonte. Só leitura. A que resolve a tarefa que você já escolheu.
+
+Roda, mede o resultado e o custo, e só então amplia.
+
+Padrão bom deixa fácil conectar. Continua sendo trabalho seu decidir o que merece ser conectado.
+
+A decisão é sua.`,
+  },
+  {
+    id: "por-que-agente-rapido-demais-esconde-o-erro-de-voce-2026",
+    slug: "por-que-agente-rapido-demais-esconde-o-erro-de-voce-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-09-09T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que agente rápido demais esconde o erro de você",
+    excerpt:
+      "Quando quarenta ações acontecem em dois minutos, você não revisa. Você aceita. A velocidade que parece o produto é também o que impede você de perceber o problema.",
+    summary:
+      "A velocidade de um agente cria uma ilusão de qualidade: quando dezenas de ações acontecem em minutos, não há como avaliar cada uma, e a única leitura disponível é o resultado final, que quase sempre parece bom. Isso esconde erros de critério, que só aparecem em amostragem deliberada. Reduzir a velocidade percebida com pontos de conferência é o que devolve capacidade de julgamento a quem opera.",
+    faq: [
+      {"q": "Por que velocidade atrapalha a revisão?", "a": "Porque revisão exige atenção por item, e atenção não escala na mesma proporção. Quando o volume cresce dez vezes e o tempo continua o mesmo, a revisão real vira leitura do resultado final."},
+      {"q": "O resultado final não basta para avaliar?", "a": "Não, porque erro de critério costuma produzir resultado plausível. O relatório fica bonito, a planilha fica preenchida, e o problema está na regra que foi aplicada, não na aparência."},
+      {"q": "Como recuperar controle sem perder o ganho?", "a": "Com amostragem periódica e pontos de conferência em etapas críticas. Você não revisa tudo, revisa o suficiente para detectar desvio de critério antes que ele se acumule."},
+      {"q": "Quantos casos amostrar?", "a": "Poucos e com regularidade vale mais que muitos uma vez só. Um punhado por semana, sempre, detecta mudança de comportamento melhor que uma auditoria grande a cada semestre."}
+    ],
+    content: `Você dá uma tarefa pro agente. Dois minutos depois ele terminou. Quarenta ações executadas, resultado pronto na sua frente.
+
+E você aprova.
+
+Não porque revisou. Porque não tem como revisar quarenta ações em dois minutos, e o resultado parece bom.
+
+## A ilusão que a velocidade cria
+
+Existe um atalho mental que todo mundo usa e quase ninguém percebe: **resultado plausível é lido como resultado correto**.
+
+Quando o processo era lento, você via as etapas. O erro aparecia no meio do caminho, e você pegava.
+
+Agora o meio do caminho passou rápido demais pra ser visto. Sobrou o fim. E o fim quase sempre parece bom, porque o agente é excelente em produzir coisa que parece bem feita.
+
+A planilha está preenchida. O relatório está bem escrito. Os chamados estão classificados.
+
+Nada disso diz se o **critério** aplicado estava certo.
+
+## O tipo de erro que só aparece na amostra
+
+Vale separar dois tipos, porque um você pega e o outro não.
+
+**Erro de execução:** o agente falhou, deu mensagem, parou. Esse aparece sozinho. É o erro barato.
+
+**Erro de critério:** ele fez tudo direitinho, com a regra errada. Classificou como urgente o que não era, considerou concluído o que estava pela metade, usou o campo errado como referência.
+
+O segundo não gera alerta nenhum. Ele produz saída perfeita, no formato certo, no prazo certo. E se acumula em todos os casos processados até alguém abrir um e reparar.
+
+É o mesmo mecanismo dos [problemas de segurança](/blog/3-lugares-por-onde-dado-sensivel-vaza-num-app-feito-com-ia-2026): o errado funciona igual ao certo.
+
+## Por que "está no registro" não resolve sozinho
+
+Ter [trilha de auditoria](/blog/como-registrar-tudo-que-o-agente-fez-trilha-de-auditoria-2026) é essencial e não é suficiente.
+
+Registro serve pra reconstruir depois que você suspeitou. Ele não faz você suspeitar.
+
+Se ninguém abre o registro, ele é um arquivo grande que prova, retroativamente, que o problema estava lá o tempo todo.
+
+## O que devolve o controle
+
+**Amostragem regular.** Alguns casos por semana, sempre, escolhidos ao acaso. Pouco e constante detecta desvio melhor que auditoria grande e rara, porque o que você quer captar é **mudança de comportamento**, e mudança se percebe com frequência.
+
+**Pontos de conferência nas etapas críticas.** Nem toda ação precisa de aprovação, mas as que doem, sim. O agente prepara, para, e alguém confirma. Custa segundos e muda a natureza do risco.
+
+**Alerta no que sai do padrão.** Volume fora da faixa, valor fora do esperado, taxa de um resultado específico subindo. Você não vai olhar tudo; então define o que grita.
+
+## O paradoxo pra encarar
+
+O ganho do agente é justamente não precisar da sua atenção. Se você revisar tudo, não ganhou nada.
+
+Então a pergunta não é "como revisar tudo". É **quanto de atenção é o mínimo pra manter o julgamento calibrado**.
+
+A resposta prática costuma ser pequena: alguns casos por semana e alerta no que foge do padrão. Muito menos que revisar tudo, muito mais que zero.
+
+Zero é onde a maioria está, e zero é onde o erro de critério mora até alguém reclamar.
+
+Rápido demais pra revisar não significa bom demais pra precisar.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-revisar-o-trabalho-de-um-agente-que-rodou-sozinho-2026",
+    slug: "como-revisar-o-trabalho-de-um-agente-que-rodou-sozinho-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-09T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80",
+    title: "Como revisar o trabalho de um agente que rodou sozinho",
+    excerpt:
+      "Revisar resposta de chat é fácil: é um texto. Revisar uma sequência de trinta ações é outro problema, e exige um método diferente do que você usa hoje.",
+    summary:
+      "Revisar o trabalho de um agente não é ler o resultado final: é conferir o caminho. O método tem quatro passos: começar pelo que ele decidiu não fazer, conferir as ações irreversíveis uma a uma, amostrar casos ao acaso em vez de olhar os primeiros, e comparar o critério aplicado com o critério combinado. Resultado bonito não é evidência de processo correto, porque erro de critério produz saída plausível.",
+    faq: [
+      {"q": "Por que não basta conferir o resultado final?", "a": "Porque erro de critério gera resultado plausível. A saída fica no formato certo e completa, e o problema está na regra aplicada, que só aparece olhando o caminho e o motivo de cada decisão."},
+      {"q": "Por onde começar a revisão?", "a": "Pelas ações irreversíveis e pelo que o agente decidiu não fazer. As irreversíveis são as que doem; as recusas revelam o critério dele melhor que os acertos."},
+      {"q": "Devo revisar os primeiros casos processados?", "a": "Não só. Os primeiros costumam ser os mais simples e dão falsa segurança. Escolha casos ao acaso, incluindo os que fogem do padrão de tamanho ou formato."},
+      {"q": "Com que frequência revisar depois que está estável?", "a": "Uma amostra pequena por semana, sempre. Regularidade detecta mudança de comportamento; auditoria grande e esporádica só detecta o estrago acumulado."}
+    ],
+    content: `Revisar uma resposta de IA é simples: você lê o texto e julga.
+
+Revisar um agente é outro problema. Ele não entregou um texto. Entregou trinta ações encadeadas, cada uma dependendo da anterior, e um resultado no fim.
+
+Se você olhar só o fim, você não revisou nada.
+
+## Por que o resultado final engana
+
+Porque erro de critério produz saída bonita.
+
+O agente aplicou a regra errada com perfeição: preencheu todos os campos, seguiu o formato, não deixou nada em branco. O relatório está impecável e a conclusão está errada.
+
+Não existe sinal na aparência. Por isso a revisão precisa olhar o **caminho**, não o destino.
+
+## Passo 1: começa pelo que ele não fez
+
+Contraintuitivo e é o mais revelador.
+
+Olha as recusas e as paradas: os casos em que ele decidiu não agir, pulou, ou marcou como não aplicável.
+
+Duas coisas aparecem aí. Se ele recusou coisa que deveria ter feito, o critério está apertado demais e trabalho está ficando parado sem ninguém saber. Se ele **não recusou nada** em cem casos, provavelmente o freio não está funcionando, porque em cem casos reais sempre tem algum estranho.
+
+Agente que nunca para é agente que nunca duvida. E nenhum processo real é tão limpo assim.
+
+## Passo 2: confere as irreversíveis uma a uma
+
+Separa as ações que não têm volta: apagou, enviou, cobrou, publicou, atualizou dado de cliente.
+
+Essas você olha todas, sem amostragem, pelo menos nas primeiras semanas.
+
+O motivo é econômico, não perfeccionista: erro reversível custa o tempo de desfazer, erro irreversível custa o que custar. A atenção vai pra onde o estrago é permanente.
+
+## Passo 3: amostra ao acaso, não os primeiros
+
+O reflexo é abrir os primeiros casos da lista. É o pior método possível.
+
+Os primeiros costumam ser os mais simples, e o agente acerta os simples. Você sai com falsa segurança.
+
+Escolhe ao acaso, e inclui de propósito os que fogem do padrão: o maior, o menor, o de formato estranho, o que demorou mais.
+
+O erro mora nas bordas. Sempre morou.
+
+## Passo 4: compara critério aplicado com critério combinado
+
+Esse é o passo que exige a [trilha de auditoria](/blog/como-registrar-tudo-que-o-agente-fez-trilha-de-auditoria-2026), e é por isso que ela precisa guardar o motivo declarado de cada decisão.
+
+Você não está perguntando se a ação foi executada corretamente. Está perguntando **se a razão faz sentido**.
+
+Quando o motivo declarado começa a parecer criativo, você achou o problema antes de ele virar volume. Critério que deriva devagar é o modo de falha mais comum de agente que roda há meses.
+
+## O que fazer com o que você achar
+
+Nem todo desvio é bug. Boa parte é **instrução ambígua**.
+
+O agente interpretou a regra de um jeito defensável e diferente do que você quis dizer. O conserto não é regra nova, é a regra existente escrita com menos margem.
+
+E aqui tem um ganho que passa despercebido: escrever instrução pra agente força a empresa a explicitar critérios que estavam só na cabeça das pessoas. Isso melhora o processo mesmo que o agente seja desligado depois.
+
+## A rotina que sustenta
+
+Depois que estabilizou, não precisa de tudo isso toda vez:
+
+**Semanal:** amostra pequena, sempre.
+**Sempre:** irreversíveis conferidas.
+**Mensal:** olhar a distribuição, ver se algum tipo de decisão cresceu sem explicação.
+
+É o mesmo espírito do [checklist de revisão de código](/blog/como-revisar-codigo-gerado-por-ia-checklist-2026): você não revisa tudo, revisa o que decide.
+
+Resultado bonito não é prova de processo correto. É só resultado bonito.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-agente-nao-precisa-de-acesso-total-quase-nunca-precisa-2026",
+    slug: "o-agente-nao-precisa-de-acesso-total-quase-nunca-precisa-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-09-08T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    title: "O agente não precisa de acesso total. Quase nunca precisa",
+    excerpt:
+      "Acesso amplo é dado porque é rápido e porque funciona. Os dois motivos são reais, e nenhum dos dois é bom. A conta chega no dia em que ele faz exatamente o que você permitiu.",
+    summary:
+      "Acesso total é concedido a agentes por conveniência: é mais rápido que descobrir a permissão mínima e evita erro durante os testes. O problema é que permissão ampla não gera sintoma nenhum enquanto tudo vai bem, e define o tamanho do estrago no dia em que algo sai errado. A pergunta correta não é o que o agente precisa para funcionar, e sim qual é o pior resultado possível com o acesso que ele tem.",
+    faq: [
+      {"q": "Por que dar acesso amplo é tão comum?", "a": "Porque funciona de primeira e economiza o trabalho de descobrir a permissão mínima. Como não gera sintoma enquanto nada dá errado, a decisão nunca é revisitada."},
+      {"q": "Qual pergunta fazer ao configurar permissão?", "a": "Qual é o pior resultado possível com esse acesso. Não o que ele precisa para funcionar, mas o que ele conseguiria fazer se recebesse uma instrução mal formulada ou um dado inesperado."},
+      {"q": "Acesso de leitura é sempre seguro?", "a": "É bem mais seguro que escrita, mas não é neutro: leitura ampla permite que dado sensível saia em respostas e relatórios. Vale limitar também o que pode ser lido."},
+      {"q": "Como corrigir um agente que já está com acesso amplo?", "a": "Revise o que ele realmente usou nas últimas semanas pelo registro, reduza a permissão para esse conjunto e observe o que quebra. É mais rápido que redesenhar do zero e costuma revelar que ele usava uma fração do que tinha."}
+    ],
+    content: `Quando alguém configura um agente pela primeira vez, a permissão que ele recebe costuma ser a mais ampla disponível.
+
+Não por descuido. Por dois motivos legítimos: é mais rápido, e evita erro chato durante o teste.
+
+Os dois motivos são reais. E os dois cobram depois.
+
+## Por que essa decisão nunca é revisitada
+
+Porque permissão excessiva **não tem sintoma**.
+
+Um agente com acesso a tudo funciona exatamente igual a um agente com acesso mínimo, enquanto nada dá errado. Não fica lento, não dá erro, não gera alerta.
+
+A diferença entre os dois só aparece num único momento: quando alguma coisa sai do previsto. Aí o acesso deixa de ser detalhe de configuração e vira o tamanho do estrago.
+
+É o mesmo desenho dos [problemas de segurança clássicos](/blog/3-lugares-por-onde-dado-sensivel-vaza-num-app-feito-com-ia-2026), com um agravante: o agente age sozinho e rápido.
+
+## A pergunta errada e a certa
+
+A pergunta que todo mundo faz ao configurar: **de que ele precisa pra funcionar?**
+
+Essa pergunta produz permissão generosa, porque na dúvida você inclui.
+
+A pergunta certa é outra: **qual é o pior resultado possível com esse acesso?**
+
+Não estou falando de agente malicioso. Estou falando de instrução mal formulada, dado inesperado, laço que repete. O agente vai fazer exatamente o que você permitiu, com a competência de sempre, na direção errada.
+
+Se a resposta pra pergunta certa for "ele poderia apagar a base de clientes", não importa que ele nunca vá fazer isso. Importa que ele pode.
+
+## Três coisas que quase nenhum agente precisa
+
+**Apagar.** A imensa maioria das tarefas úteis não envolve remoção. Se for necessário, marca como inativo em vez de apagar, e assim existe volta.
+
+**Acesso a todos os registros.** Ele precisa dos registros do escopo dele. Um agente que triagem chamados não precisa alcançar a tabela financeira.
+
+**Enviar pra fora sem revisão.** Mensagem que sai da empresa é irreversível de um jeito particular: não dá pra despublicar a impressão do destinatário.
+
+## O que fazer em vez de acesso total
+
+**Começa somente com leitura.** Ele lê e propõe; a aplicação é sua. Vale como padrão nas primeiras semanas de qualquer agente novo.
+
+**Expõe operação, não o sistema.** Em vez de acesso ao banco, uma consulta específica. Em vez do disco, uma pasta. É a granularidade que o [MCP](/blog/como-conectar-seus-dados-a-um-agente-usando-mcp-2026) permite e que quase ninguém usa.
+
+**Credencial própria.** Agente com credencial dedicada permite ver o que ele fez e revogar sem afetar mais ninguém. Agente usando a credencial de uma pessoa mistura os rastros e torna a auditoria impossível.
+
+**Ambiente separado dos primeiros testes.** Antes de tocar em dado real, ele trabalha numa cópia. Vale a mesma lógica de [separar dado real de dado de teste](/blog/como-separar-dado-real-de-dado-de-teste-lgpd-2026).
+
+## Se o seu já está com acesso amplo
+
+O conserto é mais fácil do que parece, e não exige redesenhar nada.
+
+Abre o registro das últimas semanas e vê o que ele **de fato** usou. Reduz a permissão pra esse conjunto. Observa o que quebra.
+
+Quase sempre acontece a mesma coisa: ele usava uma fração pequena do que tinha. O resto era risco parado, sem contrapartida nenhuma.
+
+## O argumento que sempre aparece
+
+"Mas assim eu vou ter que ficar ajustando permissão toda hora."
+
+Vai, às vezes. E cada ajuste é uma conversa de dois minutos sobre uma coisa que o agente passou a precisar.
+
+A alternativa é não ter conversa nenhuma até o dia em que a conversa é sobre o que aconteceu.
+
+Permissão é a única defesa que funciona mesmo depois que tudo mais falhou.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-limitar-o-que-um-agente-pode-tocar-no-seu-sistema-2026",
+    slug: "como-limitar-o-que-um-agente-pode-tocar-no-seu-sistema-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-09-08T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
+    title: "Como limitar o que um agente pode tocar no seu sistema",
+    excerpt:
+      "Escopo de agente não é instrução no prompt. É permissão no sistema. A diferença entre as duas coisas é o que separa limite de pedido educado.",
+    summary:
+      "Limitar um agente exige separar duas camadas que costumam ser confundidas: a instrução, que é um pedido, e a permissão, que é uma barreira. Instrução pode ser mal interpretada ou contornada por uma formulação inesperada; permissão negada não executa. O desenho seguro combina credencial dedicada com o mínimo necessário, exposição por operação em vez de sistema inteiro, ambiente separado no início e lista explícita de ações que exigem aprovação humana.",
+    faq: [
+      {"q": "Não basta escrever no prompt o que ele não pode fazer?", "a": "Não. Instrução é pedido, e pedido depende de interpretação. Permissão é barreira: se o acesso não existe, a ação falha independentemente do que foi entendido."},
+      {"q": "Qual a primeira coisa a configurar?", "a": "Credencial própria para o agente, com o mínimo de acesso necessário. Isso permite auditar o que foi feito por ele e revogar sem afetar pessoas."},
+      {"q": "Como decidir o que ele pode alcançar?", "a": "Listando as ações concretas que a tarefa exige e concedendo apenas essas. O que não estiver na lista deve ser negado por padrão, não esquecido."},
+      {"q": "O que sempre deve exigir confirmação humana?", "a": "Qualquer ação irreversível: apagar, enviar para fora da empresa, gastar dinheiro, publicar ou alterar dado de cliente identificado."}
+    ],
+    content: `Tem uma confusão que aparece em quase toda configuração de agente, e ela é a origem da maioria dos acidentes.
+
+Escrever no prompt "não apague nada" não é um limite. É um pedido.
+
+## Instrução e permissão são camadas diferentes
+
+**Instrução** é o que você pede. Depende de interpretação, e interpretação varia com a formulação do pedido, com o contexto e com o que apareceu antes.
+
+**Permissão** é o que o sistema deixa acontecer. Não depende de interpretação nenhuma. Se o acesso não existe, a ação falha, e pronto.
+
+As duas são necessárias, e a segunda é a que segura.
+
+Um agente bem instruído e mal permissionado funciona bem por meses e um dia faz algo que ninguém pediu. Um agente mal instruído e bem permissionado erra dentro de uma caixa, e o erro é chato em vez de caro.
+
+Se você só puder investir em uma, investe na permissão.
+
+## Camada 1: credencial própria
+
+Primeira coisa, antes de qualquer outra.
+
+O agente recebe uma credencial dele, não a sua nem a de um funcionário.
+
+Três ganhos imediatos: dá pra ver no registro o que foi feito por ele, dá pra revogar sem afetar ninguém, e dá pra conceder exatamente o que ele precisa em vez de herdar o acesso de uma pessoa, que sempre é maior.
+
+Agente rodando com credencial de gente é a raiz de metade dos problemas de auditoria.
+
+## Camada 2: o mínimo, listado
+
+Escreve as ações que a tarefa exige. Concede só essas. O que não está na lista é **negado por padrão**, não esquecido.
+
+Um exemplo concreto, pra sair do abstrato. Agente que faz triagem de chamados precisa de: ler chamado, ler histórico do cliente, atualizar o campo de categoria, adicionar comentário interno.
+
+Não precisa de: apagar chamado, alterar dado cadastral, ver dado financeiro, responder ao cliente.
+
+Note que a lista do que ele não precisa é maior que a do que precisa. É assim na maioria dos casos, e é por isso que acesso amplo é tão desproporcional.
+
+## Camada 3: expõe operação, não sistema
+
+Em vez de dar acesso ao banco, expõe a consulta específica.
+
+Em vez de dar acesso à pasta inteira do drive, expõe a subpasta do mês.
+
+Em vez de dar a API completa, expõe as duas operações necessárias.
+
+A diferença prática é grande: com acesso ao sistema, o limite depende de o agente escolher não usar o resto. Com operação exposta, o resto não existe pra ele.
+
+## Camada 4: ambiente separado no começo
+
+Nas primeiras semanas, ele trabalha numa cópia dos dados, não nos dados reais.
+
+Você observa o comportamento sem risco e descobre as interpretações estranhas em ambiente que perdoa. É a mesma lógica de [separar dado real de dado de teste](/blog/como-separar-dado-real-de-dado-de-teste-lgpd-2026).
+
+## Camada 5: lista do que exige aprovação
+
+Mesmo com tudo acima, algumas ações nunca deveriam ser automáticas:
+
+- apagar qualquer coisa
+- enviar mensagem pra fora da empresa
+- gastar dinheiro
+- publicar conteúdo
+- alterar dado de cliente identificado
+
+Nessas, o agente prepara e espera confirmação. É o mesmo princípio de [não soltar agente sem revisar permissão](/blog/agente-de-ia-sem-revisar-permissao-2026).
+
+## O teste que fecha a configuração
+
+Depois de configurar, tenta quebrar.
+
+Pede pro agente fazer explicitamente algo que ele não deveria poder: apagar um registro, acessar uma área proibida, enviar uma mensagem.
+
+Duas respostas possíveis. Se ele recusar citando a instrução, você tem instrução funcionando e permissão não testada. Se ele tentar e falhar por falta de acesso, você tem limite de verdade.
+
+O segundo é o que você quer. Instrução é a primeira linha; permissão é a que segura quando a primeira falha.
+
+A decisão é sua.`,
+  },
+  {
+    id: "agente-nao-e-assistente-e-confundir-os-dois-sai-caro-2026",
+    slug: "agente-nao-e-assistente-e-confundir-os-dois-sai-caro-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-09-07T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Agente não é assistente, e confundir os dois sai caro",
+    excerpt:
+      "Assistente sugere e você decide. Agente decide e você descobre depois. A palavra mudou pouco, o risco mudou tudo, e muita gente contratou o segundo achando que estava comprando o primeiro.",
+    summary:
+      "Assistente e agente são categorias diferentes de risco, não graus de sofisticação. No assistente existe um humano entre a sugestão e a consequência, então o erro é filtrado antes de virar ação. No agente esse filtro não existe: a decisão vira ação sem intermediário. Confundir os dois faz empresas aplicarem controles de assistente em sistemas que agem, o que significa nenhum controle onde o risco realmente está.",
+    faq: [
+      {"q": "Qual a diferença prática entre assistente e agente?", "a": "O que acontece com a saída. Assistente produz sugestão que uma pessoa avalia antes de aplicar. Agente executa a ação diretamente, sem esse passo intermediário."},
+      {"q": "Por que a distinção importa para quem contrata?", "a": "Porque define o controle necessário. Assistente exige revisão de resultado. Agente exige escopo, limites, registro e responsável nomeado, definidos antes de rodar."},
+      {"q": "Todo agente é mais arriscado que todo assistente?", "a": "Em geral sim, porque a consequência é imediata. O risco de um assistente é limitado pelo julgamento de quem recebe a sugestão; o de um agente é limitado apenas pela permissão que ele tem."},
+      {"q": "Como saber o que eu tenho hoje na empresa?", "a": "Pergunte se existe uma pessoa que aprova cada resultado antes de ele virar ação. Se existe, é assistente. Se a ação acontece direto, é agente, independentemente do nome do produto."}
+    ],
+    content: `A palavra assistente sugere alguém que ajuda. A palavra agente sugere alguém que age.
+
+Parece diferença de vocabulário de marketing. É diferença de categoria de risco.
+
+## A distinção que importa
+
+Não é sobre o modelo ser mais avançado. É sobre **o que acontece com a saída**.
+
+**Assistente:** produz uma sugestão. Uma pessoa lê, avalia e decide aplicar ou não. Existe filtro humano entre a saída e a consequência.
+
+**Agente:** executa. A decisão dele vira ação no mundo, sem intermediário.
+
+Todo o resto decorre daí.
+
+Com assistente, o erro é filtrado. Você lê algo estranho, descarta, pede de novo. O custo do erro é o tempo de perceber.
+
+Com agente, o erro **é aplicado**. E como ele processa em série, o mesmo erro é aplicado em todos os casos seguintes até alguém notar.
+
+## Por que a confusão sai cara
+
+Porque o controle que a empresa aplica é escolhido pela palavra, não pelo comportamento.
+
+Empresa que acha que tem assistente aplica controle de assistente: revisa o resultado de vez em quando, treina quem usa, e pronto.
+
+Se o que ela tem na verdade age sozinho, esse controle é quase nenhum, porque revisar resultado não pega erro de critério e não impede ação irreversível.
+
+E a confusão é fácil de acontecer, porque muito produto é vendido com nome de assistente e opera como agente assim que você liga uma integração.
+
+## O teste de uma pergunta
+
+Pra qualquer ferramenta de IA rodando na sua empresa hoje:
+
+**Existe uma pessoa que aprova cada resultado antes de ele virar ação?**
+
+Se existe, é assistente, com o risco contido pelo julgamento dessa pessoa.
+
+Se não existe, é agente. Não importa como o produto se chama, não importa o que estava no material comercial.
+
+## Os controles são diferentes
+
+Vale explicitar, porque é a parte prática.
+
+**Assistente** precisa de: gente treinada pra avaliar, critério de quando não confiar, e o hábito de conferir antes de usar. O controle mora na pessoa.
+
+**Agente** precisa de: escopo escrito, permissão mínima, freio de parada, registro do que fez e alguém responsável com autoridade pra desligar. O controle mora no desenho, porque não vai ter pessoa no meio.
+
+Aplicar o primeiro conjunto num sistema que age é exatamente o cenário em que a empresa se sente protegida e não está.
+
+## A migração silenciosa
+
+Tem um caminho que acontece sem ninguém decidir, e é o mais perigoso.
+
+A ferramenta entra como assistente. Todo mundo revisa, tudo funciona bem. A confiança cresce, com razão.
+
+Aí alguém liga uma integração pra economizar o passo manual. Depois outra. Seis meses depois, aquilo executa sozinho, e ninguém marcou o dia em que deixou de ser assistente.
+
+Os controles continuaram sendo os do começo.
+
+Vale ter uma regra explícita: **toda vez que uma ferramenta ganha a capacidade de agir sem aprovação, ela passa por uma revisão de escopo**. Não é burocracia, é o único momento em que dá pra pegar essa migração.
+
+## O que eu não estou dizendo
+
+Não estou dizendo que agente é ruim. É a maior alavanca de produtividade que apareceu, e quem não usar vai ficar pra trás.
+
+Estou dizendo que ele é uma categoria diferente, e merece decisão consciente em vez de deslize de vocabulário.
+
+Assistente erra e alguém percebe. Agente erra e alguém descobre.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-dar-a-primeira-tarefa-a-um-agente-de-ia-sem-estrago-2026",
+    slug: "como-dar-a-primeira-tarefa-a-um-agente-de-ia-sem-estrago-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-09-07T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+    title: "Como dar a primeira tarefa a um agente de IA sem estrago",
+    excerpt:
+      "A primeira tarefa não é a mais útil. É a que ensina você a operar sem custar caro. Um roteiro de cinco decisões que cabe numa tarde.",
+    summary:
+      "A primeira tarefa dada a um agente deve ser escolhida pelo custo do erro, não pelo valor do ganho. O roteiro tem cinco decisões: escolher tarefa reversível e com resultado verificável, escrever a instrução com objetivo, limite e parada, conceder apenas leitura, rodar acompanhado e conferir o caminho e não só o resultado. Só depois disso vale ampliar escopo, e sempre um passo por vez.",
+    faq: [
+      {"q": "Como escolher a primeira tarefa?", "a": "Pelo custo do erro, não pelo ganho. Ela precisa ser reversível, ter resultado verificável em minutos e não tocar dado de cliente nem enviar nada para fora."},
+      {"q": "O que a instrução precisa ter?", "a": "Três partes: o objetivo em uma frase, o limite dizendo o que ele não pode fazer, e a parada dizendo o que fazer quando não souber. Sem as duas últimas, o agente completa a tarefa a qualquer custo."},
+      {"q": "Por que rodar acompanhado a primeira vez?", "a": "Porque é onde você descobre como ele interpreta a sua instrução. Ele resolve ambiguidade de formas inesperadas, e isso não aparece em nenhum tutorial, só no seu caso."},
+      {"q": "Quando ampliar o escopo?", "a": "Depois que a mesma tarefa rodou várias vezes com resultado conferido. Amplia um eixo por vez: de leitura para escrita, ou de acompanhado para sozinho, nunca os dois juntos."}
+    ],
+    content: `A primeira tarefa que você dá pra um agente define o que você vai aprender sobre ele.
+
+E o instinto de todo mundo é escolher errado: pega a tarefa mais valiosa, porque é a que mais dói fazer à mão.
+
+Escolhe pelo custo do erro, não pelo tamanho do ganho.
+
+## Decisão 1: a tarefa
+
+Três critérios, e os três precisam ser verdade ao mesmo tempo:
+
+**Reversível.** Se der errado, você desfaz em minutos.
+**Verificável.** Você consegue olhar o resultado e dizer se está certo, rápido.
+**Contida.** Não toca dado de cliente identificado, não envia nada pra fora, não gasta.
+
+Bons primeiros casos: organizar e renomear arquivos numa pasta de trabalho, compilar informação de vários documentos num resumo, preencher uma planilha a partir de textos, revisar uma lista procurando inconsistência.
+
+Ruins: responder cliente, atualizar sistema de produção, qualquer coisa financeira.
+
+## Decisão 2: a instrução
+
+Três partes, e a maior parte do texto vai nas duas últimas:
+
+**Objetivo.** Uma frase clara do que é pra fazer.
+
+**Limite.** O que ele não pode fazer, nomeado. Não apagar, não sair da pasta, não alterar arquivo original, não acessar outra fonte.
+
+**Parada.** O que fazer quando não souber: parar, não adivinhar, registrar o motivo e avisar.
+
+A parada é a parte que quase todo mundo esquece, e é a que evita o modo de falha mais comum: o agente [inventa um caminho](/blog/como-fazer-um-agente-parar-quando-ele-nao-sabe-2026) pra completar a tarefa de qualquer jeito.
+
+Uma instrução que é dois terços limite e parada não está exagerada. Está certa.
+
+## Decisão 3: só leitura
+
+Na primeira rodada, ele lê e propõe. Você aplica.
+
+Parece que anula o ganho, e anula mesmo. Não tem problema: nessa fase você está avaliando o **julgamento** dele, não economizando tempo.
+
+O pior caso vira uma sugestão ruim que você descarta. Exatamente o que você quer enquanto está aprendendo a operar.
+
+## Decisão 4: roda acompanhado
+
+Primeira execução com você olhando do começo ao fim.
+
+Você vai ver coisas que nenhum tutorial conta: ele interpreta uma palavra ao pé da letra, resolve uma ambiguidade de um jeito que você não previu, insiste onde uma pessoa desistiria.
+
+Isso é informação sobre como escrever a próxima instrução, e ela só existe no seu caso.
+
+## Decisão 5: confere o caminho, não só o resultado
+
+O resultado quase sempre parece bom. Erro de critério produz saída bonita.
+
+Olha o que ele fez pra chegar lá: quais passos, em que ordem, o que decidiu não fazer.
+
+E olha especialmente as recusas. Se ele não recusou nada em nenhum caso, provavelmente a parada não está funcionando, porque processo real sempre tem caso estranho. É o que detalhei em [como revisar o trabalho de um agente](/blog/como-revisar-o-trabalho-de-um-agente-que-rodou-sozinho-2026).
+
+## Como ampliar depois
+
+Um eixo por vez. Nunca dois juntos.
+
+De leitura pra escrita, na mesma tarefa que ele já domina. Ou de acompanhado pra sozinho, mantendo só leitura.
+
+Se você ampliar os dois ao mesmo tempo e algo der errado, você não vai saber qual mudança causou. E vai ter que voltar as duas.
+
+## O erro clássico da primeira semana
+
+Dar a tarefa valiosa logo de cara, com acesso de escrita, rodando sozinha, porque a versão limitada "não economiza tempo".
+
+Não economiza mesmo. Não é pra economizar. É pra você descobrir como essa ferramenta se comporta antes de ela ter poder de fazer estrago.
+
+Uma tarde investida na tarefa chata compra a confiança pra delegar a tarefa cara.
+
+A decisão é sua.`,
+  },
+  {
     id: "vibecoding-com-engenharia-separa-velocidade-de-divida-2026",
     slug: "vibecoding-com-engenharia-separa-velocidade-de-divida-2026",
     contentVersion: 1,
@@ -1771,7 +3032,7 @@ A segunda pergunta é: se quebrar, quem te conta?
 
 Se a resposta é "o cliente", você não tem processo, tem sorte. E sorte costuma acabar no pior momento.
 
-Captura de erro e alerta chegando onde você realmente olha. Isso é uma tarde de trabalho e muda a natureza do risco: você deixa de descobrir problema por reclamação. Escrevi o passo a passo em [como monitorar seu app](/blog/como-monitorar-seu-app-e-saber-quando-ele-quebra-2026).
+Captura de erro e alerta chegando onde você realmente olha. Isso é uma tarde de trabalho e muda a natureza do risco: você deixa de descobrir problema por reclamação. Escrevi o passo a passo em [como monitorar seu app](/blog/como-monitorar-seu-app-e-saber-quando-quebra-2026).
 
 ## 3. Subir pedaço pequeno
 
@@ -9852,7 +11113,7 @@ git push -u origin main
 - Nenhuma chave de API no código? (só em variável de ambiente)
 - Repositório é privado?
 
-Falei disso em detalhe em [nunca vaze uma senha](/blog/nunca-vaze-uma-senha). Não pule essa parte.
+Falei disso em detalhe em [nunca vaze uma senha](/blog/nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore). Não pule essa parte.
 
 ### Passo 2: conecta na Vercel
 
@@ -10197,7 +11458,7 @@ O que eu costumo achar:
 - Chave em arquivo .env que foi pro Git sem querer.
 - Chave hardcoded no código do front-end (visível pra qualquer um que abra o navegador).
 
-Esse é o achado mais comum e o mais perigoso. Já escrevi sobre isso em [nunca vaze uma senha](/blog/nunca-vaze-uma-senha) e [o risco não é o código que você escreve](/blog/risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026).
+Esse é o achado mais comum e o mais perigoso. Já escrevi sobre isso em [nunca vaze uma senha](/blog/nunca-vaze-uma-senha-variaveis-de-ambiente-gitignore) e [o risco não é o código que você escreve](/blog/risco-nao-e-o-codigo-que-escreve-e-o-que-instala-2026).
 
 **Pergunta pra você:** suas chaves de API estão em variável de ambiente no servidor, nunca no código? Tem certeza?
 
@@ -11623,7 +12884,7 @@ Sem método, você depende da sorte de a IA entender o que você quer. Com méto
 O método é o **P.R.O.M.P.T.E.R.**: framework de 8 elementos (Papel, Regras, Objetivo, Modelo, Parâmetros, Teste, Exemplo, Retorno) que transforma pedido vago em contrato claro.
 
 **Aprofunde:**
-- [Como usar IA no trabalho: o método P.R.O.M.P.T.E.R. com exemplos](/blog/prompter)
+- [Como usar IA no trabalho: o método P.R.O.M.P.T.E.R. com exemplos](/blog/prompter-na-pratica-5-exemplos-tutorial-2026)
 - [P.R.O.M.P.T.E.R. na prática: 5 prompts ruins virando profissionais](/blog/prompter-na-pratica-5-exemplos-tutorial-2026)
 - [Como criar seu assistente de IA personalizado (sem código)](/blog/como-criar-assistente-de-ia-personalizado-sem-codigo-2026)
 
@@ -11635,8 +12896,8 @@ O jeito de não cair nisso é o **Protocolo de 5 Camadas**: Entender → Ler →
 
 **Aprofunde:**
 - [Protocolo de 5 Camadas: como revisar código gerado por IA](/blog/protocolo-de-5-camadas)
-- [Manifesto: por que eu construo (e ensino) vibecoding com engenharia](/blog/manifesto-vibecoding-com-engenharia)
-- [Os 7 pecados do vibecoding às cegas (e como evitá-los)](/blog/7-pecados-vibecoding-as-cegas)
+- [Manifesto: por que eu construo (e ensino) vibecoding com engenharia](/blog/manifesto)
+- [Os 7 pecados do vibecoding às cegas (e como evitá-los)](/blog/os-7-pecados-do-vibecoding-as-cegas)
 
 ### Pilar 3: método pra escalar sem quebrar
 
@@ -11662,7 +12923,7 @@ Se você tá começando um projeto novo com vibecoding, essa é a sequência:
 8. **Observar em produção.** Log, erro, latência. Sem isso, você não sabe quando quebrou.
 
 **Aprofunde:**
-- [Do zero ao primeiro sistema: configure o VS Code + GitHub Copilot](/blog/do-zero-ao-primeiro-sistema-vscode-copilot)
+- [Do zero ao primeiro sistema: configure o VS Code + GitHub Copilot](/blog/configurar-vscode-copilot-primeiro-sistema)
 - [Boas práticas de vibecoding para empresas](/blog/boas-praticas-vibecoding-para-empresas)
 - [Como escrever spec de produto que uma IA entende](/blog/como-criar-assistente-de-ia-personalizado-sem-codigo-2026)
 
@@ -11696,7 +12957,7 @@ Sem hype. Só o que eu uso de verdade no dia a dia:
 - **Firebase (Firestore + Auth + Admin)**: banco e login. Simples, barato, escala.
 - **Resend**: e-mail transacional.
 
-Setup completo com passo a passo: [Do zero ao primeiro sistema](/blog/do-zero-ao-primeiro-sistema-vscode-copilot).
+Setup completo com passo a passo: [Do zero ao primeiro sistema](/blog/configurar-vscode-copilot-primeiro-sistema).
 
 ## Onde procurar mais
 
@@ -11770,7 +13031,7 @@ P.R.O.M.P.T.E.R. é meu framework pra estruturar prompt:
 - **E**xemplo: pelo menos 1 caso do output esperado
 - **R**etorno: como você vai receber (JSON, markdown, texto)
 
-Método completo aqui: [P.R.O.M.P.T.E.R.](/blog/prompter). Neste post mostro 5 casos reais de refino.
+Método completo aqui: [P.R.O.M.P.T.E.R.](/blog/prompter-na-pratica-5-exemplos-tutorial-2026). Neste post mostro 5 casos reais de refino.
 
 ## Exemplo 1: pedir código
 
@@ -11887,7 +13148,7 @@ Prompt curto rende resposta curta. Prompt bagunçado rende bagunça. Prompt prof
 
 Pega esses 5 exemplos, cola no Claude/ChatGPT/Gemini e roda. Compara antes e depois. Vai perceber que a IA sempre soube. Você é quem não sabia pedir.
 
-Método completo em [P.R.O.M.P.T.E.R.](/blog/prompter).
+Método completo em [P.R.O.M.P.T.E.R.](/blog/prompter-na-pratica-5-exemplos-tutorial-2026).
 
 A decisão é sua.`,
   },
