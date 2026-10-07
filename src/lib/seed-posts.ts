@@ -7,6 +7,1275 @@ import type { Post } from "./posts";
  */
 export const seedPosts: Post[] = [
   {
+    id: "seu-fosso-nao-e-o-modelo-e-o-que-so-voce-sabe-2026",
+    slug: "seu-fosso-nao-e-o-modelo-e-o-que-so-voce-sabe-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Manifesto"],
+    publishedAt: "2026-10-13T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
+    title: "Seu fosso não é o modelo. É o que só você sabe",
+    excerpt:
+      "Todo mundo tem acesso ao mesmo modelo, pelo mesmo preço, no mesmo dia. O que ninguém tem é o seu histórico, o seu critério e os seus casos difíceis.",
+    summary:
+      "Quando todos acessam os mesmos modelos pelo mesmo preço, o modelo deixa de ser diferencial e vira insumo. O que resta como vantagem é o que não se compra: o histórico de decisões da empresa, o critério que separa resposta boa de resposta plausível e os casos difíceis que só quem opera conhece. Esses três ativos são construídos por registro deliberado, não aparecem sozinhos, e são a razão para tratar dado como patrimônio.",
+    faq: [
+      {"q": "Por que o modelo não é mais diferencial?", "a": "Porque qualquer concorrente pluga o mesmo modelo no mesmo dia, pelo mesmo preço, e os preços caem rápido. O que é igual para todos não diferencia ninguém."},
+      {"q": "O que conta como fosso de dados?", "a": "O histórico de decisões e resultados da sua operação, os casos difíceis e exceções que você já resolveu, e o critério documentado que separa resposta aceitável de inaceitável no seu contexto."},
+      {"q": "Preciso de muito dado para ter vantagem?", "a": "Não de volume, de especificidade. Centenas de casos reais bem documentados do seu nicho valem mais que milhões de registros genéricos que qualquer um poderia obter."},
+      {"q": "Como começar a construir esse ativo hoje?", "a": "Registrando decisões com o motivo, guardando os casos em que a IA errou e o que a tornou errada, e escrevendo o critério de qualidade que hoje existe só na cabeça de quem revisa."}
+    ],
+    content: `Toda semana sai um modelo melhor. Mais barato, mais rápido, mais capaz.
+
+E toda semana alguém conclui que precisa correr atrás do mais novo pra não ficar pra trás.
+
+É correr atrás da parte que menos importa.
+
+## O que é igual pra todo mundo
+
+O modelo que você usa, seu concorrente usa. No mesmo dia, pelo mesmo preço, com a mesma documentação.
+
+Não existe vantagem em algo que se contrata com cartão de crédito em cinco minutos.
+
+E o preço desaba. Quando a OpenAI [cortou 80% em três semanas](/blog/openai-cortou-preco-80-porcento-modelo-virou-commodity-2026), ficou escancarado: modelo é insumo, não é posição. Insumo barateia; posição se constrói.
+
+## O que não se compra
+
+Três coisas, e as três são dado.
+
+**O histórico da sua operação.** O que foi decidido, o que deu certo, o que deu errado e por quê. Um concorrente novo não tem isso nem com dinheiro, porque é tempo acumulado.
+
+**Os casos difíceis.** Toda operação real tem as exceções que ninguém previu: o cliente que manda o arquivo no formato errado, a regra que vale só pra um estado, o caso de borda que quebrou tudo uma vez. Quem já resolveu esses tem um mapa que não existe em lugar nenhum.
+
+**O critério.** A diferença entre resposta boa e resposta plausível no **seu** contexto. É julgamento de quem opera, e quase sempre mora só na cabeça de uma ou duas pessoas.
+
+Repara que nenhum dos três é tecnologia. Os três são conhecimento, e conhecimento registrado é dado.
+
+## Por que isso virou mais importante, não menos
+
+Parece contraintuitivo. A IA sabe tanta coisa, por que o que eu sei importaria mais?
+
+Porque ela sabe o **geral** com excelência e o **seu** com zero. Ela conhece a prática recomendada do mundo e desconhece a sua exceção.
+
+E como o geral agora é commodity disponível pra qualquer um, o valor migrou inteiro pro específico. É a única parte que sobrou escassa.
+
+Quem tem dado específico bom transforma um modelo genérico em algo que responde do jeito da casa. Quem não tem usa o mesmo modelo que todo mundo, do mesmo jeito que todo mundo.
+
+## O detalhe que decide: isso não se acumula sozinho
+
+Aqui está o erro mais comum.
+
+As empresas acham que têm esse ativo porque operam há anos. Não têm. Elas **viveram** os casos; não registraram.
+
+O cliente difícil foi atendido e a solução não foi escrita. A decisão foi tomada numa reunião e o motivo não ficou em lugar nenhum. A pessoa que sabia foi embora.
+
+Dado que não é registrado não é ativo. É lembrança, e lembrança some.
+
+## Como construir, a partir de hoje
+
+**Registra decisão com motivo.** Não só o que foi feito, o porquê. É a informação que mais vale e a primeira a evaporar.
+
+**Guarda os erros.** Todo caso em que a IA errou, com o que a tornou errada. Esse arquivo é ouro: é o que ensina a próxima configuração e o que treina quem chega.
+
+**Escreve o critério.** O que torna uma resposta aceitável aqui. Se isso só existe na cabeça de alguém, a empresa tem uma pessoa, não um ativo.
+
+**Organiza pra ser recuperável.** Dado que ninguém acha não serve. É o passo de [preparar o dado pra IA responder com ele](/blog/como-preparar-seus-dados-pra-ia-responder-com-eles-2026).
+
+## A pergunta que separa
+
+Se o seu concorrente contratasse o mesmo modelo amanhã, o que ele ainda não teria?
+
+Se a resposta for "nada", você não tem fosso. Tem assinatura.
+
+Se a resposta for o seu histórico, os seus casos e o seu critério, você tem algo que não cai de preço em três semanas.
+
+Modelo é alugado. Dado é seu.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-organizar-os-dados-de-um-negocio-pequeno-pra-usar-ia-2026",
+    slug: "como-organizar-os-dados-de-um-negocio-pequeno-pra-usar-ia-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Primeiros Passos"],
+    publishedAt: "2026-10-13T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+    title: "Como organizar os dados de um negócio pequeno pra usar IA",
+    excerpt:
+      "Não precisa de data warehouse nem de projeto de seis meses. Precisa saber onde as coisas estão, com nome consistente, e tirar duas ou três de lugares onde não deviam estar.",
+    summary:
+      "Negócio pequeno não precisa de infraestrutura de dados para começar a usar IA: precisa de organização mínima. Quatro passos resolvem: listar onde cada informação vive hoje, padronizar o identificador do cliente entre os sistemas, separar o que é sensível do que é operacional e eliminar as cópias paralelas em planilhas pessoais. Sem isso, qualquer uso de IA responde com informação incompleta e ninguém percebe.",
+    faq: [
+      {"q": "Preciso de um banco de dados central antes de usar IA?", "a": "Não. Precisa saber onde cada informação vive e conseguir recuperá-la. Centralizar é um projeto; saber onde está é uma tarde."},
+      {"q": "Qual o maior problema de dados em empresa pequena?", "a": "O mesmo cliente com nomes e identificadores diferentes em cada sistema. Sem um identificador consistente, cruzar informação vira trabalho manual e a IA responde com pedaços soltos."},
+      {"q": "Planilha pessoal é problema?", "a": "É, quando vira a versão real de algo que deveria estar no sistema. A informação some com a pessoa, ninguém mais enxerga, e decisões passam a ser tomadas com base em algo que só uma pessoa vê."},
+      {"q": "Por onde começar se está tudo bagunçado?", "a": "Pelo inventário. Uma lista com que informação existe, onde mora e quem mantém. É o passo que revela as duplicidades e custa uma tarde."}
+    ],
+    content: `Existe um mito que trava empresa pequena: pra usar IA é preciso ter os dados organizados num lugar só.
+
+Não precisa. Projeto de centralização leva meses e custa caro, e a maioria dos ganhos acontece antes disso.
+
+O que precisa é bem menos. Quatro passos.
+
+## Passo 1: inventário, numa tabela
+
+Lista o que existe. Três colunas: **que informação**, **onde mora**, **quem mantém**.
+
+Cliente fica no CRM. Nota fiscal fica no contador. Atendimento fica no e-mail. Contrato fica no drive. Controle de entrega fica numa planilha da Ana.
+
+Em uma tarde a lista fica pronta e duas coisas aparecem sozinhas: informação que está em três lugares diferentes, e informação que depende de uma pessoa só.
+
+Esse inventário é o documento mais útil que a maioria das empresas pequenas não tem.
+
+## Passo 2: um identificador consistente de cliente
+
+O problema número um não é falta de dado. É **não conseguir juntar**.
+
+O mesmo cliente é "Padaria do João" no CRM, "João Silva ME" na nota, e "padaria joao" na planilha. Pra uma pessoa é óbvio que é o mesmo. Pra qualquer sistema, são três.
+
+Escolhe um identificador, de preferência algo que não muda, como o CNPJ, e usa ele em todo lugar. Isso sozinho destrava cruzar informação entre sistemas, que é de onde vem a maior parte do valor.
+
+Não precisa arrumar o histórico inteiro hoje. Precisa parar de criar bagunça nova.
+
+## Passo 3: separa o sensível do operacional
+
+Marca na lista do passo 1 o que é sensível: documento, dado bancário, dado de saúde, contrato assinado, base de clientes.
+
+Isso define o que pode e o que não pode ir pra uma ferramenta de IA, e é a base da [classificação em três níveis](/blog/como-definir-o-que-o-time-pode-e-nao-pode-colar-numa-ia-2026) que o time precisa ter na cabeça.
+
+Fazer essa separação antes é o que evita o acidente clássico: alguém com pressa cola o documento inteiro, com tudo dentro, numa ferramenta pública.
+
+## Passo 4: mata as cópias paralelas
+
+Em toda empresa pequena existe a planilha pessoal que virou a versão real de alguma coisa.
+
+O sistema tem o pedido, mas o controle de verdade está na planilha do vendedor. O CRM tem o cliente, mas o histórico que importa está no WhatsApp de alguém.
+
+Isso cria dois problemas que se somam: a informação some junto com a pessoa, e qualquer análise feita no sistema está errada, porque a realidade mora fora dele.
+
+Não precisa proibir planilha. Precisa decidir, pra cada informação, **qual é a fonte oficial**, e fazer o resto apontar pra ela.
+
+## O que isso destrava
+
+Com inventário, identificador consistente, sensibilidade marcada e fonte única definida, você consegue:
+
+Pedir pra IA resumir o histórico de um cliente, porque dá pra juntar as fontes.
+Gerar relatório que bate com a realidade, porque não tem versão paralela.
+Usar ferramenta de IA sem medo, porque o que é sensível está mapeado.
+
+Nada disso exigiu banco novo, ferramenta nova ou consultoria.
+
+## O que não fazer agora
+
+**Não contrata plataforma de dados.** Com o volume de um negócio pequeno, é resolver com caminhão o que cabe na mochila.
+
+**Não tenta limpar o histórico inteiro.** Começa pelo que entra de hoje em diante. O passado se arruma quando precisar, e boa parte dele nunca vai precisar.
+
+**Não espera estar perfeito.** Dado organizado é consequência de uso, não pré-requisito. Quem espera a organização perfeita nunca começa.
+
+Uma tarde de inventário vale mais que seis meses de projeto.
+
+A decisão é sua.`,
+  },
+  {
+    id: "o-direito-de-apagar-e-obrigacao-sua-nao-favor-2026",
+    slug: "o-direito-de-apagar-e-obrigacao-sua-nao-favor-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-10-12T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80",
+    title: "O direito de apagar é obrigação sua, não favor",
+    excerpt:
+      "Quando um cliente pede pra apagar os dados dele, a empresa costuma tratar como pedido chato a ser negociado. É direito previsto em lei, e a forma de responder diz muito sobre a operação.",
+    summary:
+      "O pedido de exclusão de dados é um direito do titular previsto na LGPD, não uma cortesia que a empresa concede. Tratar como favor gera três problemas: atraso que vira risco jurídico, resposta improvisada que varia conforme quem atende, e a descoberta tardia de que a empresa não sabe onde o dado está. A forma madura é ter um processo definido, saber o que a lei permite conservar e responder com clareza sobre o que foi feito.",
+    faq: [
+      {"q": "Posso recusar um pedido de exclusão?", "a": "Integralmente, raramente. A LGPD prevê hipóteses de conservação, como cumprimento de obrigação legal ou regulatória, mas elas cobrem partes específicas do dado, não o conjunto inteiro. O correto é apagar o que não se enquadra e explicar o que ficou e por quê."},
+      {"q": "Qual o prazo para responder?", "a": "Para confirmação de existência de tratamento e acesso, a lei fala em formato simplificado imediatamente ou declaração completa em até 15 dias. Para a eliminação em si, a exigência é de prazo razoável, então o seguro é tratar com a mesma urgência e documentar."},
+      {"q": "O que posso conservar mesmo após o pedido?", "a": "O que a lei exige que seja guardado, como registros fiscais e contábeis, e as demais hipóteses previstas na norma. A regra prática é conservar o mínimo necessário para cumprir a obrigação e eliminar o resto."},
+      {"q": "Preciso de advogado para isso?", "a": "Para desenhar o processo e definir os prazos de retenção do seu setor, sim. Este texto é orientação de operação, não parecer jurídico."}
+    ],
+    content: `Chega um e-mail: o cliente quer que você apague os dados dele.
+
+A reação mais comum nas empresas é tratar isso como um pedido incômodo. Alguém pergunta se precisa mesmo, outro sugere oferecer desconto pra pessoa desistir, e aquilo fica parado.
+
+É o enquadramento errado, e ele cria três problemas.
+
+## Problema 1: não é cortesia
+
+A LGPD lista os direitos do titular, e a eliminação dos dados está entre eles. Existem hipóteses em que a empresa pode e deve conservar parte da informação, e voltamos nisso. Mas o ponto de partida é: **a pessoa tem direito, e você tem obrigação**.
+
+Quando a empresa trata como favor negociável, ela se coloca numa posição em que cada pedido vira discussão. E discussão consome tempo, atrasa, e atraso é exatamente o que transforma uma solicitação simples em exposição.
+
+## Problema 2: a resposta vira improviso
+
+Sem processo definido, quem responde é quem recebeu o e-mail.
+
+Um atendente apaga tudo que encontra. Outro responde que não é possível. Um terceiro pede documento que a lei não exige.
+
+Três clientes, três respostas diferentes, e nenhuma delas é a política da empresa, porque a empresa não tem política. É o mesmo vazio que resolvi em [a política de IA que toda empresa precisa ter](/blog/a-politica-de-ia-que-toda-empresa-precisa-ter-2026), aplicado a outro tema.
+
+## Problema 3: o pedido revela o que ninguém sabia
+
+Esse é o mais revelador.
+
+Na hora de apagar, descobre-se que o dado daquele cliente está no sistema, no backup, na planilha de alguém, numa ferramenta de e-mail marketing e numa base que foi exportada pra um fornecedor dois anos atrás.
+
+Ninguém sabe o mapa. E não saber onde o dado está é um problema muito maior que o pedido de exclusão: significa que a empresa também não sabe o que perderia num incidente.
+
+O pedido não criou o problema. Só acendeu a luz.
+
+## O que a lei permite conservar
+
+Aqui mora a parte que muita gente erra pros dois lados.
+
+Não é "apaga tudo imediatamente" nem "não dá pra apagar nada".
+
+A norma prevê hipóteses de conservação, entre elas o cumprimento de obrigação legal ou regulatória. Registro fiscal e contábil é o exemplo clássico: existe prazo legal de guarda e ele não desaparece porque o cliente pediu.
+
+A postura correta é cirúrgica: **conserva o mínimo que a lei exige, apaga o resto, e explica**. Nem o exagero de apagar o que você é obrigado a manter, nem a comodidade de manter tudo alegando obrigação.
+
+E como o prazo de guarda varia por setor, essa definição é conversa com jurídico, uma vez, pra valer sempre.
+
+## O que uma resposta madura contém
+
+Quatro coisas, e nenhuma exige advogado por pedido:
+
+**Confirmação de que o pedido foi recebido**, rápido.
+**O que foi apagado.**
+**O que foi conservado e por qual motivo legal.**
+**Até quando** aquilo ficará guardado.
+
+Isso cabe num modelo de e-mail. Escreve uma vez, usa sempre.
+
+Sobre prazo: para confirmação de existência de tratamento e acesso, a lei fala em formato simplificado imediatamente ou declaração completa em até 15 dias. Para a eliminação em si, a exigência é de prazo razoável, sem número fixo. Na prática, tratar tudo com a mesma urgência é mais barato que discutir qual regra se aplica.
+
+## O que isso diz sobre a empresa
+
+Uma operação que apaga dado com clareza em dias é uma operação que sabe onde o dado está, tem processo e consegue agir rápido.
+
+Uma que enrola por semanas não está protegendo nada. Está informando, pra quem pediu, que não tem controle do próprio sistema.
+
+Direito do titular não é custo de conformidade. É teste de maturidade operacional, e ele chega sem avisar.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-apagar-o-dado-de-um-cliente-que-pediu-lgpd-na-pratica-2026",
+    slug: "como-apagar-o-dado-de-um-cliente-que-pediu-lgpd-na-pratica-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-10-12T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    title: "Como apagar o dado de um cliente que pediu (LGPD na prática)",
+    excerpt:
+      "Parece um comando de apagar. Não é. O dado está em mais lugares do que você imagina, parte dele você é obrigado a manter, e o backup é a pegadinha que quase todo mundo esquece.",
+    summary:
+      "Atender um pedido de exclusão exige mais que remover um registro do banco: o dado costuma estar em sistemas auxiliares, ferramentas de terceiros, exportações e backups. O processo prático tem cinco passos: localizar todas as cópias, separar o que a lei obriga a conservar, apagar o restante, tratar os backups com política de retenção em vez de edição, e registrar o que foi feito. Definição de prazos de guarda é conversa com jurídico, não chute.",
+    faq: [
+      {"q": "Preciso apagar o dado dos backups também?", "a": "Editar backup antigo costuma ser inviável e arriscado. A prática aceita é documentar a política de retenção, garantir que a cópia não seja restaurada para uso comum e que o dado seja eliminado quando aquele backup expirar."},
+      {"q": "E se o dado estiver num fornecedor?", "a": "A obrigação continua sendo sua. É preciso comunicar o operador e exigir a eliminação, o que só é viável se existir contrato prevendo isso, por isso vale checar antes de contratar."},
+      {"q": "O que fazer quando parte do dado precisa ficar?", "a": "Apagar o que não se enquadra em nenhuma hipótese de conservação e manter só o mínimo exigido, informando ao titular o que ficou e por qual motivo legal."},
+      {"q": "Anonimizar conta como apagar?", "a": "Pode atender, desde que a anonimização seja real e não permita reidentificação. Tirar o nome e manter CPF, e-mail ou combinação que identifique a pessoa não é anonimizar."}
+    ],
+    content: `Pedido de exclusão parece tarefa simples: acha o registro, apaga, responde o cliente.
+
+Na prática é um rastreamento, e é por isso que tanta empresa demora ou faz pela metade.
+
+Cinco passos.
+
+## Passo 1: encontra todas as cópias
+
+O dado quase nunca está num lugar só. Vale procurar em seis:
+
+**O banco principal.** O óbvio, e o único que a maioria lembra.
+**Sistemas auxiliares.** Suporte, e-mail marketing, CRM, cobrança.
+**Arquivos.** Documento enviado, foto, PDF, contrato no armazenamento.
+**Registros e histórico.** Logs que guardam e-mail ou identificador.
+**Exportações.** Planilha que alguém baixou, relatório enviado por e-mail.
+**Backups.** O que todo mundo esquece.
+
+Se você nunca fez esse mapa, a primeira solicitação vai levar dias. Depois de feito, as próximas levam minutos. Por isso vale fazer o mapa **antes** de precisar, junto com o [inventário de dados](/blog/como-organizar-os-dados-de-um-negocio-pequeno-pra-usar-ia-2026).
+
+## Passo 2: separa o que a lei obriga a manter
+
+Antes de apagar qualquer coisa, decide o que fica.
+
+A LGPD prevê hipóteses de conservação, e a mais comum é o cumprimento de obrigação legal ou regulatória. Registro fiscal e contábil costuma ter prazo próprio de guarda, e ele vale mesmo depois do pedido.
+
+A regra prática: **conserva o mínimo necessário pra cumprir a obrigação, apaga o resto**.
+
+Isso significa, muitas vezes, manter a nota fiscal e apagar o perfil, o histórico de navegação, as preferências e o conteúdo de atendimento. Não é tudo ou nada.
+
+E os prazos de guarda variam por setor. Define uma vez com o jurídico e escreve numa tabela: que tipo de dado, quanto tempo, por qual norma. Depois disso, a operação segue a tabela sem precisar de parecer a cada pedido.
+
+## Passo 3: apaga de verdade o que pode ser apagado
+
+Dois cuidados.
+
+**Apagar não é esconder.** Marcar como inativo mantém o dado lá. Se o pedido é de eliminação, inativar não cumpre.
+
+**Cuidado com o efeito cascata.** Em banco relacional, apagar um cliente pode arrastar pedidos e registros que você precisa manter. Vale o mesmo método de [apagar código com segurança](/blog/como-apagar-codigo-com-seguranca-2026): entende o alcance antes de executar.
+
+Se a alternativa for anonimizar em vez de apagar, ela precisa ser real. Tirar o nome e deixar CPF, e-mail ou uma combinação que identifique a pessoa não é anonimização; é falsa sensação de conformidade.
+
+## Passo 4: trata o backup pela retenção
+
+Editar backup antigo é inviável tecnicamente e arriscado: você corrompe a cópia que existe justamente pra salvar você num desastre.
+
+A prática aceita é outra:
+
+Documenta a política de retenção dos backups, com prazo definido.
+Garante que aquele dado não volta pro uso comum se houver restauração.
+Deixa registrado que a eliminação se completa quando o backup expira.
+
+Isso só funciona se os backups **tiverem** prazo de expiração. Backup eterno significa dado eterno, e aí a promessa de exclusão não se sustenta. Vale revisar isso junto com o teste de restauração, que é assunto de [backup que você nunca restaurou](/blog/backup-que-voce-nunca-restaurou-nao-e-backup-2026).
+
+## Passo 5: registra o que foi feito
+
+Guarda: quem pediu, quando, o que foi apagado, o que foi conservado, por qual motivo e quando aquilo expira.
+
+Esse registro é a sua prova de que atendeu. Sem ele, você fez o trabalho e não consegue demonstrar, o que na prática é parecido com não ter feito.
+
+## O que preparar antes do próximo pedido
+
+Três coisas, e todas são de uma vez só:
+
+O mapa de onde o dado vive.
+A tabela de prazos de guarda por tipo de dado, definida com jurídico.
+O modelo de resposta ao titular.
+
+Com as três, o pedido que levava dias passa a levar uma hora.
+
+Este texto é orientação de operação, não parecer jurídico. A definição dos prazos e das hipóteses do seu setor é conversa com advogado, uma vez, pra valer sempre.
+
+A decisão é sua.`,
+  },
+  {
+    id: "backup-que-voce-nunca-restaurou-nao-e-backup-2026",
+    slug: "backup-que-voce-nunca-restaurou-nao-e-backup-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-10-11T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+    title: "Backup que você nunca restaurou não é backup",
+    excerpt:
+      "É uma crença. Existe uma diferença enorme entre ter arquivos sendo copiados e conseguir voltar a operar, e a maioria só descobre qual tem no pior dia possível.",
+    summary:
+      "Backup existente e backup funcional são coisas diferentes, e só o teste de restauração distingue uma da outra. Os modos de falha mais comuns são silenciosos: rotina que parou meses atrás, cópia incompleta que não inclui tudo que o sistema precisa, arquivo íntegro que ninguém sabe restaurar e tempo de recuperação maior que o tolerável. Um teste por trimestre, feito em ambiente separado e cronometrado, converte crença em evidência.",
+    faq: [
+      {"q": "Com que frequência testar a restauração?", "a": "Uma vez por trimestre resolve para a maioria dos projetos pequenos. O que importa é a regularidade, porque o que se procura é detectar quando algo parou de funcionar."},
+      {"q": "O que exatamente testar?", "a": "Restaurar numa cópia separada e verificar se o sistema volta a funcionar com aquele dado, não apenas se o arquivo abre. E cronometrar quanto tempo levou."},
+      {"q": "Qual a falha mais comum em backup?", "a": "A rotina ter parado sem alerta. Como ninguém olha enquanto nada dá errado, costuma-se descobrir meses depois, na hora em que o backup seria necessário."},
+      {"q": "Backup automático do provedor é suficiente?", "a": "Ajuda, mas não dispensa saber o prazo de retenção, o que está incluso e como restaurar. Muita gente descobre tarde que o backup do provedor cobre o banco e não cobre os arquivos."}
+    ],
+    content: `Pergunta pra qualquer empresa se existe backup e a resposta é sim.
+
+Pergunta quando foi a última vez que alguém restaurou e testou. O silêncio responde.
+
+Essas duas perguntas separam duas coisas muito diferentes.
+
+## Ter cópia e conseguir voltar
+
+**Backup existe** quando arquivos estão sendo copiados pra algum lugar.
+
+**Backup funciona** quando você consegue, a partir daquela cópia, voltar a operar.
+
+A distância entre as duas é onde moram os desastres. E ela só é medida de um jeito: restaurando.
+
+## Os quatro modos de falha
+
+Todos silenciosos. Nenhum avisa.
+
+**A rotina parou.** Mudou uma credencial, estourou o espaço, alguém mexeu numa configuração. A cópia simplesmente deixou de acontecer, e como nada quebra enquanto você não precisa, descobre-se meses depois.
+
+**A cópia está incompleta.** O backup pega o banco e não pega os arquivos enviados pelos usuários. Ou pega os dois e não pega as configurações. Você restaura e tem metade de um sistema.
+
+**Ninguém sabe restaurar.** O arquivo está íntegro, e a pessoa que sabia o procedimento saiu da empresa. Aprender durante o incidente é a pior condição possível.
+
+**Demora demais.** O backup funciona e leva dezoito horas pra restaurar. Se o negócio não aguenta dezoito horas parado, esse backup não resolve o seu problema.
+
+## O teste, uma vez por trimestre
+
+Não é complicado e não precisa ser perfeito.
+
+**Restaura numa cópia separada.** Nunca por cima da produção. O objetivo é testar, não arriscar.
+
+**Confere se o sistema funciona**, não só se o arquivo abre. Entra, navega, procura um registro que você sabe que existe. Arquivo íntegro com sistema que não sobe não é recuperação.
+
+**Cronometra.** Esse número é o seu tempo real de recuperação. Até medir, é chute.
+
+**Anota o procedimento.** Enquanto faz, escreve os passos. Isso vira o roteiro que alguém vai seguir sob pressão, e sob pressão ninguém improvisa bem.
+
+Uma hora por trimestre. É o item de maior retorno do [checkup de manutenção](/blog/como-fazer-o-checkup-de-manutencao-do-seu-projeto-2026).
+
+## As três perguntas que o teste responde
+
+**Quanto dado eu perco?** A distância entre o último backup e o momento da falha. Se a cópia é diária, você pode perder um dia. Aceitável ou não é decisão de negócio, não técnica.
+
+**Quanto tempo fico fora?** O número que você acabou de cronometrar.
+
+**O que não volta?** Quase sempre tem algo fora do backup, e é melhor descobrir agora.
+
+## O caso específico de quem usa serviço gerenciado
+
+Muita gente assume que está coberta porque o provedor faz backup automático.
+
+Cobre parte, e vale confirmar três coisas: por quanto tempo as cópias ficam guardadas, o que exatamente está incluso, e como se restaura.
+
+A descoberta mais comum é que o backup do provedor cobre o banco de dados e não cobre os arquivos que os usuários enviaram, que costumam estar em outro serviço. São dois backups, não um.
+
+## Por que isso é tratado como opcional
+
+Porque é o trabalho mais ingrato que existe: ninguém elogia backup testado, e o resultado de fazer certo é que nada acontece.
+
+Só que o custo de descobrir no dia errado não é técnico. É perder dado de cliente sem ter como recuperar, e não existe conserto retroativo pra isso.
+
+Backup não testado é uma aposta que você faz todo dia sem saber.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-migrar-dado-sem-perder-nada-no-caminho-2026",
+    slug: "como-migrar-dado-sem-perder-nada-no-caminho-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-10-11T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+    title: "Como migrar dado sem perder nada no caminho",
+    excerpt:
+      "Migração é a operação com maior chance de perda silenciosa que existe. O método que funciona nunca desliga a origem antes de provar, com número, que o destino está igual.",
+    summary:
+      "Migração de dados falha em silêncio: registros somem, acentos quebram, datas invertem e ninguém percebe até precisar daquele caso específico. O método seguro tem cinco passos: contar antes, migrar para um destino novo sem tocar na origem, conferir por contagem e por amostra, rodar os dois em paralelo por um período, e só então desligar a origem. A regra que sustenta tudo é nunca apagar a origem no mesmo dia.",
+    faq: [
+      {"q": "Qual o maior risco de uma migração?", "a": "A perda silenciosa. Registros que não entram, campos truncados ou caracteres corrompidos não geram erro visível, e o problema só aparece meses depois, quando alguém procura um caso específico."},
+      {"q": "Como provar que a migração deu certo?", "a": "Com número e com amostra. Contagem total e por categoria batendo, somas de valores conferindo, e inspeção manual de casos extremos como o registro mais antigo, o maior e o que tem caracteres especiais."},
+      {"q": "Quando desligar o sistema antigo?", "a": "Depois de um período em que os dois convivem e o novo se prova em uso real. Desligar no mesmo dia da migração remove a única rede de proteção que existe."},
+      {"q": "Dá para usar IA na migração?", "a": "Dá, e ela é útil para escrever a transformação e mapear campos entre formatos. A conferência continua sendo sua, porque ela não sabe quais registros importam para o negócio."}
+    ],
+    content: `Migrar dado é a operação com maior chance de perda silenciosa que existe num sistema.
+
+Não é a mais difícil. É a mais traiçoeira, porque quando dá errado, nada avisa.
+
+## Por que o erro não aparece
+
+Em quase toda outra operação, falha grita. A tela quebra, o teste falha, alguém reclama.
+
+Numa migração, o sistema novo sobe funcionando lindamente. Com 94% dos registros.
+
+Os 6% que faltam não geram erro nenhum. Eles simplesmente não estão lá. E você descobre em março, quando alguém procura um cliente de 2024 e ele não existe mais.
+
+Os formatos mais comuns de perda silenciosa:
+
+Registros que não entraram porque bateram numa validação do destino.
+Acentos virando caractere estranho por diferença de codificação.
+Datas invertendo dia e mês.
+Texto longo cortado porque o campo novo é menor.
+Valor decimal arredondado por diferença de tipo.
+
+Nenhum desses dá erro. Todos corrompem.
+
+## Passo 1: conta antes
+
+Antes de mover qualquer coisa, tira a fotografia da origem.
+
+Quantos registros no total. Quantos por categoria. Soma dos valores numéricos que importam. Data do registro mais antigo e do mais novo.
+
+Anota num arquivo. Esses números são o seu gabarito, e sem eles você não tem como provar nada depois.
+
+## Passo 2: migra pra um destino novo, sem tocar na origem
+
+A origem fica intacta, em modo leitura. Nada de mover, nada de apagar.
+
+Se der errado, você refaz. Essa é a diferença entre um contratempo e um desastre.
+
+E migra em lote pequeno primeiro: cem registros, confere, depois o resto. Os cem primeiros revelam quase todos os problemas de formato, e revelam barato.
+
+## Passo 3: confere por número e por amostra
+
+Os dois, porque eles pegam coisas diferentes.
+
+**Por número:** a contagem bate? As somas batem? A contagem por categoria bate? Se faltam 300 registros, você sabe agora, não em março.
+
+**Por amostra:** abre na mão alguns casos escolhidos a dedo. O mais antigo, o mais recente, o maior, um com acento no nome, um com campo vazio, um com valor negativo.
+
+É nas bordas que a corrupção aparece. Amostra aleatória do meio da base não pega quase nada.
+
+## Passo 4: roda os dois em paralelo
+
+O passo que quase todo mundo pula por pressa, e o que mais protege.
+
+Por um período, origem e destino coexistem. O novo é usado de verdade; o antigo continua disponível, intacto, em leitura.
+
+Se aparecer qualquer dúvida, você compara. É a mesma lógica de [mudar uma parte que o sistema inteiro usa](/blog/como-mudar-uma-parte-que-o-sistema-inteiro-usa-2026): o novo nasce ao lado, não no lugar.
+
+Quanto tempo depende do ciclo do negócio. Se existe fechamento mensal, pelo menos um fechamento inteiro precisa acontecer no sistema novo antes de desligar o antigo.
+
+## Passo 5: desliga a origem, depois
+
+Só depois do período de convivência, e com o gabarito do passo 1 conferido de novo.
+
+E mesmo aí: guarda uma cópia exportada da origem, fora do sistema. Custa quase nada e é o seu seguro.
+
+**A regra que resume tudo: nunca apaga a origem no mesmo dia.** Se você só puder seguir uma coisa deste texto, segue essa.
+
+## Onde a IA ajuda
+
+Ela é boa em escrever a transformação, mapear campo por campo entre dois formatos, achar inconsistência num conjunto de exemplos e gerar o script de conferência.
+
+O que ela não faz é saber **quais registros importam**. Ela não sabe que aqueles vinte clientes antigos são os que mais faturam, nem que aquele campo aparentemente vazio é usado no fechamento contábil.
+
+Ela faz o trabalho. A conferência é sua.
+
+Migração bem feita é chata, lenta e termina com números iguais nos dois lados. É exatamente isso que você quer.
+
+A decisão é sua.`,
+  },
+  {
+    id: "relatorio-errado-custa-mais-caro-que-sistema-fora-do-ar-2026",
+    slug: "relatorio-errado-custa-mais-caro-que-sistema-fora-do-ar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Negócios"],
+    publishedAt: "2026-10-10T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    title: "Relatório errado custa mais caro que sistema fora do ar",
+    excerpt:
+      "Sistema fora do ar todo mundo vê e todo mundo corre. Número errado ninguém vê, e a decisão tomada em cima dele segue produzindo efeito por meses.",
+    summary:
+      "Indisponibilidade é cara e visível, e por isso é corrigida rápido. Número errado é silencioso: ele é usado para decidir preço, contratação e investimento, e o erro continua produzindo efeito depois de corrigido, porque as decisões já foram tomadas. O agravante é que dado errado destrói confiança no conjunto, e equipe que desconfia dos números volta a decidir por intuição.",
+    faq: [
+      {"q": "Por que número errado é pior que sistema fora do ar?", "a": "Porque a queda é percebida em minutos e corrigida no mesmo dia, enquanto o número errado é usado para decidir e continua produzindo efeito mesmo depois de corrigido."},
+      {"q": "Como descobrir que um relatório está errado?", "a": "Conferindo contra uma fonte independente e aplicando testes de sanidade: ordem de grandeza plausível, soma das partes igual ao total e comparação com o período anterior."},
+      {"q": "Qual a causa mais comum de relatório errado?", "a": "Definição ambígua. O mesmo nome significando coisas diferentes em áreas diferentes, como cliente ativo ou receita, gera números distintos que estão todos tecnicamente corretos."},
+      {"q": "O que fazer quando se descobre um erro antigo?", "a": "Comunicar, corrigir e revisar as decisões tomadas com base naquele dado. Corrigir o relatório sem revisar as decisões conserta a planilha e não conserta o efeito."}
+    ],
+    content: `Quando o sistema cai, todo mundo sabe em minutos. Cliente reclama, alerta dispara, alguém larga tudo pra resolver.
+
+Quando o relatório mostra um número errado, ninguém sabe. E o número vira decisão.
+
+## As duas curvas de custo
+
+**Sistema fora do ar** tem custo alto e curto. Duas horas de queda machucam, mas às 14h você está de volta e a conta parou de crescer.
+
+**Número errado** tem custo baixo por dia e longo. Ninguém percebe, ninguém corre, e o efeito continua.
+
+O problema é o que acontece no meio desse tempo: alguém decidiu com aquele número. Reajustou preço, contratou gente, cortou um canal, fez um investimento.
+
+E aqui mora a parte que quase ninguém considera: **corrigir o relatório não desfaz a decisão**. O dado volta ao certo, o contrato assinado continua assinado.
+
+## Como relatório fica errado sem ninguém perceber
+
+Quatro causas, e a primeira é a campeã.
+
+**Definição ambígua.** O que é "cliente ativo"? Quem comprou nos últimos 30 dias, quem tem contrato vigente, quem fez login? Três definições, três números, todos tecnicamente corretos. Duas áreas usando a mesma palavra pra coisas diferentes produzem relatórios que nunca batem.
+
+**Dado faltando que vira zero.** A integração falhou numa terça, aquele dia não entrou, e o relatório mensal mostra um número menor sem indicar que falta coisa. Vazio virando zero é silencioso e devastador.
+
+**Duplicidade.** O mesmo registro contado duas vezes depois de uma reprocessagem. Soma infla e ninguém questiona número grande.
+
+**Regra que mudou e ninguém atualizou.** A empresa passou a considerar frete na receita. O relatório antigo continua com a regra velha. Agora existem duas verdades circulando.
+
+## O custo que ninguém coloca na planilha
+
+Perda de confiança.
+
+No momento em que a liderança descobre que um número estava errado, ela passa a desconfiar de todos.
+
+Aí acontece o pior cenário possível: a empresa tem dado e volta a decidir por intuição, porque ninguém confia no painel. Todo o investimento em instrumentação vira enfeite.
+
+Reconstruir essa confiança leva muito mais tempo que consertar a consulta.
+
+## O que fazer, na ordem
+
+**1. Define os termos, por escrito.** Uma página com os cinco ou dez números que a empresa usa pra decidir, cada um com a definição exata e a fonte. É o trabalho mais barato e mais ignorado que existe.
+
+**2. Põe teste de sanidade no relatório.** Três conferências automáticas: a ordem de grandeza é plausível, a soma das partes bate com o total, e a variação contra o período anterior está dentro de uma faixa razoável. Fora disso, o relatório avisa em vez de exibir.
+
+**3. Mostra quando falta dado.** Se a integração falhou, o relatório precisa dizer "dados incompletos" em vez de mostrar um número menor com cara de verdade. Falha silenciosa num relatório é o mesmo problema de [falha silenciosa num sistema](/blog/como-monitorar-seu-app-e-saber-quando-quebra-2026).
+
+**4. Confere contra fonte independente.** Uma vez por mês, compara o número principal com algo que venha de outro caminho: extrato, sistema do contador, contagem manual de uma amostra.
+
+## Quando descobrir um erro antigo
+
+Comunica rápido, corrige, e faz a parte que dói: **revisa as decisões tomadas em cima daquele dado**.
+
+Essa última é a que diferencia operação madura de empresa que varre pra baixo do tapete. Corrigir a planilha e não revisar a decisão conserta o relatório e mantém o estrago.
+
+Sistema fora do ar é uma crise de duas horas. Número errado é uma decisão errada que ninguém sabe que tomou.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-corrigir-dado-ruim-antes-que-vire-decisao-ruim-2026",
+    slug: "como-corrigir-dado-ruim-antes-que-vire-decisao-ruim-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-10-10T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    title: "Como corrigir dado ruim antes que vire decisão ruim",
+    excerpt:
+      "Limpar a base inteira é projeto que nunca termina. Existe um caminho melhor: fechar a torneira primeiro, depois limpar só o que alguém usa pra decidir.",
+    summary:
+      "Limpeza de dados falha quando é tratada como mutirão: a base é limpa uma vez e volta a sujar, porque a entrada continua aberta. A ordem que funciona é inversa: primeiro travar a entrada com validação no servidor e listas fechadas, depois limpar apenas o que alimenta decisão, e por último decidir o que fazer com o histórico, que em boa parte dos casos não precisa ser corrigido.",
+    faq: [
+      {"q": "Por que mutirão de limpeza não funciona?", "a": "Porque trata o sintoma. Enquanto a entrada aceitar dado inconsistente, a base suja de novo, e em poucos meses o trabalho inteiro precisa ser refeito."},
+      {"q": "Por onde começar?", "a": "Pela entrada. Validação no servidor, lista fechada em vez de campo livre onde faz sentido, e formato definido para data, documento e valor."},
+      {"q": "Preciso corrigir todo o histórico?", "a": "Quase nunca. Corrija o que alimenta decisão atual e deixe o resto como está, marcado como histórico, porque limpar dado que ninguém consulta é custo sem retorno."},
+      {"q": "Como a IA ajuda nessa limpeza?", "a": "Ela é eficiente para detectar padrões inconsistentes, propor normalização e identificar prováveis duplicatas. A aprovação da correção precisa ser humana, porque fundir dois registros errados cria um problema pior."}
+    ],
+    content: `Toda empresa chega num momento em que alguém olha a base e decide fazer uma limpeza geral.
+
+Monta-se o esforço, a base fica bonita por algumas semanas, e volta a sujar.
+
+Porque a limpeza trata o sintoma e deixa a causa intacta.
+
+## A ordem certa é o contrário da intuitiva
+
+A intuição manda limpar primeiro.
+
+O certo é **fechar a torneira primeiro**.
+
+Se a entrada continua aceitando dado inconsistente, qualquer limpeza tem prazo de validade. Você gasta duas semanas e, em três meses, está no mesmo lugar.
+
+## Primeiro: trava a entrada
+
+Três mudanças resolvem a maior parte.
+
+**Validação no servidor, não só na tela.** A validação do navegador é conveniência pro usuário; qualquer caminho que não passe pela tela ignora ela. A que protege é a do servidor.
+
+**Lista fechada em vez de campo livre.** Todo campo de texto livre vira bagunça. Estado digitado à mão produz SP, S.P., São Paulo e Sao Paulo. Onde o conjunto de valores é conhecido, lista.
+
+**Formato definido pro que tem formato.** Data, documento, telefone, valor. Define um, converte na entrada, guarda sempre igual. Metade dos problemas de relatório nasce de data guardada em três formatos diferentes.
+
+Isso não resolve o passado. Garante que o passado para de crescer.
+
+## Depois: limpa só o que alimenta decisão
+
+Aqui está o segundo erro comum: querer limpar tudo.
+
+Pergunta o que de fato é usado pra decidir. Normalmente é pouco: cliente, receita, status de contrato, uma ou duas categorias.
+
+Começa por esses. O resto espera, e boa parte nunca vai precisar.
+
+**Identifica o problema por tipo**, não registro a registro:
+
+Duplicata, o mesmo cliente em duas fichas.
+Formato misturado, a mesma informação escrita de jeitos diferentes.
+Vazio que deveria ter valor.
+Valor impossível, data no futuro, idade de 200 anos, preço negativo.
+
+Cada tipo tem um conserto em bloco. Um a um é inviável e desnecessário.
+
+## Duplicata merece cuidado extra
+
+É o tipo mais perigoso de limpar, porque o conserto errado é pior que o problema.
+
+Fundir dois registros que não eram a mesma pessoa cria um monstro: histórico de dois clientes misturados, e separar depois é muito mais difícil que fundir.
+
+Por isso: duplicata provável é sugerida pelo sistema e **aprovada por gente**. Nunca fundida automaticamente por semelhança de nome.
+
+## Onde a IA é boa aqui
+
+Essa é uma das tarefas em que ela rende mais.
+
+Detecta padrão inconsistente numa coluna com facilidade. Propõe normalização. Identifica provável duplicata melhor que regra simples. Encontra valor absurdo que ninguém viu.
+
+O que ela não faz é **aprovar a correção**. Ela não sabe que aqueles dois registros parecidos são, na verdade, matriz e filial, que são clientes diferentes com nome quase igual.
+
+Fluxo que funciona: ela aponta, propõe e explica; você aprova em lote depois de olhar uma amostra. É o mesmo princípio de [revisar o trabalho de um agente](/blog/como-revisar-o-trabalho-de-um-agente-que-rodou-sozinho-2026).
+
+## Por último: o histórico
+
+Depois da entrada travada e do dado de decisão limpo, sobra o passado.
+
+E a resposta certa, na maioria dos casos, é **deixar como está**.
+
+Marca como histórico, documenta que até tal data o padrão era outro, e segue. Limpar dado que ninguém consulta é custo sem retorno, e é onde projetos de limpeza morrem de exaustão.
+
+Fecha a torneira, limpa o que decide, deixa o resto quieto.
+
+A decisão é sua.`,
+  },
+  {
+    id: "quem-tem-acesso-ao-seu-banco-hoje-2026",
+    slug: "quem-tem-acesso-ao-seu-banco-hoje-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-10-09T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    title: "Quem tem acesso ao seu banco hoje? Quase ninguém sabe responder",
+    excerpt:
+      "Faz a pergunta na sua empresa e observa a pausa. Acesso é concedido o tempo todo, por motivo legítimo, e praticamente nunca é retirado.",
+    summary:
+      "Acesso a dado é concedido por motivos legítimos e quase nunca revisado, então ele só acumula: ex-funcionário, fornecedor antigo, credencial criada para um teste e chave compartilhada entre pessoas. O resultado é uma lista que ninguém consegue recitar e um estrago potencial que ninguém dimensiona. A correção é barata e consiste em levantar a lista, remover o que não tem justificativa atual e transformar a revisão em rotina trimestral.",
+    faq: [
+      {"q": "Por que o acesso só acumula?", "a": "Porque conceder resolve um problema imediato e revogar não resolve nada visível. Como nada quebra quando o acesso sobra, ninguém volta para retirá-lo."},
+      {"q": "O que levantar nesse inventário?", "a": "Pessoas com acesso ao painel do banco, credenciais de aplicação, chaves de integração com terceiros, quem consegue restaurar backup e quem tem acesso às ferramentas intermediárias de dados."},
+      {"q": "Credencial compartilhada é problema grave?", "a": "É, por dois motivos: não há como saber quem fez o quê e não há como revogar o acesso de uma pessoa sem afetar todas as outras."},
+      {"q": "Com que frequência revisar?", "a": "Uma vez por trimestre para a lista completa e imediatamente quando alguém sai da empresa ou um contrato com fornecedor termina."}
+    ],
+    content: `Faz essa pergunta na sua empresa hoje: quem consegue ler a base de clientes agora?
+
+A pausa que vem depois é a resposta.
+
+## Por que ninguém sabe
+
+Porque acesso só entra. Nunca sai.
+
+Cada concessão teve motivo legítimo. O desenvolvedor precisou investigar um bug. O fornecedor precisou fazer a integração. O estagiário precisou de um relatório. A ferramenta nova precisou conectar.
+
+Todos resolveram o problema do dia. E ninguém voltou pra tirar depois, porque tirar não resolve nada visível.
+
+Esse é o ponto: **acesso sobrando não tem sintoma**. O sistema funciona igual. Ninguém reclama. A diferença só aparece no dia em que alguém usa o que não deveria ter.
+
+## O que costuma aparecer no inventário
+
+Quando a empresa levanta a lista pela primeira vez, o padrão se repete:
+
+**Ex-funcionário** com acesso ativo. A conta de e-mail foi desligada, o acesso ao banco não.
+
+**Fornecedor de projeto encerrado.** A agência terminou há oito meses e a credencial dela continua funcionando.
+
+**Credencial de teste** criada pra resolver uma noite, com acesso amplo, que virou permanente.
+
+**Senha compartilhada** entre três pessoas. Não dá pra saber quem fez o quê, e não dá pra tirar de uma sem tirar de todas.
+
+**Ferramenta intermediária** que alguém conectou, continua lendo, e ninguém lembra pra quê.
+
+Nenhum desses é malícia. Todos são acúmulo.
+
+## O que levantar
+
+Cinco frentes, e a maioria das empresas só lembra da primeira:
+
+Pessoas com acesso ao painel do banco.
+Credenciais usadas pelas aplicações.
+Chaves de integração entregues a terceiros.
+Quem consegue restaurar um backup, porque restaurar backup é acesso a tudo.
+Ferramentas conectadas, de relatório, automação ou e-mail marketing.
+
+A quarta merece destaque. Controlar o banco com rigor e deixar o backup acessível é trancar a porta e deixar a janela aberta.
+
+## Como reduzir sem travar o trabalho
+
+**Credencial por pessoa e por sistema.** Nada compartilhado. Sem isso, não existe auditoria nem revogação individual.
+
+**Leitura por padrão, escrita por exceção.** A maioria dos acessos existe pra consultar. Escrita é poucos, nomeados.
+
+**Acesso temporário com data.** Quando alguém precisa pra uma investigação, concede com prazo. Combinar de tirar depois nunca funciona, porque depois ninguém lembra.
+
+**Nada de acesso direto à produção pra consulta rotineira.** Se o time precisa de número, a resposta é um relatório, não a chave do banco.
+
+## A rotina que evita a volta
+
+Levantar uma vez não resolve. Em seis meses a lista cresce de novo.
+
+**Trimestral:** abre a lista e, pra cada item, pergunta se a justificativa ainda existe. Entra no [checkup de manutenção](/blog/como-fazer-o-checkup-de-manutencao-do-seu-projeto-2026).
+
+**Na saída de alguém:** no mesmo dia. Desligar o e-mail e esquecer o resto é o padrão da maioria das empresas.
+
+**No fim de contrato com fornecedor:** faz parte do encerramento, como devolver equipamento.
+
+## Por que isso importa mais do que parece
+
+Porque o tamanho do estrago de qualquer incidente é definido por essa lista.
+
+Uma credencial vazada dá ao atacante exatamente o que ela permitia. Se ela permitia tudo, o incidente é total. Se permitia ler uma tabela, é contido.
+
+Você não controla se uma credencial vai vazar. Controla o que ela alcança quando vazar.
+
+Uma tarde pra levantar. Uma hora por trimestre pra manter.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-controlar-quem-acessa-qual-dado-na-pratica-2026",
+    slug: "como-controlar-quem-acessa-qual-dado-na-pratica-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Segurança"],
+    publishedAt: "2026-10-09T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
+    title: "Como controlar quem acessa qual dado, na prática",
+    excerpt:
+      "A regra que a IA escreve por padrão é: quem está logado vê tudo. Transformar isso em controle de verdade leva uma tarde e evita o vazamento mais comum que existe.",
+    summary:
+      "O controle de acesso que a IA gera por padrão costuma parar em usuário autenticado, o que significa que qualquer pessoa logada alcança o dado de qualquer outra. O controle real exige três camadas: papéis definidos antes de escrever código, verificação de propriedade do dado no servidor em toda rota, e regras no banco que neguem por padrão. O teste decisivo é trocar o identificador na URL e ver o que aparece.",
+    faq: [
+      {"q": "Autenticação não é suficiente?", "a": "Não. Autenticação responde quem é a pessoa; autorização responde o que ela pode ver. Sistema que só autentica deixa qualquer usuário logado alcançar o dado de qualquer outro."},
+      {"q": "Onde a verificação precisa ficar?", "a": "No servidor, em toda rota que devolve ou altera dado de alguém. Verificação na tela apenas esconde botões e não impede o acesso direto."},
+      {"q": "Como testar se o controle funciona?", "a": "Entrando com uma conta, abrindo um registro seu e trocando o identificador na URL por outro. Se aparecer dado alheio, o controle está só na interface."},
+      {"q": "Qual o padrão correto nas regras do banco?", "a": "Negar tudo por padrão e abrir exceções específicas, sempre amarradas ao usuário dono do dado, em vez de liberar e tentar restringir depois."}
+    ],
+    content: `Existe uma pergunta que separa sistema com controle de acesso de sistema que só tem login:
+
+**O usuário A consegue ver o dado do usuário B?**
+
+Em muito sistema feito rápido, a resposta é sim. E ninguém sabe, porque pela interface isso nunca acontece.
+
+## Autenticar não é autorizar
+
+São duas perguntas diferentes e muita gente trata como uma.
+
+**Autenticação:** quem é você? Resolvida pelo login.
+
+**Autorização:** o que você pode ver? É outra coisa, e é onde o problema mora.
+
+Quando você pede um sistema com login pra IA, ela entrega autenticação. Autorização ela entrega no nível mais básico: está logado, pode acessar.
+
+Não é erro dela. Você pediu login; ela fez login. Quem precisa dizer que cada um só vê o que é seu é você. É a mesma lógica de [não delegar arquitetura](/blog/por-que-arquitetura-nao-se-delega-pra-ia-2026): a decisão de consequência é de quem constrói.
+
+## Camada 1: define os papéis antes do código
+
+Antes de escrever qualquer coisa, uma lista curta.
+
+Quem são os perfis e o que cada um enxerga. Aluno vê as próprias notas. Professor vê a turma dele. Admin vê tudo.
+
+Três linhas. Parece burocracia e é o que evita a reescrita mais cara que existe, porque mudar quem vê o quê depois encosta em todas as telas.
+
+## Camada 2: o servidor confere de quem é o dado
+
+Esta é a camada que protege de verdade.
+
+Em **toda** rota que devolve ou altera dado de alguém, a pergunta tem que ser feita no servidor: esse registro pertence a quem está pedindo?
+
+Não é checar se está logado. É checar propriedade.
+
+A versão errada, e comum, é confiar no que o navegador manda. Se o cliente envia qual usuário ele é, qualquer um pode enviar outro. O identificador de quem pede vem da sessão no servidor, nunca do pedido.
+
+E vale o alerta: esconder o botão na tela não é controle. A tela é conveniência pro usuário honesto. Quem não usa a tela pega o dado direto, e é isso que está entre [os três lugares por onde dado sensível vaza](/blog/3-lugares-por-onde-dado-sensivel-vaza-num-app-feito-com-ia-2026).
+
+## Camada 3: o banco nega por padrão
+
+A última linha, pra quando as outras falharem.
+
+Nas regras do banco, o padrão é **negar tudo**. Depois você abre exceções específicas, sempre amarradas ao usuário dono do dado.
+
+Começar liberando e tentar restringir depois é a receita do banco aberto, porque sempre sobra uma coleção que ninguém lembrou de fechar.
+
+Essa camada é o que protege quando alguém esquece a verificação numa rota nova. E alguém vai esquecer.
+
+## O teste de um minuto
+
+Depois de implementar, confere assim:
+
+Entra com uma conta. Abre uma tela que mostra algo seu, do tipo barra pedido barra 1024. Troca pra 1025.
+
+Três resultados:
+
+**Erro de permissão:** está correto.
+**Aparece dado de outro:** o controle está só na interface.
+**Erro feio de sistema:** bloqueou por acidente, não por regra. Vale consertar, porque acidente não é garantia.
+
+Repete pra cada tipo de dado sensível. Leva minutos e é a verificação de maior retorno que existe.
+
+## O caso que quase todo mundo esquece
+
+Relatório e exportação.
+
+A tela do cliente está protegida, mas a rota que gera o relatório em planilha devolve tudo, porque foi escrita pensando no admin.
+
+Vale revisar separadamente: exportação, relatório, endereço de busca e qualquer coisa que devolva lista. São as rotas que mais entregam dado de uma vez e as que menos recebem atenção.
+
+Login diz quem entrou. Autorização diz o que cada um leva.
+
+A decisão é sua.`,
+  },
+  {
+    id: "por-que-a-ia-acerta-no-mundo-e-erra-no-seu-dado-2026",
+    slug: "por-que-a-ia-acerta-no-mundo-e-erra-no-seu-dado-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-10-08T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+    title: "Por que a IA acerta no mundo e erra no seu dado",
+    excerpt:
+      "Ela responde qualquer pergunta geral com precisão e erra feio na sua base. Não é limitação do modelo. É que o seu contexto nunca foi dito a ele.",
+    summary:
+      "A IA domina o conhecimento geral e desconhece completamente o particular da sua empresa: o significado dos seus campos, as exceções do seu negócio e o vocabulário interno. Quando ela erra no seu dado, quase sempre é porque interpretou o nome de um campo pelo sentido usual, não pelo que ele representa ali. A correção é de contexto, não de modelo: nomear, explicar as exceções e dar exemplos reais de resposta certa.",
+    faq: [
+      {"q": "Trocar por um modelo melhor resolve?", "a": "Raramente. Se o erro vem de falta de contexto, um modelo mais forte apenas erra com mais confiança, porque continua sem a informação que faltava."},
+      {"q": "Qual a causa mais comum de erro no dado próprio?", "a": "Nome de campo interpretado pelo sentido usual. Um campo chamado status significa coisas diferentes em cada empresa, e a IA assume o significado mais comum do mundo."},
+      {"q": "Como corrigir sem treinar modelo?", "a": "Entregando contexto: um glossário dos campos e termos internos, a lista de exceções do negócio e alguns exemplos reais de pergunta com resposta correta."},
+      {"q": "Exemplo ajuda mais que explicação?", "a": "Em geral sim. Três exemplos reais de resposta certa comunicam o padrão melhor que um parágrafo descrevendo o que se espera."}
+    ],
+    content: `Você pergunta uma coisa geral e a resposta é impecável.
+
+Pergunta sobre o seu negócio, com os seus dados, e ela erra de um jeito que parece bobo.
+
+A primeira reação costuma ser culpar o modelo. Quase sempre não é ele.
+
+## O que ela sabe e o que ela não sabe
+
+Ela aprendeu o mundo: como funciona contabilidade, o que é um pedido, como se estrutura um relatório, o que significa cada termo em uso comum.
+
+Ela não aprendeu **você**. Não sabe que na sua empresa "ativo" quer dizer quem comprou nos últimos 90 dias, que aquele campo chamado tipo guarda três coisas diferentes por motivo histórico, nem que o cliente com código 1 é um registro de teste de 2023 que ninguém apagou.
+
+E como a parte geral virou commodity, o erro quase sempre está na parte particular.
+
+## O erro número um: nome de campo
+
+É de longe o mais comum, e o mais invisível.
+
+Você tem um campo chamado **status**. Pra IA, status é o significado usual: ativo, inativo, pendente.
+
+Na sua empresa, **status** guarda a etapa do processo de cobrança. Nunca foi renomeado porque todo mundo sabe.
+
+Ela lê o nome, assume o sentido do mundo, e produz um resultado coerente e errado. Sem aviso nenhum, porque pra ela faz todo sentido.
+
+Isso vale pra tabela, coluna, categoria e valor abreviado. Toda empresa tem um punhado de nomes que significam outra coisa internamente.
+
+## O erro número dois: a exceção que não está escrita
+
+Todo negócio real tem regra que não cabe em lógica limpa.
+
+Aquele cliente tem condição especial por contrato antigo. Aquela categoria não entra no cálculo por decisão de 2024. Aquele período foi atípico e distorce qualquer média.
+
+Nada disso está no dado. Está na cabeça de duas pessoas.
+
+A IA calcula certo com a informação que tem. O resultado está errado porque faltava metade da regra.
+
+## O erro número três: o vocabulário interno
+
+Toda empresa tem sigla e apelido que não existem fora dela.
+
+Você pergunta sobre o "fechamento" e tem um significado específico ali. Ela responde com o significado geral.
+
+Quanto mais madura a empresa, mais vocabulário próprio, e mais essa distância cresce.
+
+## A correção é contexto, não modelo
+
+Isso é o que mais importa deste texto: **trocar por um modelo mais caro não resolve nenhum dos três**.
+
+Se falta informação, o modelo melhor erra com mais confiança. Você paga mais pela mesma resposta errada, agora mais bem escrita.
+
+Três coisas resolvem, e nenhuma exige treinar nada:
+
+**Glossário.** Uma página: o que cada campo importante significa de verdade, e os termos internos traduzidos. É o documento de maior retorno por linha escrita que existe nesse assunto.
+
+**Lista de exceções.** As regras que não estão no dado. Cliente com condição especial, categoria que não conta, período atípico.
+
+**Exemplos de resposta certa.** Três perguntas reais com a resposta correta ao lado. Exemplo comunica padrão melhor que descrição, e é o atalho mais eficiente que existe aqui.
+
+Isso vira o contexto que acompanha o pedido, e é também a matéria-prima de qualquer sistema de [recuperação de conteúdo](/blog/rag-tutorial-como-fazer-ia-responder-com-base-nos-seus-dados-2026).
+
+## Como descobrir onde ela erra no seu caso
+
+Não espera o erro aparecer numa decisão.
+
+Monta dez perguntas das quais **você já sabe a resposta**. Roda. Compara.
+
+Onde ela errar, pergunta por quê. A explicação dela costuma revelar exatamente qual suposição estava errada, e aí você sabe o que precisa entrar no glossário.
+
+Dez perguntas, meia hora, e você passa a saber onde confiar.
+
+## O lado bom
+
+Esse problema é de contexto, e contexto é barato de produzir e permanente.
+
+O glossário que você escreve hoje serve pro modelo de hoje, pro de dezembro e pro do ano que vem. Modelo troca; o significado dos seus campos não.
+
+É por isso que [o fosso é o seu dado](/blog/seu-fosso-nao-e-o-modelo-e-o-que-so-voce-sabe-2026), não o modelo.
+
+Ela sabe o mundo. Quem sabe a sua empresa é você.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-preparar-seus-dados-pra-ia-responder-com-eles-2026",
+    slug: "como-preparar-seus-dados-pra-ia-responder-com-eles-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-10-08T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    title: "Como preparar seus dados pra IA responder com eles",
+    excerpt:
+      "Jogar a pasta inteira no modelo é caro, lento e piora a resposta. Preparar é separar o que responde pergunta do que é ruído, e isso é trabalho de quem conhece o negócio.",
+    summary:
+      "Entregar documentos brutos para a IA produz resposta ruim porque conteúdo irrelevante compete com o relevante. A preparação tem quatro passos: escolher o conjunto pequeno que responde as perguntas reais, quebrar os documentos em trechos com sentido próprio, marcar cada trecho com origem e data, e remover versões vencidas. O maior ganho costuma vir do último passo, porque documento desatualizado faz a IA responder com confiança algo que não vale mais.",
+    faq: [
+      {"q": "Por que não entregar todos os documentos?", "a": "Porque contexto irrelevante compete com o relevante e piora a resposta, além de custar mais. Um conjunto pequeno e curado responde melhor que uma pasta inteira."},
+      {"q": "O que é quebrar em trechos com sentido próprio?", "a": "Dividir o documento por seção completa, de modo que cada pedaço se sustente sozinho. Corte por tamanho fixo separa a pergunta da resposta e produz trecho inútil."},
+      {"q": "Por que marcar origem e data?", "a": "Para a resposta poder citar de onde veio e para você conseguir descartar o que venceu. Sem data, conteúdo antigo é tratado com o mesmo peso do atual."},
+      {"q": "Qual o erro mais caro na preparação?", "a": "Deixar versão vencida no conjunto. A IA responde com a política antiga, com total segurança, e ninguém percebe porque a resposta parece correta."}
+    ],
+    content: `O caminho mais comum pra fazer a IA responder com o conteúdo da empresa é também o pior: joga a pasta inteira e pede pra ela se virar.
+
+Fica caro, fica lento e a resposta piora. Parece contraintuitivo que mais informação piore, mas é o que acontece: conteúdo irrelevante compete com o relevante pela atenção do modelo.
+
+Preparar é curadoria, e é trabalho de quem conhece o negócio.
+
+## Passo 1: começa pelas perguntas, não pelos documentos
+
+O erro de origem é partir do que existe.
+
+Parte do que vão perguntar.
+
+Lista as dez perguntas que as pessoas realmente fazem. "Qual o prazo de garantia?" "Como funciona o cancelamento?" "Qual a regra de desconto pra parceiro?"
+
+Agora olha quais documentos respondem essas dez. Quase sempre são poucos, e quase sempre não são os maiores.
+
+Esse conjunto pequeno é o seu ponto de partida. Dá pra crescer depois; é muito mais difícil consertar um conjunto inchado.
+
+## Passo 2: quebra em trechos que se sustentam sozinhos
+
+A IA não lê o documento inteiro pra responder. Ela recebe pedaços.
+
+Se o pedaço não faz sentido isolado, a resposta sai pela metade.
+
+**O jeito errado:** cortar por tamanho fixo. O corte cai no meio de uma frase e separa a pergunta da resposta.
+
+**O jeito certo:** cortar por seção completa. Uma cláusula inteira, um procedimento inteiro, uma pergunta com a resposta junto.
+
+Teste simples: lê um trecho isolado e pergunta se ele responde alguma coisa sozinho. Se precisar do anterior pra fazer sentido, o corte está errado.
+
+## Passo 3: marca origem e data em cada trecho
+
+Dois campos por pedaço, e os dois são obrigatórios.
+
+**De onde veio:** nome do documento e seção. Permite que a resposta cite a fonte, e resposta com fonte é verificável. Sem isso, a pessoa precisa confiar.
+
+**De quando é:** a data da versão. Permite descartar o que venceu, que é o próximo passo.
+
+## Passo 4: tira o que está vencido
+
+Esse é o que mais melhora resultado e o menos feito.
+
+A pasta tem a política de 2024, a de 2025 e a atual. As três falam do mesmo assunto, com regras diferentes.
+
+A IA encontra a de 2024, acha coerente, responde com ela. Com total segurança, no formato certo, e errado.
+
+E ninguém percebe, porque a resposta parece correta. É o tipo de erro que só aparece quando um cliente cobra uma regra que não existe mais.
+
+**Documento vencido é pior que documento ausente.** Ausente a IA diz que não sabe; vencido ela responde errado.
+
+## O que não entra
+
+Vale tanto quanto o que entra:
+
+Rascunho e versão em discussão.
+Documento com dado pessoal, a menos que esteja [tratado](/blog/como-usar-ia-com-dado-sensivel-sem-entregar-o-dado-2026).
+Ata de reunião, que registra discussão e não decisão.
+E-mail, salvo quando contém decisão formal.
+
+Material de discussão é especialmente perigoso: a IA encontra a proposta que foi rejeitada e responde como se fosse regra.
+
+## Como saber se ficou bom
+
+As dez perguntas do passo 1, de novo. Agora você já sabe as respostas certas.
+
+Roda e compara. Onde errar, pergunta de qual trecho ela tirou aquilo. Ela te diz, e aí você vê se o problema é documento vencido, corte ruim ou conteúdo que falta.
+
+Três rodadas disso resolvem a maior parte.
+
+## O que isso tem de estratégico
+
+Esse conjunto curado não é tarefa técnica. É o conhecimento da empresa, escrito, organizado e recuperável.
+
+Ele funciona com o modelo de hoje e com o do ano que vem. Modelo troca; conteúdo bem preparado fica.
+
+É o trabalho que transforma "a gente sabe" em "a empresa sabe".
+
+A decisão é sua.`,
+  },
+  {
+    id: "modelo-troca-dado-fica-2026",
+    slug: "modelo-troca-dado-fica-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["IA & Carreira"],
+    publishedAt: "2026-10-07T18:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    title: "Modelo troca. Dado fica. E é o dado que te diferencia",
+    excerpt:
+      "Nos últimos meses o modelo do momento mudou várias vezes. Quem construiu em cima de um modelo específico refez trabalho. Quem construiu em cima do próprio dado só trocou a peça.",
+    summary:
+      "Modelos mudam a cada poucas semanas e preços caem rápido, então amarrar o valor do produto a um modelo específico garante retrabalho. O que permanece é o dado da empresa, o contexto que explica esse dado e o processo de revisão que garante qualidade. A consequência prática é arquitetural: isolar a chamada ao modelo num ponto trocável e investir o tempo no que não envelhece.",
+    faq: [
+      {"q": "Devo evitar depender de um fornecedor de IA?", "a": "Não precisa evitar usar, precisa evitar que a troca seja cara. Isolar a chamada num único ponto do código transforma uma migração de semanas em uma tarde."},
+      {"q": "O que exatamente permanece quando o modelo muda?", "a": "O dado da empresa, o glossário e as exceções que dão sentido a ele, os exemplos de resposta correta e o processo de revisão. Nada disso precisa ser refeito a cada modelo novo."},
+      {"q": "Vale trocar sempre para o modelo mais novo?", "a": "Só quando ele resolve melhor a sua tarefa, medido nos seus casos. Novidade não é critério, resultado medido é."},
+      {"q": "Como testar um modelo novo sem risco?", "a": "Com um conjunto fixo de casos reais cujas respostas corretas você já conhece. Roda nos dois, compara qualidade e custo, e decide com número."}
+    ],
+    content: `Olha o que aconteceu nos últimos meses.
+
+Um modelo virou o melhor. Três semanas depois, outro. O preço de um deles caiu 80% de uma vez. Um concorrente apareceu cobrando metade.
+
+Quem amarrou o produto a um modelo específico refez trabalho em cada uma dessas voltas.
+
+## O que é peça trocável e o que é ativo
+
+**Trocável:** o modelo, o fornecedor, o preço por token, o jeito de chamar a API.
+
+**Ativo:** o seu dado, o contexto que explica esse dado, os exemplos do que é resposta certa no seu caso, e o processo de revisão que garante qualidade.
+
+A primeira lista muda sozinha, sem você pedir. A segunda só muda se você construir.
+
+E a tentação é inversa: o modelo é visível, é notícia, dá assunto. O glossário dos seus campos não dá assunto nenhum e é o que sustenta tudo.
+
+## A consequência prática é arquitetural
+
+Isso não é filosofia, é uma decisão de código com efeito direto.
+
+**Isola a chamada ao modelo num ponto só.** Toda a aplicação fala com uma função sua; essa função fala com o fornecedor. Trocar vira mexer num arquivo em vez de caçar chamada espalhada por vinte.
+
+**Não espalha o nome do modelo pelo código.** Nem o formato específico de resposta dele. Isso vai mudar.
+
+**Guarda os seus casos de teste.** Um conjunto de perguntas reais com as respostas certas, fora do código. É o que permite avaliar qualquer modelo novo em minutos.
+
+Com essas três, trocar de fornecedor é uma tarde. Sem elas, é um projeto, e projeto não acontece quando tem coisa mais urgente.
+
+## O teste que decide se você troca
+
+Modelo novo não se adota por lançamento. Se adota por número.
+
+Pega o seu conjunto de casos. Roda nos dois. Compara três coisas: acertou mais, custou quanto, demorou quanto.
+
+Se o novo ganha nos três, troca. Se ganha em qualidade e perde em custo, a conta depende do volume. Se empata, fica onde está, porque migração sem ganho é risco de graça.
+
+Isso leva uma hora quando o conjunto de testes existe. Leva uma semana quando não existe, e é por isso que a maioria não testa e só segue a manchete.
+
+## O que não muda de valor
+
+Enquanto os modelos se revezam, quatro coisas seguem valendo exatamente igual:
+
+Saber **qual pergunta** vale a pena fazer.
+Ter **o dado** que responde essa pergunta.
+Saber **avaliar** se a resposta está certa.
+Ter **processo** pra quando ela estiver errada.
+
+Nenhuma delas aparece em lançamento. Todas são trabalho acumulado.
+
+## O erro que mais vejo
+
+Empresa que passa seis meses escolhendo o modelo ideal e zero hora organizando o próprio dado.
+
+No fim, ela tem o melhor modelo do mercado respondendo mal, porque [o contexto dela nunca foi dado a ele](/blog/por-que-a-ia-acerta-no-mundo-e-erra-no-seu-dado-2026).
+
+O inverso também existe e é muito melhor: empresa com dado bem organizado tem resultado bom com modelo mediano. E quando troca pro melhor, melhora de novo, sem refazer nada.
+
+Dado bom amplifica qualquer modelo. Modelo bom não conserta dado ruim.
+
+## O resumo
+
+Modelo é infraestrutura. Vai ficar melhor e mais barato sem você fazer nada, e vai mudar de nome várias vezes.
+
+Dado é patrimônio. Só melhora se você investir, e ninguém pode copiar o seu.
+
+Investe no que fica.
+
+A decisão é sua.`,
+  },
+  {
+    id: "como-decidir-onde-cada-dado-do-seu-sistema-vai-morar-2026",
+    slug: "como-decidir-onde-cada-dado-do-seu-sistema-vai-morar-2026",
+    contentVersion: 1,
+    status: "published",
+    tags: ["Vibecoding"],
+    publishedAt: "2026-10-07T08:00:00-03:00",
+    coverUrl:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    title: "Como decidir onde cada dado do seu sistema vai morar",
+    excerpt:
+      "É a decisão mais cara de mudar depois e a que mais gente deixa a IA tomar sozinha. Quatro perguntas resolvem, e nenhuma delas é técnica.",
+    summary:
+      "Onde cada dado mora define permissão, custo e dificuldade de mudança, e é a decisão mais cara de reverter num sistema. Quatro perguntas orientam a escolha: quem precisa enxergar, com que frequência é lido e escrito, quanto tempo precisa ser guardado e o que acontece se for perdido. A separação mais importante é entre dado operacional, arquivo, segredo e registro histórico, porque cada um tem regra de acesso e custo diferentes.",
+    faq: [
+      {"q": "Por que essa decisão é tão cara de mudar?", "a": "Porque ela define o modelo de permissão e as consultas de todo o sistema. Mudar onde um dado mora depois costuma encostar em todas as telas que o utilizam."},
+      {"q": "Posso deixar a IA decidir a estrutura?", "a": "Ela sugere bem o padrão comum, e o padrão comum ignora o seu contexto de custo, volume e sensibilidade. A sugestão serve como ponto de partida, não como decisão."},
+      {"q": "Qual a separação mais importante?", "a": "Separar dado operacional, arquivo, segredo e registro histórico. Cada um tem regra de acesso, custo e prazo de retenção diferentes, e misturá-los é o que cria o problema."},
+      {"q": "Arquivo deve ficar no banco?", "a": "Em geral não. Arquivo custa caro no banco e barato em armazenamento de objeto. O banco guarda a referência e os metadados, o arquivo fica onde é barato servir."}
+    ],
+    content: `Entre todas as decisões de um sistema, essa é a mais cara de mudar depois.
+
+Funcionalidade você reescreve. Tela você refaz. Mas mover um dado de lugar significa mexer em tudo que lê aquele dado, e isso costuma ser o sistema inteiro.
+
+E é justamente a decisão que mais gente delega pra IA sem perceber.
+
+## Por que delegar aqui sai caro
+
+Você pede um sistema de pedidos. A IA cria as tabelas que fazem sentido no padrão mais comum da internet.
+
+Funciona. E ela não sabia três coisas: que o seu volume é pequeno, que aquele campo é sensível e que aquele arquivo pode ter 2GB.
+
+A estrutura que ela escolheu é correta em geral e inadequada pro seu caso. Como [arquitetura não se delega](/blog/por-que-arquitetura-nao-se-delega-pra-ia-2026), essa decisão continua sendo sua.
+
+## As quatro perguntas
+
+Pra cada tipo de informação, quatro perguntas. Nenhuma técnica.
+
+**1. Quem precisa enxergar?**
+
+Só o dono, a equipe, ou é público? Essa resposta define a regra de permissão, e misturar dado com níveis diferentes de acesso na mesma estrutura é a origem do vazamento mais comum. Se um pedaço é mais sensível que o resto, ele merece lugar próprio.
+
+**2. Com que frequência é lido e escrito?**
+
+Lido o tempo todo e escrito raramente é um caso. Escrito a cada clique e lido quase nunca é outro completamente diferente. Registro de acesso e dado de cadastro não deveriam viver no mesmo lugar, porque um cresce rápido e é consultado pouco.
+
+**3. Por quanto tempo precisa ficar?**
+
+Pra sempre, cinco anos por obrigação fiscal, ou trinta dias? Isso define retenção, e retenção definida é o que torna possível [atender um pedido de exclusão](/blog/como-apagar-o-dado-de-um-cliente-que-pediu-lgpd-na-pratica-2026). Dado sem prazo definido fica pra sempre por omissão.
+
+**4. O que acontece se perder?**
+
+Catástrofe, chateação ou nada? Isso define onde investir em backup. Nem tudo merece o mesmo cuidado, e tratar tudo igual é caro de um lado e insuficiente do outro.
+
+## As quatro gavetas
+
+Na prática, quase todo sistema pequeno se organiza em quatro naturezas, e misturá-las é a origem da maioria dos problemas.
+
+**Operacional:** cliente, pedido, produto. Lido e escrito o tempo todo, precisa ser consultável e é onde a permissão importa mais. Vai no banco.
+
+**Arquivo:** PDF, imagem, documento enviado. Grande, lido às vezes, nunca consultado por conteúdo. Vai em armazenamento de objeto; o banco guarda só a referência e os metadados. Arquivo dentro do banco é caro e lento, e é um erro comum em sistema feito rápido.
+
+**Segredo:** chave de API, token, credencial. Nunca no banco de aplicação e nunca no código. Vai em variável de ambiente ou cofre, no servidor.
+
+**Registro histórico:** log, auditoria, evento. Cresce muito, é consultado raramente, e tem prazo de expiração. Separado do operacional, senão ele engorda a base principal e encarece tudo.
+
+## O erro mais comum em sistema feito rápido
+
+Tudo no mesmo lugar.
+
+Arquivo em base64 dentro do banco. Log na mesma tabela do pedido. Token guardado num campo de configuração.
+
+Funciona, e por um tempo funciona bem. Depois a base fica lenta, a conta sobe, e separar depois é a migração que ninguém quer fazer.
+
+## Como decidir rápido
+
+Faz uma tabela antes de escrever código. Uma linha por tipo de informação, quatro colunas com as quatro respostas.
+
+Quinze minutos. Quinze linhas, no caso de um sistema pequeno.
+
+Essa tabela é o que você entrega pra IA junto com o pedido. Com ela, o que vem de volta já nasce com a estrutura certa, em vez de nascer com o padrão genérico da internet.
+
+Estrutura errada não quebra nada hoje. Cobra em volume, em permissão e no dia em que você precisa mudar.
+
+A decisão é sua.`,
+  },
+  {
     id: "software-nao-e-entregue-e-mantido-2026",
     slug: "software-nao-e-entregue-e-mantido-2026",
     contentVersion: 1,
