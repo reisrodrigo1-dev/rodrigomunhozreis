@@ -20,8 +20,8 @@ export function AuthorBio() {
         </p>
         <p className="mt-2 text-lg font-medium text-paper">{site.name}</p>
         <p className="mt-1 text-sm leading-relaxed text-paper/60">
-          {site.role} e sócio de produtos 100% construídos em vibecoding — MeuCurso, DireitoHub e
-          TreinadorOAB. Escreve sobre construir e usar IA com a velocidade da máquina e o rigor de
+          {site.role}, Co-Founder, CTO e CAIO da Tellia e sócio de produtos 100% construídos em
+          vibecoding: MeuCurso, DireitoHub e TreinadorOAB. Escreve sobre construir e usar IA com a velocidade da máquina e o rigor de
           engenheiro: <span className="text-paper/80">vibecoding com engenharia</span>.
         </p>
         <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">

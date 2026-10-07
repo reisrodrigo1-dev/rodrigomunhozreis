@@ -74,8 +74,16 @@ const orgJsonLd = {
   jobTitle: [
     "Consultor de Inteligência Artificial",
     "Diretor de Tecnologia (CTO)",
+    "Chief AI Officer (CAIO)",
+    "Co-Founder",
     "Autor",
   ],
+  worksFor: {
+    "@type": "Organization",
+    name: "Tellia",
+    url: "https://tellia.com.br",
+    description: "Análise de comunicação com IA para pessoas, empresas e consultorias.",
+  },
   url: `https://${site.domain}`,
   description: site.description,
   sameAs: [site.links.linkedin, site.links.instagram],

@@ -41,11 +41,18 @@ export const site = {
     whatsappUrl: "",
   },
   companies: [
+    { name: "Tellia", desc: "Co-Founder, CTO e CAIO · análise de comunicação com IA." },
     { name: "MeuCurso", desc: "Diretor de TI · e-commerce jurídico (OAB e concursos)." },
     { name: "BipeTech", desc: "Sócio · edtech por trás do TreinadorOAB e do ConectaEduca." },
     { name: "DireitoHub", desc: "Sócio · legal-tech." },
   ],
   projects: [
+    {
+      name: "Tellia",
+      role: "Co-Founder, CTO e CAIO",
+      desc: "Análise de comunicação com IA para pessoas, empresas e consultorias.",
+      url: "https://tellia.com.br",
+    },
     {
       name: "MeuCurso",
       role: "Presidente do Comitê de Inovação",

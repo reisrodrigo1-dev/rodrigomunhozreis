@@ -23,7 +23,7 @@ export async function GET() {
     "",
     `> ${site.tagline}. ${site.description}`,
     "",
-    `Autor: ${site.name}, ${site.role}. Constrói produtos reais em vibecoding (MeuCurso, DireitoHub, TreinadorOAB, ConectaEduca, BipeTech).`,
+    `Autor: ${site.name}, ${site.role}. Co-Founder, CTO e CAIO da Tellia (análise de comunicação com IA). Constrói produtos reais em vibecoding (Tellia, MeuCurso, DireitoHub, TreinadorOAB, ConectaEduca, BipeTech).`,
     "",
     "Conteúdo em português do Brasil, com exemplos práticos, preços reais e opinião fundamentada. Sem hype.",
     `Artigos publicados: ${posts.length}.`,
