@@ -78,6 +78,12 @@ export default function RobosPage() {
             <p className="mt-4 text-sm text-paper/40">
               Grátis · funciona em qualquer IA · sem instalar nada
             </p>
+            <p className="mt-2 text-sm text-paper/40">
+              Usa o Claude Code?{" "}
+              <Link href="/skills" className="text-amber-light underline-offset-4 hover:underline">
+                Conheça as skills do Engenho
+              </Link>
+            </p>
           </Reveal>
         </div>
 

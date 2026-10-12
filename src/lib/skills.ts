@@ -67,6 +67,7 @@ export const skills: Skill[] = [
   { id: "lapidador", name: "Lapidador", category: "Método & Prompts", tagline: "Refino", description: "Melhora a resposta da IA por refino iterativo — diagnostica o que ficou ruim e pede o ajuste certo.", whenToUse: "Quando a resposta da IA está quase boa, genérica, longa, com tom errado ou faltando algo." },
   { id: "bagagem", name: "Bagagem", category: "Método & Prompts", tagline: "Contexto", description: "Monta o contexto certo pra dar à IA: o que incluir, o que cortar e como organizar.", whenToUse: "Quando a IA responde genérico por falta de contexto, ou ao trabalhar com documentos/dados longos." },
   { id: "maestro", name: "Maestro", category: "Método & Prompts", tagline: "Orquestração", description: "Quebra uma tarefa grande em passos e os coordena — encadear, paralelizar e verificar.", whenToUse: "Quando a tarefa é grande/complexa demais pra um pedido só, ou a IA se perde no meio." },
+  { id: "sintese", name: "Síntese", category: "Método & Prompts", tagline: "Resumos fiéis", description: "Resume conteúdo longo preservando o essencial — e sem inventar nada que não esteja na fonte.", whenToUse: "Ao resumir uma transcrição, reunião, artigo ou documento longo, ou transformá-lo em pontos-chave." },
 
   // 📣 Marketing
   { id: "alavanca", name: "Alavanca", category: "Marketing", tagline: "Inteligência de funil", description: "Recomenda canal, estrutura de campanha, copy e métricas, com o método isca → e-mail → nutrição.", whenToUse: "Ao planejar divulgação, montar funil, escrever copy ou melhorar conversão." },

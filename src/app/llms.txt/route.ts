@@ -35,6 +35,7 @@ export async function GET() {
     `- [Blog](${base}/blog): artigos sobre vibecoding com engenharia, segurança em IA e carreira`,
     `- [Materiais](${base}/materiais): e-book gratuito "IA Sem Medo"`,
     `- [Robôs](${base}/robos): robôs/prompts de IA gratuitos`,
+    `- [Skills](${base}/skills): suíte Engenho, 50 skills gratuitas para o Claude Code (segurança, código, prompts, conteúdo, marketing e negócio)`,
     `- [Newsletter](${base}/newsletter): artigos novos por e-mail`,
     "",
     "## Método (conteúdo proprietário)",

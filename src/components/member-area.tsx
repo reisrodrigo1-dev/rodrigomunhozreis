@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -26,6 +27,17 @@ const categories: Robot["category"][] = [
   "Marketing & Vendas",
   "Produtividade & Carreira",
 ];
+// /cliente?destino=skills: quem chega pela página pública de Skills volta direto
+// para o download depois de entrar ou criar a conta. Lido de window.location (e não
+// de useSearchParams) para a página continuar estática, sem Suspense.
+function useDestinoSkills(): boolean {
+  const [skillsDest, setSkillsDest] = useState(false);
+  useEffect(() => {
+    setSkillsDest(new URLSearchParams(window.location.search).get("destino") === "skills");
+  }, []);
+  return skillsDest;
+}
+
 const perfis = ["Dono de empresa", "Empreendedor", "Profissional / colaborador", "Estudante", "Outro"];
 
 const catIcons: Record<Robot["category"], React.ReactNode> = {
@@ -84,6 +96,7 @@ function shortLabel(user: User): string {
 
 /* ───────────────────────── Login ───────────────────────── */
 function AuthForm() {
+  const skillsDest = useDestinoSkills();
   const [mode, setMode] = useState<"signup" | "login">("signup");
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -150,7 +163,11 @@ function AuthForm() {
             <span className="text-grad">Central de </span>
             <span className="accent">Robôs.</span>
           </h1>
-          <p className="mt-3 text-paper/55">Crie sua conta grátis para acessar os robôs de IA.</p>
+          <p className="mt-3 text-paper/55">
+            {skillsDest
+              ? "Crie sua conta grátis para baixar as skills do Engenho."
+              : "Crie sua conta grátis para acessar os robôs de IA."}
+          </p>
         </div>
         <div className="glass mt-7 p-7">
           <div className="mb-5 flex gap-2 rounded-full border border-white/10 p-1 text-sm">
@@ -472,6 +489,8 @@ function Dashboard({ user }: { user: User }) {
 }
 
 export function MemberArea() {
+  const router = useRouter();
+  const skillsDest = useDestinoSkills();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -480,7 +499,14 @@ export function MemberArea() {
     setLoading(false);
   }), []);
 
-  if (loading) {
+  // Navegação client-side (não reload): o cadastro do aluno (createStudent) pode
+  // ainda estar gravando quando o login dispara, e um reload cortaria a escrita.
+  useEffect(() => {
+    if (user && skillsDest) router.replace("/cliente/skills");
+  }, [user, skillsDest, router]);
+
+  // Spinner também enquanto redireciona para as skills (evita piscar o painel de robôs).
+  if (loading || (user && skillsDest)) {
     return (
       <div className="grid min-h-screen place-items-center">
         <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/15 border-t-amber" />
