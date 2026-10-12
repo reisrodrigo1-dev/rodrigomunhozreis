@@ -49,7 +49,7 @@ const groups = ["Painel", "Conteúdo", "Pessoas"];
 
 function DarkScreen({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grid min-h-screen place-items-center bg-[#070608] px-6 text-center text-paper">
+    <div className="grid min-h-screen place-items-center bg-[#081A23] px-6 text-center text-paper">
       <div>{children}</div>
     </div>
   );
@@ -206,10 +206,10 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-page md:flex">
       {/* Sidebar desktop */}
-      <aside className="sticky top-0 hidden h-screen w-60 shrink-0 bg-[#0a090b] md:block">{Sidebar}</aside>
+      <aside className="sticky top-0 hidden h-screen w-60 shrink-0 bg-[#06141B] md:block">{Sidebar}</aside>
 
       {/* Top bar mobile */}
-      <header className="sticky top-0 z-30 flex items-center gap-3 bg-[#0a090b] px-4 py-3 text-paper md:hidden">
+      <header className="sticky top-0 z-30 flex items-center gap-3 bg-[#06141B] px-4 py-3 text-paper md:hidden">
         <button onClick={() => setDrawer(true)} aria-label="Abrir menu" className="grid h-9 w-9 place-items-center rounded-lg text-paper/70 hover:bg-white/5">
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
         </button>
@@ -220,7 +220,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       {drawer && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setDrawer(false)} aria-hidden="true" />
-          <aside className="absolute left-0 top-0 h-full w-72 bg-[#0a090b]">{Sidebar}</aside>
+          <aside className="absolute left-0 top-0 h-full w-72 bg-[#06141B]">{Sidebar}</aside>
         </div>
       )}
 

@@ -6,16 +6,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: { DEFAULT: "#17140F", soft: "#3D372E" },
-        paper: "#F4EFE6",
-        page: "#FBF8F2",
-        muted: { DEFAULT: "#7C7365", soft: "#9A9183" },
-        line: "#E4DBCB",
+        ink: { DEFAULT: "#0B1E27", soft: "#2E4652" },
+        paper: "#F1F6F8",
+        page: "#F5F9FB",
+        muted: { DEFAULT: "#5B7380", soft: "#8AA2AD" },
+        line: "#D5E2E8",
+        // Cor de destaque. O nome "amber" é histórico (a marca era âmbar até 10/2026);
+        // hoje é o azul da identidade teal. Mantido para não renomear ~290 classes.
         amber: {
-          DEFAULT: "#B5762A",
-          deep: "#8F5C1E",
-          light: "#E0A45C",
-          soft: "#F1E5CF",
+          DEFAULT: "#0EA5E9",
+          deep: "#0369A1",
+          light: "#38BDF8",
+          soft: "#E0F2FE",
         },
       },
       fontFamily: {

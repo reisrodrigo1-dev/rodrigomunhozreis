@@ -184,7 +184,7 @@ function AuthForm() {
                 <input type="tel" required inputMode="numeric" autoComplete="tel" placeholder="WhatsApp — (11) 91234-5678" value={whatsapp} onChange={(e) => setWhatsapp(maskPhone(e.target.value))} maxLength={16} className={field} />
                 <select value={perfil} onChange={(e) => setPerfil(e.target.value)} className={field}>
                   {perfis.map((p) => (
-                    <option key={p} value={p} style={{ color: "#15130f", backgroundColor: "#fff" }}>{p}</option>
+                    <option key={p} value={p} style={{ color: "#0B1E27", backgroundColor: "#fff" }}>{p}</option>
                   ))}
                 </select>
               </>
@@ -332,7 +332,7 @@ function Dashboard({ user }: { user: User }) {
   return (
     <div className="flex min-h-screen">
       {/* Sidebar desktop */}
-      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 border-r border-white/8 bg-[#0a090b] lg:block">
+      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 border-r border-white/8 bg-[#06141B] lg:block">
         {SidebarContent}
       </aside>
 
@@ -340,14 +340,14 @@ function Dashboard({ user }: { user: User }) {
       {drawer && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setDrawer(false)} aria-hidden="true" />
-          <aside className="absolute left-0 top-0 h-full w-72 border-r border-white/8 bg-[#0a090b]">{SidebarContent}</aside>
+          <aside className="absolute left-0 top-0 h-full w-72 border-r border-white/8 bg-[#06141B]">{SidebarContent}</aside>
         </div>
       )}
 
       {/* Conteúdo */}
       <div className="min-w-0 flex-1">
         {/* Top bar */}
-        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-white/8 bg-[#070608]/85 px-4 py-3 backdrop-blur md:px-7">
+        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-white/8 bg-[#081A23]/85 px-4 py-3 backdrop-blur md:px-7">
           <button onClick={() => setDrawer(true)} aria-label="Abrir menu" className="grid h-9 w-9 place-items-center rounded-lg text-paper/70 hover:bg-white/5 lg:hidden">
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
           </button>
@@ -390,7 +390,7 @@ function Dashboard({ user }: { user: User }) {
 
           {/* Boas-vindas */}
           {welcome && loaded && robots.length > 0 && activeCat === "Todos" && !term && (
-            <div className="glass relative mt-6 border-amber/25 p-5" style={{ background: "rgba(224,164,92,0.06)" }}>
+            <div className="glass relative mt-6 border-amber/25 p-5" style={{ background: "rgba(56,189,248,0.06)" }}>
               <button onClick={dismissWelcome} aria-label="Dispensar" className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-md text-paper/50 hover:bg-white/10 hover:text-paper">
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" /></svg>
               </button>

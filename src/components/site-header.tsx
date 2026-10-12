@@ -4,7 +4,7 @@ import { MobileNav } from "@/components/mobile-nav";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-[#070608]/70 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-[#081A23]/70 backdrop-blur-md">
       <div className="container-c flex h-16 items-center justify-between">
         <Link href="/" className="group flex items-center gap-2.5" aria-label={site.name}>
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-amber to-amber-deep font-semibold text-ink shadow-lg shadow-amber/20 transition group-hover:shadow-amber/40">

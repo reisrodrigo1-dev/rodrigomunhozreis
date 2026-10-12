@@ -155,7 +155,7 @@ export default function Home() {
           </div>
 
           <Reveal>
-            <div className="glass mt-8 p-7" style={{ background: "rgba(224,164,92,0.06)" }}>
+            <div className="glass mt-8 p-7" style={{ background: "rgba(56,189,248,0.06)" }}>
               <p className="text-lg text-paper/75">
                 Para conversar com a IA, ensino o método{" "}
                 <span className="accent text-xl">P.R.O.M.P.T.E.R.</span> — Papel, Realidade, Objetivo,
@@ -289,7 +289,7 @@ export default function Home() {
             <Reveal delay={0.08}>
               <div
                 className="glass glass-hover h-full p-8"
-                style={{ borderColor: "rgba(224,164,92,0.35)", background: "rgba(224,164,92,0.08)" }}
+                style={{ borderColor: "rgba(56,189,248,0.35)", background: "rgba(56,189,248,0.08)" }}
               >
                 <p className="text-2xl font-semibold text-paper">Consultoria</p>
                 <p className="mt-3 text-paper/60">
@@ -372,7 +372,7 @@ export default function Home() {
       <section className="relative overflow-hidden border-t border-white/5 py-28">
         <div
           className="pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-          style={{ background: "rgba(224,164,92,0.10)", filter: "blur(100px)" }}
+          style={{ background: "rgba(56,189,248,0.10)", filter: "blur(100px)" }}
         />
         <div className="container-c relative text-center">
           <Reveal>

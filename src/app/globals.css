@@ -37,11 +37,11 @@
     @apply border border-line text-ink hover:border-amber hover:text-amber-deep;
   }
   .btn-on-dark {
-    @apply bg-amber text-ink hover:bg-amber-light;
+    @apply bg-amber-light text-ink hover:bg-sky-300;
   }
   .btn-glow {
-    @apply bg-amber text-ink hover:bg-amber-light hover:-translate-y-0.5;
-    box-shadow: 0 10px 34px -8px rgba(224, 164, 92, 0.5);
+    @apply bg-amber-light text-ink hover:bg-sky-300 hover:-translate-y-0.5;
+    box-shadow: 0 10px 34px -8px rgba(56, 189, 248, 0.5);
   }
   .btn-dark-ghost {
     @apply border border-white/15 bg-white/5 text-paper hover:border-amber-light hover:text-amber-light;
@@ -100,7 +100,7 @@
   animation: pulse-glow 7s ease-in-out infinite;
 }
 
-/* Aurora: manchas âmbar que derivam devagar no fundo (movimento sutil) */
+/* Aurora: manchas azuis que derivam devagar no fundo (movimento sutil) */
 @keyframes drift-a {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
   50% { transform: translate3d(7%, 6%, 0) scale(1.12); }

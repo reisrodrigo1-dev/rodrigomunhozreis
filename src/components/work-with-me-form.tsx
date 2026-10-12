@@ -71,7 +71,7 @@ export function WorkWithMeForm() {
       </label>
       <select id="tipo-servico" value={tipo} onChange={(e) => setTipo(e.target.value)} className={field}>
         {tipos.map((t) => (
-          <option key={t} value={t} style={{ color: "#15130f", backgroundColor: "#fff" }}>
+          <option key={t} value={t} style={{ color: "#0B1E27", backgroundColor: "#fff" }}>
             {t}
           </option>
         ))}

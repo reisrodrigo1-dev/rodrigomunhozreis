@@ -16,10 +16,10 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#070608",
+          backgroundColor: "#081A23",
           backgroundImage:
-            "radial-gradient(900px 500px at 80% -10%, rgba(232,163,61,0.28), transparent)",
-          color: "#F4EFE6",
+            "radial-gradient(900px 500px at 80% -10%, rgba(56,189,248,0.28), transparent)",
+          color: "#F1F6F8",
           fontFamily: "sans-serif",
         }}
       >
@@ -29,11 +29,11 @@ export default function OpengraphImage() {
               width: 64,
               height: 64,
               borderRadius: 16,
-              background: "linear-gradient(135deg, #E8A33D, #B9772A)",
+              background: "linear-gradient(135deg, #38BDF8, #0369A1)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#070608",
+              color: "#081A23",
               fontSize: 38,
               fontWeight: 800,
             }}
@@ -56,10 +56,10 @@ export default function OpengraphImage() {
           }}
         >
           <span>Construa com IA</span>
-          <span style={{ color: "#E8A33D", fontStyle: "italic" }}>sem virar um risco.</span>
+          <span style={{ color: "#38BDF8", fontStyle: "italic" }}>sem virar um risco.</span>
         </div>
 
-        <div style={{ display: "flex", marginTop: 36, fontSize: 32, color: "rgba(244,239,230,0.65)" }}>
+        <div style={{ display: "flex", marginTop: 36, fontSize: 32, color: "rgba(241,246,248,0.65)" }}>
           {`${site.tagline} · ${site.role}`}
         </div>
       </div>

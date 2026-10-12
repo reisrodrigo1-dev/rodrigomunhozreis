@@ -2,7 +2,7 @@ import { site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="relative border-t border-white/10 bg-[#040304]">
+    <footer className="relative border-t border-white/10 bg-[#061219]">
       <div className="container-c flex flex-col gap-8 py-14 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
           <div className="flex items-center gap-2.5">

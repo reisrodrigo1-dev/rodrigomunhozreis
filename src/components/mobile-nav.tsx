@@ -46,7 +46,7 @@ export function MobileNav() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu de navegação"
-            className="fixed inset-0 z-[60] bg-[#070608]/95 backdrop-blur-md"
+            className="fixed inset-0 z-[60] bg-[#081A23]/95 backdrop-blur-md"
             initial={reduce ? { opacity: 0 } : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

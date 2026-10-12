@@ -139,7 +139,7 @@ export default async function IaSemMedoPage() {
               <div id="baixar" className="glass scroll-mt-24 p-7 md:p-8">
                 {/* Mini-capa: mostra o "produto" que a pessoa vai receber (lift de conversão). */}
                 <div className="mb-5 flex items-center gap-4">
-                  <div className="flex h-24 w-[68px] shrink-0 flex-col rounded-md border border-amber/30 bg-gradient-to-b from-[#241d12] to-[#0e0b07] p-2 shadow-lg">
+                  <div className="flex h-24 w-[68px] shrink-0 flex-col rounded-md border border-amber/30 bg-gradient-to-b from-[#0E3C50] to-[#081A23] p-2 shadow-lg">
                     <span className="text-[6.5px] font-semibold uppercase tracking-wider text-amber-light/80">
                       Guia gratuito
                     </span>
